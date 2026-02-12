@@ -20,11 +20,11 @@ This folder supports review, cleanup, and controlled merge back to `dist/scope-l
 - Generated from canonical source + applicability rules.
 
 4. **Validation**
-- `scripts/validate-scope-exports.py` checks:
+- `scripts/validate_scope_review_exports.py` checks:
   - export parity
   - metadata consistency in `dist/scope-library.json`
-- `scripts/validate-scope-review-buckets.py` checks section-to-bucket sync.
-- `scripts/validate-distribution-manifests.py` checks upload/internal manifests.
+- `scripts/validate_scope_bucket_mapping.py` checks section-to-bucket sync.
+- `scripts/validate_upload_manifest.py` checks upload/internal manifests.
 
 5. **Canonicalization**
 - Approved docs-layer changes are merged back into `dist/scope-library.json`.
@@ -46,5 +46,5 @@ This folder supports review, cleanup, and controlled merge back to `dist/scope-l
 - Keep optional/deal-specific content excluded from baseline dist unless explicitly approved.
 - Keep `dist/` free of merge temp files and generated samples.
 - Generate optional review docs from JSON source of truth:
-  - `python3 scripts/export-optional-scope-library.py`
-- Internal scripts must use `scripts/internal_generate.py` (no direct dist module loading).
+  - `python3 scripts/export_optional_scope_docs.py`
+- Internal scripts must use `scripts/run_internal_generation.py` (no direct dist module loading).

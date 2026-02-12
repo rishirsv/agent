@@ -1,0 +1,23 @@
+{
+  "report_id": "project-ascend-report",
+  "source_file": "Project Ascend - Report.pptx",
+  "status": "pass",
+  "page_count": 47,
+  "markdown_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/extracted/project-ascend-report.md",
+  "montage_files": [
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-01.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-02.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-03.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-04.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-05.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/montage/montage-06.png"
+  ],
+  "section_coverage": {},
+  "missing_sections": [],
+  "reviewer": "codex",
+  "review_notes_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/project-ascend-report/review-notes.md",
+  "created_at": "2026-02-12T20:40:06.074004+00:00",
+  "updated_at": "2026-02-12T20:40:06.074009+00:00",
+  "reviewed_at": "2026-02-12T20:40:06.074011+00:00",
+  "review_notes": "Manual verbatim extraction completed for full report body text; table text excluded by rule."
+}

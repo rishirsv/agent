@@ -12,10 +12,11 @@ If anything conflicts with `ts-engagement-assistant.md`, the system prompt wins.
 
 ## Interview Sequence (Reliable Pattern)
 
-1. Turn 1: ask deal setup only (no Canvas unless user uploaded docs).
+1. Turn 1: ask only project name (map to `PROJECT_CODE_NAME`), `CHOICE_DEAL_TYPE` (buyside only), `INDUSTRY`, `CLIENT_LEGAL_NAME`, `CLIENT_ADDRESS_LINE_1`, `CLIENT_ADDRESS_LINE_2`, `CLIENT_COUNTRY`, `CLIENT_CONTACT_NAME_TITLE`, `TARGET_LEGAL_NAME_FULL` (no Canvas unless user uploaded docs).
 2. Turn 2+: show `Updated fields`, then full Canvas re-render.
 3. Terms stage: collect fee values and independence choice.
 4. Generate only on exact `generate`.
+5. Never ask Team/Fee/Independence on Turn 1.
 
 ## Required Fee Behavior
 
@@ -39,6 +40,10 @@ Run this after Terms are complete and before first generation attempt.
   - section-only: `net_debt`
   - concept-wide: `net_debt` + `locked_box`
 - If user says `generate` with no scope edits, proceed with full default scope.
+- Before `generate`, mirror final scope decisions into payload:
+  - removals -> `excluded_section_keys`
+  - catalog additions -> `optional_section_keys`
+  - ad hoc additions -> `ad_hoc_optional_sections`
 - Treat `BILLING_ENTITY_NAME` as derived from `CLIENT_LEGAL_NAME` by default; do not ask unless user requests override.
 - After scope decisions, ask once: `By the way, I can also add optional scopes. Want any?`
 - If user declines optionals, continue directly to generation flow.
@@ -111,7 +116,7 @@ with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, dir="/mnt/da
     vars_path = f.name
 
 cmd = [
-    sys.executable, "/mnt/data/el-generate.py",
+    sys.executable, "/mnt/data/engagement_letter_generator.py",
     "--template", template_file,
     "--scope-library", "/mnt/data/scope-library.json",
     "--industry", industry,
@@ -127,7 +132,7 @@ Example 1:
 - Assistant:
   - Mark `Net debt` as excluded in scope review.
   - Re-render full Canvas + scope review.
-  - Update `scope_selection.excluded_top_level_ids`.
+  - Update `scope_selection.excluded_section_keys`.
 
 Example 2:
 - User: `Remove working capital and net debt, then generate.`

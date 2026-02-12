@@ -1,0 +1,16 @@
+[
+  {
+    "source_file": "Example report_Private Equity lender_Project Garrison.pptx",
+    "report_id": "example-report-private-equity-lender-project-garrison",
+    "status": "pass",
+    "output_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/extracted/example-report-private-equity-lender-project-garrison.md",
+    "notes": "manual verbatim extraction complete; table text excluded"
+  },
+  {
+    "source_file": "Project Ascend - Report.pptx",
+    "report_id": "project-ascend-report",
+    "status": "pass",
+    "output_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/extracted/project-ascend-report.md",
+    "notes": "manual verbatim extraction complete; table text excluded"
+  }
+]

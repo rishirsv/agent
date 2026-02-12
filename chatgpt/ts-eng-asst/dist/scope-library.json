@@ -1409,35 +1409,6 @@
           "text": "Insurance and warranty-related cost trends and reserve adequacy considerations."
         }
       ],
-      "working_capital": [
-        {
-          "id": "scope.164",
-          "text": "Analyze the company's historical monthly working capital patterns and consider an appropriate “target working capital” peg for purposes of a purchase price adjustment mechanism; and assess the level of working capital required to support future growth."
-        },
-        {
-          "id": "scope.165",
-          "text": "Analyze the composition of individual working capital accounts and monthly working capital trends including working capital days metrics (i.e. DSO and DPO)."
-        },
-        {
-          "id": "scope.166",
-          "text": "Identify potential adjustments for large non-recurring, unusual or non-operating items that may have affected normal working capital trends, (such as accruals for bonuses, non-trade balances, etc.)"
-        },
-        {
-          "id": "scope.167",
-          "text": "Summarize and normalize historical working capital in the business including:",
-          "children": [
-            {
-              "text": "Commenting on the working capital trends, for the respective period;"
-            },
-            {
-              "text": "Understanding key drivers (i.e., seasonality, accounts payable days, days sales outstanding, inventory days); and"
-            },
-            {
-              "text": "Identifying large or unusual non-recurring items that may have impacted normal working capital trends including potential items identified within the quality of earnings analysis noted above."
-            }
-          ]
-        }
-      ],
       "accounts_receivable": [
         {
           "id": "scope.168",
@@ -1446,20 +1417,6 @@
         {
           "id": "scope.606",
           "text": "Reserve roll-forward, write-off trends, credit balances, and other collection adjustments."
-        }
-      ],
-      "accounts_payable_and_accrued_liabilities": [
-        {
-          "id": "scope.172",
-          "text": "Accounts payable aging, major-vendor settlement terms, and days payable outstanding trends."
-        },
-        {
-          "id": "scope.173",
-          "text": "Accrued liabilities profile (including payroll/PTO, bonus/commission cadence, and deferred revenue timing considerations)."
-        },
-        {
-          "id": "scope.607",
-          "text": "Other current liability balances and unusual movements affecting working capital comparability."
         }
       ],
       "capital_expenditure_requirements": [
@@ -1474,36 +1431,6 @@
               "text": "Impairment write-downs and issues."
             }
           ]
-        }
-      ],
-      "commitments_and_contingencies": [
-        {
-          "id": "scope.174",
-          "text": "Long-term debt, Finance lease obligations, and other long-term liabilities;"
-        },
-        {
-          "id": "scope.175",
-          "text": "Deferred revenue / Contingent considerations / earnouts on acquisitions / warranty & insurance reserves"
-        },
-        {
-          "id": "scope.176",
-          "text": "Post-retirement obligations or incentive compensation;"
-        },
-        {
-          "id": "scope.177",
-          "text": "Other significant and/or unusual liabilities including off-balance sheet liabilities"
-        },
-        {
-          "id": "scope.178",
-          "text": "Pending or threatened litigations by regulatory or other authorities and by employees;"
-        },
-        {
-          "id": "scope.179",
-          "text": "Significant lease and purchase obligations; and"
-        },
-        {
-          "id": "scope.180",
-          "text": "Inquire about other off-balance sheet transactions."
         }
       ],
       "inventory": [
@@ -2641,8 +2568,8 @@
     "industries_analyzed": 17,
     "common_threshold": "legacy: 8 of 11",
     "total_sections_found": 32,
-    "total_bullets_cataloged": 610,
+    "total_bullets_cataloged": 593,
     "metadata_counts_basis": "current-dist-structure",
-    "metadata_last_refreshed_utc": "2026-02-11T20:05:53.894491+00:00"
+    "metadata_last_refreshed_utc": "2026-02-12T16:15:51.628513+00:00"
   }
 }

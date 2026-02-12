@@ -1,0 +1,19 @@
+{
+  "overlaps": {
+    "slideCount": 45,
+    "overlapCount": 10,
+    "severeCount": 0,
+    "warningCount": 10,
+    "containmentCount": 0
+  },
+  "overflow": {
+    "status": 0,
+    "skipped": true,
+    "reason": "missing_numpy"
+  },
+  "warnings": [
+    "Strict overflow check skipped: optional dependency `numpy` is not installed."
+  ],
+  "missingSlots": [],
+  "fallbacks": []
+}

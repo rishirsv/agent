@@ -1,0 +1,8 @@
+{
+  "input": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pptx",
+  "dpi": 120,
+  "failures": [
+    26
+  ],
+  "image_dir": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/strict/2026-02-12T16-59-14-399Z/overflow"
+}

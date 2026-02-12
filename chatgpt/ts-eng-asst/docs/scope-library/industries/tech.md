@@ -8,19 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.394` | `tech.accounting_overview.scope.394` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("by you"). |
-| `scope.398` | `tech.accounting_overview.scope.398` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("to be performed by you"). |
-| `scope.399` | `tech.accounting_overview.scope.399` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("to be performed by you"). |
-| `scope.405` | `tech.quality_of_earnings.scope.405` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
-| `scope.410` | `tech.quality_of_earnings.scope.410` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("analysis performed by you"). |
-| `scope.411` | `tech.quality_of_earnings.scope.411` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("your analysis"). |
-| `scope.414` | `tech.quality_of_earnings.scope.414` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("to be performed by you"). |
-| `scope.415` | `tech.quality_of_earnings.scope.415` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("reviewed by you"). |
-| `scope.416` | `tech.quality_of_earnings.scope.416` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("prepared by you"). |
-| `scope.418` | `tech.supporting_analysis_to_quality_of_earnings.scope.418` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Client-performed work framing ("to be performed by you"). |
+_None._
 
 ### Optional / Pending Review
 

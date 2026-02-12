@@ -475,66 +475,17 @@
     "industries_analyzed": 17,
     "common_threshold": "legacy: 8 of 11",
     "total_sections_found": 32,
-    "total_bullets_cataloged": 610,
+    "total_bullets_cataloged": 593,
     "metadata_counts_basis": "current-dist-structure",
-    "metadata_last_refreshed_utc": "2026-02-11T20:05:53.894491+00:00"
+    "metadata_last_refreshed_utc": "2026-02-12T16:15:51.628513+00:00"
   },
   "review_tracking": {
     "source": "docs/Scope Review/deletion-optional-tracker.md",
-    "entries_for_industry": [
-      {
-        "scope_id": "scope.003",
-        "path": "common.accounting_overview.scope.003",
-        "short_text": "Analyze the accounting policies as disclosed in the audited financial statements and perform...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Parent/jurisdiction-specific IFRS framing."
-      },
-      {
-        "scope_id": "scope.046",
-        "path": "construction.accounting_overview.scope.046",
-        "short_text": "Understand and summarize the financial statement preparation process, including:",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Engagement pricing/fee + Parent-specific GAAP framing."
-      },
-      {
-        "scope_id": "scope.017",
-        "path": "construction.financial_due_diligence.scope.017",
-        "short_text": "Deliverable format statement",
-        "current_status": "REMOVED_DEFAULT",
-        "recommended_disposition": "OPTIONAL_CANDIDATE",
-        "notes": "Removed from construction default output; keep as optional framing add-on."
-      },
-      {
-        "scope_id": "scope.018",
-        "path": "construction.financial_due_diligence.scope.018",
-        "short_text": "Time-period coverage framing",
-        "current_status": "REMOVED_DEFAULT",
-        "recommended_disposition": "OPTIONAL_CANDIDATE",
-        "notes": "Removed from construction default output; useful in selected situations."
-      },
-      {
-        "scope_id": "scope.021",
-        "path": "construction.quality_of_earnings.scope.021",
-        "short_text": "Incentive compensation, dis-synergies/synergies",
-        "current_status": "REMOVED_DEFAULT",
-        "recommended_disposition": "OPTIONAL_CANDIDATE",
-        "notes": "Removed from construction default output; can be added when transaction thesis needs it."
-      },
-      {
-        "scope_id": "scope.022",
-        "path": "construction.quality_of_earnings.scope.022",
-        "short_text": "JV dredging impact",
-        "current_status": "REMOVED_DEFAULT",
-        "recommended_disposition": "OPTIONAL_CANDIDATE",
-        "notes": "Removed from construction default output; specialized topic kept optional."
-      }
-    ],
+    "entries_for_industry": [],
     "counts": {
-      "entries_total": 6,
-      "removed_canonical": 2,
-      "optional_candidates": 4,
+      "entries_total": 0,
+      "removed_canonical": 0,
+      "optional_candidates": 0,
       "pending_review_delete": 0
     }
   },

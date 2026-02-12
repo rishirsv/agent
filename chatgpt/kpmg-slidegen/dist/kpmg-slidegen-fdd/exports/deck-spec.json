@@ -1,62 +1,126 @@
 {
   "metadata": {
-    "title": "Project Cascade Care - Financial Due Diligence",
-    "author": "KPMG Transaction Services"
+    "title": "NorthBridge Compliance Solutions - Simulated FDD Deck - Financial Due Diligence",
+    "author": "KPMG Transaction Services",
+    "company": "KPMG LLP",
+    "subject": "Financial Due Diligence Report"
   },
   "slides": [
     {
       "type": "cover",
-      "title": "Financial Due\nDiligence",
-      "subtitle": "Project Cascade Care\nPrepared for NorthRiver Capital Partners\nFebruary 2026"
+      "title": "Financial Due Diligence Report",
+      "subtitle": "NorthBridge Compliance Solutions - Simulated FDD Deck\nPrepared for Confidential Private Equity Client\nFebruary 12, 2026\nPrivate and Confidential"
     },
     {
-      "type": "divider",
-      "sectionNumber": "01",
-      "sectionTitle": "Executive Summary"
+      "type": "oneColumnText",
+      "title": "Table of Contents",
+      "strapline": "This page provides the reader a structured navigation of the deck sections and how evidence flows to conclusions.",
+      "body": [
+        "Section 1: Executive summary and transaction-relevant conclusions (slides s03-s05).",
+        "Section 2: Business overview and revenue quality (slides s06-s11).",
+        "Section 3: P&L walkthrough (slides s12-s18).",
+        "Section 4: Balance sheet, working capital profile, and cash conversion (slides s19-s24).",
+        "Section 5: QoE bridge and adjustment support status (slides s25-s32).",
+        "Section 6: Net working capital and peg implications (slides s33-s38).",
+        "Section 7: Key diligence risks and reporting environment (slides s39-s41).",
+        "Section 8: Appendices and exhibit placeholders (slides s42-s45)."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Executive Summary - Headline Conclusions",
+      "strapline": "This page summarizes the headline diligence conclusions, including earnings durability, normalization themes, and decision-level risks.",
+      "body": [
+        "NorthBridge delivered sustained topline growth from USD 125.0m in FY2023 to USD 168.0m in TTM Jun-2026, with growth weighted to recurring subscriptions. In execution terms, the growth narrative is defensible only when subscription KPIs tie to finance support, with classification treatment mirrored across all workstreams.",
+        "Management reporting indicates that subscription revenue is approximately 82.1% of TTM revenue; this supports durability but remains subject to ARR-to-GL tie-out. As negotiations conclude, durability evidence is strongest when retention and concentration tie back to contract data, so closing discussions remain focused on validated facts.",
+        "Reported EBITDA reached USD 29.0m in TTM Jun-2026, and operating cash flow of USD 22.4m implies solid earnings conversion. For underwriting, valuation confidence increases when this finding is translated into model assumptions to reduce avoidable interpretation disputes later in the process.",
+        "Preliminary QoE analysis indicates normalized EBITDA of USD 32.4m, but pending support on several high-impact items prevents point-estimate certainty. In close-account mechanics, the QoE narrative is strongest when unsupported lines stay outside the point estimate until documentation is complete and reviewed.",
+        "Operating NWC is structurally negative (USD -28.0m at Jun-2026), driven by deferred revenue mechanics rather than short-term liquidity stress. For diligence purposes, peg calibration is more stable when seasonality and cut-off effects are normalized for this transaction to keep underwriting and drafting on the same factual baseline.",
+        "Deal value should be anchored to a support-tested EBITDA range and an explicitly defined negative peg to avoid mechanical pricing leakage at close. Before final recommendations are set, true-up volatility declines when closing definitions mirror diligence treatment, so analysis and transaction mechanics stay coherent."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Executive Summary - Reported Performance",
+      "strapline": "This page highlights the reported financial trajectory, margin profile, and cash conversion in a transaction framing.",
+      "body": [
+        "Gross margin remained stable at approximately 64% across FY2023 through TTM Jun-2026, indicating consistent unit economics through a period of scale-up. In close planning, the margin bridge is more credible after item-level support closes across key drivers for this transaction.",
+        "Reported EBITDA increased from USD 22.0m in FY2023 to USD 29.0m in TTM Jun-2026, while margin remained in a narrow 17-18% band as growth investment continued. In close planning, forecast credibility improves when cohort, billing, and GAAP views reconcile.",
+        "Net debt declined from USD 42.0m to USD 29.0m over the same period, supported by recurring operating cash generation and scheduled term debt amortization. Accordingly, close-account execution is smoother when operating and financing balances are split clearly, so run-rate assumptions and legal definitions stay aligned.",
+        "TTM pre-distribution free cash flow was approximately USD 14.9m. For investment-committee review, debate narrows when this conclusion is supported by reproducible evidence in the deal model to reduce avoidable interpretation disputes later in the process.",
+        "The reported profile supports financing capacity, but valuation should not rely on reported EBITDA without full normalization support closure. For valuation, signing quality improves when this conclusion is cross-checked to source schedules, so analysis and transaction mechanics stay coherent.",
+        "Required diligence focus is on cut-off, capitalization policy, and classification consistency across QoE, NWC, and debt-like schedules. At signing, valuation debate narrows when each adjustment maps to ledger-level evidence while unresolved evidence keeps downside sensitivity active."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Executive Summary - Transaction Considerations",
+      "strapline": "This page summarizes preliminary transaction considerations: normalized earnings base, working capital peg, and priority diligence close items.",
+      "body": [
+        "Preliminary normalized EBITDA is USD 32.4m, compared with reported EBITDA of USD 29.0m for TTM Jun-2026. For final deal discussions, the QoE narrative is strongest when unsupported lines stay outside the point estimate in the deal model to reduce avoidable interpretation disputes later in the process.",
+        "Highest-risk open QoE themes remain services cut-off, capitalization policy normalization, and legal support completeness. In SPA drafting, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced to reduce period-shifted value transfer risk.",
+        "Reported NWC is USD -28.0m at Jun-2026; identified adjustments move the preliminary adjusted position to USD -26.5m. From a risk-allocation perspective, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced to improve confidence in final recommendation quality.",
+        "A negative peg range of roughly USD -26m to USD -27m is directionally supportable, pending monthly seasonality schedules and final SPA definitions. In SPA drafting, the adjusted peg is more defensible once the driver bridge is fully documented for this transaction until the final support pack is closed.",
+        "Without definition alignment, the same timing issue can be counted twice across EBITDA, NWC, and debt-like calculations. From a buyer-protection lens, peg calibration is more stable when seasonality and cut-off effects are normalized, with date logic documented before close-account drafting.",
+        "Recommended close plan: finalize the top five QoE and top five NWC support packages before hard-wiring price mechanics. Accordingly, point-estimate confidence increases after open adjustment support is resolved to improve confidence in final recommendation quality."
+      ]
     },
     {
       "type": "twoColumnText",
       "title": "Business Overview",
-      "strapline": "Operating model, scale metrics, and concentration context through TTM Sep-25",
+      "strapline": "This page describes the operating model, how the company makes money, and what features of revenue quality matter for transaction risk.",
       "leftBody": [
-        "Cascade Care Holdings operates 68 outpatient clinics across six US states and provides urgent care, imaging diagnostics, ambulatory procedures, and occupational health services.",
-        "Revenue increased from USD 214.6m in FY2022 to USD 312.8m in TTM Sep-25, representing an 13.3% CAGR driven by de novo clinic additions and same-clinic visit growth.",
-        "Commercial and Medicare payers represented 81% of net revenue in TTM Sep-25, while self-pay and workers compensation represented 19%.",
-        "Top five payer contracts represented 46% of net revenue; no single payer exceeded 14%, but reimbursement reset timing remains a key sensitivity.",
-        "Provider headcount increased from 412 clinicians in FY2022 to 537 clinicians in TTM Sep-25, with staffing growth concentrated in imaging and specialty procedure capacity."
+        "NorthBridge is a cloud EHSQ software provider serving regulated industrial customers across North America. In late-stage negotiations, the base case is stronger when services timing noise is isolated from recurring demand.",
+        "The operating model combines recurring SaaS subscriptions with project-based implementation and configuration services. In the investment case, run-rate confidence rises once expansion and churn assumptions are evidence-linked to avoid re-trading of recurring assumptions at close.",
+        "TTM Jun-2026 revenue was USD 168.0m, with management reporting approximately 420 customers across approximately 1,450 managed sites. At IC, run-rate confidence rises once expansion and churn assumptions are evidence-linked to improve confidence in final recommendation quality.",
+        "Delivery is supported by Toronto headquarters and hubs in Denver, Dallas, and Atlanta, using a blended onshore-offshore staffing model. Ahead of final recommendation sign-off, decision confidence rises when this point is tied to reconciled evidence.",
+        "Current scale and mix indicate a mature subscription base with a services layer that remains operationally capacity-constrained. In the investment case, durability evidence is strongest when retention and concentration tie back to contract data in the deal model."
       ],
       "rightBody": [
-        "Growth quality is supported by repeat-visit behavior and favorable service mix shift toward higher-acuity diagnostics; however, reimbursement rate changes can compress margins quickly if labor costs continue to rise.",
-        "The payer profile is diversified at an aggregate level, but concentration within a small number of managed-care contracts requires explicit downside stress testing.",
-        "De novo site additions have improved market density and referral capture, though initial ramp inefficiency at newer sites remains a drag on consolidated EBITDA margin.",
-        "Labor availability and premium contract labor usage are the most material controllable margin risks over the next 12 months.",
-        "Transaction diligence should prioritize reimbursement bridge testing, clinic-level contribution margin analysis, and physician productivity normalization assumptions."
+        "Revenue durability depends on renewal quality, module expansion, and disciplined milestone cut-off in the services stream. Accordingly, run-rate confidence rises once expansion and churn assumptions are evidence-linked.",
+        "The high recurring mix supports valuation resilience, but services timing can still drive quarter-level EBITDA volatility. Before final recommendations are set, debate narrows when this conclusion is supported by reproducible evidence, with one recurring logic carried through model and SPA drafting.",
+        "Policy-driven areas, especially capitalization and cut-off, are more likely than demand weakness to distort short-term profitability. For valuation, earnings conclusions are sturdier when policy-driven timing effects are isolated in the deal model, with date logic documented before close-account drafting.",
+        "Buyer protections should prioritize definition precision and evidence-backed treatment of timing and policy adjustments. In SPA drafting, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced, with timing assumptions aligned across diligence workstreams.",
+        "Near-term diligence priority is reconciling subscription, billing, and GAAP revenue views to one consistent baseline. For underwriting, run-rate confidence rises once expansion and churn assumptions are evidence-linked to improve confidence in final recommendation quality."
       ]
     },
     {
       "type": "analysisWideChart2ColsText",
-      "title": "Key Findings - Financial Performance",
-      "strapline": "Reported growth remains strong while labor and reimbursement dynamics drive margin sensitivity",
+      "title": "Revenue Mix and Recurring Quality",
+      "strapline": "This page quantifies revenue mix (recurring vs non-recurring) and interpret implications for earnings durability and valuation.",
       "body": [
-        "Revenue increased from USD 214.6m in FY2022 to USD 312.8m in TTM Sep-25, with same-clinic visit growth averaging 6.2% annually and average revenue per visit improving through service mix expansion.",
-        "Reported EBITDA increased from USD 31.2m to USD 47.6m over the same period, though EBITDA margin improved only modestly due to elevated clinician labor inflation and start-up costs at new clinics.",
-        "Clinical labor as a percentage of revenue increased from 36.8% in FY2022 to 38.4% in TTM Sep-25, primarily reflecting premium agency usage and retention incentives in two high-growth markets.",
-        "Reimbursement yield improved in FY2024 following negotiated rate increases, but TTM Sep-25 performance indicates partial give-back due to payer denial rates and lagged settlement activity.",
-        "Cash conversion declined from 88% of EBITDA in FY2023 to 79% in TTM Sep-25 due to accounts receivable aging expansion and delayed adjudication on selected payer cohorts.",
-        "Primary conclusion: the platform has demonstrable demand momentum and scale benefits, but earnings quality depends on labor normalization and tighter revenue-cycle performance."
+        "[CHART PLACEHOLDER]",
+        "Revenue grew from USD 125.0m (FY23) to USD 168.0m (TTM Jun-26). From a buyer-protection lens, run-rate confidence rises once expansion and churn assumptions are evidence-linked for this revenue case.",
+        "SaaS subscription revenue increased from USD 98.0m to USD 138.0m, representing ~82.1% of total revenue. From a transaction-risk perspective, the base case is stronger when services timing noise is isolated from recurring demand to reduce avoidable interpretation disputes later in the process.",
+        "Professional services revenue remained ~USD 29.0m-USD 30.0m per period, indicating delivery capacity constraints rather than demand constraints. Operationally, the growth narrative is defensible only when subscription KPIs tie to finance support to reduce avoidable interpretation disputes later in the process.",
+        "Revenue quality implication: higher recurring mix supports valuation durability, but services timing/cut-off can introduce quarter-to-quarter EBITDA volatility. From a buyer-protection lens, commercial upside is more defensible after management metrics tie to ledger outcomes for the revenue case, with classification treatment mirrored across all workstreams.",
+        "Follow-up is required to validate subscription vs services mapping from billing system to GL and reconcile ARR reporting to GAAP revenue. Accordingly, run-rate confidence rises once expansion and churn assumptions are evidence-linked in the revenue model.",
+        "Valuation and deal mechanics should rely on support-tested drivers and downside sensitivities, not headline run-rate alone. Accordingly, durability evidence is strongest when retention and concentration tie back to contract data in the revenue model, with one recurring logic carried through model and SPA drafting."
       ],
       "chart": {
         "type": "bar",
         "data": [
           {
-            "name": "Revenue (USD m)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [214.6, 248.9, 287.4, 312.8]
+            "name": "SaaS subscription revenue (USD m)",
+            "labels": [
+              "FY23",
+              "TTM Jun-26"
+            ],
+            "values": [
+              98,
+              138
+            ]
           },
           {
-            "name": "EBITDA (USD m)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [31.2, 38.7, 44.9, 47.6]
+            "name": "Professional services revenue (USD m)",
+            "labels": [
+              "FY23",
+              "TTM Jun-26"
+            ],
+            "values": [
+              27,
+              30
+            ]
           }
         ],
         "opts": {
@@ -64,76 +128,880 @@
           "showValue": true,
           "valAxisTitle": "USD m"
         },
-        "source": "Source: Management reporting package and trial balance extracts"
+        "source": "Source: management reporting package (preliminary) and financials-income-statement.csv"
       }
     },
     {
-      "type": "summaryFinancials",
-      "title": "Financial Snapshot",
-      "strapline": "KPI summary and quarterly trend indicate sustained demand with moderate margin pressure",
-      "kpis": [
-        { "value": "$312.8m", "label": "TTM Sep-25 Revenue", "delta": "+8.8% vs FY2024" },
-        { "value": "$47.6m", "label": "TTM Sep-25 EBITDA", "delta": "15.2% margin" },
-        { "value": "68", "label": "Clinic Footprint", "delta": "+9 sites since FY2022" },
-        { "value": "79%", "label": "Cash Conversion", "delta": "vs 88% in FY2023" }
+      "type": "analysisWideChart2ColsText",
+      "title": "Revenue Bridge (FY23 to TTM Jun-26)",
+      "strapline": "Explain the drivers of topline growth and isolate structural vs timing elements relevant to sustainability.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Total revenue increased by USD 43.0m from FY23 to TTM Jun-26. For valuation, the growth narrative is defensible only when subscription KPIs tie to finance support for the revenue case to reduce avoidable interpretation disputes later in the process.",
+        "Management attribution: growth driven by net new ARR, annual price uplift, and cross-sell expansion within existing accounts. For underwriting, forecast credibility improves when cohort, billing, and GAAP views reconcile, so analysis and transaction mechanics stay coherent.",
+        "Services revenue is relatively flat, consistent with implementation capacity constraints; backlog at Jun-26 estimated at ~USD 18m. From a transaction-risk perspective, forecast credibility improves when cohort, billing, and GAAP views reconcile in the revenue model, so analysis and transaction mechanics stay coherent.",
+        "Churn and contraction are concentrated in smaller manufacturing customers; retention in utilities segment is reported higher. In SPA drafting, forecast credibility improves when cohort, billing, and GAAP views reconcile for the revenue case to reduce avoidable interpretation disputes later in the process.",
+        "Base-case revenue durability is supported by subscription mix, but downside sensitivity should incorporate (i) pipeline conversion risk and (ii) services cut-off variability. For valuation, forecast credibility improves when cohort, billing, and GAAP views reconcile, with date logic documented before close-account drafting.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. Practically, the base case is stronger when services timing noise is isolated from recurring demand for the revenue case."
       ],
       "chart": {
-        "type": "area",
+        "type": "line",
         "data": [
           {
-            "name": "Quarterly Revenue (USD m)",
-            "labels": ["Q1-24", "Q2-24", "Q3-24", "Q4-24", "Q1-25", "Q2-25", "Q3-25"],
-            "values": [68.4, 70.2, 72.1, 76.7, 77.9, 79.8, 80.6]
+            "name": "Revenue (USD m)",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              125,
+              142,
+              160,
+              168
+            ]
+          },
+          {
+            "name": "Growth vs FY23 (USD m)",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              0,
+              17,
+              35,
+              43
+            ]
           }
         ],
         "opts": {
           "showValue": true,
-          "lineSmooth": true,
-          "catAxisLabelFontSize": 6
+          "valAxisTitle": "USD m"
         },
-        "source": "Source: Monthly management accounts"
+        "source": "Source: financials-income-statement.csv; management attribution notes"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Customer Concentration and Retention",
+      "strapline": "This page assesses customer concentration, retention, and related downside sensitivity for the transaction.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Customer concentration: top 10 customers ~22% of revenue; largest customer ~4.8%. For investment-committee review, run-rate confidence rises once expansion and churn assumptions are evidence-linked to reduce avoidable interpretation disputes later in the process.",
+        "Retention: gross retention ~93%; net revenue retention ~109% driven by module expansion and regulatory-driven add-ons. At signing, forecast credibility improves when cohort, billing, and GAAP views reconcile for this revenue case.",
+        "Average subscription contract term ~2.3 years with annual billing; renewal calendar is weighted to Q4 due to legacy contract start dates. For valuation, forecast credibility improves when cohort, billing, and GAAP views reconcile to improve confidence in final recommendation quality.",
+        "Risk implication: concentration is moderate but still relevant for downside cases; largest 3 customers collectively drive ~12% of revenue and should be stressed in valuation sensitivity. In risk terms, run-rate confidence rises once expansion and churn assumptions are evidence-linked.",
+        "Follow-up is required to reconcile concentration metrics to invoicing data and confirm no undisclosed side letters impacting pricing or renewal terms. Before final recommendations are set, commercial upside is more defensible after management metrics tie to ledger outcomes until documentation is complete and reviewed.",
+        "Valuation and deal mechanics should rely on support-tested drivers and downside sensitivities, not headline run-rate alone. In the investment case, forecast credibility improves when cohort, billing, and GAAP views reconcile, so run-rate assumptions and legal definitions stay aligned."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Concentration / retention metrics",
+            "labels": [
+              "Top 10 share %",
+              "Largest customer %",
+              "NRR %",
+              "GRR %"
+            ],
+            "values": [
+              22,
+              4.8,
+              109,
+              93
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "%"
+        },
+        "source": "Source: management reporting (support pending to billing and cohort files)"
       }
     },
     {
       "type": "analysisNarrowTable",
-      "title": "Profit & Loss Overview",
-      "strapline": "Reported income statement trend used as baseline for normalization and valuation",
+      "title": "Bookings, Backlog, and Pipeline",
+      "strapline": "This page summarizes bookings, backlog, and implementation pipeline to support forward-looking revenue and margin considerations.",
       "table": {
-        "headers": ["Metric", "FY2022", "FY2023", "FY2024", "TTM Sep-25"],
+        "headers": [
+          "Metric",
+          "Value",
+          "Support status"
+        ],
         "rows": [
-          ["Revenue (USD m)", "214.6", "248.9", "287.4", "312.8"],
-          ["Clinical labor (USD m)", "79.0", "92.8", "106.9", "120.1"],
-          ["Supply and drugs (USD m)", "26.4", "30.2", "35.1", "38.3"],
-          ["Gross profit (USD m)", "109.2", "125.9", "145.4", "154.4"],
-          ["Gross margin (%)", "50.9%", "50.6%", "50.6%", "49.4%"],
-          ["SG&A (USD m)", "48.7", "53.6", "60.2", "65.7"],
-          ["EBITDA (USD m)", "31.2", "38.7", "44.9", "47.6"],
-          ["EBITDA margin (%)", "14.5%", "15.5%", "15.6%", "15.2%"],
-          ["Operating cash flow (USD m)", "24.8", "34.1", "37.3", "37.5"],
-          ["Cash conversion (% EBITDA)", "79%", "88%", "83%", "79%"]
+          [
+            "FY24 bookings",
+            "USD 34m",
+            "Preliminary"
+          ],
+          [
+            "FY25 bookings",
+            "USD 38m",
+            "Preliminary"
+          ],
+          [
+            "Services backlog at Jun-26",
+            "USD 18m",
+            "Support pending"
+          ],
+          [
+            "Backlog coverage of next 12 months services revenue",
+            "~60%",
+            "Support pending"
+          ],
+          [
+            "Implementation cycle time",
+            "4.2 months FY25 vs 3.5 months FY23",
+            "Preliminary"
+          ]
         ]
       },
-      "notes": "Review note: final normalized EBITDA remains subject to labor-cost bridge support, payer settlement tie-out, and non-recurring legal/acquisition cost validation."
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Bookings increased from USD 34m in FY2024 to USD 38m in FY2025, indicating continued demand despite a more constrained implementation throughput. For underwriting, the growth narrative is defensible only when subscription KPIs tie to finance support.",
+        "Backlog of approximately USD 18m provides near-term services visibility, but also signals execution dependency to convert backlog without margin pressure. For underwriting, forecast credibility improves when cohort, billing, and GAAP views reconcile.",
+        "Longer implementation cycle times versus FY2023 suggest delivery friction that can defer revenue recognition and working-capital release. In close-account mechanics, equity value confidence improves when debt-like definitions are fixed before signing to improve confidence in final recommendation quality.",
+        "Forward forecasts should stress-test backlog burn assumptions against staffing mix and contractor reliance, not just pipeline headline values. Accordingly, forecast credibility improves when cohort, billing, and GAAP views reconcile to reduce avoidable interpretation disputes later in the process.",
+        "Required close-out support is a monthly bookings-to-billings-to-revenue bridge with consistent definitions and reconciliation controls. At IC, the base case is stronger when services timing noise is isolated from recurring demand while point-estimate certainty remains provisional."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Revenue Recognition and Billing Mechanics",
+      "strapline": "Document revenue recognition mechanics and billing terms, highlighting cut-off and contract accounting risks.",
+      "body": [
+        "SaaS subscriptions are primarily billed annually in advance, which is consistent with current deferred revenue of USD 38.0m at Jun-2026. For diligence purposes, closing mechanics are cleaner when account classifications are locked across workstreams, so closing discussions remain focused on validated facts.",
+        "Professional services are recognized on milestone completion; contract assets were USD 9.0m at Jun-2026 and therefore require delivery-status validation. Before the recommendation is finalized, the adjusted peg is more defensible once the driver bridge is fully documented to reduce period-shifted value transfer risk.",
+        "Operating NWC of USD -28.0m reflects billing mechanics and deferred revenue structure, not a deterioration in day-to-day operating liquidity. At signing, true-up volatility declines when closing definitions mirror diligence treatment to keep underwriting and drafting on the same factual baseline.",
+        "Preliminary QoE identifies a USD -0.6m services cut-off adjustment, highlighting that milestone timing can affect both earnings and peg outcomes. For final deal discussions, the bridge carries pricing value once recurring and non-recurring treatment is explicit for the revenue case, because timing treatment can transfer value at close.",
+        "Cut-off conclusions should be reconciled once across QoE and NWC workstreams to avoid double counting in purchase price negotiations. In IC discussions, the QoE narrative is strongest when unsupported lines stay outside the point estimate, so cut-off disputes do not reopen pricing negotiations.",
+        "SPA drafting should explicitly define treatment of deferred revenue, contract assets, and milestone disputes for closing-account clarity. In risk terms, closing mechanics are cleaner when account classifications are locked across workstreams for the revenue case, so cut-off disputes do not reopen pricing negotiations."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Profit & Loss Overview - Reported Trend",
+      "strapline": "This page presents reported P&L trend as the baseline for QoE normalization and valuation analysis.",
+      "table": {
+        "headers": [
+          "Line item",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Revenue",
+            "125.0",
+            "142.0",
+            "160.0",
+            "168.0"
+          ],
+          [
+            "COGS",
+            "45.0",
+            "51.0",
+            "57.0",
+            "60.0"
+          ],
+          [
+            "Gross Profit",
+            "80.0",
+            "91.0",
+            "103.0",
+            "108.0"
+          ],
+          [
+            "Total Operating Expenses (ex D&A)",
+            "58.0",
+            "67.0",
+            "76.0",
+            "79.0"
+          ],
+          [
+            "Reported EBITDA",
+            "22.0",
+            "24.0",
+            "27.0",
+            "29.0"
+          ],
+          [
+            "Depreciation & Amortization",
+            "6.0",
+            "7.0",
+            "8.0",
+            "9.0"
+          ],
+          [
+            "Operating Income (EBIT)",
+            "16.0",
+            "17.0",
+            "19.0",
+            "20.0"
+          ],
+          [
+            "Net Income",
+            "9.0",
+            "9.8",
+            "11.6",
+            "12.4"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Revenue expanded to USD 168.0m in TTM Jun-2026 while gross margin remained stable, indicating topline scale without material gross profitability deterioration. Left unresolved, unsupported KPI bridges can weaken confidence in recurring revenue quality.",
+        "EBITDA growth to USD 29.0m reflects operating leverage at absolute dollar level, but margin stability indicates ongoing reinvestment in growth and platform capacity. In close planning, equity value confidence improves when debt-like definitions are fixed before signing.",
+        "Rising D&A is consistent with increasing capitalized software and finite-lived intangible amortization, which should be incorporated into cash conversion interpretation. In SPA drafting, equity value confidence improves when debt-like definitions are fixed before signing.",
+        "The reported trend is a strong baseline, but policy-sensitive areas remain the main source of normalization risk rather than core demand weakness. For closing mechanics, normalized margin quality improves when structural spend is separated from temporary dislocation.",
+        "Valuation should reference normalized outcomes only after final support testing on cut-off, capitalization, and discrete non-recurring costs. For final pricing dialogue, the operating-cost narrative is more decision-useful when allocation logic is evidenced."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Gross Margin Drivers",
+      "strapline": "Explain gross margin stability and isolate the drivers (mix, hosting efficiency, services utilization) that affect sustainable EBITDA.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Blended gross margin remained stable at ~64% from FY23 through TTM Jun-26. Operationally, normalized margin quality improves when structural spend is separated from temporary dislocation for the earnings case to keep underwriting and drafting on the same factual baseline.",
+        "Subscription gross margin is estimated at ~78%, while services gross margin is estimated at ~33%. In SPA drafting, commercial upside is more defensible after management metrics tie to ledger outcomes for the earnings case to reduce avoidable interpretation disputes later in the process.",
+        "Hosting costs increased with customer count, but unit economics improved modestly due to cloud-commitment discounts. In close planning, durability evidence is strongest when retention and concentration tie back to contract data, so closing discussions remain focused on validated facts.",
+        "Services margin is sensitive to subcontractor use and project delays; contractor usage increased in FY25 to address backlog. In close planning, commercial upside is more defensible after management metrics tie to ledger outcomes to improve confidence in final recommendation quality.",
+        "Downside sensitivity should assume either flat subscription margin with services variability, or a partial unwind of cloud discounts at renewal. In IC discussions, forecast credibility improves when cohort, billing, and GAAP views reconcile.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. From a buyer-protection lens, the operating-cost narrative is more decision-useful when allocation logic is evidenced until the final support pack is closed."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Gross margin %",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              64,
+              64.1,
+              64.4,
+              64.3
+            ]
+          },
+          {
+            "name": "COGS as % of revenue",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              36,
+              35.9,
+              35.6,
+              35.7
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "valAxisTitle": "%"
+        },
+        "source": "Source: financials-income-statement.csv"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Operating Expense Breakdown",
+      "strapline": "Decompose operating expenses to explain EBITDA margin trajectory and identify normalization considerations.",
+      "table": {
+        "headers": [
+          "Opex line",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026",
+          "% Revenue (TTM)"
+        ],
+        "rows": [
+          [
+            "Sales & Marketing",
+            "28.0",
+            "33.0",
+            "38.0",
+            "39.0",
+            "23.2%"
+          ],
+          [
+            "Research & Development",
+            "17.0",
+            "19.0",
+            "21.0",
+            "22.0",
+            "13.1%"
+          ],
+          [
+            "General & Administrative",
+            "13.0",
+            "15.0",
+            "17.0",
+            "18.0",
+            "10.7%"
+          ],
+          [
+            "Total opex (ex D&A)",
+            "58.0",
+            "67.0",
+            "76.0",
+            "79.0",
+            "47.0%"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Total operating expenses increased with revenue, and the spending mix indicates intentional growth investment rather than uncontrolled cost expansion. In close-account mechanics, forecast credibility improves when cohort, billing, and GAAP views reconcile.",
+        "S&M intensity remained near 23% of revenue, suggesting commercial capacity buildout has been broadly proportional to scale. In close planning, run-rate confidence rises once expansion and churn assumptions are evidence-linked, so closing discussions remain focused on validated facts.",
+        "R&D spend plus capitalized development indicates sustained product investment; treatment consistency is therefore more important than absolute level alone. For underwriting, steady-state profitability becomes clearer once one-time costs are ring-fenced, so valuation dialogue stays anchored in evidence.",
+        "G&A includes both structural platform costs and discrete items, requiring careful separation to avoid over- or under-normalization. Operationally, normalized margin quality improves when structural spend is separated from temporary dislocation to prevent non-repeatable effects from distorting valuation.",
+        "The EBITDA case is most sensitive to classification quality in opex lines, not to a broad structural margin break in the reported model. In execution terms, steady-state profitability becomes clearer once one-time costs are ring-fenced."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Sales and Marketing Efficiency",
+      "strapline": "This page assesses sales efficiency and scalability of growth (CAC payback, pipeline conversion) and identify risks to forward run-rate.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "S&M spend remained ~22-23% of revenue, while revenue growth moderated from +13.6% to +12.7% and +5.0%. For valuation, run-rate confidence rises once expansion and churn assumptions are evidence-linked to keep underwriting and drafting on the same factual baseline.",
+        "Management KPIs: CAC payback ~20-24 months; net new ARR in FY25 ~USD 16m; pipeline conversion ~22% from qualified to closed-won. Accordingly, run-rate confidence rises once expansion and churn assumptions are evidence-linked.",
+        "Sales capacity expanded in FY24-FY25, driving near-term opex pressure ahead of ARR realization. At signing, run-rate confidence rises once expansion and churn assumptions are evidence-linked, so closing discussions remain focused on validated facts.",
+        "Base-case assumes continued ARR expansion; downside case should incorporate lower conversion or elongated sales cycles without immediate opex step-down. Operationally, commercial upside is more defensible after management metrics tie to ledger outcomes, so closing discussions remain focused on validated facts.",
+        "Diligence ask: tie CRM bookings/pipeline to invoicing and confirm definition consistency for CAC and payback metrics. As negotiations conclude, the base case is stronger when services timing noise is isolated from recurring demand to reduce avoidable interpretation disputes later in the process.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. At signing, underwriting confidence rises when run-rate assumptions tie to documented driver math until the final support pack is closed."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Sales & Marketing (USD m)",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              28,
+              33,
+              38,
+              39
+            ]
+          },
+          {
+            "name": "S&M as % of revenue",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              22.4,
+              23.2,
+              23.8,
+              23.2
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "USD m / %"
+        },
+        "source": "Source: financials-income-statement.csv; management KPI commentary"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "R&D Spend and Capitalization",
+      "strapline": "Evaluate R&D investment and capitalization practices to support product roadmap and assess normalization risk.",
+      "table": {
+        "headers": [
+          "R&D and capitalization metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Expensed R&D (USD m)",
+            "17.0",
+            "19.0",
+            "21.0",
+            "22.0"
+          ],
+          [
+            "Capitalized software development cash outflow (USD m)",
+            "4.0",
+            "4.5",
+            "5.0",
+            "4.5"
+          ],
+          [
+            "Implied capitalization rate",
+            "-",
+            "-",
+            "-",
+            "17.0%"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "The implied development capitalization rate in TTM Jun-2026 is elevated enough to warrant policy-level testing and project-level support tie-out. For underwriting, run-rate confidence rises once expansion and churn assumptions are evidence-linked.",
+        "Capitalization decisions affect both current EBITDA and future amortization burden, so valuation impact extends beyond a single period adjustment. For underwriting, point-estimate confidence increases after open adjustment support is resolved, so closing discussions remain focused on validated facts.",
+        "Management attributes higher capitalization to platform re-architecture; this rationale must be validated against eligibility rules and time records. From a buyer-protection lens, the operating-cost narrative is more decision-useful when allocation logic is evidenced.",
+        "QoE downside is concentrated in policy consistency, not in whether development spend itself is economically required. In close planning, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced while point-estimate certainty remains provisional.",
+        "Required evidence is a full capitalization rollforward linked to project scopes, effort tracking, and amortization start dates. Left unresolved, temporary movements can be misread as durable margin if driver support is incomplete."
+      ]
+    },
+    {
+      "type": "twoColumnText",
+      "title": "G&A Trend and Non-recurring Items",
+      "strapline": "Explain G&A trend and separate structural cost base from non-recurring items relevant to normalized earnings.",
+      "leftBody": [
+        "G&A increased from USD 13.0m in FY2023 to USD 18.0m in TTM Jun-2026 as governance and support functions scaled with the platform. From a buyer-protection lens, steady-state profitability becomes clearer once one-time costs are ring-fenced in the deal model.",
+        "The reported line includes both structural overhead and discrete charges linked to ERP transition, transaction activity, and legal matters. For closing mechanics, steady-state profitability becomes clearer once one-time costs are ring-fenced, with one-time effects held outside the run-rate base.",
+        "Process friction during ERP migration has increased manual review effort in accrual and classification areas. From a buyer-protection lens, earnings conclusions are sturdier when policy-driven timing effects are isolated to improve confidence in final recommendation quality.",
+        "As a result, headline G&A trend alone is not sufficient to infer sustainable run-rate cost structure. For valuation, earnings conclusions are sturdier when policy-driven timing effects are isolated, with recurring items handled consistently in valuation and drafting.",
+        "Normalization requires item-level support to separate one-time activity from true steady-state corporate cost. At signing, the margin bridge is more credible after item-level support closes across key drivers in the deal model, while steady-state margins remain tied to repeatable economics."
+      ],
+      "rightBody": [
+        "QoE treatment should remove discrete items while preserving recurring capability spend needed to operate as a scaled software platform. For valuation, point-estimate confidence increases after open adjustment support is resolved to avoid re-trading of recurring assumptions at close.",
+        "Under-adjusting non-recurring costs understates value; over-adjusting structural overhead overstates sustainable EBITDA. From an operating perspective, the operating-cost narrative is more decision-useful when allocation logic is evidenced for this transaction, with recurring items handled consistently in valuation and drafting.",
+        "Post-close planning should assume incremental compliance and controls spend rather than a full reversion to FY2023 corporate cost ratios. Accordingly, the margin bridge is more credible after item-level support closes across key drivers to improve confidence in final recommendation quality.",
+        "The cleanest path is a reconciled G&A bridge from GL detail to QoE adjustments with explicit policy and ownership notes. At IC, point-estimate confidence increases after open adjustment support is resolved to improve confidence in final recommendation quality.",
+        "Decision-useful output requires parallel validation of allocation logic, one-time tagging, and period-of-benefit assumptions. At IC, earnings conclusions are sturdier when policy-driven timing effects are isolated in the deal model, with one-time effects held outside the run-rate base."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Reported EBITDA Walkthrough",
+      "strapline": "This page bridges EBITDA movement from FY23 to TTM Jun-26 to identify the primary operational drivers of profitability.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Reported EBITDA increased by USD 7.0m from FY23 to TTM Jun-26. From an operating perspective, steady-state profitability becomes clearer once one-time costs are ring-fenced for the earnings case.",
+        "Gross profit increased by USD 28.0m over the same period, driven by revenue growth at stable gross margin. Operationally, forecast credibility improves when cohort, billing, and GAAP views reconcile for the earnings case, so valuation dialogue stays anchored in evidence.",
+        "Opex increased by USD 21.0m, reflecting investment in sales capacity and product development. For underwriting, the margin bridge is more credible after item-level support closes across key drivers for the earnings case to keep underwriting and drafting on the same factual baseline.",
+        "Key interpretation: EBITDA growth is volume-led, but margin stability indicates incremental gross profit is being reinvested rather than fully dropping to EBITDA. From a transaction-risk perspective, earnings conclusions are sturdier when policy-driven timing effects are isolated, so analysis and transaction mechanics stay coherent.",
+        "Normalized EBITDA should focus on removing discrete, non-recurring costs rather than assuming structural margin expansion. For closing mechanics, the normalized case is most reliable when policy and timing judgments are documented, with classification treatment mirrored across all workstreams.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. In the investment case, underwriting confidence rises when run-rate assumptions tie to documented driver math for the earnings case."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "EBITDA bridge (USD m)",
+            "labels": [
+              "FY23 EBITDA",
+              "Gross profit increase",
+              "Opex increase",
+              "TTM Jun-26 EBITDA"
+            ],
+            "values": [
+              22,
+              28,
+              -21,
+              29
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "USD m"
+        },
+        "source": "Source: financials-income-statement.csv (derived bridge)"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Stratified Balance Sheet Overview",
+      "strapline": "This page provides a stratified balance sheet view to identify working capital drivers, debt-like items, and capital intensity.",
+      "table": {
+        "headers": [
+          "Balance sheet line",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Cash",
+            "12.0",
+            "10.0",
+            "11.0",
+            "13.0"
+          ],
+          [
+            "Accounts Receivable",
+            "22.0",
+            "25.0",
+            "27.0",
+            "28.0"
+          ],
+          [
+            "Contract Assets (Unbilled Receivables)",
+            "6.0",
+            "7.0",
+            "8.0",
+            "9.0"
+          ],
+          [
+            "Deferred Revenue (Current)",
+            "28.0",
+            "32.0",
+            "36.0",
+            "38.0"
+          ],
+          [
+            "Term Debt",
+            "50.0",
+            "45.0",
+            "40.0",
+            "38.0"
+          ],
+          [
+            "Lease Liabilities",
+            "4.0",
+            "4.0",
+            "4.0",
+            "4.0"
+          ],
+          [
+            "Total Assets",
+            "153.0",
+            "155.0",
+            "160.0",
+            "163.0"
+          ],
+          [
+            "Total Liabilities",
+            "114.0",
+            "117.0",
+            "119.0",
+            "121.0"
+          ],
+          [
+            "Total Equity",
+            "39.0",
+            "38.0",
+            "41.0",
+            "42.0"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "The balance sheet mix highlights a software platform profile with meaningful intangibles and contract-liability-driven working-capital dynamics. From a transaction-risk perspective, debate narrows when this conclusion is supported by reproducible evidence.",
+        "Deferred revenue scale is a core operating characteristic and should be treated consistently as operating in both valuation and peg frameworks. In execution terms, NWC conclusions are more robust when volatile balances are supported at account level.",
+        "Debt and lease balances are clear, while accrual-detail categories remain the primary source of debt-like classification uncertainty. Ahead of final recommendation sign-off, close-account execution is smoother when operating and financing balances are split clearly for this transaction.",
+        "Intangible asset concentration increases dependence on disciplined capitalization and impairment governance. Accordingly, signing quality improves when this conclusion is cross-checked to source schedules, so analysis and transaction mechanics stay coherent.",
+        "Transaction analysis should focus on classification precision and support quality rather than broad balance-sheet capacity concerns. From a buyer-protection lens, transaction clarity improves when assumptions are explicit and support-tested."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Operating Working Capital Profile",
+      "strapline": "Explain the operating working capital profile and isolate the components that drive variability and peg risk.",
+      "table": {
+        "headers": [
+          "Operating NWC component",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Accounts Receivable",
+            "22.0",
+            "25.0",
+            "27.0",
+            "28.0"
+          ],
+          [
+            "Contract Assets (Unbilled Receivables)",
+            "6.0",
+            "7.0",
+            "8.0",
+            "9.0"
+          ],
+          [
+            "Prepaids & Other Current Assets",
+            "4.0",
+            "4.0",
+            "5.0",
+            "5.0"
+          ],
+          [
+            "Accounts Payable",
+            "9.0",
+            "10.0",
+            "11.0",
+            "12.0"
+          ],
+          [
+            "Accrued Expenses",
+            "7.0",
+            "8.0",
+            "9.0",
+            "9.0"
+          ],
+          [
+            "Accrued Compensation",
+            "6.0",
+            "7.0",
+            "8.0",
+            "8.0"
+          ],
+          [
+            "Deferred Revenue (Current)",
+            "28.0",
+            "32.0",
+            "36.0",
+            "38.0"
+          ],
+          [
+            "Other Current Liabilities",
+            "3.0",
+            "3.0",
+            "3.0",
+            "3.0"
+          ],
+          [
+            "Operating NWC (assets - liabilities)",
+            "-21.0",
+            "-24.0",
+            "-27.0",
+            "-28.0"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Operating NWC has become more negative over time, which is structurally supportive for cash conversion in this billing model. At signing, closing mechanics are cleaner when account classifications are locked across workstreams.",
+        "AR and contract assets have scaled with revenue, so collectability and milestone discipline remain the key quality checks. In SPA drafting, the adjusted peg is more defensible once the driver bridge is fully documented.",
+        "Deferred revenue expansion explains most of the negative NWC profile and should not be interpreted as a short-term liquidity issue. At signing, true-up volatility declines when closing definitions mirror diligence treatment for the peg framework.",
+        "Because the peg is negative, classification and cut-off errors can create disproportionate purchase-price impact. Accordingly, NWC conclusions are more robust when volatile balances are supported at account level, with timing assumptions aligned across diligence workstreams.",
+        "A monthly reconciled NWC schedule is required to separate structural billing effects from temporary period-end noise. At signing, closing mechanics are cleaner when account classifications are locked across workstreams, because unresolved lines can move value and close accounts."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Net Debt and Leverage",
+      "strapline": "This page summarizes net debt, leverage, and covenant headroom to support valuation and financing discussions.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Net debt declined from USD 42.0m to USD 29.0m as term debt amortized and cash stabilized. From a mechanics perspective, dispute risk drops when bridge logic is tested for double-count exposure to improve confidence in final recommendation quality.",
+        "Leverage at Jun-26 is ~1.0x net debt / reported EBITDA and ~0.9x net debt / normalized EBITDA. Operationally, valuation debate narrows when each adjustment maps to ledger-level evidence for the net debt bridge, so closing discussions remain focused on validated facts.",
+        "Debt terms: senior term loan with maturity in 2029; variable rate. Accordingly, deal math is cleaner when lease and debt conventions align in drafting language to reduce avoidable interpretation disputes later in the process.",
+        "Financing capacity appears available, but buyer should stress normalized EBITDA downside case and ensure debt-like items are captured consistently with SPA. In the investment case, the bridge carries pricing value once recurring and non-recurring treatment is explicit, so valuation dialogue stays anchored in evidence.",
+        "Data request: debt agreement, covenant definitions, and quarterly covenant calculations through Jun-26. In execution terms, dispute risk drops when bridge logic is tested for double-count exposure for the net debt bridge to reduce avoidable interpretation disputes later in the process."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Net debt (USD m)",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              42,
+              39,
+              33,
+              29
+            ]
+          },
+          {
+            "name": "Net debt / reported EBITDA (x)",
+            "labels": [
+              "FY23",
+              "FY24",
+              "FY25",
+              "TTM Jun-26"
+            ],
+            "values": [
+              1.9,
+              1.6,
+              1.2,
+              1
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "valAxisTitle": "USD m / x"
+        },
+        "source": "Source: financials-balance-sheet-stratified.csv and financials-income-statement.csv"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "EBITDA-to-Cash Conversion",
+      "strapline": "This page bridges EBITDA to cash conversion and identify key cash drivers relevant to valuation and debt sizing.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "TTM Jun-26 CFO was USD 22.4m on reported EBITDA of USD 29.0m (~77% cash conversion). In SPA drafting, equity value confidence improves when debt-like definitions are fixed before signing to reduce avoidable interpretation disputes later in the process.",
+        "TTM investing cash outflows were USD 10.5m, including PP&E capex USD 3.0m and capitalized software development USD 4.5m. Accordingly, the EV-to-equity bridge is more reliable after classification logic is pressure-tested.",
+        "Free cash flow before financing/distributions was ~USD 14.9m (CFO USD 22.4m less capex/cap dev USD 7.5m). For investment-committee review, deal math is cleaner when lease and debt conventions align in drafting language.",
+        "Cash flow sensitivity: deferred revenue growth is a meaningful cash tailwind; if growth slows, cash conversion may revert toward 65-75% absent opex step-down. For underwriting, peg calibration is more stable when seasonality and cut-off effects are normalized, so analysis and transaction mechanics stay coherent.",
+        "Debt sizing should consider a cash conversion range and capex/cap dev requirements to sustain ARR growth. For valuation, net debt outcomes are more predictable once reclassification-prone items have owners for the net debt bridge, so closing discussions remain focused on validated facts.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. At signing, net debt outcomes are more predictable once reclassification-prone items have owners while unresolved evidence keeps downside sensitivity active."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "TTM Jun-26 cash bridge (USD m)",
+            "labels": [
+              "Reported EBITDA",
+              "CFO",
+              "FCF (pre financing)"
+            ],
+            "values": [
+              29,
+              22.4,
+              14.9
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "USD m"
+        },
+        "source": "Source: financials-cashflow-bridge.csv"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Capitalized Software and Intangibles",
+      "strapline": "Explain capital intensity and intangible asset profile, including any impairment or capitalization risks relevant to valuation.",
+      "table": {
+        "headers": [
+          "Asset / expense line",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Capitalized Software (net)",
+            "14.0",
+            "16.0",
+            "18.0",
+            "19.0"
+          ],
+          [
+            "Other Intangibles (net)",
+            "25.0",
+            "22.0",
+            "19.0",
+            "17.0"
+          ],
+          [
+            "Goodwill",
+            "60.0",
+            "60.0",
+            "60.0",
+            "60.0"
+          ],
+          [
+            "Depreciation & Amortization",
+            "6.0",
+            "7.0",
+            "8.0",
+            "9.0"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Net capitalized software growth supports the product roadmap narrative but also increases sensitivity to capitalization-policy consistency. From a closing perspective, run-rate confidence rises once expansion and churn assumptions are evidence-linked, so valuation dialogue stays anchored in evidence.",
+        "Declining finite-lived intangibles are consistent with amortization run-off and should be reflected in forward operating-cash assumptions. In close planning, valuation confidence increases when this finding is translated into model assumptions, so valuation dialogue stays anchored in evidence.",
+        "Stable goodwill does not eliminate impairment risk; it shifts focus to forecast support and policy governance. From a buyer-protection lens, downside protection is stronger when unresolved lines remain in sensitivity cases.",
+        "The reported capital profile is not inherently adverse, but policy execution quality directly influences normalized EBITDA conclusions. In IC discussions, point-estimate confidence increases after open adjustment support is resolved to improve confidence in final recommendation quality.",
+        "Priority support is project-level capitalization eligibility, useful-life assumptions, and impairment testing documentation. In SPA drafting, debate narrows when this conclusion is supported by reproducible evidence."
+      ]
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Debt-like Items and EV-to-Equity Bridge",
+      "strapline": "Identify debt-like items and balance sheet topics that influence enterprise value to equity value bridge and SPA definitions.",
+      "leftBody": [
+        "Jun-2026 balance sheet debt items include term debt of USD 38.0m and lease liabilities of USD 4.0m, with net debt at USD 29.0m. From a buyer-protection lens, equity value confidence improves when debt-like definitions are fixed before signing.",
+        "Deferred revenue totals USD 46.0m and represents an operating contract liability, not financing debt. Operationally, NWC conclusions are more robust when volatile balances are supported at account level for the net debt bridge.",
+        "Potential debt-like classifications include specific litigation reserves, one-time ERP payable balances, and transaction-linked accruals. For underwriting, net debt outcomes are more predictable once reclassification-prone items have owners, with one-time effects held outside the run-rate base.",
+        "Several items currently reside in broad accrual categories and require schedule-level disaggregation for treatment certainty. For final pricing dialogue, dispute risk drops when bridge logic is tested for double-count exposure to keep underwriting and drafting on the same factual baseline.",
+        "Absent clarity, EV-to-equity math can be distorted by inconsistent classification between debt-like and peg buckets. The net debt bridge remains provisional until true-up definitions mirror diligence treatment."
+      ],
+      "rightBody": [
+        "SPA definitions should explicitly separate operating liabilities from debt-like obligations and transaction-specific settlements. In risk terms, net debt outcomes are more predictable once reclassification-prone items have owners for the net debt bridge, so analysis and transaction mechanics stay coherent.",
+        "Deferred revenue treatment must stay consistent with peg mechanics to prevent double counting of the same economic obligation. Accordingly, purchase-price sensitivity is easier to manage when timing effects are separated for the net debt bridge.",
+        "High-risk accrual balances should be tied to named schedules, expected settlement paths, and ownership for pre-close resolution. In the investment case, close-account execution is smoother when operating and financing balances are split clearly.",
+        "Valuation and purchase-price mechanics should be signed off only after definitions are tested against a pro forma closing statement. In close planning, dispute risk drops when bridge logic is tested for double-count exposure.",
+        "Recommended data ask: full accrued-expense rollforward with legal, ERP, compensation, and tax components split out. In SPA drafting, deal math is cleaner when lease and debt conventions align in drafting language to reduce avoidable interpretation disputes later in the process."
+      ]
     },
     {
       "type": "analysisWideChart2ColsText",
       "title": "QoE Bridge - Reported to Normalized EBITDA",
-      "strapline": "Preliminary bridge from reported EBITDA to normalized run-rate earnings",
+      "strapline": "This page bridges reported EBITDA to normalized EBITDA and summarizes the main adjustment themes with support status.",
       "body": [
-        "TTM Sep-25 reported EBITDA of USD 47.6m adjusts to preliminary normalized EBITDA of USD 53.2m after due diligence adjustments and management support review.",
-        "Contract labor premium normalization of USD 2.1m reflects agency usage above normalized staffing model in two markets and is supported by monthly labor variance files.",
-        "Acquisition integration costs of USD 1.4m relate to one-time systems migration and duplicate leadership roles following FY2024 tuck-in acquisitions.",
-        "Legal settlement and advisory costs of USD 0.9m are non-recurring and tied to a closed payer dispute and transaction-specific advisory matters.",
-        "Owner discretionary and non-operating expenses of USD 1.2m include travel, sponsorship, and legacy consulting costs not expected under institutional ownership.",
-        "Open item: coding audit reserve adequacy may offset a portion of positive add-backs pending completion of third-party compliance review."
+        "[CHART PLACEHOLDER]",
+        "Reported EBITDA for TTM Jun-26 is USD 29.0m (17.3% margin). Accordingly, point-estimate confidence increases after open adjustment support is resolved.",
+        "Identified net adjustments total +USD 3.4m across 13 items; preliminary normalized EBITDA: USD 32.4m. Operationally, the QoE narrative is strongest when unsupported lines stay outside the point estimate.",
+        "The largest add-backs are ERP integration costs, restructuring/severance, transaction advisory fees. For underwriting, the QoE narrative is strongest when unsupported lines stay outside the point estimate, so analysis and transaction mechanics stay coherent.",
+        "The largest deductions are services revenue cut-off, excess capitalization of development costs, insurance proceeds removal. In close planning, point-estimate confidence increases after open adjustment support is resolved in the QoE bridge, with date logic documented before close-account drafting.",
+        "Support status currently shows ~4 adjustments supported, ~4 pending, remainder partial; valuation should be based on normalized range until pending items are resolved. In close planning, valuation debate narrows when each adjustment maps to ledger-level evidence while unresolved evidence keeps downside sensitivity active.",
+        "Valuation and deal mechanics should rely on support-tested drivers and downside sensitivities, not headline run-rate alone. In execution terms, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced for this QoE bridge, with recurring items handled consistently in valuation and drafting.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. In execution terms, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced while unresolved evidence keeps downside sensitivity active."
       ],
       "chart": {
         "type": "bar",
         "data": [
           {
-            "name": "USD m",
-            "labels": ["Reported", "Labor", "Integration", "Legal", "Owner", "Normalized"],
-            "values": [47.6, 2.1, 1.4, 0.9, 1.2, 53.2]
+            "name": "QoE bridge (USD m)",
+            "labels": [
+              "Reported EBITDA",
+              "Add-backs",
+              "Deductions",
+              "Normalized EBITDA"
+            ],
+            "values": [
+              29,
+              4.9,
+              -1.5,
+              32.4
+            ]
           }
         ],
         "opts": {
@@ -141,378 +1009,879 @@
           "showValue": true,
           "valAxisTitle": "USD m"
         },
-        "source": "Source: QoE adjustment tracker v5 and management support files"
+        "source": "Source: qoe-adjustments.csv and financials-income-statement.csv"
       }
     },
     {
-      "type": "analysisWideChartTableText",
-      "title": "Net Working Capital Overview",
-      "strapline": "NWC trend indicates a higher normalized peg than current draft SPA assumptions",
+      "type": "analysisNarrowTable",
+      "title": "QoE Adjustments Register",
+      "strapline": "This page provides a complete register of identified QoE adjustments, including recurring flag, support status, and transaction relevance.",
+      "table": {
+        "headers": [
+          "ID",
+          "Adjustment",
+          "Amount (USD m)",
+          "Recurring",
+          "Support"
+        ],
+        "rows": [
+          [
+            "QA01",
+            "ERP integration costs",
+            "+1.2",
+            "N",
+            "supported"
+          ],
+          [
+            "QA02",
+            "Restructuring/severance (CS consolidation)",
+            "+0.8",
+            "N",
+            "partial"
+          ],
+          [
+            "QA03",
+            "Non-recurring legal settlement and counsel",
+            "+0.5",
+            "N",
+            "pending"
+          ],
+          [
+            "QA04",
+            "Transaction advisory fees (sell-side/financing)",
+            "+0.7",
+            "N",
+            "supported"
+          ],
+          [
+            "QA05",
+            "Data-security remediation and customer credits",
+            "+0.4",
+            "N",
+            "partial"
+          ],
+          [
+            "QA06",
+            "Change-in-control retention bonuses",
+            "+0.3",
+            "N",
+            "supported"
+          ],
+          [
+            "QA07",
+            "Temporary contractors for implementation backlog",
+            "+0.5",
+            "N",
+            "partial"
+          ],
+          [
+            "QA08",
+            "Bad-debt spike on distressed customer",
+            "+0.3",
+            "N",
+            "supported"
+          ],
+          [
+            "QA09",
+            "Related-party hosting markup above market",
+            "+0.2",
+            "Y",
+            "pending"
+          ],
+          [
+            "QA10",
+            "Insurance proceeds in other income",
+            "-0.3",
+            "N",
+            "supported"
+          ],
+          [
+            "QA11",
+            "Milestone services recognized before delivery",
+            "-0.6",
+            "N",
+            "pending"
+          ],
+          [
+            "QA12",
+            "Software capitalization above policy baseline",
+            "-0.4",
+            "Y",
+            "pending"
+          ],
+          [
+            "QA13",
+            "Under-accrual of annual SaaS platform fees",
+            "-0.2",
+            "Y",
+            "partial"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Source: management information and KPMG analysis (simulated).",
+      "insights": [
+        "Net adjustments are +USD 3.4m (+USD 4.9m add-backs and -USD 1.5m deductions). Pricing should anchor to the net bridge.",
+        "Open support is concentrated in policy and timing items, not immaterial one-offs. Normalized EBITDA should remain range-based until closure.",
+        "Recurring lines (hosting markup, capitalization policy, SaaS fee accrual) affect forward run-rate assumptions. The same treatment should carry into SPA definitions.",
+        "Non-recurring lines (ERP transition, severance, advisory, bad-debt spike) are appropriate to exclude from sustainable earnings. They should remain visible in close-account mechanics.",
+        "Point-estimate confidence depends on GL, contract, and delivery tie-out at line level. Each open support request should have a named owner and date."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "QoE Detail - ERP Integration Costs",
+      "strapline": "Deep-dive the ERP integration adjustment: quantify costs, confirm one-time nature, and describe residual risks.",
+      "table": {
+        "headers": [
+          "Item",
+          "Value",
+          "Notes"
+        ],
+        "rows": [
+          [
+            "Adjustment ID",
+            "QA01",
+            "ERP implementation and systems integration costs"
+          ],
+          [
+            "Amount (USD m)",
+            "+1.2",
+            "TTM Jun-2026"
+          ],
+          [
+            "Support status",
+            "supported",
+            "Primary cost support available; finalize full tie-out"
+          ],
+          [
+            "Recurring flag",
+            "N",
+            "Expected non-recurring post go-live"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "QA01 is a significant one-time add-back and is directionally supportable based on ERP rollout context and go-live timing. Accordingly, point-estimate confidence increases after open adjustment support is resolved, with discrete movements ring-fenced from durable performance.",
+        "The key diligence question is residual spend tail: stabilization and automation work may continue even after primary implementation. At signing, the bridge carries pricing value once recurring and non-recurring treatment is explicit.",
+        "Classification risk exists if any ERP costs were capitalized inconsistently or embedded in other operating lines. Accordingly, point-estimate confidence increases after open adjustment support is resolved in the QoE bridge, so analysis and transaction mechanics stay coherent.",
+        "Valuation should treat the identified amount as non-recurring only to the extent post-go-live spend is demonstrably non-structural. Before final recommendations are set, the normalized case is most reliable when policy and timing judgments are documented in the QoE bridge.",
+        "Required support includes vendor statements of work, invoices, and project-level cost-center reconciliation. For underwriting, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced until the final support pack is closed."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "QoE Detail - Restructuring and Retention",
+      "strapline": "Deep-dive restructuring and retention adjustments: quantify costs and validate that savings are not already embedded in run-rate.",
+      "table": {
+        "headers": [
+          "ID",
+          "Description",
+          "Amount (USD m)",
+          "Support"
+        ],
+        "rows": [
+          [
+            "QA02",
+            "Restructuring and severance (customer success consolidation)",
+            "+0.8",
+            "partial"
+          ],
+          [
+            "QA06",
+            "Change-in-control retention bonuses",
+            "+0.3",
+            "supported"
+          ],
+          [
+            "QA07",
+            "Temporary contractors to clear implementation backlog",
+            "+0.5",
+            "partial"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Restructuring and retention adjustments are material in aggregate and require confirmation of timing and true one-time character. Accordingly, the bridge carries pricing value once recurring and non-recurring treatment is explicit.",
+        "Any claimed run-rate savings should be tested against current service capacity and contractor substitution patterns. For valuation, valuation debate narrows when each adjustment maps to ledger-level evidence.",
+        "If savings are already embedded in TTM performance, additional normalization could overstate sustainable EBITDA. Accordingly, point-estimate confidence increases after open adjustment support is resolved, so valuation dialogue stays anchored in evidence.",
+        "Retention and severance items can also influence debt-like or closing-account treatment depending on payment timing. Operationally, the bridge carries pricing value once recurring and non-recurring treatment is explicit for this QoE bridge while point-estimate certainty remains provisional.",
+        "Evidence closure requires HR records, payroll support, and bridge schedules from announced actions to realized cost run-rate. Operationally, valuation debate narrows when each adjustment maps to ledger-level evidence, with one recurring logic carried through model and SPA drafting."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "QoE Detail - Legal and Insurance Items",
+      "strapline": "Deep-dive legal and insurance items to ensure sustainable EBITDA excludes discrete matters and does not embed one-time gains/losses.",
+      "table": {
+        "headers": [
+          "ID",
+          "Description",
+          "Amount (USD m)",
+          "Support"
+        ],
+        "rows": [
+          [
+            "QA03",
+            "Non-recurring legal settlement and outside counsel",
+            "+0.5",
+            "pending"
+          ],
+          [
+            "QA10",
+            "Insurance proceeds recorded in other income",
+            "-0.3",
+            "supported"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "QA03 and QA10 both represent discrete legal or insurance effects and should not be extrapolated into forward operating assumptions. Accordingly, point-estimate confidence increases after open adjustment support is resolved, with discrete movements ring-fenced from durable performance.",
+        "QA03 remains pending, so legal support quality is the gating item for treating the charge as truly non-recurring. Operationally, the normalized case is most reliable when policy and timing judgments are documented for this QoE bridge.",
+        "QA10 is a non-recurring gain and should be removed from normalized earnings to avoid overstating sustainable profitability. On a risk basis, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced for this QoE bridge.",
+        "Legal topics carry dual impact: EBITDA normalization and potential debt-like or indemnity exposure. For underwriting, the QoE narrative is strongest when unsupported lines stay outside the point estimate.",
+        "Close readiness requires a consolidated legal matters schedule tied to accounting entries and expected settlement outcomes. For valuation, the normalized case is most reliable when policy and timing judgments are documented, so analysis and transaction mechanics stay coherent."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "QoE Detail - Cut-off and Capitalization Policy",
+      "strapline": "Deep-dive timing and policy normalizations (cut-off and capitalization) that can materially affect both EBITDA and working capital.",
+      "table": {
+        "headers": [
+          "ID",
+          "Description",
+          "Amount (USD m)",
+          "Support"
+        ],
+        "rows": [
+          [
+            "QA11",
+            "Milestone services revenue recognized before delivery",
+            "-0.6",
+            "pending"
+          ],
+          [
+            "QA12",
+            "Software development capitalization above policy baseline",
+            "-0.4",
+            "pending"
+          ],
+          [
+            "QA13",
+            "Under-accrual of annual SaaS platform fees",
+            "-0.2",
+            "partial"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Cut-off and capitalization adjustments are high-sensitivity because they can move both EBITDA and working-capital conclusions. At signing, the bridge carries pricing value once recurring and non-recurring treatment is explicit, with timing assumptions aligned across diligence workstreams.",
+        "Services cut-off support should be based on delivery evidence, not solely milestone invoicing status. On a risk basis, valuation debate narrows when each adjustment maps to ledger-level evidence.",
+        "Capitalization normalization must be anchored to policy application and effort-tracking evidence across major projects. In execution terms, point-estimate confidence increases after open adjustment support is resolved in the QoE bridge, so closing discussions remain focused on validated facts.",
+        "Under-accrued platform fees indicate run-rate expense alignment risk even where one-off adjustments appear modest. In SPA drafting, the bridge carries pricing value once recurring and non-recurring treatment is explicit, with classification treatment mirrored across all workstreams.",
+        "These items should be resolved in a single integrated framework to prevent duplicate or contradictory adjustments across workstreams. In close planning, valuation debate narrows when each adjustment maps to ledger-level evidence, so analysis and transaction mechanics stay coherent."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Normalized EBITDA Sensitivity and Open Items",
+      "strapline": "This page presents sensitivity of normalized EBITDA to key open items and define the diligence close plan for support-pending adjustments.",
       "body": [
-        "Average net working capital increased from USD 26.1m in FY2022 to USD 35.8m in TTM Sep-25, primarily driven by accounts receivable growth and delayed payer adjudication.",
-        "AR days increased from 44 to 57 over the same period, with the largest movement concentrated in two national payer groups transitioning to revised authorization workflows.",
-        "Deferred revenue increased from USD 5.2m to USD 8.7m and partially offsets receivables build, reflecting stronger pre-visit collections and employer prepayment programs.",
-        "Preliminary normalized peg range of USD 34m to USD 37m is above the current SPA placeholder and should be revised to reduce completion-account leakage risk.",
-        "Cut-off testing at quarter-end remains a key diligence priority, particularly around late-period claims submissions and contractual allowance estimation.",
-        "Transaction implication: peg methodology should use rolling-average mechanics with explicit treatment of denied-claim reversals and deferred revenue timing effects."
+        "[CHART PLACEHOLDER]",
+        "Pending QoE items represent ~USD 1.7m of gross adjustment magnitude; net impact is ~USD -0.3m. Operationally, the QoE narrative is strongest when unsupported lines stay outside the point estimate.",
+        "Base-case normalized EBITDA: USD 32.4m; illustrative downside case approximates ~USD 31.7m. For valuation, the QoE narrative is strongest when unsupported lines stay outside the point estimate, so valuation dialogue stays anchored in evidence.",
+        "Sensitivity drivers: (i) milestone delivery evidence for QA11, (ii) capitalization policy compliance for QA12, (iii) legal settlement documentation for QA03, (iv) related-party contract terms for QA09. Accordingly, point-estimate confidence increases after open adjustment support is resolved.",
+        "Valuation and debt sizing should use a range until support is obtained; buyer should align purchase agreement language to unresolved QoE and debt-like items. For underwriting, the bridge carries pricing value once recurring and non-recurring treatment is explicit.",
+        "Close plan: prioritize support for items comprising >USD 0.5m and document resolution path. Operationally, point-estimate confidence increases after open adjustment support is resolved, so analysis and transaction mechanics stay coherent.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. Operationally, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced for the earnings case until the final support pack is closed."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Normalized EBITDA sensitivity (USD m)",
+            "labels": [
+              "Base case",
+              "Downside case",
+              "Upside case"
+            ],
+            "values": [
+              32.4,
+              31.7,
+              33.1
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "USD m"
+        },
+        "source": "Source: qoe-adjustments.csv; management support status log (preliminary scenarios)"
+      }
+    },
+    {
+      "type": "oneColumnText",
+      "title": "QoE Conclusions and Transaction Implications",
+      "strapline": "Conclude the QoE analysis with decision-level implications for valuation, financing, and SPA negotiation priorities.",
+      "body": [
+        "Preliminary normalized EBITDA of USD 32.4m represents a USD 3.4m uplift to reported EBITDA, with the majority of uplift linked to non-recurring cost items. At signing, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced, so forecast logic and signing mechanics reference one baseline.",
+        "The largest downside sensitivity remains in policy and timing adjustments, particularly services cut-off and software capitalization. For underwriting, the bridge carries pricing value once recurring and non-recurring treatment is explicit to reduce period-shifted value transfer risk.",
+        "At Jun-2026 net debt of USD 29.0m, leverage is approximately 0.9x on normalized EBITDA, supporting financing flexibility in base case scenarios. In SPA drafting, the bridge carries pricing value once recurring and non-recurring treatment is explicit for this QoE bridge.",
+        "Valuation should remain range-based until pending adjustments are supported, reclassified, or removed from the bridge. Accordingly, the bridge carries pricing value once recurring and non-recurring treatment is explicit.",
+        "Drafting risk is not the bridge itself but inconsistent definitions across QoE, NWC, and debt-like treatments in SPA schedules. In SPA drafting, the QoE narrative is strongest when unsupported lines stay outside the point estimate in the QoE bridge to keep underwriting and drafting on the same factual baseline.",
+        "Recommendation: close high-impact support items before final pricing, and lock cross-schedule definitions in legal documentation. Before the recommendation is finalized, valuation debate narrows when each adjustment maps to ledger-level evidence to reduce avoidable interpretation disputes later in the process."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Net Working Capital Overview",
+      "strapline": "This page summarizes NWC profile and propose a preliminary peg view aligned to deal mechanics.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Reported operating NWC was USD -28.0m at Jun-26 versus USD -21.0m at FY23, reflecting deferred revenue growth and subscription billing terms. In SPA drafting, peg calibration is more stable when seasonality and cut-off effects are normalized, so valuation dialogue stays anchored in evidence.",
+        "After identified normalizations (10 items; net +USD 1.5m), adjusted NWC is USD -26.5m (preliminary). For valuation, true-up volatility declines when closing definitions mirror diligence treatment for the peg framework, so analysis and transaction mechanics stay coherent.",
+        "Preliminary peg implication: negative peg is appropriate given business model; propose -26m to -27m range subject to monthly schedule and SPA definition alignment. Operationally, true-up volatility declines when closing definitions mirror diligence treatment, so closing discussions remain focused on validated facts.",
+        "Key drivers of variability: deferred revenue renewal seasonality, services milestone billings, and timing of bonus and vendor accruals. For valuation, peg calibration is more stable when seasonality and cut-off effects are normalized, with timing assumptions aligned across diligence workstreams.",
+        "Purchase price true-up sensitivity is high due to negative peg; narrow definitions and robust closing accounts procedures reduce dispute risk. In IC discussions, NWC conclusions are more robust when volatile balances are supported at account level, so valuation dialogue stays anchored in evidence.",
+        "Follow-up is required to complete source tie-out for the metrics on this page before converting preliminary conclusions into final deal positions. From a mechanics perspective, NWC conclusions are more robust when volatile balances are supported at account level until the final support pack is closed."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "NWC bridge (USD m)",
+            "labels": [
+              "Reported NWC (Jun-26)",
+              "Identified adjustments",
+              "Adjusted NWC (Jun-26)"
+            ],
+            "values": [
+              -28,
+              1.5,
+              -26.5
+            ]
+          }
+        ],
+        "opts": {
+          "barDir": "col",
+          "showValue": true,
+          "valAxisTitle": "USD m"
+        },
+        "source": "Source: financials-balance-sheet-stratified.csv and working-capital-adjustments.csv"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "NWC Seasonality and Peg Calibration",
+      "strapline": "This page assesses seasonality and measurement-period considerations to calibrate the peg and mitigate closing date arbitrage.",
+      "body": [
+        "[CHART PLACEHOLDER]",
+        "Management indicates NWC becomes more negative in Q4 due to annual renewals and upfront billings; monthly NWC is estimated to range from ~-24m to ~-30m. Practically, closing mechanics are cleaner when account classifications are locked across workstreams.",
+        "If closing occurs in Q4, peg should reference a seasonally-adjusted average rather than a point-in-time balance to prevent transfer of value via renewal timing. For diligence purposes, true-up volatility declines when closing definitions mirror diligence treatment, because timing treatment can transfer value at close.",
+        "Services milestone billing can create short-term contract asset spikes; peg methodology should specify treatment of unapproved change orders and disputed balances. Operationally, peg calibration is more stable when seasonality and cut-off effects are normalized, so QoE and peg analyses remain internally consistent.",
+        "Consider a trailing 12-month average peg or a seasonality-adjusted peg by quarter; define measurement period in SPA to avoid opportunistic timing. Practically, the adjusted peg is more defensible once the driver bridge is fully documented, with date logic documented before close-account drafting.",
+        "Data request: monthly balance sheet with reconciliations for AR, contract assets, deferred revenue, and accrual components. In the investment case, true-up volatility declines when closing definitions mirror diligence treatment for the peg framework to keep underwriting and drafting on the same factual baseline."
       ],
       "chart": {
         "type": "line",
         "data": [
           {
-            "name": "Average NWC (USD m)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [26.1, 29.8, 33.6, 35.8]
-          },
-          {
-            "name": "AR Days",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [44, 49, 54, 57]
+            "name": "Illustrative monthly NWC range (USD m)",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4"
+            ],
+            "values": [
+              -24,
+              -26,
+              -27,
+              -30
+            ]
           }
         ],
         "opts": {
           "showValue": true,
-          "valAxisTitle": "Index / USD m"
+          "valAxisTitle": "USD m"
         },
-        "source": "Source: Monthly balance sheet extracts and payer aging analytics"
+        "source": "Source: management seasonality commentary (support pending to monthly schedules)"
       }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "AR and Contract Asset Review",
+      "strapline": "This page reviews AR and contract assets (unbilled receivables) for collectability and cut-off risks that impact peg and closing adjustment.",
+      "table": {
+        "headers": [
+          "AR / contract asset metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Accounts Receivable (USD m)",
+            "22.0",
+            "25.0",
+            "27.0",
+            "28.0"
+          ],
+          [
+            "Contract Assets (USD m)",
+            "6.0",
+            "7.0",
+            "8.0",
+            "9.0"
+          ],
+          [
+            "Aged/disputed AR reserve adjustment (WC04)",
+            "-",
+            "-",
+            "-",
+            "-0.6"
+          ],
+          [
+            "Unapproved change-order adjustment (WC05)",
+            "-",
+            "-",
+            "-",
+            "-0.4"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "AR and contract assets have grown with scale, but aging quality and change-order approval status drive the real peg risk. Before investment recommendation sign-off, NWC conclusions are more robust when volatile balances are supported at account level.",
+        "WC04 and WC05 indicate that collectability and billability adjustments are already identifiable at meaningful value levels. In execution terms, the QoE narrative is strongest when unsupported lines stay outside the point estimate.",
+        "Because these accounts are also linked to services cut-off, evidence standards should be aligned with QoE testing. For valuation, the normalized case is most reliable when policy and timing judgments are documented.",
+        "Close true-up exposure can be reduced materially with subsequent-cash testing and project-level contract-asset support. From a mechanics perspective, purchase-price sensitivity is easier to manage when timing effects are separated to keep underwriting and drafting on the same factual baseline.",
+        "Priority support is full AR aging, disputes log, post-period receipts, and contract-asset schedules by project and approval status. For underwriting, closing mechanics are cleaner when account classifications are locked across workstreams, so analysis and transaction mechanics stay coherent."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Deferred Revenue and Contract Liabilities",
+      "strapline": "This page reviews deferred revenue and contract liabilities for completeness and delivery alignment, given its outsized impact on negative NWC.",
+      "table": {
+        "headers": [
+          "Deferred revenue metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Deferred Revenue (Current)",
+            "28.0",
+            "32.0",
+            "36.0",
+            "38.0"
+          ],
+          [
+            "Deferred Revenue (Non-Current)",
+            "6.0",
+            "7.0",
+            "7.0",
+            "8.0"
+          ],
+          [
+            "Total deferred revenue",
+            "34.0",
+            "39.0",
+            "43.0",
+            "46.0"
+          ],
+          [
+            "Deferred revenue cut-off true-up (WC09)",
+            "-",
+            "-",
+            "-",
+            "+0.3"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Deferred revenue scale is a structural feature of the annual billing model and a primary driver of negative working capital. From a transaction-risk perspective, true-up volatility declines when closing definitions mirror diligence treatment for this revenue case.",
+        "WC09 highlights timing reconciliation risk between delivered services and deferred-revenue release accounting. On a risk basis, closing mechanics are cleaner when account classifications are locked across workstreams, with timing assumptions aligned across diligence workstreams.",
+        "Deferred revenue should remain operating in peg mechanics, but delivery-status evidence is needed to avoid timing distortions. For underwriting, closing mechanics are cleaner when account classifications are locked across workstreams, because timing treatment can transfer value at close.",
+        "Cut-off matters here can affect both NWC and EBITDA conclusions, requiring one coordinated resolution path. Before investment recommendation sign-off, closing mechanics are cleaner when account classifications are locked across workstreams, so cut-off disputes do not reopen pricing negotiations.",
+        "Required evidence is product- and term-level rollforward with explicit links to billing, delivery milestones, and release logic. For underwriting, true-up volatility declines when closing definitions mirror diligence treatment while unresolved evidence keeps downside sensitivity active."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Working Capital Adjustments and Adjusted Peg",
+      "strapline": "This page summarizes identified working capital adjustments and translate them into a preliminary adjusted peg recommendation.",
+      "table": {
+        "headers": [
+          "ID",
+          "Adjustment",
+          "Amount (USD m)",
+          "Support",
+          "Peg relevance"
+        ],
+        "rows": [
+          [
+            "WC01",
+            "Remove deal-related advisory accruals (transaction-specific)",
+            "+1.1",
+            "partial",
+            "high"
+          ],
+          [
+            "WC02",
+            "Remove one-time ERP vendor payable (debt-like)",
+            "+0.7",
+            "pending",
+            "high"
+          ],
+          [
+            "WC03",
+            "Normalize accrued annual bonus to run-rate",
+            "-0.5",
+            "partial",
+            "high"
+          ],
+          [
+            "WC04",
+            "Reserve aged/disputed receivables",
+            "-0.6",
+            "pending",
+            "high"
+          ],
+          [
+            "WC05",
+            "Remove unapproved change-order contract assets",
+            "-0.4",
+            "pending",
+            "medium"
+          ],
+          [
+            "WC06",
+            "Exclude indirect tax payable from operating NWC",
+            "+0.5",
+            "supported",
+            "medium"
+          ],
+          [
+            "WC07",
+            "Accrue under-recorded SaaS platform fees",
+            "-0.2",
+            "partial",
+            "medium"
+          ],
+          [
+            "WC08",
+            "Exclude non-operating vendor prepayment",
+            "-0.2",
+            "pending",
+            "low"
+          ],
+          [
+            "WC09",
+            "Deferred revenue cut-off true-up",
+            "+0.3",
+            "pending",
+            "medium"
+          ],
+          [
+            "WC10",
+            "Remove litigation reserve (debt-like)",
+            "+0.8",
+            "pending",
+            "high"
+          ],
+          [
+            "TOTAL",
+            "Net working-capital adjustments",
+            "+1.5",
+            "mixed",
+            "high"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Identified working-capital adjustments total +USD 1.5m net, shifting reported NWC from USD -28.0m to a preliminary adjusted level of USD -26.5m. In IC discussions, normalized EBITDA is defensible only after high-impact adjustments are fully evidenced.",
+        "High-relevance items are concentrated in accrual classification, reserves, and one-time liabilities rather than broad operating drift. From a buyer-protection lens, valuation debate narrows when each adjustment maps to ledger-level evidence, so temporary items do not inflate multiple-bearing earnings.",
+        "Support status remains mixed, so the adjusted peg should currently be treated as provisional rather than final. At signing, valuation debate narrows when each adjustment maps to ledger-level evidence.",
+        "Definitions in SPA must map each item to one category only: operating peg, debt-like, or pre-close settlement. In close planning, valuation debate narrows when each adjustment maps to ledger-level evidence, so analysis and transaction mechanics stay coherent.",
+        "Final peg recommendation should follow a documented adjustment-to-definition crosswalk and evidence closure on pending items. Accordingly, the bridge carries pricing value once recurring and non-recurring treatment is explicit for the peg framework."
+      ]
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Closing Mechanics and Purchase Price Sensitivity",
+      "strapline": "Translate working capital findings into closing mechanics recommendations and quantify potential purchase price adjustment sensitivity.",
+      "leftBody": [
+        "A USD 1.0m NWC variance at close moves purchase price by USD 1.0m under standard true-up mechanics. In close-account mechanics, purchase-price sensitivity is easier to manage when timing effects are separated.",
+        "With a negative peg structure, account classification choices can create outsized economic swings despite small absolute balance changes. Accordingly, true-up volatility declines when closing definitions mirror diligence treatment.",
+        "Deferred revenue, contract assets, litigation reserves, and transaction accruals are the most dispute-prone accounts in this package. On a risk basis, true-up volatility declines when closing definitions mirror diligence treatment.",
+        "Timing-driven QoE adjustments and NWC adjustments overlap in several areas and must be cross-referenced before SPA finalization. For underwriting, the bridge carries pricing value once recurring and non-recurring treatment is explicit, so cut-off disputes do not reopen pricing negotiations.",
+        "Point-in-time measurement on a seasonal business profile can transfer value unintentionally if not normalized. Accordingly, debate narrows when this conclusion is supported by reproducible evidence for this transaction, so analysis and transaction mechanics stay coherent."
+      ],
+      "rightBody": [
+        "Define inclusions and exclusions unambiguously, including tax balances, transaction costs, lease-related items, and legal reserves. Operationally, deal math is cleaner when lease and debt conventions align in drafting language to improve confidence in final recommendation quality.",
+        "Set measurement mechanics in writing: calculation basis, cut-off conventions, and period reference. In close planning, the recommendation is stronger when this line is tracked through close mechanics, with date logic documented before close-account drafting.",
+        "Require detailed account schedules at close for high-volatility balances to limit post-close interpretation disputes. For underwriting, review confidence improves when this exhibit reconciles directly to core conclusions for the support pack.",
+        "Use one integrated bridge across QoE, debt-like, and NWC workstreams so each adjustment is recognized once. At signing, valuation debate narrows when each adjustment maps to ledger-level evidence to improve confidence in final recommendation quality.",
+        "Draft and review a mock closing statement before signing to pressure-test definitions and sensitivity. For underwriting, valuation confidence increases when this finding is translated into model assumptions for this transaction to reduce avoidable interpretation disputes later in the process."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Key Diligence Risks",
+      "strapline": "Consolidate the primary diligence risks, quantify where possible, and propose mitigations or deal protections.",
+      "body": [
+        "Services revenue cut-off remains the most material timing risk, with QA11 and related NWC items indicating direct sensitivity in both EBITDA and peg. For closing mechanics, true-up volatility declines when closing definitions mirror diligence treatment, with timing assumptions aligned across diligence workstreams.",
+        "Capitalization policy risk (QA12) can shift reported operating expense and therefore both valuation base and future amortization burden. In SPA drafting, underwriting confidence rises when run-rate assumptions tie to documented driver math for the risk register to improve confidence in final recommendation quality.",
+        "Retention and concentration metrics are still management-reported and pending independent tie-out, limiting confidence in downside revenue stress testing. For final pricing dialogue, durability evidence is strongest when retention and concentration tie back to contract data until documentation is complete and reviewed.",
+        "Security-remediation adjustments appear discrete, but residual obligations and customer-credit tail risk should be confirmed prior to close. From an operating perspective, valuation debate narrows when each adjustment maps to ledger-level evidence, while transitory costs remain in sensitivity rather than base case.",
+        "Deal protection should focus on definition precision, targeted indemnities for discrete matters, and completion conditions on unresolved high-impact items. In the investment case, downside protection is stronger when unresolved lines remain in sensitivity cases for the risk register, while steady-state margins remain tied to repeatable economics.",
+        "Residual risk is manageable if support closure is sequenced before finalizing valuation point estimates and closing-account mechanics. At signing, recommendation quality improves when unresolved issues are tracked to dated milestones for the risk register, so analysis and transaction mechanics stay coherent."
+      ]
     },
     {
       "type": "twoColumnText",
       "title": "Financial Reporting Environment",
-      "strapline": "Process observations based on management walkthroughs; no controls testing or audit procedures performed",
+      "strapline": "This page assesses financial reporting process maturity and highlight areas that affect diligence confidence and post-close integration effort.",
       "leftBody": [
-        "Month-end close is completed in approximately six business days, with core reconciliations prepared centrally but reviewed locally by regional finance teams.",
-        "Manual journals represented approximately 24% of quarter-end postings in TTM Sep-25, including material top-side adjustments for contractual allowances and labor accruals.",
-        "Three recently acquired clinic clusters operate on legacy billing workflows and do not yet follow a unified close checklist.",
-        "Revenue-cycle analytics are robust for top-line reporting, but contract-asset aging and denial reserve movement reporting remain less mature."
+        "Management reports an approximately eight-business-day close cycle, with additional effort currently required during ERP transition. At signing, deal readiness increases when account reconciliations are repeatable and complete for the control environment while point-estimate certainty remains provisional.",
+        "Manual journals are concentrated in revenue cut-off, capitalization, and accrual true-up entries. Operationally, durability evidence is strongest when retention and concentration tie back to contract data, so QoE and peg analyses remain internally consistent.",
+        "Services project accounting and deferred-revenue release workflows are not yet fully automated end to end. For closing mechanics, net debt outcomes are more predictable once reclassification-prone items have owners for the control environment, so analysis and transaction mechanics stay coherent.",
+        "Capitalization support still relies on spreadsheet-driven evidence aggregation in parts of the process. Accordingly, the reporting narrative is more reliable once ERP-transition effects are isolated.",
+        "These characteristics increase dependence on reviewer judgment in precisely the areas that drive the largest deal sensitivities. Operationally, execution risk declines when journal-intensive areas have reproducible support trails, so closing discussions remain focused on validated facts."
       ],
       "rightBody": [
-        "Primary reporting risk is variability in allowance estimation and late-period claim reclassifications, which may increase earnings volatility if not standardized.",
-        "Recommended remediation includes a standardized close calendar, required preparer-reviewer sign-offs for high-risk journals, and weekly denial-trend dashboards.",
-        "Capitalization governance should include documented eligibility matrices and centralized review to improve consistency across regions.",
-        "Transaction implication: current process environment is manageable but requires a focused 100-day finance integration plan to improve reporting confidence."
+        "Higher process discretion elevates the risk of QoE and working-capital disputes if supporting schedules are incomplete at close. In SPA drafting, the normalized case is most reliable when policy and timing judgments are documented.",
+        "Immediate remediation priorities are cut-off controls, contract-accounting subledger discipline, and capitalization governance. For underwriting, the reporting narrative is more reliable once ERP-transition effects are isolated.",
+        "Post-close integration planning should include controls uplift and reporting automation as core day-one value-protection actions. At IC, confidence in reported outputs rises when policy-heavy entries are fully documented to reduce avoidable interpretation disputes later in the process.",
+        "Diligence confidence improves materially once journal analytics and reconciliation evidence are provided at account-level detail. As negotiations conclude, the reporting narrative is more reliable once ERP-transition effects are isolated to improve confidence in final recommendation quality.",
+        "Transaction teams should align remediation deliverables with closing conditions for high-impact accounting areas. For investment-committee review, close certainty improves when controls evidence ties to high-value conclusions for the control environment to reduce avoidable interpretation disputes later in the process."
       ]
-    },
-    {
-      "type": "titleStrapline4TextBoxes",
-      "title": "Top Diligence Risk Framework",
-      "strapline": "Priority risk themes, current evidence status, and mitigation focus",
-      "columns": [
-        {
-          "heading": "Reimbursement Yield",
-          "body": [
-            "Risk: Contract resets and denial trends pressure net revenue yield.",
-            "Evidence: AR days increased to 57 and denial rates rose in two national payers.",
-            "Mitigation: Complete payer-level bridge and validate contractual allowance policy."
-          ]
-        },
-        {
-          "heading": "Clinical Labor Cost",
-          "body": [
-            "Risk: Premium agency usage inflates labor ratio and suppresses margin expansion.",
-            "Evidence: Labor ratio increased from 36.8% to 38.4% of revenue.",
-            "Mitigation: Validate normalized staffing model and retention-cost assumptions."
-          ]
-        },
-        {
-          "heading": "Revenue Recognition",
-          "body": [
-            "Risk: Inconsistent cut-off and reserve assumptions across acquired regions.",
-            "Evidence: Material top-side journals and non-standard close practices observed.",
-            "Mitigation: Standardize close controls and reconcile allowance methodology."
-          ]
-        },
-        {
-          "heading": "Growth Sustainability",
-          "body": [
-            "Risk: New-site ramp performance may lag underwriting assumptions.",
-            "Evidence: EBITDA conversion at newer clusters is below mature-site average.",
-            "Mitigation: Apply site cohort sensitivity in valuation and debt sizing cases."
-          ]
-        }
-      ]
-    },
-    {
-      "type": "divider",
-      "sectionNumber": "02",
-      "sectionTitle": "Historical Performance"
-    },
-    {
-      "type": "analysisWideChartTableText",
-      "title": "Revenue by Service Line",
-      "strapline": "Diagnostics and ambulatory procedures continue to drive mix improvement",
-      "body": [
-        "Diagnostics revenue increased from USD 58.2m in FY2022 to USD 101.4m in TTM Sep-25, driven by modality expansion and improved referral capture.",
-        "Urgent care remains the largest service line at USD 126.7m in TTM Sep-25, but growth moderated as acuity mix shifted toward scheduled services.",
-        "Ambulatory procedures expanded from USD 34.6m to USD 59.1m over the same period and contributed disproportionately to gross profit growth.",
-        "Occupational health revenue remained stable as a percentage of total revenue, providing defensible baseline utilization in down-cycle scenarios.",
-        "Service-line mix change is generally favorable for margin sustainability, subject to reimbursement and labor assumptions in high-acuity pathways."
-      ],
-      "chart": {
-        "type": "bar",
-        "data": [
-          {
-            "name": "Urgent Care",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [102.3, 113.9, 122.4, 126.7]
-          },
-          {
-            "name": "Diagnostics",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [58.2, 72.4, 89.8, 101.4]
-          },
-          {
-            "name": "Ambulatory Procedures",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [34.6, 42.1, 52.2, 59.1]
-          }
-        ],
-        "opts": {
-          "barDir": "col",
-          "showValue": true,
-          "valAxisTitle": "USD m"
-        },
-        "source": "Source: Service-line management reports"
-      }
-    },
-    {
-      "type": "analysisNarrowTable",
-      "title": "Payer Concentration and Exposure",
-      "strapline": "Payer concentration is moderate but contract reset timing drives downside sensitivity",
-      "table": {
-        "headers": ["Payer Group", "FY2023", "FY2024", "TTM Sep-25", "Commentary"],
-        "rows": [
-          ["Payer A", "13.1%", "13.8%", "14.0%", "National commercial; reset due Q3-26"],
-          ["Payer B", "10.9%", "11.2%", "10.8%", "Regional managed care"],
-          ["Payer C", "9.4%", "9.8%", "9.6%", "Medicare Advantage mix increasing"],
-          ["Payer D", "6.3%", "6.6%", "6.9%", "Higher denial trend in FY2025"],
-          ["Payer E", "4.8%", "4.9%", "4.7%", "Stable reimbursement profile"],
-          ["Top 5 Total", "44.5%", "46.3%", "46.0%", "Moderate concentration"],
-          ["Top 10 Total", "60.8%", "62.1%", "62.7%", "Contract timing sensitivity"],
-          ["Self-Pay / Other", "17.9%", "17.4%", "16.8%", "Collections management focus" ]
-        ]
-      },
-      "notes": "Review note: final concentration sensitivity will incorporate contract-specific reimbursement step-down scenarios and denial trend assumptions."
-    },
-    {
-      "type": "analysisWideChart2ColsText",
-      "title": "Site-Level Performance Variance",
-      "strapline": "Mature clinics drive margin while newly opened sites remain sub-scale",
-      "body": [
-        "Mature-site EBITDA margin averaged 19.6% in TTM Sep-25 compared with 8.3% for sites opened in the last 24 months.",
-        "New-site cohorts reached revenue breakeven by month 11 on average, but full labor productivity normalization typically lagged until months 16 to 18.",
-        "The largest margin variance driver is clinician scheduling efficiency, followed by modality utilization and local payer mix.",
-        "Three newly opened markets remain below underwriting margin by 420 basis points due to slower referral conversion and higher locum usage.",
-        "Portfolio margin improvement depends on accelerating site maturation and reducing premium labor intensity at underperforming clusters."
-      ],
-      "chart": {
-        "type": "bar",
-        "data": [
-          {
-            "name": "Revenue per Site (USD m)",
-            "labels": ["Mature", "12-24 Months", "<12 Months"],
-            "values": [5.9, 4.2, 3.3]
-          },
-          {
-            "name": "EBITDA Margin (%)",
-            "labels": ["Mature", "12-24 Months", "<12 Months"],
-            "values": [19.6, 13.1, 8.3]
-          }
-        ],
-        "opts": {
-          "barDir": "col",
-          "showValue": true,
-          "valAxisTitle": "Index"
-        },
-        "source": "Source: Clinic cohort performance pack"
-      }
     },
     {
       "type": "oneColumnText",
-      "title": "Margin Bridge and Sensitivity Narrative",
-      "strapline": "Margin evolution reflects competing effects from scale benefits and labor/reimbursement pressure",
+      "title": "Open Diligence Items and Close Plan",
+      "strapline": "List the unresolved diligence items required to finalize QoE, peg, and EV-to-equity bridge conclusions.",
       "body": [
-        "Consolidated EBITDA margin improved from 14.5% in FY2022 to 15.6% in FY2024 as clinic utilization improved and fixed overhead was leveraged across a larger site base.",
-        "TTM Sep-25 margin moderated to 15.2% due to increased contract labor, slower payer adjudication, and temporary duplication of regional management roles after acquisitions.",
-        "Labor normalization is the highest-impact controllable lever, with estimated upside of 120 to 170 basis points if agency usage converges to historical staffing ratios.",
-        "Reimbursement sensitivity remains material; a 100 basis point reduction in blended net yield would reduce EBITDA by approximately USD 3.1m on current revenue base.",
-        "Supply inflation has moderated relative to FY2023 peaks, but pharmaceuticals and imaging consumables still create localized margin pressure in two high-volume markets.",
-        "Base case margin expansion appears achievable with execution discipline, while downside cases should explicitly incorporate labor availability constraints and reimbursement reset risk."
-      ]
-    },
-    {
-      "type": "divider",
-      "sectionNumber": "03",
-      "sectionTitle": "Quality of Earnings"
-    },
-    {
-      "type": "analysisWideChart2ColsText",
-      "title": "QoE Adjustment Detail - Labor Normalization",
-      "strapline": "Contract labor premium and retention incentives are partially transitional",
-      "body": [
-        "Contract labor premium spend increased to USD 8.6m in TTM Sep-25 versus USD 5.1m in FY2023 due to clinician vacancies in two growth markets.",
-        "Management hiring pipeline indicates vacancy rates should normalize over the next 9 to 12 months, supporting partial normalization of premium labor costs.",
-        "Preliminary add-back of USD 2.1m assumes premium labor ratio converges to weighted-average historical levels adjusted for current market pay rates.",
-        "Retention incentive expense of USD 0.7m is treated as recurring and is not added back in the normalized case.",
-        "Remaining support required includes signed offer acceptance data, vacancy trend evidence, and site-level scheduling productivity reports."
-      ],
-      "chart": {
-        "type": "line",
-        "data": [
-          {
-            "name": "Contract Labor Premium (USD m)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [4.8, 5.1, 7.4, 8.6]
-          },
-          {
-            "name": "Vacancy Rate (%)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [8.1, 7.4, 9.2, 9.6]
-          }
-        ],
-        "opts": {
-          "showValue": true,
-          "valAxisTitle": "Index"
-        },
-        "source": "Source: HR analytics and labor variance tracker"
-      }
-    },
-    {
-      "type": "twoColumnText",
-      "title": "QoE Adjustment Detail - Legal and One-Time Costs",
-      "strapline": "Non-recurring dispute and integration costs require clear support boundaries",
-      "leftBody": [
-        "Legal settlement and advisory expense totaled USD 0.9m in TTM Sep-25 related to a payer dispute resolved in Q2 and transaction-specific advisory work.",
-        "Integration costs of USD 1.4m included duplicate corporate functions, systems migration, and one-time severance tied to acquired site onboarding.",
-        "Documentary support includes settlement agreements, board-approved integration plans, and invoices tagged to non-operating workstreams.",
-        "No recurring litigation reserve release has been included in adjustments; only clearly one-time costs were considered."
-      ],
-      "rightBody": [
-        "Preliminary treatment as non-recurring is supportable, provided final tie-out confirms no ongoing service contracts are embedded in the same vendor pools.",
-        "Risk of over-adjustment is moderate if integration activities extend beyond the current forecast window or if management reclassifies recurring support as one-time.",
-        "Recommended validation steps include vendor-level spend lookback, legal accrual roll-forward, and post-close run-rate contract mapping.",
-        "Transaction implication: these adjustments can support valuation uplift, but certainty weighting should reflect completion of final support testing."
-      ]
-    },
-    {
-      "type": "analysisWideChartTableText",
-      "title": "QoE Adjustment Detail - Occupancy Normalization",
-      "strapline": "Temporary overlap rent and closure costs are material but expected to unwind",
-      "body": [
-        "Occupancy expense in TTM Sep-25 includes USD 1.3m of temporary overlap rent from clinic relocations and lease transition activity.",
-        "Closure and make-good costs of USD 0.6m were incurred on two legacy sites and are treated as non-recurring in the normalized case.",
-        "Base rent escalators remain a recurring cost and are excluded from add-back treatment.",
-        "Management expects overlap rent to fully unwind by Q2-26 following completion of relocation activities.",
-        "Remaining diligence focus includes lease abstraction completeness and confirmation of no continuing dual-site obligations."
-      ],
-      "chart": {
-        "type": "bar",
-        "data": [
-          {
-            "name": "Occupancy Cost Components (USD m)",
-            "labels": ["Base Rent", "Overlap Rent", "Closure Cost", "Total"],
-            "values": [18.2, 1.3, 0.6, 20.1]
-          }
-        ],
-        "opts": {
-          "showValue": true,
-          "valAxisTitle": "USD m"
-        },
-        "source": "Source: Lease schedules and site transition tracker"
-      }
-    },
-    {
-      "type": "analysisWideChart2ColsText",
-      "title": "Cash Conversion and EBITDA Quality",
-      "strapline": "Conversion remains solid but has softened as AR aging and growth investment increased",
-      "body": [
-        "Cash conversion declined from 88% of EBITDA in FY2023 to 79% in TTM Sep-25, primarily due to higher receivable days and elevated growth capex.",
-        "Operating cash flow remained positive and increased in absolute terms, but conversion efficiency weakened as revenue-cycle timing became less favorable.",
-        "Maintenance capex remained stable near 2.1% of revenue, while growth capex increased to support de novo clinic rollout and imaging capacity expansion.",
-        "Working-capital normalization is expected to improve conversion modestly if payer adjudication cycle times return toward FY2023 levels.",
-        "Transaction implication: valuation cases should incorporate a prudent cash-conversion haircut until AR and denial trends demonstrate sustained improvement."
-      ],
-      "chart": {
-        "type": "line",
-        "data": [
-          {
-            "name": "Cash Conversion (% EBITDA)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [79, 88, 83, 79]
-          },
-          {
-            "name": "Operating Cash Flow (USD m)",
-            "labels": ["FY2022", "FY2023", "FY2024", "TTM Sep-25"],
-            "values": [24.8, 34.1, 37.3, 37.5]
-          }
-        ],
-        "opts": {
-          "showValue": true,
-          "valAxisTitle": "Index"
-        },
-        "source": "Source: Cash flow statements and management bridge analysis"
-      }
-    },
-    {
-      "type": "divider",
-      "sectionNumber": "04",
-      "sectionTitle": "Appendices"
-    },
-    {
-      "type": "twoColumnText",
-      "title": "Payroll Appendix Commentary",
-      "strapline": "Personnel and compensation interpretation with exhibit handoff requirements",
-      "leftBody": [
-        "[TABLE IMAGE PLACEHOLDER]",
-        "Exhibit handoff: replace with final payroll bridge tied to HRIS, payroll register, and general ledger by month.",
-        "Required support: FTE bridge by role, overtime hours, agency labor tracking, severance tagging, and compensation-grade mapping."
-      ],
-      "rightBody": [
-        "Total compensation increased from USD 96.4m in FY2022 to USD 128.3m in TTM Sep-25, while average cost per clinical FTE increased from USD 146k to USD 162k.",
-        "Base salary represented approximately 72% of total compensation in TTM Sep-25; variable and premium labor components represented the remaining 28%.",
-        "Contract labor and overtime increased materially in FY2024 and TTM Sep-25 and are partially linked to vacancy coverage in high-growth markets.",
-        "Compensation trend supports scale growth narrative but requires normalization testing for agency usage and retention incentives before final run-rate margin conclusions.",
-        "Follow-up ask: complete role-level cohort analysis and reconcile labor-cost bridge to site-level productivity metrics."
+        "Open items with highest value sensitivity are QA03, QA09, QA11, QA12, WC02, WC04, WC05, and WC10; each has direct impact on either normalized EBITDA, peg, or both. In SPA drafting, valuation debate narrows when each adjustment maps to ledger-level evidence while unresolved evidence keeps downside sensitivity active.",
+        "Core data packs still required include AR aging with subsequent collections, deferred revenue rollforward, milestone delivery support, capitalization workpapers, and quarter-end journal listings. Before final recommendations are set, closing mechanics are cleaner when account classifications are locked across workstreams for the risk register until documentation is complete and reviewed.",
+        "Legal and finance teams should align SPA definitions early for deferred revenue, taxes payable, transaction accruals, and litigation-related reserves. On a risk basis, purchase-price sensitivity is easier to manage when timing effects are separated for the risk register to keep underwriting and drafting on the same factual baseline.",
+        "Until these items are closed, a range-based valuation and peg framework is more defensible than single-point conclusions. In risk terms, NWC conclusions are more robust when volatile balances are supported at account level for the risk register.",
+        "Execution risk rises materially in the final weeks if support closure and definition alignment are handled sequentially instead of in parallel. Operationally, negotiation posture improves when open items are sequenced by value impact for the risk register to keep underwriting and drafting on the same factual baseline.",
+        "Immediate next step is a dated close plan assigning owner, evidence source, and resolution decision for each open item. In execution terms, recommendation quality improves when unresolved issues are tracked to dated milestones until documentation is complete and reviewed."
       ]
     },
     {
       "type": "analysisNarrowTable",
-      "title": "Appendix - Working Capital Support Schedule",
-      "strapline": "Detailed schedule supporting normalized peg conclusions",
+      "title": "Appendix A - ARR Cohort and Retention Support",
+      "strapline": "This page provides ARR cohort / retention support for the main-deck revenue quality conclusions.",
       "table": {
-        "headers": ["Metric (USD m)", "FY2022", "FY2023", "FY2024", "TTM Sep-25"],
+        "headers": [
+          "ARR / retention metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
         "rows": [
-          ["Accounts receivable", "31.4", "38.6", "46.3", "50.9"],
-          ["Inventory and supplies", "6.8", "7.4", "8.2", "8.6"],
-          ["Contract assets", "4.9", "6.1", "7.5", "8.2"],
-          ["Accounts payable", "12.6", "14.1", "15.4", "16.0"],
-          ["Accrued liabilities", "9.4", "10.2", "11.8", "12.5"],
-          ["Deferred revenue", "5.2", "6.1", "7.8", "8.7"],
-          ["Net working capital", "26.1", "29.8", "33.6", "35.8"],
-          ["AR days", "44", "49", "54", "57"],
-          ["AP days", "28", "30", "31", "32"]
+          [
+            "Management-reported ARR (USD m)",
+            "118",
+            "133",
+            "148",
+            "155"
+          ],
+          [
+            "Net revenue retention (%)",
+            "106",
+            "107",
+            "109",
+            "108"
+          ],
+          [
+            "Gross retention (%)",
+            "92",
+            "93",
+            "93",
+            "93"
+          ],
+          [
+            "Support status",
+            "Pending",
+            "Pending",
+            "Pending",
+            "Pending"
+          ]
         ]
       },
-      "notes": "Support note: schedule excludes cash and debt-like items and reflects preliminary due diligence and pro forma adjustments."
-    },
-    {
-      "type": "oneColumnText",
-      "title": "Appendix - Definitions and Accounting Policy Notes",
-      "strapline": "Reference definitions used throughout the report",
-      "body": [
-        "Reported EBITDA: operating profit before depreciation and amortization, adjusted for management-defined non-operating classifications where documented.",
-        "Normalized EBITDA: reported EBITDA adjusted for non-recurring, non-operating, and run-rate normalization items identified in due diligence.",
-        "Net Working Capital: current operating assets less current operating liabilities, excluding cash, debt-like items, and non-operating balances.",
-        "Cash Conversion: operating cash flow divided by EBITDA for the same period, before one-time financing-related cash movements.",
-        "Contract Assets and Contract Liabilities: balances recognized under revenue recognition policies for timing differences between service delivery and billing.",
-        "All findings are based on management-provided information and discussions; no audit or controls testing procedures were performed in connection with this report."
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "ARR and retention metrics support the recurring-revenue thesis, but all key values are currently management-reported and pending independent tie-out. Accordingly, run-rate confidence rises once expansion and churn assumptions are evidence-linked.",
+        "The reported NRR profile suggests expansion offsets gross churn; cohort-level support is needed to validate concentration and segment mix effects. In the investment case, run-rate confidence rises once expansion and churn assumptions are evidence-linked for this revenue case.",
+        "This appendix is decision-relevant because revenue durability assumptions directly inform valuation multiple confidence. From a mechanics perspective, commercial upside is more defensible after management metrics tie to ledger outcomes to reduce avoidable interpretation disputes later in the process.",
+        "The exhibit should reconcile ARR movement to billed activity and GAAP revenue mapping, not just headline KPI outputs. At signing, run-rate confidence rises once expansion and churn assumptions are evidence-linked for this revenue case.",
+        "Required support includes cohort bridge, churn logs, and contract-level price and expansion attribution. On a risk basis, the growth narrative is defensible only when subscription KPIs tie to finance support."
       ]
     },
     {
-      "type": "backCover",
-      "disclaimer": "The information contained herein is of a general nature and is not intended to address the circumstances of any particular individual or entity. Although we endeavor to provide accurate and timely information, there can be no guarantee that such information is accurate as of the date received or that it will continue to be accurate in the future. No one should act on such information without appropriate professional advice after a thorough examination of the particular situation.",
-      "url": "kpmg.com"
+      "type": "analysisNarrowTable",
+      "title": "Appendix B - Payroll Analysis",
+      "strapline": "Support operating expense analysis with payroll/headcount trends and preserve the analyst-owned exhibit placeholder.",
+      "table": {
+        "headers": [
+          "Payroll metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Total cash compensation (USD m, management)",
+            "44",
+            "48",
+            "52",
+            "54"
+          ],
+          [
+            "Estimated FTE count (management)",
+            "560",
+            "590",
+            "610",
+            "615"
+          ],
+          [
+            "Contractor usage trend",
+            "Baseline",
+            "Rising",
+            "Elevated",
+            "Elevated"
+          ],
+          [
+            "Exhibit status",
+            "[TABLE IMAGE PLACEHOLDER]",
+            "[TABLE IMAGE PLACEHOLDER]",
+            "[TABLE IMAGE PLACEHOLDER]",
+            "[TABLE IMAGE PLACEHOLDER]"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Payroll and headcount trends are directionally consistent with the growth and investment narrative in S&M and product functions. From a buyer-protection lens, commercial upside is more defensible after management metrics tie to ledger outcomes for the support pack.",
+        "Increased contractor usage is a key bridge item between operating delivery constraints and QoE adjustments. Operationally, point-estimate confidence increases after open adjustment support is resolved for the support pack to improve confidence in final recommendation quality.",
+        "Compensation detail is critical to validate severance, retention, and temporary-labor normalization claims. In close planning, run-rate confidence rises once expansion and churn assumptions are evidence-linked for the support pack, so closing discussions remain focused on validated facts.",
+        "Appendix quality depends on direct tie-out from payroll and HRIS systems to GL departmental expense lines. Accordingly, review confidence improves when this exhibit reconciles directly to core conclusions, so valuation dialogue stays anchored in evidence.",
+        "Replace the placeholder exhibit with a functional compensation bridge including base, incentive, commissions, and contractor spend. In execution terms, buyer-readiness increases when the support pack closes interpretation gaps."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Appendix C - Capex and Capitalized Software Detail",
+      "strapline": "This page provides capex and capitalized software detail to support cash conversion and capitalization policy conclusions.",
+      "table": {
+        "headers": [
+          "Capex / development metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "PP&E capex cash outflow (USD m)",
+            "2.0",
+            "2.5",
+            "3.0",
+            "3.0"
+          ],
+          [
+            "Capitalized software development (USD m)",
+            "4.0",
+            "4.5",
+            "5.0",
+            "4.5"
+          ],
+          [
+            "Total investment cash outflow (USD m)",
+            "6.0",
+            "7.0",
+            "8.0",
+            "7.5"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Capex and capitalized software trends support continued platform investment and explain a meaningful share of cash deployment. At signing, sign-off quality improves when source traceability is reproducible by reviewers, so analysis and transaction mechanics stay coherent.",
+        "These balances are directly linked to the capitalization-policy adjustment risk identified in QoE. In the investment case, point-estimate confidence increases after open adjustment support is resolved to improve confidence in final recommendation quality.",
+        "A project-level bridge is required to distinguish maintenance effort from capitalizable enhancement activity. Ahead of final recommendation sign-off, support reliability rises when each line maps to a named diligence conclusion while point-estimate certainty remains provisional.",
+        "Amortization assumptions should be validated alongside additions to test whether reported EBITDA is sustainably representative. For investment-committee review, closing dialogue is tighter when schedules align with the valuation model for the support pack.",
+        "The final appendix should tie ledger additions, project evidence, and amortization schedules into one auditable rollforward. Practically, sign-off quality improves when source traceability is reproducible by reviewers, so valuation dialogue stays anchored in evidence."
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Appendix D - Debt and Lease Schedule",
+      "strapline": "This page provides debt and lease schedule detail supporting net debt and covenant commentary.",
+      "table": {
+        "headers": [
+          "Debt / lease metric",
+          "FY2023",
+          "FY2024",
+          "FY2025",
+          "TTM Jun-2026"
+        ],
+        "rows": [
+          [
+            "Term debt (USD m)",
+            "50.0",
+            "45.0",
+            "40.0",
+            "38.0"
+          ],
+          [
+            "Lease liabilities (USD m)",
+            "4.0",
+            "4.0",
+            "4.0",
+            "4.0"
+          ],
+          [
+            "Net debt (USD m)",
+            "42.0",
+            "39.0",
+            "33.0",
+            "29.0"
+          ],
+          [
+            "Illustrative maturity",
+            "2029",
+            "2029",
+            "2029",
+            "2029"
+          ]
+        ]
+      },
+      "notes": "[TABLE IMAGE PLACEHOLDER] Analyst-owned exhibit placeholder retained. Source: management-provided information and KPMG analysis (simulated).",
+      "insights": [
+        "Debt and lease balances support the reported net-debt trajectory and indicate manageable leverage at current earnings levels. Accordingly, the EV-to-equity bridge is more reliable after classification logic is pressure-tested for the net debt bridge.",
+        "The main remaining risk is covenant-definition and add-back treatment consistency under downside earnings scenarios. In SPA drafting, the QoE narrative is strongest when unsupported lines stay outside the point estimate.",
+        "Debt-like classification work should be coordinated with this schedule to avoid mismatch between legal and financial bridges. From a buyer-protection lens, dispute risk drops when bridge logic is tested for double-count exposure for the net debt bridge.",
+        "Close certainty improves if term sheets, amortization detail, and covenant calculations are validated before final documentation. In SPA drafting, the EV-to-equity bridge is more reliable after classification logic is pressure-tested to improve confidence in final recommendation quality.",
+        "The final schedule should include maturity, pricing, covenant headroom, and permitted-adjustment mechanics in one reconciled view. For final committee judgment, the normalized case is most reliable when policy and timing judgments are documented."
+      ]
     }
   ]
 }

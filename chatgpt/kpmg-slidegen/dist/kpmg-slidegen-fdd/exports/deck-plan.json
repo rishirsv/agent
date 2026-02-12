@@ -1,37 +1,462 @@
 {
-  "deck_title": "Project Cascade Care - Financial Due Diligence",
+  "deck_title": "NorthBridge Compliance Solutions - Simulated FDD Report (45-slide deck)",
   "narrative_arc": [
-    "Executive summary",
-    "Historical performance",
-    "Quality of earnings",
-    "Working capital and cash",
-    "Appendix support"
+    "Context and conclusions",
+    "Business model and revenue quality",
+    "Reported performance walkthrough",
+    "Balance sheet and cash conversion",
+    "QoE normalization and support status",
+    "Working capital and peg mechanics",
+    "Risks, reporting environment, and close plan",
+    "Appendix support exhibits"
   ],
   "slides": [
-    { "slide_id": "s01", "layout_slug": "layout.fdd_cover", "rationale": "Cover context and report identity" },
-    { "slide_id": "s02", "layout_slug": "layout.fdd_key_takeaways", "rationale": "Section divider for executive summary" },
-    { "slide_id": "s03", "layout_slug": "layout.fdd_two_column_bullets", "rationale": "Business profile and implications split" },
-    { "slide_id": "s04", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Headline findings with trend visuals" },
-    { "slide_id": "s05", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "KPI snapshot using summary layout" },
-    { "slide_id": "s06", "layout_slug": "layout.fdd_table_left_content_right", "rationale": "Reported P&L table with commentary" },
-    { "slide_id": "s07", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "QoE bridge from reported to normalized" },
-    { "slide_id": "s08", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "NWC trend and peg implications" },
-    { "slide_id": "s09", "layout_slug": "layout.fdd_two_column_bullets", "rationale": "Process observations and implications" },
-    { "slide_id": "s10", "layout_slug": "layout.fdd_two_column_bullets", "rationale": "Four-box risk framework summary" },
-    { "slide_id": "s11", "layout_slug": "layout.fdd_key_takeaways", "rationale": "Section divider for historical analysis" },
-    { "slide_id": "s12", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Service line bridge with commentary" },
-    { "slide_id": "s13", "layout_slug": "layout.fdd_table_left_content_right", "rationale": "Concentration table plus interpretation" },
-    { "slide_id": "s14", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Site performance comparison visual" },
-    { "slide_id": "s15", "layout_slug": "layout.fdd_one_column_narrative", "rationale": "Narrative margin bridge" },
-    { "slide_id": "s16", "layout_slug": "layout.fdd_key_takeaways", "rationale": "Section divider for QoE details" },
-    { "slide_id": "s17", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Labor normalization adjustment detail" },
-    { "slide_id": "s18", "layout_slug": "layout.fdd_two_column_bullets", "rationale": "Legal and one-time adjustment narrative" },
-    { "slide_id": "s19", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Occupancy normalization detail" },
-    { "slide_id": "s20", "layout_slug": "layout.fdd_chart_left_content_right", "rationale": "Cash conversion trend analysis" },
-    { "slide_id": "s21", "layout_slug": "layout.fdd_key_takeaways", "rationale": "Appendix section divider" },
-    { "slide_id": "s22", "layout_slug": "layout.fdd_table_left_content_right", "rationale": "Payroll appendix placeholder plus analysis" },
-    { "slide_id": "s23", "layout_slug": "layout.fdd_table_left_content_right", "rationale": "Appendix table support" },
-    { "slide_id": "s24", "layout_slug": "layout.fdd_one_column_narrative", "rationale": "Policy and definition reference notes" },
-    { "slide_id": "s25", "layout_slug": "layout.fdd_cover", "rationale": "Back cover disclaimer" }
+    {
+      "slide_id": "s01",
+      "intent": "cover",
+      "layout_slug": "layout.fdd_cover",
+      "slot_plan": {
+        "title": "engagement title",
+        "subtitle": "client + report date + confidentiality footer"
+      },
+      "rationale": "Cover layout establishes engagement context and locks target/company/period anchors for fact fidelity."
+    },
+    {
+      "slide_id": "s02",
+      "intent": "table_of_contents",
+      "layout_slug": "layout.fdd_agenda",
+      "slot_plan": {
+        "body": "section list with slide ranges"
+      },
+      "rationale": "Agenda layout provides clear navigation and supports deck-first workflow coherence."
+    },
+    {
+      "slide_id": "s03",
+      "intent": "key_takeaways",
+      "layout_slug": "layout.fdd_key_takeaways",
+      "slot_plan": {
+        "header": "headline conclusion",
+        "bullets": "5\u20137 executive takeaways with evidence and implications"
+      },
+      "rationale": "Key takeaways layout is suited for dense executive conclusions with explicit evidence and transaction implications."
+    },
+    {
+      "slide_id": "s04",
+      "intent": "key_takeaways",
+      "layout_slug": "layout.fdd_key_takeaways",
+      "slot_plan": {
+        "header": "headline conclusion",
+        "bullets": "5\u20137 executive takeaways with evidence and implications"
+      },
+      "rationale": "Key takeaways layout is suited for dense executive conclusions with explicit evidence and transaction implications."
+    },
+    {
+      "slide_id": "s05",
+      "intent": "key_takeaways",
+      "layout_slug": "layout.fdd_key_takeaways",
+      "slot_plan": {
+        "header": "headline conclusion",
+        "bullets": "5\u20137 executive takeaways with evidence and implications"
+      },
+      "rationale": "Key takeaways layout is suited for dense executive conclusions with explicit evidence and transaction implications."
+    },
+    {
+      "slide_id": "s06",
+      "intent": "business_overview",
+      "layout_slug": "layout.fdd_two_column_bullets",
+      "slot_plan": {
+        "left": "baseline context + definitions + scale facts",
+        "right": "findings + implications + diligence asks"
+      },
+      "rationale": "Two-column or chart-left layouts support separating baseline company facts from revenue-quality implications."
+    },
+    {
+      "slide_id": "s07",
+      "intent": "business_overview",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Two-column or chart-left layouts support separating baseline company facts from revenue-quality implications."
+    },
+    {
+      "slide_id": "s08",
+      "intent": "revenue_bridge",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart-left layout fits a driver-based waterfall/bridge visual with right-side interpretation."
+    },
+    {
+      "slide_id": "s09",
+      "intent": "customer_concentration",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart-left layout accommodates concentration/retention visuals with implication-led narrative."
+    },
+    {
+      "slide_id": "s10",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s11",
+      "intent": "business_overview",
+      "layout_slug": "layout.fdd_one_column_narrative",
+      "slot_plan": {
+        "body": "ordered narrative: observation \u2192 evidence \u2192 implication \u2192 risk \u2192 next steps"
+      },
+      "rationale": "Two-column or chart-left layouts support separating baseline company facts from revenue-quality implications."
+    },
+    {
+      "slide_id": "s12",
+      "intent": "profit_and_loss_overview",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Table-left layout fits multi-period P&L tables and forces interpretation beyond restating headers."
+    },
+    {
+      "slide_id": "s13",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s14",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s15",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s16",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s17",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_two_column_bullets",
+      "slot_plan": {
+        "left": "baseline context + definitions + scale facts",
+        "right": "findings + implications + diligence asks"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s18",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s19",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s20",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s21",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s22",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s23",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s24",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_two_column_bullets",
+      "slot_plan": {
+        "left": "baseline context + definitions + scale facts",
+        "right": "findings + implications + diligence asks"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s25",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s26",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s27",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s28",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s29",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s30",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s31",
+      "intent": "qoe_adjustment_highlights",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart/table-left layouts are designed for reported-to-normalized bridges and adjustment registers with explicit support status."
+    },
+    {
+      "slide_id": "s32",
+      "intent": "key_takeaways",
+      "layout_slug": "layout.fdd_key_takeaways",
+      "slot_plan": {
+        "header": "headline conclusion",
+        "bullets": "5\u20137 executive takeaways with evidence and implications"
+      },
+      "rationale": "Key takeaways layout is suited for dense executive conclusions with explicit evidence and transaction implications."
+    },
+    {
+      "slide_id": "s33",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s34",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_chart_left_content_right",
+      "slot_plan": {
+        "left": "[CHART PLACEHOLDER] (analyst-owned visual)",
+        "right": "6\u20139 bullets interpreting drivers, implications, and open items"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s35",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s36",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s37",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s38",
+      "intent": "working_capital_review",
+      "layout_slug": "layout.fdd_two_column_bullets",
+      "slot_plan": {
+        "left": "baseline context + definitions + scale facts",
+        "right": "findings + implications + diligence asks"
+      },
+      "rationale": "Chart/table-left layouts fit NWC trend and component exhibits while preserving placeholders and deal-mechanics commentary."
+    },
+    {
+      "slide_id": "s39",
+      "intent": "key_diligence_risks",
+      "layout_slug": "layout.fdd_key_takeaways",
+      "slot_plan": {
+        "header": "headline conclusion",
+        "bullets": "5\u20137 executive takeaways with evidence and implications"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s40",
+      "intent": "reporting_environment",
+      "layout_slug": "layout.fdd_two_column_bullets",
+      "slot_plan": {
+        "left": "baseline context + definitions + scale facts",
+        "right": "findings + implications + diligence asks"
+      },
+      "rationale": "Two-column or narrative layouts fit process observations paired with transaction relevance and remediation actions."
+    },
+    {
+      "slide_id": "s41",
+      "intent": "general_fdd_analysis",
+      "layout_slug": "layout.fdd_one_column_narrative",
+      "slot_plan": {
+        "body": "ordered narrative: observation \u2192 evidence \u2192 implication \u2192 risk \u2192 next steps"
+      },
+      "rationale": "Layout selected based on evidence shape and intent-to-layout guidance in knowledge/layout-catalog.md."
+    },
+    {
+      "slide_id": "s42",
+      "intent": "appendix_support",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Table-left layout supports analyst-owned exhibits while retaining decision-useful commentary even when visuals are placeholders."
+    },
+    {
+      "slide_id": "s43",
+      "intent": "payroll_appendix",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Table-left appendix pattern preserves the placeholder token and provides exhibit handoff instructions and interpretation."
+    },
+    {
+      "slide_id": "s44",
+      "intent": "appendix_support",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Table-left layout supports analyst-owned exhibits while retaining decision-useful commentary even when visuals are placeholders."
+    },
+    {
+      "slide_id": "s45",
+      "intent": "appendix_support",
+      "layout_slug": "layout.fdd_table_left_content_right",
+      "slot_plan": {
+        "left": "[TABLE IMAGE PLACEHOLDER] (analyst-owned exhibit)",
+        "right": "5\u20138 bullets interpreting signals, outliers, and deal implications"
+      },
+      "rationale": "Table-left layout supports analyst-owned exhibits while retaining decision-useful commentary even when visuals are placeholders."
+    }
   ]
 }

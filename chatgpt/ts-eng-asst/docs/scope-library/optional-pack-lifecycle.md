@@ -45,4 +45,4 @@ Keep baseline scope lean and reusable, while preserving useful optional analyses
 ## Automation
 
 - Optional review docs are generated from JSON source of truth:
-  - `python3 scripts/export-optional-scope-library.py`
+  - `python3 scripts/export_optional_scope_docs.py`

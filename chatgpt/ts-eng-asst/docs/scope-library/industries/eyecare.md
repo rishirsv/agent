@@ -8,12 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.047` | `eyecare.business_overview.scope.047` | `REMOVED_CANONICAL` | `OPTIONAL_CANDIDATE` | Removed due to overlap with common business/accounting overview. |
-| `scope.048` | `eyecare.business_overview.scope.048` | `REMOVED_CANONICAL` | `OPTIONAL_CANDIDATE` | Removed due to overlap with common business/accounting overview. |
-| `scope.049` | `eyecare.quality_of_earnings.scope.049` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
+_None._
 
 ### Optional / Pending Review
 

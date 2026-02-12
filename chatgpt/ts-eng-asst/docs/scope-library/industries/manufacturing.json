@@ -590,57 +590,16 @@
     "industries_analyzed": 17,
     "common_threshold": "legacy: 8 of 11",
     "total_sections_found": 32,
-    "total_bullets_cataloged": 610,
+    "total_bullets_cataloged": 593,
     "metadata_counts_basis": "current-dist-structure",
-    "metadata_last_refreshed_utc": "2026-02-11T20:05:53.894491+00:00"
+    "metadata_last_refreshed_utc": "2026-02-12T16:15:51.628513+00:00"
   },
   "review_tracking": {
     "source": "docs/Scope Review/deletion-optional-tracker.md",
-    "entries_for_industry": [
-      {
-        "scope_id": "scope.003",
-        "path": "common.accounting_overview.scope.003",
-        "short_text": "Analyze the accounting policies as disclosed in the audited financial statements and perform...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Parent/jurisdiction-specific IFRS framing."
-      },
-      {
-        "scope_id": "scope.225",
-        "path": "manufacturing.quality_of_earnings.scope.225",
-        "short_text": "Based on the analysis and discussion with the sell-side due diligence advisor, comment on Ma...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Sell-side advisor framing in reusable baseline."
-      },
-      {
-        "scope_id": "scope.226",
-        "path": "manufacturing.quality_of_earnings.scope.226",
-        "short_text": "Perform a traffic light assessment of Management and sell-side proposed adjustments; and",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Sell-side framing in reusable baseline."
-      },
-      {
-        "scope_id": "scope.227",
-        "path": "manufacturing.quality_of_earnings.scope.227",
-        "short_text": "Propose any significant adjustments identified that are not reflected in the sell-side Quali...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Sell-side framing in reusable baseline."
-      },
-      {
-        "scope_id": "scope.229",
-        "path": "manufacturing.quality_of_earnings.scope.229",
-        "short_text": "Summarize potential adjustments identified regarding the earnings of Target in the form of a...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "VDD/sell-side framing in reusable baseline."
-      }
-    ],
+    "entries_for_industry": [],
     "counts": {
-      "entries_total": 5,
-      "removed_canonical": 5,
+      "entries_total": 0,
+      "removed_canonical": 0,
       "optional_candidates": 0,
       "pending_review_delete": 0
     }

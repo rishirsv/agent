@@ -497,3 +497,31 @@
   - `sed -n '1,360p' /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/docs/kpmg-slidegen-fdd/progress.md`
 - Resume context note:
   - Dist is upload-ready with a consolidated three-file knowledge base and report-agnostic templated playbooks; next work is pilot validation and template tuning.
+
+### Entry 015
+- Timestamp: 2026-02-12T17:02:00Z
+- Phase/Subphase: Post-phase hardening / Full prose rewrite quality recovery
+- What was done:
+  - Rewrote full deck narrative content in `exports/deck-spec.json` to replace robotic/template-like bullet language with multi-sentence, implication-led business prose aligned to Project North style cues.
+  - Applied post-rewrite linguistic cleanup to reduce repeated connective patterns and remove awkward constructions (for example comma-infinitive artifacts).
+  - Resolved strict overflow failure on slide 26 by compacting QoE register table labels and right-side insights while preserving factual fidelity.
+  - Re-generated final PPTX/PDF and refreshed gold-standard copies in exports.
+  - Updated generation notes with root-cause diagnosis, remediation actions, and final quality controls.
+- Evidence paths:
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-spec.json`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pptx`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pdf`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-gold-standard-northbridge-fdd.pptx`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-gold-standard-northbridge-fdd.pdf`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/generation-notes.md`
+  - `/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/strict/2026-02-12T17-00-35-454Z/overflow/overflow-report.json`
+- Commands run:
+  - `node /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/generator/validate.js --in /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-spec.json`
+  - `node /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/generator/index.js --in /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-spec.json --out /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pptx --strict`
+  - `soffice --headless --convert-to pdf --outdir /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pptx`
+  - `cp /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pptx /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-gold-standard-northbridge-fdd.pptx`
+  - `cp /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck.pdf /Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/dist/kpmg-slidegen-fdd/exports/deck-gold-standard-northbridge-fdd.pdf`
+- Plan assumption changes:
+  - None. Quality was improved by rewriting prose and slide-specific fit compaction, not by reducing validation rigor.
+- Immediate next step:
+  - Await user review against Project North quality benchmark and tune any remaining style deltas on flagged slides.

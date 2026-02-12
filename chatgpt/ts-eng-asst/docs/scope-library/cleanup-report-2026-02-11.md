@@ -17,7 +17,7 @@
 ### Metadata + Validation
 
 - Added `scripts/refresh-scope-metadata.py` to recompute metadata counters in `dist/scope-library.json`.
-- Updated `scripts/validate-scope-exports.py` to fail if metadata counters are stale.
+- Updated `scripts/validate_scope_review_exports.py` to fail if metadata counters are stale.
 - Refreshed metadata and re-exported docs review surface.
 
 ### Documentation Updates
@@ -35,7 +35,7 @@
 
 - `dist/assistant-playbook.md`
 - `dist/buyside-engagement-letter.docx`
-- `dist/el-generate.py`
+- `dist/engagement_letter_generator.py`
 - `dist/el-placeholder-schema.json`
 - `dist/scope-library.json`
 - `dist/scope-review-buckets.json`

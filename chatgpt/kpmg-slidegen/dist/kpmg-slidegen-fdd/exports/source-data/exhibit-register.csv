@@ -1,0 +1,28 @@
+exhibit_id,slide_id,slide_title,placeholder_token,visual_type,expected_tie_out_source,owner,notes
+EX01,s02,Agenda / Table of Contents,[TABLE IMAGE PLACEHOLDER],table,N/A (auto-generated in PPT),Deck compiler,Optional section page-number map if required
+EX02,s07,Revenue Mix and Recurring Revenue Quality,[CHART PLACEHOLDER],chart,Revenue mix schedule; billing export,Data room: revenue by SKU + GL mapping,Stacked bars: subscription vs services; recurring % callout
+EX03,s08,Revenue Bridge (FY23 to TTM Jun-26),[CHART PLACEHOLDER],chart,Bridge model from income statement CSV,FDD model,"Waterfall: volume/new logos, price uplift, churn, services, FX (if any)"
+EX04,s09,Customer Concentration and Retention,[CHART PLACEHOLDER],chart,Customer revenue extract + ARR cohort file,Data room: CRM/BI export,Top 10 share; NRR trend; churn trend
+EX05,s10,"Bookings, Backlog, and Implementation Pipeline",[TABLE IMAGE PLACEHOLDER],table,Bookings/backlog report (monthly),Management reporting,Pipeline by stage; backlog coverage of next 12 months services revenue
+EX06,s12,Profit & Loss Overview - Reported Trend,[TABLE IMAGE PLACEHOLDER],table,Income statement CSV + management trial balance,FDD model,Reported P&L table with margins and YoY growth
+EX07,s13,Gross Margin Drivers,[CHART PLACEHOLDER],chart,COGS detail by function + hosting metrics,Data room: hosting invoices; payroll allocation,Gross margin bridge: mix vs hosting vs services utilization
+EX08,s14,Operating Expense Breakdown,[TABLE IMAGE PLACEHOLDER],table,Opex rollforward by department,GL detail,Opex as % revenue; headcount overlays
+EX09,s15,Sales & Marketing Efficiency,[CHART PLACEHOLDER],chart,"CAC, bookings, pipeline conversion",CRM + finance,CAC payback; sales efficiency multiple
+EX10,s16,R&D Spend and Capitalization,[TABLE IMAGE PLACEHOLDER],table,Capitalization policy + project time reports,Finance + PMO,Capitalized dev % of R&D; backlog; policy compliance
+EX11,s18,Reported EBITDA Walkthrough,[CHART PLACEHOLDER],chart,Income statement CSV,FDD model,EBITDA bridge: gross profit change and opex changes
+EX12,s19,Stratified Balance Sheet Overview,[TABLE IMAGE PLACEHOLDER],table,Balance sheet CSV + TB,FDD model,Balance sheet by strata (operating vs non-operating; debt-like)
+EX13,s21,Net Debt and Leverage,[CHART PLACEHOLDER],chart,Balance sheet cash/debt + EBITDA,FDD model,Net debt and leverage trend chart; covenant headroom
+EX14,s22,EBITDA-to-Cash Conversion,[CHART PLACEHOLDER],chart,Cashflow bridge CSV,FDD model,Bridge: EBITDA -> CFO -> FCF; cash conversion %
+EX15,s23,Capitalized Software and Intangibles Rollforward,[TABLE IMAGE PLACEHOLDER],table,Fixed asset and intangible registers,Finance,"Rollforward: additions, amortization, closing balance"
+EX16,s25,QoE Bridge - Reported to Normalized EBITDA,[CHART PLACEHOLDER],chart,QoE adjustments CSV + EBITDA,FDD model,Waterfall: reported EBITDA -> normalized EBITDA (32.4)
+EX17,s26,QoE Adjustments Register,[TABLE IMAGE PLACEHOLDER],table,QoE adjustments CSV,FDD model,"Table: adjustments, recurring flag, support status"
+EX18,s31,Normalized EBITDA Sensitivity and Open Items,[CHART PLACEHOLDER],chart,Open items log + sensitivity cases,FDD model,Tornado: key open items; base vs downside
+EX19,s33,Net Working Capital - Overview,[CHART PLACEHOLDER],chart,Balance sheet current accounts + NWC definition,FDD model,NWC trend (negative) + peg recommendation
+EX20,s34,NWC Seasonality,[CHART PLACEHOLDER],chart,Monthly working capital schedule,Data room: monthly balance sheet,Seasonality heatmap; peg range
+EX21,s35,Accounts Receivable and Contract Assets,[TABLE IMAGE PLACEHOLDER],table,AR aging + contract asset detail,AR subledger,"Aging, disputes, unbilled schedule"
+EX22,s36,Deferred Revenue and Contract Liabilities,[TABLE IMAGE PLACEHOLDER],table,Deferred revenue rollforward,Billing system export,"By product, term, and delivery status"
+EX23,s37,Working Capital Adjustments and Adjusted Peg,[TABLE IMAGE PLACEHOLDER],table,Working-capital-adjustments.csv,FDD model,Adjustment bridge: reported NWC -> adjusted NWC -> peg
+EX24,s42,Appendix A - ARR Cohort and Waterfall,[TABLE IMAGE PLACEHOLDER],table,ARR by cohort + churn analysis,BI export,ARR bridge with cohort retention
+EX25,s43,Appendix B - Payroll Analysis,[TABLE IMAGE PLACEHOLDER],table,Payroll register + HRIS export,HR + finance,Compensation by function; FTE; cost per FTE
+EX26,s44,Appendix C - Capex Detail,[TABLE IMAGE PLACEHOLDER],table,Capex ledger + capitalization support,Finance,Capex by category; dev capitalization support
+EX27,s45,Appendix D - Debt & Lease Schedule,[TABLE IMAGE PLACEHOLDER],table,Debt schedule + lease amortization,Treasury,Maturity ladder; interest rates; covenant summary

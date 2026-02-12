@@ -168,7 +168,7 @@ Conduct call with potential R&W insurers / lenders and answer any Q&A as it pert
   - Tax exposures identified by your tax due diligence team; and
   - Other debt and debt-like balances that could be included in the locked box.
 
-### `tech` — Phase 1 Gaap Considerations (`phase_1_gaap_considerations`)
+### `tech` — Phase 1 GAAP Considerations (`phase_1_gaap_considerations`)
 
 - (scope.438) We will conduct a high-level analysis to identify and evaluate the differences between the target's financial statement results prepared in accordance with Spanish GAAP and US GAAP. This analysis will encompass the following:
   - Comparison of significant accounting policies and practices.
@@ -238,7 +238,7 @@ Conduct call with potential R&W insurers / lenders and answer any Q&A as it pert
 - (scope.272) Consider whether elements of working capital have the nature of and may be reclassified as net debt, and if so, summarize the potential impact of these adjustments on working capital and net debt.
 - (scope.273) Summarize and comment on net debt items (on and off balance sheet) presented by management and other potential debt-like items; and
 
-### `manufacturing` — Aspe To Ifrs Us Gaap Assessment (`aspe_to_ifrs_us_gaap_assessment`)
+### `manufacturing` — Aspe To Ifrs Us GAAP Assessment (`aspe_to_ifrs_us_gaap_assessment`)
 
 - (scope.287) Review financial information and financial statements to gain an understanding of Target's key accounting policies and practices. Summarize any potential adjustments between ASPE and IFRS/US GAAP that may impact historical EBITDA or balance sheet accounts.
 

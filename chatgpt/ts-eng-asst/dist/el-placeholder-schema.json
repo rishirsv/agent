@@ -17,17 +17,18 @@
           "label": "Template type",
           "options": ["buyside", "sellside"],
           "example": "buyside",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"],
           "notes": "Determines which .docx template is loaded and which variables are relevant."
         },
         {
           "key": "PROJECT_CODE_NAME",
           "type": "field",
-          "label": "Project code name",
+          "label": "Project name",
           "example": "Atlas",
-          "required": true,
-          "applies_to": ["buyside", "sellside"]
+          "required": false,
+          "applies_to": ["buyside", "sellside"],
+          "notes": "User-facing intake should ask for project name. Internally this maps to PROJECT_CODE_NAME placeholders."
         },
         {
           "key": "CHOICE_DEAL_TYPE",
@@ -35,7 +36,7 @@
           "label": "Deal type",
           "options": ["investment in", "acquisition of"],
           "example": "acquisition of",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside"]
         },
         {
@@ -43,8 +44,9 @@
           "type": "field",
           "label": "Deal description (sellside)",
           "example": "potential divestment of Target",
-          "required": true,
-          "applies_to": ["sellside"]
+          "required": false,
+          "applies_to": ["sellside"],
+          "notes": "Default to 'potential divestment of Target'. Do not ask unless user explicitly wants different wording."
         },
         {
           "key": "INDUSTRY",
@@ -58,7 +60,7 @@
             "generic"
           ],
           "example": "healthcare",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"],
           "notes": "Controls which FDD scope section is inserted from scope-library.json. Use 'generic' to insert only the common scope skeleton."
         }
@@ -83,7 +85,7 @@
           "type": "field",
           "label": "Client full legal name (body intro)",
           "example": "Acme Holdings Inc.",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -91,7 +93,7 @@
           "type": "field",
           "label": "Client legal name (acceptance block)",
           "example": "Acme Holdings Inc.",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"],
           "notes": "Usually same as CLIENT_LEGAL_NAME."
         },
@@ -100,7 +102,7 @@
           "type": "field",
           "label": "Client short name (header)",
           "example": "Acme Holdings",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -132,7 +134,7 @@
           "type": "field",
           "label": "Client country (Appendix B)",
           "example": "Canada",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -164,7 +166,7 @@
           "type": "field",
           "label": "EL signatory name",
           "example": "John Smith",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         }
       ]
@@ -188,16 +190,16 @@
           "type": "field",
           "label": "Target defined term",
           "example": "(\"Target\")",
-          "required": true,
+          "required": false,
           "applies_to": ["sellside"],
-          "notes": "How Target is defined in the sellside letter, e.g. '(\"Target\")'."
+          "notes": "Defaults to '(\"Target\")'. Do not ask unless user explicitly requests a different defined term."
         },
         {
           "key": "TARGET_DESCRIPTION_DETAIL",
           "type": "field",
           "label": "Target description detail (Appendix B)",
           "example": "the cardiac services division of HealthCo",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside"]
         },
         {
@@ -220,7 +222,7 @@
           "type": "field",
           "label": "Letter date",
           "example": "January 15, 2026",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -228,7 +230,7 @@
           "type": "field",
           "label": "Engagement commencement date",
           "example": "January 20, 2026",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -236,7 +238,7 @@
           "type": "field",
           "label": "Draft report delivery date",
           "example": "February 15, 2026",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -244,15 +246,7 @@
           "type": "field",
           "label": "Factual accuracy letter date",
           "example": "February 1, 2026",
-          "required": true,
-          "applies_to": ["buyside", "sellside"]
-        },
-        {
-          "key": "RELEASE_DATE",
-          "type": "field",
-          "label": "Release letter date",
-          "example": "February 1, 2026",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -300,24 +294,16 @@
           "type": "field",
           "label": "Signing partner name",
           "example": "Jane Doe",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"],
           "notes": "Appears in the signature block. May be the same as TEAM_PARTNER_NAME."
-        },
-        {
-          "key": "SIGNING_PARTNER_NAME_2",
-          "type": "field",
-          "label": "Signing partner name (Appendix B/release)",
-          "example": "Jane Doe",
-          "required": true,
-          "applies_to": ["buyside", "sellside"]
         },
         {
           "key": "PROJECT_NAME_HEADER",
           "type": "field",
           "label": "Project name (header)",
           "example": "Project Atlas",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         }
       ]
@@ -464,7 +450,7 @@
             "an Excel data book"
           ],
           "example": "a PDF written report and an Excel data book",
-          "required": true,
+          "required": false,
           "applies_to": ["buyside", "sellside"]
         },
         {
@@ -537,27 +523,30 @@
           "type": "choice",
           "label": "Client or Target (repeated choice)",
           "options": ["Client", "Target"],
-          "example": "Client",
+          "example": "Target",
           "required": false,
-          "applies_to": ["sellside"]
+          "applies_to": ["sellside"],
+          "notes": "Defaults to 'Target' for sellside unless user explicitly overrides."
         },
         {
           "key": "CHOICE_CLIENT_OR_TARGET_POSSESSIVE",
           "type": "choice",
           "label": "Client's or Target's (possessive)",
           "options": ["Client's", "Target's"],
-          "example": "Client's",
+          "example": "Target's",
           "required": false,
-          "applies_to": ["sellside"]
+          "applies_to": ["sellside"],
+          "notes": "Defaults to \"Target's\" for sellside unless user explicitly overrides."
         },
         {
           "key": "CHOICE_CLIENT_OR_TARGET_POSSESSIVE_2",
           "type": "choice",
           "label": "Client's or Target's (MDR section)",
           "options": ["Client's", "Target's"],
-          "example": "Client's",
+          "example": "Target's",
           "required": false,
-          "applies_to": ["sellside"]
+          "applies_to": ["sellside"],
+          "notes": "Defaults to \"Target's\" for sellside unless user explicitly overrides."
         },
         {
           "key": "CONFIDENTIALITY_PROCEDURES",
@@ -584,38 +573,6 @@
           "applies_to": ["buyside"]
         },
         {
-          "key": "THIRD_PARTY_LEGAL_NAME",
-          "type": "field",
-          "label": "Third-party recipient legal name",
-          "example": "Buyer Co. Advisors LLP",
-          "required": false,
-          "applies_to": ["buyside", "sellside"]
-        },
-        {
-          "key": "RECIPIENT_LEGAL_NAME",
-          "type": "field",
-          "label": "Recipient legal name (release letter)",
-          "example": "Buyer Co. Advisors LLP",
-          "required": false,
-          "applies_to": ["buyside", "sellside"]
-        },
-        {
-          "key": "RECIPIENT_SIGNATORY_NAME",
-          "type": "field",
-          "label": "Recipient signatory name",
-          "example": "David Wilson",
-          "required": false,
-          "applies_to": ["buyside", "sellside"]
-        },
-        {
-          "key": "RELEASE_DELIVERABLES_DESC",
-          "type": "field",
-          "label": "Release deliverables description",
-          "example": "our due diligence report relating to Project Atlas",
-          "required": false,
-          "applies_to": ["buyside"]
-        },
-        {
           "key": "FAL_ADDRESS",
           "type": "field",
           "label": "FAL address (sellside)",
@@ -630,24 +587,6 @@
           "example": "All material contracts have been disclosed to KPMG;",
           "required": false,
           "applies_to": ["sellside"]
-        },
-        {
-          "key": "CHOICE_DEAL_TYPE_2",
-          "type": "choice",
-          "label": "Deal type (Appendix B variant)",
-          "options": ["acquisition of", "investment in"],
-          "example": "acquisition of",
-          "required": false,
-          "applies_to": ["buyside"]
-        },
-        {
-          "key": "CHOICE_DEAL_TYPE_3",
-          "type": "choice",
-          "label": "Deal type (release letter variant)",
-          "options": ["acquisition", "investment in"],
-          "example": "acquisition",
-          "required": false,
-          "applies_to": ["buyside"]
         }
       ]
     }

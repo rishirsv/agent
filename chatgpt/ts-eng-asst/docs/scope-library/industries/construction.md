@@ -8,19 +8,11 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.046` | `construction.accounting_overview.scope.046` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Engagement pricing/fee + Parent-specific GAAP framing. |
+_None._
 
 ### Optional / Pending Review
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.017` | `construction.financial_due_diligence.scope.017` | `REMOVED_DEFAULT` | `OPTIONAL_CANDIDATE` | Removed from construction default output; keep as optional framing add-on. |
-| `scope.018` | `construction.financial_due_diligence.scope.018` | `REMOVED_DEFAULT` | `OPTIONAL_CANDIDATE` | Removed from construction default output; useful in selected situations. |
-| `scope.021` | `construction.quality_of_earnings.scope.021` | `REMOVED_DEFAULT` | `OPTIONAL_CANDIDATE` | Removed from construction default output; can be added when transaction thesis needs it. |
-| `scope.022` | `construction.quality_of_earnings.scope.022` | `REMOVED_DEFAULT` | `OPTIONAL_CANDIDATE` | Removed from construction default output; specialized topic kept optional. |
+_None._
 
 ## Applicability
 

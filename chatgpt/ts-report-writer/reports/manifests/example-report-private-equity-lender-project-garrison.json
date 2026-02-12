@@ -1,0 +1,50 @@
+{
+  "report_id": "example-report-private-equity-lender-project-garrison",
+  "source_file": "Example report_Private Equity lender_Project Garrison.pptx",
+  "source_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/Example report_Private Equity lender_Project Garrison.pptx",
+  "source_format": "pptx",
+  "method_used": "presentation_to_pdf_then_text_extract",
+  "total_pages": 88,
+  "line_count": 1614,
+  "section_counts": {
+    "Executive Summary": 292,
+    "Key Findings": 22,
+    "Business Overview": 57,
+    "Summary Financials": 9,
+    "Profit and Loss Overview / Financial Performance": 49,
+    "Quality of Earnings": 156,
+    "Income Statement": 238,
+    "Balance Sheet": 142,
+    "Net Working Capital": 3,
+    "Net Debt (Cash)": 44,
+    "Cash Flows": 56,
+    "Related Parties": 259,
+    "Reporting Environment": 21,
+    "Forecast Trading": 19,
+    "Industry Analysis": 42,
+    "Quality of Net Assets": 0,
+    "Gross Margin by LOB": 0,
+    "Appendices": 43
+  },
+  "missing_sections": [
+    "Quality of Net Assets",
+    "Gross Margin by LOB"
+  ],
+  "exclusion_stats": {
+    "header_footer_zone": 467,
+    "table_region": 4619,
+    "empty": 44,
+    "table_like": 34,
+    "navigation": 82,
+    "legal": 18,
+    "short_noise": 442,
+    "numeric_stub": 917,
+    "source_footnote": 45
+  },
+  "warnings": [],
+  "verification_status": "pass",
+  "updated_at": "2026-02-12T20:40:06.071009+00:00",
+  "reviewer": "codex",
+  "reviewed_at": "2026-02-12T20:40:06.071000+00:00",
+  "review_notes": "Manual verbatim extraction completed for full report body text; table text excluded by rule."
+}

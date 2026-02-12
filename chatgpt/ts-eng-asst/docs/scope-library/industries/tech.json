@@ -463,105 +463,16 @@
     "industries_analyzed": 17,
     "common_threshold": "legacy: 8 of 11",
     "total_sections_found": 32,
-    "total_bullets_cataloged": 610,
+    "total_bullets_cataloged": 593,
     "metadata_counts_basis": "current-dist-structure",
-    "metadata_last_refreshed_utc": "2026-02-11T20:05:53.894491+00:00"
+    "metadata_last_refreshed_utc": "2026-02-12T16:15:51.628513+00:00"
   },
   "review_tracking": {
     "source": "docs/Scope Review/deletion-optional-tracker.md",
-    "entries_for_industry": [
-      {
-        "scope_id": "scope.003",
-        "path": "common.accounting_overview.scope.003",
-        "short_text": "Analyze the accounting policies as disclosed in the audited financial statements and perform...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Parent/jurisdiction-specific IFRS framing."
-      },
-      {
-        "scope_id": "scope.394",
-        "path": "tech.accounting_overview.scope.394",
-        "short_text": "Using analysis performed by you, and discussions with you and Target:",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"by you\")."
-      },
-      {
-        "scope_id": "scope.398",
-        "path": "tech.accounting_overview.scope.398",
-        "short_text": "Review a reconciliation of trial balance information to internal and external financial stat...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"to be performed by you\")."
-      },
-      {
-        "scope_id": "scope.399",
-        "path": "tech.accounting_overview.scope.399",
-        "short_text": "Review a reconciliation of net income and net assets period-over-period (to be performed by...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"to be performed by you\")."
-      },
-      {
-        "scope_id": "scope.405",
-        "path": "tech.quality_of_earnings.scope.405",
-        "short_text": "Consider the quality of earnings analysis prepared by the sell side. Form a view on seller p...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Sell-side framing in reusable baseline."
-      },
-      {
-        "scope_id": "scope.410",
-        "path": "tech.quality_of_earnings.scope.410",
-        "short_text": "Using analysis performed by you, and discussions with you and Target:",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"analysis performed by you\")."
-      },
-      {
-        "scope_id": "scope.411",
-        "path": "tech.quality_of_earnings.scope.411",
-        "short_text": "Discuss whether additional EBITDA adjustments might be considered, in addition to those alre...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"your analysis\")."
-      },
-      {
-        "scope_id": "scope.414",
-        "path": "tech.quality_of_earnings.scope.414",
-        "short_text": "Review a reconciliation of employee costs included in adjusted EBITDA to the planned go-forw...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"to be performed by you\")."
-      },
-      {
-        "scope_id": "scope.415",
-        "path": "tech.quality_of_earnings.scope.415",
-        "short_text": "* The quality of earnings analysis will consider the allocated costs included in the reporte...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"reviewed by you\")."
-      },
-      {
-        "scope_id": "scope.416",
-        "path": "tech.quality_of_earnings.scope.416",
-        "short_text": "We will flag in our report if, in the course of our analysis and discussion with Target, the...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"prepared by you\")."
-      },
-      {
-        "scope_id": "scope.418",
-        "path": "tech.supporting_analysis_to_quality_of_earnings.scope.418",
-        "short_text": "Consider the following analysis, to be performed by you, and consider the impact on the qual...",
-        "current_status": "REMOVED_CANONICAL",
-        "recommended_disposition": "EXCLUDE_REUSABLE_OR_REWRITE",
-        "notes": "Client-performed work framing (\"to be performed by you\")."
-      }
-    ],
+    "entries_for_industry": [],
     "counts": {
-      "entries_total": 11,
-      "removed_canonical": 11,
+      "entries_total": 0,
+      "removed_canonical": 0,
       "optional_candidates": 0,
       "pending_review_delete": 0
     }

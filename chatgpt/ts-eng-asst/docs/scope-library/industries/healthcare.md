@@ -8,13 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.111` | `healthcare.assistance_with_transaction_documentation.scope.111` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Transaction documentation support is deal-specific; purchase agreement definition framing. |
-| `scope.110` | `healthcare.purchase_and_sale_agreement.scope.110` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Transaction legal-document support is deal-specific; purchase-and-sale-agreement attorney framing. |
-| `scope.083` | `healthcare.quality_of_earnings.scope.083` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side advisor framing in reusable baseline. |
-| `scope.084` | `healthcare.quality_of_earnings.scope.084` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side advisor framing in reusable baseline. |
+_None._
 
 ### Optional / Pending Review
 

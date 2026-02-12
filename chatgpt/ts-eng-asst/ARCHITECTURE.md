@@ -28,8 +28,8 @@ This project is a prompt-driven document generation system for KPMG Transaction 
 
 - In scope:
   - Prompt contract (`dist/ts-engagement-assistant.md`)
-  - Generator runtime (`dist/el-generate.py`, `dist/_scope_core.py`)
-  - Shared scope core (`scope_core.py`)
+  - Generator runtime (`dist/engagement_letter_generator.py`, `dist/scope_engine.py`)
+  - Shared scope core (`scope_engine.py`)
   - Template/schema/scope assets in `dist/`
   - Prompt integrity checks + distribution checks in `scripts/`
 - Out of scope:
@@ -49,16 +49,16 @@ This project is a prompt-driven document generation system for KPMG Transaction 
 
 - `dist/ts-engagement-assistant.md` — system prompt contract and runtime behavior rules
 - `dist/assistant-playbook.md` — advisory operating guidance
-- `dist/el-generate.py` — deterministic generation pipeline
-- `dist/_scope_core.py` — runtime scope assembly core
+- `dist/engagement_letter_generator.py` — deterministic generation pipeline
+- `dist/scope_engine.py` — runtime scope assembly core
 - `dist/el-placeholder-schema.json` — interview fields, required rules, template mapping
 - `dist/scope-library.json` — common + industry scope content and nested bullets
 - `dist/scope-review-buckets.json` — section bucketing, aliases, concept mappings
 - `dist/scope-library-optional.json` — explicit optional scope modules
-- `scope_core.py` — shared scope core for local tooling/runtime parity
-- `scripts/internal_generate.py` — internal subprocess entrypoint
+- `scope_engine.py` — shared scope core for local tooling/runtime parity
+- `scripts/run_internal_generation.py` — internal subprocess entrypoint
 - `scripts/check-system-prompt-contract.py` — prompt budget + immutable snippet enforcement
-- `scripts/export-scope-library.py` — sync/export scope docs by industry
+- `scripts/export_scope_review_surface.py` — sync/export scope docs by industry
 
 ## 3. Architectural style
 
@@ -79,7 +79,7 @@ This project is a prompt-driven document generation system for KPMG Transaction 
   - deterministic generation path for uploaded files
 - Internal testing distribution (`scripts/`, docs export/validation):
   - richer diagnostics and QA checks
-  - must use `scripts/internal_generate.py` instead of direct dist module imports
+  - must use `scripts/run_internal_generation.py` instead of direct dist module imports
 
 ## 4. Domain model and modules
 
@@ -101,25 +101,25 @@ ts-eng-asst/
   dist/
     ts-engagement-assistant.md
     assistant-playbook.md
-    el-generate.py
-    _scope_core.py
+    engagement_letter_generator.py
+    scope_engine.py
     el-placeholder-schema.json
     scope-library.json
     scope-review-buckets.json
     scope-library-optional.json
     buyside-engagement-letter.docx
     sellside-engagement-letter.docx
-  scope_core.py
+  scope_engine.py
   scripts/
-    internal_generate.py
+    run_internal_generation.py
     check-system-prompt-contract.py
-    export-scope-library.py
-    export-optional-scope-library.py
+    export_scope_review_surface.py
+    export_optional_scope_docs.py
     check-scope-spelling.py
-    validate-scope-exports.py
-    validate-scope-review-buckets.py
-    validate-distribution-manifests.py
-    validate-internal-boundary.py
+    validate_scope_review_exports.py
+    validate_scope_bucket_mapping.py
+    validate_upload_manifest.py
+    validate_internal_runtime_boundary.py
   docs/
     spec-ts-sow.md
     ...
@@ -140,7 +140,7 @@ Rules:
   1. Collect required fields using schema-driven applicability.
   2. Apply defaults/derivations; render Canvas review.
   3. Run pre-generate scope review (section-level include/exclude).
-  4. On exact `generate`, invoke `el-generate.py` with flags and JSON-file variables payload.
+  4. On exact `generate`, invoke `engagement_letter_generator.py` with flags and JSON-file variables payload.
   5. Generator removes guidance, applies conditional section policies, replaces scope, fills placeholders, validates output.
 - Data touched:
   - `el-placeholder-schema.json`
@@ -264,7 +264,7 @@ Release strategy:
 flowchart LR
   U[TS User] --> A[ChatGPT Assistant]
   A --> P[System Prompt Contract]
-  A --> G[el-generate.py]
+  A --> G[engagement_letter_generator.py]
   G --> T[(Word Templates)]
   G --> S[(Schema + Scope JSON)]
   G --> O[Generated .docx]
@@ -278,7 +278,7 @@ sequenceDiagram
   participant User
   participant Assistant
   participant Prompt as Prompt Contract
-  participant Generator as el-generate.py
+  participant Generator as engagement_letter_generator.py
   participant Files as JSON/DOCX Files
 
   User->>Assistant: Provide deal details
@@ -300,7 +300,7 @@ flowchart TD
   PR[ts-engagement-assistant.md]
   BUK[scope-review-buckets.json]
   LIB[scope-library.json]
-  GEN[el-generate.py]
+  GEN[engagement_letter_generator.py]
   DOCX[buyside/sellside templates]
 
   SCH --> PR
@@ -332,12 +332,12 @@ Run from `ai-tools/chatgpt/ts-eng-asst`:
 ```bash
 python3 scripts/check-system-prompt-contract.py --prompt dist/ts-engagement-assistant.md --max-chars 8000
 python3 scripts/check-scope-spelling.py
-python3 scripts/validate-scope-exports.py
-python3 scripts/validate-scope-review-buckets.py
-python3 scripts/validate-internal-boundary.py
-python3 scripts/validate-distribution-manifests.py
-python3 -m py_compile dist/el-generate.py
-python3 -m py_compile dist/_scope_core.py
+python3 scripts/validate_scope_review_exports.py
+python3 scripts/validate_scope_bucket_mapping.py
+python3 scripts/validate_internal_runtime_boundary.py
+python3 scripts/validate_upload_manifest.py
+python3 -m py_compile dist/engagement_letter_generator.py
+python3 -m py_compile dist/scope_engine.py
 ```
 
 Expected:

@@ -14,7 +14,7 @@ This report audits the current reusable **FDD scope library** and related scope-
 - `context/dist/scope-library.json` (scope content)
 - `context/dist/scope-review-buckets.json` (bucket taxonomy, aliases, concepts)
 - `context/dist/el-placeholder-schema.json` (placeholder contract)
-- `context/dist/el-generate.py` (generation and scope assembly behavior)
+- `context/dist/engagement_letter_generator.py` (generation and scope assembly behavior)
 - `context/docs/mining/audit-mapping.md` (mining taxonomy mapping + promotion logic)
 - `context/docs/mining/audit-verification-results.md` (prior verification findings)
 
@@ -112,7 +112,7 @@ This section captures new findings from generated `.docx` review and Oracle feed
   - bucket-aware placement using `dist/scope-review-buckets.json` mapping, and
   - optional anchor rules (`section_ordering.anchor_rules`) with cycle-safe fallback to deterministic base order.
   - Ordering is best-effort and robust when sections are deleted/excluded.
-- [x] **Q-008 (Runtime applicability enforcement):** Implemented runtime applicability application in `dist/el-generate.py` with companion-file loading.
+- [x] **Q-008 (Runtime applicability enforcement):** Implemented runtime applicability application in `dist/engagement_letter_generator.py` with companion-file loading.
   - Runtime now loads and applies `section-applicability.json` before section assembly (best-effort).
   - Dist companion file added: `dist/section-applicability.json`.
   - Result: runtime `.docx` generation now matches docs-layer exclusions/replacements (validated with `banking` where generic `working_capital` is no longer injected).
@@ -129,7 +129,7 @@ This section captures new findings from generated `.docx` review and Oracle feed
 
 ### Overall assessment
 
-- The scope library is **structurally viable**: all section keys used by the library have bucket assignments, and the generator assembles scope as intended using **common skeleton + industry module + industry-only “extra sections”**. (Generator behavior: `context/dist/el-generate.py:L1151-L1237`; placeholder contract: `context/dist/el-placeholder-schema.json:L21-L35`.)
+- The scope library is **structurally viable**: all section keys used by the library have bucket assignments, and the generator assembles scope as intended using **common skeleton + industry module + industry-only “extra sections”**. (Generator behavior: `context/dist/engagement_letter_generator.py:L1151-L1237`; placeholder contract: `context/dist/el-placeholder-schema.json:L21-L35`.)
 - The largest maintainability and governance risks are:
   1. **Default scope over-inclusion** (high volume, many single-industry keys included by default).
   2. **Taxonomy drift** (near-duplicate section keys and variant naming families).
@@ -139,7 +139,7 @@ This section captures new findings from generated `.docx` review and Oracle feed
 ### Top priority remediation (in order)
 
 1. **Normalize section-key families** (reduce drift and simplify UI/QA) — especially `audit_work_*`, `inventory/inventories`, `related_part*`, `supporting_analysis_*`, `work_in_progress*`, and the “other assets / prepaids” cluster. See “Taxonomy Normalization Plan” below. (Bucket keys show these variants exist today: `context/dist/scope-review-buckets.json:L34-L90`.)
-2. **Create an explicit Optional (non-default) tier** and move clearly optional/phase-specific/transaction-documentation support out of default scope. Today, everything is included unless explicitly excluded. (See assembly logic: `context/dist/el-generate.py:L1151-L1237`.)
+2. **Create an explicit Optional (non-default) tier** and move clearly optional/phase-specific/transaction-documentation support out of default scope. Today, everything is included unless explicitly excluded. (See assembly logic: `context/dist/engagement_letter_generator.py:L1151-L1237`.)
 3. **Purge or relocate deal-specific artifacts** from reusable library:
    - Fee note (“Fees for this optional procedure…”) should not ship as reusable scope text. (`context/dist/scope-library.json:L3116-L3125`.)
    - Tool-specific deliverables (Power BI / PowerPoint / data cube) are not universally appropriate as default scope. (`context/dist/scope-library.json:L1918-L1952`, `context/dist/scope-library.json:L3564-L3571`.)
@@ -158,9 +158,9 @@ This section captures new findings from generated `.docx` review and Oracle feed
   - Builds `nodes_default` from the **common skeleton**
   - Builds `nodes_industry` from the industry module
   - Builds `extra_sections` for module sections not present in the common skeleton
-  - Emits everything unless excluded (section keys via `excluded_section_keys`, or bullet IDs via `excluded_top_level_ids`). (`context/dist/el-generate.py:L1151-L1237`.)
+  - Emits everything unless excluded (section keys via `excluded_section_keys`, or bullet IDs via `excluded_top_level_ids`). (`context/dist/engagement_letter_generator.py:L1151-L1237`.)
 
-- There is currently **no native concept of “optional (non-default)”** in generation logic; “optional” can only be expressed by pre-populating exclusions. (`context/dist/el-generate.py:L1087-L1094`, `context/dist/el-generate.py:L1151-L1237`.)
+- There is currently **no native concept of “optional (non-default)”** in generation logic; “optional” can only be expressed by pre-populating exclusions. (`context/dist/engagement_letter_generator.py:L1087-L1094`, `context/dist/engagement_letter_generator.py:L1151-L1237`.)
 
 ### Implication
 
@@ -230,7 +230,7 @@ A majority of section keys (42/60) appear in only one industry module. This incr
 - duplication risk (since new keys often overlap existing common sections), and
 - inconsistent phrasing or scope semantics.
 
-The generator currently includes all industry sections by default, including “extra sections” not in the common skeleton. (`context/dist/el-generate.py:L1151-L1237`.)
+The generator currently includes all industry sections by default, including “extra sections” not in the common skeleton. (`context/dist/engagement_letter_generator.py:L1151-L1237`.)
 
 #### Recommendation
 
@@ -240,7 +240,7 @@ Introduce a **tiering model**:
 - **Optional (non-default)**: specialized procedures, transaction-documentation support, post-bid support, data/analytics deliverables, VDD review, etc.
 - **Excluded (not reusable)**: fee notes, jurisdiction-specific GAAP language, and other deal artifacts.
 
-Implementation-wise, the existing `excluded_section_keys` mechanism can support optional-by-default by populating it automatically, but this requires a governance decision on default exclusions. (`context/dist/el-generate.py:L1087-L1094`, `context/dist/el-generate.py:L1151-L1237`.)
+Implementation-wise, the existing `excluded_section_keys` mechanism can support optional-by-default by populating it automatically, but this requires a governance decision on default exclusions. (`context/dist/engagement_letter_generator.py:L1087-L1094`, `context/dist/engagement_letter_generator.py:L1151-L1237`.)
 
 ---
 
@@ -424,7 +424,7 @@ This section classifies each scope area into one of the four disposition categor
 
 | Type           | Industry                                                                                               | Section Key / Item ID                                                                        | Current State                                                                                        | Recommended State                    | Rationale                                                                                                                          | Evidence                                                                                                                                                                                                                                      | Impact if unchanged                                                                   |
 | -------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Disposition    | Common (all)                                                                                           | `business_overview`                                                                          | Included by default via common skeleton                                                              | Keep Default                         | Foundational cross-industry FDD scope area                                                                                         | `context/dist/scope-library.json:L2-L26`; generator includes common skeleton by default: `context/dist/el-generate.py:L1151-L1203`                                                                                                            | Losing baseline scope consistency if removed                                          |
+| Disposition    | Common (all)                                                                                           | `business_overview`                                                                          | Included by default via common skeleton                                                              | Keep Default                         | Foundational cross-industry FDD scope area                                                                                         | `context/dist/scope-library.json:L2-L26`; generator includes common skeleton by default: `context/dist/engagement_letter_generator.py:L1151-L1203`                                                                                                            | Losing baseline scope consistency if removed                                          |
 | Disposition    | Common (all)                                                                                           | `accounting_overview`                                                                        | Included by default via common skeleton                                                              | Keep Default                         | Cross-industry accounting policies + reporting environment                                                                         | `context/dist/scope-library.json:L27-L75`                                                                                                                                                                                                     | Missing baseline accounting policy diligence                                          |
 | Disposition    | Common (all)                                                                                           | `quality_of_earnings`                                                                        | Included by default via common skeleton                                                              | Keep Default                         | Core QoE normalization framework is part of baseline                                                                               | `context/dist/scope-library.json:L76-L111`                                                                                                                                                                                                    | QoE output becomes inconsistent across engagements                                    |
 | Disposition    | Common (all)                                                                                           | `revenue_analysis`                                                                           | Included by default via common skeleton                                                              | Keep Default                         | Core revenue understanding; industry modules add specificity                                                                       | `context/dist/scope-library.json:L112-L183`                                                                                                                                                                                                   | Incomplete revenue diligence if removed                                               |
@@ -473,7 +473,7 @@ This section classifies each scope area into one of the four disposition categor
 | Redundancy     | Manufacturing                                                                                          | `working_capital` duplicates (`scope.249`, `scope.258`, `scope.253`, `scope.257`)            | Duplicate bullets exist in same section                                                              | Merge/Normalize                      | Same procedure stated twice; punctuation differences only                                                                          | `context/dist/scope-library.json:L2489-L2540`                                                                                                                                                                                                 | Inflated scope and confusing review/editing                                           |
 | Alias Coverage | All                                                                                                    | Missing alias targets (38 keys not covered)                                                  | Many keys have no alias mapping                                                                      | Merge/Normalize (and extend aliases) | Without aliases, user intent mapping will be brittle and post-normalization will remain fragile                                    | `context/dist/scope-review-buckets.json:L103-L147`                                                                                                                                                                                            | Incorrect scope selection, poor UX, higher support burden                             |
 | Text Quality   | Multi                                                                                                  | Typos (“the the”, “Target’s the”, “customers,etc.”, repeated phrase)                         | Professional defects present                                                                         | Merge/Normalize (QA)                 | These should be caught in validation gate                                                                                          | Examples: `context/dist/scope-library.json:L2473-L2487`, `context/dist/scope-library.json:L2000-L2012`, `context/dist/scope-library.json:L2176-L2180`                                                                                         | Reduced trust; more manual cleanup per engagement                                     |
-| Artifact       | Multi                                                                                                  | Sell-side phrasing appears in default scope bullets                                          | Default text assumes sell-side advisors/reports                                                      | Optional (or rewrite to neutral)     | Scope library is selected by industry only; no template-type gating is present in scope assembly                                   | Example sell-side bullets: `context/dist/scope-library.json:L884-L901`, `context/dist/scope-library.json:L1432-L1442`, `context/dist/el-generate.py:L894-L914`                                                                                | Wrong assumptions in buy-side templates; legal/commercial confusion                   |
+| Artifact       | Multi                                                                                                  | Sell-side phrasing appears in default scope bullets                                          | Default text assumes sell-side advisors/reports                                                      | Optional (or rewrite to neutral)     | Scope library is selected by industry only; no template-type gating is present in scope assembly                                   | Example sell-side bullets: `context/dist/scope-library.json:L884-L901`, `context/dist/scope-library.json:L1432-L1442`, `context/dist/engagement_letter_generator.py:L894-L914`                                                                                | Wrong assumptions in buy-side templates; legal/commercial confusion                   |
 
 ---
 
@@ -504,7 +504,7 @@ This section classifies each scope area into one of the four disposition categor
    - Remove or rewrite jurisdiction/phase/addendum language to either (a) optional modules or (b) neutral phrasing. (`context/dist/scope-library.json:L3814-L3817`, `context/dist/scope-library.json:L4093-L4111`.)
 
 3. **Implement Optional (non-default) behavior in generation/UI**
-   - Short-term: populate `excluded_section_keys` defaults based on an “optional-by-default” list until proper metadata exists. (`context/dist/el-generate.py:L1087-L1094`, `context/dist/el-generate.py:L1151-L1237`.)
+   - Short-term: populate `excluded_section_keys` defaults based on an “optional-by-default” list until proper metadata exists. (`context/dist/engagement_letter_generator.py:L1087-L1094`, `context/dist/engagement_letter_generator.py:L1151-L1237`.)
    - Medium-term: add metadata to scope sections indicating default state (Core vs Optional) and have generator respect it.
 
 4. **Add automated validation gates** (pre-commit or CI)
@@ -524,7 +524,7 @@ This section classifies each scope area into one of the four disposition categor
 
 ## 7) Risks / Unknowns
 
-- **Template neutrality policy:** The generator’s scope assembly is keyed on industry only (no template-type gating in scope insertion), so keeping sell-side-specific language would require either neutral text or separate scope libraries by template. (`context/dist/el-generate.py:L894-L914`, `context/dist/el-generate.py:L1151-L1237`.)
+- **Template neutrality policy:** The generator’s scope assembly is keyed on industry only (no template-type gating in scope insertion), so keeping sell-side-specific language would require either neutral text or separate scope libraries by template. (`context/dist/engagement_letter_generator.py:L894-L914`, `context/dist/engagement_letter_generator.py:L1151-L1237`.)
 - **Optional-by-default governance:** Some teams may rely on the current “everything included” behavior. Moving content to Optional may change expectations unless the UI makes opt-in easy and defaults are clearly communicated.
 - **Ambiguous thin sections:** A few sections have very thin bullets that don’t evidence intended meaning (e.g., `other_assets`, `other_current_assets_liabilities`). Without source provenance in this zip, their intended scope may need stakeholder confirmation before final removal/merge. (Examples: `context/dist/scope-library.json:L1170-L1173`, `context/dist/scope-library.json:L3048-L3052`.)
 - **Mining provenance not included:** The zip does not include raw mined source documents, so we cannot validate whether some “odd” bullets are faithful extractions vs. artifacts; we can only assess what is present in `dist/`. (Noted in mining verification: `context/docs/mining/audit-verification-results.md:L13-L27`.)
@@ -537,17 +537,17 @@ Status: `Completed`
 
 Implemented:
 
-- Added shared scope core module: `scope_core.py` and runtime copy `dist/_scope_core.py`.
+- Added shared scope core module: `scope_engine.py` and runtime copy `dist/scope_engine.py`.
 - Wired runtime and export validators to shared core entrypoints for applicability/order logic parity.
-- Added internal generation entrypoint: `scripts/internal_generate.py` (subprocess wrapper).
+- Added internal generation entrypoint: `scripts/run_internal_generation.py` (subprocess wrapper).
 - Removed internal direct dist module loading from:
-  - `scripts/generate-demo-letter.py`
-  - `scripts/test-scope-replacement.py`
+  - `scripts/generate_demo_letter.py`
+  - `scripts/smoke_test_scope_insertion.py`
 - Added manifest and boundary checks:
-  - `scripts/validate-distribution-manifests.py`
-  - `scripts/validate-internal-boundary.py`
+  - `scripts/validate_upload_manifest.py`
+  - `scripts/validate_internal_runtime_boundary.py`
 - Added optional-scope docs exporter:
-  - `scripts/export-optional-scope-library.py`
+  - `scripts/export_optional_scope_docs.py`
 - Added unknown optional-key runtime fallback (synthesized ad hoc optional section bullets in house style).
 - Regenerated review surfaces:
   - `docs/scope-library/industries/*`
@@ -557,16 +557,16 @@ Implemented:
 
 Validation run (pass):
 
-- `python3 scripts/export-scope-library.py --with-skeleton`
-- `python3 scripts/validate-scope-exports.py`
-- `python3 scripts/validate-scope-review-buckets.py`
+- `python3 scripts/export_scope_review_surface.py --with-skeleton`
+- `python3 scripts/validate_scope_review_exports.py`
+- `python3 scripts/validate_scope_bucket_mapping.py`
 - `python3 scripts/refresh-scope-metadata.py --check`
 - `python3 scripts/check-system-prompt-contract.py --prompt dist/ts-engagement-assistant.md --max-chars 8000`
-- `python3 scripts/validate-internal-boundary.py`
-- `python3 scripts/validate-distribution-manifests.py`
+- `python3 scripts/validate_internal_runtime_boundary.py`
+- `python3 scripts/validate_upload_manifest.py`
 
 Manual output runs (pass):
 
-- 5-industry sample generation via `scripts/generate-demo-letter.py` (both templates).
-- 3-industry smoke generation via `scripts/test-scope-replacement.py`.
+- 5-industry sample generation via `scripts/generate_demo_letter.py` (both templates).
+- 3-industry smoke generation via `scripts/smoke_test_scope_insertion.py`.
 

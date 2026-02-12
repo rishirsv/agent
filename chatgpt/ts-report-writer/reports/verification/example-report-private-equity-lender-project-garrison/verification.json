@@ -1,0 +1,49 @@
+{
+  "report_id": "example-report-private-equity-lender-project-garrison",
+  "source_file": "Example report_Private Equity lender_Project Garrison.pptx",
+  "status": "pass",
+  "page_count": 88,
+  "markdown_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/extracted/example-report-private-equity-lender-project-garrison.md",
+  "montage_files": [
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-01.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-02.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-03.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-04.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-05.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-06.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-07.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-08.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-09.png",
+    "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/montage/montage-10.png"
+  ],
+  "section_coverage": {
+    "Executive Summary": 292,
+    "Key Findings": 22,
+    "Business Overview": 57,
+    "Summary Financials": 9,
+    "Profit and Loss Overview / Financial Performance": 49,
+    "Quality of Earnings": 156,
+    "Income Statement": 238,
+    "Balance Sheet": 142,
+    "Net Working Capital": 3,
+    "Net Debt (Cash)": 44,
+    "Cash Flows": 56,
+    "Related Parties": 259,
+    "Reporting Environment": 21,
+    "Forecast Trading": 19,
+    "Industry Analysis": 42,
+    "Quality of Net Assets": 0,
+    "Gross Margin by LOB": 0,
+    "Appendices": 43
+  },
+  "missing_sections": [
+    "Quality of Net Assets",
+    "Gross Margin by LOB"
+  ],
+  "reviewer": "codex",
+  "review_notes_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/verification/example-report-private-equity-lender-project-garrison/review-notes.md",
+  "created_at": "2026-02-12T19:58:45.354866+00:00",
+  "updated_at": "2026-02-12T20:40:06.062637+00:00",
+  "reviewed_at": "2026-02-12T20:40:06.061574+00:00",
+  "review_notes": "Manual verbatim extraction completed for full report body text; table text excluded by rule."
+}

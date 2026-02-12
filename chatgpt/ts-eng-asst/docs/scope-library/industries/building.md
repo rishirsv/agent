@@ -8,9 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
+_None._
 
 ### Optional / Pending Review
 

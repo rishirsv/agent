@@ -1,0 +1,22 @@
+{
+  "report_id": "project-ascend-report",
+  "source_file": "Project Ascend - Report.pptx",
+  "source_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/Project Ascend - Report.pptx",
+  "source_format": "pptx",
+  "method_used": "manual_presentation_to_pdf_then_verbatim_body_extraction",
+  "total_pages": 47,
+  "line_count": 0,
+  "section_counts": {},
+  "missing_sections": [],
+  "exclusion_stats": {
+    "table_text_excluded": true,
+    "legal_footer_navigation_excluded": true,
+    "image_text_excluded": true
+  },
+  "warnings": [],
+  "verification_status": "pass",
+  "reviewer": "codex",
+  "reviewed_at": "2026-02-12T20:40:06.083417+00:00",
+  "review_notes": "Manual verbatim extraction completed for full report body text; table text excluded by rule.",
+  "updated_at": "2026-02-12T20:40:06.083439+00:00"
+}

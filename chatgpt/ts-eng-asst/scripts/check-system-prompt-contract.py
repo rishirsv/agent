@@ -16,7 +16,7 @@ with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, dir="/mnt/da
     variables_path = f.name
 
 cmd = [
-    sys.executable, "/mnt/data/el-generate.py",
+    sys.executable, "/mnt/data/engagement_letter_generator.py",
     "--template", template_file,
     "--scope-library", "/mnt/data/scope-library.json",
     "--industry", industry,

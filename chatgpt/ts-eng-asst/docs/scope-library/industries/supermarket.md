@@ -8,11 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.357` | `supermarket.business_overview.scope.357` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | US GAAP vs IFRS-specific framing; needs gating. |
-| `scope.360` | `supermarket.quality_of_earnings.scope.360` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
+_None._
 
 ### Optional / Pending Review
 

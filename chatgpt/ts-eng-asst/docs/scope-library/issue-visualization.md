@@ -42,7 +42,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  A[dist/scope-library.json] --> B[export-scope-library.py]
+  A[dist/scope-library.json] --> B[export_scope_review_surface.py]
   C[docs/scope-library/section-applicability.json] --> B
   B --> D[Apply common section exclusions]
   B --> E[Apply industry section replacements]
@@ -236,17 +236,17 @@ Top-level bullet count includes common skeleton + selected industry module.
 
 ```mermaid
 flowchart LR
-  A[Shared Core scope_core.py] --> B[dist/_scope_core.py]
-  A --> C[scripts/export-scope-library.py]
-  A --> D[scripts/validate-scope-exports.py]
-  E[scripts/internal_generate.py] --> F[dist/el-generate.py]
-  G[scripts/validate-internal-boundary.py] --> H[No direct dist module loads in internal scripts]
-  I[scripts/validate-distribution-manifests.py] --> J[Upload/Internal manifest checks]
+  A[Shared Core scope_engine.py] --> B[dist/scope_engine.py]
+  A --> C[scripts/export_scope_review_surface.py]
+  A --> D[scripts/validate_scope_review_exports.py]
+  E[scripts/run_internal_generation.py] --> F[dist/engagement_letter_generator.py]
+  G[scripts/validate_internal_runtime_boundary.py] --> H[No direct dist module loads in internal scripts]
+  I[scripts/validate_upload_manifest.py] --> J[Upload/Internal manifest checks]
 ```
 
 Key outputs:
 
-- Runtime: `dist/el-generate.py`, `dist/_scope_core.py`
+- Runtime: `dist/engagement_letter_generator.py`, `dist/scope_engine.py`
 - Optional docs: `docs/scope-library/optional-scope-library.md`
 - Validation gates: internal boundary + distribution manifest + scope export parity
 

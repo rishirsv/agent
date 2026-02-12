@@ -8,16 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.214` | `hvac.optional_fdd_procedures.scope.214` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Explicitly optional procedure; purchase agreement legal-document support framing. |
-| `scope.212` | `hvac.phase_2_post_bid_support.scope.212` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Post-bid/phase-2 support is engagement-specific; buyer diligence call framing. |
-| `scope.213` | `hvac.phase_2_post_bid_support.scope.213` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Post-bid/phase-2 support is engagement-specific; potential buyer inquiry framing. |
-| `scope.123` | `hvac.quality_of_earnings.scope.123` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side advisor framing in reusable baseline. |
-| `scope.124` | `hvac.quality_of_earnings.scope.124` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
-| `scope.125` | `hvac.quality_of_earnings.scope.125` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
-| `scope.138` | `hvac.quality_of_earnings.scope.138` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side/report-rollforward framing in reusable baseline. |
+_None._
 
 ### Optional / Pending Review
 
@@ -30,7 +21,7 @@ Rules source: `docs/scope-library/section-applicability.json`.
 - Excluded common sections: _None_
 - Replaced common sections: `audit_work_paper`, `capital_expenditure_requirements`, `net_debt`, `revenue_analysis`, `working_capital`
 - Added industry sections: _None_
-- Replaced industry sections: `accounting_overview`, `accounts_payable_and_accrued_liabilities`, `accounts_receivable`, `customer_base_health_da`, `data_and_analytics`, `marketing_and_advertising_performance_da`, `net_debt`, `operating_expenses`, `operations_performance_da`, `optional_fdd_procedures`, `phase_2_post_bid_support`, `quality_of_earnings`, `revenue_analysis`, `revenue_and_profitability_analysis_da`
+- Replaced industry sections: `accounting_overview`, `accounts_receivable`, `customer_base_health_da`, `data_and_analytics`, `marketing_and_advertising_performance_da`, `net_debt`, `operating_expenses`, `operations_performance_da`, `optional_fdd_procedures`, `phase_2_post_bid_support`, `quality_of_earnings`, `revenue_analysis`, `revenue_and_profitability_analysis_da`
 
 ## Section Review (Common + Industry)
 
@@ -153,16 +144,6 @@ Each section below shows common skeleton bullets and industry-specific bullets w
   - Large, unusual, or non-operating items that may have affected normal working capital trends (such as accruals for bonuses, capital accruals, month end vs quarter end differences, etc.); and
   - Understanding the accounting impact of allowance for uncollectible amounts and other accruals requiring judgment.
 
-#### Industry (`hvac`)
-
-- (scope.164) Analyze the company's historical monthly working capital patterns and consider an appropriate “target working capital” peg for purposes of a purchase price adjustment mechanism; and assess the level of working capital required to support future growth.
-- (scope.165) Analyze the composition of individual working capital accounts and monthly working capital trends including working capital days metrics (i.e. DSO and DPO).
-- (scope.166) Identify potential adjustments for large non-recurring, unusual or non-operating items that may have affected normal working capital trends, (such as accruals for bonuses, non-trade balances, etc.)
-- (scope.167) Summarize and normalize historical working capital in the business including:
-  - Commenting on the working capital trends, for the respective period;
-  - Understanding key drivers (i.e., seasonality, accounts payable days, days sales outstanding, inventory days); and
-  - Identifying large or unusual non-recurring items that may have impacted normal working capital trends including potential items identified within the quality of earnings analysis noted above.
-
 ### Inventory (`inventory`)
 
 #### Common
@@ -212,12 +193,6 @@ _Not in common skeleton._
   - Supplier settlement terms; and
   - Other current and non-current liabilities.
 
-#### Industry (`hvac`)
-
-- (scope.172) Accounts payable aging, major-vendor settlement terms, and days payable outstanding trends.
-- (scope.173) Accrued liabilities profile (including payroll/PTO, bonus/commission cadence, and deferred revenue timing considerations).
-- (scope.607) Other current liability balances and unusual movements affecting working capital comparability.
-
 ### Capital expenditure requirements (`capital_expenditure_requirements`)
 
 #### Common
@@ -244,16 +219,6 @@ _Not in common skeleton._
   - Incentive compensation and employee benefit obligations;
   - Expected or contingent liabilities (e.g. environmental, litigation, regulatory and tax); and
   - Other off-balance sheet transactions.
-
-#### Industry (`hvac`)
-
-- (scope.174) Long-term debt, Finance lease obligations, and other long-term liabilities;
-- (scope.175) Deferred revenue / Contingent considerations / earnouts on acquisitions / warranty & insurance reserves
-- (scope.176) Post-retirement obligations or incentive compensation;
-- (scope.177) Other significant and/or unusual liabilities including off-balance sheet liabilities
-- (scope.178) Pending or threatened litigations by regulatory or other authorities and by employees;
-- (scope.179) Significant lease and purchase obligations; and
-- (scope.180) Inquire about other off-balance sheet transactions.
 
 ### Related Parties (`related_parties`)
 

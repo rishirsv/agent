@@ -1,7 +1,7 @@
 {
   "engagement": {
-    "name": "Project Cascade Care",
-    "client": "NorthRiver Capital Partners",
+    "name": "NorthBridge Compliance Solutions - Simulated FDD Deck",
+    "client": "Confidential Private Equity Client",
     "report_date": "2026-02-12"
   },
   "global_constraints": {
@@ -13,30 +13,622 @@
     "verbosity": "standard"
   },
   "slides": [
-    { "slide_id": "s01", "intent": "cover", "objective": "Set engagement context" },
-    { "slide_id": "s02", "intent": "section_divider", "objective": "Start executive summary section" },
-    { "slide_id": "s03", "intent": "business_overview", "objective": "Summarize operating model and footprint" },
-    { "slide_id": "s04", "intent": "key_findings_financial", "objective": "Present headline financial findings" },
-    { "slide_id": "s05", "intent": "summary_financials", "objective": "Provide KPI and trend snapshot" },
-    { "slide_id": "s06", "intent": "profit_loss_overview", "objective": "Show reported P&L baseline" },
-    { "slide_id": "s07", "intent": "qoe_adjustment_highlights", "objective": "Bridge reported to normalized EBITDA" },
-    { "slide_id": "s08", "intent": "working_capital_review", "objective": "Explain NWC trend and peg implications" },
-    { "slide_id": "s09", "intent": "reporting_environment", "objective": "Assess reporting process maturity" },
-    { "slide_id": "s10", "intent": "risk_framework", "objective": "Summarize transaction risk framework" },
-    { "slide_id": "s11", "intent": "section_divider", "objective": "Start historical performance section" },
-    { "slide_id": "s12", "intent": "service_line_analysis", "objective": "Analyze revenue by service line" },
-    { "slide_id": "s13", "intent": "customer_concentration", "objective": "Assess payer and referral concentration" },
-    { "slide_id": "s14", "intent": "site_performance", "objective": "Compare site-level economics" },
-    { "slide_id": "s15", "intent": "margin_analysis", "objective": "Narrate margin bridge and sensitivity" },
-    { "slide_id": "s16", "intent": "section_divider", "objective": "Start quality of earnings section" },
-    { "slide_id": "s17", "intent": "qoe_adjustment_detail", "objective": "Detail labor normalization adjustment" },
-    { "slide_id": "s18", "intent": "qoe_adjustment_detail", "objective": "Detail legal and one-time adjustments" },
-    { "slide_id": "s19", "intent": "qoe_adjustment_detail", "objective": "Detail occupancy and rent normalization" },
-    { "slide_id": "s20", "intent": "cash_conversion", "objective": "Assess EBITDA to cash bridge" },
-    { "slide_id": "s21", "intent": "section_divider", "objective": "Start appendices" },
-    { "slide_id": "s22", "intent": "payroll_appendix", "objective": "Provide payroll appendix commentary" },
-    { "slide_id": "s23", "intent": "appendix_support", "objective": "Provide NWC appendix support table" },
-    { "slide_id": "s24", "intent": "appendix_support", "objective": "Summarize accounting policy references" },
-    { "slide_id": "s25", "intent": "back_cover", "objective": "Close report with disclaimer" }
+    {
+      "slide_id": "s01",
+      "intent": "cover",
+      "objective": "Establish engagement context, target company, and period coverage for the simulated FDD deck.",
+      "evidence": [
+        "Target company: NorthBridge Compliance Solutions, Inc. (NorthBridge); HQ: Toronto, Ontario; founded 2011.",
+        "Engagement type: simulated buyside Financial Due Diligence (FDD) deck for generator testing.",
+        "Financial periods presented: FY2023, FY2024, FY2025, and TTM ended Jun-2026.",
+        "Currency convention: USD millions unless otherwise noted."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s02",
+      "intent": "table_of_contents",
+      "objective": "Provide the reader a structured navigation of the deck sections and how evidence flows to conclusions.",
+      "evidence": [
+        "Section 1: Executive summary and transaction-relevant conclusions (slides s03\u2013s05).",
+        "Section 2: Business overview and revenue quality (slides s06\u2013s11).",
+        "Section 3: P&L walkthrough (slides s12\u2013s18).",
+        "Section 4: Balance sheet, working capital profile, and cash conversion (slides s19\u2013s24).",
+        "Section 5: QoE bridge and adjustment support status (slides s25\u2013s32).",
+        "Section 6: Net working capital and peg implications (slides s33\u2013s38).",
+        "Section 7: Key diligence risks and reporting environment (slides s39\u2013s41).",
+        "Section 8: Appendices and exhibit placeholders (slides s42\u2013s45)."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s03",
+      "intent": "key_takeaways",
+      "objective": "Summarize the headline diligence conclusions, including earnings durability, normalization themes, and decision-level risks.",
+      "evidence": [
+        "Revenue grew from USD 125.0m (FY23) to USD 160.0m (FY25) and USD 168.0m (TTM Jun-26), driven primarily by SaaS subscription expansion.",
+        "Recurring SaaS revenue represented ~82.1% of TTM Jun-26 revenue (management reporting; preliminary).",
+        "Reported EBITDA was USD 29.0m in TTM Jun-26 (17.3% margin) with cash conversion of ~77% (CFO USD 22.4m).",
+        "Preliminary QoE bridge indicates normalized EBITDA of USD 32.4m (net adjustments +USD 3.4m); several high-impact items remain support-pending.",
+        "Operating NWC is structurally negative (reported USD -28.0m at Jun-26) driven by deferred revenue; peg mechanics should avoid unintended purchase price outcomes."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s04",
+      "intent": "key_takeaways",
+      "objective": "Highlight the reported financial trajectory, margin profile, and cash conversion in a transaction framing.",
+      "evidence": [
+        "Reported gross margin remained stable at ~64% across FY23\u2013TTM Jun-26 (gross profit USD 108.0m on USD 168.0m revenue in TTM).",
+        "EBITDA increased from USD 22.0m (FY23) to USD 29.0m (TTM Jun-26), while EBITDA margin remained ~17\u201318% as opex scaled with growth.",
+        "Net debt reduced from USD 42.0m (FY23) to USD 29.0m (TTM Jun-26) due to sustained free cash flow and term debt paydown.",
+        "TTM Jun-26 free cash flow before distributions was ~USD 14.9m (CFO USD 22.4m less capex/capitalized software USD 7.5m).",
+        "Transaction implication: leverage capacity appears supported at current run-rate, but valuation should reference normalized EBITDA subject to support tie-out."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s05",
+      "intent": "key_takeaways",
+      "objective": "Summarize preliminary transaction considerations: normalized earnings base, working capital peg, and priority diligence close items.",
+      "evidence": [
+        "Normalized EBITDA (preliminary) of USD 32.4m implies normalized EBITDA margin of ~19.3% on TTM Jun-26 revenue.",
+        "Largest support-pending QoE themes: milestone revenue cut-off (services), capitalization policy normalization, and resolution of legal settlement support.",
+        "Reported NWC at Jun-26 is USD -28.0m; adjusted NWC after identified normalizations is USD -26.5m (preliminary).",
+        "Peg recommendation: consider a negative peg range (e.g., -26m to -27m) based on trailing averages and deal definition alignment (subject to monthly schedule tie-out).",
+        "Next-step focus: finalize support for top 5 QoE and top 5 NWC adjustments; confirm SPA definitions (debt-like vs working capital) to avoid double-counting."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s06",
+      "intent": "business_overview",
+      "objective": "Describe the operating model, how the company makes money, and what features of revenue quality matter for transaction risk.",
+      "evidence": [
+        "NorthBridge provides cloud-based EHSQ compliance software and implementation services to regulated industrial customers across North America.",
+        "Primary revenue streams: (i) SaaS subscriptions billed annually (recurring), (ii) professional services for implementation and configuration (project-based).",
+        "Scale: TTM Jun-26 revenue USD 168.0m; customer base ~420 customers / ~1,450 managed sites (management reporting; preliminary).",
+        "Footprint: HQ Toronto with delivery hubs in Denver, Dallas, and Atlanta; blended onshore/offshore delivery model for implementation and support.",
+        "Diligence context: revenue durability depends on renewal retention, usage expansion, and cut-off discipline for milestone-based services revenue.",
+        "Transaction implication: earnings quality is sensitive to service delivery timing and capitalization policies; buyer protections should focus on cut-off and policy consistency."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s07",
+      "intent": "business_overview",
+      "objective": "Quantify revenue mix (recurring vs non-recurring) and interpret implications for earnings durability and valuation.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Revenue grew from USD 125.0m (FY23) to USD 168.0m (TTM Jun-26).",
+        "SaaS subscription revenue increased from USD 98.0m (FY23) to USD 138.0m (TTM Jun-26), representing ~82.1% of total revenue (management reporting; preliminary).",
+        "Professional services revenue remained ~USD 29.0m\u2013USD 30.0m per period (FY24\u2013TTM), indicating delivery capacity constraints rather than demand constraints.",
+        "Revenue quality implication: higher recurring mix supports valuation durability, but services timing/cut-off can introduce quarter-to-quarter EBITDA volatility.",
+        "Follow-up required: validate subscription vs services mapping from billing system to GL and reconcile ARR reporting to GAAP revenue."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s08",
+      "intent": "revenue_bridge",
+      "objective": "Explain the drivers of topline growth and isolate structural vs timing elements relevant to sustainability.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Total revenue increased by USD 43.0m from FY23 (USD 125.0m) to TTM Jun-26 (USD 168.0m).",
+        "Management attribution (preliminary): growth driven by net new ARR (~USD 16m in FY25), annual price uplift (~3\u20134%), and cross-sell expansion within existing accounts.",
+        "Services revenue is relatively flat, consistent with implementation capacity constraints; backlog at Jun-26 estimated at ~USD 18m (management reporting; support pending).",
+        "Churn and contraction are concentrated in smaller manufacturing customers; retention in utilities segment is reported higher (support pending by cohort).",
+        "Transaction implication: base-case revenue durability is supported by subscription mix, but downside sensitivity should incorporate (i) pipeline conversion risk and (ii) services cut-off variability."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s09",
+      "intent": "customer_concentration",
+      "objective": "Assess customer concentration, retention, and related downside sensitivity for the transaction.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Customer concentration (FY25): top 10 customers ~22% of revenue; largest customer ~4.8% (management reporting; support pending to billing extract).",
+        "Retention (FY25): gross retention ~93%; net revenue retention ~109% driven by module expansion and regulatory-driven add-ons (management reporting; support pending).",
+        "Average subscription contract term ~2.3 years with annual billing; renewal calendar is weighted to Q4 due to legacy contract start dates.",
+        "Risk implication: concentration is moderate but still relevant for downside cases; largest 3 customers collectively drive ~12% of revenue and should be stressed in valuation sensitivity.",
+        "Follow-up required: reconcile concentration metrics to invoicing data and confirm no undisclosed side letters impacting pricing or renewal terms."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s10",
+      "intent": "general_fdd_analysis",
+      "objective": "Summarize bookings, backlog, and implementation pipeline to support forward-looking revenue and margin considerations.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Bookings trend (management reporting; preliminary): FY24 bookings ~USD 34m; FY25 bookings ~USD 38m with conversion to ARR weighted to H1 following contract signature.",
+        "Services backlog at Jun-26 estimated at ~USD 18m (~60% of next 12 months services revenue), indicating near-term revenue visibility but also delivery capacity dependence.",
+        "Implementation pipeline: backlog aging has increased (average implementation cycle ~4.2 months in FY25 vs ~3.5 months in FY23), contributing to contractor usage.",
+        "Transaction implication: sustained growth requires scaling implementation capacity without margin dilution; diligence should focus on utilization, subcontractor reliance, and backlog burn-down assumptions.",
+        "Data request: monthly bookings/backlog rollforward with definitions and reconciliation to billings and GAAP revenue."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s11",
+      "intent": "business_overview",
+      "objective": "Document revenue recognition mechanics and billing terms, highlighting cut-off and contract accounting risks.",
+      "evidence": [
+        "SaaS subscriptions are typically billed annually in advance; this drives deferred revenue balances (current deferred revenue {fmt_m(38.0)} at Jun-26).",
+        "Professional services are primarily milestone-based with revenue recognized upon delivery; contract assets (unbilled receivables) were {fmt_m(9.0)} at Jun-26.",
+        "Reported operating NWC is negative (Jun-26 NWC {fmt_m(nwc['TTM Jun-2026'])}), reflecting advance billings and deferred revenue rather than working capital strain.",
+        "Cut-off sensitivity: services milestone acceleration can overstate both revenue and EBITDA in the measurement period; a preliminary QoE adjustment of -USD 0.6m has been identified (support pending).",
+        "Transaction implication: closing accounts and peg should explicitly define treatment of deferred revenue and contract assets to avoid double-counting between QoE and NWC adjustments."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s12",
+      "intent": "profit_and_loss_overview",
+      "objective": "Present reported P&L trend as the baseline for QoE normalization and valuation analysis.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Reported revenue increased from USD 125.0m (FY23) to USD 160.0m (FY25) and USD 168.0m (TTM Jun-26).",
+        "Gross profit increased from USD 80.0m (FY23) to USD 108.0m (TTM Jun-26); gross margin remained ~64%.",
+        "Reported EBITDA increased from USD 22.0m (FY23) to USD 29.0m (TTM Jun-26); margin ~17.3% in TTM.",
+        "Depreciation & amortization increased to USD 9.0m in TTM, consistent with capitalized software growth and acquired intangibles amortization.",
+        "Normalization watch items: services cut-off, capitalization policy consistency, and non-recurring operating costs embedded in opex."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s13",
+      "intent": "general_fdd_analysis",
+      "objective": "Explain gross margin stability and isolate the drivers (mix, hosting efficiency, services utilization) that affect sustainable EBITDA.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Blended gross margin remained stable at ~64% from FY23 through TTM Jun-26 (FY25: 64.4%; TTM: 64.3%).",
+        "Subscription gross margin is estimated at ~78% (hosting and customer success costs), while services gross margin is estimated at ~33% (labor utilization-driven) (management reporting; support pending).",
+        "Hosting costs increased with customer count, but unit economics improved modestly due to cloud-commitment discounts (support pending to invoices).",
+        "Services margin is sensitive to subcontractor use and project delays; contractor usage increased in FY25 to address backlog (linked to QoE adjustment QA07).",
+        "Transaction implication: downside sensitivity should assume either flat subscription margin with services variability, or a partial unwind of cloud discounts at renewal."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s14",
+      "intent": "general_fdd_analysis",
+      "objective": "Decompose operating expenses to explain EBITDA margin trajectory and identify normalization considerations.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Total opex (ex D&A) increased from USD 58.0m (FY23) to USD 79.0m (TTM Jun-26) as the company invested in sales capacity and product development.",
+        "Sales & Marketing increased from USD 28.0m (FY23) to USD 39.0m (TTM), remaining ~22\u201323% of revenue.",
+        "R&D increased from USD 17.0m (FY23) to USD 22.0m (TTM) and is supplemented by capitalized development cash outflows of USD 4.5m (TTM).",
+        "G&A increased from USD 13.0m (FY23) to USD 18.0m (TTM), including discrete non-recurring legal and ERP-related spend (see QoE register).",
+        "Transaction implication: EBITDA margin stability reflects reinvestment; normalized EBITDA is more sensitive to non-recurring opex items than to structural margin compression."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s15",
+      "intent": "general_fdd_analysis",
+      "objective": "Assess sales efficiency and scalability of growth (CAC payback, pipeline conversion) and identify risks to forward run-rate.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "S&M spend remained ~22\u201323% of revenue, while revenue growth moderated from +13.6% (FY24) to +12.7% (FY25) and +5.0% (TTM vs FY25).",
+        "Management KPIs (preliminary): CAC payback ~20\u201324 months; net new ARR in FY25 ~USD 16m; pipeline conversion ~22% from qualified to closed-won (support pending).",
+        "Sales capacity expanded in FY24\u2013FY25 (headcount additions), driving near-term opex pressure ahead of ARR realization.",
+        "Transaction implication: base-case assumes continued ARR expansion; downside case should incorporate lower conversion or elongated sales cycles without immediate opex step-down.",
+        "Diligence ask: tie CRM bookings/pipeline to invoicing and confirm definition consistency for CAC and payback metrics."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s16",
+      "intent": "general_fdd_analysis",
+      "objective": "Evaluate R&D investment and capitalization practices to support product roadmap and assess normalization risk.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Expensed R&D was USD 22.0m in TTM Jun-26; capitalized software development cash outflows were USD 4.5m in the same period.",
+        "Implied development capitalization rate is ~17% of total development spend in TTM (cap dev 4.5 / (R&D 22.0 + cap dev 4.5)).",
+        "Management indicates capitalization increased in FY25 due to a major platform re-architecture; QoE adjustment QA12 assumes a normalized capitalization rate closer to historical policy baseline (support pending).",
+        "Product roadmap implication: sustaining ARR expansion requires continued investment; buyer should validate whether roadmap spend is appropriately classified (expense vs capitalize) and consistent with GAAP policy.",
+        "Data request: capitalization policy memo, project time tracking extracts, and rollforward from capitalized dev to amortization schedule."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s17",
+      "intent": "general_fdd_analysis",
+      "objective": "Explain G&A trend and separate structural cost base from non-recurring items relevant to normalized earnings.",
+      "evidence": [
+        "G&A increased from USD 13.0m (FY23) to USD 18.0m (TTM Jun-26) as the company scaled finance, security, and compliance functions.",
+        "Non-recurring components are embedded in G&A, including ERP integration costs (QA01), transaction advisory fees (QA04), and a discrete legal settlement (QA03).",
+        "Reporting process maturity is improving but remains reliant on manual journals during ERP transition; this increases the risk of cut-off and accrual variability (see reporting environment section).",
+        "Transaction implication: normalized earnings should exclude non-recurring G&A, but the buyer should assume a higher steady-state corporate cost base post-close (public-company readiness, controls uplift).",
+        "Follow-up required: reconcile G&A department allocations and validate that one-time items are properly segregated in the GL."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s18",
+      "intent": "general_fdd_analysis",
+      "objective": "Bridge EBITDA movement from FY23 to TTM Jun-26 to identify the primary operational drivers of profitability.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Reported EBITDA increased by USD 7.0m from FY23 (USD 22.0m) to TTM Jun-26 (USD 29.0m).",
+        "Gross profit increased by USD 28.0m over the same period (FY23 USD 80.0m to TTM USD 108.0m), driven by revenue growth at stable gross margin.",
+        "Opex (ex D&A) increased by USD 21.0m (FY23 USD 58.0m to TTM USD 79.0m), reflecting investment in sales capacity and product development.",
+        "Key interpretation: EBITDA growth is volume-led, but margin stability indicates incremental gross profit is being reinvested rather than fully dropping to EBITDA.",
+        "Transaction implication: normalized EBITDA should focus on removing discrete, non-recurring costs rather than assuming structural margin expansion."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s19",
+      "intent": "general_fdd_analysis",
+      "objective": "Provide a stratified balance sheet view to identify working capital drivers, debt-like items, and capital intensity.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Total assets were USD 163.0m at Jun-26, including cash USD 13.0m, AR USD 28.0m, contract assets USD 9.0m, and goodwill/intangibles USD 77.0m.",
+        "Total liabilities were USD 121.0m at Jun-26, including current deferred revenue USD 38.0m, term debt USD 38.0m, and non-current deferred revenue USD 8.0m.",
+        "Deferred revenue is the primary driver of negative operating working capital and cash conversion; diligence should validate deferred revenue rollforward and service obligations.",
+        "Debt-like watch items: litigation reserve and ERP payable (see working capital adjustments WC02 and WC10) and any off-balance sheet commitments.",
+        "Transaction implication: balance sheet valuation should focus on true debt-like items versus operating deferred revenue to avoid over-adjusting purchase price."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s20",
+      "intent": "working_capital_review",
+      "objective": "Explain the operating working capital profile and isolate the components that drive variability and peg risk.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Operating NWC moved from USD -21.0m (FY23) to USD -28.0m (Jun-26), primarily due to deferred revenue growth (current deferred revenue USD 28.0m to USD 38.0m).",
+        "AR increased from USD 22.0m (FY23) to USD 28.0m (Jun-26) in line with revenue; contract assets increased from USD 6.0m to USD 9.0m reflecting milestone-based services activity.",
+        "Operating implication: structurally negative NWC supports cash conversion, but increases sensitivity to revenue cut-off and contract asset collectability.",
+        "Peg implication: small classification/cut-off errors in deferred revenue and contract assets can drive meaningful purchase price adjustments given negative peg baseline.",
+        "Follow-up required: monthly working capital schedule and reconciliation to AR subledger, billing system, and deferred revenue rollforward."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s21",
+      "intent": "general_fdd_analysis",
+      "objective": "Summarize net debt, leverage, and covenant headroom to support valuation and financing discussions.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Net debt declined from USD 42.0m (FY23) to USD 29.0m (Jun-26) as term debt amortized and cash stabilized.",
+        "Leverage at Jun-26 is ~1.0x net debt / reported EBITDA and ~0.9x net debt / normalized EBITDA (preliminary).",
+        "Debt terms (management-provided; support pending): senior term loan with maturity in 2029; variable rate (SOFR + ~3.25%).",
+        "Transaction implication: financing capacity appears available, but buyer should stress normalized EBITDA downside case and ensure debt-like items are captured consistently with SPA.",
+        "Data request: debt agreement, covenant definitions, and quarterly covenant calculations through Jun-26."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s22",
+      "intent": "general_fdd_analysis",
+      "objective": "Bridge EBITDA to cash conversion and identify key cash drivers relevant to valuation and debt sizing.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "TTM Jun-26 CFO was USD 22.4m on reported EBITDA of USD 29.0m (~77% cash conversion).",
+        "TTM investing cash outflows were USD 10.5m, including PP&E capex USD 3.0m and capitalized software development USD 4.5m.",
+        "Free cash flow before financing/distributions was ~USD 14.9m (CFO USD 22.4m less capex/cap dev USD 7.5m).",
+        "Cash flow sensitivity: deferred revenue growth is a meaningful cash tailwind; if growth slows, cash conversion may revert toward 65\u201375% absent opex step-down.",
+        "Transaction implication: debt sizing should consider a cash conversion range and capex/cap dev requirements to sustain ARR growth."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s23",
+      "intent": "general_fdd_analysis",
+      "objective": "Explain capital intensity and intangible asset profile, including any impairment or capitalization risks relevant to valuation.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Capitalized software (net) increased from USD 14.0m (FY23) to USD 19.0m (Jun-26), reflecting ongoing platform investment.",
+        "Other intangibles (net) declined from USD 25.0m (FY23) to USD 17.0m (Jun-26) due to amortization (D&A USD 9.0m in TTM).",
+        "Goodwill remained USD 60.0m across periods; no impairment testing performed as part of this simulated package.",
+        "Transaction implication: capitalization practices influence both EBITDA (expense vs capitalize) and future amortization; buyer should validate policy compliance and project eligibility.",
+        "Follow-up required: fixed asset register, intangible rollforward, and capitalization eligibility testing for major platform projects."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s24",
+      "intent": "general_fdd_analysis",
+      "objective": "Identify debt-like items and balance sheet topics that influence enterprise value to equity value bridge and SPA definitions.",
+      "evidence": [
+        "Term debt was USD 38.0m at Jun-26; lease liabilities were USD 4.0m. Net debt was USD 29.0m.",
+        "Deferred revenue (current + non-current) totaled USD 46.0m at Jun-26 and is a core operating liability; treatment should align with peg/closing accounts to avoid double-counting.",
+        "Potential debt-like items identified for definition alignment: litigation reserve (WC10), ERP vendor payable (WC02), and change-in-control bonuses (QA06) if paid pre-close.",
+        "Transaction implication: EV-to-equity bridge should clearly separate operating liabilities (deferred revenue) from debt-like items to prevent price disputes.",
+        "Data request: detailed schedule of accruals within accrued expenses and other current liabilities to support debt-like vs NWC classification."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s25",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Bridge reported EBITDA to normalized EBITDA and summarize the main adjustment themes with support status.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "TTM Jun-26 reported EBITDA: USD 29.0m (17.3% margin).",
+        "Identified adjustments (net): +USD 3.4m across 13 items; preliminary normalized EBITDA: USD 32.4m (19.3% margin).",
+        "Largest add-backs: ERP integration costs (QA01 +1.2), restructuring/severance (QA02 +0.8), transaction advisory fees (QA04 +0.7).",
+        "Largest deductions: services revenue cut-off (QA11 -0.6), excess capitalization of development costs (QA12 -0.4), insurance proceeds removal (QA10 -0.3).",
+        "Support status: ~4 adjustments supported, ~4 pending, remainder partial; valuation should be based on normalized range until pending items are resolved."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s26",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Provide a complete register of identified QoE adjustments, including recurring flag, support status, and transaction relevance.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "13 adjustments identified for TTM Jun-26; 9 add-backs totaling +USD 4.9m and 4 deductions totaling -USD 1.5m (net +USD 3.4m).",
+        "Recurring adjustments (policy/run-rate): related-party hosting markup (QA09) and capitalization/fee accrual normalizations (QA12, QA13).",
+        "Support mix: supported (QA01, QA04, QA06, QA08, QA10); partial (QA02, QA05, QA07, QA13); pending (QA03, QA09, QA11, QA12).",
+        "Transaction implication: recurring adjustments should be reflected in run-rate forecasts and integration plans; non-recurring items inform one-time cost expectations but not valuation base.",
+        "Follow-up required: tie-out each adjustment to GL detail, invoices/contracts, and (where applicable) payroll registers and customer delivery evidence."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s27",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Deep-dive the ERP integration adjustment: quantify costs, confirm one-time nature, and describe residual risks.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "ERP integration and systems costs adjustment (QA01): +USD 1.2m in TTM Jun-26; management attributes costs to external consultants, data migration, and parallel-run support.",
+        "Timeline: primary go-live completed in Q1 FY26; parallel-run costs expected to decline materially in H2 FY26 (support pending to project plan).",
+        "Residual risk: post-close stabilization and optimization spend may continue, particularly around reporting automation and controls uplift.",
+        "Transaction implication: treat QA01 as non-recurring for valuation, but include a one-time integration budget in the post-close plan; confirm no capitalization misclassification.",
+        "Support request: vendor SOWs, invoices, and project cost center GL extracts reconciled to QA01 amount."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s28",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Deep-dive restructuring and retention adjustments: quantify costs and validate that savings are not already embedded in run-rate.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Restructuring/severance (QA02): +USD 0.8m; change-in-control retention bonuses (QA06): +USD 0.3m in TTM Jun-26.",
+        "Headcount actions: customer success consolidation and role rationalization; management indicates run-rate savings of ~USD 0.6m annualized (support pending).",
+        "Risk of double-counting: confirm savings are not already reflected in the TTM base period and that contractor usage is not offsetting permanent reductions.",
+        "Transaction implication: buyer should consider a run-rate cost base that includes ongoing capacity required to deliver backlog; validate savings versus service quality impacts.",
+        "Support request: HR termination register, payroll extracts, bonus plan documents, and timing of headcount reductions."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s29",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Deep-dive legal and insurance items to ensure sustainable EBITDA excludes discrete matters and does not embed one-time gains/losses.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Legal settlement and outside counsel (QA03): +USD 0.5m identified; support pending to settlement agreement and invoices; management asserts non-recurring.",
+        "Insurance proceeds (QA10): -USD 0.3m removed from EBITDA as a non-recurring gain; supported by accounting entry classification (support provided).",
+        "Residual risk: confirm no additional contingent liabilities or customer disputes that would imply recurring legal spend above baseline.",
+        "Transaction implication: unresolved legal matters can create both EBITDA noise and potential debt-like exposures; SPA should address indemnities and specific reserves.",
+        "Data request: legal claims summary, settlement documentation, and insurance correspondence supporting QA03/QA10."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s30",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Deep-dive timing and policy normalizations (cut-off and capitalization) that can materially affect both EBITDA and working capital.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Services revenue cut-off (QA11): -USD 0.6m pending confirmation of delivery status for milestone-based implementations; impacts both revenue and contract asset / deferred revenue classification.",
+        "Excess capitalization of development costs (QA12): -USD 0.4m to normalize capitalization rate; support pending to policy memo and time tracking.",
+        "Under-accrued SaaS platform fees (QA13): -USD 0.2m to align run-rate vendor expense with contract schedule (partial support).",
+        "Transaction implication: these items are high priority because they can shift both normalized EBITDA and NWC peg; diligence should ensure consistent treatment to avoid double-counting.",
+        "Follow-up required: contract-level delivery evidence, capitalization eligibility testing, and vendor contract schedules tied to accruals."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s31",
+      "intent": "qoe_adjustment_highlights",
+      "objective": "Present sensitivity of normalized EBITDA to key open items and define the diligence close plan for support-pending adjustments.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Pending QoE items (QA03, QA09, QA11, QA12) represent ~USD 1.7m of gross adjustment magnitude; net impact is ~USD -0.3m.",
+        "Base-case normalized EBITDA: USD 32.4m; illustrative downside case (if QA11/QA12 confirmed but QA03/QA09 not supported) approximates ~USD 31.7m (assumption).",
+        "Sensitivity drivers: (i) milestone delivery evidence for QA11, (ii) capitalization policy compliance for QA12, (iii) legal settlement documentation for QA03, (iv) related-party contract terms for QA09.",
+        "Transaction implication: valuation and debt sizing should use a range until support is obtained; buyer should align purchase agreement language to unresolved QoE and debt-like items.",
+        "Close plan: prioritize support for items comprising >USD 0.5m and document resolution path (support obtained vs reclassified vs removed)."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s32",
+      "intent": "key_takeaways",
+      "objective": "Conclude the QoE analysis with decision-level implications for valuation, financing, and SPA negotiation priorities.",
+      "evidence": [
+        "Preliminary normalized EBITDA of USD 32.4m (TTM Jun-26) represents a +USD 3.4m uplift versus reported EBITDA and is driven primarily by non-recurring items.",
+        "Two adjustments (services cut-off and capitalization policy) drive most of the downside risk and require detailed testing to avoid valuation overstatement.",
+        "At Jun-26 net debt of USD 29.0m, leverage is ~0.9x on normalized EBITDA; debt capacity appears supported but should incorporate a downside EBITDA case.",
+        "SPA implication: define treatment of transaction costs, legal reserves, and deferred revenue consistently between QoE, debt-like, and working capital true-up to prevent double-counting.",
+        "Recommendation: treat normalized EBITDA as a range pending support tie-out; include targeted diligence deliverables as conditions to finalizing price mechanics."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s33",
+      "intent": "working_capital_review",
+      "objective": "Summarize NWC profile and propose a preliminary peg view aligned to deal mechanics.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Reported operating NWC was USD -28.0m at Jun-26 versus USD -21.0m at FY23, reflecting deferred revenue growth and subscription billing terms.",
+        "After identified normalizations (10 items; net +USD 1.5m), adjusted NWC is USD -26.5m (preliminary).",
+        "Preliminary peg implication: negative peg is appropriate given business model; propose -26m to -27m range subject to monthly schedule and SPA definition alignment.",
+        "Key drivers of variability: deferred revenue renewal seasonality (Q4 heavy), services milestone billings (contract assets), and timing of bonus and vendor accruals.",
+        "Transaction implication: purchase price true-up sensitivity is high due to negative peg; narrow definitions and robust closing accounts procedures reduce dispute risk."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s34",
+      "intent": "working_capital_review",
+      "objective": "Assess seasonality and measurement-period considerations to calibrate the peg and mitigate closing date arbitrage.",
+      "evidence": [
+        "[CHART PLACEHOLDER]",
+        "Management indicates NWC becomes more negative in Q4 due to annual renewals and upfront billings; monthly NWC is estimated to range from ~-24m to ~-30m (support pending to monthly schedule).",
+        "If closing occurs in Q4, peg should reference a seasonally-adjusted average rather than a point-in-time balance to prevent transfer of value via renewal timing.",
+        "Services milestone billing can create short-term contract asset spikes; peg methodology should specify treatment of unapproved change orders and disputed balances.",
+        "Transaction implication: consider a trailing 12-month average peg or a seasonality-adjusted peg by quarter; define measurement period in SPA to avoid opportunistic timing.",
+        "Data request: monthly balance sheet (last 24 months) with reconciliations for AR, contract assets, deferred revenue, and accrual components."
+      ],
+      "preferred_visual": "chart"
+    },
+    {
+      "slide_id": "s35",
+      "intent": "working_capital_review",
+      "objective": "Review AR and contract assets (unbilled receivables) for collectability and cut-off risks that impact peg and closing adjustment.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "AR was USD 28.0m at Jun-26 with implied DSO ~60 days (management reporting; support pending to subledger).",
+        "Aged/disputed AR reserve adjustment (WC04): -USD 0.6m proposed pending validation of dispute status and subsequent collections.",
+        "Contract assets were USD 9.0m at Jun-26; adjustment WC05 proposes -USD 0.4m to exclude unapproved change orders from peg.",
+        "Transaction implication: AR and contract assets are primary sources of peg volatility; buyer should require detailed aging, dispute logs, and proof of delivery for milestone billings.",
+        "Follow-up required: AR aging, credit memos/credits log, contract asset schedule by project, and post-period cash receipts testing."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s36",
+      "intent": "working_capital_review",
+      "objective": "Review deferred revenue and contract liabilities for completeness and delivery alignment, given its outsized impact on negative NWC.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Deferred revenue totaled USD 46.0m at Jun-26 (current USD 38.0m; non-current USD 8.0m), reflecting annual upfront subscription billings.",
+        "Deferred revenue cut-off true-up (WC09): +USD 0.3m increase to peg based on services delivered but not released from deferral (support pending).",
+        "Risk: misalignment between delivery status and deferral can impact both EBITDA (QoE cut-off) and peg; definitions must avoid double-counting the same timing issue.",
+        "Transaction implication: buyer should validate deferred revenue rollforward by product and term, and assess cost-to-serve to confirm deferred revenue is not economically debt-like.",
+        "Data request: deferred revenue rollforward, billing system extracts, and delivery evidence for services components."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s37",
+      "intent": "working_capital_review",
+      "objective": "Summarize identified working capital adjustments and translate them into a preliminary adjusted peg recommendation.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "10 working capital adjustments identified for Jun-26; net impact +USD 1.5m to reported NWC (i.e., less negative).",
+        "High peg-relevance items: deal-related accruals (+1.1), litigation reserve (+0.8), ERP payable (+0.7), and AR reserve (-0.6) (support pending/partial).",
+        "Adjusted NWC estimate: USD -26.5m versus reported USD -28.0m.",
+        "Transaction implication: peg should be set on adjusted NWC with explicit exclusions for transaction-specific and debt-like items; otherwise the true-up could systematically transfer value.",
+        "Follow-up required: map each adjustment to SPA definitions and confirm which items are expected to be settled pre-close versus left in the business."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s38",
+      "intent": "working_capital_review",
+      "objective": "Translate working capital findings into closing mechanics recommendations and quantify potential purchase price adjustment sensitivity.",
+      "evidence": [
+        "Peg mechanics sensitivity: a USD 1.0m swing in NWC at close translates 1:1 to purchase price adjustment under standard true-up provisions.",
+        "Given negative peg baseline, classification decisions (deferred revenue vs debt-like, transaction accruals vs operating accruals) can create disproportionate dispute risk if definitions are not precise.",
+        "Recommended mechanics: (i) define NWC inclusions/exclusions clearly (taxes, transaction accruals, leases), (ii) specify measurement date and methodology (average vs point-in-time), (iii) require detailed schedules for high-volatility accounts.",
+        "Interaction with QoE: timing and policy items (services cut-off, capitalization policy) should be resolved in one place (either QoE or NWC) with explicit cross-references.",
+        "Next-step ask: align legal/SPA teams on proposed NWC definition and produce a pro forma closing statement template prior to signing."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s39",
+      "intent": "key_diligence_risks",
+      "objective": "Consolidate the primary diligence risks, quantify where possible, and propose mitigations or deal protections.",
+      "evidence": [
+        "Revenue cut-off risk on milestone-based services: preliminary QoE adjustment -USD 0.6m (QA11) and related NWC adjustment (WC05/WC09) indicate timing sensitivity.",
+        "Capitalization policy risk: higher capitalization rate drives EBITDA uplift; QA12 (-USD 0.4m) remains support-pending and requires policy and time-tracking validation.",
+        "Customer concentration/retention risk: top 10 customers ~22% of FY25 revenue; NRR/GRR metrics are management-reported and require tie-out to billings.",
+        "Data security and remediation risk: QA05 (+USD 0.4m) indicates a discrete incident; buyer should confirm remediation completeness and any ongoing obligations.",
+        "Mitigations: targeted purchase agreement definitions, specific indemnities for discrete matters, and diligence completion conditions for high-impact open items."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s40",
+      "intent": "reporting_environment",
+      "objective": "Assess financial reporting process maturity and highlight areas that affect diligence confidence and post-close integration effort.",
+      "evidence": [
+        "Month-end close is reported at ~8 business days; ERP transition has increased manual workarounds and reconciliations (management walkthrough; support pending).",
+        "Manual journals represent ~18% of quarter-end entries, concentrated in revenue cut-off, capitalization, and accrual true-ups (support pending to JE listing).",
+        "Key process gaps (preliminary): inconsistent project accounting for services milestones, limited automated deferred revenue rollforward, and reliance on spreadsheets for capitalization eligibility.",
+        "Transaction implication: higher reporting risk increases the probability of working capital and QoE disputes; buyer should plan for early controls uplift and reporting automation post-close.",
+        "Recommended remediation: strengthen cut-off controls, implement contract accounting subledger reporting, and formalize capitalization governance with periodic review."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s41",
+      "intent": "general_fdd_analysis",
+      "objective": "List the unresolved diligence items required to finalize QoE, peg, and EV-to-equity bridge conclusions.",
+      "evidence": [
+        "Priority open items (support pending): QA03 (legal settlement), QA09 (related-party hosting markup), QA11 (services cut-off), QA12 (capitalization normalization), WC02 (ERP payable classification), WC04/WC05 (AR/contract asset reserves), WC10 (litigation reserve).",
+        "Data requests to close: AR aging + subsequent receipts; deferred revenue rollforward; services delivery evidence for milestone billings; capitalization policy memo + time tracking; JE listing for quarter-end.",
+        "Definition alignment: confirm SPA treatment for deferred revenue, taxes payable, transaction accruals, and any debt-like reserves to avoid double-counting across QoE and NWC.",
+        "Timeline assumption: package is prepared on a simulated basis; in a live deal, these items would be prioritized in the final 2\u20133 weeks before signing/close.",
+        "Transaction implication: absent support closure, valuation should reference a normalized EBITDA and NWC peg range rather than a point estimate."
+      ],
+      "preferred_visual": "narrative"
+    },
+    {
+      "slide_id": "s42",
+      "intent": "appendix_support",
+      "objective": "Provide ARR cohort / retention support for the main-deck revenue quality conclusions.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Management-reported ARR increased from ~USD 118m (FY23) to ~USD 148m (FY25) and ~USD 155m (TTM Jun-26) (support pending to billing export).",
+        "Net revenue retention is reported at ~108\u2013109% in FY25\u2013TTM, implying expansion offsets churn; cohort analysis required to validate by segment.",
+        "Transaction implication: revenue durability and valuation multiple depend on retention quality; reconcile ARR to GAAP revenue and validate cohort-level retention drivers.",
+        "Data request: ARR bridge by customer cohort, churn log, and price uplift schedule tied to contract terms."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s43",
+      "intent": "payroll_appendix",
+      "objective": "Support operating expense analysis with payroll/headcount trends and preserve the analyst-owned exhibit placeholder.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Exhibit handoff: replace placeholder with payroll bridge tied to HRIS and payroll registers (by function and location).",
+        "Total cash compensation (management reporting; preliminary): ~USD 44m (FY23) to ~USD 52m (FY25) and ~USD 54m (TTM Jun-26).",
+        "Headcount (preliminary): ~560 FTE (FY23) to ~610 FTE (FY25) with hiring concentrated in sales and product; contractor usage increased in FY25 for implementation backlog.",
+        "Potential normalization linkage: severance/retention (QA02/QA06) and contractor backlog costs (QA07) should reconcile to payroll and vendor invoices.",
+        "Follow-up required: FTE roster, comp mix (base/bonus/commission), and reconciliation of payroll to GL by department."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s44",
+      "intent": "appendix_support",
+      "objective": "Provide capex and capitalized software detail to support cash conversion and capitalization policy conclusions.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "TTM Jun-26 PP&E capex was USD 3.0m and capitalized software development was USD 4.5m (cash flow bridge).",
+        "Major spend themes (management reporting; support pending): platform re-architecture, security tooling, and customer success automation.",
+        "Transaction implication: validate that capitalized software additions meet eligibility criteria and that amortization profile is consistent with useful lives; this directly impacts EBITDA normalization (QA12).",
+        "Data request: capex ledger, capitalized project listing, and rollforward from additions to amortization."
+      ],
+      "preferred_visual": "table"
+    },
+    {
+      "slide_id": "s45",
+      "intent": "appendix_support",
+      "objective": "Provide debt and lease schedule detail supporting net debt and covenant commentary.",
+      "evidence": [
+        "[TABLE IMAGE PLACEHOLDER]",
+        "Term debt balance was USD 38.0m at Jun-26; lease liabilities were USD 4.0m (balance sheet).",
+        "Illustrative terms (management-provided; support pending): variable-rate term loan (SOFR + ~3.25%), maturity 2029, quarterly amortization with optional prepayment.",
+        "Covenant framework (support pending): net leverage covenant <3.5x and minimum liquidity covenant; confirm definitions and add-backs permitted.",
+        "Transaction implication: debt-like item definitions and covenant headroom should be validated early to avoid closing delays and post-close surprises.",
+        "Data request: executed credit agreement, amortization schedule, and historical covenant compliance calculations."
+      ],
+      "preferred_visual": "table"
+    }
   ]
 }

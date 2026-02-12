@@ -8,13 +8,7 @@ Entries below are pulled from `docs/Scope Review/deletion-optional-tracker.md`.
 
 ### Excluded / Rewrite Before Reuse
 
-| Scope ID | Path | Status | Disposition | Notes |
-|---|---|---|---|---|
-| `scope.003` | `common.accounting_overview.scope.003` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Parent/jurisdiction-specific IFRS framing. |
-| `scope.225` | `manufacturing.quality_of_earnings.scope.225` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side advisor framing in reusable baseline. |
-| `scope.226` | `manufacturing.quality_of_earnings.scope.226` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
-| `scope.227` | `manufacturing.quality_of_earnings.scope.227` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | Sell-side framing in reusable baseline. |
-| `scope.229` | `manufacturing.quality_of_earnings.scope.229` | `REMOVED_CANONICAL` | `EXCLUDE_REUSABLE_OR_REWRITE` | VDD/sell-side framing in reusable baseline. |
+_None._
 
 ### Optional / Pending Review
 

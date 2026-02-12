@@ -1,0 +1,16 @@
+[
+  {
+    "index": 1,
+    "source_file": "Example report_Private Equity lender_Project Garrison.pptx",
+    "source_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/Example report_Private Equity lender_Project Garrison.pptx",
+    "format": "pptx",
+    "report_id": "example-report-private-equity-lender-project-garrison"
+  },
+  {
+    "index": 2,
+    "source_file": "Project Ascend - Report.pptx",
+    "source_path": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/reports/Project Ascend - Report.pptx",
+    "format": "pptx",
+    "report_id": "project-ascend-report"
+  }
+]

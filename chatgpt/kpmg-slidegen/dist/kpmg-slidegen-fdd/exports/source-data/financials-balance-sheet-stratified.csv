@@ -1,0 +1,25 @@
+line_item,FY2023,FY2024,FY2025,TTM Jun-2026
+Cash,12.0,10.0,11.0,13.0
+Accounts Receivable,22.0,25.0,27.0,28.0
+Contract Assets (Unbilled Receivables),6.0,7.0,8.0,9.0
+Prepaids & Other Current Assets,4.0,4.0,5.0,5.0
+Total Current Assets,44.0,46.0,51.0,55.0
+"Property, Plant & Equipment (net)",8.0,9.0,10.0,10.0
+Capitalized Software (net),14.0,16.0,18.0,19.0
+Goodwill,60.0,60.0,60.0,60.0
+Other Intangibles (net),25.0,22.0,19.0,17.0
+Other Long-Term Assets,2.0,2.0,2.0,2.0
+Total Assets,153.0,155.0,160.0,163.0
+Accounts Payable,9.0,10.0,11.0,12.0
+Accrued Expenses,7.0,8.0,9.0,9.0
+Accrued Compensation,6.0,7.0,8.0,8.0
+Deferred Revenue (Current),28.0,32.0,36.0,38.0
+Other Current Liabilities,3.0,3.0,3.0,3.0
+Total Current Liabilities,53.0,60.0,67.0,70.0
+Deferred Revenue (Non-Current),6.0,7.0,7.0,8.0
+Term Debt,50.0,45.0,40.0,38.0
+Lease Liabilities,4.0,4.0,4.0,4.0
+Other Long-Term Liabilities,1.0,1.0,1.0,1.0
+Total Liabilities,114.0,117.0,119.0,121.0
+Total Equity,39.0,38.0,41.0,42.0
+Total Liabilities & Equity,153.0,155.0,160.0,163.0

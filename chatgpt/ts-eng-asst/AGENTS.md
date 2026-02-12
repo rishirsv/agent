@@ -25,18 +25,34 @@ Keep `dist/` limited to:
 - The current schema(s) / library files referenced by the prompt (e.g. `scope-library.json`)
 - Any icon assets explicitly used for the GPT configuration
 
+Current upload manifest (must stay exact unless intentionally changed):
+
+- `dist/engagement_letter_generator.py`
+- `dist/scope_engine.py`
+- `dist/ts-engagement-assistant.md`
+- `dist/assistant-playbook.md`
+- `dist/el-placeholder-schema.json`
+- `dist/scope-library.json`
+- `dist/scope-review-buckets.json`
+- `dist/section-applicability.json`
+- `dist/scope-library-optional.json`
+- `dist/buyside-engagement-letter.docx`
+- `dist/sellside-engagement-letter.docx`
+- `dist/ts-engagement-assistant-icon.png` (only if used in GPT config)
+
 Do **not** add to `dist/`:
 
 - Demo artifacts (example outputs, example variable dumps)
 - Test outputs or golden files
 - Local caches (`__pycache__/`, `*.pyc`)
 - OS/editor metadata (`.DS_Store`, etc.)
+- Build or review artifacts (`*.tmp`, `*-candidate*.json`, test `.docx`, screenshots)
 
 Dual-distribution rule:
 
-- Internal scripts must not directly import/load `dist/el-generate.py`.
-- Use `scripts/internal_generate.py` for internal generation runs.
-- Runtime upload path remains `dist/el-generate.py` + `dist/_scope_core.py`.
+- Internal scripts must not directly import/load `dist/engagement_letter_generator.py`.
+- Use `scripts/run_internal_generation.py` for internal generation runs.
+- Runtime upload path remains `dist/engagement_letter_generator.py` + `dist/scope_engine.py`.
 
 If you need demo or test materials, put them under `chatgpt/ts-sow/reference/` (or another non-`dist/` folder) instead.
 
@@ -48,20 +64,24 @@ If you need demo or test materials, put them under `chatgpt/ts-sow/reference/` (
   - `python3 scripts/check-system-prompt-contract.py --prompt dist/ts-engagement-assistant.md --max-chars 8000`
 - Validate outputs are “clean”: no remaining `{{...}}` tokens in generated `.docx`.
 - For scope text changes, treat `dist/scope-library.json` as canonical.
-- Keep `docs/scope-library/industries/*` synced to `dist` (re-export with `python3 scripts/export-scope-library.py`).
+- Keep `docs/scope-library/industries/*` synced to `dist` (re-export with `python3 scripts/export_scope_review_surface.py`).
 - `reference/legacy/*` contains historical snapshots only (not authoritative).
 - For scope text QA, run:
   - `python3 scripts/refresh-scope-metadata.py`
   - `python3 scripts/check-scope-spelling.py`
-  - `python3 scripts/validate-scope-exports.py`
+  - `python3 scripts/validate_scope_review_exports.py`
   - `python3 -m json.tool dist/scope-library.json >/dev/null`
   - `python3 -m json.tool dist/scope-review-buckets.json >/dev/null`
-  - `python3 scripts/validate-distribution-manifests.py`
-  - `python3 scripts/validate-internal-boundary.py`
+  - `python3 scripts/validate_upload_manifest.py`
+  - `python3 scripts/validate_internal_runtime_boundary.py`
 
 - If merge candidates/backups are created during scope canonicalization:
   - Move them to `reference/legacy/` after merge.
   - Do not leave merge temp files in `dist/`.
+- If any non-manifest file appears in `dist/`:
+  - Move generated samples to `reference/generated/examples/`.
+  - Move diagnostics/review docs to `docs/` or `reference/legacy/`.
+  - Re-run `python3 scripts/validate_upload_manifest.py` before finishing.
 
 ## Scope Library Review Workflow (Docs-first)
 
@@ -71,12 +91,12 @@ When scope cleanup is in review mode, use `docs/scope-library/industries` as the
   - `docs/scope-library/industries/*.json`
   - `docs/scope-library/industries/*.md`
 - Regenerate industry files with:
-  - `python3 scripts/export-scope-library.py`
+  - `python3 scripts/export_scope_review_surface.py`
 - Only generate skeleton pack when explicitly requested:
-  - `python3 scripts/export-scope-library.py --with-skeleton`
+  - `python3 scripts/export_scope_review_surface.py --with-skeleton`
 - Do not update `dist/scope-library.json` unless the user explicitly says to finalize/canonicalize changes.
 - After exports, always run:
-  - `python3 scripts/validate-scope-exports.py`
+  - `python3 scripts/validate_scope_review_exports.py`
   - `python3 scripts/check-scope-spelling.py`
 
 ## Section Applicability (Docs-layer)
@@ -100,10 +120,10 @@ Workflow:
 
 1. Update `docs/scope-library/section-applicability.json`.
 2. Regenerate exports:
-   - `python3 scripts/export-scope-library.py`
-   - Optional skeleton pack: `python3 scripts/export-scope-library.py --with-skeleton`
+   - `python3 scripts/export_scope_review_surface.py`
+   - Optional skeleton pack: `python3 scripts/export_scope_review_surface.py --with-skeleton`
 3. Validate:
-   - `python3 scripts/validate-scope-exports.py`
+   - `python3 scripts/validate_scope_review_exports.py`
    - `python3 scripts/check-scope-spelling.py`
 
 Notes:
@@ -156,7 +176,7 @@ c) Other fee income and commissions - trends therein and noted one-time / non-ca
 
 - **Guidance text:** bracketed guidance like `[GUIDANCE: ...]` is intended to **remain in the output** for humans to edit; only curly-brace guidance placeholders (e.g. `{{GUIDANCE_01}}`, `{{GUIDANCE: ...}}`) are internal and should be removed during generation.
 - **Section removal:** prefer explicit marker paragraphs (e.g. `{{BLOCK_*_START}}` / `{{BLOCK_*_END}}`) so the generator can delete entire sections deterministically.
-- **Generation invocation contract:** always call `el-generate.py` via subprocess flags, and pass `--variables` as a JSON file path (temp file), not a long inline JSON string.
+- **Generation invocation contract:** always call `engagement_letter_generator.py` via subprocess flags, and pass `--variables` as a JSON file path (temp file), not a long inline JSON string.
 - **Independence behavior (intended):**
   - If `CHOICE_INDEPENDENCE_APPLIES=no`, remove the full Independence Considerations block.
   - `CHOICE_SEC_STATUS` is conditionally required only when `CHOICE_INDEPENDENCE_APPLIES=yes` and the section remains in-template.

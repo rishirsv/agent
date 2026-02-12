@@ -1,0 +1,576 @@
+{
+  "summary": {
+    "slideCount": 45,
+    "overlapCount": 10,
+    "severeCount": 0,
+    "warningCount": 10,
+    "containmentCount": 0
+  },
+  "slides": [
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [
+        {
+          "slide": "Slide 6",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 2,
+            "type": "text",
+            "x": 1.0905511811023623,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 1.0918635170603674,
+            "y": 1.5399311023622047,
+            "w": 5.5065616797900265,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        },
+        {
+          "slide": "Slide 6",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 3,
+            "type": "text",
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.505249343832022,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        }
+      ],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 2
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [
+        {
+          "slide": "Slide 17",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 2,
+            "type": "text",
+            "x": 1.0905511811023623,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 1.0918635170603674,
+            "y": 1.5399311023622047,
+            "w": 5.5065616797900265,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        },
+        {
+          "slide": "Slide 17",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 3,
+            "type": "text",
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.505249343832022,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        }
+      ],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 2
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [
+        {
+          "slide": "Slide 24",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 2,
+            "type": "text",
+            "x": 1.0905511811023623,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 1.0918635170603674,
+            "y": 1.5399311023622047,
+            "w": 5.5065616797900265,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        },
+        {
+          "slide": "Slide 24",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 3,
+            "type": "text",
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.505249343832022,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        }
+      ],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 2
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [
+        {
+          "slide": "Slide 38",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 2,
+            "type": "text",
+            "x": 1.0905511811023623,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 1.0918635170603674,
+            "y": 1.5399311023622047,
+            "w": 5.5065616797900265,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        },
+        {
+          "slide": "Slide 38",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 3,
+            "type": "text",
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.505249343832022,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        }
+      ],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 2
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [
+        {
+          "slide": "Slide 40",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 2,
+            "type": "text",
+            "x": 1.0905511811023623,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 1.0918635170603674,
+            "y": 1.5399311023622047,
+            "w": 5.5065616797900265,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        },
+        {
+          "slide": "Slide 40",
+          "a": {
+            "index": 1,
+            "type": "text",
+            "x": 1.0918635170603674,
+            "y": 1.1055555555555556,
+            "w": 11.149606299212598,
+            "h": 0.44375,
+            "ignorable": false
+          },
+          "b": {
+            "index": 3,
+            "type": "text",
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.5078740157480315,
+            "h": 4.883858267716535,
+            "ignorable": false
+          },
+          "intersection": {
+            "x": 6.7362204724409445,
+            "y": 1.5399311023622047,
+            "w": 5.505249343832022,
+            "h": 0.009374453193351062
+          },
+          "severity": "warning",
+          "suggestion": "Reposition elements vertically."
+        }
+      ],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 2
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    },
+    {
+      "overlaps": [],
+      "containment": [],
+      "severeCount": 0,
+      "warningCount": 0
+    }
+  ]
+}

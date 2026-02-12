@@ -591,7 +591,10 @@ export function addSlide25UpsidesSensitivitiesTable(slide) {
   });
 }
 
-export function addAnalysisNarrowTable(pptx, { title, strapline, table, notes, geometry, masterName } = {}) {
+export function addAnalysisNarrowTable(
+  pptx,
+  { title, strapline, table, notes, insights: customInsights, geometry, masterName } = {},
+) {
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const g = geometry || {};
 
@@ -616,7 +619,10 @@ export function addAnalysisNarrowTable(pptx, { title, strapline, table, notes, g
     const yShift = strapline && !hasMeasuredStrapline ? STRAPLINE_SHIFT : 0;
     const cols = Array.isArray(table.headers) ? table.headers.length : 0;
     const rows = Array.isArray(table.rows) ? table.rows.length : 0;
-    const insights = insightsForAnalysisTable(title, table);
+    const insights =
+      Array.isArray(customInsights) && customInsights.length
+        ? customInsights
+        : insightsForAnalysisTable(title, table);
 
     // Default analysis layout: two columns (table + narrative). This matches how
     // these pages are typically built in diligence decks and lets us keep slides
