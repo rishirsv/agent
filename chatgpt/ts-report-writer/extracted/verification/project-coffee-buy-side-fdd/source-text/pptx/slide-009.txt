@@ -1,0 +1,56 @@
+Headlines (2/3)
+Observation
+Topic
+Implication
+Value impact
+Observation
+Topic
+Valuation
+SPA
+Other
+Impact
+Proposed adjustments
+(USD million)
+Historical performance - [ENTITY 1]
+Quality of information and basis of preparation
+FDD
+The significant increase in revenue in FY[X]2 was attributable to sales to [CUSTOMER 1] which has later discontinued in February 20XX. Despite the increase in cost of raw materials, %GP margin has increased throughout the historical periods due to the adjustment in selling prices of products, the adjustment in coffee blend mix and the decrease in portion of coffee beans purchased from [ADDRESS] which were considered more expensive than other sources.
+🗸
+✘
+✘
+EBITDA
+n/a
+Value Creation
+[ENTITY 1] has a number of coffee bean suppliers, and coffee beans bought from a provider in [ADDRESS] are considered to have a higher raw material cost.
+Vendor spend analysis could help with
+the identification of viable terms for negotiations and vendor consolidation.
+🗸
+✘
+✘
+EBITDA
+UQ
+Historical performance - [ENTITY 3]
+FDD
+The increase in revenue of [ENTITY 3] in FY[X]2 and MM[X]3 was mainly driven by external customers while the sales to [ENTITY 2] has decreased due to lower number of [BRAND 1] stores and [ENTITY 2]’s tightened food waste policy. %GP margin and % EBITDA have decreased throughout FY[X]2 and MM[X]3 due to the increase in cost of raw materials despite the change in supplier of butter and the adjustment to product receipe as well as the increase in staff cost.
+🗸
+✘
+✘
+EBITDA
+n/a
+Value Creation
+As the financial analysis shows the reduction in EBITDA margin
+throughout FY[X]2 and MM[X]3,
+product profitability and fully costed analysis could help
+rationalise
+the product portfolio and improve margins with a focus on high profitable products
+🗸
+✘
+✘
+EBITDA
+UQ
+Read more
+Read more
+Read more
+Read more
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices | Engagement Appendices

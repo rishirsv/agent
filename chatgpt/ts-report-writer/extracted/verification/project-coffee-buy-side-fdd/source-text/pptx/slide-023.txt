@@ -1,0 +1,35 @@
+Group: Pro forma consolidated profit & loss (1/2)
+The increase in the Group’s revenue in FY[X]2 was mainly driven by increased sales of [ENTITY 1] and [ENTITY 3].
+The decrease in %GP and %EBITDA in MM[X]3 was mainly caused by increased discount rate provided by [ENTITY 2] to its customers, increased cost of bakery and higher staff cost.
+Source: (1)
+Audited financial statements for FY[X]1 and FY[X]2
+, (2)
+Management account for FY[X]1, FY[X]2 and MM[X]3
+, (3) Summary of related party transactions for FY[X]1, FY[X]2, MM[X]3, and (4) KPMG analysis
+Commentary on pro forma consolidated profit and loss
+Basis of preparation:
+Indicative pro forma consolidated P&L was prepared based on stand-alone financial performance of the 3 Target entities, after adjustment for the elimination of intercompany transactions (i.e. sales, rental fee, interest income). We recommend detailed analysis to be performed to quantify the impact of the following:
+Unrealised profit from the sales of products between related parties which were not yet sold to third parties.
+Unrealised profit from the sales of coffee machines from [ENTITY 1] to [ENTITY 2] to be used at [BRAND 1] stores
+Please refer to Appendix 2 for more details.
+Pro forma consolidated revenue was primarily derived from [BRAND 1] coffee shop chain business under [ENTITY 2] operating entity, accounting for 65.7%-77.1% of total Group revenue during the analysed period. The improvement in FY[X]2 was mainly driven by increased sales of coffee beans to [CUSTOMER 1] by USD 34.7 million, cake products to [CUSTOMER 5] and [CUSTOMER 3] by USD 8.9 million in total as well as the increase in average ticket size at stores from USD 89 in FY[X]1 to USD 97 in FY[X]2.
+Cost of goods sold mainly included cost of coffee beans and bakery materials, packaging cost, direct labour, and other overheads expenses. The increase in % cost to total revenue throughout FY[X]1-MM[X]3 was largely caused by the higher cost of raw material of bakery, especially butter, eggs and wheat flour. Although the cost of coffee beans has increased during the historical periods, [ENTITY 1] has tried to maintain the margin through the adjustment of selling prices and coffee blends to reduce cost.
+Executive summary
+|
+Consolidated financial performance
+|
+Financial performance
+|
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

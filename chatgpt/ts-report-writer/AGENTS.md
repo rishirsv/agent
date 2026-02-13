@@ -117,6 +117,20 @@ Required verification artifacts include:
 
 - Date: 2026-02-13
 - Report ID: `project-cinema-report`
+- Issue observed: markdown looked cleaner and source-backed, but section placement still mismatched montage flow in follow-up review.
+- Root cause: provenance exact-match was treated as sufficient while manual montage-to-section reconciliation was incomplete.
+- Fix applied: remapped sections from page-level source artifacts and strengthened autopilot docs to require montage page-ID evidence before pass.
+- Prevention rule: never mark `pass` on provenance/gates alone; require explicit montage reconciliation evidence with page IDs in review notes.
+
+- Date: 2026-02-13
+- Report ID: `project-coffee-buy-side-fdd`
+- Issue observed: initial strict PPTX extraction passed provenance but failed fail-closed `cleanup_quality` due many fragment/table-label bullets, and `manual_checklist_complete` failed because review notes were left templated.
+- Root cause: raw PPTX XML line selection retained numerous low-context fragments and QA checklist metadata was not completed before gating.
+- Fix applied: executed a full-report cleanup by pruning fragment-triggering lines from selected catalog, regenerated markdown/render-trace/section mapping artifacts together, added source-evidence + coverage-map sections, completed review checklist, and reran provenance + gates to pass.
+- Prevention rule: for PPTX reports, treat `cleanup_quality` and `manual_checklist_complete` as mandatory finalization steps; after cleanup, always regenerate trace/mapping artifacts in lockstep with markdown before rerunning gates.
+
+- Date: 2026-02-13
+- Report ID: `project-cinema-report`
 - Issue observed: initial strict PDF extraction produced many sentence fragments and navigation leftovers that passed provenance matching but failed the new `cleanup_quality` fail-closed gate.
 - Root cause: exact source-line matching alone is insufficient for final output quality; fragment/noise bullets must be removed globally before final QA.
 - Fix applied: rerendered from strict source-backed lines with a full-report cleanup filter for fragment endings/navigation noise, then regenerated mapping/render artifacts and completed review checklist before rerunning gates.

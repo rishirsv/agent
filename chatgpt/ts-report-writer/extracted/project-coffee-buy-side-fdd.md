@@ -1,0 +1,1504 @@
+# Report Extraction: project-coffee-buy-side-fdd
+
+## Report Metadata
+
+- `SOURCE_FILE`: Project Coffee_buy side_FDD .pptx
+- `REPORT_ID`: project-coffee-buy-side-fdd
+- `SOURCE_PATH`: reports/Project Coffee_buy side_FDD .pptx
+- `EXTRACTION_STATUS`: extracted_pending_verification
+- `EXTRACTION_DATE`: 2026-02-13T20:04:17.817414+00:00
+- `VERBATIM_MODE`: strict
+- `EVIDENCE_PROFILE`: full
+- `FAIL_CLOSED`: true
+
+# Executive Summary
+- Financial due diligence report
+- [MAIN CLIENT]
+- [DATE]
+- Project [X] — Financial due diligence
+- [MONTH]
+- . We have not undertaken to update our report for events or circumstances arising after that date.
+- We draw your attention to the following matters:
+- Our work on historical trading comprises the financial years ended December 31, 20XX and 20XX, and year-to-date period until [MONTH] 31, 20XX.
+- Please review the following documents in the appendices, which set out the basis and limitations of our work performed:
+- You should note that our findings do not constitute recommendations to you as to whether or not you should proceed with the proposed transaction.
+- We would be pleased to receive your observations on our report. Please feel free to contact us to discuss.
+- [NAME]
+- Partner, Deal Advisory
+- [MAIN CLIENT]
+- [ADDRESS]
+- [SIGNATURE]
+- Shareholding structure
+- Pro forma consolidated profit & loss
+- Group’s staff cost
+- SG&A breakdown
+- Supporting analysis - [ENTITY 2]
+- [ADDRESS]
+- [MR./MRS.] [LESSOR NAME]
+- [ADDRESS]
+- Mr. [LESSOR NAME]
+- Headquarter and factory locating
+- [ADDRESS] are owned by [ENTITY 3].
+- Factories and warehouse
+- Roasting factory at [ADDRESS]
+- USD 160,000/ month
+- [ADDRESS]
+- No rental fee paid to [ENTITY 3]
+- Beverage factory at [ADDRESS]
+- (For manufacturing of concentrated drinks, syrups, powder mix and other beverages)
+- Mr. [LESSOR NAME]
+- Roasting and Cleaning machine located on land leased from [NAME]
+- (For roasting and cleaning green beans purchased from local farmers)
+- USD 35,541/ year
+- [ORG 3] (currently paid by the family)
+- Quality of information and internal control
+- Financial information of [ENTITY 2], [ENTITY 1], and [ENTITY 3] were prepared based on TFRS for NPAEs. If TFRS for PAE is adopted, there are several accounting standards which should be considered e.g. TFRS 15 Revenue from contract with customers, TFRS16 Leases, TAS19 Employee Benefits and TAS37 Provisions, Contingent Liabilities and Contingent Assets Recognition
+- Historical performance - [ENTITY 1]
+- The significant increase in revenue in FY[X]2 was attributable to sales to [CUSTOMER 1] which has later discontinued in February 20XX. Despite the increase in cost of raw materials, %GP margin has increased throughout the historical periods due to the adjustment in selling prices of products, the adjustment in coffee blend mix and the decrease in portion of coffee beans purchased from [ADDRESS] which were considered more expensive than other sources.
+- [ENTITY 1] has a number of coffee bean suppliers, and coffee beans bought from a provider in [ADDRESS] are considered to have a higher raw material cost.
+- the identification of viable terms for negotiations and vendor consolidation.
+- Historical performance - [ENTITY 3]
+- The increase in revenue of [ENTITY 3] in FY[X]2 and MM[X]3 was mainly driven by external customers while the sales to [ENTITY 2] has decreased due to lower number of [BRAND 1] stores and [ENTITY 2]’s tightened food waste policy. %GP margin and % EBITDA have decreased throughout FY[X]2 and MM[X]3 due to the increase in cost of raw materials despite the change in supplier of butter and the adjustment to product receipe as well as the increase in staff cost.
+- As the financial analysis shows the reduction in EBITDA margin
+- the product portfolio and improve margins with a focus on high profitable products
+- Net revenue during FY[X]1-MM[X]3 was negatively impacted by increased % discount in MM[X]3 and the decline in average ticket size from both existing stores and closed stores despite the recovery of traffic to some store locations.
+- Sale promotions may not be the most sustainable tool to attract customers in the long run.
+- Consider to perform multiple forecast scenarios on the key drivers of [ENTITY 2]’s performance such as price adjustment, % discount, sale growth for different types of store locations, and cost of raw materials. In addition, commercial due diligence should be carried out to understand the market trend, consumer segments, and competitors. Benchmark analysis on key cost should also be carried out to compare with peers and to provide better understanding on current market positioning and improvement areas.
+- [MAIN CLIENT] should work
+- to conduct a portfolio review of all stores and develop
+- turnaround plans for those non-performing stores considered capable of improving. Foot traffic, local competition, and current product offerings / promotion campaigns and should be analysed.
+- Loss making stores may suggest potential impairment risk of fixed assets. Impairment loss of fixed assets should be considered.
+- Consider to request a renewal of expired lease agreements as a condition precedent to Closing or at least seek formal confirmation from lessors of any extension.
+- A written consent for change of shareholding structure should be obtained
+- from lessors prior to Closing, should they be specifically required. Consult with your legal advisor on the status of all lease agreements.
+- to develop a plan to improve the profitability through SKU rationalisation, new customer acquisition plan, procurement
+- planning and a relationship development plan.
+- Representations and warranties relating to the accuracy and completeness of related party transactions disclosed by Management should be obtained in the SPA.
+- party arrangements post-transaction should be agreed in a written contract prior to Closing and factored into your valuation model.
+- Consider to discuss with Management regarding the settlement plan with respect to loans from directors and related companies. If not settled at/prior to Closing, a formal loan agreement should be in place for the shareholder loan.
+- You should discuss with the [SURNAME] family on the expense they’re currently covering for free of charge at the processing facility in [ADDRESS], and what the future arrangement / payment will be that the Group may have to incur, post-Closing.
+- Introduction to our value creation - initial opportunity assessment
+- Value creation initial opportunity assessment
+- Basis of our work
+- value creation approach uses data and analytics to identify opportunities to enhance a business’s EBITDA and cash flow, at deal speed.
+- We use a combination of internal and external data sets to produce comprehensive insights, along with sector and functional expertise to quantify upside opportunities across revenue, cost and cash.
+- Like-for-like store
+- 3-year negative decline
+- 2-year negative decline
+- 1-year negative decline
+- Segmentation criteria
+- 3-year negative decline:
+- 2-year negative decline:
+- stores which EBITDA is declining, but  EBITDA is still positive
+- stores with achieved positive EBITDA and EBITDA is growing
+- Out of 72 like-for-like stores which operated throughout FY[X]1 to MM[X]3, 17 stores have consecutive years of negative EBITDA which indicates a opportunity to
+- Out of the 72 like-for-like stores, 31 stores have negative EBITDA in MM[X]3 and 17 of these stores have negative EBITDA margin in three or last two periods
+- These 17 stores are mainly located in gas stations which is a major location type in [ENTITY 2] portfolio. The decrease in profitability is mainly driven by decrease in ticket count, higher rental costs and employee cost. They should be targeted for rationalisation.
+- EBITDA opportunity can be
+- for 17 stores by rental expense renegotiation, space reduction, staff headcount reduction or closedown
+- Estimated potential EBITDA upside in the base case has been quantified by closing 3-year negative decline stores
+- Estimated potential EBITDA upside in the stretch case has been quantified by closing 2-year negative decline in addition to the base case
+- In-depth analysis for key drivers and key risks of each store to identify specific factors for EBITDA improvement or rationalisation plan
+- Consider implementing pilot programs in a select number of underperforming stores to test potential solutions.
+- clear performance metrics to track the progress and monitor the impact of these initiatives and gather data for further analysis
+- Estimated EBITDA upside from rental and services cost and employee cost reduction benchmarking to gainer stores
+- Next steps to validate the opportunity
+
+# Key Findings
+- Our financial due diligence report was prepared based on audited financial statements of FY[X]0-FY[X]2, trial balance, and supporting details such as performance by product, by customer, and by store.
+- Audited financial statements of [ENTITY 2] and [ENTITY 3] were audited by [XX] Audit Limited for FY[X]1
+- and by [XX] Audit Co., Ltd. for FY[X]2. Audited financial statements of [ENTITY 1] were audited by [XX] Audit Co., Ltd. for both FY[X]1 and FY[X]2. [ENTITY 2], [ENTITY 3], and [ENTITY 1] received unqualified audit opinion for both years.
+- Management informed us that [ENTITY 2] and [ENTITY 3] changed its auditor in FY[X]2 as they planned to adopt TFRS for PAEs in the future. [XX] Audit Co  is
+- The Targets currently apply TFRS for NPAEs and the policies below should be considered post-Closing should TFRS for PAE be adopted:
+- TFRS15 Revenue from contracts with customers as discussed in the next Key
+- TFRS16 Leases. [ENTITY 2],
+- [ENTITY 1], and [ENTITY 3]
+- currently record rental expenses in the P&L. Minimum rents were required to be capitalised by recognising ROU asset and a lease liability in the Balance sheet and depreciation expenses and finance costs in the income statement.
+- TAS19 Employee Benefits which requires actuarial valuation of employee benefit obligation
+- AS37 Provisions, Contingent Liabilities and Contingent Assets Recognition
+- (for both TFRS for PAEs and NPAEs)
+- rental space and warranty liability for coffee machines.
+- You will be aware that the current due diligence scopes cover historical trading performance only with a high-level observation on Balance Sheet as per p
+- -91. Should You proceed with any proposed transaction, we recommend additional work to be performed as discussed on page 19
+- [ENTITY 2] has never recorded liability with respect to
+- TFRS15 – Revenue from contract with customers,
+- an entity is required to identify and allocate part of the transaction price to each performance obligation
+- or every USD 100 spending, customers will receive a point which can be used to redeem beverages or as a discount for [BRAND 1] merchandise. Part of sales of F&B products to customers should therefore be allocated as performance obligation representing future obligation for reward points. This liability will be recognised as revenue in proportion to the usage pattern of the reward points.
+- In addition to the reward points,
+- [ENTITY 2]’s customers will also earn 1 stamp for each beverage
+- For every 10 stamps collected, customers are entitled to a free drink of their choice (value of USD 75).
+- , all stamps will be reset to zero at month-end
+- [ENTITY 2]’s reward points and [ENTITY 1]’s one-year warranty
+- have never been recorded. Instead, they were recognised as discount in P&L upon redemption of the points or as expenses upon warranty claim.
+- In addition to reward points, [ENTITY 2] also offers other types of sale promotions such as
+- promotion campaigns with third-parties. Management informed us that these have been properly recorded as unearned revenue on the Balance sheet.
+- Management informed us that [ENTITY 2] already has a system in place to track the outstanding reward points. As at 31 May 20XX, there was a total of 1.6 million points which are equivalent to the value of USD 12.0 million - USD 12.5 million calculated based on the estimated value of USD 7.5 to USD 7.8 per point provided by Management.
+- Unrecorded stamps and reward points
+- Quality of information
+- Under TFRS for PAEs, liabilities of [ENTITY 2]
+- are currently understated as they did not record ROU assets / lease liabilities, unredeemed points, product warranty. Further accounting analysis in respect of the impact of TFRS15 and TFRS16 towards financial position and financial performance should be considered.
+- Starting in FY[X]1, [ENTITY 1] and [ENTITY 3] applied standard costing which consisted of direct materials, direct labou
+- standard cost is updated monthly.
+- In the first year of adoption, Management informed us that there were some incorrect Bill of Materials (BOM) information which resulted in a portion of production cost being recognised as work in progress on the Balance sheet when it should have been recognised as cost of goods sold in FY[X]1. Please see the summary of work in progress in the table.
+- Management informed us that the work in progress of [ENTITY 1] has been recognised as cost in FY[X]2, while for [ENTITY 3], this incorrect cost remained on the Balance sheet. Management informed that they have discussed this with the auditor and planned to gradually recognise the cost to P&L in the future.
+- Cost of goods sold
+- Reconciliation of cost between TB and SKU information
+- Standard cost of goods sold is usually adjusted to reflect actual cost at
+- each month-end. Management confirmed that cost of goods sold per the trial balance reflected the actual cost of goods sold. We note that however, this adjustment was only done at the company accounts level.
+- The supporting details containing margin of product at SKU and customer level still reflected the standard cost.
+- According to Management, components of cost of goods sold which were not included in the SKU data mainly consisted of variances which represent the differences between standard cost and actual cost
+- Reported financial performance of [ENTITY 1] and [ENTITY 3] in FY[X]1 and FY[X]2 may not be accurate due to the improper cost recognition. We have proposed to
+- The increase in net revenue of [ENTITY 2] in FY[X]2 was mainly driven by the increase in average ticket size contributed by the price adjustment of approximately 4% and increased sales of marketing sets (i.e. a
+- combination of beverage and bakery sold at discounted price)
+- offset by the impact of 21 closed stores during FY[X]1-FY[X]2.
+- The decrease in revenue in MM[X]3 by 3.1% from MM[X]2 was contributed by
+- increased % discount through the sales of larger value voucher packs which reduced the average net revenue per ticket
+- and the impacts from declining ticket count from the overall economic downturn and the impact of closed stores, as cited by Management.
+- Net revenue from LFL stores (i.e. stores which operated throughout the analysed periods) represented over 75% of total revenue in MM[X]3 but saw a decrease of 4.4% from MM[X]2 period being driven by
+- Management. Net revenue from LFL stores at offices and universities have improved in both FY[X]2 and MM[X]3 as more people have
+- onsite classes at universities, which increased traffic.
+- From FY[X]1 to June 20XX, a total of 31
+- stores were closed due to historical underperformance as well as some locations were having issues on the renewal of lease agreements.
+- The increase in % GP and EBITDA margin in FY[X]2 was due the increased margin of beverage from price adjustment offset by the decreased margin of bakery due to increased cost of raw materials and staff salary incremental increase. The subsequent decrease in % GP and EBITDA margin in MM[X]3 was caused by
+- higher transportation and accommodation allowances provided to staff.
+- The number of loss-making stores at EBITDA level has significantly
+- increased from 24 in FY[X]2 to 47 in MM[X]3, with an increase mainly from gas station locations. This suggests that nearly half of the total stores are now loss-making and have an adverse impact to [ENTITY 2]’s underlying EBITDA.
+- of these stores were loss making at EBITDA level throughout FY[X]1-MM[X]3 suggesting potential risk of asset impairments. This included 11 LFL stores and 2 new stores.
+- According to Management, 4 of these stores will be closed once their rental contracts end during FY[X]3-FY[X]. The other 2 stores are stand-alone flagship stores (i.e. with higher rental cost and staff cost). For the remaining 7 stores, Management has managed to reduce rental cost for one of them with the rest still in the negotiation process with lessors.
+- According to the summary of lease agreements prepared by Management, there are 24
+- stores of [ENTITY 2] whose contracts have expired or will expire in 20XX.
+- Revenue generated from these 2
+- represented approximately 24% of total revenue of [ENTITY 2] in FY[X]2 and MM[X]3.
+- Management informed us that for 21 of these stores, [ENTITY 2] is in the process of renewing the leases (11 stores) or
+- The other three branches which are [BRANCH 1]
+- BRANCH 2], and [BRANCH 3]
+- will be closed by August 20XX, October 20XX, and December 20XX respectively.
+- Loss-making stores
+- The sales of coffee beans accounted for approximately 60-70% of total sales of [ENTITY 1]. Other products sold by [ENTITY 1] included non-coffee beverages as well as coffee machines and equipment.
+- The increase in FY[X]2 revenue was attributable to the increase in sales to [CUSTOMER 1] (accounting for 32.3% of total sales in FY[X]2), and to B2B customers particularly [CUSTOMER 5 and CUSTOMER 6]. In MM[X]3, although sales to the B2B business continued to increase, it was offset by the impact from
+- as the contract has ended without being renewed. [ENTITY 1] was not selected by [CUSTOMER 1] in the previous bid given
+- the increase in selling price of coffee beans from higher cost of raw materials.
+- As discussed on page 11, the incorrect BOM information in FY[X]1 caused the reported cost of goods sold in FY[X]1 to be understated, and cost in FY[X]2 to be overstated by USD 2.7 million. In the graph adjacent, we have reflected the appropriate adjustment and presented % margins on an adjusted basis – this shows %GP and % EBITDA in FY[X]1 to decrease by 3.6
+- ppt and %GP and %EBITDA in FY[X]2 to increase by 2.4
+- ppt. We note that the breakdown of the adjustment at SKU and customer level was not available. The analysis of margin by customer was therefore presented on the reported numbers
+- the adjustment of selling prices of coffee beans and the adjustment of coffee blend in FY[X]2 as well as the increased purchases of cheaper Lao Arabica beans in MM[X]3. In addition to the impact from increased GP margin,  adjusted EBITDA margin in FY[X]2 also benefited from the reduction in staff cost as resigned staff were replaced by junior staff with lower pay rate.
+- Margin of coffee beans sold to B2B was higher than B2C customers due to the selling price agreed with [
+- (>70% margin in FY[X]2 and MM[X]3), which Management stated was significantly higher than other customers. Management also informed us that selling prices to B2B customers are higher than B2C customers in general. However, we note that marketing fees charged by B2B customers were recorded in SG&A and therefore not reflected in the %GP margin.
+- During FY[X]1 to MM[X]3, sales to [CUSTOMER 5] accounted for over 50% of the total sales of coffee beans to B2B customers.
+- During FY[X]2 and MM[X]3,
+- [ENTITY 3] derived more than 60% of its total revenue from sales to [ENTITY 2] and approximately 25-30% from recurring customers in retail business. The increase in revenue in FY[X]2 was mainly driven by the increased sales to [CUSTOMER 5], sales to [CUSTOMER 3]
+- is a newly acquired customer, and sales of seasonal products to [CUSTOMER 7].
+- As discussed on page 11, the incorrect BOM information in FY[X]1 caused the cost of goods sold in FY[X]1 to be understanded by USD 5.3 million. In the graph adjacent, we have reflected the appropriate adjustment and presented % margins on an adjusted basis – this shows %GP and % EBITDA in FY[X]1 to decrease by 8.8 ppt. Similar to [ENTITY 1], we note that the breakdown of the adjustment at SKU and customer level was not available. The analysis of margin by customer was therefore presented the reported figures before the adjustment.
+- The increase in cost of raw materials has put downward pressure to the % adjusted
+- GP margin in FY[X]2 and MM[X]3 despite the change in the suppliers of some ingredients and the adjustment of product recipes in order to reduce cost.
+- In addition to the impact from decreased GP margin, the decline in EBITDA margin was contributed by increased marketing fees charged from customers in FY[X]2 and the increase in staff cost from salary adjustment in MM[X]3.
+- Margin by customer type
+- customer type was only available for the month during Jul-Dec 20XX and may be overstated due to the reason discussed above.
+- Margin from seasonal customers in FY[X]1 and FY[X]2 was higher than margin from sales to other types of customers due to high portion of cookies and cakes sales which generated high margin of almost 40% in FY[X]2. Margin from seasonal customers has turned negative in MM[X]3 due to
+- In addition, Management also informed us that the selling prices of recurring customers were determined based on expected retail prices. Selling prices of seasonal customers on the other hand were determined based on cost structure of products themselves.
+- According to Management, although selling prices to recurring customers can be adjusted, the negotiation process takes time. Therefore, the increase in raw material cost also could not be fully passed on to customers immediately.
+- Adjusted financial performance represented financial performance of [ENTITY 3] after the adjustment with respect to incorrect cost recognition as discussed on page 11
+- Remark: This table represented margins at standard cost. Please see further explanation on page 11
+- Related party transactions during FY[X]2 and MM[X]3 primarily included the following transaction natures:
+- Sales of coffee beans,
+- coffee machines and bakery between [ENTITY 3], [ENTITY 1], [ENTITY 2] entities.
+- [ADDRESS]
+- roasting and storage facilities for coffee beans at the rental rate of USD 160,000
+- Loans from directors who are members of [SURNAME] family free of interest charges
+- According to the audited financial statements of FY[X]2,
+- the directors will not demand repayment of the loan until the company has sufficient cash flow to make the repayment.
+- Loans from financial institutions
+- Short-term and long-term loans of the Group consisted of overdraft and promissory notes from [BANK 1] and [BANK 2] used for working capital and other long-term loans from [BANK 1], [BANK 4] and [BANK 3].
+- According to Management, long-term loans
+- of production facilities, and warehouse in addition to investment in [ENTITY 2]’s store
+- In addition to the company assets
+- , we understand that bank borrowings of [ENTITY 2], [ENTITY 1], and [ENTITY 3] were pledged by land owned by the directors and
+- personal guarantees from the directors.
+- Most long-term loan facilities were granted a grace period starting from October 20XX to September 20XX. Management informed us that they are waiting to hear back from [BANK 1] with respect to the possible extension of grace periods.
+- Management confirmed that they were not aware of any financial covenants.
+- The audited financial statements of [ENTITY 2] and [ENTITY 3] noted the potential going concern issue due to net loss, negative retained earnings exceeding share capital, and the current liabilities exceeding current assets
+- [MAIN CLIENT] should work with the Seller on the future financing structure of [ENTITY 2], [ENTITY 1], and [ENTITY 3]. Debt repayments and future financing plan should be mutually agreed and factored into your valuation.
+- Appropriate representations and warranties in respect of completeness and accuracy of debt balances should be obtained in the SPA. All third party financial loans, and loan from/to related parties should be identified and defined as such in the SPA, with an appropriate mechanism to deduct these items from the purchase price consideration.
+- due diligence procedures should be performed on Balance sheet to ensure all other potential debt and debt-like items are appropriately identified.
+- (2) Trial balance as at 31 May 20XX
+- Directors of the Targets consisted of the five family members of [SURNAME] family and one external individual ([MR./MRS.]). Management informed us that the designated role/responsibility for each individual include:
+- [MR./MRS.] [FAMILY MEMBER 3] [SURNAME]
+- ([MR./MRS.]) - COO and Business development
+- [MR./MRS.] [FAMILY MEMBER 1] [SURNAME] ([MR./MRS.]) – Marketing and Operation of [ENTITY 2]
+- [MR./MRS.] [FAMILY MEMBER 2] [SURNAME] ([MR./MRS.]) - Oversees bakery production of [ENTITY 3]
+- [MR./MRS.]– Oversees factory operations
+- Management informed us that apart from the designated roles, other members of [SURNAME] family (including [MR./MRS.] [FAMILY MEMBER 4] S. and [MR./MRS.] [FAMILY MEMBER 5]) also oversee the back-off operation of all three entities.
+- We understand that [MR./MRS.] [FAMILY MEMBER 4] S. received salary from all target entities. [MR./MRS.] was paid by [ENTITY 1]. [MR./MRS.] and [MR./MRS.] were paid by [ENTITY 2] whereas [MR./MRS.] was paid by [ENTITY 3].
+- [MR./MRS.] was paid by [ENTITY 1] and [ENTITY 3].
+- Staff cost of each company may not be reflective of the current structure as most of the functions supported more than one entity. However, there were no service charges from the entity providing the services to service recipient. You and the Seller should consider to agree on the
+- structure post-transaction and put in place a service agreement and ensure that service charges are on an arm’s length basis.
+- Functions which are specific to each entity e.g. coffee roasting line production and beverage production for [ENTITY 1], bakery production for [ENTITY 3], or store operation for [ENTITY 2]. Staff of such functions were paid by each respective entity.
+- Other functions which are shared between [ENTITY 2], [ENTITY 1], and [ENTITY 3]. For example, accounting function consisted of 14 staff as at 31 May 20XX. 8 of them staff were paid by [ENTITY 2] while the other 6 paid by [ENTITY 1]. Management cited that these staff have been with [ENTITY 2] and [ENTITY 1] before the set-up of [ENTITY 3] entity. However, they helped to support all three entities.
+- For shared functions, Management confirmed that there were no charges between [ENTITY 2], [ENTITY 1], and [ENTITY 3]
+- Please refer to Appendix 3 for more details.
+- Given that the current financial due diligence scope covers historical trading performance and only high-level observation on Balance sheet, we recommend the following areas be performed in the next due diligence phase:
+- As a valued client of ours
+- we have performed high-level assessment at our investment, with no additional fees charged
+- We hope that this
+- provides a good demonstration of the work we can undertake in value creation, and that you will consider this scope in future deals, turnaround,
+- and performance improvement initiatives.
+- Key activities undertaken for this hig
+- Initial opportunity assessment:
+- a set of hypotheses to unlock business upside opportunities. We have outlined potential analyses to undertake further to understand the size of opportunity as well as initiative to enhance business. We have identified 13 hypotheses across 4 levers which are commercial proficiency, pricing management, operation, cash release.
+- market, competition, and store profitability analysis. We obtained secondary data from publicly available sources to understand market and competitor landscape and the brand positioning against it competitors. We have undertaken store profitability to better understand store performance and identified potential EBITDA improvement opportunity.
+- Identified value creation levers should be further validated based on your own experience and hypotheses, and the findings from our FDD analysis.
+- Additional hypotheses of interest not yet tested due to limited information should be defined, and required information requested.
+- Value creation levers should be refined and consolidated in order to develop a view on potential upside to support your valuation and post-deal turnaround plan.
+- We have undertaken an initial value creation opportunity assessment at our investment to demonstrate potential areas of upside in [BRAND 1] group. Whist the analysis and insights detailed in this report do not form a full scope or in-depth value creation assessment, we hope this provides useful insights to consider in your assessment of future value creation potential.
+- EBITDA improvement potential for [ENTITY 2] from selected hypotheses
+- As of 20XX, there are 24,131 outlets
+- We performed competitor mapping using 2 criteria as follows:
+- Product sophistication:
+- identified based on brewing methods, ranging from basic grinding and brewing to nitro cold brewing, and the variety of coffee bean choices between normal blended beans and premium beans and sophisticated blending method.
+- price of iced americano regular size with standard coffee bean is used as an index to determine price positioning
+- As coffee retailers is a crowded market, [BRAND 1] need a strong brand positioning and USP to stand out from its competitors
+- Product sophistication
+- After analysing product assortment, we have identified [BRAND 1] fa
+- s into low sophisticated product segment due to its limited types of coffee bean with less special technique in blending and brewing
+- When comparing [BRAND 1] with coffee shops with low product sophistication peer. [BRAND 1] have higher price point than most of the brands
+- Therefore, [BRAND 1] needs to develop other unique selling points and strengthen brand positioning to attract customer and drive higher customer traffic to the stores
+- For example, [PRODUCT 2], which is also identified as low sophisticated product segment, is well-known for
+- the store decoration.
+- Meanwhile a high sophisticated brand originated in [COUNTRY] like [X] heavily focus on coffees. They offer limited range of menu but with sophisticated brewing methods and premium coffee beans
+- Timeline to implement: 6 months
+- would be required to evaluate cost reduction potential of individual store
+- The analysis may include workflow analysis and impact of changes to customer services
+- Comparing positive decline stores to gainer stores, rental cost is slightly higher than the gainer stores, while 1-year negative decline stores have higher cost by 10%. Rental cost reduction could be achieved through reformatting the store to be smaller or renegotiating the fee.
+- Regarding employee costs, positive decline and 1-year negative decline have higher % cost to revenue 1% and 16% respectively. Number of employees in each store could be optimised by considered the average daily order volume.
+- Note: (*) Stores with no rental and services cost are not included in this analysis
+- Estimated potential EBITDA upside is quantified by rental cost and employee cost reduction by benchmarking to gainer store
+- Base case EBITDA upside is estimated by 50% of cost reduction initiative of positive decline and 1-year negative decline stores is achieved  and stretch case is estimated by aligning rental and services costs and employee costs to be at the same level as the gainer stores
+- Key information outstanding or not available and comment on the quality of information available
+- the key potential valuation issues arising within the report and highlight recommendations
+- Identify the potential areas of transaction and business risk and possible contention as part of the transaction
+- the impact of COVID-19 on the business, including any reactive measures implemented by management, any reliefs, subsidies, payment holidays or other forms of support provided by governments, banks, or suppliers
+- Based on information received, present a high level view of upside opportunities. We will discuss with you potential opportunity areas identified that needs to deep-dive in Phase 2 due diligence.
+- Discuss with Target’s management on main accounting policies and practices and comment on any significant changes in accounting policies or estimates, if any
+- Comment on key accounting policies including revenue and cost recognitions, areas of subjectivity in the accounting policies and the consistency of approach throughout the period
+- and comment on reconciliations between audited financial statement and management accounts on which our analysis will be based
+- Comment on the reconciliation of financial information and other supporting details.
+- Comment on the key differences between the accounting standards applied by the Target and TFRS for PAEs (Note that we won’t be quantifying the impact at this stage and will seek to discuss with You first).
+
+# Business Overview
+- [GROUP FULL NAME] was established to operate as coffee shops under the brand [BRAND 1] leveraging the family business. The business has expanded into a number of service lines which include bakery, franchise management and catering business
+- manufacturer of coffee beans and beverages and the non-exclusive dealer of coffee machines.
+- with over 90 branches nationwide. It also provides catering services for coffee breaks. Its store models include owned stores, franchise and co-investment.
+- engages in the manufacturing and distribution of bakery products which includes products under its own brand and customers’ brands (OEM). [ENTITY 3] also provides one-stop service for new bakery product development.
+- [GROUP FULL NAME]
+- [ENTITY 1 FULL NAME] (“[ENTITY 1]”)
+- [ENTITY 2 FULL NAME]
+- [ENTITY 3 FULL NAME] (“[ENTITY 3]”)
+- [FAMILY MEMBER 1] [SURNAME]
+- [FAMILY MEMBER 2] [SURNAME]
+- [FAMILY MEMBER 3] [SURNAME]
+- [FAMILY MEMBER 4] [SURNAME]
+- [FAMILY MEMBER 5]
+- [SURNAME]
+- We note that [ENTITY 1], [ENTITY 2] and [ENTITY 3] are held by [GROUP NAME] and other individual shareholders in [SURNAME] family. Please see shareholder details in Appendix 1.
+- Timeline of key events
+- [ENTITY 1]  was registered
+- [YEAR]
+- The first [BRAND 1] coffee shop was founded under [ENTITY 2]
+- [YEAR]
+- Promote coffee plantation at [ADDRESS] for quality control prior to roasting process
+- [YEAR]
+- [ENTITY 3] Bakery was established to supply bakery products and provide one-stop service (began operation in [YEAR])
+- [YEAR]
+- [GROUP FULL NAME] was founded
+- [YEAR]
+- Extended market via integrated bakery services under branding “[BRAND 1] catering”
+- [YEAR]
+- [BRAND 1] rebranding and the first drive thru was introduced
+- [YEAR]
+- No. of [BRAND 1] stores by location type as at 31 May 20XX
+
+# Summary Financials
+- Pro forma consolidated
+
+# Profit and Loss Overview / Financial Performance
+- [ENTITY 2]: Revenue by location type in MM[X]3
+- Adjusted financial performance represented financial performance of [ENTITY 1] after the adjustment with respect to incorrect cost recognition as discussed on
+- Remark: This table represented margins at standard cost. Please see further explanation on page 11
+- Consider to perform benchmarking analysis with respect to the margin of coffee beans to different types of customers and to what extent the increase in market prices of coffee beans can continue to be passed on to customers.
+- You should consider to develop a plan with the Seller to expand the customer base of [ENTITY 1] given that the contract with [CUSTOMER 1] has discontinued.
+- The improvement in GP and EBITDA margins in FY[X]2 was mainly due to the increase in net revenue from higher average ticket size as a consequence of the selling price adjustment during October 20XX. In MM[X]3, the decline in net revenue as a result of higher discount as well as the increase in staff benefit caused GP and EBITDA margins to decrease.
+- The significant increase of revenue in FY[X]2 compared to FY[X]1 was attributable to sales of coffee beans to [CUSTOMER 1] which increased by USD 34.
+- million from the prior year in addition to the sales of ready-mixed non-coffee (powder mix and concentrate). In MM[X]3, although sales of coffee beans have decreased slightly by
+- , the impact was offset by the continued increase in sales of ready-mixed non-coffee and syrup.
+- [ENTITY 1] was not selected
+- by [CUSTOMER 1] to supply coffee beans in 20XX due to high selling prices. Management planned to enter to bid again once the price of coffee beans go down.
+- he cost of goods sold during FY[X]1-MM[X]3 consisted of green coffee beans, powder mix, other beverage ingredients, direct labour, overhead and  factory rental expense.
+- As discussed on page 11, during the initial adoption of standard costing in FY[X]1, there were some incorrect Bill of Materials resulting in an understatement of costs
+- of goods sold in FY[X]1 by USD 2.7 million and an overstatement of cost of goods sold in FY[X]2 by USD 2.7 million per the discussion with Management. We have proposed the adjustment with respect to this matter to the
+- increase in adjusted GP margin in FY[X]2 was attributable to increase in selling prices of coffee beans and the adjustment of blending formula to be more cost effective. The increase in GP margin in MM[X]3 was mainly due to the increase in the portion of purchases of coffee beans which were less expensive than [PRODUCT 2].
+- More than 70% of SG&A during FY[X]1-MM[X]3 comprised of staff cost, marketing expenses and depreciation expenses. The significant decrease
+- in FY[X]2 was due to economies of scales gained from the increase in revenue and the replacement of a resigned senior staff with junior staff who have lower pay rate.
+- The increase in SG&A in MM[X]3 was increase in base salary of staff and the increase in marketing fees charged from customers.
+- Management informed us that
+- [ENTITY 1] provided coffee machines to some B2C customers to use free of charge. However, if these customers do not meet the minimum purchase order of coffee beans in each month, they will be charged a fixed penalty fee.
+- Apart from the penalty fee, revenue from services include delivery fee charged to customers who purchased under USD 3,000 per invoice.
+- in amount of USD 0.6 million and USD 0.2 million in FY[X]1 and FY[X]2 respectively as well as gain on sales of fixed assets in FY[X]1 (USD 0.4 million).
+- Finance costs mainly comprised interest expenses from OD and loans from financial institutions. The others were interest expenses from lease liabilities of vehicles.
+- Commentary on historical performance
+- The increase in sales of bakery during the analysed period mainly related to the increased sales to recurring customers. While the sales from recurring customer has increased, the sales to [ENTITY 2], related party, slightly decreased due to the decrease in number of [ENTITY 2] stores, and
+- [ENTITY 2]’s tightened food waste policy causing the
+- sales to total revenue to decrease from 80.5% in FY[X]1 to 64.6% in MM[X]3
+- Majority of cost consisted of bakery ingredients (e.g. eggs, butter, wheat flour and
+- As discussed on page 11, during the initial adoption of standard costing in FY[X]1, there were some incorrect Bill of Materials resulting in an understatement of costs
+- of goods sold in FY[X]1 by USD 5.3 million per the discussion with Management. We have proposed the adjustment with respect to this matter to the
+- Commentary on historical performance (Cont.)
+- (Cont.) The decrease in GP margin in FY[X]2
+- was mainly driven by the increased cost of bakery materials in both periods,  the increased of cost production staff cost as a result of the increased headcount of production staff and overtime cost to accommodate the increased sales in FY[X]2, additional headcount with higher pay rate and salary adjustment in MM[X]3.
+- SG&A expenses mainly comprised of staff cost, marketing expenses, and service fee. The increase of SG&A came from increase in marketing
+- such as rebate, marketing support and distribution fee to major customers. In addition, staff cost increased from FY[X]2 to MM[X]3 due to an incremental increase in base salary for 2.7%, and headcount growth.
+- Majority of other income came from [ENTITY 1], related party, that rents the factory located in [X] Industrial Estate for coffee roasting in an amount of USD 0.2 million/ month. In addition, Management informed us that there were subsidies from Social security in amount of USD 0.5 million and USD 0.2 million in FY[X]1 and FY[X]2 respectively. Also, [ENTITY 3] had received compensation of loss of electric wire.
+- Finance costs mainly comprised of interest expenses from bank loans and overdraft. The others were interest expenses from lease liabilities of vehicles.
+- 0XX to 20XX and year-to-date period until [
+- Obtain consolidated P&L from the Seller to understand the Group performance. If this cannot be provided, to the extent that we can and based on available information, we will attempt to eliminate intercompany transaction and prepare an indicative pro forma consolidated P&L of the 3 entities.
+- Revenue and margin analysis
+- Summarise and comment on the trading results of each entity (bakery, coffee shop, coffee trading) for the period
+- including the drivers of historical sales, margin and EBITDA
+- and comment on the drivers of historical sales, margin and EBITDA, and inquire about (where possible
+- Revenue mix and margin by product, type, segment, stores, locations, channels.
+- Present Like for Like analysis to demonstrate the impact of new and closed branches, same store sales growth etc.
+- Comment on discounts and promotional policies and their impact and classification in the financial statements
+- Revenue and margin analysis (Cont.)
+- Present top-10 performing and bottom-10 performing stores by revenue and EBITDA / EBITDAR (by branch where appropriate)
+- key terms and condition from franchise, delivery partner agreements, and their related impact on reported performance and future commitments
+- To the extent of information available, comment on the KPIs which management use to control the business and monitor performance such as:
+- Spend per bill;
+- Customers per day;
+- Revenue per square foot
+- Cost drivers and SG&A expenses
+- cost, other OPEX, rental cost, store cost, shared service), and comment on key drivers of costs and trends identified
+- Understand repair/maintenance schedule including minor and major store refurbishment plans
+- and comment on key suppliers by value for the period, supplier dependence, significant changes in supplier base, significant supply contracts and significant changes in supply arrangements/ terms
+- and comment on the employee profile and costs by function including key terms associated with the bonus arrangements
+- impacts of COVID-19 on revenue, margin and one-off incentives from government support, temporary rental discounts from lessors, etc.
+- Enquire Management on cash management and reconciliation process at Store level. Understand minimum cash retained at Store and expense approval process.
+
+# Quality of Earnings
+- [ENTITY 2]: Like-for-like analysis - Revenue
+- [ENTITY 2]: Net sales bridge in FY[X]1 to FY[X]2 and MM[X]2 to MM[X]3 ([BRAND 1] stores
+- Management account for FY
+- Historical performance by branch for FY
+- , MM[X]2 and MM[X]3,
+- to present such cost in its corresponding period.
+- [ENTITY 1] and [ENTITY 3] should consider to update direct
+- and overhead in BOM more regularly to ensure that cost of goods sold per SKU data closely reflects actual cost
+- mainly related to non-recurring items and accounting adjustments relating to revenue from services and cost of goods sold. We recommend further analysis to be performed for the quantification of adjustments with respect to the future adoption of TFRS for PAEs such as TFRS15 -
+- Revenue from contract with customers,
+- TFRS16 – Leases, and TAS19 – actuarial valuation of employee benefit obligation.
+- Unquantifiable adjustments include improper recognition of unredeemed [BRAND 1] rewards and warranty, and understatement of employee benefit obligations.
+- Please note that the quality of earnings analysis does not represent a complete list of potential adjustments. Readers of this report should be aware that there are likely to be additional factors which affect the EBITDA of the business.
+- One-off/non-recurring adjustments to EBITDA
+- We propose to remove the following one-off/non-recurring revenue and expenses from the underlying results of the Group’s
+- According to the COVID-19 relief measures, temporary subsid
+- from social security office were provided to the Group, which is deemed to be non-recurring.
+- Management stated that there were car rental expenses of USD 0.6 million in FY[X]1 which was viewed as non-recurring expenses.
+- This one-off revenue in FY[X]2 related to insurance claim from flooding at [BRAND 1] store located at [LOCATION 1] and [LOCATION 2] of USD 50k, and compensation received from legal lawsuit about stealing of electric wire of USD 420k – which we viewed to be one-off.
+- We seek to remove gain/loss on the disposal of assets from the underlying earnings as this does not relate to the Group’s normal business operation. The relatively high gain on the disposal of assets in FY[X]1 related to sales of [ENTITY 2]’s vehicles.
+- Potential adjustments to EBITDA
+- Franchise contract attracts single upfront fee (i.e. franchise fee) being charged to franchisee in exchange for the right to operate [BRAND 1] franchise store for five years. Prior to 20XX, Management cited that franchise fee was recorded as
+- one lump sum, whereas this should have been recorded as deferred revenue and gradually recognised as revenue on P&L over the contract period. We have estimated and proposed adjustment to recognise this in the correct period, based on the information of franchise stores as at 31 May 20XX:
+- Management fee was collected from the co-investor
+- the Group to operate and run the co-investment store for five years. According to Management, this fee was recorded as one lump sum, however, it should have been recorded as deferred revenue and subsequently recognised as revenue on P&L throughout the contract period. We therefore propose to adjust this to be recognised in the correct period, based on the list of co-investment stores as at 31 May 20XX:
+- Indicative pro forma consolidated EBITDA was prepared based on stand-alone financial performance of the 3 Target entities, after adjustment for the elimination of intercompany transactions.
+- Potential adjustments to EBITDA (Cont.)
+- Management informed us that in FY[X]1, standard cost per BOM keyed in the ERP system was incorrect resulting in the outstanding work-in-process balances of [ENTITY 1] and [ENTITY 3]. Per our discussion with Management, these costs should have been recognised as cost of goods sold in FY[X]1.
+- For [ENTITY 1] entity, all incremental costs of USD 2.7 million were recorded as cost in FY[X]2
+- For [ENTITY 3] entity, there were outstanding WIP balance as at 31 May 20XX in the amount of USD 5.
+- We therefore adjusted as if these costs have been recorded in FY[X]1.
+- We were informed by Management that there were unrecorded expenses in [ENTITY 1] which incurred
+- the roasting station in [ADDRESS]. These expenses which included
+- (Directors of [ENTITY 1] and shareholders of [GROUP FULL NAME]. We therefore proposed to reflect these expenses in FY[X]1 – MM[X]3 periods as these expenses should be recorded as part of the Company’s underlying earnings.
+- Unquantifiable adjustments to EBITDA
+- [BRAND 1] operated a number of customer loyalty programs;
+- [BRAND]stamps” where customers can collect one e-stamp for every drink purchased. 10 stamps can be used to exchange for one free drink (USD 75 value). However, all stamps will be reset to zero at month-end.
+- “[BRAND 1] rewards” where customers receive one point for every USD 100 of purchases. These points can be redeemed for a free drink or discount for [BRAND 1] merchandise with validity period of 2 years for [BRAND] Member membership status, with no expiration date for [BRAND] Family and [BRAND] VIP membership status.
+- In the historical periods, [ENTITY 2] has never recorded any provision relating to the reward points on its Balance sheet. When points/stamps are subsequently redeemed, the Group only recognised the difference between selling price of products and payments from customers as discount (netted off gross revenue).
+- Under TFRS for NPAEs, [ENTITY 2] is required by TAS37 (Provisions, Contingent Liabilities, and Contingent assets) to record provision together with expenses at period-end. We note that as an NPAE entity, [ENTITY 2] also have the option to adopt TAS37 or to adopt TFRS15 as discussed in the next paragraph.
+- Under TFRS for PAEs, [ENTITY 2] is required by TFRS15 to allocate part of the proceeds from sales as provision. This provision will be recognised as revenue based on the usage pattern.
+- As a result, reported EBITDA might not be correct due to the difference in the period of revenue recognition between when points are earned by customers and when points are redeemed under the Group’s current practice.
+- As at 31 May 20XX, there was a total of 1.6 million points, which are equivalent to the value ranging from USD 12.0 million - USD 12.5 million. According to Management, one point is worth an estimated value of USD 7.5 - USD 7.8.
+- We recommend further analysis to be performed to quantify the impact of the potential adoption of TFRS15, post-Closing.
+- Other considerations (Cont.)
+- [ENTITY 1] began selling coffee beans to [COMPANY 1] under [CUSTOMER 1] in FY[X]1 and entered into sales agreement for March 20XX - February 20XX, and this has caused a significant increase in total revenue of [ENTITY 1] by USD 37.1 million in FY[X]1. Margin from coffee beans sold to [CUSTOMER 1] was lower than margin generated from other customers. As [ENTITY 1] did not get selected to be [CUSTOMER 1]’s supplier due to higher selling price and higher cost of coffee beans, there was no additional sales generated from [CUSTOMER 1] after MM[X]3. We therefore proposed the GP generated from [CUSTOMER 1] since FY[X]1 – MM[X]3 to be considered if there was no sale between [ENTITY 1] and [CUSTOMER 1], due to its potential non-recurring nature.
+- Due to the consecutive net losses, there was no bonus payment to the Group’s staff during the analysed period. However, Management cited that
+- there was a possibility for the Group to pay bonus for the year 20XX as Management viewed that there might be performance improvement. Hence
+- should be considered.
+- In MM[X]3, Management informed us that the Group currently requires
+- top and middle management for the Group such as CFO and Head of department.
+- potential increase in staff costs from the additional headcount of management personnel
+- should therefore be considered and reflected throughout the historical period.
+- The Group may be required to apply TFRS16 (Leases) for post transaction for [MAIN CLIENT]’s consolidated financial statement purpose. According to the current rental assets such as rental stores, factories and vehicles, all related expenses will be replaced by finance costs and depreciation expenses in P&L, while Balance sheet will have right-of-use assets and lease liabilities. However, all finance costs and depreciation expenses will be below EBITDA line.
+- Unquantifiable adjustments to EBITDA (Cont.)
+- one-year warranty to coffee machines sold to customers. Although [ENTITY 1] is a dealer of coffee machines, the repair expenses were absorbed and recorded in [ENTITY 1]’s P&L accounts. Management informed that customers are able to claim only in the case that coffee machines have defects from manufacturers (not caused by customers themselves
+- . As such, this warranty was considered as assurance-type warranty, and does not fall under the scope of TFRS 15 – Contract with customers.
+- However, the warranty is instead subject to TAS37 – Provisions, Contingent Liabilities, and Contingent assets which were required by both NPAEs and PAEs. Under TAS37, [ENTITY 1] is required to record warranty expense and provision at period-end. This provision will be updated at period-end to reflect the expected claims by customers. As [ENTITY 1] has never recorded liability, we suggest further analysis to be performed to quantify the impact to EBITDA.
+- Under TFRS for NPAEs, employee benefit obligations were recognised based on Management’s best estimate. As the Targets only recorded the expense at the year-end, hence, no employee benefit expenses have yet been recognised in MM[X]3 period.
+- However, if TFRS for PAEs is to be adopted in the future, the Targets will have to adopt TAS19 which requires actuarial valuation of employee benefit obligation.
+- Management stated that donation
+- of USD 1.6 million to [ORG 1 ]in FY[X]1 and USD 0.1 million to [ORG 2] in MM[X]3 were as part of [ENTITY 2]’s effort to secure rental agreements in those locations. The amount of donation was offered based on negotiation.
+- However, if [ENTITY 2] plan to lease store in the government property in the future, the impact from donation should be taken into consideration when assessing the underlying EBITDA
+- analysis on page 24 and summarised its impact on GP and EBITDA margins per the table below.
+- and summarised its impact on GP and EBITDA margins per the table below.
+- at the lower of average cost or the net
+- value. The level of inventories as at 31 [MONTH] 20[X]2 was high as the company stocks up on raw materials at the end of the year. We were informed that some suppliers stopped their operations or deliveries during the New Year holidays and a first few days after they reopened.
+- Under the assumption that consolidated P&L can be provided - provide an analysis of underlying profitability highlighting the impact on EBITDA of:
+- Non-recurring and/or non-cash items;
+- Non-representative or non-trading items;
+- Non arm-length related party transactions.
+- Original Equipment Manufacturer
+- Right-of-use
+- Selling and administrative
+- Stock Keeping Unit
+- Small and Medium Enterprises
+- Sale and purchase agreement
+- Thai Accounting Standards
+- Thai Financial Reporting Standards
+- Value added tax
+
+# Income Statement
+- The increase in the Group’s revenue in FY[X]2 was mainly driven by increased sales of [ENTITY 1] and [ENTITY 3].
+- The decrease in %GP and %EBITDA in MM[X]3 was mainly caused by increased discount rate provided by [ENTITY 2] to its customers, increased cost of bakery and higher staff cost.
+- Audited financial statements for FY[X]1 and FY[X]2
+- Management account for FY[X]1, FY[X]2 and MM[X]3
+- Indicative pro forma consolidated P&L was prepared based on stand-alone financial performance of the 3 Target entities, after adjustment for the elimination of intercompany transactions (i.e. sales, rental fee, interest income). We recommend detailed analysis to be performed to quantify the impact of the following:
+- Unrealised profit from the sales of products between related parties which were not yet sold to third parties.
+- Unrealised profit from the sales of coffee machines from [ENTITY 1] to [ENTITY 2] to be used at [BRAND 1] stores
+- Please refer to Appendix 2 for more details.
+- Pro forma consolidated revenue was primarily derived from [BRAND 1] coffee shop chain business under [ENTITY 2] operating entity, accounting for 65.7%-77.1% of total Group revenue during the analysed period. The improvement in FY[X]2 was mainly driven by increased sales of coffee beans to [CUSTOMER 1] by USD 34.7 million, cake products to [CUSTOMER 5] and [CUSTOMER 3] by USD 8.9 million in total as well as the increase in average ticket size at stores from USD 89 in FY[X]1 to USD 97 in FY[X]2.
+- Cost of goods sold mainly included cost of coffee beans and bakery materials, packaging cost, direct labour, and other overheads expenses. The increase in % cost to total revenue throughout FY[X]1-MM[X]3 was largely caused by the higher cost of raw material of bakery, especially butter, eggs and wheat flour. Although the cost of coffee beans has increased during the historical periods, [ENTITY 1] has tried to maintain the margin through the adjustment of selling prices and coffee blends to reduce cost.
+- SG&A expenses largely represented staff costs, service fees, logistic fees, marketing fees, and depreciation and amortisation expenses, accounting for more than 87.3% of the total during the analysed period. The increase in SG&A expenses in FY[X]2 was mainly related to the increase in fees charged from online marketplace and delivery platforms due to the expansion of online sales of [BRAND 1] products, increase in marketing fee (comprising rebate and entry fees) and increase in logistic cost for sales to external customers charged to [ENTITY 3].
+- Revenue from service primarily related to fees collected from franchise stores (including franchise upfront fee, royalty, marketing, and software license fees),management fee collected from co-investors, and penalty fee from some B2C customers who did not meet minimum purchase commitment,
+- Other income mainly consisted of revenue from expired [BRAND 1] vouchers, gain from sales of fixed assets, and subsidies from Social Security Office. High amount in FY[X]2 contained USD1.6 million of COVID-19 government subsidy.
+- FY[X]1 to FY[X]2 was primarily attributable to the increase in bundle sales (i.e. marketing set) both in-stores and online platforms via delivery applications, and the increase in average ticket size from USD 89 in FY[X]1 to USD 97 in FY[X]2 due to the price adjustment in October 20XX by around 4% for both beverage and bakery.
+- Net revenue in MM[X]3 decreased from MM[X]2 mainly caused by the increase in discount from the uses of higher value voucher packs in 20XX as well as the impact of closed stores resulting in the decrease in ticket count.
+- The majority of cost of goods sold consisted of costs of beverage and bakery, direct labour, store rental and service expenses, accounting for 66.4%-70.2% of the total during the analysed period. In FY[X]2, the decrease in % cost to total revenue was largely driven by the selling price adjustment for beverage, bakery and merchandise, ranging from USD 2-50 per unit, in October 20XX.
+- MM[X]2 to MM[X]3 mainly came from higher discount rate provided to customers, higher labour costs due to the increase in transportation and accommodation allowances for store staff from the increase in monthly average
+- per staff of USD 557 in MM[X]2 to USD 788 in MM[X]3, as informed by Management.
+- More than 72.9% of total SG&A expenses during the analysed period represented staff cost, depreciation and amortisation expenses, and service fees. SG&A expenses in FY[X]2 slightly increased from FY[X]1 due to the increase in fees charged from e-wallet service as in-stores sales with cashless payments became more common after the COVID-19 pandemic. In addition, GP charged from delivery platforms and fee charged from online marketplace has increased due to the expansion of online sales.
+- Audited financial statements for FY[X]1 and FY[X]2
+- Management account for FY[X]1, FY[X]2, MM[X]2 and MM[X]3
+- Revenue from service mainly comprised of franchise fee, royalty and marketing fees collected from franchise stores, management fee charged to franchisees and co-investors, and rental and service income from the sublease of store to franchisees.
+- According to Management, other income largely consisted of revenue from expired vouchers.
+- Finance costs comprised interest expense from loans from related parties, bank overdraft, loans from financial institutions, and interest expenses from vehicles under finance lease liabilities.
+- Audited financial statements for FY[X]1 and FY[X]2
+- Management account for FY[X]1, FY[X]2, MM[X]2 and MM[X]3
+- Publicly Accountable Entities
+- Glossary of terms and abbreviations (2/2)
+- Other definitions (Cont.)
+
+# Balance Sheet
+- Net det analysis including identification of debt and debt-like items
+- Net working capital analysis including detailed analysis on receivables, inventory, payables, and cash conversion cycle. Perform identification of non-working capital / non-recurring items to understand underlying working capital profile.
+- In addition, tax due diligence and legal due diligence should be considered to identify any non-compliance and quantify the exposure of liabilities which can be treated as debt-like item and deducted from the purchase price.
+- We will include high level analysis on potential areas where further validation should be made in order to assess potential EBITDA upsides post-transaction. We can further discuss with You on the hypotheses we came up with and how we can assist with detailed assessment.
+- As at 31 [MONTH] 20[X]3, [ENTITY 2] reported negative NAV of USD 93.6 million. This negative NAV was resulted from net losses carried forward and net loss incurred in MM[X]3 due to competitive market as well as the economic downturn. The
+- current liabilities position, loans obtained from banks and directors to support working capital, and accumulated deficit
+- potential liquidity and going concern issues.
+- Please note that the scopes of work on Balance Sheet is on a high level basis only, and we recommend to conduct full analysis in the next due diligence phase in order to understand key balance sheet captions in more details, such as Non-current assets, Working capital items, and Debt items.
+- The major components of assets as at 31 [MONTH] 20[X]3 were fixed and intangible assets, accounting for 80.9% of total assets. Management confirmed that all assets are free of encumbrance.
+- Cash and cash equivalents
+- included petty cash at head office and cash at banks. Cash at tills in all stores were included in other non-current assets.
+- cash deposit policy at store level, store/on-site managers are responsible for the preparation of sales record on logbook and pay-in
+- Store managers will deposit cash to [ENTITY 2]’s bank accounts before 2 pm, and
+- accounting staff for reconciliation process on a daily basis.
+- Cash collected from customers after 2pm will be handled by store managers and deposited the next day.
+- Trade and other receivables
+- as at 31 [MONTH] 20[X]3 largely consisted of trade receivables from third parties (48.3%), prepaid IT system license and service expenses (30.5%) and prepaid store rental fees (11.3%). According to Management, the normal credit term provided to customers is 30 days. Management stated that there is no outstanding receivable over one year nor bad debt written off.
+- as at 31 [MONTH] 20[X]3 mainly comprised of supplies (e.g., napkins, straws, plastic bags, etc.) (37.0%), beverage raw materials (27.4%), and packaging (11.5%). Inventories are stated at the lower of cost and net realisable value. Cost of inventories was based on weighted average costing
+- under perpetual inventory system.
+- According to Management, full physical count of inventory is done
+- every month end. For beverage ingredients, store staff also perform physical count on a weekly basis. For expired bakery, each store has to report the waste in POS system and return the expired bakery back to the warehouse for disposal of stock waste. destruction.
+- (Cont.) Warehouse staff is responsible for monitoring of slow-moving inventory and expiry date of inventory. Management informed us that each store will order beverage ingredients and bakery products, from the distribution centre located in [ENTITY 3]’s building, to sell for 5-7 days which are also the shelf life of bakery products. Beverage ingredients, apart from milk and dairy products, usually have long lifespan.
+- Loan to related party
+- represented loan to [ENTITY 3], bearing interest rate of 1% p.a.. There is no formal written contract.
+- as at 31 [MONTH] 20[X]3 primarily consisted of store and leasehold improvement (71.0%) and store equipment (22.1%). According to Management, store staff will perform full physical count of fixed assets located at the store on a quarterly basis, while, a full physical count of fixed assets located at head office will be taken place once a year. [ENTITY 2] has no formal policy on impairment assessment of fixed assets.
+- Management informed us that [ENTITY 2] uses space at [ENTITY 3]’s building for warehouse and storage and chill/ freezer room as [ENTITY 2]’s distribution centre for free of charge.
+- ), ERP system (Microsoft D365), etc.
+- related to rental leases of two office buildings at [PLACE, CITY], which
+- used as [ENTITY 2]’s head office.
+- As at 31 [MONTH] 20[X]3, the majority of liabilities consisted of loans from related parties (38.5%), long-term borrowings from financial institution (36.7%) and trade and other payables (17.5%).
+- TFRS15, [ENTITY 2] should record c
+- the Balance sheet due to the future obligation of sales promotion. However, Management informed us that currently reward points are recognised as discount in the P&L upon redemption.
+- Other non-current assets
+- as at 31 [MONTH] 20[X]3 consisted of deposits for rental and service agreements (74.5%), WHT receivables (8.0%), cash at stores (6.4%), deposits paid to suppliers/ contractors (6.0%), and deposit for electricity/ water usage (5.1%). The decrease in non-current assets was mainly caused by the return of deposits for rental agreements from lessors at the end of lease term.
+- According to Management, cash at stores are divided into two portions; 1) cash float used as changes
+- ranging from USD 2,000 – USD 10,000 per store, and 2) petty cash used for miscellaneous payments in a range from USD 500 – USD 3,000 per store.
+- Short-term borrowing from financial institution
+- of USD 10 million. The OD is secured by directors’
+- and guaranteed by a related company.
+- Trade and other
+- at 31 [MONTH] 20[X]3 mainly comprised of trade payables from related parties (64.5%) and other payables (16.1%) (e.g. fleet card, electricity, water, communication, maintenance, security guard, audit fee, etc.).
+- The normal credit term received from suppliers is 30 days. According to Management,
+- trade and other payables as at 31 [MONTH] 20[X]3 was from advance check of USD 10.3 million paid to [ENTITY 1]
+- from [LESSEE]Public Co., Ltd. of USD 0.9 million and [LESSEE 2] of USD 0.8 million
+- with the maturity date of lease agreements in [MONTH] 20[X]3 and 20[X]4, respectively.
+- Long-term borrowings
+- as at 31 [MONTH] 20[X]3 consisted of six tranches of loans obtained from [BANK 1], bearing interest rate at MLR or/and MLR-0.25% to -1.5% p.a.
+- Other current liabilities
+- , and accrued SSF and PF contribution payables. The increase in other current liabilities as at 31 [MONTH] 20[X]3 was largely driven by accrued SSF contribution payables as the temporary reduction in the contribution rate
+- , coupled with delayed payments of SSF contribution and taxes
+- As at 31 [MONTH] 20[X]3,
+- reported NAV of USD 84.4 million. The increase in NAV
+- the purchases of coffee beans following the harvesting season during the mid-year period.
+- mainly consisted of raw materials (e.g. [EXAMPLES]) (63.3%) and semi – products (i.e. coffee beans that are already graded and sorted in preparation for the next production process.) (21.4%). Inventories are recorded at cost based on the lower of the average cost or the estimated net realisable value. [ENTITY 1] conducts full stock counts at the end of each month.
+- The increase in inventories from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily attributed to the increases in purchases of [VARIANT] beans from [COUNTRY] with the import window during mid-year.
+- as at 31 [MONTH] 20[X]3 consisted of restricted cash
+- USD 0.5 million. The decrease from the balance as at 31 [MONTH] 20[X]2 was due to the release of bank guarantees at the end of the sales contract between [ENTITY 1] and [CUSTOMER 1] Co., Ltd.
+- Property, plant and equipment
+- as at 31 [MONTH] 20[X]3 mainly consisted of land (22.5%) and building improvement (16.8%). [ENTITY 1] has production facilities in two locations
+- Green bean warehouse and roasting facilities locating in [FACTORY 1]. The warehouse is located
+- on the land that is owned by [ENTITY 1].
+- The roasting equipment is located inside the [ENTITY 3] building, with a monthly rent of 160,000 baht per month.
+- Production facilities for concentrated drinks, syrups, beverages, and powder mixes locating in [VILLAGE NAME] village. There are two buildings which are connected to each other. One is owned by [ENTITY 1] and the other one is a rental from an external party at USD 44,000 per month.
+- Trade and other receivables
+- as at 31 [MONTH] 20[X]3 largely consisted of trade receivables from customers (85.2%) and accrued interest receivables (5.2%). The decrease in trade and other receivables from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily due to two reasons:
+- The high balance as at 31 [MONTH] 20[X]2 was
+- due to the receipt of advance payment from [ENTITY 2] through post-dated cheques, amounting to USD 10.3 million.
+- The sales agreement with [CUSTOMER 1] has ended in [MONTH] 20[X]3, resulting in a decreased balance as at 31 [MONTH] 20[X]3.
+- The credit term provided to customer is 30 days from billing date.
+- We were informed that t
+- here are long-outstanding receivables from the individual (USD 177,000) which is under legal proceeding.
+- as at 31 [MONTH] 20[X]3 consisted of software
+- development (61.8%) and a computer program license (38.2%). Additionally, there was a [BRAND 1] brand trademark with a 10 useful life years, which has been fully amortised.
+- We did not receive further details on the trademark agreement and whether a renewal is required.
+- Bank overdraft and shot-term borrowings from financial institutions
+- consisted overdraft from [BANK 1] and [BANK 2], as well as a promissory note from [BANK 1] bearing MOR (Minimum Overdraft Rate) interest rates, with monthly payments due on the last business day of each bank. [ENTITY 1] has used its land, buildings, and lease agreements as collaterals for these loans.
+- Trade and other
+- at  31 [MONTH] 20[X]3 largely consisted of domestic trade payables (38.5%), and other payables (45.5%) (such as ERP software, land tax, audit fee, etc.). The increase in trade and other payables from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was mainly due to the purchases of [VARIANT] coffee beans as discussed in note 4 – Inventories.
+- Loans from directors
+- [MR./MRS.]
+- [FAMILY MEMBER 5] and [MR./MRS.] [FAMILY MEMBER 4] [SURNAME], the directors of [ENTITY 1]. We were informed that these loans are repayable at call and does not have a formal agreement.
+- from [LESSEE]Public Co., Ltd., amounting to USD 1.1 million.
+- Long-term loan borrowing
+- as at 31 [MAY] 20[X]3, comprised two tranches obtained from [BANK 1] and [BANK 3].
+- The first tranche is a loan from [BANK 1] with an outstanding balance of USD 15 million, bearing interest at MLR-1.50% to 0.25% per annum, with
+- payments due on the 20th of each month. The loan agreement's maturity date is in March
+- It has a grace period of 24 months from [MONTH] 20[X]1 to [MONTH] 20[X]3. This long-term loan is secured by the company’s land and building and guaranteed by the directors. The negotiation process for the extension of grace period is still ongoing.
+- The second tranche is a loan from [BANK 3] with an outstanding balance of USD 8.4 million, bearing interest at 2% to MLR-1.0% per annum, with interest payments due on the 15
+- of each month. The loan agreement does not specify
+- maturity date. It had a grace period of 6 months, starting from [MONTH] to [MONTH] 20[X]1.
+- The major components of liabilities as at 31 [MONTH] 20[X]3 were bank overdraft and short-term borrowing from financial institutions (36.3%) and loan from directors (33.8%).
+- The major components of assets as at 31 [MONTH] 20[X]3 were property, plant and equipment (81.9%) and inventories (7.6%). However,
+- total assets may be overstated by WIP balance of USD 5.4 million due to t
+- he incorrect data input in the Bill of Materials (BOM) resulting in additional costs, which should have been recognised as the cost of goods sold (COGS).
+- Property, plant and equipment
+- as at 31 [MONTH] 20[X]3 mainly consisted of building (63.3%) and land (12.7%). [ENTITY 3] factory and office are located in the [FACTORY 1], [CITY], serving as a warehouse for storage and the production of bakery products.
+- as at 31 [MONTH] 20[X]3 consisted of software license (43.8%) and trademark with useful life of 10 years (28.3%).
+- We were not provided further details on the trademark fee paid to [BRAND 1].
+- Bank overdraft and shot-term borrowing from financial institutions
+- as at 31 [MONTH] 20[X]3 represented overdraft from [BANK 1] used for working capital, bearing interest at 12.1% per annum. This overdraft is secured by [ENTITY 3]’s land and
+- Trade and other
+- at  31 [MONTH] 20[X]3 largely consisted of trade payables (72.8%) and other payables
+- such as ERP software, land tax, audit fee, etc. (14.3%).
+- represent the outstanding amount of car hire purchase debts from [LESSEE] Public Co., Ltd., amounting to USD 0.5 million.
+- Trade and other receivables
+- largely consisted of trade receivables from customer (52.4%), and trade receivables from related parties (42.0%).
+- The credit term provided to customer is 30 days from billing date
+- .The decrease from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily due to the payment from [ENTITY 2].
+- We were informed that there are no long-outstanding receivables from customers.
+- mainly consisted of raw materials (e.g. [EXAMPLES] etc.), work in process as well as
+- Inventories was overstated due to the WIP balance of USD 5.4 million which remained on the Balance sheet throughout 31 [MONTH] 2020 to 31 [MONTH] 20[X]3.  According to Management, this WIP balance represented the incorrect input of data per the Bill of Materials (BOM), leading to additional costs which should have been recognised as cost of goods sold (COGS) in FY[X]1. Please refer to
+- The major components of liabilities as at 31 [MONTH] 20[X]3 were long-term borrowing (82.6%) bank overdraft and short-term borrowing from financial institutions (9.2%) which are
+- land and guaranteed by the directors.
+- Long-term loan borrowing
+- as at 31 [MONTH] 20[X]3, comprised three tranches obtained from [BANK 1].
+- The first tranche is a loan with an outstanding balance of USD 8.9 million, bearing interest of 4% per annum, with interest payment due on the 25th day of each month.
+- The second tranche is a loan with an outstanding balance of USD 8.9 million, bearing interest at 4% per annum, with interest payment due on the 19th day of each month.
+- The third tranche is a loan with an outstanding balance of USD 5.6 million, bearing interest at MLR-1% to MLR per annum, with interest payment due on the 7th day of each month.
+- These long-term loans are secured by the [ENTITY 3]’s land and guaranteed by the directors.
+- All of these loans have a grace period of 24 months, starting from [MONTH] 20[X]1 to [MONTH] 20[X]3. Management stated that the negotiation process for the extension of grace period is still ongoing.
+- on a high level basis.
+
+# Net Working Capital
+- In 20XX, there were some incorrect Bill of Materials (BOM) information which resulted in a portion of production cost being
+- as work in progress on the Balance sheet. Although Management confirmed that the issue has been resolved, cost of goods sold and inventory balance in the historical periods may not be accurate.
+- In addition, there were differences between total cost per SKU data and cost of goods sold due to
+- as well as production waste.
+- Please see Key financials
+- The audited financial statements of [ENTITY 2] and [ENTITY 3] noted the potential going concern issue due to net loss, negative retained earnings exceeding share capital, and the current liabilities exceeding current assets
+- Historical performance - [ENTITY 2]
+- Profitability margin of [ENTITY 2] has improved in FY[X]2 from selling price adjustment. However, in MM[X]3, revenue saw a slight decline caused by increased % discount and the overall decrease in ticket count from economic downturn.
+- The number of loss-making stores at EBITDA level has increased from 24 stores in FY[X]1 to 47 stores in MM[X]3.
+- Store profitability analysis identifies opportunities to rationalise 17 underperforming stores with consecutive years of loss making
+- improve cost efficiency of the stores with higher turnaround potential, focusing on rental and employee costs as the main areas of concern.
+- The increase of discounts in MM[X]3 resulted in decline in revenue.
+- with a focus on discount policy should be further reviewed to ensure competitiveness and margin improvements
+- There may be an opportunity to improve [ENTITY 2]’s, [ENTITY 1]’s, and [ENTITY 3] Bakery’s net working capital by analysing historical DSO, DIO and DPO and benchmarking it with peers
+- Strengthening payment terms from customers and renegotiating contracts with suppliers might provide further opportunity for one-time cash release
+- Assess working capital improvement opportunities using available inventory, receivables and payable working capital data (including working capital days)
+- Identify potential one-time cash opportunities by leveraging management discussions, available inventory data, site visit observations and benchmarks for assessment
+- [ENTITY 1] and [ENTITY 3] Bakery are likely to have periodic plans for maintenance CAPEX, delivery vehicles and factory expansion while [ENTITY 2] is likely to invest in more branches as growth CAPEX.
+- Opportunity may exist to be more efficient with CAPEX investment
+- Review the CAPEX plan and historical CAPEX schedule
+- Understand what investment levels will be essential to achieve growth targets related to increased penetration of existing services and new offerings
+- Benchmark CAPEX spend with industry peers and leverage the best practices from the industry
+- Prelim. Opp. Assessment
+- Potential Analysis Areas
+- Operational improvement
+- initial Value Creation opportunities for [ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery (3/3)
+- opportunities, identify sequencing and assess implementation costs & resourcing needs
+- Rapid Diagnostic to ‘size the prize’
+- business, the operating model and management’s current focus
+- co-create the scope of the Value Creation diagnostic
+- Align on expectations for the Rapid Diagnostic
+- Worker compensation fund
+- Work in process
+
+# Net Debt (Cash)
+- Loans from financial institutions
+- The Group has short-term facilities from [BANK 1] and [BANK 2] and long-term loans from [BANK 1], [BANK 4], and [BANK 3].
+- The grace period granted from [BANK 1] will end in September 20XX. Management is still in negotiation process for the possible extension of the grace periods.
+- Most of the staff functions were shared between [ENTITY 2], [ENTITY 1], and [ENTITY 3]. Although directors in [SURNAME] family have their designated focus areas, they shared the responsibilities to oversee the operation of the Group.
+- There was no service
+- charges between [ENTITY 2], [ENTITY 1], and [ENTITY 3]. Future roles and compensation package of founder's family should be discussed with the Management.
+
+# Cash Flows
+Not present in source report
+
+# Related Parties
+- Related party transactions mainly comprised sales between the Group entities, shared functions without services charges, rental expenses, and loans from directors free of interest charge and loans from related entities at interest rate of 1%.
+- We understand that there is no agreement in place for related party transactions
+- at interest rates of 1%, repayable at call.
+- Management and staff are shared between [ENTITY 1], [ENTITY 2], and [ENTITY 3]. Although there is no fee charged between each entity, the cost of these shared staff will be assigned and paid by [ENTITY 1], [ENTITY 2], and [ENTITY 3].
+- Please refer to page 112.
+- [ENTITY 2] use space at [ENTITY 3] for warehouse and storage, as well as chill/freezer room  free of charge as their DC
+- We understand that there was no agreement in place for these related party transactions and loans.
+- In addition, Management informed us that
+- [SURNAME] family has provided financial support out of their own pocket to cover expenses incurred at coffee bean processing facility
+- [ADDRESS]
+- USD 2 million per year.
+- These expenses were not recorded under the accounts of [ENTITY 1].
+- period was attributable to the closure of [ENTITY 2]’s branches and [ENTITY 2]’s tightened food waste policy. In FY[X]2, [ENTITY 2] set food waste as one of the main KPI for area managers, which led to a decrease in amount of purchases from [ENTITY 3].
+- During FY[X]2, [ENTITY 3] has adjusted the product recipe and increased selling prices which caused the margin to improve slightly. Margin in MM[X]3 was negatively impacted by the increase in raw materials cost.
+- External customers - Recurring
+- Recurring customers refer to corporate companies which regularly purchased [ENTITY 3]’s products and signed customer contracts with duration ranging for 1-3 years as informed by Management.
+- Charges from recurring customers such as rebate, marketing support, distribution fee, and etc. were recorded under SG&A and therefore not included in the margin by customers analysis. Management also stated that the trade agreements provided to customers had been factored in the pricing calculation.
+- According to Management, there is no specific selling price and minimum volume identified in the customer contract as selling price was separately agreed for each product.
+- The increase of selling price was not sufficient to increase [ENTITY 3]’s margin due to greater increase in cost of raw materials, as well as the process of price adjustment of each customer took time to adjust. [ENTITY 3] has to absorb the incremental cost until customers agreed to increase selling prices.
+- External customers – Recurring (Cont.)
+- Most products sold to [SUPPLIER 20] under [CUSTOMER 5] was of cake products under [BRAND 2] brand.
+- increase of sales in FY[X]2 was driven by the increase in product SKUs under [BRAND 2] brand, increase in volume, and the increase in selling price for some products. This resulted in the increase in sales of cake products by USD 4.7 million, and an increase in sales of cookies and snacks by USD 1.5 million.
+- Margin of sales to [CUSTOMER 5] decreased throughout the analysed periods from 30.2% in FY[X]1 to 17.1% in MM[X]3 due to the increase in cost of raw materials. Even though there was a price adjustment, the new selling prices did not cover the incremental cost.
+- [GROUP NAME] and [ENTITY 1], bearing interest rate of 1% p.a.,
+- with outstanding balances of USD 1.0 million and USD 8.8 million, respectively. In addition, [ENTITY 2] obtained interest-free loans from the directors, i.e. [MR./MRS.] [FAMILY MEMBER 5], [MR./MRS.] [FAMILY MEMBER 4] S.
+- and [MR./MRS.] [FAMILY MEMBER 1] S., with total outstanding balance of USD 68.3 million. These loans from related parties are made without a formal written agreement and due at call.
+- Employee benefit obligations
+- was calculated by HR department based on management best estimate method
+- TFRS for NPAEs.
+- Due to the high turnover rate of store staff, the provision was set up only for staff who
+- believed that these staff have higher probability to stay at [ENTITY 2] until retirement (i.e. 60 years old).
+- Management informed us that
+- [ENTITY 2] normally records EBO at the year end.
+- as at 31 [MONTH] 20[X]3 consisted of receivable from [ENTITY 2] and [ENTITY 3], amounting to USD 18.4 million and USD 6,967, respectively. Although credit term provided to related parties is also 30 days, actual payments may vary depending on cash flow and financial liquidity of related parties. The increased in trade receivable from related parties as at 31 [MONTH] 20[X]3 compared to 31 [MONTH] 20[X]2 primarily due to the increase in outstanding amount with [ENTITY 2].
+- as at 31 [MONTH] 20[X]3  consisted of loans to [ENTITY 2]
+- USD 8.8 million) and [ENTITY 3] (USD 8.4 million) which are repayable at call. Although these loans have no written agreements, we were informed that there has been a reduction in interest rate from the original rate of 3% to 1% which became effective on 1 January 20[X]3. This reduction was made in response to the economic downturn affecting the financial performance of [ENTITY 3] and [ENTITY 2].
+- The major components of assets as at 31 [MONTH] 20[X]3 were inventories (37.5%) and property, plant and equipment (36.2%).
+- bearing interest rate of 1% per annum.
+- In addition, [ENTITY 3] obtained interest-free loans from the directors, i.e. [MR./MRS.] [FAMILY MEMBER 5], [MR./MRS.] [FAMILY MEMBER 4] and [MR./MRS.] [FAMILY MEMBER 1], with total outstanding balance of USD 99.7 million. These loans from related parties are made without a formal written agreement and due at call.
+- As at 31 [MONTH] 20[X]3,
+- the related parties' transactions of [ENTITY 2], [ENTITY 1], and [ENTITY 3] primarily consisted of sales between related parties, trade receivables, trade payables, and loans. The main transactions involved [ENTITY 2] purchasing bakery products from [ENTITY 3] and coffee beans from [ENTITY 1] for business operations.
+- Loans from the directors, i.e. [MR./MRS.] [FAMILY MEMBER 5], [MR./MRS.] [FAMILY MEMBER 4]
+- [MR./MRS.] [FAMILY MEMBER 1] S., are interest-free loans, and are made without a formal written agreement and due at call.
+- Loans from related parties bearing an interest rate of 1% p.a., are made without a formal written agreement and due at call.
+
+# Reporting Environment
+Not present in source report
+
+# Forecast Trading
+Not present in source report
+
+# Industry Analysis
+Not present in source report
+
+# Quality of Net Assets
+Not present in source report
+
+# Gross Margin by LOB
+Not present in source report
+
+# Appendices
+## Appendix 1: Extracted Appendix Content
+- SG&A breakdown
+- Supporting analysis - [ENTITY 1]
+- Supporting analysis - [ENTITY 3]
+- Related party transaction
+- Commitments and contingencies
+- Initial opportunity assessment
+- significant increase of revenue in FY[X]2 was driven by the increased sales of coffee beans to [CUSTOMER 1]. Reported GP margin in FY[X]1 and FY[X]2 were
+- affected by the incorrect cost recognition. If we were to reflect the adjustment to reported figures, GP margin in FY[X]1 and FY[X]2 would be 34.4% and 36.1% respectively. Management explained that the increase in adjusted GP margin during FY[X]1-FY[X]2 was caused by selling price adjustment while further improvement in MM[X]3 was due to the increased portion of coffee beans which were cheaper.
+- increase in selling price and sales volume of cake products sold to [CUSTOMER 5] and [CUSTOMER 3]. Reported GP margin in FY[X]1 was affected by the incorrect cost recognition. If we were to reflect the adjustment to reported figures, GP margin in FY[X]1 would reduce to 10.2%.  Management explained that as [ENTITY 3] was not able to pass through raw material cost increase to customers during FY[X]2-MM[X]3,  this resulted in a decreases in both GP and EBITDA margins.
+- Supporting analysis - [ENTITY 2]
+- SG&A breakdown
+- Revenue from sales of beverage contributed over 60.6% of [ENTITY 2]’s total revenue during the analysed period. The increase in sales in FY[X]2 compared to FY[X]1 was mainly driven by the increase in average ticket size due to the price adjustment as well as increase in sales of marketing sets. The impact of closed stores and the continuous increase in % discount through increased sales of higher-valued voucher packs (retain customer loyalty and increase competitiveness in the market) caused net revenue from sales in MM[X]3 to decrease.
+- [ENTITY 2]: Revenue by product type (1/3)
+- [ENTITY 2]: Revenue by product type (2/3)
+- According to Management, the selling prices of beverage and bakery are benchmarked against competitors’ prices (e.g. [CUSTOMER 7, CUSTOMER 15], etc.) while maintaining a minimum of 15% margin after overhead costs.
+- Management stated that selling price is generally reviewed and adjusted along with other competitors. During the analysed period, the price adjustment ranging from USD 2-50 per unit was made to some SKUs of beverages, bakery and merchandise in October 20XX as a result of the increase in minimum wage and cost of products.
+- Discount/ promotional policy
+- Sales discount and promotional activities are usually offered with the goals to increase store traffic and boost sales as well as to retain customers with the [BRAND 1] brand. The main types of sales promotion being offered during the historical period are presented as follows:
+- A combination of beverage and bakery being offered at a discounted price
+- (i.e. marketing set) with an objective to increase the ticket size. The discount rate will be within the range of 10%-25%.
+- Partnership promotion:
+- Discounted prices offered to business partners that collaborate with [ENTITY 2] in marketing initiatives (e.g. [CUSTOMER 11], [CUSTOMER 16], etc.). The discounted rate will be considered after taking into accounts of the media value and rebate/subsidy that partners offer.
+- Special promotion: F
+- or every quarter of the year, special promotions will be designed to drive store traffic and increase overall revenue while maintaining an acceptable profit margin. For example, customers will get a special colour-changing glass collection if their spending meets USD 250.
+- Commentary on pricing and discount policies
+- Discount/ promotional policy (Cont.)
+- Local store marketing promotion:
+- a dynamic discount policy that offers exclusive deals and limited-time discounts to incentivise local customers to visit [BRAND 1] store and purchase more depending on the nature of each store. For example, customers who come as a group of 5 only have pay for 4 (i.e. one free drink) during the exam period for stores locating at university.
+- a collection of coupons that are bundled together as promotional offering which are only available for [BRAND 1] members on the web-application. The voucher packs usually cost around USD 555-2,999. The discount rate ranged between 20%-35% depending on the size of the voucher pack.
+- customers will receive a [BRAND] stamp for each beverage purchased which will be reset to zero at the end of every month. For every 10 stamps collected, customers are entitled to a free drink of their choice (value of USD 75). In addition, for every USD 100 spending, customers will also receive a point which can be used to redeem beverages (10 points for 1 drink in value of USD 70-80 and 15 points for 1 special drink in value of USD 85-99) or discount for [BRAND 1] merchandise.
+- Points will be expired after two years for members with [BRAND] Member (entry tier) and will not be expired for members holding [BRAND] Family and [BRAND] VIP status.
+- Customers with [BRAND] Family  and [BRAND] VIP tier will receive a 10% and 15% discount on beverage, respectively, and will earn double amounts of [BRAND] stamps during their birth month.
+- Management informed us that unredeemed points have never been recorded as liability on the Balance sheet. [ENTITY 2] recognises the redeemed points as discount against sales upon redemption.
+- According to Management, all types of discounts are recorded net of revenue for each product type when sales are made. However, under TRFR15, unredeemed points should have been recorded as liability on the Balance sheet and will be recognised as revenue upon points redemption instead of recognising it as discount. Commercial due diligence should be conducted to understand the market, key competitors, and the effectiveness of each discount/promotion campaign.
+- [ENTITY 2]: Revenue by product type (3/3)
+- Commentary on revenue by product
+- Net revenue from sales of beverage increased from FY[X]1 to FY[X]2 by 2.3% due to the increase in store traffics as COVID-19 eased, and the price adjustment on some beverage's menu
+- or USD 3-6 per a cup of beverage
+- in October 20[X]2.
+- In MM[X]2, the decrease in net revenue from sales of beverage was mainly caused by higher discount offered to customers from the increased uses of vouchers and the impact from closed stores.
+- The 3.2% increase in net revenue from sales of bakery from FY[X]1 to FY[X]2 was mainly attributable to the price adjustment on some bakery menu by 4.2% or USD 2-15 per unit during October 20XX, resulting in the increase in ticket size.
+- Net revenue from sales of bakery dropped in MM[X]3 was caused by decrease in the quantity of bakery products sold caused by the competitive market and the closure of stores that contributed high sales of bakery due to lease renewal issues.
+- This related to a set of products
+- bundle to customers at a special price. In FY[X]2, [ENTITY 2] has introduced many bundle sets for both in-store and online channels via delivery applications in order to increase the ticket size, resulting in the increase in sales from marketing set.
+- This mainly represented sales of drip coffee, house blend coffee beans, cocoa 3 in 1, etc. The decrease in net revenue from sales of merchandise throughout the analysed periods was due to decreased sales of drip coffee at the stores. However, Management informed us that [ENTITY 2] plans to expand sales of merchandise through online channels (e.g. [CHANNEL 1], [CHANNEL 2], [CHANNEL3], [CHANNEL4], etc.).
+- This related to collectibles such as tote bag, bottles, tumbler and umbrella. The decrease in % discount on sales of premium to 47.1
+- n MM[X]3 was from the change in point redemption policy to redeem point with certain USD amount instead USD 1.
+- [ENTITY 2] provides catering services under [BU NAME] business unit which provides coffee break or sets of snack box for
+- . Revenue in FY[X]1 was negatively impacted by COVID-19 outbreak causing the decrease in demand due to venue closures, a shift to virtual events and the increase in safety protocols.
+- This consisted of revenue from sales of packaging, sticker labels for bakery products, supplies (e.g. napkins, straws, etc.) to franchise stores, sales of coffee machine and equipment, and sales of bottles for ice keeper for take-away drink.
+- [ENTITY 2]: Revenue by location type
+- Revenue from gas station and hospital location types represented 72.3% of total revenue in FY[X]2 and 67.2% in MM[X]3. Revenue contribution mix from office, university and head office (i.e. uses of vouchers, sales through online channels and income from catering) increased from 9.5% in MM[X]2 to 19.0% in MM[X]3 due to the easing of COVID-19 restrictions resulting in more people returning to their office, studying on site and holding physical events.
+- Despite a decline in the volume of ticket count in FY[X]2, the increase in the average ticket size due to the price adjustment for some SKUs of the products had led to an overall increase in sales. The decrease in net sales in MM[X]3 was driven by declining ticket counts and the average ticket size, caused by the increase in uses of voucher packs which allowed customers to purchase a bulk of beverages at a discounted price. Discount from the vouchers
+- recorded as discount net of store revenue whereas the value of vouchers is recorded as revenue under the head office cost centre.
+- [ENTITY 2]: Average ticket size and ticket count
+- LFL stores (i.e. 72 stores which operated throughout FY[X]1 to MM[X]3) accounted for over 70% of total revenue of [ENTITY 2]. The increase in revenue in FY[X]2 was mainly attributable to the increase in LFL sales at universities and offices due to the return to work at office, onsite classes as well as revenue generated from new stores. The decrease in overall revenue in MM[X]3 was largely caused by the closure of stores at gas stations and community malls in addition to the decrease of revenue from LFL stores due to the economic downturn and a competitive market, according to Management.
+- [ENTITY 2]: Like-for-like analysis - Revenue
+- According to Management, closed
+- stores during the analysed period were mainly due to historical underperformance as well as some locations were having issues on the renewal of lease rental agreements.
+- This included 14 stores which were closed during FY[X]1 to MM[X]3 in addition to the 3 stores (XX gas stations) that were closed in July 20XX as informed by Management.
+- This did not include 2 new co-investment stores (XX gas stations) which were opened in June 20XX.
+- Management cited that the main reason which caused revenue in MM[X]3 to decline, for these 2 store location types, was a result of
+- high competition in the market.
+- We excluded stores that were closed in July 20XX from LFL analysis. Please note that there will be other three stores that will
+- be closed later in 20XX (i.e. [BRANCH 1], [BRANCH 2]and [BRANCH 3] branches) as informed by Management.
+- Overall GP, EBITDA and EBITDAR margins of LFL stores declined in MM[X]3 due to the increase in staff benefit and the increase in rental fees as discounts/waivers provided by lessors during the COVID-19 pandemic have discontinued for some stores.
+- [ENTITY 2]: Like-for-like analysis - Profitability margins (1/2)
+- [ENTITY 2]: Like-for-like analysis - Profitability margins (2/2)
+- Management informed us that
+- GP, EBITDA and EBITDAR margins of LFL stores located in university increased from MM[X]2 in MM[X]3 mainly driven
+- by higher revenue being generated as a result of returning of students to study on-site
+- Top 10 performing stores accounted for 25.4-28.7% of total revenue from stores during FY[X]1-MM[X]3. According to Management, these top 10 stores were located at good locations which attract higher traffics. In addition, for stores locating at private hospitals, customers tend to have high purchasing power. Management informed us that the decrease in total revenue from the top 10 stores over the analysed period was mainly caused by the higher discount offered to customers and due to the economic downturn.
+- [ENTITY 2]: Top 10 stores by Revenue
+- Five out of the bottom 10 stores had just opened in 20XX and require some time to build up traffic and customer awareness. According to Management, the main reasons that caused the other five stores to generate low revenue were due to their location as well as being affected by the COVID-19 pandemic, which caused people to work from home/ study online resulting in low traffics to stores. Management also informed us that although COVID-19 restriction on outdoor activities has eased, traffic to some stores located at university and office building has not fully returned to the pre-COVID-19 level.
+- [ENTITY 2]: Bottom 10 stores by Revenue
+- Total EBITDA from top 10 stores declined by 11.0% in FY[X]2 compared with FY[X]1 and by 6.0% in MM[X]3 from MM[X]2 largely due to the decrease in revenue caused by the economic downturn, the rental fees being reverted to normal fee level for some stores during FY[X]2 and the increase in staff cost in MM[X]3 as informed by Management.
+- [ENTITY 2]: Top 10 stores by EBITDA
+- Seven of the bottom 10 stores consecutively generated negative EBITDA margins since FY[X]1 suggesting potential impairment risk of fixed assets at these stores. According to Management, most of the bottom 10 performing stores had very high rental fees and are located in the locations that attract low traffics. Your commercial team should discuss with the Management on plans to turn these loss-making stores around, or potential termination of lease contracts.
+- [ENTITY 2]: Bottom 10 stores by EBITDA
+- Revenue from franchise stores and management fees charged to co-investors and franchisees contributed the majority of total service revenue, accounting for 58.9%-69.5% during the analysed period. According to Management, rather than being amortised over the contract period, franchise fees were fully recorded at the time of contract signing in FY[X]1 and FY[X]2.
+- [ENTITY 2]: Revenue by service type (1/2)
+- Franchise fee included royalty fee for five years and other store pre-opening fees which consisted of fees for store’s location assessment, staff training, labels, trademarks, logos, standards for opening a [BRAND 1] stores and POP marketing materials with total charge of USD 350k. After the initial five-year term contract is expired, a franchisor ([ENTITY 2]) will determine whether the franchise contract will be renewed  for an additional five years. For franchisee who would like to open a second store, franchise fee will be reduced as no staff training is required from [ENTITY 2].
+- Management cited that, for franchise contract signed in MM[X]3, [ENTITY 2] recognises the first portion of franchise fee of USD 200k as revenue when the contract is signed due to expenses associated with pre-opening of franchise store, and amortises the remaining portion of USD 150k over a five-year period. However, during FY[X]1-FY[X]2, [ENTITY 2] recognised franchise fee in full as revenue instead of amortising it over the contract period.
+- During the operation of franchise stores, [ENTITY 2] will collect royalty fee at 4% and marketing fee at 2% of monthly sales which are tracked through the POS system at the stores. [ENTITY 2] issues invoices to collect these fees twice a month (i.e. on the 15
+- and on the last day of each month).
+- Commentary on revenue by service type
+- Note: (*) This included revenue from marketing and royalty fees
+- decrease in average royalty and marketing fees per franchise store in FY[X]2 was largely due to the closures of high traffic franchise stores
+- as leases could not be renewed.
+- [ENTITY 2] recorded management fee charged on co-investment stores as revenue in full after the contract was signed instead of amortising it over the contract period.
+- [ENTITY 2]: Revenue by service type (2/2)
+- Management fee comprised of two portions of fees collected from co-investment and franchise stores as following:
+- Management fee collected from co-investors of USD 100k which [ENTITY 2] recognised as revenue in full on the date of the contract's signing instead of amortising the fee over the contract period of five years; and
+- Software license fee for [BRAND 1] operating system collected from franchisees of USD 100k which was amortised over a five-year period at USD 20k each year. No software license fee is charged to the co-investment store type.
+- For some franchise locations, landlords required [ENTITY 2] to be the lease holder and guarantor. The stores are then subleased to franchisees at cost plus 10% margin which was recognised as rental and service income in [ENTITY 2]’s accounts. The decrease in rental and service income in MM[X]3 was due to the impact of closed stores.
+- Commentary on revenue by service type (Cont.)
+- The decrease in % cost over total revenue in FY[X]2 was mainly driven by the increase in selling price of some SKUs for beverages by USD 3-6, for bakery by USD 2-15, and for merchandise by USD 20-50. While, % cost in MM[X]3 increased due to the rise in staff benefit relating to transportation and accommodation allowances.
+- [ENTITY 2]: Cost of goods sold (1/2)
+- According to Management, [ENTITY 2] recognises entire cost of products sold, cost of store staff and other cost relating to the store in COGS. [ENTITY 2] applies standard cost of products sold
+- using bill of materials (BOM) in the ERP system which is updated monthly.
+- This represented cost of bakery products (
+- [ EXAMPLES] etc.) purchased from [ENTITY 3], a related party. The increase in % cost of bakery over total revenue in FY[X]2 was due to the increase in cost of bakery driven by the increase in cost of raw materials.  Although selling prices of some bakery menu have increased in [MONTH] 20[X]2, Management informed us that the increase in cost could not be fully passed through to customers
+- Cost of beverage comprised of raw materials (e.g. [EXAMPLES] etc.). Most of the raw materials were purchased from [ENTITY 1], a related party. The decrease in % cost to total revenue over the analysed period was caused by the price adjustment on some beverage menu in [MONTH] 20[X]2 as well as the change in ingredients to alternative raw materials with lower prices on some menu.
+- A decrease in % cost of merchandise over total revenue over the analysed period was due to the selling price incremental of around USD 20-50 on drip coffee, house blend coffee beans and cocoa 3 in 1 in [MONTH] 20[X]2.
+- This related to cost of coffee break/ snack box under [BU NAME] business unit. The increase in cost during FY[X]1-MM[X]3 was in line with the increase in revenue from catering due to the easing COVID-19 lockdown.
+- Commentary on cost of goods sold
+- We were not able to show % cost by key product given that sales of marketing sets included both sales of beverages and bakery. The breakdown was not available.
+- [ENTITY 2]: Cost of goods sold (2/2)
+- According to Management, stores rental and services fees decreased from FY[X]1 in FY[X]2 because of the impact of closed stores. In addition, [ENTITY 2] has reduced the rental space of some stores.
+- This represented revenue sharing to co-investors in a range of 15%-20% on total sales from co-investment stores.
+- This related to variances between actual cost and standard cost of material, and cost of waste. The increase in variances/damage loss in FY[X]2 was due to the inefficiency of inventory control for waste monitoring as well as there were some errors on BOM which lead to high adjustment recorded (e.g. bug in unit conversion) between POS system and ERP system.
+- This represented the rental cost of ice making machines from third parties used in the stores.
+- Others mainly comprised of cost of sample products for new menu, and property and sign taxes at stores.
+- Commentary on cost of goods sold (Cont.)
+- Based on information provided, [ENTITY 3] and [ENTITY 1], the related parties, were the key suppliers for bakery and beverage raw materials representing over 79.6% of total purchases from Top 10 suppliers. We understand that purchases were made through purchase orders (PO). There are no supplier agreements in place.
+- [ENTITY 2]: Key suppliers
+- Top ten suppliers for FY[X]1, FY[X]2 and MM[X]3
+- According to Management, the decrease in purchases in FY[X]2 was due to less quantity sold and tighter waste control policy.
+- decrease in purchases in FY[X]2 was caused by less quantity of beverage sold as the result of closures of stores, high competition in the market as well as economic downturn.
+- Remark: Top 10 suppliers were ranked based on MM[X]3 purchase value.
+- The majority of SG&A expenses included staff cost for back office staff, depreciation and amortisation and service fees, accounted for 72.9%-78.2% of the total during the analysed period. The increase in % SG&A expenses to total revenue in MM[X]3 was mainly attributable to the increase in staff cost as a result of higher number of staff as well as the salary adjustment in March 20[X]3. Please see analysis of staff cost on the next page.
+- [ENTITY 2]: SG&A expenses
+- Commentary on SG&A expenses
+- Management account for FY[X]1, FY[X]2, MM[X]2 and MM[X]3
+- Service fee mainly consisted of fees charged from e-wallet service, delivery/online applications, IT system and maintenance service (i.e. cloud server, google workspace, web-app and salesforce). Relatively high service fee in FY[X]2 was driven by the increase in GP charged from delivery platforms (e.g. [EXAMPLES]) and online marketplace from increased online sales. In addition, there was an increase in fees charged from e-wallet service due to increased in-stores sales with cashless payment method.
+- This represented fees charged from outsourced logistic service provider for transporting products to own investment stores, co-investment stores and franchise stores. According to Management, [ENTITY 2] outsourced to three individuals and [OUTSOURCE Co.] in MM[X]3. The fees were charged by location and distance per the agreement/quotation.
+- Relatively high marketing expenses in FY[X]1 was mainly driven by the increase in promotional campaigns on an online marketplace (i.e. [ONLINE MARKETPLACE 1]) which [ENTITY 2] offered higher discounts to boost online sales and promote [BRAND 1] brand. In addition, this included a donation of USD 1.6 million to [ORG 1]as part of [ENTITY 2]’s effort to secure rental agreement.
+- Others largely comprised of copy machine and office rental fees, audit fee, training expenses and non-deductible expenses.
+- Staff cost of [ENTITY 2] included salary, allowances, overtime, sales incentive, and other benefits (e.g. social security contribution, etc.). As at [DDMM] 20[X]3, total staff headcount was 377 staff including 282 store staff and 95 back office staff. According to Management, additional headcount for middle and top management (e.g. CFO and Head of department) will be required in the future.
+- [ENTITY 2]: Staff costs
+- Commentary on staff cost
+- Salary and allowances
+- According to Management, salary adjustment normally takes place in March of each year. However, during FY[X]1-MM[X]3, there were salary adjustments in [MONTH] 20[X]2 for most of store staff due to the increment increase of minimum wage rate, and in March 20[X]3 for back office staff with an average salary incremental rate of 3.2% and 0.1% for some store staff.
+- In MM[X]3, there was an increase in transportation and accommodation allowances by approximately 41% to store staff.
+- Management informed us that the decrease in average monthly salary and allowances per head in FY[X]2 for store staff was due to the high turnover rate of approximately 10%. In addition, resigned back office staff was replaced by staff with lower salary rates.
+- There was no bonus payment during the analysed period due to the underperformance of the business as informed by Management.
+- [ENTITY 2] provides sales incentives to store staff who meet the monthly sales targets set by each store. The incentive rates vary depending on the staff performance and store location.
+- For back office staff, sales incentives were provided to sales and catering manager, [MR./MRS.] [NAME]., with the incentive rate ranging from 0.6%-1.0%, but not more than USD 13k per month, based on total sales amount and other conditions specified in the internal memo.
+- Other benefit and welfare
+- Other benefits included contribution to provident fund contribution and worker compensation fund, annual physical check-up, uniforms, medical expenses, and other welfares.
+- This also included management salary and benefits.
+- SG&A breakdown
+- The significant increase of net sales of coffee beans in FY[X]2 came from the sales to [CUSTOMER 1] which ended in
+- [MONTH]
+- 20[X]3, while the increase in net sales of coffee machine came from [CUSTOMER 2] to support the opening of new branches. In MM[X]3, the revenue appeared higher than MM[X]2 due to sales of
+- to the supplier.
+- [ENTITY 1]: Revenue by product type (1/4)
+- Sales of coffee and beverage accounted for over 90% of total revenue from FY[X]1 to MM[X]3.
+- For coffee and beverage, discounts rates provided to B2B customers were stated in the trade agreements, while discount rates for B2C customers were in the range of 10%-12% based on the rates agreed with each customer. In addition, there were monthly promotions or campaigns to push sales volume on a case by case basis.
+- For coffee machine, [ENTITY 1] provided discount to non coffee machine dealers of not over 35% for FY[X]1 – FY[X]2, and not over 30% discount in MM[X]3 while the dealers will get special discount rate on a case by case basis.
+- The fluctuation of discount rate for each product type was therefore affected by the portion of sales from each customer who receive a different discount rate depending on sale volume and monthly promotions/campaigns.
+- In addition, high % discount rate of coffee machine in FY[X]2 and MM[X]2 mainly came from special promotion to increase sale volume, and special discounts for sales of older models and sample products
+- [ENTITY 1] has trade agreements with B2B customers in term of rebate which it’s recorded under SG&A expense as marketing.
+- Commentary on overall revenue by product type and discount
+- [ENTITY 1] sold Arabica beans (USD 3.2 million) back to [SUPPLIER 9], its supplier at cost as the contract with [CUSTOMER 1] has ended resulting in the overstock of coffee beans
+- We understand from Management that there is no seasonality impact in the [ENTITY 1]’s business. However, the increase of sales during [MM]-[MM] related to the start of sales to [CUSTOMER 1] in 20[X]1 and the increase in sales to [CUSTOMER 1] before the contract ended in 20[X]3.
+- Net revenue from coffee beans accounting for 62.6% to 71.5% over the analysed period. Due to the increase in selling price for several products in FY[X]2, the overall margin increased from 44.1% in FY[X]1 to 50.0% in FY[X]2. In MM[X]3, the
+- margin was caused by the increase in selling prices of several products e.g.
+- ready-mixed non coffee and syrup, offset by the impact from the sales of coffee beans back to its supplier at cost.
+- [ENTITY 1]: Revenue by product type (2/4)
+- Details of net sales and margin by SKU and by customer was prepared by Management based on the actual quantity of products sold, net selling price, and standard cost of each product which is generated from Bill of Material (“BOM”) in the ERP system. BOM which consists of direct materials, direct labour and overhead per production unit is prepared by R&D department and updated monthly.
+- Components of cost of goods sold which were not included in SKU data are variances to reflect cost of goods sold at actual cost such as staff cost, depreciation, electricity and water and others.
+- However, there were some differences between implied cost per SKU data
+- and cost of products accounts stated at standard cost (before the allocation of variances in direct labor and overhead) as shown in the table below. Management informed us that at every month-end, direct materials were first recorded at standard cost on FIFO basis per SKU data. This standard cost will be adjusted to average cost in the trial balance. The difference shown in the table represented such adjustment in addition to any stock loss from production process.
+- Although we have noted the incorrect cost recognition on page 11,
+- the breakdown of the adjustment by SKU was not available.
+- Margin by product
+- Commentary on revenue by product type
+- This line referred to discount for the invoice comprising of several types of products and these discounts were not allocated to net sales, therefore we excluded discounts from other types of products
+- [ENTITY 1]: Revenue by product type (3/4)
+- Coffee and beverage
+- According to Management, prices of coffee bean to each customer were determined based on the market prices of coffee beans and blend. These prices were also benchmarked against competitors’ prices.
+- The significant increase in sales of coffee beans in FY[X]2 came from the large order of roasted beans (USD 37.1 million) from [COMPANY 1] under [CUSTOMER 1]. In addition, the increase was contributed by both the increased sale volume to [CUSTOMER 5], and the increase in average selling price as [ENTITY 1] lent coffee machine to [CUSTOMER 5] to use for free of charge. This resulted in an increase in sales to [CUSTOMER 5] by USD 1.8 million in FY[X]2.
+- The increase in margin of coffee beans in FY[X]2 was attributable to the adjustment of selling price to all customer groups and the change in roasting methods and blending formula for coffee beans sold under the [ENTITY 1]’s brand.
+- In MM[X]3, there was a sale of coffee beans back to the supplier, [SUPPLIER 9], at cost resulting in a slight decrease in margin from sales of coffee beans. If this sale back was excluded, overall margin of coffee beans would be increased to
+- We noted that net sales of coffee beans decreased slightly in MM[X]3 compared with MM[X]2 as the sale contract with [CUSTOMER 1] has ended, and the customer did not select [ENTITY 1] to be their supplier.
+- Commentary on revenue by product type (Cont.)
+- Coffee and beverage (Cont.)
+- Drip coffee sold to [ENTITY 2] and B2B are produced under the [BRAND 1] brand. The decline in sales of drip coffee in FY[X]2 and MM[X]3 was attributable to decreased sales to [ENTITY 2], a related party, who was the key customer. The decreased margin throughout the historical period was due to the fact that [ENTITY 1] was not able to fully pass on the increase in cost of raw materials to customers as
+- he selling price of drip coffee was limited by retail price of [ENTITY 2] and B2B customers.
+- Management informed that
+- drip coffee sold to B2C was unbranded, and was therefore easier to adjust the blending formulas and selling prices.
+- The increase in sales of other beverages was driven by ready-mixed non-coffee (e.g. [EXAMPLES] etc.), and concentrate products under syrup product group. These products were mainly sold to retail customers who used these ingredients to make drinks for sale at their food court.
+- In FY[X]2, the margin of these products saw an increase due to the increased selling price especially for B2B customers group.
+- In MM[X]3, Management informed us that [ENTITY 1] has increased the selling prices of ready-mixed non-coffee and syrup groups in order to improve their profitability margin. [ENTITY 1] also entered into an agreement with [CUSTOMER 3] where [ENTITY 1] agreed to lend
+- machine for [CUSTOMER 3] to use free-of-charge in exchange for [CUSTOMER 3] making minimum purchase orders of concentrate products. Management informed us that [ENTITY 1] was able to charge higher selling price to [CUSTOMER 3] compared with other customers, resulting in additional uplift in the syrup’s margin.
+- [ENTITY 1]: Revenue by product type (
+- Commentary on revenue by product type (Cont.)
+- Coffee machines and equipment
+- [ENTITY 1] is a non-exclusive dealer of coffee machines of [NAME] brand from [COUNTRY] and [NAME] brand from [COUNTRY] in addition to grinders of [NAME] brand from New [COUNTRY].
+- Although [ENTITY 1] provides 1-year warranty to customers. [ENTITY 1] did not record liability for the warranty relating to the maintenance services and spare parts.
+- [ENTITY 1] is required to record warranty provision at
+- [ENTITY 1] does not get the back-to back warranty from machine supplier, and is responsible for all expenses incurred from 1-year warranty. In addition, [ENTITY 1] also provides repair and maintenance services to coffee machines after 1-year warranty upon request from customers.
+- The increase in sales of coffee machines in FY[X]2 came from sales to [CUSTOMER 2] to support their branch expansion. We were informed by Management that for 20[X]3, orders from [CUSTOMER 2] was placed in [MONTH] and therefore, not included in the MM[X]3 sales period.
+- According to Management, margin of coffee machine has consistently decreased from FY[X]1 to MM[X]3 due to the impact from foreign exchange rates as purchases were made in USD and EUR in addition to the price increase by [NAME] brand which was not reflected in the selling price per the contract with customers. Furthermore, Management stated that given the competitive nature of the coffee machine market, there was not much room for price adjustment.
+- Merchandise comprised of beverage supplies (e.g. [EXAMPLES] etc.) and other ingredients such as tapioca bubbles, brown sugar. These products were mainly sold to [CUSTOMER 4]and [CUSTOMER 5] customers.
+- External customers contributed more than 60% of total revenue during the analysed period while % contribution from internal customer decreased year-on-year. B2B external customers also generated the highest margin (55.0% in FY[X]1 and 63.2% in MM[X]3) due to high portion of non-coffee products.
+- Revenue and margin by customer type (1/3)
+- Commentary on revenue by customer
+- Details of net sales and margin by SKU and by customer were prepared based on the number of actual products sold and standard cost. Please see more explanation on page 57.
+- The grouping of customers to B2B and B2C was provided by Management.
+- B2B refers to key retail customers with several branches and have entered into trade agreements with [ENTITY 1]. .
+- B2C refers to traditional trades, individuals, and other non-retail businesses. [ENTITY 1] does not have any agreement with B2C customers.
+- The slight decrease in sales to [ENTITY 2] in FY[X]2 and MM[X]3 compared with the same period in prior year, mainly came from the impact of closed [BRAND 1] branches, which led to a decline in purchases of coffee beans and coffee machine from [ENTITY 1]. The slight drop of margin in MM[X]3 was caused by the increase in cost of raw materials such coffee beans, powder mix and also increase in cost of packaging materials of drip coffee products.
+- Revenue and margin by customer type (2/3)
+- External customers – B2B
+- [CUSTOMER 5], [CUSTOMER 6] and [CUSTOMER 3]
+- to these three customers free of rental fee, [ENTITY 1] was able to charge higher selling prices of coffee beans and other beverages (concentrated drinks)
+- Net sales from [CUSTOMER 5] saw an increase by USD 3.9 million in FY[X]2 and USD 2.2 million in MM[X]3 due to the increase in sale volume and selling price.
+- [ENTITY 1] started selling to [CUSTOMER 3] department stores in FY[X]2, and to mini [CUSTOMER 3] stores in MM[X]3.
+- The increase in sales to [CUSTOMER 6] was mainly driven by the increase in orders from powder mix and concentrated drinks by USD 2.5 million in FY[X]2 and USD 1.1 million in MM[X]3
+- Margin of sales to [CUSTOMER 5] appear to increase in FY[X]2 due to the price adjustment of coffee beans.
+- sales of [CUSTOMER 2] came from the sales of coffee machines under [NAME] brand and grinders under [NAME] brand.
+- significant increase of USD 1.3 millions related to the opening of new [CUSTOMER 2] branches in FY[X]2.
+- We were informed by Management that for 20[X]3, orders from [CUSTOMER 2] were placed in [MONTH] 20[X]3 and therefore, not included in the MM[X]3 sales period.
+- The decrease in margins related to the increase in cost of coffee machine from [NAME] brand. The margin of coffee machines sold to [CUSTOMER 2] has decreased from 44% in FY[X]1 to 33.5% in MM[X]3.
+- Commentary on revenue by customer (Cont.)
+- External customers – B2C
+- Over 80% of product
+- s sold to B2C customers were coffee beans. Given that selling prices of coffee beans to B2C customers were easier to adjust, net sales and margin of B2C customers increased throughout the analysed periods. In addition, Management explained that as most of the coffee beans sold to B2C customers were under [ENTITY 1]’s brand or unbranded, [ENTITY 1] was able to adjust coffee blends, and processing process to be more cost effective unlike coffee beans sold to B2B customers that have stricter requirement.
+- Management informed us that B2C customers were however more sensitive to price increase. [ENTITY 1] therefore had to provide additional promotion to attract B2C customers and maintain sales volume.
+- In MM[X]3, [ENTITY 1] sold Arabica beans (USD 3.2 million) back to [SUPPLIER 9], its supplier at cost (as the contract with [CUSTOMER 1] has ended) in order to manage the overstock of coffee beans and improve [ENTITY 1]’s cash flow.
+- [ENTITY 1] began
+- coffee beans to [COMPANY 1] under [CUSTOMER 1] in FY[X]1. Margin of coffee beans sold to [CUSTOMER 1] was lower than margin generated from other customers. In MM[X]3, [ENTITY 1] did not get selected to be [CUSTOMER 1]’s supplier due to the high selling price compared to other suppliers.
+- Revenue and margin by customer type (3/3)
+- Commentary on revenue by customer (Cont.)
+- Management informed us that the overall margin of B2B customers was higher than B2C during FY[X]1 – MM[X]3 due to B2B having higher portion of non-coffee products
+- (mainly comprising powder mix and concentrated drinks). In addition, we note that margin of non-coffee products from B2B customers was higher than B2C as [ENTITY 1] lend
+- to some B2B customers to use for free-of-charge.
+- For coffee beans, margin of B2B customers in FY[X]1-FY[X]2 was higher than B2C and [ENTITY 2] due to higher selling prices charged to
+- from sales of coffee beans to [ENTITY 2] were lowest compared with external customers during the analysed period as [ENTITY 1] used [PRODUCT 2] [BRAND 1] brand, which attract higher cost.
+- According to Management, the slight decrease in % adjusted cost of goods sold from 65.6% in FY[X]1 to 63.9% in FY[X]2 was mainly driven by
+- increase in selling price of products sold to customers
+- . In MM[X]3, the % cost of goods sold decreased to 61.7% due to the increase in portion of [VARIANT] beans which were less expensive than [VARIANT
+- beans purchased from [CITY].
+- [ENTITY 1]: Cost of goods sold (1/2)
+- The table adjacent was prepared based on the trial balance. We were not provided  cost of goods sold by product type (e.g. [EXAMPLES] etc.)
+- Cost of coffee and beverage comprised of raw materials (e.g. [EXAMPLES] etc), and allocated direct labour and overhead.
+- In addition, we were informed by Management that this account also included the adjustment to cost of direct materials which was initially recorded at standard cost on a FIFO basis to average cost at every month-end as well as cost of stock waste and defected materials from the production process.
+- The nature of account w
+- to record variances between actual cost of raw materials used and raw material recorded per BOM. In FY[X]2, there were incorrect
+- BOM which lead to high raw material adjustment being recorded (USD 0.6 million).
+- be understated in FY[X]1 and overstated in FY[X]2. we have therefore proposed an adjustment to reflect actual cost for indicative purpose.
+- % cost of coffee machines and equipment decreased in FY[X]2 and MM[X]3 due to the decrease in sales of coffee machine.
+- Please see the analysis on staff cost analysis on page
+- Commentary on Cost of goods sold
+- Others commonly consisted of outsourcing and production equipment while there was USD 46 thousand for a quality check service incurred only in FY[X]1 which caused to higher cost in this period.
+- [ENTITY 1]: Cost of goods sold (2/2)
+- Rental fee consisted of the rental of part of [ENTITY 3]’s factory in [FACTORY 1] to be used as roasting and storage facilities for coffee beans at the rental rate of USD 160,000 per month and rental of factory owned by Mr. [LESSOR NAME], an external party for production of concentrated drinks, syrups, beverages, and powder mix at the rate of USD 44,000 per month.
+- This consisted of the repair of machinery for the relocation of roasting factory to [FACTORY 1] in FY[X]1 as well as other maintenance expenses.
+- Commentary on Cost of goods sold (Cont.)
+- market price of coffee beans especially [VARIANT] beans from [CITY], [ENTITY 1] has increased the purchases of
+- [VARIANT]
+- which have lower prices.
+- [ENTITY 1]: Key suppliers (1/2)
+- Management stated that [ENTITY 1] does not have any supply contract (except for Contract Farming agreement with [ORG 3]) and there is no minimum purchase requirement for any of the suppliers. As seasonality of harvest coffee bean is during [MONTH] – [MONTH] of every year, coffee beans will be reserved and ordered in advance. The price will be also agreed in advance with trader.
+- These suppliers are
+- a group of [SUPPLIER 10] suppliers.
+- Management informed us that [ENTITY 1] has entered into
+- to purchase Cherry beans and Silver skin (form of beans before proceeding to green bean
+- ) from local farmers in [SUPPLIER 10] and other farms around [CITY]. Management confirmed to us that there is no minimum purchase commitment or fixed prices under this contract. The rental rate for land leased from [ORG 3] (where some roasting and cleaning machines of [ENTITY 1] are located) is
+- USD 35,541 per year for the 3-year rental period starting on [DD] [MONTH] 20[X]1.
+- When the market prices of coffee beans increased during the past 2 years, [ENTITY 1] has increased
+- purchases from [COUNTRY], [COUNTRY], and [COUNTRY] traders and reduced purchases from [SUPPLIER 10] due to their higher prices. According to Management, the portion of coffee beans from [SUPPLIER 10] reduced from
+- 60-75% of total purchases in FY[X]1-FY[X]2 to 30-40% in MM[X]3. Management explained that coffee beans from [CITY] was one of the key selling points of [BRAND 1] brand, and may return to purchase from them.
+- Commentary on Key suppliers
+- Average coffee bean cost
+- [VARIANT 2] beans were supplied from [CITY] farmers and produced coffee beans at [SUPPLIER 10] factory. Due to an increase of [VARIANT 2] bean price, [ENTITY 1] had purchased [VARIANT 3] which was of lower price and reduced portion of purchases in [COUNTRY]. [COUNTRY] [VARIANT 4] beans were imported during [MONTH] – [MONTH].
+- [ENTITY 1]: Key suppliers (2/2)
+- 2/3 text box
+- Second text column
+- Expenses incurred from the roasting station in [CITY] included maintenance, staff cost, transportation of green beans
+- and etc. of approximately USD 2 million per year were paid by [SURNAME] family
+- (Directors of [ENTITY 1] and shareholders of [GROUP NAME])
+- and not recorded in the [ENTITY 1]’s P&L account.
+- In MM[X]3, there were 2 new key suppliers
+- as shown in the table below – these are [NATIONALITY] traders that sell [VARIANT 3]. As top suppliers were ranked based on FY[X]2 purchases to eliminate any seasonality impact, these two new suppliers were not included in the list.
+- [SUPPLIER 15] is a coffee machine supplier from [COUNTRY]. [ENTITY 1] normally orders coffee machine twice a year.
+- [VARIANT 4] coffee
+- beans from [SUPPLIER 16] were usually ordered during [MONTH]-[MONTH]. In 20[X]3, [ENTITY 1] has recently ordered in [MONTH] 20[X]3.
+- Commentary on Key suppliers (Cont.)
+- cost, depreciation and amortisation expense, and marketing fee. The increase in % SG&A expense of total
+- staff cost driven by the increase in base salary, increase in transportation/
+- the increase in % marketing fee to [CUSTOMER 6] which is 4% of net sales and entry fee.
+- SG&A expenses (1/2)
+- Please see staff cost analysis under SG&A in page
+- Marketing fee referred to various fee charged by B2B customers (e.g. [CUSTOMER 5], [CUSTOMER 3], [CUSTOMER 6] and etc.) per trade agreements such
+- support, entry fee, new store support and other promotion supports
+- Rebate rate was in the range of 2% - 8% of net sales and paid in cash on a yearly and monthly basis depending on the agreements with customers
+- General marketing support provided to customers was in the range of 1% - 4% of net sales. In addition to the variable charge, there is also a fixed annual payment for marketing supports ranging from USD 3,000 up to USD 24,000.
+- Other marketing fees for the sales of products to customer’s new store
+- were 10% of net sales for new store (only for the first month) and 3% of net sales (for the first 3 months) for every new item.
+- The increase of marketing fees in FY[X]2 related to the rebate provided to customers in line with the increase of net sales. In MM[X]3, the increase was due to the entry fee paid to [CUSTOMER 6] and [CUSTOMER 5] for new product items.
+- Logistic cost primarily related to transportation services provided by outsourced company for the transportation of products to customers.
+- In FY[X]2, there was an increased delivery round for [CUSTOMER 1] products by 3 days per week which has led to higher expenses compared to FY[X]1.
+- Commentary on SG&A expenses
+- This staff cost included employee benefit obligation expenses for both production and non-production staff. The breakdown was not available.
+- [ENTITY 1]: SG&A expenses (2/2)
+- Service fee consisted of website service fee, software subscription fee, security fee and including of wages of outsource
+- repair and maintenance services of coffee machine to customers outside [CITY].
+- Service fee in FY[X]1 also included fee paid to outsourced staff (USD 0.2 million) who helped with the loading of coffee beans from truck to [ENTITY 1]’s warehouse. In FY[X]2, this fee has already been reflected as part of the purchase price of coffee beans.
+- Others mainly consisted of training cost, rental fee (for office building, office equipment, parking space, and land), taxes, and sample products. Other SG&A in FY[X]1 also included rental expense for vehicle (USD 0.6 million) which has discontinued in FY[X]2. The increase in MM[X]3 related to fees charged for e-wallet payments.
+- Commentary on SG&A expenses (Cont.)
+- Staff cost comprised of salary and other benefits such as overtime, contribution to social
+- security fund, worker compensation fund and others. As at 31 [MONTH] 20[X]3, [ENTITY 1] had 67 staff, comprising of
+- office staff. Management informed us that the current level of production staff was sufficient, with
+- for salesperson, top and middle management e.g. CFO, Head of each department
+- [ENTITY 1]: Staff cost (1/2)
+- Salary and wages
+- Production staff consisted of only production department.
+- Cost of factory manager was included in SG&A expenses.
+- staff consisted of personnel cost of accounting, purchasing, sales, maintenance (Coffee machine service), quality assurance (QA), warehouse and research & development and Management personnel.
+- [ENTITY 1] adjusts salary rate in March of every year. During the analysed period, 2 rounds of salary adjustments that were made to production and QA staff were:
+- Adjustment of salary and wages of some production and QA staff at the end of FY[X]2 to meet the minimum rate.
+- Adjustment of salary for the remaining of staff during MM[X]3 with average salary incremental rate of approximately 2.6%.
+- These salary adjustments have led to the increase in average monthly salary and wages per head in FY[X]2 and MM[X]3.
+- For salary of staff recorded in SG&A, Management informed us that there was one senior staff who resigned and was replaced with a junior staff with lower salaries. This resulted in a decrease in average salary per head in FY[X]2.
+- During FY[X]1 – MM[X]3, there was no bonus payment provided to staff.
+- Commentary on Staff cost
+- We were not provided with the breakdown of expenses relating to employee benefit obligation of production and non-production staff.
+- [ENTITY 1]: Staff cost (2/2)
+- In FY[X]2, overtime of production staff increased given the large order from [CUSTOMER 1]. Management informed that [ENTITY 1] increased the number of shifts of production staff instead of increasing the headcount.
+- Sales incentives were determined based on the type of customers.
+- For B2B customers, [ENTITY 1] has provided yearly incentives
+- 1-2 months of salary
+- if sales staff is able to achieve sale target.
+- For B2C customers,
+- [ENTITY 1] has provided monthly incentives on the fulfilment of 2 conditions which are 1) meet the monthly sales target, and 2) money collection within the credit term. Salesperson will get 1.5% of the sales target and USD 0.5
+- The sales incentives policy was unchanged during the analysed period.
+- Contribution SSF, PF and WCF
+- [ENTITY 1]’s annual contribution rate for
+- worker compensation fund is in the range of 0.2% to 1.0%
+- of staff remuneration.
+- For provident fund, Management stated that [ENTITY 1] did not make any contribution in FY[X]1.
+- Other benefit and welfare
+- Other benefits included annual physical check-up, uniforms, medical expenses, COVID-19 expense, transportation and etc.
+- [ENTITY 1] provided food allowance only for production staff.
+- Commentary on Staff cost (Cont.)
+- Supporting analysis - [ENTITY 3]
+- SG&A breakdown
+- Sales of bread and cakes accounted for 67.9%-75.4% of total net sales during FY[X]1-MM[X]3. The decrease in product margin in MM[X]3 was caused by the increase in cost of raw materials. According to Management, margin of
+- frozen dough during [MM]-[MM]X1 and FY[X]2 was incorrect resulting in a negative margin.
+- [ENTITY 3]: Revenue by product type (1/
+- Details of net sales and margin by SKU and by customer was prepared by Management based on the quantity, actual products sold, net selling price, and standard cost of each product which is generated from Bill of Material (“BOM”) in the ERP system. BOM which consists of direct materials, direct labour and overhead per production unit is prepared by R&D department and updated monthly.
+- Components of cost of goods sold which were not included in SKU data are variances to reflect cost of goods sold at actual cost such as staff cost, depreciation, electricity and water and others.
+- Although we have noted the incorrect cost recognition on page 11,
+- the breakdown of the adjustment by SKU was not available.
+- Margin by product
+- was therefore presented on the reported numbers.
+- In addition, the details of reported margin by SKU was not available for the period
+- prior to July 20[X]1. % Margin for [MM]-[MM]’[XX] was calculated based on net sales and margin of [MM]-[MM]’[XX] period.
+- Commentary on revenue by product type
+- [ENTITY 3]: Revenue by product type (2/2)
+- Bakery products produced by [ENTITY 3] can be categorised into three groups which are products under its
+- , [BRAND 1] brand, and under customer brands (i.e. OEM).
+- In terms of OEM, [ENTITY 3] has to develop products
+- customer’s requirement and enter into bidding process with other competitors. [ENTITY 3] and customers would agree on the retail price and % GP representing marketing fee to be charged to [ENTITY 3]. The difference between the two was [ENTITY 3]’s selling prices.
+- Management informed us that t
+- of [ENTITY 3]’s customers.
+- For bakery products under
+- [ENTITY 3]’s brand, [ENTITY 3] has the flexibility to adjust both the recipe and selling prices. Given the larger production volume, products under [ENTITY 3]’s brand were
+- more cost effective to produce than OEM products.
+- [ENTITY 3] also produces bakery products under [BRAND 1] brand and mainly sells to [ENTITY 2] and also to other customers. However, the selling price of products under [BRAND 1] brand is limited by the retail prices at [BRAND 1] stores.
+- Most of bread products were sold to [ENTITY 2].
+- The slight increase of bread sales during FY[X]1 to MM[X]3 came from the increased popularity of marketing sets sold under  [ENTITY 2] where, for example, drinks were sold together with sandwiches
+- In FY[X]2, an increase of 1.1ppt in margin of bread came from the change in the brand of key ingredients, such as butter
+- for cost reduction purpose.
+- The drop in margin in MM[X]3 around 6
+- Commentary on revenue by product type (Cont.)
+- Cake products consisted of cakes, roll cakes, muffins and tarts. Cakes were the major product sold by [ENTITY 3] under both [ENTITY 3]’s brand and OEM brand.
+- In FY[X]2, there were increases of cake orders from Family Mart and Tops under [CUSTOMER 5], and [CUSTOMER 3] by total amount of USD
+- In MM[X]3, sales of cake product group also increased from [CUSTOMER 5] and [CUSTOMER 3]. For [CUSTOMER 3], Management informed us that [ENTITY 1] only sold to [CUSTOMER 3] department stores in FY[X]2 and has commenced to sell to mini [CUSTOMER 3] in 20[X]3.
+- The consecutive decrease in margins of cakes throughout the analysed period came from increase of costs of products sold to [CUSTOMER 5]. Even though, the cakes sold to [CUSTOMER 3] had higher margin, the portion of cakes sold to [CUSTOMER 3] was smaller. Management informed that the discussion on adjustment of selling prices is ongoing  with [CUSTOMER 5].
+- Puff, Pie and Croissants
+- [ENTITY 3] received a new order for croissants from [CUSTOMER 7] under [CUSTOMER 12] group with total sale value of 1.0 million in FY[X]2 resulting in an increase in sales of this product group.
+- The increase in margin in FY[X]2 was caused by the increase in selling prices to [ENTITY 2] who is the key customer for this product group. The decrease in margin in MM[X]3 was caused by the increase in cost of raw materials.
+- Snack product group consisted of cookies,
+- crispy toast, other gift sets and snack boxes for events. Key customers of snacks were [ENTITY 2] and [CUSTOMER 5].
+- The increase of sales in FY[X]2 came from the sales of cookies to [CUSTOMER 7] for approximately USD 1.6 million.
+- During FY[X]1-MM[X]3, we observe [ENTITY 3] to have less reliance of sales to [ENTITY 2], related party with sales contribution of 80.5% in FY[X]1 decreased to 64.6% in MM[X]3. Margin from sales of all customers decreased in MM[X]3 as a result of an increase in cost of raw materials. The increase in margin to [CUSTOMER 3] was due to the adjustment of selling prices when the new contract was signed in 20[X]3.
+- Revenue by customer type (1/3)
+- Commentary on revenue by customer type
+- Details of net sales and margin by SKU and by customer was prepare
+- based on the number of actual products sold and standard cost. Please see more explanation on page 72.
+- The categorisation of external customers to recurring and seasonal customers was provided by Management.
+- Management stated that there was no agreement between [ENTITY 3] and [ENTITY 2].
+- Although [ENTITY 3] has the flexibility to adjust product recipe and the selling price, we observed the slight decrease in margin due to the  increase in cost of bakery materials despite the
+- rice adjustment in FY[X]2 and the removal of products which were not profitable in MM[X]3 period.
+- [ENTITY 3]: Revenue by customer type (2/3)
+- Commentary on revenue by customer type (Cont.)
+- Internal customers (Cont.)
+- [ENTITY 3]: Revenue by customer type (3/3)
+- Commentary on revenue by customer type (Cont.)
+- External customers – Recurring (Cont.)
+- [CUSTOMER 3] and mini [CUSTOMER 3]
+- Over 90% of products sold to [CUSTOMER 3] and mini [CUSTOMER 3] represented cake products.
+- In MM[X]3, [ENTITY 3] has begun to sell to mini [CUSTOMER 3] and expanded its product lines from 6 cake products in FY[X]2 to 16 in MM[X]3.
+- The increase in margin of products sold to [CUSTOMER 3] in MM[X]3 came from the signing of a new contract
+- which allowed [ENTITY 3] to adjust the selling prices to reflect
+- Due to internal reason of customer, there was no sales transaction between [ENTITY 3] and [CUSTOMER 10] during FY[X]2 and MM[X]3. Management informed us that, [CUSTOMER 10] will become a recurring customer after mid-July 20[X]3 as [ENTITY 3] has already signed contract with [CUSTOMER 10].
+- [CUSTOMER 8] was the distributor
+- bakery products (e.g. cakes, puff/pie/croissant) to [SUPPLIER 21]. Selling price dealt with [CUSTOMER 8] was different from other recurring customers as the selling price was not limited by [CUSTOMER 8]’ retail prices
+- [ENTITY 3] being able to set the selling prices based on the cost structure of the products.
+- External customers – Seasonal
+- Seasonal customers refer to both individual and corporate customers who purchased from [ENTITY 3] on a seasonal basis e.g. during festive holiday, special occasion, etc.
+- The duration of customer contract is within 1 year. There is no specific product and sale volume identified in the contract. Management stated that as the selling price for products sold to seasonal
+- was higher than prices of recurring customers. The margin of seasonal customers in FY[X]1-FY[X]2 was higher than other customers.
+- The negative margin of seasonal customer in MM[X]3 was attributable to defected bakery products sold to [ENTITY 3]’s employees.
+- [CUSTOMER 12]  (NAME cafe)
+- [ENTITY 3] began to sell products [NAME] café in FY[X]2, comprising of cookies (USD 1.6 million), and croissants (USD 1.0 million). Sales has subsequently decreased in MM[X]3 following the end of the contract.
+- [CUSTOMER 13] (
+- The sales represented cookies and cakes for special event
+- and New Year. Per the sale contract provided by Management, sales volume and selling price were agreed through purchase order. The decrease in margin was caused by the increase in cost of cookies.
+- Other customers were [ENTITY 3]’s employees who purchased production waste or defected bakery products at lower selling price
+- negative margin during the analysed period.
+- The increase in % cost of goods sold to revenue in FY[X]2
+- the increased cost of bakery materials, which [ENTITY 3] could not fully pass through to customers in addition to the increase of wages since [MONTH] 20[X]2.
+- [ENTITY 3]: Cost of goods sold
+- Commentary on Cost of goods sold
+- The table adjacent was prepared based on the trial balance.
+- Cost of bakery comprised of raw materials (e.g. wheat flour, butter, eggs, sausage, etc.), cost of direct labour and overhead
+- which consisted of cost of electricity and water, depreciation, staff cost and other estimated costs
+- at standard cost.
+- As discussed on page
+- , incorrect BOM caused cost to be understated in FY[X]1.
+- account was to record variances between actual cost of raw material and cost of raw materials per BOM. The high variance in FY[X]2 was caused by inaccurate BOM keyed in the production system when [ENTITY 3] first introduced frozen dough. As the cost of raw materials per BOM was updated on a monthly basis, this led to a decrease in variance.
+- Management explained that the t
+- he increase of % adjusted cost of bakery to total revenue in FY[X]2 and MM[X]3 was attributable to the increase in cost of bakery ingredients.
+- The nature of account was to reverse all standard cost recorded in cost of bakery to record actual costs in other accounts (Variance of overhead also included of variance of direct labour).
+- The increase in staff cost in FY[X]2 was due to the increase in number of production staff to accommodate the increase in sales order.
+- Others consisted of production equipment, factory miscellaneous supplies, rental factory equipment and transportation of raw material.
+- Management stated that there is no minimum purchase requirement for each supplier. For the past few years, R&D team had done the research and adjusted bakery recipe and changed suppliers of some ingredients to reduce cost of bakery.
+- [ENTITY 3]: Key suppliers
+- [ENTITY 3] changed the supplier of butter to [SUPPLIER 30] which is a more affordable brand, resulting in the decrease in purchases from [SUPPLIER 20] and [SUPPLIER 22]
+- Management stated that [ENTITY 3] does not have any supply contract and there is no minimum purchase requirement for any of the suppliers. The purchase price and volume were agreed
+- % - 81.5%of SG&A expenses
+- staff cost, marketing fee, service fee and logistic cost
+- The increase in % SG&A expense of total revenue in MM[X]3 was primarily attributable to increased staff cost driven by the increase in base salary, increase in marketing fee from [CUSTOMER 3] as a result of the increase in rebate and distribution fee rates.
+- [ENTITY 3]: SG&A expenses (1/2)
+- Commentary on SG&A expenses
+- Please see the analysis on staff cost analysis on page 81.
+- Marketing fees referred to various fees charged by customers (such as [CUSTOMER 5], [CUSTOMER 3] and [CUSTOMER 10]), being rebate, marketing and advertising support, entry fee, new store support and other promotion supports.
+- Rebate provided to customer is in the range of 0.3% to 12.5% of net sales. Rebate is payable in cash on a yearly and monthly basis depending on the agreements with customers.
+- General marketing support provided to customers in the range of 0.5% to 1% of net sales. Also, there were fixed annual payment or occasional payment for marketing supports ranging from USD 3,000 up to USD 15,000.
+- One time supporting for every new branch was USD 1,000 to USD 30,000. In addition, for every new item, there is a charge of 5% of net sales
+- or fixed payment in amount of USD 3,000 to USD 20,000.
+- increase in marketing fee in FY[X]2 was mainly due to the rebate  (USD 0.8 million), and entry fee expense (USD 0.6 million) from [CUSTOMER 3].
+- Service fee consisted of website service fee,
+- such as payroll program, google workspace, ERP licenses and security fee.
+- We were not provided the breakdown of expenses relating to employee benefit obligation of production and non-production staff.
+- [ENTITY 3]: SG&A expenses (2/2)
+- Commentary on SG&A expenses (Cont.)
+- The increase in logistic cost was driven by sales to external customers. There is no logistic cost for sales to [ENTITY 2] as [ENTITY 2]’s distribution centre and [ENTITY 3]’s warehouse are located on the same premise
+- SG&A Others expense consisted of training cost, rental fee (for office equipment, rental car park), taxes, sample products, and distribution fee. The distribution fee was charged by external customers
+- the rate of 2.0% - 15.7% of net sales. The increase of other SG&A related to increased distribution fee by USD 0.9 million as the result of
+- sales of Central and [CUSTOMER 3] in FY[X]2.
+- Staff cost comprised of salary and other benefits provided staff such as overtime, contribution to social security fund, worker compensation fund and others. As at 31 [MONTH] 20[X]3, [ENTITY 3] had
+- office staff. Management informed us that the current level of production staff is sufficient, excepted for top and middle management e.g. CFO, head of each department.
+- [ENTITY 3]: Staff cost
+- Commentary on Staff cost
+- Salary and wages
+- Production staff only consisted of production department.
+- Cost of factory manager was included in the SG&A expenses.
+- staff consisted of personnel cost of accounting, purchasing, sales, maintenance, quality assurance (QA), warehouse and research & development and Management personnel.
+- [ENTITY 3] adjusts salary rate in March of every year. During the analysed period, 2 rounds of salary adjustments were:
+- Adjustment of salary and wages of some production staff at the end of FY[X]2 to meet the minimum rate.
+- Adjustment of salary for the remaining of staff (who did not get the salary adjustment in FY[X]2) occurred during MM[X]3 with average salary incremental rate of approximately 2.7%.
+- Given the staff shortage in FY[X]2
+- , [ENTITY 3] has hired daily staff with lower wages resulting in the decrease in average monthly salary and wages per head in FY[X]2. [ENTITY 3] hired new staff with higher salaries during MM[X]3
+- increase of average monthly salary and wages per head in MM[X]3.
+- During FY[X]1 – MM[X]3, there was no bonus payment provided to staff.
+- Despite the increase in production staff in FY[X]2, overtime cost of both production staff recorded under cost of goods sold and overtime cost of QC and warehouse staff recorded under SG&A increased to accommodate increased sales of both regular and seasonal products for [CUSTOMER 5], [CUSTOMER 6] and [CUSTOMER 12].
+- breakdown of expenses relating to employee benefit obligation of production and non-production staff.
+- As at 31 [MONTH] 20[X]3,
+- reported negative NAV of USD 19.2 million. This negative NAV was resulted from net loss carried forward and net loss incurred in MM[X]3.
+- The audited financial statements [ENTITY 3] noted the potential going concern issue due to net loss, negative retained earnings exceeding share capital, and the current liabilities exceeding current assets
+- Commitments and contingencies
+- As at 31 [MONTH] 20[X]3, commitments and contingencies of [ENTITY 2], [ENTITY 1], and [ENTITY 3] include building rental for offices and production facilities, cars, and printers which were summarised in the table below. In addition, there are leases and ice machine rental for [BRAND 1] stores. Management informed us that all the leases are still ongoing and expect to be able to renew those which have expired or will expire except for the three locations (i.e. [LOCATION 1], [LOCATION 2] AND [LOCATION 3]) which will be closed at the end of the contract term in 20[X]3.
+- Noted that car leases were recorded as lease liabilities on Balance sheet of each entity.
+- Initial opportunity assessment
+- Commercial proficiency
+- [ENTITY 2] has domestic presence through 80 owned and 20 co-invested and 10 franchised stores across [LOCATION] with the majority located in petrol stations and hospitals with high customer traffic.
+- There could be an opportunity to improve presence in untapped markets and increase overall revenue.
+- With defined brands and target customers, there could be an opportunity to use data & analytics to target new locations optimal for these customer groups in order to drive revenue growth.
+- Perform customer heat map analysis to identify current customer footprint relative to locations
+- Assess the market attractiveness, risk profile, time to market of emerging offerings and market landscape of such geographies, including the competitive structure
+- Develop market potential with clear delineation between addressable served today vs untapped opportunity
+- Customer profitability
+- [ENTITY 1] and [ENTITY 3] Bakery supply its products to several key accounts including well-known modern trades, for example, [CUSTOMER 5] and [CUSTOMER 3], as well as its related company, [ENTITY 2], and other coffee shops, serving both B2B and B2C.
+- There may exist dispersion in margins across customers in each segment, led by pricing/discount variability or difference in cost to serve
+- There may be an opportunity to renegotiate terms or agreements with existing customers for better profitability.
+- Analyse customer profitability by segmenting based on revenue and customer type
+- Analyse cost-to-serve at customer and service level to identify unprofitable customers
+- Assess pricing improvements and removal of loss-making/ margin eroding customers
+- Assess current contracts to identify opportunity of renegotiation for higher profitability
+- Brand marketing and promotion effectiveness
+- [ENTITY 2] has presence on social media and spends on digital marketing.
+- The company also runs multiple promotional campaigns to drive user acquisition and engagement
+- , however, [BRAND 1] may still need to develop a stronger branding to create long-term brand awareness
+- With the loyalty programme, [ENTITY 2] gives customers under the programme discounts and free drinks when those customers collect certain amount of points Currently, [ENTITY 2]’s marketing expense is approximately1.0% of total revenue as of MM[X]3
+- There might be opportunity to improve the effectiveness of marketing and promotion spending and increase ROI.
+- Understand the relationship and historical lead times between the different streams of marketing expenditure and revenue change
+- Perform internal and external benchmarking to identify and quantify opportunity to optimise marketing spend
+- Analyse the effectiveness of campaigns by assessing incremental sales from each marketing campaign
+- Test the elasticity impact of price changes and promotions on sales
+- Customer wallet share expansion (Cross-selling)
+- While [ENTITY 2] sells its products directly to a large base of end-customers, [ENTITY 1] and [ENTITY 3] Bakery has several key customers who are mostly businesses include modern trade, coffee shops, and OEM customers.
+- There might be a potential opportunity to enhance average order size and increase the share of the customer's wallet by cross-selling specific products to customers in each business.
+- Analyse share of wallet across existing product categories to determine where target is not getting fair share of wallet
+- Identify the customer segments that can be targeted with specific products, to capture higher market share
+- Assess current gaps in product portfolio to identify and increase sales and market share
+- Prelim. Opp. Assessment
+- Potential Analysis Areas
+- initial Value Creation opportunities for [ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery (1/3)
+- initial Value Creation opportunities for [ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery (2/3)
+- Pricing & margin management
+- Product profitability
+- [ENTITY 2], as a coffee
+- , offers a wide range of products including, beverages, bakery products, special/seasonal menus and other merchandises
+- [ENTITY 1] offers roasted coffee beans, ground coffee, beverage ingredients, coffee machines and other trading products.
+- [ENTITY 3] Bakery offer full range of bakery products and bakery R&D service
+- There may be an opportunity to rationalise the product/SKU portfolio through identifying less profitable products/SKUs, across these product/SKU categories which could result in increased margins through focus on high profitable products/SKUs.
+- Conduct fully costed analysis to study the product/SKU profitability at the contribution margin level
+- Identify low profitable products/SKUs for potential rationalisation
+- Identify the cost drivers and calculate EBITDA impact at the product/SKU level to identify reasons for margin erosion and opportunities to improve
+- Pricing and Discount analysis
+- [ENTITY 2] appears to have higher price when compared to peers with similar product sophistication level, however,
+- net revenue during FY[X]1-MM[X]3 was negatively impacted by increase in discounts
+- [ENTITY 1]’s and [ENTITY 3] Bakery’s pricing policy is based on bidding processes or negotiations with customers.
+- There may be an opportunity to access the company's pricing and discount scheme to identify optimal pricing scheme which can enhance both competitiveness and margin.
+- Perform peer benchmarking analysis to understand the target's pricing position
+- Analysis of market norms of discount scheme and benchmarking against peers
+- Analyse cost structure and product profit margin
+- Identify optimal pricing strategy based on both market and profit margin
+- [ENTITY 2] currently operates 100 coffee shops throughout [LOCATION] with additional 10 franchised stores. For MM[X]3, 47 out of 110 stores are loss making at EBITDA level.
+- There may exist an opportunity to reduce occupancy cost by evaluating and aligning the store size with the share of in-store sales or further rationalising profit-eroding stores
+- Analyse the profitability of each branch at the EBITDA margin level in order to identify low profitable branches for potential rationalisation
+- Identify key drivers of low profitability stores, improvement initiatives, and quantify upside opportunity
+- Analyse revenue per square feet for in-store sales and perform internal benchmarking to identify stores with low revenue per square feet
+- Headcount rationalisation
+- As of MM YY, [ENTITY 2] has more than 300 employees working across branches and corporate office while [ENTITY 1] and [ENTITY 3] Bakery have approximately 100-employees and 150 employees working at their factories and corporate offices respectively
+- There might be an opportunity to right-size the staff across locations, optimise tenure, rationalise under utilised employees and optimise mix between contractors and full-time employees
+- Perform organisation headcount analysis to understand the organisational structure and form basis for functional benchmarking
+- Identify duplicate roles across the organisation and estimate potential savings because of employee rationalisation and one-time costs
+- Analyse effectiveness of incentive compensation structure, if any
+- Operational improvement
+- Prelim. Opp. Assessment
+- Potential Analysis Areas
+- Procurement/ vendor consolidation
+- [ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery requires various sources for multiple raw materials across product segments from local and international vendors.
+- [ENTITY 1], in particular, purchases raw coffee beans from the community in [SUPPLIER 10] district, [ADDRESS] in
+- collaboration with Agricultural Land Reform Office, in which [ENTITY 1] is required to pay additional cost of
+- There might be an opportunity to consolidate vendors and negotiate better terms (e.g., rates, discounts, rebates, etc.)
+- Perform analysis on vendor spend data to assess spend by type, identify potential volume discounts not currently utilised, duplicative vendors, as well as performing contract 'best price' analysis to determine potential cost saving opportunities
+- Perform analysis reviewing vendor contracts and sourcing to reduce quality issues and improve costs savings
+- Logistics and route optimisation
+- [ENTITY 1] and [ENTITY 3] Bakery may have its own vehicles/fleet as well as outsourced vendors to deliver products to customers.
+- [ENTITY 2] outsources delivery services to serve customers and it may have its own fleet for raw material delivery from distribution centres to each branch.
+- There may be an opportunity to assess and potentially improve distribution or freight costs for target by either reducing footprint or by efficiently leveraging shipping from closest location
+- Conduct route assessment based on the current distribution model and ship to and from location for each product category and distribution facility
+- Analyse the contract terms for the asset-based carriers and identify opportunities to leverage the best-priced vendor and/or renegotiation of rates by consolidating spend with specific vendors
+- Optimise the distribution network to minimise freight costs
+- Back-office cost optimisation
+- There may be an opportunity to assess back-office headcount rationalisation based on efficiency metrics, internal
+- and comparison of duplicate roles and responsibilities across [ENTITY 2], [ENTITY 1], and [ENTITY 3]
+- There may be an opportunity to achieve back office (Non-FTE) savings by benchmarking back-office functions like IT, finance, HR, marketing, admin, etc. with peers
+- Perform back-office benchmarking analysis against industry peers to identify potential improvement opportunities for FTE
+- Consolidate back-office employees through centralisation of functions and analyse spans and layers for potential improvement (e.g., increasing manager spans)
+- Analyse back-office spend to identify major cost buckets
+- Perform G&A (back office) benchmarking analysis against industry peers to identify potential improvement opportunities for non-FTE spend
+- Coffee retailing market is expected to continue growing with  major players holding the majority of market share
+- Note: F = Forecast, Key player performance is based on latest available information
+- Café market outlook (20XX-20XX)
+- Unit: USD bn
+- Major players’ market share by sales value in 20XX
+- Chained Cafés
+- Independent Cafés
+- [X] coffee shop market has continued to grow from 20XX to 20XX at a CAGR of 3.1% despite the impact from COVID-19 limiting in-shop consumption. The growth is driven by increasing interest in coffee among consumers especially in specialty segment and expansion of retail petrol service stations nationwide (in response to rising on-the-go demand)
+- Even though the market is expected to expand steadily, the competition is expected to become more relentless with the low barrier to entry which drives each company to focus on product development and promotions in order to remain competitive and secure their market share
+- Key coffee shop players in the [X] market are [PLAYER 1] and [PLAYER 2], which accounted for 51.4% and 21.1% of total market share, respectively in 20XX. The remaining market share is spread among various smaller players, both chained and independent shops
+- Despite the overall market growth trend, many coffee retailers find it difficult to grow or even remain in business
+- Over the last four years,
+- [LOCATION].
+- Additionally, an increasing number of non-coffee chains, such as [SUPPLIER 20] and [SUPPLIER 23], has introduced their own coffee brands as well.
+- Even through the pandemic period, the market was able to grow continuously.
+- Risks from substitute products
+- In general, coffee shop business requires a large initial investment
+- to build and decorate the shop, buy equipment, raw materials, etc. for a single standalone location). In addition,
+- the majority of such investment costs are fixed in nature
+- (~ 5 years) and, without sufficient customer traffic, store performance could be poor.
+- Regulations on coffee bean imports
+- Today’s consumers are becoming
+- , wanting to buy products for both emotional value and functionality. For a coffee shop business, this means that overall consumers are
+- as well as higher quality coffee beans.
+- Change in consumer behaviour
+- Unclear value proposition
+- In the past, there were
+- a number of international coffee chains that closed down their business in [LOCATION]
+- after a certain period of operation, such as [BUSINESS CHAIN 1] . The common feature among these chains is the fact that
+- they charged premium prices for their products without a strong brand presence
+- In recent years,
+- numerous potential substitute products have emerged in the [X] market
+- . More sophisticated DIY coffee products for home consumption were introduced including coffee capsules and coffee drips. Furthermore,
+- [LOCATION] has a quota on the total amount of imported coffee beans
+- , whereby import within the quota is subject to a lower tariff while excess is subject to a higher rate (as high as 90% depending on country of origin). This becomes a key impediment for the market growth
+- as coffee beans for brewing particular coffees need to be imported.
+- Furthermore, the productivity of coffee beans in [LOCATION] is still low compared to the level of consumption.
+- Efficiency improvement
+- Potential rationalisation
+- Store profitability analysis indicates store rationalisation opportunity of EBITDA eroding stores
+- Value creation potential
+- by store profitability (number of store as at MM[X]3)
+- USD 3.9 M – 5.6 M (EBITDA improvement)
+- on revenue due to store closedown which may not sufficient to cover back-office cost
+- Implementation consideration
+- Contract with lessor and employee may cause the delay in store close down or additional incurred cost
+- Next steps to validate the opportunity
+- Rental and employee cost appear to have highest  improvement potential for store profitability
+- [ENTITY 2]’s % average selected cost to revenue (%, MM[X]3)
+- Leveraging store segmentation analysis, we conducted cost benchmarking to identify upside opportunities across gainer, positive decline, and negative decline store segments which are classified as store with efficiency improvement potential
+- Resizing the stores and reducing the number of employees could impact customer experience and satisfaction
+- Implementation consideration
+- Complexity could arise
+- from negotiation process with lessor and employee contract review
+- Timeline to implement: 6 - 12 months
+- 1-year negative decline
+- % Rental cost to revenue*
+- % Employee cost to revenue
+- Value creation potential
+- USD 3.0 M – 6.1 M (EBITDA improvement)
+- We suggest performing a rapid diagnostic looking into store rationalisation  as well as product and customer profitability
+- Develop tailored plans to implement EBITDA enhancement and cash release opportunities
+- Consolidate plans to form a unified schedule for implementation, including resources, one-off costs, and risk/mitigation actions
+- Validate schedule and resource requirements for each work stream, and across business units
+- Establish reporting structure to measure program success
+- Draft project charters to ensure all team members are working towards a common defined goal
+- Rapidly Implement the opportunities to create value
+- Establish the Project Management Office
+- Assign work stream ownership to key stakeholders
+- Execute implementation plan for cash release and EBITDA enhancement opportunities
+- Carefully track the implementation of benefits and one-time costs
+- Review progress and milestones with management
+- Implementation Support
+- Extract financial, operational and commercial data
+- Indicative timeline for Value Creation planning and rapid diagnostic phase
+- Planning & mobilisation
+- Project kick off
+- Hold kick off with management
+- Discuss any further data queries
+- Hypothesis development
+- Baseline & benchmarking
+- Develop initial hypothesis
+- Quantification & refinement of opportunities
+- Analysis of hypothesis
+- Development of estimated value upside
+- Implementation roadmap
+- Baseline & benchmarking
+- Agree on hypothesis & indicative priority
+- Estimated value upside
+- Quantified hypothesis
+- Shareholding structure
+- Pro forma consolidated profit & loss worksheet
+- Group’s staff cost
+- Glossary of terms and abbreviations
+- Our work commenced on [DATE]
+- [DATE]
+- . We have not undertaken to update our report for events or circumstances arising after that date.
+- This engagement is not an assurance engagement conducted in accordance with any generally accepted assurance standards and consequently no assurance opinion is expressed.
+- The contents of this report have not been reviewed by the Management of Target and the factual accuracy of this report has not been confirmed by the Management.
+- The financial information contained within this report is based on the trial balance, which are prepared using [X] Financial Reporting Standards for Non-Publicly Accountable Entities.
+- Note that this report is based on analysis, facts and circumstances prevailing during the COVID-19 pandemic. At the date of this report the situation is evolving globally and the social, economic and financial impacts are uncertain, and may have a material impact on the proposed transaction and operations of the Target
+- Value creation potential
+- During the course of our work we have attempted to identify potential value creation opportunities to facilitate discussions on areas of potential value enhancement. The value enhancement opportunities shown are indicative estimates only and are based on limited information, high level analysis and assumptions. The opportunity analysis have been carried out using limited data and do not comprise a detailed diagnostic. Accordingly the analysis needs to be interpreted with caution. The assumptions used in the calculation of base case/stretch case upside potential are set forth within our analysis.
+- In performing the value creation potential analysis we have also recommended certain "Next steps to validate opportunity".  We are happy to discuss how we can support you with these steps, subject to contract.
+- [ENTITY 1 FULL NAME] , [ENTITY 2 FULL NAME], and [ENTITY 3 FULL NAME]
+- During the course of our work our main points of contact have been the Management of Targets, represented by
+- [MR./MRS.] [FAMILY MEMBER 3] [SURNAME] (COO), [MR./MRS.] [FAMILY MEMBER 1] [SURNAME] (Marketing Director) and [MR./MRS.] [FAMILY MEMBER 2] [SURNAME] (Managing Director)
+- We attended a meeting with Management on [DATE], [DATE], and have had regular follow-up calls with Management and communication through email.
+- Overall, we have had good access to Management, who have
+- responded to our questions and requests in a timely manner.
+- The contents of our report have not been reviewed by the Management of Targets and the factual accuracy of this report has not been confirmed by the Management.
+- The requested information has been provided through the virtual data room. As of the date of this report, all available requested information has been provided in a timely manner.
+- Our work has relied on certain key sources of information including, but not limited to; (1)
+- Audited financial statements for FY[X]1 and FY[X]2, (2) Trial balance for FY[X]1, FY[X]2, MM[X]2 and MM[X]3
+- , and (3) Other supporting documents for financial performance.
+- Access to management
+- Quality of information
+- USD Group and entity definitions
+- [ENTITY 3 FULL NAME]
+- [CUSTOMER 1 FULL NAME]
+- [ENTITY 2 FULL NAME]
+- [GROUP NAME]
+- [GROUP FULL NAME]
+- The 3 Target entities (i.e. [ENTITY 3 FULL NAME],
+- [ENTITY 2 FULL NAME],
+- [ENTITY 1 FULL NAME]
+- Currencies and time periods
+- For the five-month period ended DD MM 20XX
+- For the year ended 31 December XX
+- United States Dollar currency
+- Thousand US Dollars
+- United States Dollar currency
+- Agricultural Land Reform Office
+- Business to business
+- Business to customer
+- Bill of materials
+- Cost of goods sold
+- Chief Operating Officer
+- Days Inventory Outstanding
+- Days Payable Outstanding
+- Days Sales Outstanding
+- Earnings before interest and tax
+- Earnings before interest, tax, depreciation and amortisation
+- Earnings before interest, tax, depreciation, amortisation and rent costs
+- Employee benefit obligations
+- First-in, First-out
+- Glossary of terms and abbreviations (1/2)
+- Other definitions (Cont.)
+- Full Time Employee
+- Key performance indicator
+- Like-for-like
+- Long-term loan
+- Minimum Loan Rate
+- Minimum Overdraft Rate
+- Information is not available
+- Information is not provided
+- Net asset value
+- Non-Publicly Accountable Entities
+- Share your feedback on this report!
+- [ADDRESS LINE 1]
+- [ADDRESS LINE 2]
+- [CONTACT NO.]
+- [NAME]
+- [EMAIL ID]
+- [NAME]
+- [EMAIL ID]
+
+
+## Required Source Evidence
+
+SOURCE_TEXT_DIR: extracted/verification/project-coffee-buy-side-fdd/source-text/pptx  
+MONTAGE_DIR: extracted/verification/project-coffee-buy-side-fdd/montage  
+SOURCE_ARTIFACTS: slide-001.txt ... slide-122.txt  
+OCR_USED: false  
+OCR_SLIDES: []  
+OCR_ARTIFACTS_DIR: extracted/verification/project-coffee-buy-side-fdd/source-text/ocr  
+OCR_RUN_METADATA: extracted/verification/project-coffee-buy-side-fdd/source-text/ocr/ocr-run.json  
+PROVENANCE_QA_JSON: extracted/verification/project-coffee-buy-side-fdd/qa/provenance.json  
+GATES_QA_JSON: extracted/verification/project-coffee-buy-side-fdd/qa/gates.json  
+SECTION_MAP_JSON: extracted/verification/project-coffee-buy-side-fdd/mapping/section-map.json  
+SECTION_ACCOUNTING_JSON: extracted/verification/project-coffee-buy-side-fdd/mapping/section-accounting.json  
+RENDER_TRACE_JSON: extracted/verification/project-coffee-buy-side-fdd/render/render-trace.json
+
+## Source-to-Extraction Coverage Map
+
+| Canonical Section | Source slide/page IDs | Source evidence files | Extracted reference(s) | Notes |
+|---|---|---|---|---|
+| Executive Summary | 1, 2, 3, 6, 8, 9, 13, 14, 16, 17, 21, 104, 105 | `slide-001.txt`, `slide-002.txt`, `slide-003.txt`, `slide-006.txt` ... | `# Executive Summary` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Key Findings | 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 101, 103, 104, 105, 117 | `slide-011.txt`, `slide-012.txt`, `slide-013.txt`, `slide-014.txt` ... | `# Key Findings` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Business Overview | 5 | `slide-005.txt` | `# Business Overview` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Summary Financials | 7 | `slide-007.txt` | `# Summary Financials` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Profit and Loss Overview / Financial Performance | 7, 15, 30, 32, 33, 34, 35, 116, 118, 119 | `slide-007.txt`, `slide-015.txt`, `slide-030.txt`, `slide-032.txt` ... | `# Profit and Loss Overview / Financial Performance` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Quality of Earnings | 7, 12, 25, 26, 27, 28, 32, 34, 91, 118, 121 | `slide-007.txt`, `slide-012.txt`, `slide-025.txt`, `slide-026.txt` ... | `# Quality of Earnings` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Income Statement | 23, 24, 30, 31, 121 | `slide-023.txt`, `slide-024.txt`, `slide-030.txt`, `slide-031.txt` ... | `# Income Statement` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Balance Sheet | 20, 84, 85, 86, 87, 88, 89, 91, 92, 116 | `slide-020.txt`, `slide-084.txt`, `slide-085.txt`, `slide-086.txt` ... | `# Balance Sheet` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Net Working Capital | 8, 100, 106, 121 | `slide-008.txt`, `slide-100.txt`, `slide-106.txt`, `slide-121.txt` | `# Net Working Capital` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Net Debt (Cash) | 10 | `slide-010.txt` | `# Net Debt (Cash)` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Cash Flows | N/A | N/A | `# Cash Flows` | Not present in source report. |
+| Related Parties | 10, 17, 76, 86, 88, 92, 94 | `slide-010.txt`, `slide-017.txt`, `slide-076.txt`, `slide-086.txt` ... | `# Related Parties` | Full-report cleanup pass applied; retained only source-backed body lines. |
+| Reporting Environment | N/A | N/A | `# Reporting Environment` | Not present in source report. |
+| Forecast Trading | N/A | N/A | `# Forecast Trading` | Not present in source report. |
+| Industry Analysis | N/A | N/A | `# Industry Analysis` | Not present in source report. |
+| Quality of Net Assets | N/A | N/A | `# Quality of Net Assets` | Not present in source report. |
+| Gross Margin by LOB | N/A | N/A | `# Gross Margin by LOB` | Not present in source report. |
+| Appendices | 3, 32, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 90, 95, 96, 97, 98, 99, 100, 101, 102, 104, 105, 106, 107, 108, 114, 115, 116, 120, 121, 122 | `slide-003.txt`, `slide-032.txt`, `slide-034.txt`, `slide-036.txt` ... | `# Appendices` | Full-report cleanup pass applied; retained only source-backed body lines. |

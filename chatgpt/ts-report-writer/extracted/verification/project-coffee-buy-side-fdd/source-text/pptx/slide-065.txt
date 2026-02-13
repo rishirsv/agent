@@ -1,0 +1,20 @@
+[ENTITY 1]: Cost of goods sold (2/2)
+Rental fee consisted of the rental of part of [ENTITY 3]’s factory in [FACTORY 1] to be used as roasting and storage facilities for coffee beans at the rental rate of USD 160,000 per month and rental of factory owned by Mr. [LESSOR NAME], an external party for production of concentrated drinks, syrups, beverages, and powder mix at the rate of USD 44,000 per month.
+This consisted of the repair of machinery for the relocation of roasting factory to [FACTORY 1] in FY[X]1 as well as other maintenance expenses.
+Commentary on Cost of goods sold (Cont.)
+Source: (1)Trial balance as at 31 [MONTH] 20[X]1, 20[X]2 and 31 [MONTH] 20[X]2 and 20[X]3 (2) Information from Management and (3) KPMG analysis
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

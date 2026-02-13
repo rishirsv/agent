@@ -1,0 +1,38 @@
+[ENTITY 3]: Balance sheet overview (
+3
+/3)
+Commentary on key balance sheet items
+(Cont.)
+Source: […]
+The major components of liabilities as at 31 [MONTH] 20[X]3 were long-term borrowing (82.6%) bank overdraft and short-term borrowing from financial institutions (9.2%) which are
+secured by the [ENTITY 3]’s
+land and guaranteed by the directors.
+Long-term loan borrowing
+as at 31 [MONTH] 20[X]3, comprised three tranches obtained from [BANK 1].
+The first tranche is a loan with an outstanding balance of USD 8.9 million, bearing interest of 4% per annum, with interest payment due on the 25th day of each month.
+The second tranche is a loan with an outstanding balance of USD 8.9 million, bearing interest at 4% per annum, with interest payment due on the 19th day of each month.
+The third tranche is a loan with an outstanding balance of USD 5.6 million, bearing interest at MLR-1% to MLR per annum, with interest payment due on the 7th day of each month.
+These long-term loans are secured by the [ENTITY 3]’s land and guaranteed by the directors.
+All of these loans have a grace period of 24 months, starting from [MONTH] 20[X]1 to [MONTH] 20[X]3. Management stated that the negotiation process for the extension of grace period is still ongoing.
+Loan from related parties
+as at 31 [MONTH] 20[X]3 consisted of
+loans from [ENTITY 1]
+(
+USD 8.4 million)
+and [GROUP NAME] (
+USD 4.1 million)
+bearing interest rate of 1% per annum.
+In addition, [ENTITY 3] obtained interest-free loans from the directors, i.e. [MR./MRS.] [FAMILY MEMBER 5], [MR./MRS.] [FAMILY MEMBER 4] and [MR./MRS.] [FAMILY MEMBER 1], with total outstanding balance of USD 99.7 million. These loans from related parties are made without a formal written agreement and due at call.
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis |
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

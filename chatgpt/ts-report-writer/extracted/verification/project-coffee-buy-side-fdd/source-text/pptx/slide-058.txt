@@ -1,0 +1,32 @@
+Net revenue from coffee beans accounting for 62.6% to 71.5% over the analysed period. Due to the increase in selling price for several products in FY[X]2, the overall margin increased from 44.1% in FY[X]1 to 50.0% in FY[X]2. In MM[X]3, the
+slight increase in
+margin was caused by the increase in selling prices of several products e.g.
+ready-mixed non coffee and syrup, offset by the impact from the sales of coffee beans back to its supplier at cost.
+[ENTITY 1]: Revenue by product type (2/4)
+Basis of preparation
+Details of net sales and margin by SKU and by customer was prepared by Management based on the actual quantity of products sold, net selling price, and standard cost of each product which is generated from Bill of Material (“BOM”) in the ERP system. BOM which consists of direct materials, direct labour and overhead per production unit is prepared by R&D department and updated monthly.
+Components of cost of goods sold which were not included in SKU data are variances to reflect cost of goods sold at actual cost such as staff cost, depreciation, electricity and water and others.
+However, there were some differences between implied cost per SKU data
+and cost of products accounts stated at standard cost (before the allocation of variances in direct labor and overhead) as shown in the table below. Management informed us that at every month-end, direct materials were first recorded at standard cost on FIFO basis per SKU data. This standard cost will be adjusted to average cost in the trial balance. The difference shown in the table represented such adjustment in addition to any stock loss from production process.
+Although we have noted the incorrect cost recognition on page 11,
+the breakdown of the adjustment by SKU was not available.
+Margin by product
+was therefore presented on the reported numbers
+Commentary on revenue by product type
+Source: (1) Details of net sales by SKU and by customer for FY[X]1, FY[X]2, MM[X]2 and MM[X]3 (2) Trial balance as at [DD] [MONTH] 20[X]1, 20[X]2 and [DD] [MONTH] 20[X]2 and 20[X]3. and (3) KPMG analysis
+This line referred to discount for the invoice comprising of several types of products and these discounts were not allocated to net sales, therefore we excluded discounts from other types of products
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

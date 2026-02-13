@@ -1,0 +1,47 @@
+Group: Quality of earnings (3/4)
+Potential adjustments to EBITDA (Cont.)
+Management informed us that in FY[X]1, standard cost per BOM keyed in the ERP system was incorrect resulting in the outstanding work-in-process balances of [ENTITY 1] and [ENTITY 3]. Per our discussion with Management, these costs should have been recognised as cost of goods sold in FY[X]1.
+For [ENTITY 1] entity, all incremental costs of USD 2.7 million were recorded as cost in FY[X]2
+For [ENTITY 3] entity, there were outstanding WIP balance as at 31 May 20XX in the amount of USD 5.
+3
+million.
+We therefore adjusted as if these costs have been recorded in FY[X]1.
+We were informed by Management that there were unrecorded expenses in [ENTITY 1] which incurred
+by
+the roasting station in [ADDRESS]. These expenses which included
+maintenance, staff cost, transportation of green beans
+,
+etc. totaled to approximately USD 2 million per year and
+were paid by [SURNAME] family
+(Directors of [ENTITY 1] and shareholders of [GROUP FULL NAME]. We therefore proposed to reflect these expenses in FY[X]1 – MM[X]3 periods as these expenses should be recorded as part of the Company’s underlying earnings.
+Unquantifiable adjustments to EBITDA
+[BRAND 1] operated a number of customer loyalty programs;
+[BRAND]stamps” where customers can collect one e-stamp for every drink purchased. 10 stamps can be used to exchange for one free drink (USD 75 value). However, all stamps will be reset to zero at month-end.
+“[BRAND 1] rewards” where customers receive one point for every USD 100 of purchases. These points can be redeemed for a free drink or discount for [BRAND 1] merchandise with validity period of 2 years for [BRAND] Member membership status, with no expiration date for [BRAND] Family and [BRAND] VIP membership status.
+In the historical periods, [ENTITY 2] has never recorded any provision relating to the reward points on its Balance sheet. When points/stamps are subsequently redeemed, the Group only recognised the difference between selling price of products and payments from customers as discount (netted off gross revenue).
+Under TFRS for NPAEs, [ENTITY 2] is required by TAS37 (Provisions, Contingent Liabilities, and Contingent assets) to record provision together with expenses at period-end. We note that as an NPAE entity, [ENTITY 2] also have the option to adopt TAS37 or to adopt TFRS15 as discussed in the next paragraph.
+Under TFRS for PAEs, [ENTITY 2] is required by TFRS15 to allocate part of the proceeds from sales as provision. This provision will be recognised as revenue based on the usage pattern.
+As a result, reported EBITDA might not be correct due to the difference in the period of revenue recognition between when points are earned by customers and when points are redeemed under the Group’s current practice.
+As at 31 May 20XX, there was a total of 1.6 million points, which are equivalent to the value ranging from USD 12.0 million - USD 12.5 million. According to Management, one point is worth an estimated value of USD 7.5 - USD 7.8.
+We recommend further analysis to be performed to quantify the impact of the potential adoption of TFRS15, post-Closing.
+Source:
+(1) Trial balance as at 31 December 20XX and 20XX, (2) Management discussion, and (3) KPMG analysis
+Executive summary
+|
+Consolidated financial performance
+|
+Financial performance
+|
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

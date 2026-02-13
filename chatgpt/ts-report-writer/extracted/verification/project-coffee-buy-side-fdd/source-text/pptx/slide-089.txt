@@ -1,0 +1,48 @@
+[ENTITY 1]: Balance sheet overview (3/3)
+Commentary on key balance sheet items (Cont.)
+Intangible assets
+as at 31 [MONTH] 20[X]3 consisted of software
+under
+development (61.8%) and a computer program license (38.2%). Additionally, there was a [BRAND 1] brand trademark with a 10 useful life years, which has been fully amortised.
+We did not receive further details on the trademark agreement and whether a renewal is required.
+Bank overdraft and shot-term borrowings from financial institutions
+consisted overdraft from [BANK 1] and [BANK 2], as well as a promissory note from [BANK 1] bearing MOR (Minimum Overdraft Rate) interest rates, with monthly payments due on the last business day of each bank. [ENTITY 1] has used its land, buildings, and lease agreements as collaterals for these loans.
+Trade and other
+payables
+as
+at  31 [MONTH] 20[X]3 largely consisted of domestic trade payables (38.5%), and other payables (45.5%) (such as ERP software, land tax, audit fee, etc.). The increase in trade and other payables from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was mainly due to the purchases of [VARIANT] coffee beans as discussed in note 4 – Inventories.
+Loans from directors
+represented interest-free loans from
+[MR./MRS.]
+[FAMILY MEMBER 5] and [MR./MRS.] [FAMILY MEMBER 4] [SURNAME], the directors of [ENTITY 1]. We were informed that these loans are repayable at call and does not have a formal agreement.
+Lease liabilities
+as at 31 [MONTH] 20[X]3
+represent
+lease of vehicle
+from [LESSEE]Public Co., Ltd., amounting to USD 1.1 million.
+Long-term loan borrowing
+as at 31 [MAY] 20[X]3, comprised two tranches obtained from [BANK 1] and [BANK 3].
+The first tranche is a loan from [BANK 1] with an outstanding balance of USD 15 million, bearing interest at MLR-1.50% to 0.25% per annum, with
+interest
+payments due on the 20th of each month. The loan agreement's maturity date is in March
+2030.
+It has a grace period of 24 months from [MONTH] 20[X]1 to [MONTH] 20[X]3. This long-term loan is secured by the company’s land and building and guaranteed by the directors. The negotiation process for the extension of grace period is still ongoing.
+The second tranche is a loan from [BANK 3] with an outstanding balance of USD 8.4 million, bearing interest at 2% to MLR-1.0% per annum, with interest payments due on the 15
+th
+of each month. The loan agreement does not specify
+the
+maturity date. It had a grace period of 6 months, starting from [MONTH] to [MONTH] 20[X]1.
+The major components of liabilities as at 31 [MONTH] 20[X]3 were bank overdraft and short-term borrowing from financial institutions (36.3%) and loan from directors (33.8%).
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis |
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

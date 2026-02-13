@@ -1,9 +1,9 @@
 [
   {
-    "source_file": "Project Coffee_buy side_FDD (Consumer & Retail - F&B).pptx",
-    "report_id": "project-coffee-buy-side-fdd-consumer-retail-f-b",
-    "status": "blocked",
-    "output_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/extracted/project-coffee-buy-side-fdd-consumer-retail-f-b.md",
-    "notes": "File is not a zip file"
+    "source_file": "Project Coffee_buy side_FDD .pptx",
+    "report_id": "project-coffee-buy-side-fdd",
+    "status": "done_pending_review",
+    "output_file": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/extracted/project-coffee-buy-side-fdd.md",
+    "notes": "presentation_dual_source_catalog"
   }
 ]

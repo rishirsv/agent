@@ -1,0 +1,11 @@
+Financial position
+07
+01
+[ENTITY 2]
+83-85
+02
+[ENTITY 1]
+86-88
+03
+[ENTITY 3]
+89-91

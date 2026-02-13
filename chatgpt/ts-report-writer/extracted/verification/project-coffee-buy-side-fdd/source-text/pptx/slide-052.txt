@@ -1,0 +1,22 @@
+[ENTITY 2]: Cost of goods sold (2/2)
+According to Management, stores rental and services fees decreased from FY[X]1 in FY[X]2 because of the impact of closed stores. In addition, [ENTITY 2] has reduced the rental space of some stores.
+This represented revenue sharing to co-investors in a range of 15%-20% on total sales from co-investment stores.
+This related to variances between actual cost and standard cost of material, and cost of waste. The increase in variances/damage loss in FY[X]2 was due to the inefficiency of inventory control for waste monitoring as well as there were some errors on BOM which lead to high adjustment recorded (e.g. bug in unit conversion) between POS system and ERP system.
+This represented the rental cost of ice making machines from third parties used in the stores.
+Others mainly comprised of cost of sample products for new menu, and property and sign taxes at stores.
+Commentary on cost of goods sold (Cont.)
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

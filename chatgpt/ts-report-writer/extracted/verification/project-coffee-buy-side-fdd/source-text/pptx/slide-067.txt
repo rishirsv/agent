@@ -1,0 +1,36 @@
+Average coffee bean cost
+[VARIANT 2] beans were supplied from [CITY] farmers and produced coffee beans at [SUPPLIER 10] factory. Due to an increase of [VARIANT 2] bean price, [ENTITY 1] had purchased [VARIANT 3] which was of lower price and reduced portion of purchases in [COUNTRY]. [COUNTRY] [VARIANT 4] beans were imported during [MONTH] – [MONTH].
+[ENTITY 1]: Key suppliers (2/2)
+Source: (10 List of Top 10 key suppliers for FY[X]1, FY[X]2 and MM[X]3  (2) Management’s discussion and (3) Average coffee bean cost provided by Management
+Left
+2/3 text box
+Right
+Second text column
+50-50
+text box
+(Cont.)
+Expenses incurred from the roasting station in [CITY] included maintenance, staff cost, transportation of green beans
+and etc. of approximately USD 2 million per year were paid by [SURNAME] family
+(Directors of [ENTITY 1] and shareholders of [GROUP NAME])
+and not recorded in the [ENTITY 1]’s P&L account.
+In MM[X]3, there were 2 new key suppliers
+as shown in the table below – these are [NATIONALITY] traders that sell [VARIANT 3]. As top suppliers were ranked based on FY[X]2 purchases to eliminate any seasonality impact, these two new suppliers were not included in the list.
+[SUPPLIER 15] is a coffee machine supplier from [COUNTRY]. [ENTITY 1] normally orders coffee machine twice a year.
+[VARIANT 4] coffee
+beans from [SUPPLIER 16] were usually ordered during [MONTH]-[MONTH]. In 20[X]3, [ENTITY 1] has recently ordered in [MONTH] 20[X]3.
+Commentary on Key suppliers (Cont.)
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

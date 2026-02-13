@@ -1,0 +1,32 @@
+Key findings — Financial (5/10)
+Overall
+The sales of coffee beans accounted for approximately 60-70% of total sales of [ENTITY 1]. Other products sold by [ENTITY 1] included non-coffee beverages as well as coffee machines and equipment.
+The increase in FY[X]2 revenue was attributable to the increase in sales to [CUSTOMER 1] (accounting for 32.3% of total sales in FY[X]2), and to B2B customers particularly [CUSTOMER 5 and CUSTOMER 6]. In MM[X]3, although sales to the B2B business continued to increase, it was offset by the impact from
+the decrease in
+sales to [CUSTOMER 1]
+as the contract has ended without being renewed. [ENTITY 1] was not selected by [CUSTOMER 1] in the previous bid given
+the increase in selling price of coffee beans from higher cost of raw materials.
+As discussed on page 11, the incorrect BOM information in FY[X]1 caused the reported cost of goods sold in FY[X]1 to be understated, and cost in FY[X]2 to be overstated by USD 2.7 million. In the graph adjacent, we have reflected the appropriate adjustment and presented % margins on an adjusted basis – this shows %GP and % EBITDA in FY[X]1 to decrease by 3.6
+ppt and %GP and %EBITDA in FY[X]2 to increase by 2.4
+ppt. We note that the breakdown of the adjustment at SKU and customer level was not available. The analysis of margin by customer was therefore presented on the reported numbers
+Despite the increase in
+cost of coffee beans, the improvement in adjusted %
+GP margin was mainly attributable to
+the adjustment of selling prices of coffee beans and the adjustment of coffee blend in FY[X]2 as well as the increased purchases of cheaper Lao Arabica beans in MM[X]3. In addition to the impact from increased GP margin,  adjusted EBITDA margin in FY[X]2 also benefited from the reduction in staff cost as resigned staff were replaced by junior staff with lower pay rate.
+Margin of coffee beans sold to B2B was higher than B2C customers due to the selling price agreed with [
+CUSTOMER 5
+]
+(>70% margin in FY[X]2 and MM[X]3), which Management stated was significantly higher than other customers. Management also informed us that selling prices to B2B customers are higher than B2C customers in general. However, we note that marketing fees charged by B2B customers were recorded in SG&A and therefore not reflected in the %GP margin.
+During FY[X]1 to MM[X]3, sales to [CUSTOMER 5] accounted for over 50% of the total sales of coffee beans to B2B customers.
+Financial performance of [ENTITY 1]
+Adjusted financial performance represented financial performance of [ENTITY 1] after the adjustment with respect to incorrect cost recognition as discussed on
+page 11.
+Remark: This table represented margins at standard cost. Please see further explanation on page 11
+Source: (1) Audited financial statements FY[X]1-FY[X]2 (2) Trial balance for MM[X]2 and MM[X]3 (3) Store performance FY[X]1-MM[X]3
+Consider to perform benchmarking analysis with respect to the margin of coffee beans to different types of customers and to what extent the increase in market prices of coffee beans can continue to be passed on to customers.
+You should consider to develop a plan with the Seller to expand the customer base of [ENTITY 1] given that the contract with [CUSTOMER 1] has discontinued.
+Value
+SPA
+Other
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices | Engagement Appendices

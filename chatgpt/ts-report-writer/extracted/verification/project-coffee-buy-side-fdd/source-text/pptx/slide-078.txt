@@ -1,0 +1,36 @@
+The increase in % cost of goods sold to revenue in FY[X]2
+and MM[X]3
+was mainly driven by
+the increased cost of bakery materials, which [ENTITY 3] could not fully pass through to customers in addition to the increase of wages since [MONTH] 20[X]2.
+[ENTITY 3]: Cost of goods sold
+Commentary on Cost of goods sold
+The table adjacent was prepared based on the trial balance.
+Cost of bakery comprised of raw materials (e.g. wheat flour, butter, eggs, sausage, etc.), cost of direct labour and overhead
+which consisted of cost of electricity and water, depreciation, staff cost and other estimated costs
+at standard cost.
+As discussed on page
+11
+, incorrect BOM caused cost to be understated in FY[X]1.
+This
+account was to record variances between actual cost of raw material and cost of raw materials per BOM. The high variance in FY[X]2 was caused by inaccurate BOM keyed in the production system when [ENTITY 3] first introduced frozen dough. As the cost of raw materials per BOM was updated on a monthly basis, this led to a decrease in variance.
+Management explained that the t
+he increase of % adjusted cost of bakery to total revenue in FY[X]2 and MM[X]3 was attributable to the increase in cost of bakery ingredients.
+The nature of account was to reverse all standard cost recorded in cost of bakery to record actual costs in other accounts (Variance of overhead also included of variance of direct labour).
+The increase in staff cost in FY[X]2 was due to the increase in number of production staff to accommodate the increase in sales order.
+Others consisted of production equipment, factory miscellaneous supplies, rental factory equipment and transportation of raw material.
+Source: (1)Trial balance as at 31 [MONTH] 20[X]1, 20[X]2 and 31 [MONTH] 20[X]2 and 20[X]3 (2) Information from Management and (3) KPMG analysis
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

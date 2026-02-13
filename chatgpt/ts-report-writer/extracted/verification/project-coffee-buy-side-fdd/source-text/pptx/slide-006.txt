@@ -1,0 +1,52 @@
+Summary of facilities
+Facilities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Headquarters
+Location:
+[ADDRESS]
+Rental fee:
+USD 2,400/month
+Lessor:
+[MR./MRS.] [LESSOR NAME]
+Location:
+[ADDRESS]
+Rental fee:
+USD 1,200/month
+Lessor:
+Mr. [LESSOR NAME]
+Headquarter and factory locating
+in
+[ADDRESS] are owned by [ENTITY 3].
+Factories and warehouse
+Roasting factory at [ADDRESS]
+Rental fee:
+USD 160,000/ month
+Lessor:
+[ENTITY 3]
+Warehouse and distribution centre at [ENTITY 3]’s building in
+[ADDRESS]
+Rental fee:
+No rental fee paid to [ENTITY 3]
+Detail
+Beverage factory at [ADDRESS]
+(For manufacturing of concentrated drinks, syrups, powder mix and other beverages)
+Rental fee:
+USD 44,000/month
+Lessor:
+Mr. [LESSOR NAME]
+Heading
+Second level
+Third level
+Fourth level
+Roasting and Cleaning machine located on land leased from [NAME]
+(For roasting and cleaning green beans purchased from local farmers)
+Rental fee:
+USD 35,541/ year
+Lessor:
+[ORG 3] (currently paid by the family)
+Summary of facilities
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices | Engagement Appendices
+Source : (1) Discussion with Management and (2) Rental agreements

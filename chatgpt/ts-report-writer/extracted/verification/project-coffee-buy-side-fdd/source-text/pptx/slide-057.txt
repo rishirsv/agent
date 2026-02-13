@@ -1,0 +1,38 @@
+The significant increase of net sales of coffee beans in FY[X]2 came from the sales to [CUSTOMER 1] which ended in
+[MONTH]
+20[X]3, while the increase in net sales of coffee machine came from [CUSTOMER 2] to support the opening of new branches. In MM[X]3, the revenue appeared higher than MM[X]2 due to sales of
+coffee
+beans
+back
+to the supplier.
+[ENTITY 1]: Revenue by product type (1/4)
+Sales of coffee and beverage accounted for over 90% of total revenue from FY[X]1 to MM[X]3.
+For coffee and beverage, discounts rates provided to B2B customers were stated in the trade agreements, while discount rates for B2C customers were in the range of 10%-12% based on the rates agreed with each customer. In addition, there were monthly promotions or campaigns to push sales volume on a case by case basis.
+For coffee machine, [ENTITY 1] provided discount to non coffee machine dealers of not over 35% for FY[X]1 – FY[X]2, and not over 30% discount in MM[X]3 while the dealers will get special discount rate on a case by case basis.
+The fluctuation of discount rate for each product type was therefore affected by the portion of sales from each customer who receive a different discount rate depending on sale volume and monthly promotions/campaigns.
+In addition, high % discount rate of coffee machine in FY[X]2 and MM[X]2 mainly came from special promotion to increase sale volume, and special discounts for sales of older models and sample products
+.
+[ENTITY 1] has trade agreements with B2B customers in term of rebate which it’s recorded under SG&A expense as marketing.
+Commentary on overall revenue by product type and discount
+Source: (1) Audited financial statements as at [DD] [MONTH] 20[X]1, 20[X]2 (2) Monthly trial balance as at [DD] [MONTH] 20[X]1, 20[X]2 and [DD] [MONTH] 20[X]2 and 20[X]3
+[ENTITY 1] sold Arabica beans (USD 3.2 million) back to [SUPPLIER 9], its supplier at cost as the contract with [CUSTOMER 1] has ended resulting in the overstock of coffee beans
+We understand from Management that there is no seasonality impact in the [ENTITY 1]’s business. However, the increase of sales during [MM]-[MM] related to the start of sales to [CUSTOMER 1] in 20[X]1 and the increase in sales to [CUSTOMER 1] before the contract ended in 20[X]3.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices
+FYX1
+FYX2
+MMX3
+USD’000

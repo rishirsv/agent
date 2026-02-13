@@ -1,0 +1,64 @@
+Key findings — Financial (1/10)
+Basis of preparation
+Our financial due diligence report was prepared based on audited financial statements of FY[X]0-FY[X]2, trial balance, and supporting details such as performance by product, by customer, and by store.
+Audited financial statements of [ENTITY 2] and [ENTITY 3] were audited by [XX] Audit Limited for FY[X]1
+and by [XX] Audit Co., Ltd. for FY[X]2. Audited financial statements of [ENTITY 1] were audited by [XX] Audit Co., Ltd. for both FY[X]1 and FY[X]2. [ENTITY 2], [ENTITY 3], and [ENTITY 1] received unqualified audit opinion for both years.
+Management informed us that [ENTITY 2] and [ENTITY 3] changed its auditor in FY[X]2 as they planned to adopt TFRS for PAEs in the future. [XX] Audit Co  is
+in
+the SEC’s
+auditor approved list
+.
+The Targets currently apply TFRS for NPAEs and the policies below should be considered post-Closing should TFRS for PAE be adopted:
+TFRS15 Revenue from contracts with customers as discussed in the next Key
+finding
+TFRS16 Leases. [ENTITY 2],
+[ENTITY 1], and [ENTITY 3]
+currently record rental expenses in the P&L. Minimum rents were required to be capitalised by recognising ROU asset and a lease liability in the Balance sheet and depreciation expenses and finance costs in the income statement.
+TAS19 Employee Benefits which requires actuarial valuation of employee benefit obligation
+T
+AS37 Provisions, Contingent Liabilities and Contingent Assets Recognition
+(for both TFRS for PAEs and NPAEs)
+– with respect to the provision for
+decommissioning of
+rental space and warranty liability for coffee machines.
+You will be aware that the current due diligence scopes cover historical trading performance only with a high-level observation on Balance Sheet as per p
+age
+8
+3
+-91. Should You proceed with any proposed transaction, we recommend additional work to be performed as discussed on page 19
+.
+[ENTITY 2] has never recorded liability with respect to
+unredeemed points.
+Under
+TFRS15 – Revenue from contract with customers,
+an entity is required to identify and allocate part of the transaction price to each performance obligation
+[ENTITY 2]
+:
+F
+or every USD 100 spending, customers will receive a point which can be used to redeem beverages or as a discount for [BRAND 1] merchandise. Part of sales of F&B products to customers should therefore be allocated as performance obligation representing future obligation for reward points. This liability will be recognised as revenue in proportion to the usage pattern of the reward points.
+In addition to the reward points,
+[ENTITY 2]’s customers will also earn 1 stamp for each beverage
+purchased
+.
+For every 10 stamps collected, customers are entitled to a free drink of their choice (value of USD 75).
+However
+, all stamps will be reset to zero at month-end
+We understand
+that
+the liability of
+[ENTITY 2]’s reward points and [ENTITY 1]’s one-year warranty
+have never been recorded. Instead, they were recognised as discount in P&L upon redemption of the points or as expenses upon warranty claim.
+In addition to reward points, [ENTITY 2] also offers other types of sale promotions such as
+vouchers and
+promotion campaigns with third-parties. Management informed us that these have been properly recorded as unearned revenue on the Balance sheet.
+Management informed us that [ENTITY 2] already has a system in place to track the outstanding reward points. As at 31 May 20XX, there was a total of 1.6 million points which are equivalent to the value of USD 12.0 million - USD 12.5 million calculated based on the estimated value of USD 7.5 to USD 7.8 per point provided by Management.
+Unrecorded stamps and reward points
+Quality of information
+Under TFRS for PAEs, liabilities of [ENTITY 2]
+and [ENTITY 1]
+are currently understated as they did not record ROU assets / lease liabilities, unredeemed points, product warranty. Further accounting analysis in respect of the impact of TFRS15 and TFRS16 towards financial position and financial performance should be considered.
+Value
+SPA
+Other
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices | Engagement Appendices

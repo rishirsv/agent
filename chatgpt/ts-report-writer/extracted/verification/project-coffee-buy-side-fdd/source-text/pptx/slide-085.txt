@@ -1,0 +1,49 @@
+[ENTITY 2]: Balance sheet overview (2/3)
+The major components of assets as at 31 [MONTH] 20[X]3 were fixed and intangible assets, accounting for 80.9% of total assets. Management confirmed that all assets are free of encumbrance.
+Commentary on key balance sheet items
+Cash and cash equivalents
+included petty cash at head office and cash at banks. Cash at tills in all stores were included in other non-current assets.
+According to
+the
+cash deposit policy at store level, store/on-site managers are responsible for the preparation of sales record on logbook and pay-in
+slip for cash sales
+Store managers will deposit cash to [ENTITY 2]’s bank accounts before 2 pm, and
+inform the deposit amount to the
+accounting staff for reconciliation process on a daily basis.
+Cash collected from customers after 2pm will be handled by store managers and deposited the next day.
+Trade and other receivables
+as at 31 [MONTH] 20[X]3 largely consisted of trade receivables from third parties (48.3%), prepaid IT system license and service expenses (30.5%) and prepaid store rental fees (11.3%). According to Management, the normal credit term provided to customers is 30 days. Management stated that there is no outstanding receivable over one year nor bad debt written off.
+Inventories
+as at 31 [MONTH] 20[X]3 mainly comprised of supplies (e.g., napkins, straws, plastic bags, etc.) (37.0%), beverage raw materials (27.4%), and packaging (11.5%). Inventories are stated at the lower of cost and net realisable value. Cost of inventories was based on weighted average costing
+method
+under perpetual inventory system.
+According to Management, full physical count of inventory is done
+at
+every month end. For beverage ingredients, store staff also perform physical count on a weekly basis. For expired bakery, each store has to report the waste in POS system and return the expired bakery back to the warehouse for disposal of stock waste. destruction.
+(Cont.) Warehouse staff is responsible for monitoring of slow-moving inventory and expiry date of inventory. Management informed us that each store will order beverage ingredients and bakery products, from the distribution centre located in [ENTITY 3]’s building, to sell for 5-7 days which are also the shelf life of bakery products. Beverage ingredients, apart from milk and dairy products, usually have long lifespan.
+Loan to related party
+represented loan to [ENTITY 3], bearing interest rate of 1% p.a.. There is no formal written contract.
+Fixed assets
+as at 31 [MONTH] 20[X]3 primarily consisted of store and leasehold improvement (71.0%) and store equipment (22.1%). According to Management, store staff will perform full physical count of fixed assets located at the store on a quarterly basis, while, a full physical count of fixed assets located at head office will be taken place once a year. [ENTITY 2] has no formal policy on impairment assessment of fixed assets.
+Management informed us that [ENTITY 2] uses space at [ENTITY 3]’s building for warehouse and storage and chill/ freezer room as [ENTITY 2]’s distribution centre for free of charge.
+Intangible assets
+included computer software, e.g. POS system (
+Synature
+), ERP system (Microsoft D365), etc.
+Leasehold rights
+related to rental leases of two office buildings at [PLACE, CITY], which
+are being
+used as [ENTITY 2]’s head office.
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis |
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

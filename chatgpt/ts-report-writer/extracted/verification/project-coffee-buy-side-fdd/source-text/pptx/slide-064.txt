@@ -1,0 +1,41 @@
+According to Management, the slight decrease in % adjusted cost of goods sold from 65.6% in FY[X]1 to 63.9% in FY[X]2 was mainly driven by
+the
+increase in selling price of products sold to customers
+and the adjustment in coffee blend mix
+. In MM[X]3, the % cost of goods sold decreased to 61.7% due to the increase in portion of [VARIANT] beans which were less expensive than [VARIANT
+]
+beans purchased from [CITY].
+[ENTITY 1]: Cost of goods sold (1/2)
+The table adjacent was prepared based on the trial balance. We were not provided  cost of goods sold by product type (e.g. [EXAMPLES] etc.)
+Cost of coffee and beverage comprised of raw materials (e.g. [EXAMPLES] etc), and allocated direct labour and overhead.
+In addition, we were informed by Management that this account also included the adjustment to cost of direct materials which was initially recorded at standard cost on a FIFO basis to average cost at every month-end as well as cost of stock waste and defected materials from the production process.
+The nature of account w
+as
+to record variances between actual cost of raw materials used and raw material recorded per BOM. In FY[X]2, there were incorrect
+raw material used
+in
+BOM which lead to high raw material adjustment being recorded (USD 0.6 million).
+As discussed on page 11, incorrect BOM caused cost to
+be understated in FY[X]1 and overstated in FY[X]2. we have therefore proposed an adjustment to reflect actual cost for indicative purpose.
+% cost of coffee machines and equipment decreased in FY[X]2 and MM[X]3 due to the decrease in sales of coffee machine.
+Please see the analysis on staff cost analysis on page
+69
+.
+Commentary on Cost of goods sold
+Others commonly consisted of outsourcing and production equipment while there was USD 46 thousand for a quality check service incurred only in FY[X]1 which caused to higher cost in this period.
+Source: (1)Trial balance as at 31 [MONTH] 20[X]1, 20[X]2 and 31 [MONTH] 20[X]2 and 20[X]3 (2) Information from Management and (3) KPMG analysis
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

@@ -1,0 +1,43 @@
+[ENTITY 1]: Balance sheet overview (2/3)
+Commentary on key balance sheet items
+Inventories
+mainly consisted of raw materials (e.g. [EXAMPLES]) (63.3%) and semi – products (i.e. coffee beans that are already graded and sorted in preparation for the next production process.) (21.4%). Inventories are recorded at cost based on the lower of the average cost or the estimated net realisable value. [ENTITY 1] conducts full stock counts at the end of each month.
+The increase in inventories from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily attributed to the increases in purchases of [VARIANT] beans from [COUNTRY] with the import window during mid-year.
+Restricted cash
+as at 31 [MONTH] 20[X]3 consisted of restricted cash
+of
+USD 0.5 million. The decrease from the balance as at 31 [MONTH] 20[X]2 was due to the release of bank guarantees at the end of the sales contract between [ENTITY 1] and [CUSTOMER 1] Co., Ltd.
+Property, plant and equipment
+as at 31 [MONTH] 20[X]3 mainly consisted of land (22.5%) and building improvement (16.8%). [ENTITY 1] has production facilities in two locations
+Green bean warehouse and roasting facilities locating in [FACTORY 1]. The warehouse is located
+on the land that is owned by [ENTITY 1].
+The roasting equipment is located inside the [ENTITY 3] building, with a monthly rent of 160,000 baht per month.
+Production facilities for concentrated drinks, syrups, beverages, and powder mixes locating in [VILLAGE NAME] village. There are two buildings which are connected to each other. One is owned by [ENTITY 1] and the other one is a rental from an external party at USD 44,000 per month.
+Trade and other receivables
+as at 31 [MONTH] 20[X]3 largely consisted of trade receivables from customers (85.2%) and accrued interest receivables (5.2%). The decrease in trade and other receivables from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily due to two reasons:
+The high balance as at 31 [MONTH] 20[X]2 was
+due to the receipt of advance payment from [ENTITY 2] through post-dated cheques, amounting to USD 10.3 million.
+The sales agreement with [CUSTOMER 1] has ended in [MONTH] 20[X]3, resulting in a decreased balance as at 31 [MONTH] 20[X]3.
+The credit term provided to customer is 30 days from billing date.
+We were informed that t
+here are long-outstanding receivables from the individual (USD 177,000) which is under legal proceeding.
+Trade receivables - Related parties
+as at 31 [MONTH] 20[X]3 consisted of receivable from [ENTITY 2] and [ENTITY 3], amounting to USD 18.4 million and USD 6,967, respectively. Although credit term provided to related parties is also 30 days, actual payments may vary depending on cash flow and financial liquidity of related parties. The increased in trade receivable from related parties as at 31 [MONTH] 20[X]3 compared to 31 [MONTH] 20[X]2 primarily due to the increase in outstanding amount with [ENTITY 2].
+Loan to related parties
+as at 31 [MONTH] 20[X]3  consisted of loans to [ENTITY 2]
+(
+USD 8.8 million) and [ENTITY 3] (USD 8.4 million) which are repayable at call. Although these loans have no written agreements, we were informed that there has been a reduction in interest rate from the original rate of 3% to 1% which became effective on 1 January 20[X]3. This reduction was made in response to the economic downturn affecting the financial performance of [ENTITY 3] and [ENTITY 2].
+The major components of assets as at 31 [MONTH] 20[X]3 were inventories (37.5%) and property, plant and equipment (36.2%).
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis |
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

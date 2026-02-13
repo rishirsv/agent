@@ -1,0 +1,36 @@
+Given the
+consecutive decline in GP and EBITDA margin, consider to work with
+Management
+to develop a plan to improve the profitability through SKU rationalisation, new customer acquisition plan, procurement
+planning and a relationship development plan.
+Key findings — Financial (6/10)
+Overall
+During FY[X]2 and MM[X]3,
+[ENTITY 3] derived more than 60% of its total revenue from sales to [ENTITY 2] and approximately 25-30% from recurring customers in retail business. The increase in revenue in FY[X]2 was mainly driven by the increased sales to [CUSTOMER 5], sales to [CUSTOMER 3]
+which
+is a newly acquired customer, and sales of seasonal products to [CUSTOMER 7].
+As discussed on page 11, the incorrect BOM information in FY[X]1 caused the cost of goods sold in FY[X]1 to be understanded by USD 5.3 million. In the graph adjacent, we have reflected the appropriate adjustment and presented % margins on an adjusted basis – this shows %GP and % EBITDA in FY[X]1 to decrease by 8.8 ppt. Similar to [ENTITY 1], we note that the breakdown of the adjustment at SKU and customer level was not available. The analysis of margin by customer was therefore presented the reported figures before the adjustment.
+The increase in cost of raw materials has put downward pressure to the % adjusted
+GP margin in FY[X]2 and MM[X]3 despite the change in the suppliers of some ingredients and the adjustment of product recipes in order to reduce cost.
+In addition to the impact from decreased GP margin, the decline in EBITDA margin was contributed by increased marketing fees charged from customers in FY[X]2 and the increase in staff cost from salary adjustment in MM[X]3.
+Margin by customer type
+Margin by
+customer type was only available for the month during Jul-Dec 20XX and may be overstated due to the reason discussed above.
+Margin from seasonal customers in FY[X]1 and FY[X]2 was higher than margin from sales to other types of customers due to high portion of cookies and cakes sales which generated high margin of almost 40% in FY[X]2. Margin from seasonal customers has turned negative in MM[X]3 due to
+the end of seasonal product sales to [
+CUSTOMER 13] as well as
+sales of
+defected bakery products at loss
+.
+In addition, Management also informed us that the selling prices of recurring customers were determined based on expected retail prices. Selling prices of seasonal customers on the other hand were determined based on cost structure of products themselves.
+According to Management, although selling prices to recurring customers can be adjusted, the negotiation process takes time. Therefore, the increase in raw material cost also could not be fully passed on to customers immediately.
+Value
+SPA
+Other
+Read more
+Source: (1) Audited financial statements FY[X]1-FY[X]2 (2) Trial balance for MM[X]2 and MM[X]3 (3) Revenue and margin by customer in FY[X]1-MM[X]3
+Adjusted financial performance represented financial performance of [ENTITY 3] after the adjustment with respect to incorrect cost recognition as discussed on page 11
+Remark: This table represented margins at standard cost. Please see further explanation on page 11
+Financial performance of [ENTITY 3]
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related party | Commitment | Value creation | Appendices | Engagement

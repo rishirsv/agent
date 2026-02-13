@@ -1,0 +1,41 @@
+[ENTITY 2]: Revenue by product type (2/3)
+Pricing policy
+According to Management, the selling prices of beverage and bakery are benchmarked against competitors’ prices (e.g. [CUSTOMER 7, CUSTOMER 15], etc.) while maintaining a minimum of 15% margin after overhead costs.
+Management stated that selling price is generally reviewed and adjusted along with other competitors. During the analysed period, the price adjustment ranging from USD 2-50 per unit was made to some SKUs of beverages, bakery and merchandise in October 20XX as a result of the increase in minimum wage and cost of products.
+Discount/ promotional policy
+Sales discount and promotional activities are usually offered with the goals to increase store traffic and boost sales as well as to retain customers with the [BRAND 1] brand. The main types of sales promotion being offered during the historical period are presented as follows:
+Bundle promotion:
+A combination of beverage and bakery being offered at a discounted price
+from original prices
+(i.e. marketing set) with an objective to increase the ticket size. The discount rate will be within the range of 10%-25%.
+Partnership promotion:
+Discounted prices offered to business partners that collaborate with [ENTITY 2] in marketing initiatives (e.g. [CUSTOMER 11], [CUSTOMER 16], etc.). The discounted rate will be considered after taking into accounts of the media value and rebate/subsidy that partners offer.
+Special promotion: F
+or every quarter of the year, special promotions will be designed to drive store traffic and increase overall revenue while maintaining an acceptable profit margin. For example, customers will get a special colour-changing glass collection if their spending meets USD 250.
+Commentary on pricing and discount policies
+Discount/ promotional policy (Cont.)
+Local store marketing promotion:
+a dynamic discount policy that offers exclusive deals and limited-time discounts to incentivise local customers to visit [BRAND 1] store and purchase more depending on the nature of each store. For example, customers who come as a group of 5 only have pay for 4 (i.e. one free drink) during the exam period for stores locating at university.
+Voucher pack:
+a collection of coupons that are bundled together as promotional offering which are only available for [BRAND 1] members on the web-application. The voucher packs usually cost around USD 555-2,999. The discount rate ranged between 20%-35% depending on the size of the voucher pack.
+Loyalty program:
+customers will receive a [BRAND] stamp for each beverage purchased which will be reset to zero at the end of every month. For every 10 stamps collected, customers are entitled to a free drink of their choice (value of USD 75). In addition, for every USD 100 spending, customers will also receive a point which can be used to redeem beverages (10 points for 1 drink in value of USD 70-80 and 15 points for 1 special drink in value of USD 85-99) or discount for [BRAND 1] merchandise.
+Points will be expired after two years for members with [BRAND] Member (entry tier) and will not be expired for members holding [BRAND] Family and [BRAND] VIP status.
+Customers with [BRAND] Family  and [BRAND] VIP tier will receive a 10% and 15% discount on beverage, respectively, and will earn double amounts of [BRAND] stamps during their birth month.
+Management informed us that unredeemed points have never been recorded as liability on the Balance sheet. [ENTITY 2] recognises the redeemed points as discount against sales upon redemption.
+According to Management, all types of discounts are recorded net of revenue for each product type when sales are made. However, under TRFR15, unredeemed points should have been recorded as liability on the Balance sheet and will be recognised as revenue upon points redemption instead of recognising it as discount. Commercial due diligence should be conducted to understand the market, key competitors, and the effectiveness of each discount/promotion campaign.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

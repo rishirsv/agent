@@ -1,0 +1,31 @@
+Sales of bread and cakes accounted for 67.9%-75.4% of total net sales during FY[X]1-MM[X]3. The decrease in product margin in MM[X]3 was caused by the increase in cost of raw materials. According to Management, margin of
+frozen dough during [MM]-[MM]X1 and FY[X]2 was incorrect resulting in a negative margin.
+[ENTITY 3]: Revenue by product type (1/
+2
+)
+Basis of preparation
+Details of net sales and margin by SKU and by customer was prepared by Management based on the quantity, actual products sold, net selling price, and standard cost of each product which is generated from Bill of Material (“BOM”) in the ERP system. BOM which consists of direct materials, direct labour and overhead per production unit is prepared by R&D department and updated monthly.
+Components of cost of goods sold which were not included in SKU data are variances to reflect cost of goods sold at actual cost such as staff cost, depreciation, electricity and water and others.
+Although we have noted the incorrect cost recognition on page 11,
+the breakdown of the adjustment by SKU was not available.
+Margin by product
+was therefore presented on the reported numbers.
+In addition, the details of reported margin by SKU was not available for the period
+prior to July 20[X]1. % Margin for [MM]-[MM]’[XX] was calculated based on net sales and margin of [MM]-[MM]’[XX] period.
+Commentary on revenue by product type
+Source: (1) Details of net sales by SKU and by customer for FY[X]1, FY[X]2, MM[X]2 and MM[X]3 (2) Trial balance as at 31 [MONTH] 20[X]1, 20[X]2 and 31 [MONTH] 20[X]2 and 20[X]3. and (3) KPMG analysis
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

@@ -1,0 +1,35 @@
+Key findings — Financial (2/10)
+Costing policy
+Starting in FY[X]1, [ENTITY 1] and [ENTITY 3] applied standard costing which consisted of direct materials, direct labou
+r, and overhead
+for each of their product SKU. Direc
+t materials at
+standard cost is updated monthly.
+In the first year of adoption, Management informed us that there were some incorrect Bill of Materials (BOM) information which resulted in a portion of production cost being recognised as work in progress on the Balance sheet when it should have been recognised as cost of goods sold in FY[X]1. Please see the summary of work in progress in the table.
+Management informed us that the work in progress of [ENTITY 1] has been recognised as cost in FY[X]2, while for [ENTITY 3], this incorrect cost remained on the Balance sheet. Management informed that they have discussed this with the auditor and planned to gradually recognise the cost to P&L in the future.
+Cost of goods sold
+Source:  Trial balance for MM[X]2 and MM[X]3
+Reconciliation of cost between TB and SKU information
+Standard cost of goods sold is usually adjusted to reflect actual cost at
+each month-end. Management confirmed that cost of goods sold per the trial balance reflected the actual cost of goods sold. We note that however, this adjustment was only done at the company accounts level.
+The supporting details containing margin of product at SKU and customer level still reflected the standard cost.
+According to Management, components of cost of goods sold which were not included in the SKU data mainly consisted of variances which represent the differences between standard cost and actual cost
+as well as production waste
+.
+Source:  (1) Trial balance for MM[X]2 and MM[X]3 (2) SKU data
+Reported financial performance of [ENTITY 1] and [ENTITY 3] in FY[X]1 and FY[X]2 may not be accurate due to the improper cost recognition. We have proposed to
+adjust the incorrect recognition of cost of goods sold in the
+QoE
+analysis
+to present such cost in its corresponding period.
+Value
+SPA
+Other
+[ENTITY 1] and [ENTITY 3] should consider to update direct
+labour
+and overhead in BOM more regularly to ensure that cost of goods sold per SKU data closely reflects actual cost
+Value
+SPA
+Other
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices | Engagement Appendices

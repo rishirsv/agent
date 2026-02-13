@@ -1,0 +1,987 @@
+{
+  "artifact_root": "extracted/verification/project-coffee-buy-side-fdd/source-text",
+  "files": [
+    {
+      "kind": "pptx",
+      "index": 1,
+      "path": "pptx/slide-001.txt",
+      "source_name": "PPTX 1",
+      "line_count": 6,
+      "char_count": 92
+    },
+    {
+      "kind": "pptx",
+      "index": 2,
+      "path": "pptx/slide-002.txt",
+      "source_name": "PPTX 2",
+      "line_count": 26,
+      "char_count": 2047
+    },
+    {
+      "kind": "pptx",
+      "index": 3,
+      "path": "pptx/slide-003.txt",
+      "source_name": "PPTX 3",
+      "line_count": 75,
+      "char_count": 1070
+    },
+    {
+      "kind": "pptx",
+      "index": 4,
+      "path": "pptx/slide-004.txt",
+      "source_name": "PPTX 4",
+      "line_count": 14,
+      "char_count": 115
+    },
+    {
+      "kind": "pptx",
+      "index": 5,
+      "path": "pptx/slide-005.txt",
+      "source_name": "PPTX 5",
+      "line_count": 60,
+      "char_count": 2315
+    },
+    {
+      "kind": "pptx",
+      "index": 6,
+      "path": "pptx/slide-006.txt",
+      "source_name": "PPTX 6",
+      "line_count": 52,
+      "char_count": 1252
+    },
+    {
+      "kind": "pptx",
+      "index": 7,
+      "path": "pptx/slide-007.txt",
+      "source_name": "PPTX 7",
+      "line_count": 29,
+      "char_count": 797
+    },
+    {
+      "kind": "pptx",
+      "index": 8,
+      "path": "pptx/slide-008.txt",
+      "source_name": "PPTX 8",
+      "line_count": 79,
+      "char_count": 2668
+    },
+    {
+      "kind": "pptx",
+      "index": 9,
+      "path": "pptx/slide-009.txt",
+      "source_name": "PPTX 9",
+      "line_count": 56,
+      "char_count": 2042
+    },
+    {
+      "kind": "pptx",
+      "index": 10,
+      "path": "pptx/slide-010.txt",
+      "source_name": "PPTX 10",
+      "line_count": 47,
+      "char_count": 1545
+    },
+    {
+      "kind": "pptx",
+      "index": 11,
+      "path": "pptx/slide-011.txt",
+      "source_name": "PPTX 11",
+      "line_count": 64,
+      "char_count": 4235
+    },
+    {
+      "kind": "pptx",
+      "index": 12,
+      "path": "pptx/slide-012.txt",
+      "source_name": "PPTX 12",
+      "line_count": 35,
+      "char_count": 2432
+    },
+    {
+      "kind": "pptx",
+      "index": 13,
+      "path": "pptx/slide-013.txt",
+      "source_name": "PPTX 13",
+      "line_count": 39,
+      "char_count": 3069
+    },
+    {
+      "kind": "pptx",
+      "index": 14,
+      "path": "pptx/slide-014.txt",
+      "source_name": "PPTX 14",
+      "line_count": 46,
+      "char_count": 2675
+    },
+    {
+      "kind": "pptx",
+      "index": 15,
+      "path": "pptx/slide-015.txt",
+      "source_name": "PPTX 15",
+      "line_count": 32,
+      "char_count": 3478
+    },
+    {
+      "kind": "pptx",
+      "index": 16,
+      "path": "pptx/slide-016.txt",
+      "source_name": "PPTX 16",
+      "line_count": 36,
+      "char_count": 3359
+    },
+    {
+      "kind": "pptx",
+      "index": 17,
+      "path": "pptx/slide-017.txt",
+      "source_name": "PPTX 17",
+      "line_count": 40,
+      "char_count": 2626
+    },
+    {
+      "kind": "pptx",
+      "index": 18,
+      "path": "pptx/slide-018.txt",
+      "source_name": "PPTX 18",
+      "line_count": 35,
+      "char_count": 2328
+    },
+    {
+      "kind": "pptx",
+      "index": 19,
+      "path": "pptx/slide-019.txt",
+      "source_name": "PPTX 19",
+      "line_count": 34,
+      "char_count": 2687
+    },
+    {
+      "kind": "pptx",
+      "index": 20,
+      "path": "pptx/slide-020.txt",
+      "source_name": "PPTX 20",
+      "line_count": 10,
+      "char_count": 1304
+    },
+    {
+      "kind": "pptx",
+      "index": 21,
+      "path": "pptx/slide-021.txt",
+      "source_name": "PPTX 21",
+      "line_count": 39,
+      "char_count": 2865
+    },
+    {
+      "kind": "pptx",
+      "index": 22,
+      "path": "pptx/slide-022.txt",
+      "source_name": "PPTX 22",
+      "line_count": 8,
+      "char_count": 91
+    },
+    {
+      "kind": "pptx",
+      "index": 23,
+      "path": "pptx/slide-023.txt",
+      "source_name": "PPTX 23",
+      "line_count": 35,
+      "char_count": 2426
+    },
+    {
+      "kind": "pptx",
+      "index": 24,
+      "path": "pptx/slide-024.txt",
+      "source_name": "PPTX 24",
+      "line_count": 24,
+      "char_count": 1389
+    },
+    {
+      "kind": "pptx",
+      "index": 25,
+      "path": "pptx/slide-025.txt",
+      "source_name": "PPTX 25",
+      "line_count": 28,
+      "char_count": 1184
+    },
+    {
+      "kind": "pptx",
+      "index": 26,
+      "path": "pptx/slide-026.txt",
+      "source_name": "PPTX 26",
+      "line_count": 39,
+      "char_count": 2613
+    },
+    {
+      "kind": "pptx",
+      "index": 27,
+      "path": "pptx/slide-027.txt",
+      "source_name": "PPTX 27",
+      "line_count": 47,
+      "char_count": 3477
+    },
+    {
+      "kind": "pptx",
+      "index": 28,
+      "path": "pptx/slide-028.txt",
+      "source_name": "PPTX 28",
+      "line_count": 49,
+      "char_count": 4036
+    },
+    {
+      "kind": "pptx",
+      "index": 29,
+      "path": "pptx/slide-029.txt",
+      "source_name": "PPTX 29",
+      "line_count": 11,
+      "char_count": 84
+    },
+    {
+      "kind": "pptx",
+      "index": 30,
+      "path": "pptx/slide-030.txt",
+      "source_name": "PPTX 30",
+      "line_count": 37,
+      "char_count": 2614
+    },
+    {
+      "kind": "pptx",
+      "index": 31,
+      "path": "pptx/slide-031.txt",
+      "source_name": "PPTX 31",
+      "line_count": 27,
+      "char_count": 980
+    },
+    {
+      "kind": "pptx",
+      "index": 32,
+      "path": "pptx/slide-032.txt",
+      "source_name": "PPTX 32",
+      "line_count": 37,
+      "char_count": 2304
+    },
+    {
+      "kind": "pptx",
+      "index": 33,
+      "path": "pptx/slide-033.txt",
+      "source_name": "PPTX 33",
+      "line_count": 34,
+      "char_count": 1986
+    },
+    {
+      "kind": "pptx",
+      "index": 34,
+      "path": "pptx/slide-034.txt",
+      "source_name": "PPTX 34",
+      "line_count": 39,
+      "char_count": 1993
+    },
+    {
+      "kind": "pptx",
+      "index": 35,
+      "path": "pptx/slide-035.txt",
+      "source_name": "PPTX 35",
+      "line_count": 29,
+      "char_count": 1723
+    },
+    {
+      "kind": "pptx",
+      "index": 36,
+      "path": "pptx/slide-036.txt",
+      "source_name": "PPTX 36",
+      "line_count": 17,
+      "char_count": 144
+    },
+    {
+      "kind": "pptx",
+      "index": 37,
+      "path": "pptx/slide-037.txt",
+      "source_name": "PPTX 37",
+      "line_count": 17,
+      "char_count": 792
+    },
+    {
+      "kind": "pptx",
+      "index": 38,
+      "path": "pptx/slide-038.txt",
+      "source_name": "PPTX 38",
+      "line_count": 41,
+      "char_count": 4195
+    },
+    {
+      "kind": "pptx",
+      "index": 39,
+      "path": "pptx/slide-039.txt",
+      "source_name": "PPTX 39",
+      "line_count": 43,
+      "char_count": 2777
+    },
+    {
+      "kind": "pptx",
+      "index": 40,
+      "path": "pptx/slide-040.txt",
+      "source_name": "PPTX 40",
+      "line_count": 17,
+      "char_count": 698
+    },
+    {
+      "kind": "pptx",
+      "index": 41,
+      "path": "pptx/slide-041.txt",
+      "source_name": "PPTX 41",
+      "line_count": 19,
+      "char_count": 844
+    },
+    {
+      "kind": "pptx",
+      "index": 42,
+      "path": "pptx/slide-042.txt",
+      "source_name": "PPTX 42",
+      "line_count": 26,
+      "char_count": 1841
+    },
+    {
+      "kind": "pptx",
+      "index": 43,
+      "path": "pptx/slide-043.txt",
+      "source_name": "PPTX 43",
+      "line_count": 17,
+      "char_count": 518
+    },
+    {
+      "kind": "pptx",
+      "index": 44,
+      "path": "pptx/slide-044.txt",
+      "source_name": "PPTX 44",
+      "line_count": 20,
+      "char_count": 516
+    },
+    {
+      "kind": "pptx",
+      "index": 45,
+      "path": "pptx/slide-045.txt",
+      "source_name": "PPTX 45",
+      "line_count": 17,
+      "char_count": 755
+    },
+    {
+      "kind": "pptx",
+      "index": 46,
+      "path": "pptx/slide-046.txt",
+      "source_name": "PPTX 46",
+      "line_count": 17,
+      "char_count": 849
+    },
+    {
+      "kind": "pptx",
+      "index": 47,
+      "path": "pptx/slide-047.txt",
+      "source_name": "PPTX 47",
+      "line_count": 17,
+      "char_count": 579
+    },
+    {
+      "kind": "pptx",
+      "index": 48,
+      "path": "pptx/slide-048.txt",
+      "source_name": "PPTX 48",
+      "line_count": 17,
+      "char_count": 709
+    },
+    {
+      "kind": "pptx",
+      "index": 49,
+      "path": "pptx/slide-049.txt",
+      "source_name": "PPTX 49",
+      "line_count": 29,
+      "char_count": 2344
+    },
+    {
+      "kind": "pptx",
+      "index": 50,
+      "path": "pptx/slide-050.txt",
+      "source_name": "PPTX 50",
+      "line_count": 22,
+      "char_count": 1349
+    },
+    {
+      "kind": "pptx",
+      "index": 51,
+      "path": "pptx/slide-051.txt",
+      "source_name": "PPTX 51",
+      "line_count": 31,
+      "char_count": 2397
+    },
+    {
+      "kind": "pptx",
+      "index": 52,
+      "path": "pptx/slide-052.txt",
+      "source_name": "PPTX 52",
+      "line_count": 22,
+      "char_count": 1154
+    },
+    {
+      "kind": "pptx",
+      "index": 53,
+      "path": "pptx/slide-053.txt",
+      "source_name": "PPTX 53",
+      "line_count": 23,
+      "char_count": 1008
+    },
+    {
+      "kind": "pptx",
+      "index": 54,
+      "path": "pptx/slide-054.txt",
+      "source_name": "PPTX 54",
+      "line_count": 26,
+      "char_count": 2142
+    },
+    {
+      "kind": "pptx",
+      "index": 55,
+      "path": "pptx/slide-055.txt",
+      "source_name": "PPTX 55",
+      "line_count": 31,
+      "char_count": 2439
+    },
+    {
+      "kind": "pptx",
+      "index": 56,
+      "path": "pptx/slide-056.txt",
+      "source_name": "PPTX 56",
+      "line_count": 19,
+      "char_count": 153
+    },
+    {
+      "kind": "pptx",
+      "index": 57,
+      "path": "pptx/slide-057.txt",
+      "source_name": "PPTX 57",
+      "line_count": 38,
+      "char_count": 2485
+    },
+    {
+      "kind": "pptx",
+      "index": 58,
+      "path": "pptx/slide-058.txt",
+      "source_name": "PPTX 58",
+      "line_count": 32,
+      "char_count": 2480
+    },
+    {
+      "kind": "pptx",
+      "index": 59,
+      "path": "pptx/slide-059.txt",
+      "source_name": "PPTX 59",
+      "line_count": 39,
+      "char_count": 3355
+    },
+    {
+      "kind": "pptx",
+      "index": 60,
+      "path": "pptx/slide-060.txt",
+      "source_name": "PPTX 60",
+      "line_count": 31,
+      "char_count": 1975
+    },
+    {
+      "kind": "pptx",
+      "index": 61,
+      "path": "pptx/slide-061.txt",
+      "source_name": "PPTX 61",
+      "line_count": 27,
+      "char_count": 1773
+    },
+    {
+      "kind": "pptx",
+      "index": 62,
+      "path": "pptx/slide-062.txt",
+      "source_name": "PPTX 62",
+      "line_count": 46,
+      "char_count": 3086
+    },
+    {
+      "kind": "pptx",
+      "index": 63,
+      "path": "pptx/slide-063.txt",
+      "source_name": "PPTX 63",
+      "line_count": 29,
+      "char_count": 1269
+    },
+    {
+      "kind": "pptx",
+      "index": 64,
+      "path": "pptx/slide-064.txt",
+      "source_name": "PPTX 64",
+      "line_count": 41,
+      "char_count": 2220
+    },
+    {
+      "kind": "pptx",
+      "index": 65,
+      "path": "pptx/slide-065.txt",
+      "source_name": "PPTX 65",
+      "line_count": 20,
+      "char_count": 941
+    },
+    {
+      "kind": "pptx",
+      "index": 66,
+      "path": "pptx/slide-066.txt",
+      "source_name": "PPTX 66",
+      "line_count": 37,
+      "char_count": 2087
+    },
+    {
+      "kind": "pptx",
+      "index": 67,
+      "path": "pptx/slide-067.txt",
+      "source_name": "PPTX 67",
+      "line_count": 36,
+      "char_count": 1695
+    },
+    {
+      "kind": "pptx",
+      "index": 68,
+      "path": "pptx/slide-068.txt",
+      "source_name": "PPTX 68",
+      "line_count": 48,
+      "char_count": 2394
+    },
+    {
+      "kind": "pptx",
+      "index": 69,
+      "path": "pptx/slide-069.txt",
+      "source_name": "PPTX 69",
+      "line_count": 22,
+      "char_count": 1087
+    },
+    {
+      "kind": "pptx",
+      "index": 70,
+      "path": "pptx/slide-070.txt",
+      "source_name": "PPTX 70",
+      "line_count": 42,
+      "char_count": 2195
+    },
+    {
+      "kind": "pptx",
+      "index": 71,
+      "path": "pptx/slide-071.txt",
+      "source_name": "PPTX 71",
+      "line_count": 41,
+      "char_count": 1534
+    },
+    {
+      "kind": "pptx",
+      "index": 72,
+      "path": "pptx/slide-072.txt",
+      "source_name": "PPTX 72",
+      "line_count": 17,
+      "char_count": 144
+    },
+    {
+      "kind": "pptx",
+      "index": 73,
+      "path": "pptx/slide-073.txt",
+      "source_name": "PPTX 73",
+      "line_count": 31,
+      "char_count": 1798
+    },
+    {
+      "kind": "pptx",
+      "index": 74,
+      "path": "pptx/slide-074.txt",
+      "source_name": "PPTX 74",
+      "line_count": 61,
+      "char_count": 3682
+    },
+    {
+      "kind": "pptx",
+      "index": 75,
+      "path": "pptx/slide-075.txt",
+      "source_name": "PPTX 75",
+      "line_count": 30,
+      "char_count": 1590
+    },
+    {
+      "kind": "pptx",
+      "index": 76,
+      "path": "pptx/slide-076.txt",
+      "source_name": "PPTX 76",
+      "line_count": 35,
+      "char_count": 2822
+    },
+    {
+      "kind": "pptx",
+      "index": 77,
+      "path": "pptx/slide-077.txt",
+      "source_name": "PPTX 77",
+      "line_count": 51,
+      "char_count": 2893
+    },
+    {
+      "kind": "pptx",
+      "index": 78,
+      "path": "pptx/slide-078.txt",
+      "source_name": "PPTX 78",
+      "line_count": 36,
+      "char_count": 2032
+    },
+    {
+      "kind": "pptx",
+      "index": 79,
+      "path": "pptx/slide-079.txt",
+      "source_name": "PPTX 79",
+      "line_count": 22,
+      "char_count": 897
+    },
+    {
+      "kind": "pptx",
+      "index": 80,
+      "path": "pptx/slide-080.txt",
+      "source_name": "PPTX 80",
+      "line_count": 38,
+      "char_count": 2096
+    },
+    {
+      "kind": "pptx",
+      "index": 81,
+      "path": "pptx/slide-081.txt",
+      "source_name": "PPTX 81",
+      "line_count": 24,
+      "char_count": 894
+    },
+    {
+      "kind": "pptx",
+      "index": 82,
+      "path": "pptx/slide-082.txt",
+      "source_name": "PPTX 82",
+      "line_count": 47,
+      "char_count": 2494
+    },
+    {
+      "kind": "pptx",
+      "index": 83,
+      "path": "pptx/slide-083.txt",
+      "source_name": "PPTX 83",
+      "line_count": 11,
+      "char_count": 81
+    },
+    {
+      "kind": "pptx",
+      "index": 84,
+      "path": "pptx/slide-084.txt",
+      "source_name": "PPTX 84",
+      "line_count": 21,
+      "char_count": 1116
+    },
+    {
+      "kind": "pptx",
+      "index": 85,
+      "path": "pptx/slide-085.txt",
+      "source_name": "PPTX 85",
+      "line_count": 49,
+      "char_count": 3546
+    },
+    {
+      "kind": "pptx",
+      "index": 86,
+      "path": "pptx/slide-086.txt",
+      "source_name": "PPTX 86",
+      "line_count": 76,
+      "char_count": 3949
+    },
+    {
+      "kind": "pptx",
+      "index": 87,
+      "path": "pptx/slide-087.txt",
+      "source_name": "PPTX 87",
+      "line_count": 21,
+      "char_count": 662
+    },
+    {
+      "kind": "pptx",
+      "index": 88,
+      "path": "pptx/slide-088.txt",
+      "source_name": "PPTX 88",
+      "line_count": 43,
+      "char_count": 3711
+    },
+    {
+      "kind": "pptx",
+      "index": 89,
+      "path": "pptx/slide-089.txt",
+      "source_name": "PPTX 89",
+      "line_count": 48,
+      "char_count": 2852
+    },
+    {
+      "kind": "pptx",
+      "index": 90,
+      "path": "pptx/slide-090.txt",
+      "source_name": "PPTX 90",
+      "line_count": 19,
+      "char_count": 785
+    },
+    {
+      "kind": "pptx",
+      "index": 91,
+      "path": "pptx/slide-091.txt",
+      "source_name": "PPTX 91",
+      "line_count": 57,
+      "char_count": 3047
+    },
+    {
+      "kind": "pptx",
+      "index": 92,
+      "path": "pptx/slide-092.txt",
+      "source_name": "PPTX 92",
+      "line_count": 38,
+      "char_count": 1951
+    },
+    {
+      "kind": "pptx",
+      "index": 93,
+      "path": "pptx/slide-093.txt",
+      "source_name": "PPTX 93",
+      "line_count": 2,
+      "char_count": 29
+    },
+    {
+      "kind": "pptx",
+      "index": 94,
+      "path": "pptx/slide-094.txt",
+      "source_name": "PPTX 94",
+      "line_count": 19,
+      "char_count": 1044
+    },
+    {
+      "kind": "pptx",
+      "index": 95,
+      "path": "pptx/slide-095.txt",
+      "source_name": "PPTX 95",
+      "line_count": 2,
+      "char_count": 32
+    },
+    {
+      "kind": "pptx",
+      "index": 96,
+      "path": "pptx/slide-096.txt",
+      "source_name": "PPTX 96",
+      "line_count": 13,
+      "char_count": 960
+    },
+    {
+      "kind": "pptx",
+      "index": 97,
+      "path": "pptx/slide-097.txt",
+      "source_name": "PPTX 97",
+      "line_count": 8,
+      "char_count": 86
+    },
+    {
+      "kind": "pptx",
+      "index": 98,
+      "path": "pptx/slide-098.txt",
+      "source_name": "PPTX 98",
+      "line_count": 56,
+      "char_count": 4101
+    },
+    {
+      "kind": "pptx",
+      "index": 99,
+      "path": "pptx/slide-099.txt",
+      "source_name": "PPTX 99",
+      "line_count": 57,
+      "char_count": 3807
+    },
+    {
+      "kind": "pptx",
+      "index": 100,
+      "path": "pptx/slide-100.txt",
+      "source_name": "PPTX 100",
+      "line_count": 64,
+      "char_count": 4524
+    },
+    {
+      "kind": "pptx",
+      "index": 101,
+      "path": "pptx/slide-101.txt",
+      "source_name": "PPTX 101",
+      "line_count": 81,
+      "char_count": 1870
+    },
+    {
+      "kind": "pptx",
+      "index": 102,
+      "path": "pptx/slide-102.txt",
+      "source_name": "PPTX 102",
+      "line_count": 60,
+      "char_count": 2777
+    },
+    {
+      "kind": "pptx",
+      "index": 103,
+      "path": "pptx/slide-103.txt",
+      "source_name": "PPTX 103",
+      "line_count": 56,
+      "char_count": 2143
+    },
+    {
+      "kind": "pptx",
+      "index": 104,
+      "path": "pptx/slide-104.txt",
+      "source_name": "PPTX 104",
+      "line_count": 75,
+      "char_count": 2950
+    },
+    {
+      "kind": "pptx",
+      "index": 105,
+      "path": "pptx/slide-105.txt",
+      "source_name": "PPTX 105",
+      "line_count": 65,
+      "char_count": 2716
+    },
+    {
+      "kind": "pptx",
+      "index": 106,
+      "path": "pptx/slide-106.txt",
+      "source_name": "PPTX 106",
+      "line_count": 61,
+      "char_count": 2143
+    },
+    {
+      "kind": "pptx",
+      "index": 107,
+      "path": "pptx/slide-107.txt",
+      "source_name": "PPTX 107",
+      "line_count": 41,
+      "char_count": 909
+    },
+    {
+      "kind": "pptx",
+      "index": 108,
+      "path": "pptx/slide-108.txt",
+      "source_name": "PPTX 108",
+      "line_count": 11,
+      "char_count": 127
+    },
+    {
+      "kind": "pptx",
+      "index": 109,
+      "path": "pptx/slide-109.txt",
+      "source_name": "PPTX 109",
+      "line_count": 7,
+      "char_count": 260
+    },
+    {
+      "kind": "pptx",
+      "index": 110,
+      "path": "pptx/slide-110.txt",
+      "source_name": "PPTX 110",
+      "line_count": 7,
+      "char_count": 414
+    },
+    {
+      "kind": "pptx",
+      "index": 111,
+      "path": "pptx/slide-111.txt",
+      "source_name": "PPTX 111",
+      "line_count": 7,
+      "char_count": 413
+    },
+    {
+      "kind": "pptx",
+      "index": 112,
+      "path": "pptx/slide-112.txt",
+      "source_name": "PPTX 112",
+      "line_count": 7,
+      "char_count": 414
+    },
+    {
+      "kind": "pptx",
+      "index": 113,
+      "path": "pptx/slide-113.txt",
+      "source_name": "PPTX 113",
+      "line_count": 7,
+      "char_count": 421
+    },
+    {
+      "kind": "pptx",
+      "index": 114,
+      "path": "pptx/slide-114.txt",
+      "source_name": "PPTX 114",
+      "line_count": 14,
+      "char_count": 148
+    },
+    {
+      "kind": "pptx",
+      "index": 115,
+      "path": "pptx/slide-115.txt",
+      "source_name": "PPTX 115",
+      "line_count": 24,
+      "char_count": 6034
+    },
+    {
+      "kind": "pptx",
+      "index": 116,
+      "path": "pptx/slide-116.txt",
+      "source_name": "PPTX 116",
+      "line_count": 42,
+      "char_count": 2105
+    },
+    {
+      "kind": "pptx",
+      "index": 117,
+      "path": "pptx/slide-117.txt",
+      "source_name": "PPTX 117",
+      "line_count": 31,
+      "char_count": 2104
+    },
+    {
+      "kind": "pptx",
+      "index": 118,
+      "path": "pptx/slide-118.txt",
+      "source_name": "PPTX 118",
+      "line_count": 31,
+      "char_count": 2388
+    },
+    {
+      "kind": "pptx",
+      "index": 119,
+      "path": "pptx/slide-119.txt",
+      "source_name": "PPTX 119",
+      "line_count": 36,
+      "char_count": 1818
+    },
+    {
+      "kind": "pptx",
+      "index": 120,
+      "path": "pptx/slide-120.txt",
+      "source_name": "PPTX 120",
+      "line_count": 78,
+      "char_count": 1447
+    },
+    {
+      "kind": "pptx",
+      "index": 121,
+      "path": "pptx/slide-121.txt",
+      "source_name": "PPTX 121",
+      "line_count": 75,
+      "char_count": 1162
+    },
+    {
+      "kind": "pptx",
+      "index": 122,
+      "path": "pptx/slide-122.txt",
+      "source_name": "PPTX 122",
+      "line_count": 14,
+      "char_count": 227
+    }
+  ],
+  "total_files": 122,
+  "ocr_target": "slide",
+  "ocr_requested_indices": [],
+  "ocr_applied_indices": [],
+  "ocr_used": false,
+  "ocr_runs": []
+}

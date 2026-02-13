@@ -1,0 +1,57 @@
+[ENTITY 3]: Balance sheet overview (2/3)
+Commentary on key balance sheet items
+The major components of assets as at 31 [MONTH] 20[X]3 were property, plant and equipment (81.9%) and inventories (7.6%). However,
+total assets may be overstated by WIP balance of USD 5.4 million due to t
+he incorrect data input in the Bill of Materials (BOM) resulting in additional costs, which should have been recognised as the cost of goods sold (COGS).
+Property, plant and equipment
+as at 31 [MONTH] 20[X]3 mainly consisted of building (63.3%) and land (12.7%). [ENTITY 3] factory and office are located in the [FACTORY 1], [CITY], serving as a warehouse for storage and the production of bakery products.
+Intangible assets
+as at 31 [MONTH] 20[X]3 consisted of software license (43.8%) and trademark with useful life of 10 years (28.3%).
+We were not provided further details on the trademark fee paid to [BRAND 1].
+Bank overdraft and shot-term borrowing from financial institutions
+as at 31 [MONTH] 20[X]3 represented overdraft from [BANK 1] used for working capital, bearing interest at 12.1% per annum. This overdraft is secured by [ENTITY 3]’s land and
+personal guarantees from
+the directors.
+Trade and other
+payables
+as
+at  31 [MONTH] 20[X]3 largely consisted of trade payables (72.8%) and other payables
+such as ERP software, land tax, audit fee, etc. (14.3%).
+Lease liabilities
+as at 31 [MONTH] 20[X]3
+represent the outstanding amount of car hire purchase debts from [LESSEE] Public Co., Ltd., amounting to USD 0.5 million.
+Trade and other receivables
+as at 31 [MONTH] 20[X]3
+largely consisted of trade receivables from customer (52.4%), and trade receivables from related parties (42.0%).
+The credit term provided to customer is 30 days from billing date
+.The decrease from 31 [MONTH] 20[X]2 to 31 [MONTH] 20[X]3 was primarily due to the payment from [ENTITY 2].
+We were informed that there are no long-outstanding receivables from customers.
+Inventories
+mainly consisted of raw materials (e.g. [EXAMPLES] etc.), work in process as well as
+packaging and labeling materials
+.
+Inventories was overstated due to the WIP balance of USD 5.4 million which remained on the Balance sheet throughout 31 [MONTH] 2020 to 31 [MONTH] 20[X]3.  According to Management, this WIP balance represented the incorrect input of data per the Bill of Materials (BOM), leading to additional costs which should have been recognised as cost of goods sold (COGS) in FY[X]1. Please refer to
+QoE
+adj
+no.7 in
+QoE
+analysis.
+Inventories
+were
+recorded
+at the lower of average cost or the net
+realisable
+value. The level of inventories as at 31 [MONTH] 20[X]2 was high as the company stocks up on raw materials at the end of the year. We were informed that some suppliers stopped their operations or deliveries during the New Year holidays and a first few days after they reopened.
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis |
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

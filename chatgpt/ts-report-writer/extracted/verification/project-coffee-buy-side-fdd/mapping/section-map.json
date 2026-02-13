@@ -1,0 +1,3960 @@
+{
+  "report_id": "project-coffee-buy-side-fdd",
+  "heading_hits": {
+    "Executive Summary": 116,
+    "Key Findings": 18,
+    "Business Overview": 5,
+    "Summary Financials": 3,
+    "Profit and Loss Overview / Financial Performance": 36,
+    "Quality of Earnings": 17,
+    "Income Statement": 11,
+    "Balance Sheet": 17,
+    "Net Working Capital": 5,
+    "Net Debt (Cash)": 2,
+    "Cash Flows": 0,
+    "Related Parties": 75,
+    "Reporting Environment": 0,
+    "Forecast Trading": 0,
+    "Industry Analysis": 0,
+    "Quality of Net Assets": 0,
+    "Gross Margin by LOB": 0,
+    "Appendices": 181
+  },
+  "heading_events": [
+    {
+      "line_id": "pptx_xml:003:0013",
+      "text": "Profit & loss overview",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0014",
+      "text": "Quality of earnings",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0018",
+      "text": "Business overview",
+      "mapped_section": "Business Overview",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0019",
+      "text": "Summary of facilities",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:003:0020",
+      "text": "Summary financials",
+      "mapped_section": "Summary Financials",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0021",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0027",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0031",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0033",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:003:0037",
+      "text": "Engagement appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:003:0063",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:004:0001",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:004:0004",
+      "text": "Business overview",
+      "mapped_section": "Business Overview",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:004:0007",
+      "text": "Summary of facilities",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:004:0010",
+      "text": "Summary financials",
+      "mapped_section": "Summary Financials",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:004:0013",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:005:0001",
+      "text": "Business overview",
+      "mapped_section": "Business Overview",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:005:0013",
+      "text": "Company overview",
+      "mapped_section": "Business Overview",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:005:0054",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:005:0056",
+      "text": "Transaction perimeter",
+      "mapped_section": "Business Overview",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:006:0001",
+      "text": "Summary of facilities",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:006:0049",
+      "text": "Summary of facilities",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:006:0050",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:007:0005",
+      "text": "Summary financials",
+      "mapped_section": "Summary Financials",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:007:0007",
+      "text": "statements of financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:007:0009",
+      "text": "Quality of earnings",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:007:0028",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:008:0021",
+      "text": "EBITDA, NWC, Net debt",
+      "mapped_section": "Net Working Capital",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:008:0034",
+      "text": "EBITDA, NWC",
+      "mapped_section": "Net Working Capital",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:008:0077",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:009:0055",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:010:0015",
+      "text": "Related party transactions",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:010:0022",
+      "text": "EBITDA, Net debt",
+      "mapped_section": "Net Debt (Cash)",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:010:0031",
+      "text": "Net debt",
+      "mapped_section": "Net Debt (Cash)",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:010:0046",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:011:0001",
+      "text": "Key findings — Financial (1/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:011:0063",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:012:0001",
+      "text": "Key findings — Financial (2/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:012:0022",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:012:0034",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:013:0004",
+      "text": "Key findings — Financial (3/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:013:0028",
+      "text": "Financial performance of [ENTITY 2]",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:013:0030",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:014:0009",
+      "text": "Key findings — Financial (4/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:014:0042",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:015:0001",
+      "text": "Key findings — Financial (5/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:015:0021",
+      "text": "Financial performance of [ENTITY 1]",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:015:0031",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:016:0006",
+      "text": "Key findings — Financial (6/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:016:0034",
+      "text": "Financial performance of [ENTITY 3]",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:016:0035",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:017:0007",
+      "text": "Key findings — Financial (7/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:017:0025",
+      "text": "between related parties",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:017:0038",
+      "text": "Related party transactions",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:017:0039",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:018:0001",
+      "text": "Key findings — Financial (8/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:018:0034",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:019:0001",
+      "text": "Key findings — Financial (9/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:019:0027",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:020:0001",
+      "text": "Key findings — Financial (10/10)",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:020:0003",
+      "text": "Full scope on Balance sheet",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:020:0009",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:021:0007",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:021:0038",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:022:0001",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:022:0004",
+      "text": "Profit and loss",
+      "mapped_section": "Income Statement",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:022:0007",
+      "text": "Quality of earnings",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0001",
+      "text": "Group: Pro forma consolidated profit & loss (1/2)",
+      "mapped_section": "Income Statement",
+      "score": 84,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:023:0009",
+      "text": "Commentary on pro forma consolidated profit and loss",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:023:0017",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0019",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0021",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0027",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0033",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:023:0035",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:024:0001",
+      "text": "Group: Pro forma consolidated profit & loss (2/2)",
+      "mapped_section": "Income Statement",
+      "score": 84,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:024:0002",
+      "text": "Commentary on pro forma consolidated profit and loss (Cont.)",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:024:0006",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:024:0008",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:024:0010",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:024:0016",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:024:0022",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:024:0024",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:025:0001",
+      "text": "Group: Quality of earnings (1/4)",
+      "mapped_section": "Quality of Earnings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:025:0003",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0010",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0012",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0014",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0020",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0026",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:025:0028",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:026:0001",
+      "text": "Group: Quality of earnings (2/4)",
+      "mapped_section": "Quality of Earnings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:026:0021",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:026:0023",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:026:0025",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:026:0031",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:026:0037",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:026:0039",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:027:0001",
+      "text": "Group: Quality of earnings (3/4)",
+      "mapped_section": "Quality of Earnings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:027:0029",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:027:0031",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:027:0033",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:027:0039",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:027:0045",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:027:0047",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:028:0001",
+      "text": "Group: Quality of earnings (4/4)",
+      "mapped_section": "Quality of Earnings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:028:0031",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:028:0033",
+      "text": "Consolidated financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:028:0035",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:028:0041",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:028:0047",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:028:0049",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:029:0001",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:030:0002",
+      "text": "[ENTITY 2]: Profit & loss overview",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:030:0004",
+      "text": "Commentary on the historical profit and loss",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:030:0021",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:030:0023",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:030:0029",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:030:0035",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:030:0037",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:031:0001",
+      "text": "[ENTITY 2]: Profit & loss overview (2/2)",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:031:0002",
+      "text": "Commentary on the historical profit and loss (Cont.)",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:031:0011",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:031:0013",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:031:0019",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:031:0025",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:031:0027",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:032:0004",
+      "text": "[ENTITY 1]: Profit & loss overview (1/2)",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:032:0017",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:032:0019",
+      "text": "Commentary on the historical profit and loss",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:032:0021",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:032:0023",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:032:0029",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:032:0035",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:032:0037",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:033:0001",
+      "text": "[ENTITY 1]: Profit & loss overview (2/2)",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:033:0016",
+      "text": "Commentary on the historical profit and loss (Cont.)",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:033:0018",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:033:0020",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:033:0026",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:033:0032",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:033:0034",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:034:0006",
+      "text": "Profit & loss overview (1/2)",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:034:0018",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:034:0023",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:034:0025",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:034:0031",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:034:0037",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:034:0039",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:035:0002",
+      "text": "Profit & loss overview (2/2)",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:035:0013",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:035:0015",
+      "text": "Financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:035:0021",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:035:0027",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:035:0029",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:037:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:037:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:037:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:037:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:038:0027",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:038:0033",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:038:0039",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:038:0041",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:039:0029",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:039:0035",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:039:0041",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:039:0043",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:040:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:040:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:040:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:040:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:041:0005",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:041:0011",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:041:0017",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:041:0019",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:042:0012",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:042:0018",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:042:0024",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:042:0026",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:043:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:043:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:043:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:043:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:044:0006",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:044:0012",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:044:0018",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:044:0020",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:045:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:045:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:045:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:045:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:046:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:046:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:046:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:046:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:047:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:047:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:047:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:047:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:048:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:048:0009",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:048:0015",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:048:0017",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:049:0015",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:049:0021",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:049:0027",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:049:0029",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:050:0008",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:050:0014",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:050:0020",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:050:0022",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:051:0017",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:051:0023",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:051:0029",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:051:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:052:0008",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:052:0014",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:052:0020",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:052:0022",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:053:0009",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:053:0015",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:053:0021",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:053:0023",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:054:0012",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:054:0018",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:054:0024",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:054:0026",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:055:0017",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:055:0023",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:055:0029",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:055:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:057:0020",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:057:0026",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:057:0032",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:057:0034",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:058:0018",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:058:0024",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:058:0030",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:058:0032",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:059:0025",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:059:0031",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:059:0037",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:059:0039",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:060:0017",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:060:0023",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:060:0029",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:060:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:061:0013",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:061:0019",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:061:0025",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:061:0027",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:062:0032",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:062:0038",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:062:0044",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:062:0046",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:063:0015",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:063:0021",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:063:0027",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:063:0029",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:064:0027",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:064:0033",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:064:0039",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:064:0041",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:065:0006",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:065:0012",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:065:0018",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:065:0020",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:066:0023",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:066:0029",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:066:0035",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:066:0037",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:067:0022",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:067:0028",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:067:0034",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:067:0036",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:068:0034",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:068:0040",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:068:0046",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:068:0048",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:069:0008",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:069:0014",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:069:0020",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:069:0022",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:070:0028",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:070:0034",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:070:0040",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:070:0042",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:071:0027",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:071:0033",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:071:0039",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:071:0041",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:073:0017",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:073:0023",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:073:0029",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:073:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:074:0047",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:074:0053",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:074:0059",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:074:0061",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:075:0016",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:075:0022",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:075:0028",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:075:0030",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:076:0004",
+      "text": "The decrease of sales to related parties during the",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:076:0021",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:076:0027",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:076:0033",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:076:0035",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:077:0037",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:077:0043",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:077:0049",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:077:0051",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:078:0022",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:078:0028",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:078:0034",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:078:0036",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:079:0008",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:079:0014",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:079:0020",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:079:0022",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:080:0024",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:080:0030",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:080:0036",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:080:0038",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:081:0010",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:081:0016",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:081:0022",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:081:0024",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:082:0033",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:082:0039",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:082:0045",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:082:0047",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:084:0001",
+      "text": "[ENTITY 2]: Balance sheet overview (1/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:084:0009",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:084:0013",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:084:0019",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:084:0021",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:085:0001",
+      "text": "[ENTITY 2]: Balance sheet overview (2/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:085:0003",
+      "text": "Commentary on key balance sheet items",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:085:0037",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:085:0041",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:085:0047",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:085:0049",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:086:0001",
+      "text": "[ENTITY 2]: Balance sheet overview (3/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:086:0010",
+      "text": "Commentary on key balance sheet items (Cont.)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:086:0047",
+      "text": "Loans from related parties",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:086:0064",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:086:0068",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:086:0074",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:086:0076",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:087:0001",
+      "text": "[ENTITY 1]: Balance sheet overview (1/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:087:0008",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:087:0012",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:087:0018",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:087:0020",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:088:0001",
+      "text": "[ENTITY 1]: Balance sheet overview (2/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:088:0002",
+      "text": "Commentary on key balance sheet items",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:088:0024",
+      "text": "Trade receivables - Related parties",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:088:0026",
+      "text": "Loan to related parties",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:088:0031",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:088:0035",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:088:0041",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:088:0043",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:089:0001",
+      "text": "[ENTITY 1]: Balance sheet overview (3/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:089:0002",
+      "text": "Commentary on key balance sheet items (Cont.)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:089:0036",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:089:0040",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:089:0046",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:089:0048",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:090:0005",
+      "text": "[ENTITY 3]: Balance sheet overview (1/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:090:0006",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:090:0010",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:090:0016",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:090:0018",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:091:0001",
+      "text": "[ENTITY 3]: Balance sheet overview (2/3)",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:091:0002",
+      "text": "Commentary on key balance sheet items",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:091:0034",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:091:0037",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:091:0045",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:091:0049",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:091:0055",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:091:0057",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:092:0001",
+      "text": "[ENTITY 3]: Balance sheet overview (",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:092:0004",
+      "text": "Commentary on key balance sheet items",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:092:0017",
+      "text": "Loan from related parties",
+      "mapped_section": "Related Parties",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:092:0026",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:092:0030",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:092:0036",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:092:0038",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:093:0001",
+      "text": "Related party transactions",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:094:0009",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:094:0011",
+      "text": "Related parties",
+      "mapped_section": "Related Parties",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:094:0017",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:094:0019",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:096:0005",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:096:0011",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:096:0013",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:098:0050",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:098:0054",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:098:0056",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:099:0051",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:099:0055",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:099:0057",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:100:0029",
+      "text": "Working capital optimisation",
+      "mapped_section": "Net Working Capital",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:100:0058",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:100:0062",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:100:0064",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:101:0071",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:101:0075",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:101:0079",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:101:0081",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:102:0054",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:102:0058",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:102:0060",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:103:0001",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:103:0050",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:103:0054",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:103:0056",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:104:0018",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:104:0030",
+      "text": "Summary of analysis",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:104:0069",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:104:0073",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:104:0075",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:105:0027",
+      "text": "Summary of analysis",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:105:0036",
+      "text": "Key findings",
+      "mapped_section": "Key Findings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:105:0059",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:105:0063",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:105:0065",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:106:0026",
+      "text": "detailed diagnostic of working capital and operating profitability",
+      "mapped_section": "Net Working Capital",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:106:0055",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:106:0059",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:106:0061",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:107:0035",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:107:0039",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:107:0041",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:108:0001",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:109:0001",
+      "text": "Appendix 1 : Shareholding structure",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:109:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:109:0005",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:109:0007",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:110:0001",
+      "text": "Appendix 2: Pro forma consolidated profit & loss (1/3)",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:110:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:110:0005",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:110:0007",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:111:0001",
+      "text": "Appendix 2: Pro forma consolidated profit & loss (2/3)",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:111:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:111:0005",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:111:0007",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:112:0001",
+      "text": "Appendix 2: Pro forma consolidated profit & loss (3/3)",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:112:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:112:0005",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:112:0007",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:113:0001",
+      "text": "Appendix 3: Group’s staff cost for the month of [DATE]",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:113:0003",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:113:0005",
+      "text": "Appendices",
+      "mapped_section": "Appendices",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:113:0007",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:114:0001",
+      "text": "Engagement appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:115:0022",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:115:0024",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:116:0013",
+      "text": "Our work on historical trading comprises the period",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:116:0017",
+      "text": ". We have analysed the balance sheet as at [DATE], and [",
+      "mapped_section": "Balance Sheet",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:116:0020",
+      "text": "Please refer to the appendices for a detailed",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:116:0040",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:116:0042",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:117:0005",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:117:0006",
+      "text": "Present a summary business overview of the Group and individual entity operation",
+      "mapped_section": "Executive Summary",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:117:0007",
+      "text": "Report key findings arising from our procedures including:",
+      "mapped_section": "Key Findings",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:117:0029",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:117:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:118:0005",
+      "text": "Quality of earnings",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:118:0014",
+      "text": "Historical financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:118:0029",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:118:0031",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:119:0005",
+      "text": "Historical financial performance",
+      "mapped_section": "Profit and Loss Overview / Financial Performance",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:119:0034",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:119:0036",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:120:0076",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:120:0078",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:121:0029",
+      "text": "OEM",
+      "mapped_section": "Quality of Earnings",
+      "score": 66,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:121:0031",
+      "text": "P&L",
+      "mapped_section": "Income Statement",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:121:0032",
+      "text": "Profit and loss statement",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:121:0045",
+      "text": "QoE",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:121:0046",
+      "text": "Quality of earnings",
+      "mapped_section": "Quality of Earnings",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:121:0065",
+      "text": "WCF",
+      "mapped_section": "Net Working Capital",
+      "score": 66,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:121:0073",
+      "text": "Executive summary",
+      "mapped_section": "Executive Summary",
+      "score": 100,
+      "exact": true
+    },
+    {
+      "line_id": "pptx_xml:121:0075",
+      "text": "Engagement Appendices",
+      "mapped_section": "Appendices",
+      "score": 95,
+      "exact": false
+    }
+  ],
+  "unresolved_headings": [
+    {
+      "line_id": "pptx_xml:001:0003",
+      "text": "[MAIN CLIENT]",
+      "score": 45
+    },
+    {
+      "line_id": "pptx_xml:001:0005",
+      "text": "[DATE]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:002:0006",
+      "text": "[MONTH]",
+      "score": 26
+    },
+    {
+      "line_id": "pptx_xml:002:0009",
+      "text": "We draw your attention to the following matters:",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:002:0018",
+      "text": "[NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:002:0021",
+      "text": "[MAIN CLIENT]",
+      "score": 45
+    },
+    {
+      "line_id": "pptx_xml:002:0022",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:002:0026",
+      "text": "[SIGNATURE]",
+      "score": 37
+    },
+    {
+      "line_id": "pptx_xml:005:0014",
+      "text": "[GROUP FULL NAME]",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:005:0016",
+      "text": "[ENTITY 1 FULL NAME] (“[ENTITY 1]”)",
+      "score": 33
+    },
+    {
+      "line_id": "pptx_xml:005:0017",
+      "text": "[ENTITY 2 FULL NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:005:0019",
+      "text": "[ENTITY 3 FULL NAME] (“[ENTITY 3]”)",
+      "score": 33
+    },
+    {
+      "line_id": "pptx_xml:005:0020",
+      "text": "[FAMILY MEMBER 1] [SURNAME]",
+      "score": 44
+    },
+    {
+      "line_id": "pptx_xml:005:0021",
+      "text": "[FAMILY MEMBER 2] [SURNAME]",
+      "score": 44
+    },
+    {
+      "line_id": "pptx_xml:005:0022",
+      "text": "[FAMILY MEMBER 3] [SURNAME]",
+      "score": 44
+    },
+    {
+      "line_id": "pptx_xml:005:0023",
+      "text": "[FAMILY MEMBER 4] [SURNAME]",
+      "score": 44
+    },
+    {
+      "line_id": "pptx_xml:005:0024",
+      "text": "[FAMILY MEMBER 5]",
+      "score": 45
+    },
+    {
+      "line_id": "pptx_xml:005:0025",
+      "text": "[SURNAME]",
+      "score": 37
+    },
+    {
+      "line_id": "pptx_xml:005:0038",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0040",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0042",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0044",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0046",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0049",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:005:0051",
+      "text": "[YEAR]",
+      "score": 30
+    },
+    {
+      "line_id": "pptx_xml:006:0008",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:006:0012",
+      "text": "[MR./MRS.] [LESSOR NAME]",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:006:0014",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:006:0029",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:007:0008",
+      "text": "[ENTITY 2]: Revenue by location type in MM[X]3",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:007:0010",
+      "text": "[ENTITY 2]: Like-for-like analysis - Revenue",
+      "score": 64
+    },
+    {
+      "line_id": "pptx_xml:017:0016",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:017:0033",
+      "text": "[ADDRESS]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:019:0004",
+      "text": "[MR./MRS.] [FAMILY MEMBER 3] [SURNAME]",
+      "score": 39
+    },
+    {
+      "line_id": "pptx_xml:021:0018",
+      "text": "Initial opportunity assessment:",
+      "score": 55
+    },
+    {
+      "line_id": "pptx_xml:037:0002",
+      "text": "[ENTITY 2]: Revenue by product type (1/3)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:038:0001",
+      "text": "[ENTITY 2]: Revenue by product type (2/3)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:038:0011",
+      "text": "Partnership promotion:",
+      "score": 52
+    },
+    {
+      "line_id": "pptx_xml:038:0013",
+      "text": "Special promotion: F",
+      "score": 46
+    },
+    {
+      "line_id": "pptx_xml:038:0017",
+      "text": "Local store marketing promotion:",
+      "score": 50
+    },
+    {
+      "line_id": "pptx_xml:039:0001",
+      "text": "[ENTITY 2]: Revenue by product type (3/3)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:040:0001",
+      "text": "[ENTITY 2]: Revenue by location type",
+      "score": 41
+    },
+    {
+      "line_id": "pptx_xml:041:0004",
+      "text": "[ENTITY 2]: Average ticket size and ticket count",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:042:0002",
+      "text": "[ENTITY 2]: Like-for-like analysis - Revenue",
+      "score": 64
+    },
+    {
+      "line_id": "pptx_xml:043:0002",
+      "text": "[ENTITY 2]: Like-for-like analysis - Profitability margins (1/2)",
+      "score": 64
+    },
+    {
+      "line_id": "pptx_xml:044:0001",
+      "text": "[ENTITY 2]: Like-for-like analysis - Profitability margins (2/2)",
+      "score": 64
+    },
+    {
+      "line_id": "pptx_xml:045:0002",
+      "text": "[ENTITY 2]: Top 10 stores by Revenue",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:046:0002",
+      "text": "[ENTITY 2]: Bottom 10 stores by Revenue",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:047:0002",
+      "text": "[ENTITY 2]: Top 10 stores by EBITDA",
+      "score": 39
+    },
+    {
+      "line_id": "pptx_xml:048:0002",
+      "text": "[ENTITY 2]: Bottom 10 stores by EBITDA",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:049:0002",
+      "text": "[ENTITY 2]: Revenue by service type (1/2)",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:050:0002",
+      "text": "[ENTITY 2]: Revenue by service type (2/2)",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:051:0002",
+      "text": "[ENTITY 2]: Cost of goods sold (1/2)",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:052:0001",
+      "text": "[ENTITY 2]: Cost of goods sold (2/2)",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:053:0002",
+      "text": "[ENTITY 2]: Key suppliers",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:054:0002",
+      "text": "[ENTITY 2]: SG&A expenses",
+      "score": 39
+    },
+    {
+      "line_id": "pptx_xml:055:0002",
+      "text": "[ENTITY 2]: Staff costs",
+      "score": 37
+    },
+    {
+      "line_id": "pptx_xml:057:0002",
+      "text": "[MONTH]",
+      "score": 26
+    },
+    {
+      "line_id": "pptx_xml:057:0008",
+      "text": "[ENTITY 1]: Revenue by product type (1/4)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:058:0005",
+      "text": "[ENTITY 1]: Revenue by product type (2/4)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:059:0001",
+      "text": "[ENTITY 1]: Revenue by product type (3/4)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:060:0001",
+      "text": "[ENTITY 1]: Revenue by product type (",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:064:0008",
+      "text": "[ENTITY 1]: Cost of goods sold (1/2)",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:065:0001",
+      "text": "[ENTITY 1]: Cost of goods sold (2/2)",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:066:0003",
+      "text": "[VARIANT]",
+      "score": 41
+    },
+    {
+      "line_id": "pptx_xml:066:0005",
+      "text": "[ENTITY 1]: Key suppliers (1/2)",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:067:0003",
+      "text": "[ENTITY 1]: Key suppliers (2/2)",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:069:0001",
+      "text": "[ENTITY 1]: SG&A expenses (2/2)",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:070:0011",
+      "text": "[ENTITY 1]: Staff cost (1/2)",
+      "score": 33
+    },
+    {
+      "line_id": "pptx_xml:071:0001",
+      "text": "[ENTITY 1]: Staff cost (2/2)",
+      "score": 33
+    },
+    {
+      "line_id": "pptx_xml:073:0003",
+      "text": "[ENTITY 3]: Revenue by product type (1/",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:074:0001",
+      "text": "[ENTITY 3]: Revenue by product type (2/2)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:076:0001",
+      "text": "[ENTITY 3]: Revenue by customer type (2/3)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:077:0001",
+      "text": "[ENTITY 3]: Revenue by customer type (3/3)",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:077:0027",
+      "text": "[CUSTOMER 13] (",
+      "score": 33
+    },
+    {
+      "line_id": "pptx_xml:078:0005",
+      "text": "[ENTITY 3]: Cost of goods sold",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:079:0002",
+      "text": "[ENTITY 3]: Key suppliers",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:080:0007",
+      "text": "[ENTITY 3]: SG&A expenses (1/2)",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:081:0001",
+      "text": "[ENTITY 3]: SG&A expenses (2/2)",
+      "score": 34
+    },
+    {
+      "line_id": "pptx_xml:082:0008",
+      "text": "[ENTITY 3]: Staff cost",
+      "score": 37
+    },
+    {
+      "line_id": "pptx_xml:089:0016",
+      "text": "[MR./MRS.]",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:101:0024",
+      "text": "Unit: USD bn",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:103:0003",
+      "text": "Product sophistication:",
+      "score": 50
+    },
+    {
+      "line_id": "pptx_xml:104:0028",
+      "text": "Timeline to implement: 6 months",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:104:0044",
+      "text": "3-year negative decline:",
+      "score": 47
+    },
+    {
+      "line_id": "pptx_xml:104:0046",
+      "text": "2-year negative decline:",
+      "score": 47
+    },
+    {
+      "line_id": "pptx_xml:105:0010",
+      "text": "Timeline to implement: 6 - 12 months",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:115:0006",
+      "text": "[DATE]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:120:0007",
+      "text": "[ENTITY 3 FULL NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:120:0009",
+      "text": "[CUSTOMER 1 FULL NAME]",
+      "score": 42
+    },
+    {
+      "line_id": "pptx_xml:120:0011",
+      "text": "[ENTITY 2 FULL NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:120:0012",
+      "text": "[GROUP NAME]",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:120:0013",
+      "text": "[GROUP FULL NAME]",
+      "score": 38
+    },
+    {
+      "line_id": "pptx_xml:120:0020",
+      "text": "[ENTITY 2 FULL NAME],",
+      "score": 35
+    },
+    {
+      "line_id": "pptx_xml:120:0023",
+      "text": "[ENTITY 1 FULL NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:122:0004",
+      "text": "[ADDRESS LINE 1]",
+      "score": 45
+    },
+    {
+      "line_id": "pptx_xml:122:0005",
+      "text": "[ADDRESS LINE 2]",
+      "score": 45
+    },
+    {
+      "line_id": "pptx_xml:122:0006",
+      "text": "[CONTACT NO.]",
+      "score": 41
+    },
+    {
+      "line_id": "pptx_xml:122:0008",
+      "text": "[NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:122:0010",
+      "text": "[EMAIL ID]",
+      "score": 40
+    },
+    {
+      "line_id": "pptx_xml:122:0011",
+      "text": "[NAME]",
+      "score": 36
+    },
+    {
+      "line_id": "pptx_xml:122:0014",
+      "text": "[EMAIL ID]",
+      "score": 40
+    }
+  ],
+  "section_disposition": {
+    "Executive Summary": "present",
+    "Key Findings": "present",
+    "Business Overview": "present",
+    "Summary Financials": "present",
+    "Profit and Loss Overview / Financial Performance": "present",
+    "Quality of Earnings": "present",
+    "Income Statement": "present",
+    "Balance Sheet": "present",
+    "Net Working Capital": "present",
+    "Net Debt (Cash)": "present",
+    "Cash Flows": "not_present",
+    "Related Parties": "present",
+    "Reporting Environment": "not_present",
+    "Forecast Trading": "not_present",
+    "Industry Analysis": "not_present",
+    "Quality of Net Assets": "not_present",
+    "Gross Margin by LOB": "not_present",
+    "Appendices": "present"
+  },
+  "section_accounting_status": "pass"
+}

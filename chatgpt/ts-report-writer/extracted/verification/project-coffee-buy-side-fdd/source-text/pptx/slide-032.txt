@@ -1,0 +1,37 @@
+The
+significant increase of revenue in FY[X]2 was driven by the increased sales of coffee beans to [CUSTOMER 1]. Reported GP margin in FY[X]1 and FY[X]2 were
+affected by the incorrect cost recognition. If we were to reflect the adjustment to reported figures, GP margin in FY[X]1 and FY[X]2 would be 34.4% and 36.1% respectively. Management explained that the increase in adjusted GP margin during FY[X]1-FY[X]2 was caused by selling price adjustment while further improvement in MM[X]3 was due to the increased portion of coffee beans which were cheaper.
+[ENTITY 1]: Profit & loss overview (1/2)
+The significant increase of revenue in FY[X]2 compared to FY[X]1 was attributable to sales of coffee beans to [CUSTOMER 1] which increased by USD 34.
+1
+million from the prior year in addition to the sales of ready-mixed non-coffee (powder mix and concentrate). In MM[X]3, although sales of coffee beans have decreased slightly by
+4.5 ppt
+, the impact was offset by the continued increase in sales of ready-mixed non-coffee and syrup.
+[ENTITY 1] was not selected
+by [CUSTOMER 1] to supply coffee beans in 20XX due to high selling prices. Management planned to enter to bid again once the price of coffee beans go down.
+More than 80%
+of t
+he cost of goods sold during FY[X]1-MM[X]3 consisted of green coffee beans, powder mix, other beverage ingredients, direct labour, overhead and  factory rental expense.
+As discussed on page 11, during the initial adoption of standard costing in FY[X]1, there were some incorrect Bill of Materials resulting in an understatement of costs
+of goods sold in FY[X]1 by USD 2.7 million and an overstatement of cost of goods sold in FY[X]2 by USD 2.7 million per the discussion with Management. We have proposed the adjustment with respect to this matter to the
+QoE
+analysis on page 24 and summarised its impact on GP and EBITDA margins per the table below.
+Commentary on the historical profit and loss
+Source: (1) Audited financial statements as at 31 December 20XX, 20XX (2) Trial balance as at  31 May 20XX and 20XX  (3) Management’s discussion and (4) KPMG analysis
+Executive summary
+| Consolidated financial performance |
+Financial performance
+|
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

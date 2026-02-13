@@ -1,0 +1,61 @@
+[ENTITY 3]: Revenue by product type (2/2)
+Overall
+Bakery products produced by [ENTITY 3] can be categorised into three groups which are products under its
+[ENTITY 3]
+brand
+, [BRAND 1] brand, and under customer brands (i.e. OEM).
+In terms of OEM, [ENTITY 3] has to develop products
+per the
+customer’s requirement and enter into bidding process with other competitors. [ENTITY 3] and customers would agree on the retail price and % GP representing marketing fee to be charged to [ENTITY 3]. The difference between the two was [ENTITY 3]’s selling prices.
+Management informed us that t
+he selling prices of OEM products
+could not be adjusted
+frequently as the change in
+[ENTITY 3]’s
+selling prices will impact retail prices
+of [ENTITY 3]’s customers.
+For bakery products under
+[ENTITY 3]’s brand, [ENTITY 3] has the flexibility to adjust both the recipe and selling prices. Given the larger production volume, products under [ENTITY 3]’s brand were
+more cost effective to produce than OEM products.
+[ENTITY 3] also produces bakery products under [BRAND 1] brand and mainly sells to [ENTITY 2] and also to other customers. However, the selling price of products under [BRAND 1] brand is limited by the retail prices at [BRAND 1] stores.
+Bread
+Most of bread products were sold to [ENTITY 2].
+The slight increase of bread sales during FY[X]1 to MM[X]3 came from the increased popularity of marketing sets sold under  [ENTITY 2] where, for example, drinks were sold together with sandwiches
+for breakfast
+.
+In FY[X]2, an increase of 1.1ppt in margin of bread came from the change in the brand of key ingredients, such as butter
+for cost reduction purpose.
+The drop in margin in MM[X]3 around 6
+ppt
+compared with MM[X]2 was caused by
+the increase of bakery materials – butter and eggs
+Commentary on revenue by product type (Cont.)
+Cakes
+Cake products consisted of cakes, roll cakes, muffins and tarts. Cakes were the major product sold by [ENTITY 3] under both [ENTITY 3]’s brand and OEM brand.
+In FY[X]2, there were increases of cake orders from Family Mart and Tops under [CUSTOMER 5], and [CUSTOMER 3] by total amount of USD
+8.9
+million.
+In MM[X]3, sales of cake product group also increased from [CUSTOMER 5] and [CUSTOMER 3]. For [CUSTOMER 3], Management informed us that [ENTITY 1] only sold to [CUSTOMER 3] department stores in FY[X]2 and has commenced to sell to mini [CUSTOMER 3] in 20[X]3.
+The consecutive decrease in margins of cakes throughout the analysed period came from increase of costs of products sold to [CUSTOMER 5]. Even though, the cakes sold to [CUSTOMER 3] had higher margin, the portion of cakes sold to [CUSTOMER 3] was smaller. Management informed that the discussion on adjustment of selling prices is ongoing  with [CUSTOMER 5].
+Puff, Pie and Croissants
+[ENTITY 3] received a new order for croissants from [CUSTOMER 7] under [CUSTOMER 12] group with total sale value of 1.0 million in FY[X]2 resulting in an increase in sales of this product group.
+The increase in margin in FY[X]2 was caused by the increase in selling prices to [ENTITY 2] who is the key customer for this product group. The decrease in margin in MM[X]3 was caused by the increase in cost of raw materials.
+Snack
+Snack product group consisted of cookies,
+crispy toast, other gift sets and snack boxes for events. Key customers of snacks were [ENTITY 2] and [CUSTOMER 5].
+The increase of sales in FY[X]2 came from the sales of cookies to [CUSTOMER 7] for approximately USD 1.6 million.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

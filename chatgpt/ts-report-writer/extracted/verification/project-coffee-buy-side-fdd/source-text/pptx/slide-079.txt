@@ -1,0 +1,22 @@
+Management stated that there is no minimum purchase requirement for each supplier. For the past few years, R&D team had done the research and adjusted bakery recipe and changed suppliers of some ingredients to reduce cost of bakery.
+[ENTITY 3]: Key suppliers
+Source: Top 10 of key suppliers in FY[X]1, FY[X]2 and MM[X]3
+[ENTITY 3] changed the supplier of butter to [SUPPLIER 30] which is a more affordable brand, resulting in the decrease in purchases from [SUPPLIER 20] and [SUPPLIER 22]
+Management stated that [ENTITY 3] does not have any supply contract and there is no minimum purchase requirement for any of the suppliers. The purchase price and volume were agreed
+via
+purchase order.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

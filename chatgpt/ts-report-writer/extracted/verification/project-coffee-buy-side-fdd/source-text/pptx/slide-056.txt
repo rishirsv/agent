@@ -1,0 +1,19 @@
+Supporting
+analysis
+- [ENTITY 1]
+05
+01
+Revenue analysis
+56-62
+02
+Cost breakdown
+63-64
+03
+Key suppliers
+65-66
+04
+SG&A breakdown
+67-68
+05
+Staff costs
+69-70

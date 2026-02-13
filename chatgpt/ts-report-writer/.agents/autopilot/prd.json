@@ -153,8 +153,8 @@
       "verificationCommand": "./.venv/bin/python scripts/qa_provenance.py --markdown extracted/project-cinema-report.md --source-manifest extracted/verification/project-cinema-report/source-text/manifest.json --out-dir extracted/verification/project-cinema-report/qa && ./.venv/bin/python scripts/qa_gates.py --report-id project-cinema-report",
       "priority": 5,
       "dependsOn": [],
-      "passes": true,
-      "attempts": 0,
+      "passes": false,
+      "attempts": 1,
       "blocked": false,
       "blockedReason": "",
       "files": [
@@ -188,7 +188,7 @@
       "priority": 6,
       "dependsOn": [],
       "passes": false,
-      "attempts": 1,
+      "attempts": 2,
       "blocked": true,
       "blockedReason": "Source file is CDFV2 Encrypted/unreadable; strict extraction and source-text export fail with File is not a zip file.",
       "files": [
@@ -221,8 +221,8 @@
       "verificationCommand": "./.venv/bin/python scripts/qa_provenance.py --markdown extracted/project-coffee-buy-side-fdd.md --source-manifest extracted/verification/project-coffee-buy-side-fdd/source-text/manifest.json --out-dir extracted/verification/project-coffee-buy-side-fdd/qa && ./.venv/bin/python scripts/qa_gates.py --report-id project-coffee-buy-side-fdd",
       "priority": 7,
       "dependsOn": [],
-      "passes": false,
-      "attempts": 0,
+      "passes": true,
+      "attempts": 1,
       "blocked": false,
       "blockedReason": "",
       "files": [

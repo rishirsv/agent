@@ -1,0 +1,78 @@
+USD Group and entity definitions
+[BANK 2]
+[BANK 2]
+[BANK 3]
+[BANK 3]
+[ENTITY 3]
+[ENTITY 3 FULL NAME]
+[CUSTOMER 1]
+[CUSTOMER 1 FULL NAME]
+[ENTITY 2]
+[ENTITY 2 FULL NAME]
+[GROUP NAME]
+[GROUP FULL NAME]
+[BANK 4]
+[BANK 4]
+[BANK 1]
+[BANK 1]
+The Group
+The 3 Target entities (i.e. [ENTITY 3 FULL NAME],
+[ENTITY 2 FULL NAME],
+and [ENTITY 1 FULL NAME])
+[ENTITY 1]
+[ENTITY 1 FULL NAME]
+Currencies and time periods
+5MXX
+For the five-month period ended DD MM 20XX
+EUR
+Euro currency
+FYXX
+For the year ended 31 December XX
+USD
+United States Dollar currency
+USD’000
+Thousand US Dollars
+USD
+United States Dollar currency
+Other definitions
+AP
+Accounts payable
+ALRO
+Agricultural Land Reform Office
+AR
+Accounts receivable
+B2B
+Business to business
+B2C
+Business to customer
+BOM
+Bill of materials
+COGS
+Cost of goods sold
+Cont.
+Conti
+nue
+COO
+Chief Operating Officer
+DC
+Distribution centre
+DIO
+Days Inventory Outstanding
+DPO
+Days Payable Outstanding
+DSO
+Days Sales Outstanding
+EBIT
+Earnings before interest and tax
+EBITDA
+Earnings before interest, tax, depreciation and amortisation
+EBITDAR
+Earnings before interest, tax, depreciation, amortisation and rent costs
+EBO
+Employee benefit obligations
+FIFO
+First-in, First-out
+Glossary of terms and abbreviations (1/2)
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments | Value creation | Appendices |
+Engagement Appendices

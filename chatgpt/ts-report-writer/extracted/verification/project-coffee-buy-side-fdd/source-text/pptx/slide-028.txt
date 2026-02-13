@@ -1,0 +1,49 @@
+Group: Quality of earnings (4/4)
+Other considerations (Cont.)
+[ENTITY 1] began selling coffee beans to [COMPANY 1] under [CUSTOMER 1] in FY[X]1 and entered into sales agreement for March 20XX - February 20XX, and this has caused a significant increase in total revenue of [ENTITY 1] by USD 37.1 million in FY[X]1. Margin from coffee beans sold to [CUSTOMER 1] was lower than margin generated from other customers. As [ENTITY 1] did not get selected to be [CUSTOMER 1]’s supplier due to higher selling price and higher cost of coffee beans, there was no additional sales generated from [CUSTOMER 1] after MM[X]3. We therefore proposed the GP generated from [CUSTOMER 1] since FY[X]1 – MM[X]3 to be considered if there was no sale between [ENTITY 1] and [CUSTOMER 1], due to its potential non-recurring nature.
+Due to the consecutive net losses, there was no bonus payment to the Group’s staff during the analysed period. However, Management cited that
+there was a possibility for the Group to pay bonus for the year 20XX as Management viewed that there might be performance improvement. Hence
+,
+the potential impact of
+bonus payment for MM[X]3
+should be considered.
+In MM[X]3, Management informed us that the Group currently requires
+top and middle management for the Group such as CFO and Head of department.
+The impact on the
+potential increase in staff costs from the additional headcount of management personnel
+should therefore be considered and reflected throughout the historical period.
+The Group may be required to apply TFRS16 (Leases) for post transaction for [MAIN CLIENT]’s consolidated financial statement purpose. According to the current rental assets such as rental stores, factories and vehicles, all related expenses will be replaced by finance costs and depreciation expenses in P&L, while Balance sheet will have right-of-use assets and lease liabilities. However, all finance costs and depreciation expenses will be below EBITDA line.
+Unquantifiable adjustments to EBITDA (Cont.)
+[ENTITY 1]
+provided
+one-year warranty to coffee machines sold to customers. Although [ENTITY 1] is a dealer of coffee machines, the repair expenses were absorbed and recorded in [ENTITY 1]’s P&L accounts. Management informed that customers are able to claim only in the case that coffee machines have defects from manufacturers (not caused by customers themselves
+)
+. As such, this warranty was considered as assurance-type warranty, and does not fall under the scope of TFRS 15 – Contract with customers.
+However, the warranty is instead subject to TAS37 – Provisions, Contingent Liabilities, and Contingent assets which were required by both NPAEs and PAEs. Under TAS37, [ENTITY 1] is required to record warranty expense and provision at period-end. This provision will be updated at period-end to reflect the expected claims by customers. As [ENTITY 1] has never recorded liability, we suggest further analysis to be performed to quantify the impact to EBITDA.
+Under TFRS for NPAEs, employee benefit obligations were recognised based on Management’s best estimate. As the Targets only recorded the expense at the year-end, hence, no employee benefit expenses have yet been recognised in MM[X]3 period.
+However, if TFRS for PAEs is to be adopted in the future, the Targets will have to adopt TAS19 which requires actuarial valuation of employee benefit obligation.
+Other considerations
+Management stated that donation
+s
+of USD 1.6 million to [ORG 1 ]in FY[X]1 and USD 0.1 million to [ORG 2] in MM[X]3 were as part of [ENTITY 2]’s effort to secure rental agreements in those locations. The amount of donation was offered based on negotiation.
+However, if [ENTITY 2] plan to lease store in the government property in the future, the impact from donation should be taken into consideration when assessing the underlying EBITDA
+.
+Executive summary
+|
+Consolidated financial performance
+|
+Financial performance
+|
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

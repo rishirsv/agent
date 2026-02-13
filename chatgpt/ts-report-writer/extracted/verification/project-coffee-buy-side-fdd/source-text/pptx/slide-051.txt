@@ -1,0 +1,31 @@
+The decrease in % cost over total revenue in FY[X]2 was mainly driven by the increase in selling price of some SKUs for beverages by USD 3-6, for bakery by USD 2-15, and for merchandise by USD 20-50. While, % cost in MM[X]3 increased due to the rise in staff benefit relating to transportation and accommodation allowances.
+[ENTITY 2]: Cost of goods sold (1/2)
+According to Management, [ENTITY 2] recognises entire cost of products sold, cost of store staff and other cost relating to the store in COGS. [ENTITY 2] applies standard cost of products sold
+using bill of materials (BOM) in the ERP system which is updated monthly.
+This represented cost of bakery products (
+e.g
+[ EXAMPLES] etc.) purchased from [ENTITY 3], a related party. The increase in % cost of bakery over total revenue in FY[X]2 was due to the increase in cost of bakery driven by the increase in cost of raw materials.  Although selling prices of some bakery menu have increased in [MONTH] 20[X]2, Management informed us that the increase in cost could not be fully passed through to customers
+due to the competitive market
+.
+Cost of beverage comprised of raw materials (e.g. [EXAMPLES] etc.). Most of the raw materials were purchased from [ENTITY 1], a related party. The decrease in % cost to total revenue over the analysed period was caused by the price adjustment on some beverage menu in [MONTH] 20[X]2 as well as the change in ingredients to alternative raw materials with lower prices on some menu.
+A decrease in % cost of merchandise over total revenue over the analysed period was due to the selling price incremental of around USD 20-50 on drip coffee, house blend coffee beans and cocoa 3 in 1 in [MONTH] 20[X]2.
+This related to cost of coffee break/ snack box under [BU NAME] business unit. The increase in cost during FY[X]1-MM[X]3 was in line with the increase in revenue from catering due to the easing COVID-19 lockdown.
+Commentary on cost of goods sold
+Source:
+(1) Trial balances for FY[X]1, FY[X]2, MM[X]2 and MM[X]3, and (2) KPMG analysis
+We were not able to show % cost by key product given that sales of marketing sets included both sales of beverages and bakery. The breakdown was not available.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

@@ -1,0 +1,64 @@
+Procurement/ vendor consolidation
+[ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery requires various sources for multiple raw materials across product segments from local and international vendors.
+[ENTITY 1], in particular, purchases raw coffee beans from the community in [SUPPLIER 10] district, [ADDRESS] in
+collaboration with Agricultural Land Reform Office, in which [ENTITY 1] is required to pay additional cost of
+fertiliser
+for those farmers
+There might be an opportunity to consolidate vendors and negotiate better terms (e.g., rates, discounts, rebates, etc.)
+Perform analysis on vendor spend data to assess spend by type, identify potential volume discounts not currently utilised, duplicative vendors, as well as performing contract 'best price' analysis to determine potential cost saving opportunities
+Perform analysis reviewing vendor contracts and sourcing to reduce quality issues and improve costs savings
+Medium
+Logistics and route optimisation
+[ENTITY 1] and [ENTITY 3] Bakery may have its own vehicles/fleet as well as outsourced vendors to deliver products to customers.
+[ENTITY 2] outsources delivery services to serve customers and it may have its own fleet for raw material delivery from distribution centres to each branch.
+There may be an opportunity to assess and potentially improve distribution or freight costs for target by either reducing footprint or by efficiently leveraging shipping from closest location
+Conduct route assessment based on the current distribution model and ship to and from location for each product category and distribution facility
+Analyse the contract terms for the asset-based carriers and identify opportunities to leverage the best-priced vendor and/or renegotiation of rates by consolidating spend with specific vendors
+Optimise the distribution network to minimise freight costs
+Medium
+Back-office cost optimisation
+There may be an opportunity to assess back-office headcount rationalisation based on efficiency metrics, internal
+benchmarking
+and comparison of duplicate roles and responsibilities across [ENTITY 2], [ENTITY 1], and [ENTITY 3]
+There may be an opportunity to achieve back office (Non-FTE) savings by benchmarking back-office functions like IT, finance, HR, marketing, admin, etc. with peers
+Perform back-office benchmarking analysis against industry peers to identify potential improvement opportunities for FTE
+Consolidate back-office employees through centralisation of functions and analyse spans and layers for potential improvement (e.g., increasing manager spans)
+Analyse back-office spend to identify major cost buckets
+Perform G&A (back office) benchmarking analysis against industry peers to identify potential improvement opportunities for non-FTE spend
+Low
+Working capital optimisation
+There may be an opportunity to improve [ENTITY 2]’s, [ENTITY 1]’s, and [ENTITY 3] Bakery’s net working capital by analysing historical DSO, DIO and DPO and benchmarking it with peers
+Strengthening payment terms from customers and renegotiating contracts with suppliers might provide further opportunity for one-time cash release
+Assess working capital improvement opportunities using available inventory, receivables and payable working capital data (including working capital days)
+Identify potential one-time cash opportunities by leveraging management discussions, available inventory data, site visit observations and benchmarks for assessment
+Medium
+CAPEX spend
+[ENTITY 1] and [ENTITY 3] Bakery are likely to have periodic plans for maintenance CAPEX, delivery vehicles and factory expansion while [ENTITY 2] is likely to invest in more branches as growth CAPEX.
+Opportunity may exist to be more efficient with CAPEX investment
+Review the CAPEX plan and historical CAPEX schedule
+Understand what investment levels will be essential to achieve growth targets related to increased penetration of existing services and new offerings
+Benchmark CAPEX spend with industry peers and leverage the best practices from the industry
+Medium
+10
+11
+Category
+Description
+Prelim. Opp. Assessment
+Lever
+Potential Analysis Areas
+Operational improvement
+Source:
+Publicly available information, companies information, and KPMG analysis
+9
+8
+Identified
+initial Value Creation opportunities for [ENTITY 2], [ENTITY 1], and [ENTITY 3] Bakery (3/3)
+Cash release
+12
+Executive summary
+| Consolidated financial performance | Financial performance | Supporting analysis | Financial position | Related parties | Commitments |
+Value creation
+|
+Appendices
+|
+Engagement Appendices

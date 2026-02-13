@@ -1,0 +1,39 @@
+Net
+sales in FY[X]2 increased by USD 8.9 million from
+the
+increase in selling price and sales volume of cake products sold to [CUSTOMER 5] and [CUSTOMER 3]. Reported GP margin in FY[X]1 was affected by the incorrect cost recognition. If we were to reflect the adjustment to reported figures, GP margin in FY[X]1 would reduce to 10.2%.  Management explained that as [ENTITY 3] was not able to pass through raw material cost increase to customers during FY[X]2-MM[X]3,  this resulted in a decreases in both GP and EBITDA margins.
+[ENTITY 3]:
+Profit & loss overview (1/2)
+Commentary on historical performance
+The increase in sales of bakery during the analysed period mainly related to the increased sales to recurring customers. While the sales from recurring customer has increased, the sales to [ENTITY 2], related party, slightly decreased due to the decrease in number of [ENTITY 2] stores, and
+[ENTITY 2]’s tightened food waste policy causing the
+%
+of [ENTITY 2]
+sales to total revenue to decrease from 80.5% in FY[X]1 to 64.6% in MM[X]3
+Majority of cost consisted of bakery ingredients (e.g. eggs, butter, wheat flour and
+vegetable oil), direct labour, overheads, depreciation, and electricity
+. expense.
+As discussed on page 11, during the initial adoption of standard costing in FY[X]1, there were some incorrect Bill of Materials resulting in an understatement of costs
+of goods sold in FY[X]1 by USD 5.3 million per the discussion with Management. We have proposed the adjustment with respect to this matter to the
+QoE
+analysis on page
+24
+and summarised its impact on GP and EBITDA margins per the table below.
+Source: (1) Audited financial statements as at 31 December 20XX, 20XX (2) Trial balance as at  31 May 20XX and 20XX  (3) Management’s discussion and (4) KPMG analysis
+Executive summary
+| Consolidated financial performance |
+Financial performance
+|
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices

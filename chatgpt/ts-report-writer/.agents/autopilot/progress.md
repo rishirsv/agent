@@ -129,3 +129,33 @@ Run: 20260213-142610-36275 (iteration 6)
 - Recommendation: Provide an unlocked/decryptable `.pptx` or an alternate unencrypted export (for example PDF) for this report, then rerun story 6.0.
 
 ---
+## [2026-02-13 15:08:52 EST] - 7.0: Extract and fully clean Project Coffee_buy side_FDD .pptx
+
+Run: 20260213-142610-36275 (iteration 7)
+
+- Guardrails reviewed: yes
+- Commit: <pending> 7.0: extract and fully clean project-coffee-buy-side-fdd
+- Verification: `./.venv/bin/python scripts/qa_provenance.py --markdown extracted/project-coffee-buy-side-fdd.md --source-manifest extracted/verification/project-coffee-buy-side-fdd/source-text/manifest.json --out-dir extracted/verification/project-coffee-buy-side-fdd/qa && ./.venv/bin/python scripts/qa_gates.py --report-id project-coffee-buy-side-fdd` -> PASS
+- Files changed:
+  - AGENTS.md
+  - .agents/autopilot/prd.json
+  - .agents/autopilot/progress.md
+  - .agents/autopilot/working.md
+  - extracted/project-coffee-buy-side-fdd.md
+  - extracted/manifests/project-coffee-buy-side-fdd.json
+  - extracted/manifests/processing-order.json
+  - extracted/manifests/tracker.json
+  - extracted/manifests/tracker.md
+  - extracted/verification/project-coffee-buy-side-fdd/*
+- What was implemented:
+  - Ran isolated strict extraction for only `reports/Project Coffee_buy side_FDD .pptx` and generated report + verification artifacts.
+  - Generated strict source-text artifacts at `extracted/verification/project-coffee-buy-side-fdd/source-text` with `scripts/extract_source_text.py`.
+  - Performed full-report cleanup by removing cleanup-quality fragment lines from selected catalog entries and regenerating markdown/render-trace/section-map/section-accounting artifacts together.
+  - Added required source-evidence metadata and completed source-to-extraction coverage map aligned to the canonical template.
+  - Completed review notes checklist and reran provenance + fail-closed gates to pass.
+  - Marked story 7.0 in PRD as `passes=true`, `blocked=false`, `blockedReason=""`.
+- **Learnings:**
+  - For PPTX strict mode, provenance pass alone is insufficient; `cleanup_quality` requires a global fragment-pruning pass across all sections.
+  - Keep markdown and trace artifacts in lockstep; editing markdown structure before traced bullets can break `markdown_trace_sync`.
+
+---

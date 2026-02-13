@@ -1,0 +1,31 @@
+[ENTITY 1]: Revenue by product type (
+4
+/4)
+Commentary on revenue by product type (Cont.)
+Coffee machines and equipment
+[ENTITY 1] is a non-exclusive dealer of coffee machines of [NAME] brand from [COUNTRY] and [NAME] brand from [COUNTRY] in addition to grinders of [NAME] brand from New [COUNTRY].
+Although [ENTITY 1] provides 1-year warranty to customers. [ENTITY 1] did not record liability for the warranty relating to the maintenance services and spare parts.
+Under TAS37,
+[ENTITY 1] is required to record warranty provision at
+period-end
+.
+[ENTITY 1] does not get the back-to back warranty from machine supplier, and is responsible for all expenses incurred from 1-year warranty. In addition, [ENTITY 1] also provides repair and maintenance services to coffee machines after 1-year warranty upon request from customers.
+The increase in sales of coffee machines in FY[X]2 came from sales to [CUSTOMER 2] to support their branch expansion. We were informed by Management that for 20[X]3, orders from [CUSTOMER 2] was placed in [MONTH] and therefore, not included in the MM[X]3 sales period.
+According to Management, margin of coffee machine has consistently decreased from FY[X]1 to MM[X]3 due to the impact from foreign exchange rates as purchases were made in USD and EUR in addition to the price increase by [NAME] brand which was not reflected in the selling price per the contract with customers. Furthermore, Management stated that given the competitive nature of the coffee machine market, there was not much room for price adjustment.
+Trading merchandise
+Merchandise comprised of beverage supplies (e.g. [EXAMPLES] etc.) and other ingredients such as tapioca bubbles, brown sugar. These products were mainly sold to [CUSTOMER 4]and [CUSTOMER 5] customers.
+Executive summary
+| Consolidated financial performance | Financial performance |
+Supporting analysis
+|
+Financial position
+|
+Related parties
+|
+Commitments
+|
+Value creation
+|
+Appendices
+|
+Engagement Appendices
