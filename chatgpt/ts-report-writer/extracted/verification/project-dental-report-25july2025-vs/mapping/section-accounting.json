@@ -1,0 +1,137 @@
+{
+  "status": "pass",
+  "summary": {
+    "expected_lines": 0,
+    "rendered_lines": 0,
+    "missing_lines": 0,
+    "unexpected_lines": 0
+  },
+  "sections": {
+    "Executive Summary": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Key Findings": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Business Overview": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Summary Financials": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Profit and Loss Overview / Financial Performance": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Quality of Earnings": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Income Statement": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Balance Sheet": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Net Working Capital": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Net Debt (Cash)": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Cash Flows": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Related Parties": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Reporting Environment": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Forecast Trading": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Industry Analysis": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Quality of Net Assets": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Gross Margin by LOB": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    },
+    "Appendices": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": [],
+      "missing_text_sample": []
+    }
+  }
+}

@@ -1,0 +1,42 @@
+Executive summary              Dental Industry         Recommendation              Historical trading             Balance sheet          Appendices
+Profit & loss overview (1/2)
+The company’s revenue grows steadily from FY22 to FY24, though it reports a net loss. However, it achieves a positive EBITDA, indicating that the loss is largely accounting-based
+rather than reflective of poor operational performance. This is primarily due to significant non-cash depreciation expenses tied to the company’s asset-heavy business model.
+Income statement | reported                                                                                                                          Overview
+Overview
+Reported                                 As % of revenue
+TTM                                                  TTM            •    Revenue: The Company operates as a single reportable segment, focused exclusively
+CADm                                                     FY22     FY23      FY24 Q1-25             FY22        FY23        FY24       Q1-25                on delivering healthcare services within Canada. All revenue is generated
+Revenue                                                 1,250     1,426    1,545    1,582       100.0%      100.0%     100.0%      100.0%                  domestically, reflecting a concentrated operational footprint. No individual customer
+Cost of revenue                                          (638)     (729)    (772)    (786)       (51.1%)    (51.1%)     (50.0%)     (49.7%)                accounts for 10% or more of total revenue, indicating a well-diversified client base and
+Gross profit                                              612      697       773      796        48.9%       48.9%       50.0%       50.3%                 reduced dependency on any single source.
+SG&A                                                  (404)    (462)     (503)    (516)       (32.3%)    (32.4%)     (32.5%)     (32.6%)
+•    Cost of Revenue: In fiscal year 2024, the Company revised its accounting policies.
+Depreciation and amortization                         (190)    (203)     (205)    (205)       (15.2%)    (14.2%)     (13.2%)     (13.0%)
+Previously, variable compensation expenses were included in the cost of revenue. As
+Share-based compensation                                (13)     (12)     (13)      (11)       (1.0%)      (0.8%)      (0.8%)     (0.7%)
+of July 1, 2024, these expenses are now reported under selling, general, and
+Net finance costs                                       (68)     (93)     (92)     (88)        (5.4%)      (6.5%)      (6.0%)     (5.5%)                administrative (‘SG&A’) expenses. All prior period figures have been restated
+Change in fair value & fx                                (15)     (6)      (24)     (37)        (1.2%)      (0.4%)     (1.6%)      (2.3%)
+accordingly, as disclosed in the Management Discussion and Analysis (‘MD&A’). The
+Loss on disposals                                         (0)    (23)      (11)     (12)        (0.0%)      (1.6%)     (0.7%)      (0.7%)
+Loss before income taxes                                   (78)   (103)      (75)     (72)        (6.2%)      (7.2%)     (4.8%)      (4.6%)
+Company uses an input-based method—primarily labor hours and raw material
+costs—to assess performance. Any fluctuations in these inputs directly affect the cost
+Income tax recovery                                        61       17       15       14          4.9%        1.2%       1.0%        0.9%
+Net income (loss)                                          (17)     (86)     (59)     (58)        (1.3%)      (6.0%)     (3.8%)      (3.7%)                of revenue. Inventory costs are also included in this category. Additionally, in fiscal
+Net interest                                               68       93        90       88          5.4%        6.5%        5.8%       5.5%                 year 2023, a gain from the disposal of intangible assets was recognized within the cost
+Depreciation & amorization                                190      203       205      205        15.2%       14.2%       13.2%      13.0%                  of revenue.
+Taxes                                                     (61)     (17)      (15)     (14)        (4.9%)      (1.2%)      (1.0%)     (0.9%)
+EBITDA                                                    181      194       220      221        14.5%       13.6%       14.2%      13.9%
+•    Operating expenses: Operating expenses encompass all SG&A costs, including
+employee benefits, variable compensation, professional services, sales and marketing,
+occupancy, and general administrative expenses.
+•    Depreciation & Amortization: This category includes depreciation and amortization
+expenses related to property, plant, and equipment (‘PP&E’), leased assets, and
+intangible assets.
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   19
+DRAFT

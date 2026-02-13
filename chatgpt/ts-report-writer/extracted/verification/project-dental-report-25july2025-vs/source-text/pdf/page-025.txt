@@ -1,0 +1,37 @@
+Executive summary              Dental Industry         Recommendation              Historical trading             Balance sheet          Appendices
+Quality of earnings (4/7) - Management Adjustments
+Quality of Earnings                                                                                                                                  Management Adjustments
+TTM
+CADm                                                                                         FY22        FY23        FY24      Q1-25                10.       Depreciation expense on right-of-use assets: This adjustment seeks to reverse
+Revenue, reported                                                                          1,250       1,426       1,545       1,582                          the impairment of right-of-use assets recognized during the three months and year
+Pro forma adjustments                                                                       34          14          13          16                         ended December 31, 2023
+Revenue, pro form a adjusted                                                               1,284       1,440       1,558       1,598
+11.       Change in fair value of preferred shares: This adjustment reflects the gains/losses
+EBITDA, reported                                                                              181         194         220        221
+arising on remeasurement for the management preferred shares at FVTPL at the end
+Managem ent adjustm ents                                                                          0           0           0           0
+1
+of each reporting period.
+Net impact adjustment                                                                      (2)         (2)        16          23
+Change in fair value of financial instruments at FVTPL                          2           -           -           5         14
+Share-based compensation                                                        3         13          12          13          11
+Loss on disposal of businesses                                                  4           -         21          10          11
+Administrative                                                                  5           9         12            7           7
+Professional services                                                           6         16          11            4           4
+Change in fair value of contingent consideration                                7         19            1           5           2
+Employee benefits expense                                                       8          (5)          1           3           1
+Loss on disposal and impairment of property and equipment int 9                             -           2           1           1
+Depreciation expense on right-of-use assets                                    10           -           0           -           -
+Change in fair value of preferred shares                                        11          -           7          (1)         (1)
+Management Adjustments                                                                      49          66          62          72
+EBITDA Managem ent adjusted                                                                  230         259         283         293
+EBITDA margin, management adjusted                                                         3.9%        4.6%        4.0%        4.6%
+Diligence Adjustments                                                                       (21)        (48)        (31)        (30)
+EBITDA, Diligence adjusted                                                                    209         212         252        263
+Pro forma adjustments                                                                         2        (25)        (30)        (27)
+EBITDA, pro form a adjusted                                                                   211         186         223        236
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   24
+DRAFT

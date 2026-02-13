@@ -2,4 +2,4 @@
 
 | Report File | Report ID | Status | Output File | Notes |
 |---|---|---|---|---|
-| Project Coffee_buy side_FDD .pptx | project-coffee-buy-side-fdd | done_pending_review | /Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/extracted/project-coffee-buy-side-fdd.md | presentation_dual_source_catalog |
+| Project Dental_Report_25July2025_vS.pdf | project-dental-report-25july2025-vs | pass | /Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/extracted/project-dental-report-25july2025-vs.md | fitz_pdf_catalog; qa_pass |

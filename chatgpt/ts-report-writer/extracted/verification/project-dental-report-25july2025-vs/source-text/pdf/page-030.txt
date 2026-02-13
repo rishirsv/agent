@@ -1,0 +1,43 @@
+Executive summary              Dental Industry         Recommendation              Historical trading          Balance sheet            Appendices
+Balance sheet overview (1/2)
+The reported balance sheet has been stratified as at March 31st, 2025 into net working capital, net debt, and others. See the following pages for additional analysis on
+NWC.
+Stratified balance sheet                                                                                                                             Overview
+As at          Stratification as at 31-Mar-25
+Components of reported net working capital, and others are discussed below. Refer to
+CADm                                                   31-Mar-25          NWC        Net debt           Others                                       the “Net debt” section for discussion on reported net debt items.
+Assets
+Net working capital
+Cash                                                          58             -           58                 -
+•    Trade and other receivables: Relates to balances billed to customers but are
+Trade and other recievables                                   89          89                -               -
+outstanding as of year end. This balance is also net of any allowances which are
+Inventories                                                   31          31                -               -
+recorded based on historical experiences. As of March 31st, 2025, there are $88.7
+Prepaid and other assets                                      17          17                -               -                                          million receivables outstanding.
+Current assets                                                 194          136             58                 -
+•    Inventories: Inventories consist of consumables and are stated at the lower of cost
+Non-current assets                                          3,216               -              -         3,217                                            and net realizable value. Cost comprises cost of purchase and other costs that have
+Assets                                                      3,410           136              58          3,217                                            been incurred in bringing the inventories to their present location and condition. Cost
+Liabilities and shareholders' equity                                                                                                                      is calculated using the weighted average cost basis. Net realizable value represents
+Trade and other payables                                   (147)        (147)               -               -
+the estimated selling price less the estimated costs necessary to make the sale. As at
+March 31st, 2025, the provisions for obsolescence amounted to $31.2 million.
+Contract liabilities                                          (5)          (5)              -               -
+Lease liabilities                                           (30)         (30)               -               -                                     •    Prepaid and other current asset items: Transaction costs allocated to the Delayed
+Draw Facility are recognized as a prepaid asset representing the right to borrow in
+Current borrowings                                              -            -              -               -
+the future on pre-specified terms, which may be favorable. Relating to non-derivative
+Income tax payable                                          (11)         (11)               -               -                                          current assets used in operations. A further breakdown of this balance is not publicly
+Dividend payable                                              (5)          (5)              -               -                                          available as at the year end date. As of March 31st, 2025, there are $16.5 million in
+Contingent consideration                                      (0)            -              -              (0)                                         prepaid and other current assets.
+Current liabilities                                           (198)        (198)               -              (0)
+Non-current liabilities                                    (1,444)              -      (1,047)            (397)
+Liabilities                                                (1,642)         (198)       (1,047)            (397)
+Shareholders' equity                                       (1,768)              -              -        (1,768)
+Liabilities and shareholders' equity                       (3,410)         (198)       (1,047)          (2,165)
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   29
+DRAFT

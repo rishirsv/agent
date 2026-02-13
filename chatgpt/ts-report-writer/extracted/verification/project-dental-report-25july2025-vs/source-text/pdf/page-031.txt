@@ -1,0 +1,38 @@
+Executive summary              Dental Industry         Recommendation              Historical trading          Balance sheet            Appendices
+Balance sheet overview (2/2)
+Stratified balance sheet                                                                                                                             Overview
+As at          Stratification as at 31-Mar-25
+•    Accounts payable and accrued liabilities: Comprised of trade payables, accrued
+CADm                                                   31-Mar-25          NWC        Net debt           Others
+liabilities, employee benefits and other current liabilities used in ongoing operations
+Assets
+of the business. As of March 31st, 2025, there are is no accounts payable and
+Cash                                                          58             -           58                 -                                          accrued liabilities.
+Trade and other recievables                                   89          89                -               -
+•    Lease liabilities: At the commencement date of the lease, the Company recognizes
+Inventories                                                   31          31                -               -                                          lease liabilities measured at the present value of lease payments to be made over
+Prepaid and other assets                                      17          17                -               -                                          the lease term, discounted using the interest rate implicit in the lease or, if that rate
+Current assets                                                 194          136             58                 -                                          cannot be readily determined, the Company’s incremental borrowing rate (“IBR”).
+Non-current assets                                          3,216               -              -         3,217
+The lease payments include fixed payments and variable lease payments that
+depend on an index or rate, less any lease incentives receivable. As of March 31st,
+Assets                                                      3,410           136              58          3,217
+2025, there are $29.8 million in lease liabilities.
+Liabilities and shareholders' equity
+Trade and other payables                                   (147)        (147)               -               -
+Contract liabilities                                          (5)          (5)              -               -
+Lease liabilities                                           (30)         (30)               -               -
+Current borrowings                                              -            -              -               -
+Income tax payable                                          (11)         (11)               -               -
+Dividend payable                                              (5)          (5)              -               -
+Contingent consideration                                      (0)            -              -              (0)
+Current liabilities                                           (198)        (198)               -              (0)
+Non-current liabilities                                    (1,444)              -      (1,047)            (397)
+Liabilities                                                (1,642)         (198)       (1,047)            (397)
+Shareholders' equity                                       (1,768)              -              -        (1,768)
+Liabilities and shareholders' equity                       (3,410)         (198)       (1,047)          (2,165)
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   30
+DRAFT

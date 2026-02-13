@@ -1,0 +1,52 @@
+Executive summary                Dental Industry        Recommendation              Historical trading          Balance sheet            Appendices
+Days Analysis
+Working capital metrics, adjusted                                                                                                                                                                   DPO, adjusted
+DSO, adjusted
+FY22 FY23 FY24
+DSO                                                                                                                                                                                                             8
+8
+Max                                     8      8      7
+Average                                 8      7      7                              7.8                                                                                                                        7
+Min                                     7      7      7                              7.6                                                                                                                        6
+Variance from high                      0      1      0
+Variance from low                      (0)    (0)    (0)                  Days       7.4                                                                                                           Days         5
+DIO                                                                                  7.2
+Max                                     7      7      7
+4
+7
+Average                                 7      7      6                                                                                                                                                         3
+Min                                     7      6      6                              6.8
+Variance from high                      0      0      1                                                                                                                                                         2
+6.6
+Variance from low                      (0)    (0)    (1)                                                                                                                                                        1
+DPO                                                                                  6.4
+Max                                     7      7      7                              6.2                                                                                                                        0
+Average                                 3      5      4                                     Q1                         Q2                            Q3                            Q4                               Q1            Q2                        Q3                        Q4
+Min                                      -      -      -
+Variance from high                      3      2      2                                                                                                                                                             FY22   FY23             Min               Max              FY24
+FY22               FY23                 FY24                  Min               Max
+Variance from low                      (3)    (5)    (5)
+Cash conversion cycle
+Max                                    15     14     13                    DIO, adjusted                                                                                                            Cash conversion cycle, adjusted
+Average                                11      9      9
+Min                                     8      8      6
+Variance from high                      3      4      4                                 8                                                                                                                      16
+Variance from low                      (3)    (2)    (3)                                7                                                                                                                      14
+Source (all): Publicly available information
+6                                                                                                                      12
+Days          5                                                                                                          Days        10
+Days Sales Outstanding (DSO), Days Inventory                                            4                                                                                                                       8
+Outstanding (DIO), and Days Payable Outstanding
+(DPO) have remained relatively stable across the                                        3                                                                                                                       6
+fiscal years. DSO, DPO, DIO all experience a notable
+decline approaching the third quarter. This trend may                                   2                                                                                                                       4
+reflect seasonal operational patterns within the dental                                 1                                                                                                                       2
+service industry, such as reduced patient volume
+during summer months, tighter working capital                                           0                                                                                                                       0
+management, or strategic efforts to streamline                                              Q1                         Q2                            Q3                            Q4                               Q1            Q2                        Q3                        Q4
+operations mid-year.
+FY22               FY23                 FY24                  Min               Max                                     FY22   FY23             Min               Max              FY24
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   34
+DRAFT

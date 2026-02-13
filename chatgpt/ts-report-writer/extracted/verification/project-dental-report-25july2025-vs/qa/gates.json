@@ -1,0 +1,201 @@
+{
+  "report_id": "project-dental-report-25july2025-vs",
+  "generated_at": "2026-02-13T20:14:23.202371+00:00",
+  "status": "pass",
+  "gates": [
+    {
+      "name": "provenance_exact_match",
+      "status": "pass",
+      "detail": "Provenance QA must pass with zero unmatched and zero OCR-only lines."
+    },
+    {
+      "name": "provenance_trace_integrity",
+      "status": "pass",
+      "detail": "Every markdown trace row maps to a catalog line_id."
+    },
+    {
+      "name": "forbidden_class_leakage",
+      "status": "pass",
+      "detail": "No forbidden class lines are present in rendered output."
+    },
+    {
+      "name": "ocr_primary_policy",
+      "status": "pass",
+      "detail": "OCR-backed lines are blocked unless --allow-ocr-primary is enabled."
+    },
+    {
+      "name": "ocr_marker_absent",
+      "status": "pass",
+      "detail": "Final markdown must not include OCR marker blocks."
+    },
+    {
+      "name": "section_disposition_complete",
+      "status": "pass",
+      "detail": "All canonical sections must have a disposition in section-map."
+    },
+    {
+      "name": "manual_checklist_complete",
+      "status": "pass",
+      "detail": "Review notes checklist and placeholders must be completed."
+    },
+    {
+      "name": "markdown_trace_sync",
+      "status": "pass",
+      "detail": "Rendered trace must exactly match markdown and all content bullets must be traced."
+    },
+    {
+      "name": "section_completeness",
+      "status": "pass",
+      "detail": "Every selected line for each mapped section must be accounted for in render output."
+    },
+    {
+      "name": "executive_summary_cleanup",
+      "status": "pass",
+      "detail": "Executive Summary must not include engagement-letter/legal boilerplate text."
+    },
+    {
+      "name": "cleanup_quality",
+      "status": "pass",
+      "detail": "Final markdown must not contain fragment/noise bullets after cleanup."
+    }
+  ],
+  "issues": [],
+  "summary": {
+    "trace_lines": 0,
+    "missing_trace_references": 0,
+    "ocr_trace_lines": 0,
+    "forbidden_class_lines": 0,
+    "manual_check_issues": 0,
+    "provenance_unmatched": 0,
+    "trace_sync_issues": 0,
+    "markdown_untraced_content_lines": 0,
+    "section_expected_lines": 0,
+    "section_rendered_lines": 0,
+    "section_missing_lines": 0,
+    "section_unexpected_lines": 0,
+    "exec_summary_boilerplate_issues": 0,
+    "cleanup_quality_issues": 0
+  },
+  "allow_ocr_primary": false,
+  "section_accounting": {
+    "Executive Summary": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Key Findings": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Business Overview": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Summary Financials": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Profit and Loss Overview / Financial Performance": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Quality of Earnings": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Income Statement": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Balance Sheet": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Net Working Capital": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Net Debt (Cash)": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Cash Flows": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Related Parties": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Reporting Environment": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Forecast Trading": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Industry Analysis": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Quality of Net Assets": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Gross Margin by LOB": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    },
+    "Appendices": {
+      "expected_line_ids": [],
+      "rendered_line_ids": [],
+      "missing_line_ids": [],
+      "unexpected_line_ids": []
+    }
+  },
+  "artifact_paths": {
+    "render_trace": "extracted/verification/project-dental-report-25july2025-vs/render/render-trace.json",
+    "catalog": "extracted/verification/project-dental-report-25july2025-vs/catalog/line-catalog.jsonl",
+    "selected_catalog": "extracted/verification/project-dental-report-25july2025-vs/catalog/selected-lines.jsonl",
+    "section_map": "extracted/verification/project-dental-report-25july2025-vs/mapping/section-map.json",
+    "section_accounting": "extracted/verification/project-dental-report-25july2025-vs/mapping/section-accounting.json",
+    "provenance": "extracted/verification/project-dental-report-25july2025-vs/qa/provenance.json",
+    "review_notes": "extracted/verification/project-dental-report-25july2025-vs/review-notes.md",
+    "verification": "extracted/verification/project-dental-report-25july2025-vs/verification.json",
+    "markdown": "/Users/rishi/Code/ai-tools/chatgpt/ts-report-writer/extracted/project-dental-report-25july2025-vs.md"
+  }
+}

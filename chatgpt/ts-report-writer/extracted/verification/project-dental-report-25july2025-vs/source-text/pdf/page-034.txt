@@ -1,0 +1,19 @@
+Executive summary              Dental Industry         Recommendation              Historical trading          Balance sheet            Appendices
+Net working capital (3/3) – Diligence Adjustments
+Net working capital detail                                                                                                                            Diligence adjustments
+As at
+6. Expected credit loss: The exclusion of expected credit loss (ECL) from net
+CADm                                                              Code       31-Dec-22 31-Dec-23 31-Dec-24                    31-Mar-25                   working capital adjustments is because it reflects a non-operational, non-cash
+Net working capital, reported                                                         77              16              33             143                  provision tied to credit risk on patient receivables, which does not impact the
+Definitional adjustments                                                              (66)             (7)           (47)             (12)                company’s core cash conversion cycle.
+Net working capital, definitional adjusted                                            10                9            (14)            131
+Diligence adjustments
+ECL                                                                6               12              13              15                 -
+Diligence adjustments                                                                 12              13              15                 -
+Net working capital, diligence adjusted                                               22              22                1            131
+As % of TTM net sales                                                               1.8%            1.5%           0.1%             8.3%
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   33
+DRAFT

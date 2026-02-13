@@ -1,0 +1,32 @@
+Executive summary              Dental Industry         Recommendation              Historical trading           Balance sheet           Appendices
+Net working capital (2/3) – Definitional adjustments
+The reported balance sheet has been stratified as at March 31st, 2025 into net working capital, net debt, and others. See the following pages for additional analysis on
+NWC.
+Net working capital detail                                                                                                                            Definitional adjustments
+As at
+The following represents definitional adjustments which have been removed from net
+CADm                                                               Code       31-Dec-22 31-Dec-23 31-Dec-24                   31-Mar-25                working capital (“NWC”).
+Net working capital, reported                                                          77              16              33             143
+1. Cash: Cash is considered a non-operating asset, and thus must be removed from
+Definitional adjustments                                                                                                                                  the net working capital analysis and added to net debt. A breakdown of cash
+Cash                                                               1              (111)            (39)            (80)            (58)                balances is not publicly available, thus any restricted cash accounts have not been
+Lease liabilities                                                  2                27              28              30              30                 identified.
+Contingent consideration                                           3                17                4              0                0            2. Lease liabilities: A breakdown of lease liabilities is not publicly available. Excluded
+Income tax payable                                                 4                  -               -              3              11                from net working capital due to its debt-like nature.
+Dividend payable                                                   5                  -               -               -               5
+3. Contingent consideration: It is an obligation of the acquirer to transfer additional
+Definitional adjustments                                                              (66)              (7)           (47)            (12)               assets or equity interests to the former owners of an acquiree if specified future
+Net working capital, definitional adjusted                                             10                9            (14)            131                events occur or conditions are met. Excluded from net working capital due to its
+Diligence adjustments                                                                  12              13              15                 -              debt-like nature.
+Net working capital, diligence adjusted                                                22              22               1             131
+4. Income taxes payable: Includes current income tax and deferred income tax
+As % of TTM net sales                                                               1.8%            1.5%            0.1%            8.3%                 recovery. Excluded from net working capital due to its debt-like nature.
+5. Dividend payable: Dividends payable arises from financing decisions rather than
+core operational activities. As such, it does not reflect the company’s operational
+efficiency or liquidity management and should be excluded as a definitional
+adjustment in net working capital analysis.
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   32
+DRAFT

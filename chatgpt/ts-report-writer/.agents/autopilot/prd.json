@@ -255,7 +255,7 @@
       "verificationCommand": "./.venv/bin/python scripts/qa_provenance.py --markdown extracted/project-dental-report-25july2025-vs.md --source-manifest extracted/verification/project-dental-report-25july2025-vs/source-text/manifest.json --out-dir extracted/verification/project-dental-report-25july2025-vs/qa && ./.venv/bin/python scripts/qa_gates.py --report-id project-dental-report-25july2025-vs",
       "priority": 8,
       "dependsOn": [],
-      "passes": false,
+      "passes": true,
       "attempts": 0,
       "blocked": false,
       "blockedReason": "",

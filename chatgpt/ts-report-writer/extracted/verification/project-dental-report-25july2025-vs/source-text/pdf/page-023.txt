@@ -1,0 +1,46 @@
+Executive summary              Dental Industry         Recommendation              Historical trading             Balance sheet          Appendices
+Quality of earnings (2/7) - Management Adjustments
+Quality of Earnings                                                                                                                                  Management Adjustments
+TTM
+1. Net impact adjustment: This adjustment relates to expenses recorded regarding net
+CADm                                                                                         FY22        FY23        FY24      Q1-25
+impact of realized/unrealized foreign exchange gains or losses on non-cash balances,
+Revenue, reported                                                                          1,250       1,426       1,545       1,582                  change in fair value of derivative instruments (including conversion options), and share
+Pro forma adjustments                                                                       34          14          13          16                 of associate losses.
+Revenue, pro form a adjusted                                                               1,284       1,440       1,558       1,598
+2. Change in fair value of financial instruments at FVTPL: Derivative financial
+EBITDA, reported                                                                              181         194         220        221
+asset/liability – interest rate swaps are measured at fair value at the end of each
+Managem ent adjustm ents                                                                          0           0           0           0               reporting period.
+Net impact adjustment                                                           1          (2)         (2)        16          23
+Change in fair value of financial instruments at FVTPL                          2           -           -           5         14              3. Share-based compensation: Equity-settled share-based payment arrangements are
+Share-based compensation                                                        3         13          12          13          11                 measured at the fair value of the equity instruments at the grant date. At each reporting
+Loss on disposal of businesses                                                  4           -         21          10          11
+date, the Company revises its estimate of the number of equity instruments expected to
+vest as a result of the effect of non-market-based vesting conditions.
+Administrative                                                                  5           9         12            7           7
+Professional services                                                           6         16          11            4           4             4. Loss on disposal of businesses: Represents the loss on disposal of businesses and
+Change in fair value of contingent consideration                                7         19            1           5           2                dental practices that were divested throughout 2023 and 2024, including those
+Employee benefits expense                                                       8          (5)          1           3           1                disposed of on March 31, and during the three and nine months ended June 30,
+Loss on disposal and impairment of property and equipment int 9                             -           2           1           1                September 30, and December 31, 2023.
+Depreciation expense on right-of-use assets                                    10           -           0           -           -
+5. Administrative: This adjustment seeks to remove costs which are not expected to
+Change in fair value of preferred shares                                        11          -           7          (1)         (1)
+occur related to the company’s IPO, as well as costs that are related to the
+Management Adjustments                                                                      49          66          62          72
+implementation of new corporate systems and the undertaking of vendor
+EBITDA Managem ent adjusted                                                                  230         259         283         293
+consolidations.
+EBITDA margin, management adjusted                                                         3.9%        4.6%        4.0%        4.6%
+Diligence Adjustments                                                                       (21)        (48)        (31)        (30)              6. Professional Services: This adjustment pertains to costs associated with the strategic
+EBITDA, Diligence adjusted                                                                    209         212         252        263                  review and the evaluation of strategic alternatives aimed at enhancing shareholder
+Pro forma adjustments                                                                         2        (25)        (30)        (27)                value. It also includes professional fees and other third-party expenses related to
+EBITDA, pro form a adjusted                                                                   211         186         223        236
+practice acquisitions. Management has proposed excluding these costs on the basis
+that they are incurred with each acquisition and are not directly tied to the Company’s
+Source: Publicly available information
+core operating activities.
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   22
+DRAFT

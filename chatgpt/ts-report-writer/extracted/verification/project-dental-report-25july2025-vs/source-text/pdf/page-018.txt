@@ -1,0 +1,35 @@
+Executive summary              Dental Industry         Recommendation               Historical trading         Balance sheet          Appendices
+Valuation
+Transactions within the dental service organization industry generally occur without statement of financial metrics and no publicly listed companies other than the
+Company. Precedent transaction’s analysis was used to lend more confidence to the valuation of the Company.
+Precedent transactions analysis                                                                                                                               Overview
+CADm
+We valued dentalcorp at a 15.38x EV/EBITDA multiple, using the Mubadala
+Buyer                                           Acquiree                Date Deal Type                EV      EBITDA EV/Adj. EBITDA                         acquisition of Dental Care Alliance as the primary precedent. This transaction was
+Mubadala                                 Dental Care Alliance Jan-23 Acquisition 2,000                              130                 15.38               selected over the Warburg Pincus investment, which traded at a higher 18.8x multiple.
+OTPP                                       The Donte Group             Jul-25 Acquisition 1,610                         -                      -
+The Warburg deal involved a minority stake, which typically commands a premium
+Warburg Pincus                                 MB2 Dental              Nov-24        Minority       3,670           195                 18.82               due to limited control and strategic influence—making it less appropriate for valuing a
+majority or full acquisition scenario. Dentalcorp and Dental Care Alliance share similar
+DSO characteristics, including comparable average practice sizes and a similar
+Equity Value Bridge
+Min                         0.00x             proportion of specialized practices, reinforcing the relevance of the Mubadala
+Median                    15.38x              transaction as a benchmark.
+EV/Adj. EBITDA                                             15.38x                                             Mean                      11.40x
+Using the 15.38x EV/EBITDA multiple, we derive an enterprise value of $3.64 billion
+TTM Adj. EBITDA                                               236                                             Max                       18.82x              for dentalcorp. After subtracting net debt of $989 million, the implied equity value is
+Im plied EV                                                 3,634                                                                                           $2.645 billion, translating to a share price of $13.36. This reflects a 65.5% upside from
+Net debt                                                     (989)                                                                                          the current market price of $8.08 as of July 24th, 2025.
+Im plied Equity Value                                       2,645
+Equity research reports suggest a valuation range for dentalcorp between $11.50 and
+Diluted Shares Outstanding                                    198                                                                                           $15.00 per share, based on market comparables and projected financial performance.
+Share Price                                                  13.36                                                                                          Our derived valuation of $13.36 per share sits comfortably within this range, indicating
+alignment with broader market expectations.
+The lack of detailed financial disclosure across DSO transactions presents a challenge
+for direct valuation analysis, making precedent transaction multiples and public market
+data critical tools for triangulating value.
+Source: Publicly available information
+© 2025 KPMG LLP, an Ontario limited liability partnership and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private
+English company limited by guarantee. All rights reserved. The KPMG name and logo are trademarks used under license by the independent member firms of the KPMG global organization.
+Document Classification: KPMG Confidential   17
+DRAFT

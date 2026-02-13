@@ -1,0 +1,339 @@
+{
+  "artifact_root": "extracted/verification/project-dental-report-25july2025-vs/source-text",
+  "files": [
+    {
+      "kind": "pdf",
+      "index": 1,
+      "path": "pdf/page-001.txt",
+      "source_name": "PDF 1",
+      "line_count": 5,
+      "char_count": 84
+    },
+    {
+      "kind": "pdf",
+      "index": 2,
+      "path": "pdf/page-002.txt",
+      "source_name": "PDF 2",
+      "line_count": 27,
+      "char_count": 3006
+    },
+    {
+      "kind": "pdf",
+      "index": 3,
+      "path": "pdf/page-003.txt",
+      "source_name": "PDF 3",
+      "line_count": 8,
+      "char_count": 221
+    },
+    {
+      "kind": "pdf",
+      "index": 4,
+      "path": "pdf/page-004.txt",
+      "source_name": "PDF 4",
+      "line_count": 33,
+      "char_count": 2590
+    },
+    {
+      "kind": "pdf",
+      "index": 5,
+      "path": "pdf/page-005.txt",
+      "source_name": "PDF 5",
+      "line_count": 19,
+      "char_count": 1810
+    },
+    {
+      "kind": "pdf",
+      "index": 6,
+      "path": "pdf/page-006.txt",
+      "source_name": "PDF 6",
+      "line_count": 41,
+      "char_count": 5152
+    },
+    {
+      "kind": "pdf",
+      "index": 7,
+      "path": "pdf/page-007.txt",
+      "source_name": "PDF 7",
+      "line_count": 51,
+      "char_count": 4550
+    },
+    {
+      "kind": "pdf",
+      "index": 8,
+      "path": "pdf/page-008.txt",
+      "source_name": "PDF 8",
+      "line_count": 30,
+      "char_count": 3038
+    },
+    {
+      "kind": "pdf",
+      "index": 9,
+      "path": "pdf/page-009.txt",
+      "source_name": "PDF 9",
+      "line_count": 52,
+      "char_count": 3746
+    },
+    {
+      "kind": "pdf",
+      "index": 10,
+      "path": "pdf/page-010.txt",
+      "source_name": "PDF 10",
+      "line_count": 27,
+      "char_count": 1579
+    },
+    {
+      "kind": "pdf",
+      "index": 11,
+      "path": "pdf/page-011.txt",
+      "source_name": "PDF 11",
+      "line_count": 39,
+      "char_count": 4809
+    },
+    {
+      "kind": "pdf",
+      "index": 12,
+      "path": "pdf/page-012.txt",
+      "source_name": "PDF 12",
+      "line_count": 5,
+      "char_count": 122
+    },
+    {
+      "kind": "pdf",
+      "index": 13,
+      "path": "pdf/page-013.txt",
+      "source_name": "PDF 13",
+      "line_count": 41,
+      "char_count": 3940
+    },
+    {
+      "kind": "pdf",
+      "index": 14,
+      "path": "pdf/page-014.txt",
+      "source_name": "PDF 14",
+      "line_count": 37,
+      "char_count": 3909
+    },
+    {
+      "kind": "pdf",
+      "index": 15,
+      "path": "pdf/page-015.txt",
+      "source_name": "PDF 15",
+      "line_count": 43,
+      "char_count": 3482
+    },
+    {
+      "kind": "pdf",
+      "index": 16,
+      "path": "pdf/page-016.txt",
+      "source_name": "PDF 16",
+      "line_count": 4,
+      "char_count": 65
+    },
+    {
+      "kind": "pdf",
+      "index": 17,
+      "path": "pdf/page-017.txt",
+      "source_name": "PDF 17",
+      "line_count": 39,
+      "char_count": 3509
+    },
+    {
+      "kind": "pdf",
+      "index": 18,
+      "path": "pdf/page-018.txt",
+      "source_name": "PDF 18",
+      "line_count": 35,
+      "char_count": 4298
+    },
+    {
+      "kind": "pdf",
+      "index": 19,
+      "path": "pdf/page-019.txt",
+      "source_name": "PDF 19",
+      "line_count": 4,
+      "char_count": 85
+    },
+    {
+      "kind": "pdf",
+      "index": 20,
+      "path": "pdf/page-020.txt",
+      "source_name": "PDF 20",
+      "line_count": 42,
+      "char_count": 5300
+    },
+    {
+      "kind": "pdf",
+      "index": 21,
+      "path": "pdf/page-021.txt",
+      "source_name": "PDF 21",
+      "line_count": 30,
+      "char_count": 3895
+    },
+    {
+      "kind": "pdf",
+      "index": 22,
+      "path": "pdf/page-022.txt",
+      "source_name": "PDF 22",
+      "line_count": 33,
+      "char_count": 4406
+    },
+    {
+      "kind": "pdf",
+      "index": 23,
+      "path": "pdf/page-023.txt",
+      "source_name": "PDF 23",
+      "line_count": 46,
+      "char_count": 5937
+    },
+    {
+      "kind": "pdf",
+      "index": 24,
+      "path": "pdf/page-024.txt",
+      "source_name": "PDF 24",
+      "line_count": 42,
+      "char_count": 6074
+    },
+    {
+      "kind": "pdf",
+      "index": 25,
+      "path": "pdf/page-025.txt",
+      "source_name": "PDF 25",
+      "line_count": 37,
+      "char_count": 4452
+    },
+    {
+      "kind": "pdf",
+      "index": 26,
+      "path": "pdf/page-026.txt",
+      "source_name": "PDF 26",
+      "line_count": 42,
+      "char_count": 5122
+    },
+    {
+      "kind": "pdf",
+      "index": 27,
+      "path": "pdf/page-027.txt",
+      "source_name": "PDF 27",
+      "line_count": 32,
+      "char_count": 3931
+    },
+    {
+      "kind": "pdf",
+      "index": 28,
+      "path": "pdf/page-028.txt",
+      "source_name": "PDF 28",
+      "line_count": 29,
+      "char_count": 4119
+    },
+    {
+      "kind": "pdf",
+      "index": 29,
+      "path": "pdf/page-029.txt",
+      "source_name": "PDF 29",
+      "line_count": 6,
+      "char_count": 144
+    },
+    {
+      "kind": "pdf",
+      "index": 30,
+      "path": "pdf/page-030.txt",
+      "source_name": "PDF 30",
+      "line_count": 43,
+      "char_count": 5143
+    },
+    {
+      "kind": "pdf",
+      "index": 31,
+      "path": "pdf/page-031.txt",
+      "source_name": "PDF 31",
+      "line_count": 38,
+      "char_count": 4090
+    },
+    {
+      "kind": "pdf",
+      "index": 32,
+      "path": "pdf/page-032.txt",
+      "source_name": "PDF 32",
+      "line_count": 39,
+      "char_count": 3975
+    },
+    {
+      "kind": "pdf",
+      "index": 33,
+      "path": "pdf/page-033.txt",
+      "source_name": "PDF 33",
+      "line_count": 32,
+      "char_count": 4159
+    },
+    {
+      "kind": "pdf",
+      "index": 34,
+      "path": "pdf/page-034.txt",
+      "source_name": "PDF 34",
+      "line_count": 19,
+      "char_count": 2283
+    },
+    {
+      "kind": "pdf",
+      "index": 35,
+      "path": "pdf/page-035.txt",
+      "source_name": "PDF 35",
+      "line_count": 52,
+      "char_count": 6476
+    },
+    {
+      "kind": "pdf",
+      "index": 36,
+      "path": "pdf/page-036.txt",
+      "source_name": "PDF 36",
+      "line_count": 23,
+      "char_count": 2791
+    },
+    {
+      "kind": "pdf",
+      "index": 37,
+      "path": "pdf/page-037.txt",
+      "source_name": "PDF 37",
+      "line_count": 3,
+      "char_count": 58
+    },
+    {
+      "kind": "pdf",
+      "index": 38,
+      "path": "pdf/page-038.txt",
+      "source_name": "PDF 38",
+      "line_count": 24,
+      "char_count": 2905
+    },
+    {
+      "kind": "pdf",
+      "index": 39,
+      "path": "pdf/page-039.txt",
+      "source_name": "PDF 39",
+      "line_count": 6,
+      "char_count": 573
+    },
+    {
+      "kind": "pdf",
+      "index": 40,
+      "path": "pdf/page-040.txt",
+      "source_name": "PDF 40",
+      "line_count": 9,
+      "char_count": 977
+    },
+    {
+      "kind": "pdf",
+      "index": 41,
+      "path": "pdf/page-041.txt",
+      "source_name": "PDF 41",
+      "line_count": 0,
+      "char_count": 0
+    }
+  ],
+  "total_files": 41,
+  "ocr_target": "page",
+  "ocr_requested_indices": [],
+  "ocr_applied_indices": [],
+  "ocr_used": false,
+  "ocr_runs": []
+}

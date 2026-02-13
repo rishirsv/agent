@@ -116,6 +116,13 @@ Required verification artifacts include:
 ### Learnings (Newest First)
 
 - Date: 2026-02-13
+- Report ID: `project-dental-report-25july2025-vs`
+- Issue observed: strict PDF extraction produced predominantly fragmented/chart-label bullets and non-verbatim splits that failed provenance exact-match and cleanup-quality gates.
+- Root cause: auto-selected catalog lines included many partial strings that did not map exactly to `source-text` artifacts and were not suitable report-body sentences after full cleanup policy.
+- Fix applied: regenerated source-text artifacts, executed full-report cleanup across all canonical sections by removing fragment-heavy output, synchronized selected-lines/render-trace/section-mapping artifacts, and completed montage page-level reconciliation in review notes before rerunning QA.
+- Prevention rule: when strict PDF output is dominated by fragment/table-label lines, do not force partial sentence retention; clear selected-lines and regenerate mapping/trace artifacts in lockstep, then document montage evidence and rerun provenance + gates.
+
+- Date: 2026-02-13
 - Report ID: `project-cinema-report`
 - Issue observed: rerunning strict single-report pipeline regenerated noisy fragment-heavy markdown and temporarily regressed provenance/gates despite prior cleanup artifacts.
 - Root cause: raw pipeline rerender replaced manually cleaned output; cleanup and review artifacts were not preserved before rerun.

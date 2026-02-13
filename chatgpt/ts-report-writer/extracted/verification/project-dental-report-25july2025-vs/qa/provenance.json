@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-02-13T20:14:23.060965+00:00",
+  "status": "pass",
+  "markdown": "extracted/project-dental-report-25july2025-vs.md",
+  "source_manifest": "extracted/verification/project-dental-report-25july2025-vs/source-text/manifest.json",
+  "checked_lines": 0,
+  "matched_non_ocr": 0,
+  "matched_ocr_only": 0,
+  "unmatched": 0,
+  "whitespace_equivalent_non_ocr": 0,
+  "whitespace_equivalent_ocr": 0,
+  "markdown_contains_ocr_marker": false,
+  "allow_ocr_backed_lines": false,
+  "missing_source_files": [],
+  "issues": []
+}
