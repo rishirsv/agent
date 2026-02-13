@@ -1,0 +1,20 @@
+[ENTITY 2]: Net debt (2/2)
+Debt and debt-like items
+Employee benefit obligations is recorded based on Management’s estimation
+of the legal severance payment required under [REGION]
+Labour
+Law.
+[ENTITY 2] only recorded employee benefit obligations for employees who are over 55 years old (2 employees from the total 47 eligible
+[REGION]
+employees). For the rest of the employees where Management did not estimate the value of EBO, there may be potential additional EBO liability, however this amount is unquantifiable. We estimated t
+he maximum severance payment to be USD 4.0 million if all permanent staff are terminated as at DD MM 20X3.
+These represent both committed and non-committed CAPEX of [ENTITY 2].
+The key CAPEX plan of [ENTITY 2] as at DD MM 20X3 is the construction of swimming pool, with a total budget of USD 12.4 million and an expected completion date in MM 20X3.
+Deposit payables refer to deposits that the parents have made before the Term begins. This deposit will be returned upon student graduation or when the student has left the school. However, the parents must notify the school 1 Term in advance in order to be eligible for the deposit return.
+This represents potential tax implication and exposure mainly arising from non-compliance of accounting and tax reporting and under-remitted payroll withholding tax. Please refer to Due diligence report – Volume 2 Tax.
+Other consideration
+Short-term loan to related party mainly comprise funds lent to directors as explained in Key Finding 7 on Page 19.
+Comments on net debt
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

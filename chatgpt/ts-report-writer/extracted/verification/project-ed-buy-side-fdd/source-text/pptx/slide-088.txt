@@ -1,0 +1,32 @@
+The balance as at 31 [MONTH] 20X2 increased from 31 [MONTH] 20X1 mainly from the increase in average students headcount during FY[X]0-FY[X]1 from 344 to 411. The adjusted balance as at 30 [MONTH] 20X3 decreased from 31 [MONTH] 20X2 because
+of the timing of invoices, where the invoices for AYX3/X4 will
+be issued mostly during [MONTH].
+Unearned revenue
+Comments on unearned revenue
+Management informed us that unearned revenue
+is
+recognised on a yearly basis. All invoices issued during the period will be recognised in revenue and subsequently adjusted
+by the portion that belongs to the future fiscal years
+at the end of the period.
+This indicates that the reported unearned revenue balance per the trial balance provided as at 30 [MONTH] 20X3 is understated (and revenue is overstated). We have estimated the unearned revenue based on information provided, and have proposed an additional adjustment to both quality of earning and net working capital analysis.
+The invoice will be issued around one month before the due date, and the due date is the end of each term as summarised in the following:
+The difference as at
+31 [MONTH] 20X1 mainly came from audit adjustment at the end of the period and some payment
+s
+received in advance
+that
+were
+recorded directly to unearned revenue. The details about type and academic year of reconciling items have not been provided.
+The difference as at 30 [MONTH] 20X3 is due to unadjusted unearned revenue, which is normally adjusted only at the year end. We have adjusted for this in the
+QoE
+Pro-forma Adj No. 1 and NWC Pro-forma Adj. No. A in order to present the underlying earning and adjusted working capital profile.
+A
+Based on adjusted unearned revenue as at 30 [MONTH] 20X3 provided by Management, unearned revenue appears to be understated by approximately USD 3
+2
+.1 million. The balance as at 31 [MONTH] 20X0 was lower than other analysed periods because during FY[X]0, the invoice was issued in the beginning of [MONTH] 20X0.
+According to Management, all unearned revenue was recorded as current liabilities which may also include non-current portion.
+Thus, we calculated indicative non-current portion as per following:
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+A

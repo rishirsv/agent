@@ -1,0 +1,210 @@
+Summary financials
+Quality of earnings - [ENTITY 1]
+Quality of earnings - [ENTITY 2]
+Quality of earnings - [ENTITY 3]
+Net debt
+Source: Trial balances as at DD MM X0, FY[X]1, FY[X]2, DD MM X1, FY[X]2 and DD MM X3 ; Management discussion ;KPMG Analysis
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Quality of earnings
+Audited
+Audited
+Audited
+Mgt.Acct.
+USD'000
+FY[X]0
+FY[X]1
+FY[X]2
+FY[X]3
+Reported EBITDA
+106,068
+134,001
+132,880
+366,884
+Pro-forma adjustment
+-
+-
+-
+(220,271)
+Reported EBITDA after pro-forma Adj.
+106,068
+134,001
+132,880
+146,613
+Potential adjustments
+(207)
+(62)
+4,830
+(1,174)
+Adjusted EBITDA
+105,861
+133,939
+137,710
+145,439
+% Reported EBITDA
+41.4%
+49.2%
+51.0%
+75.6%
+% Adjusted EBITDA
+41.3%
+49.2%
+52.8%
+50.1%
+Source: (1) Audited financial statements for FY[X]0, FY[X]1 and FY[X]2
+Source:
+(2) Management accounts for FY[X]0, FY[X]1, FY[X]2 and XM2X
+Source:
+(3) Management discussion
+Source:
+(4) KPMG analysis
+[ENTITY 2]: Quality of earnings
+Audited
+Audited
+Audited
+Mgt.Acct.
+USD'000
+FY[X]0
+DD MM 20X9 --
+DD MM 20X0
+FY[X]1
+DD MM 20X0 --
+DD MM 20X1
+FY[X]2
+DD MM 20X1 --
+DD MM 20X2
+FY[X]3
+DD MM 20X2 --
+DD MM 20X3
+Reported EBITDA
+13,103
+25,017
+30,493
+84,687
+Pro-forma adjustment
+-
+-
+-
+(48,957)
+Reported EBITDA after pro-forma Adj.
+13,103
+25,017
+30,493
+35,730
+Potential adjustments
+(215)
+522
+3,019
+5,557
+Adjusted EBITDA
+12,888
+25,539
+33,512
+41,287
+% Reported EBITDA
+21.8%
+31.1%
+37.1%
+69.5%
+% Adjusted EBITDA
+21.5%
+31.7%
+40.7%
+47.6%
+Source: (1) Audited financial statements for FY[X]0, FY[X]1 and FY[X]2
+Source:
+(2) Management accounts for FY[X]0, FY[X]1, FY[X]2 and XM2X
+Source:
+(3) Management discussion
+Source:
+(4) KPMG analysis
+[ENTITY 3]: Quality of earnings
+Audited
+Audited
+Audited
+Mgt. Acct.
+USD'000
+FY[X]0
+FY[X]1
+FY[X]2
+XM2X
+Reported EBITDA
+64,725
+13,966
+1,855
+137,488
+Potential adjustments
+14,291
+(1,024)
+10,855
+(5,217)
+Adjusted EBITDA
+79,016
+12,942
+12,710
+132,271
+% Reported EBITDA
+12.0%
+3.2%
+0.4%
+24.3%
+% Adjusted EBITDA
+14.7%
+3.0%
+3.0%
+23.4%
+Source: (1) Audited financial statements for FY[X]0, FY[X]1 and FY[X]2
+Source:
+(2) Management accounts for FY[X]0, FY[X]1, FY[X]2 and XM2X
+Source:
+(3) Management discussion
+Source:
+(4) KPMG analysis
+Net debt as at DD MM 20X3
+USD'000
+[ENTITY 1]
+[
+ENTITY
+2]
+[
+ENTITY
+3]
+General cash items
+Cash and cash equivalents
+276,731
+37,685
+208,026
+Short-term investments
+58,981
+-
+-
+Restricted cash
+-
+(852)
+-
+General debt items
+Loans from financial institutions
+(125,199)
+(200,500)
+(89,302)
+Loans from related parties
+-
+(372,414)
+(43,000)
+Reported net cash/(debt)
+210,513
+(536,081)
+75,724
+Debt and debt-like item adjustments
+(50,303)
+(62,877)
+(222,648)
+Adjusted net cash/(debt)
+160,210
+(598,958)
+(146,924)
+Source:
+(1) Trial balance as at
+DD MM X
+3, (2) Management discussion, (3) KPMG analysis
+MMX0 MMX1 MMX2 MMX3                              MMX0 MMX1 MMX2 MMX3                         MMX0 MMX1 MMX2 MMX3

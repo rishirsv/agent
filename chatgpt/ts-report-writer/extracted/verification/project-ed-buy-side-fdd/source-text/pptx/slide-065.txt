@@ -1,0 +1,22 @@
+[ENTITY 2] should have recorded a debit to staff expense and a credit to accrued expenses. Thus, w
+e have estimated the Pro-forma adjustment of accrued salary expenses as follows:
+Please refer to
+QoE
+Adj. No. 9
+Based on the information provided by Management, we observed that there was long outstanding trade receivables aged longer than 1 year. [ENTITY 2] does not have a policy to set up an allowance for doubtful debt. Thus, this amount should be excluded from net working capital due to being a non-current item in nature.
+According to Management, there were long outstanding payables mostly due to [ENTITY 1] for longer than 1 year. The transactions were mainly related to payments paid on behalf of [ENTITY 2] via [ENTITY 1]’s corporate card. We proposed to adjust this amount from net working capital due to being a non-current item in nature.
+[ENTITY 2]: Net working capital (3/3)
+Net working capital (cont’d)
+Management informed us that there was a receivable from rental and service agreement provided to [ENTITY 1] CE that was not recorded in trade and other receivables. Please refer to
+QoE
+Adj. No.6.
+According to Management, withholding tax was mainly derived from transactions with [ENTITY 1] CE. We have proposed to exclude the withholding tax assets from net working capital because Management did not have a plan to make a refund.
+According to [ENTITY 2]’s accounting policy, the physical count of inventory is performed annually. The additional purchased inventory will be recorded in the cost of sales, and the cost of sales will be adjusted for cost of goods sold only at year end. indicating that the inventory balance as at DD MM 20X3 was understated.
+Based on the information provided by Management, the prepaid expenses normally represents prepaid insurance for staff, students and buildings. The balance is usually treated as expense before being adjusted to record as prepayment asset on Balance sheet at the end of the period, indicating that the prepaid balance as at DD MM 20X3 was understated.
+As [ENTITY 2]’s XM2X accounts have not yet been audited and the accounting closing is usually performed at the year end, Management informed us that [ENTITY 2] may not completely record all accruals in the accounts as at DD MM 20X3 such as meal fee, security services and utilities expenses. Please refer to
+QoE
+Adj. No. 8
+Net working capital (cont’d)
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

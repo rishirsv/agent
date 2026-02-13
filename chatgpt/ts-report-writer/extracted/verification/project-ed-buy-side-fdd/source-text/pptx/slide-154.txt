@@ -1,0 +1,50 @@
+Appendix 5: Benchmarking analysis - COS & SG&A
+There are opportunities to improve COS for [ENTITY 3] and opportunities to improve SG&A for [ENTITY 2].
+Comments
+Median COS across the peer set is
+xx.x
+%.
+[ENTITY 1] and [ENTITY 2]’s COS of
+xx.x
+% and
+xx.x
+%, respectively, are lower than the peer group median and are in the first and second quartile, respectively.
+[ENTITY 3]’s COS of
+xx.x
+% is higher than the peer group median and is in the fourth quartile.
+By reducing COS expense
+xx.x
+% to match with the peer median, there is an opportunity for [ENTITY 3] to reduce the COS expense of USD
+xxx.x
+million.
+Median SG&A across the peer set is
+xx.x
+%.
+[ENTITY 1] and [ENTITY 3]’s SG&A of
+xx.x
+% and
+xx.x
+%, respectively,
+are lower than the peer group median and are in the first quartile.
+[ENTITY 2]’s SG&A of
+xx.x
+% is higher than the peer group median and is in the third quartile.
+By reducing SG&A expense
+x.x
+% to match with the peer median, there is an opportunity for [ENTITY 2] to reduce the SG&A
+expense
+by
+USD
+x.x
+million.
+SG&A - Peer analysis
+Comments
+COS - Peer analysis
+Source: (1) Audited financial statement FYXX (2) Corpus (3) KPMG analysis
+Note: (*) International schools includes [ENTITY 3] (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (**) Bilingual schools includes [ENTITY 1] (ENTITY FULL NAME), [ENTITY 2] (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME)
+International school*
+Bilingual school**
+Targets
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

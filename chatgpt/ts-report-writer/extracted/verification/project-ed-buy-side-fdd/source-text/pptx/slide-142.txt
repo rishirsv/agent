@@ -1,0 +1,153 @@
+1
+3
+5
+4
+2
+Business risk
+Investing in classroom expansion could potentially pose business risk due to demand fluctuation in the future.
+(+) New
+57
+(-) Graduate
+168
+(-) Leave
+653
+AY[X]2
+246
+(+) New
+60
+(-) Graduate
+728
+6
+(-) Leave
+1,002
+Ending
+DD MM 20[x]3
+AY[X]9
+174
+(+) New
+(-) Graduate
+(-) Leave
+587
+AY[X]0
+251
+(+) New
+415
+(-) Graduate
+204
+(-) Leave
+572
+AY[X]1
+306
+Potential revenue upside of USD 1.5m by increasing enrolment rate to optimize capacity utilization
+The student-to-teacher ratio has been taken into account to evaluate the existing constraints for
+analysing
+student
+c
+lass utilization.
+In the base case, we calculated the potential EBITDA increase by raising the utilization rate of grades below 80% to 80%.****
+In the stretch case, our assumption is to achieve full utilization of non-fully utilized grades at 100%.
+Value creation potential
+Summary of analysis
+[ENTITY 3] has demonstrated improvements in student enrolment following the COVID-19 pandemic. However, the underutilization of classrooms across 11 grades suggests an opportunity for revenue growth by increasing student enrolment and retaining current students.
+Source: (1) Student movement (2) KPMG analysis
+Note: (*)The student movement analysis exclude Pre-Nursery (47 students as at Apr 23) since there are alternative courses and different tuition fees within this grade, resulting in varying EBITDA upside quantification (**) The class utilization rate is determined by dividing the number of students by the total capacity of each grade (***) Intern teacher and student support are excluded from the analysis (****) According to Management interview, the school plans to achieve close to maximum capacity next year (AY24)
+Implementation consideration
+Complexity
+Acquiring new students to increase class
+utilisation
+rate could be difficult due to limited demand in
+xxxx
+.
+Next steps to validate the opportunity
+Key findings
+Due to the COVID-19 pandemic, there were drops in student headcount in AY[X]0 and AY[X]1. However, enrolments rebounded with the
+xxxx
+Sandbox campaign, allowing [ENTITY 3] to open while other schools remained closed. Consequently, some students from other schools moved to [ENTITY 3], resulting in short-term increased student headcount.
+Even though student numbers have surpassed pre-COVID levels, there is room for improvement in student c
+lass
+utilization. This can be achieved by increasing facilities for Kindergarten and Primary levels, as well as by expanding student enrolment at the Secondary level.
+Analyze withdrawal
+rates to understand student attrition (leavers) compared to prior years by grade
+Conduct a cost-benefit analysis (CBA) to determine if investing in additional facilities is necessary to accommodate capacity for additional joiners in Kindergarten and Primary school
+Conduct Management interview to understand the rationales behind [ENTITY 3]’s current plan regarding capacity improvement
+Base case
+Stretch case
+0.4
+1.5
+100%
+24%
+-9%
+-34%
+81%
+34%
+-9%
+-28%
+79%
+42%
+-8%
+-23%
+90%
+57%
+-8%
+-1%
+138%
+% Proportion compared to each beginning AY
+Grade
+Class Utilisation rate
+**
+Student to Teacher ratio***
+Pre-Nursery
+17:1
+Nursery
+Reception
+Year 1
+10:1
+Year 2
+Year 3
+Year 4
+Year 5
+Year 6
+Year 7
+6:1
+Year 8
+Year 9
+Year 10
+Year 11
+Year 12
+Year 13
+[ENTITY 3] student headcount bridge*, AY[X]9-AY[X]3
+1
+3
+5
+4
+2
+-141
+-15
++81
++349
+Timeline to implement: >12 months
+USD 0.4-1.5M (EBITDA improvement)
+131%
+89%
+100%
+100%
+100%
+98%
+92%
+102%
+98%
+82%
+73%
+95%
+78%
+69%
+72%
+63%
+100%
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

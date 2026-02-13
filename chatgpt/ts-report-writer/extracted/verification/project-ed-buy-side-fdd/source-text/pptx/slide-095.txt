@@ -1,0 +1,20 @@
+[ENTITY 3]:[ENTITY 3 FULL NAME]
+04
+01
+Quality of earnings
+97–99
+02
+Net working capital
+100–102
+03
+Net debt
+103
+04
+Profit and loss overview and supporting analysis
+104–
+115
+05
+Balance sheet overview and supporting analysis
+116
+–
+129

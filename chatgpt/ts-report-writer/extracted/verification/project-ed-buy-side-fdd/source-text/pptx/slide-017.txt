@@ -1,0 +1,49 @@
+Key findings — Financial (4/9)
+[ENTITY 3]
+Total revenue in FY[X]1 dropped by 19.5% from FY[X]0 as there was a significant decrease in average student headcount from 793 to 714. The majority of [ENTITY 3]’s students are international students (
+70.0% Non-[REGION] VS 30.0% [REGION] in
+FY[X]0), and most of them travelled back to their home countries during the COVID-19 period. In FY[X]2, even though there was an increase in standard tuition fee of 4% (no fee adjustment in FY[X]1), discounts were provided to students during this period, causing a slight decline in revenue of 2.1%. Revenue for XM2X and XM2X rose steadily mainly due to the growth in average student headcount from 712 to 950, positively affected both tuition and non-tuition fees income.
+Relatively low EBITDA margins observed in FY[X]1 and FY[X]2 were primarily driven by decreased revenue, and higher % of cost and SG&A to total revenue. Management informed us that during the pandemic there was no policy to lay off employees, which caused staff costs, the major fixed expenses, to remain high during the period. For XM2X, % EBITDA rose significantly from XM2X mainly due to an increase in revenue.
+According to Management, [ENTITY 3] experienced a liquidity issue during FY[X]1 and FY[X]2 when they generated a net loss of USD 26.9 million and USD 37.3 million, respectively. To maintain the cash flow, [ENTITY 3] withheld 20% of salary payment from MM to MM 20X1 for [REGION] staff, MM to MM 20X1 for Staff Type 1s. [ENTITY 3] subsequently paid these portions in December 2021 and February 2022, respectively. Currently, Management informed us that [ENTITY 3] received a refinancing loan from [BANK X] to support operations and the school’s CAPEX plan.
+As at DD MM 20X3, the total utilization rate was 86.6% (1,049 students). Management plans to open 1 additional class for Year 6 by renovating existing classroom and expects to achieve the maximum capacity in the following year by constructing a new administration building for all administrative staff and a new innovation center to create more spaces and classrooms.
+Financial performance in FY[X]1 and FY[X]2 were negatively impacted by the decrease in student headcount as a
+result of the COVID-19
+pandemic.
+There
+is a continued risk of future revenue reduction arising from the future COVID-19 outbreak, given the uncertainty of the current situation. You should consider
+performing
+multiple scenarios of COVID-19 impact and sensitivity analysis in your valuation model.
+COVID-19 has had impacts on [ENTITY 3]’s financial performance due to dependency on international students
+[ENTITY 1]
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+Read more
+([ENTITY 3])
+Source: (1) Trial balances as at DD MM 20X0, FY[X]1, FY[X]2 and DD MM 20X3, (2) Student headcount as at DD MM 20X0, FY[X]1, FY[X]2 and DD MM 20X3, (3) KPMG analysis
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 3] students
+FY[X]0
+FY[X]1
+FY[X]2
+X
+M2X
+X
+M2X
+Average student headcount
+793
+714
+712
+712
+950
+Tuition income (before
+discount) per student (USD)
+715,023
+710,023
+715,183
+660,651
+627,303

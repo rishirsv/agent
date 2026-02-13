@@ -1,0 +1,74 @@
+[ENTITY 1]: Quality of earnings (3/3)
+Potential adjustments (Cont’d)
+According to Management, costs of uniform and textbooks are recorded on a yearly basis, while revenues generated from sales of these items are recorded on a cash basis. We propose to adjust these for the XM2X period by using the average %GP observed across FY[X]0-FY[X]2 as shown in the table below:
+.
+Quality of earnings
+Potential adjustments (Cont’d)
+As [ENTITY 1]’s XM2X accounts have not yet been audited and the accounting closing is usually performed at the year end, we consider that [ENTITY 1] may not completely record all accruals in the accounts as at DD MM 20X3 such as meal fee, security expenses and utilities expenses. There may be other potential understatement of liabilities which should have been considered to adjust within QOE adjustment. However, due to the limitation of information, we were unable to quantify the impact.
+According to Management, there is obsolete inventory (i.e., outdated textbooks) that still sits on the account as [ENTITY 1] normally upgrades its textbooks annually. However, [ENTITY 1] has never recognized a provision or written off any obsolete inventory. The estimated value of outdated textbooks for XM2X was approximately USD 80,000 to USD 100,000; however, we have not been provided with the detailed breakdown.
+.
+Quality of earnings
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Uniform and textbook cost
+USD'000
+FY[X]0
+FY[X]1
+FY[X]2
+X
+M2X
+Uniform
+Revenue from uniform sales
+1,802
+2,788
+2,982
+2,125
+Uniform cost
+(1,254)
+(1,737)
+(1,832)
+-
+%GP to revenue
+30.4%
+37.7%
+38.6%
+n/a
+Average %GP FY20-FY22
+Indicative uniform cost for 11M23
+n/a
+n/a
+n/a
+1,369
+Textbook
+Revenue from textbook sales
+2,106
+2,101
+2,201
+2,238
+Textbook cost
+(1,318)
+(1,345)
+(1,445)
+(6)
+%GP to revenue
+37.4%
+36.0%
+34.3%
+n/a
+Average %GP FY20-FY22
+Indicative textbook cost for 11M23
+n/a
+n/a
+n/a
+1,428
+Understated uniform and textbook cost
+n/a
+n/a
+n/a
+2,798
+35.6%
+35.9%
+Source: (1) Trial balances for FY[X]0-XM2X
+Source:
+(2) KPMG analysis

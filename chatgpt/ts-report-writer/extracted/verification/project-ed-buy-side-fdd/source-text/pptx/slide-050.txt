@@ -1,0 +1,31 @@
+As at DD MM 20X3 [ENTITY 1] reported NBV of fixed assets totaling USD 277.8 million, mainly comprising
+:
+buildings and building improvements (65.6%) and land and land improvements (31.6%). All land and buildings are used as collateral in a loan with [BANK 2].
+Fixed and intangible assets (1/2)
+Comments on fixed assets
+Overview
+Land is stated at cost less allowance for devaluation (if any)
+Fixed assets are stated at cost less accumulated depreciation, the depreciation is calculated on a straight-line basis over the estimated useful life of each asset group.
+Lands mainly comprise:
+land title deed no. 64206 (21 [UNITS] 3 [UNITS] 63 [UNITS]). This land is currently owned by [SHAREHOLDER 3] and is used for primary and secondary school buildings. This land will be transferred to [ENTITY 1] in the future.
+The second plot of land comprise land title deed no. 4333 (20 rai). This land is currently being used as the location for dormitories. We understand [ENTITY 1] has full ownership of this land.
+Buildings consists of: (1) buildings used in the ordinary business operation of the school (such as primary and secondary school buildings), (2) 2 dormitories, (3) Administrative building
+Furniture and equipment mainly consists of whiteboards, projectors, tables, and chairs. Overall, the main reason for the steady increase is due to the increase of students.
+Overview (cont’d)
+We have noted that Management does not record depreciation on a monthly basis, but will record all depreciation expenses at the end of the fiscal year.
+We have also noted that Management cannot provide us with a detailed breakdown of the land balance.
+Physical count of fixed assets
+According to Management, [ENTITY 1] does not perform a physical count of fixed assets.
+Collaterals
+Land title deed no. 64206 belonging to [SHAREHOLDER 3] and all buildings thereon are pledged against loans with [BANK 2].
+Land and buildings located on land title deed no. 4333 are pledged against loans with [BANK 2].
+Insurance coverage
+According to the loans with [BANK 2], [ENTITY 1] is required to insure its building and building improvements with insurance conditions that [BANK 2] is satisfied with.
+Based on the latest industrial all risk insurance policy made with Muang [REGION] Insurance PCL. covering the period between DD MMMM YYYY and DD MMMM YYYY, all
+the buildings including primary and secondary schools, dormitories, and [ENTITY 1] community centre are covered.  This insurance agreement has a total coverage of USD 400.0 million, which is higher than the net book value of buildings and building improvements as at DD MM 20X3.
+Appraisal value
+Based on the latest appraisal value from the Treasury Department, the current total values for all buildings and land located on land title deed no. 64206 and 4333 are USD 249.7 million and USD 228.0 million, respectively.
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+DD MM 20X0,20X1, and  20X2

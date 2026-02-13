@@ -1,0 +1,50 @@
+Appendix 5: Benchmarking analysis - Methodology and sample set
+Methodology
+The peer group includes a total of one public and eight private companies that are presented in more detail on the following pages.
+Peer benchmarking information based on publicly available data from fiscal year 20XX.
+Data for other more relevant peers may not have been available since the nature of business is non-profit.
+03
+02
+01
+Peer short-listing
+Identify companies with similar operations, net sales level and geography as Targets.
+Peer group
+Filters applied
+Net sales distribution (USD million)
+EBIT Margin (%)
+16.0
+1,340.0
+160.8
+260.6
+Min
+Max
+Median
+Note:
+KPI identification
+Identify a set of key performance indicators (KPI) for the industry of the Targets.
+Data analysis
+Compare the Targets’ data with industry benchmarks.
+Industry code
+(Education within the school system)
+Geography
+([REGION])
+Net sales
+(USD XX-XXM)
+Nature of business
+(International/ Bilingual schools)
+Min
+Max
+Median
+[ENTITY 3]
+[ENTITY 1]
+[ENTITY 2]
+463.7
+82.3
+(72.0)%
+44.4%
+3.4%
+(7.9)%
+24.5%
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

@@ -1,0 +1,50 @@
+[ENTITY 1]: Net cash (2/2)
+Debt and debt-like items (Cont’d):
+Payable of investments to [ENTITY 1] [REGION] which is the unpaid portion of investments to [ENTITY 1]
+xxxx
+. As at DD MM 20X3, [ENTITY 1] has paid 25% for the purchase of 400 shares valued at USD 100 each (has paid USD 10,000 out of USD 40,000) to [ENTITY 1] [REGION].
+Deposit payables refer to deposits that the parents have made before the Term begins. This deposit will be returned upon student graduation or when the student has left the school. However, the parents must notify the school 1 Term in advance in order to be eligible for the deposit return.
+This represents potential tax implication and exposure mainly arising from non-compliance of accounting and tax reporting and under-remitted payroll withholding tax. Please refer to Due diligence report – Volume 2 Tax.
+Other considerations:
+This represents interest receivables from loans entered into with related parties ([ENTITY 2], [X], and [ENTITY 1] [REGION]). We have considered this to be an Other consideration item due to the uncertainty on recoverability of these interest receivables.
+This represents loan agreements entered into with related parties ([ENTITY 2], [X], and [ENTITY 1] [REGION]). The following table represents the summary of the principal and interest rates of the loan agreements.
+’
+We have considered this to be an Other consideration item due to the uncertainty on the recoverability of these related party loans.
+Comments on adjusted net cash items
+[ENTITY 1] is currently experiencing 2 litigation claims as discussed in Key Finding 10 on Page 22
+.
+According to Management, [ENTITY 1]’s lawyers are confident that [ENTITY 1] will win these litigation cases, therefore [ENTITY 1] has not recorded any provisions related to the litigations. Given the uncertain nature of the situation, we propose that COMPANY X should consider these legal cases when evaluating the protection clause under the SPA and purchase price.
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Loans to related parties as at
+DD MM
+20X3
+USD'000
+Outstanding balance
+Interest rate
+Purpose
+[ENTITY 2]
+95,575
+MLR -1.0%
+CAPEX
+[ENTITY 2]
+276,839
+MLR%
+Working capital
+[ENTITY 1]
+xxxx
+110,000
+1.50%
+CAPEX
+Pimtara
+7,896
+5%
+Working capital
+Total
+490,310
+Source: (1) Trial balance as at
+DD
+MM 20X3
+Source:
+(2) Dicussions held with Management

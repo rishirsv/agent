@@ -1,0 +1,15 @@
+Financing arrangement mainly represents loan agreements with [BANK 1] and [ENTITY 1]. All of [ENTITY 2]’s land and buildings are pledged as collateral for the loan with [BANK 1].
+Financing arrangement (1/2)
+This outstanding balance relates to loan that [ENTITY 1] has borrowed from [BANK 2] and lent to [ENTITY 2]
+A
+The difference is due to incorrect entry by accounting staff. [ENTITY 2] has debited the wrong loan account when they record their payment of the principal
+, which we have adjusted to show a Pro-forma balance.
+B
+These loan agreements stipulate that 3 individuals (Mr. [DIRECTOR 1], Ms. [DIRECTOR 6], and Mr. [DIRECTOR 9] C.)  must
+own at least 75% of the outstanding shares of [ENTITY 2].
+C
+Basis of preparation:
+Pro-forma outstanding balance of loans column as at 30 [MONTH] 20X3 is prepared based on the supporting details of outstanding loans provided by Management.
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

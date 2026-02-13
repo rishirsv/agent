@@ -1,0 +1,84 @@
+Cost allocation
+by school level indicates the margins of Secondary level are below average, with potential for improvement
+Estimated potential EBITDA upside in the base case has been quantified by increasing the EBITDA margin of Secondary level by 3.2% to match with the weighted
+average across the three levels.
+For the stretch
+case, the gross margin from Secondary level is increased by 6.8% to match with the weighted average.
+[ENTITY 3]’s Revenue grouped by education levels, GP margin*, and EBITDA margin*
+(%, YTD20[X]3**)
+Value creation potential
+Summary of analysis
+[ENTITY 3] generates the highest revenue from Secondary level, however, its profit margins are the lowest compared to Primary and Kindergarten level. This indicates potential for profitability optimisation through volum
+e
+, price/discount or cost optimisation
+USD 10.5-21.7M (EBITDA improvement)
+Source: (1) Trial balance (2) Employee census (3) KPMG analysis
+Note:
+(*) Margin by education levels is not available. We calculated gross margin and EBITDA margin based on the allocation of COS and SG&A to education level, number of grades, number of teachers, and number of students, (**) Revenue and cost are based on XM2X data provided by [ENTITY 3] Management. Further analysis is required for detailed transactional data
+,
+including revenue and cost of service by each student grade
+,
+in order to
+analyse
+margin by grade.
+Business risk
+Raising tuition and fees for other services may lead to losing price-sensitive
+clients.
+Implementation consideration
+Consider further analysis using the cost breakdown by grade and/or by student for
+a
+deeper understanding of profitability
+Analyse
+and identify potential actions to increase revenue and/or decrease costs
+Discuss with
+Management
+on business risk and complexity
+of
+implementing new price and discount policy
+Complexity
+Complexity could arise based on striking the balance of pricing, discount, and number of students.
+Even though Secondary level has the highest number of students which resulted in the highest revenue (after discount), it produced the lowest margins when compared to Primary and Kindergarten levels due to the
+teaching
+staff costs being more expensive than others and the high discount offerings in order to compete with peer
+s.
+The profit margins of Secondary level are lower than the weighted average across all three levels which indicates potential to improve the profitability through tuition fee adjustment, discount offerings, new student acquisition strategy, etc.
+Next steps to validate the opportunity
+Key findings
+1
+3
+5
+4
+2
+1
+5
+4
+2
+Timeline to implement: >12 months
+Secondary
+33.8%
+Kindergarten
+Primary
+69.8%
+44.1%
+GP margin
+Primary
+36.9%
+Kindergarten
+Secondary
+26.5%
+21.1%
+EBITDA margin
+Weighted
+average 40.6%
+Weighted
+average 24.3%
+3
+Base case
+Stretch case
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

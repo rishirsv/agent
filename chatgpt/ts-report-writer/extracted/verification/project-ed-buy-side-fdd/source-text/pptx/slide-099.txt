@@ -1,0 +1,26 @@
+[ENTITY 3] reports negative
+net working capital due to the nature of business, as the majority
+of tuition and other fees are invoiced in advance, resulting in a large balance of unearned revenue. The key adjustments from reported NWC to adjusted NWC as at 30 [MONTH] 20X3 are mainly due to the exclusion of accrued pension amounting to USD
+23.4 million
+and deposits paid for PPE amounting to USD 11.3 million.
+[ENTITY 3]: Net working capital
+(1/2)
+Basis of preparation
+Reported net working capital is prepared based on a general definition of net working capital, which is current assets less current liabilities, excluding cash and cash equivalents and debt items.
+Debt and debt-like items
+Unearned revenue has both debt-like and working capital characteristics. The current portion of unearned revenue is currently treated as part of net working capital item with services due to be delivered within the next 12 months. With the nature of the school operation where invoices are usually sent ahead of the next academic year, unearned revenue balance is therefore a usual liability balance to appear on Balance sheet and part of working capital.
+We’ve proposed to exclude the non-current portion of unearned revenue from working capital as it relates to the service to be provided in more than 12 months. In the non-current balance, for the portion that the school has already received cash in advance for, we have treated this as a debt-like item as this represents the liability and obligation that the School has towards its students, and that while cash collected may have already been used by the school for working capital purpose, there's a risk of returning this cash, if students request for the refund in accordance with the school refund policy.
+There is no authoritative literature or common standard with respect to the identification of items which may form part of ‘debt’ or ‘net debt’, and the decision as to what items should be included or excluded is highly judgmental. We understand that You have not finalized on the treatment of unearned revenue. You should discuss with the Seller on the final treatment of unearned revenue as this may have an impact to your Enterprise-Equity value bridge.
+Net working capital
+Source: Trial balances as at 31 [MONTH] 20X0, 20X1, 20X2 and 30 [MONTH] 20X3 ; Management discussion ;KPMG Analysis
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |
+[ENTITY 3]
+|
+Related party arrangements
+|
+Value creation
+|
+Basis of preparation
+|
+Appendices

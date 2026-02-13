@@ -1,0 +1,46 @@
+Balance sheet overview (2/3)
+Comments on Balance sheet items
+Cash and cash equivalents
+represent petty cash and saving and current accounts at financial institutions. Management informed us that cash and cash equivalents as at DD MM 20X3 are free from encumbrances. The balance as at DD MM 20X3 decreased significantly from DD MM 20X2 mainly because of an additional loan given to [ENTITY 1]
+xxxx
+and repayment of loan from [BANK 2].
+Short-term investments
+as at
+DD MM 20X3 represent [BANK 2] mutual fund (69.4%) and 3-months fixed deposit at GSB (30.6%). Management
+informed us that there is no formal investment policy. NAME (Group CFO) is responsible for managing [ENTITY 1]’s cash and investment balance. [ENTITY 1] normally adjusts the value of the mutual fund to the market value on an annual basis.
+Trade and other receivables
+mainly consist of interest receivables (66.9%) and trade receivables (30.7%). Interest receivables consist of receivables from related parties ([ENTITY 2], [ENTITY 1]
+xxxx
+and [RELATED PARTY 1]). Management informed us that the related parties have never paid interest to [ENTITY 1]. For trade receivables, [ENTITY 1] does not have a policy to set up allowance for doubtful debt.
+Inventory
+as at DD MM 20X3 comprises textbooks (42.5%), uniforms (53.8%) and supplies (3.7%) The balance as at DD MM 20X3 increased by USD 3.6 million mainly because [ENTITY 1] purchased more inventory to prepare for the academic year starting in
+MMMM YYYY
+. In addition, a significant increase in inventory balance as at DD MM 20X3 from DD MM 20X2 occurred because the physical count of inventory is performed annually, and the cost of sales is recorded only at year end, indicating that the inventory balance as at DD MM 20X3 is overstated. For supplies such as stationery, [ENTITY 1] changed its method of recording supplies from recording as inventory to expenses when [ENTITY 1] received goods.
+Other current assets
+as at DD MM 20X3 mainly consist of deposits (76.6%) and advances (19.9%). The balance as at DD MM 20X3 increased from DD MM 20X2 due to a deposit totaling USD 7.9 million paid for the construction of a non-core
+centre
+building and outdoor play area.
+Restricted cash
+refers to a letter of guarantee made with [BANK 2] (USD 1.6 million) for electricity usage.
+Other investments
+as at DD MM 20X3 consist of (1) investments in [ENTITY 2] of USD 15 million (99,999 outstanding shares and 19.9% shareholding); and (2) investments in [ENTITY 1]
+xxxx
+Limited valued of USD 10,000 (400 outstanding shares).
+Long-term loans to related parties
+as at DD MM 20X3 consist of loans to [ENTITY 2] amounting to USD 372 million, bearing an interest rate of MLR -1.0% p.a. and MLR p.a., and a loan to [ENTITY 1]
+xxxx
+amounting to USD 110 million, bearing an interest rate of 1.5% p.a.
+Fixed assets
+as at DD MM 20X3 mainly consists of land and buildings. L
+and XXX is used for the school operation (Secondary school building), which is owned by [SHAREHOLDER 3], a related party. Management informed us that they plan to transfer the ownership of this land to [ENTITY 1] prior to Closing.
+Trade and other payables
+as at DD MM 20X3 mainly comprise trade payables (77.9%) and other payables (14.6%). Trade and other payables as at DD MM 20X3 decreased from DD MM 20X2 as some expenses have already been paid, such as meal fee, within the month. Management informed us that there is no outstanding balance of trade and other payables due for more than a year.
+Unearned revenue
+represents tuition fee and non-tuition fee based on invoices issued in the period that relates to the future fiscal years. Management informed us that unearned revenue is usually adjusted annually at year end. Pro-forma unearned revenue as at DD MM 20X3 is USD 199.3 million which is higher than the previous period due to an increase in average student headcount from 1,010 in FY[X]2 to 1,099 in XM2X and the
+unamortised
+amount of tuition fee for Term 2 AY22/23.
+Loans from financial institution
+as at DD MM 20X3 consist entirely of loans from [BANK 2] mainly for CAPEX purposes. These loans bear varying interest rates from MLR -1.0% to MLR% p.a..
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

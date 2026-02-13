@@ -1,0 +1,47 @@
+Business overview
+Increase/(decrease) in no. of students
+Increase/ (decrease) in tuition fee revenue
+per head
+Increase/(decrease) in non-tuition fee revenue
+FY [X]0
+FY [X]1
+FY [X]2
+Annualized
+FY [X]3
+[ENTITY 3]: Revenue bridge
+FY [X]0
+FY [X]1
+FY [X]2
+Annualized
+FY [X]3
+FY [X]2
+Annualized
+FY [X]3
+(Increase)/decrease in discount
+53.5%
+Gross profit margin
+50.5%
+EBITDA margin
+45.2%
+Net profit margin
+50.4%
+Gross profit margin
+38.8%
+EBITDA margin
+13.7%
+Net profit margin
+36.2%
+Gross profit margin
+24.3%
+EBITDA margin
+18.3%
+Net profit margin
+Source: Audited financial statements, Trial balances, Student headcount and KPMG analysis
+[ENTITY 1]: Pro-forma annualized FY [X]3
+[ENTITY 2]: Pro-forma annualized FY [X]3
+[ENTITY 3]: XM2X
+FY [X]0
+FY [X]1
+FY [X]2
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

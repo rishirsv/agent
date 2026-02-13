@@ -1,0 +1,51 @@
+[ENTITY 1]: Net working capital (3/3)
+Net working capital (cont’d)
+Based on the trial balance as at DD MM 20X3, [ENTITY 1] recorded staff costs (e.g., salary and wages) incurred up to MMMM YYYY. Management confirmed that [ENTITY 1] paid staff salary on time. The accounting staff did not record salary payment as staff expense but they recorded a debit to accrued expenses and a credit to cash as a contra accounts of accrued expenses (resulting in a positive amount of accrued expenses as at DD MM 20X3). Thus, w
+e have estimated the Pro-forma adjustment of accrued salary expenses as follow:
+According to Management, [ENTITY 1]
+has an accounting policy to record the deposit paid for PPE and assets under construction in deposits which were grouped as other current assets. The deposits for PPE should be grouped as non-current assets and is therefore excluded from net working capital.
+Net working capital (cont’d)
+During 2018, [ENTITY 1] recorded a deposit paid for electricity-saving equipment amounting to USD 476,460. However, the equipment did not work as they expected. [ENTITY 1] did not pay for the remaining amount and subsequently was taken to court by the vendor. The lawsuit finished during XM2X
+period, and [ENTITY 1] has already paid the penalty but has not adjusted the deposit paid balance. Management informed us that this amount will be written off at the end of the period so we have excluded this amount from net working capital.
+According to the [ENTITY 1]’s accounting policy, the physical count of inventory is performed annually, and the cost of sales will be recorded only at the year end, indicating that the inventory balance as at DD MM 20X3 is overstated. Please refer to QOE adjustment No.
+1
+2
+Management informed us that [ENTITY 2] does not have a corporate card, so when [ENTITY 2] needs to pay school-related expenses such as Facebook ads or to purchase goods via online shopping, [ENTITY 1] will make a payment on behalf of [ENTITY 2]. Thus, this amount should be excluded from net working capital due to this being unrelated to [ENTITY 1]’s operation. However, we were not provided with the advance balance recorded in cash advance of [ENTITY 1]’s accounts. In addition, based on the details of long outstanding receivable, there were balances related to [ENTITY 2] amounting to USD 800,492. We have therefore proposed the adjustment based on the long outstanding receivable related to [ENTITY 2] and the amount shown in [ENTITY 2]’s accounts.
+According to Management, withholding tax was mainly derived from interest income. We proposed to exclude the withholding tax assets from net working capital because Management did not have a plan to make a refund, and this can be considered as non-trade in nature.
+Please refer to
+QoE
+Adj. No.14
+Please refer to
+QoE
+Adj. No.9
+As [ENTITY 1]’s XM2X accounts have not yet been audited and the accounting closing is usually performed at the year end, we consider that [ENTITY 1] may not completely record all accruals in the accounts as at DD MM 20X3 such as meal fee, security expenses and utilities expenses. There may be other potential understatement of liabilities which should have been considered to adjust within working capital.
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Pro-forma salary payables related accounts
+USD'000
+DD MM 20X3
+Reported accrued salary related accounts
+25,723
+Pro-forma accrued salary related accounts
+Accrued salary expenses
+-
+Wages payables
+(200)
+WHT payables
+(430)
+SSF payables
+(102)
+PVD payables
+(541)
+Teacher funds payables
+(36)
+Subtotal
+(1,309)
+Total Pro-forma adjustments
+(27,032)
+Source: (1) Summary details of payroll expenses
+Source:
+(2) Trial balance as at DD MM 20X3
+Source:
+(3) KPMG analysis

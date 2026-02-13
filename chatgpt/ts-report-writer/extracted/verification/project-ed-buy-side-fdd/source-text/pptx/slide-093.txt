@@ -1,0 +1,24 @@
+Accrued interest expenses
+represent the accrued interest expenses from long-term loan from [ENTITY 1] with the interest rate of MLR% p.a.
+Management informed us that accrued interest expenses will be adjusted annually and the balance as at 30 [MONTH] 20X3 was decreased from 31 [MONTH] 20X2 from the payment of interest expenses to [BANK 2] on behalf of [ENTITY 1]. The estimated additional amount of accrued interest expenses that should be recorded is approximately USD 6.3 million.
+Accrued expenses
+normally comprise expenses that have not yet been invoiced such as student meal, transportation expenses, rental expenses and internet and telephone expenses. The balance as at 30 [MONTH] 20X3 decreased significantly because the accrued expenses will only be adjusted at the end of the period.
+Salary payables related accounts
+consist of accrued salary expenses, WHT payables, SSF payables, PVD payables and teacher fund payables. The balance as at 30 [MONTH] 20X3 was positive because [ENTITY 2] recorded staff cost as a debit to accrued salary expenses account instead of staff expense in the P&L
+.
+According to Management, WHT payables, SSF payables, PVD payables and teacher fund payables will be paid within two weeks in the following months. We
+summarised
+the indicative balance of salary payables related accounts based on the information provided by Management as follows:
+Deposits from students
+represents deposits which will be given back to the student after they have graduated from Year 13. The justification for the increase between 31 [MONTH] 20X2 and 30 [MONTH] 20X3 is mainly from changing the deposit rate from USD 15,000 to USD 55,000 along with the increase in student headcount.
+Other liabilities balance mainly consists of accrued interest expenses from the long-term loan with [ENTITY 1]. The balance as at 30 [MONTH] 20X3 decreased
+by USD 4.2 million from 31 [MONTH] 20X2
+as a resut of interest payment to [BANK 2] on behalf of [ENTITY 1].
+Other liabilities
+Comments on other liabilities
+A
+We estimated there to be no accrued salary expenses as at 30 [MONTH] 20X3 because the salary for [MONTH] 20X3 has already been paid. The other accounts are estimated based on the information related to salary expenses in [MONTH]’23
+A
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

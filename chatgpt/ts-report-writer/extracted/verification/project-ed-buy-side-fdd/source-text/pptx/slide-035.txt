@@ -1,0 +1,187 @@
+Tuition fee revenue was relatively stable during the analyzed period while the non-tuition revenue (excluding capital levy) has decreased during FY[X]1 and FY[X]2 from FY[X]0 due to the COVID-19 impact. The increase in net profit margin was driven by an increase in total revenue from FY[X]0 to annualized FY[X]3, which was largely caused by an increase in student headcount
+and tuition fee adjustments, along with a decrease in staff cost
+from the layoffs during the COVID-19 situation.
+Profit & loss overview (1/2)
+Comments on the historical profit and loss
+Revenue from school service
+Revenue from school service comprises tuition fee revenue and non-tuition fee revenue.
+Tuition fee revenue after discount accounted for 75.0% to 82.3% of total revenue during FY[X]0 to annualized FY[X]3, and is showing an upward trend during the analyzed periods. The increase in FY[X]1 resulted from a) an increase in student headcounts; and b) tuition fee adjustments, which increased by approximately 3.6% on average per year.
+Discount mainly comprises staff discount, sibling discount and academic scholarships provided to students on a case-by-case basis.
+Non-tuition fee revenue accounted for 17.7% to 23.4% of total revenue during FY[X]0 to annualized FY[X]3. Non-tuition fee largely comprises meal fee, capital levy, SSS fee, admission fee and extracurricular activities.(For further detail, please refer to Page 37)
+With [ENTITY 1] starts collecting capital levy from FY[X]1 onwards, we observe non-tuition fee excluding capital levy to decrease in FY[X]1 and FY[X]2 from FY[X]0. This was due to refund for meal fee to students. In addition, the cancellation of school activities due to COVID-19 pandemic also attributed to such decrease.
+After recovery from the pandemic, revenue from school service in FY[X]3 has improved as a result of the slight increase in student headcount and resume of onsite classes.
+Management accounts of XM2X do not represent the actual performance as [ENTITY 1] normally adjusts and records certain balance only at the year end,
+resulting in the misstatement of various accounts (revenue, staff costs, depreciation, and interest income/expense). We have presented a Pro-forma financial performance of XM2X, which is derived from supporting documents and certain assumptions for comparison purposes. Please see further detail in Appendix 1.
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Statements of financial performance
+USD'000
+Note
+Revenue from school service
+1
+256,469
+272,089
+260,594
+316,960
+485,015
+290,547
+Cost of school service
+2
+(139,939)
+(127,292)
+(115,907)
+(147,421)
+(93,563)
+(135,136)
+Gross profit
+116,530
+144,797
+144,687
+169,540
+391,452
+155,411
+SG&A
+3
+(30,902)
+(30,057)
+(31,426)
+(36,345)
+(32,048)
+(33,316)
+Operating profit
+85,628
+114,740
+113,261
+133,195
+359,404
+122,095
+Other income
+4
+2,921
+2,481
+2,444
+8,029
+7,480
+7,360
+EBIT
+88,549
+117,221
+115,705
+141,224
+366,884
+129,455
+Interest income
+5
+12,863
+10,285
+9,551
+9,440
+498
+8,653
+Finance cost
+6
+(11,869)
+(9,575)
+(8,824)
+(7,502)
+(2,080)
+(6,877)
+EBT
+89,543
+117,931
+116,432
+143,161
+365,302
+131,231
+Corporate income tax
+-
+(47)
+(54)
+-
+-
+-
+Net profit
+89,543
+117,884
+116,378
+143,161
+365,302
+131,231
+Add back to EBIT
+Depreciation and amortisation
+17,519
+16,780
+17,175
+18,718
+-
+17,158
+EBITDA
+106,068
+134,001
+132,880
+159,941
+366,884
+146,613
+Key performance indicators
+% Gross profit
+45.4%
+53.2%
+55.5%
+53.5%
+80.7%
+53.5%
+% Operating profit
+33.4%
+42.2%
+43.5%
+42.0%
+74.1%
+42.0%
+% EBIT
+34.5%
+43.1%
+44.4%
+44.6%
+75.6%
+44.6%
+% Net profit
+34.9%
+43.3%
+44.7%
+45.2%
+75.3%
+45.2%
+% EBITDA
+41.4%
+49.2%
+51.0%
+50.5%
+75.6%
+50.5%
+Source: (1) Audited financial statements as at
+DD MM
+20X0, 2021 and 20X2
+Source:
+(2) Trial balances of FY[X]0, FY[X]1, FY[X]2and
+X
+M2X
+Source:
+(3) KPMG analysis
+Audited
+FY[X]1
+Reported
+Mgt. Acct.
+X
+M2X
+Pro-forma
+Mgt. Acct.
+X
+M2X
+Pro-forma
+annualised
+FY[X]3
+Audited
+FY[X]3
+Audited
+FY[X]2

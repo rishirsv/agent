@@ -1,0 +1,116 @@
+[ENTITY 1]'s
+employee headcount (HC)
+of 186 FTEs has an aggregated monthly cost base of USD 8.1m, with 111 faculty staff accounting for 59.7% of total HC costs
+Student development
+Kindergarten
+31
+1
+Primary
+Secondary
+Admin
+1
+Student support
+3
+School manager
+3
+HR
+Other
+***
+2
+Management
+Finance and accounting
+4
+2
+Total headcounts
+186
+1
+1
+4
+44
+6
+Student support - Non-teaching
+26
+35
+20
+3
+12
+Thai
+Expat
+Teaching staff:
+Total 111 employees*
+59.7% of total HC costs**
+Non-teaching staff:
+Total 71 employees*
+38.2% of total HC costs**
+Source:
+Census and payroll provided by the company
+Note:	 (*)  The number of employees is based on the Company’s census and payroll as of April 20[X]3, which is not an average headcount YTD20[X]3. (**) Total headcount costs include all bonus, benefits, and allowances
+, (***) Other functions include: Dormitory, Nurse, Purchasing, Secretary, and Non-core business staff, (****) Average cost per FTE is calculated by dividing fully-loaded cost by number of employees in each division.
+Functions grouping varies across the schools due to the
+availability and details of information.
+No. of employees, salary and total HC cost by department and division of
+[ENTITY 1 FULL NAME]
+(as of MM DD, 20[X]3)
+Management:
+Total 4 employees*
+2.1% of total HC costs**
+No. of employees
+(headcount, %)
+Headcount cost
+(USD million, %)
+60 (32.3%)
+4.3 (53.3%)
+126 (67.7%)
+3.8 (46.7%)
+Headcount by division
+(%)
+Fully-loaded cost
+(USD’000)
+100.0%
+14.0%
+23.7%
+18.8%
+3.2%
+16.7%
+10.8%
+2.2%
+0.5%
+1.6%
+6.5%
+1.6%
+0.5%
+8,089.0
+932.4
+1,982.9
+1,916.3
+207.2
+530.3
+744.7
+200.8
+400.0
+109.2
+355.6
+680.0
+29.6
+43.5
+35.9
+45.1
+54.8
+34.5
+17.1
+37.2
+50.2
+400.0
+36.4
+29.6
+226.7
+29.6
+Average cost per FTE****
+(USD’000)
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

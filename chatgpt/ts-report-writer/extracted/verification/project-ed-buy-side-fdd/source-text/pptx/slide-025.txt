@@ -1,0 +1,17 @@
+[ENTITY 1]: [ENTITY 1 FULL NAME]
+02
+01
+Quality of earnings
+26–28
+02
+Net working capital
+29–32
+03
+Net cash
+33–34
+04
+Profit and loss overview and supporting analysis
+35–45
+05
+Balance sheet overview and supporting analysis
+46–60

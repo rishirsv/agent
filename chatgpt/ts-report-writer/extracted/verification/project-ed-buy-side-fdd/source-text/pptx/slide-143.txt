@@ -1,0 +1,85 @@
+Business risk
+Laying off teachers may result in difficulties of acquiring new teachers and the decline of academic quality.
+Implementation consideration
+Review the employee contracts and policies
+Identify and
+analyse
+the potential
+risk
+from
+laying off
+teachers with above
+-
+average salaries and acquiring new teachers with average salaries
+Evaluate opportunities to optimize faculty staffing model and implement stricter (and lower) pay grades
+Complexity
+Salary packages must be aligned across teachers and grades and requires careful change management.
+.
+On average, [ENTITY 3] pays the highest salaries to teachers when compared to [ENTITY 1] and [ENTITY 2] with the widest range of salaries since it is an international school and the others are bilingual schools.
+This issue can be observed in the Secondary level Staff Type 1 teachers of [ENTITY 3] with the minimum salary at USD 20k and the maximum at USD198k.
+Some outliers could be observed, considering
+the executive positions being grouped as teachers, they are removed from the graphs.
+Since teachers
+are unlikely to accept the salary reduction, the best option for the implementation is to allow those teachers to resign and hire new teachers under a new structure.
+Next steps to validate the opportunity
+Key findings
+Several teachers receive salaries exceeding the average by group, indicating potential opportunity to reduce costs
+We quantified the potential cost-savings for [ENTITY 3] only. In the base case, teachers’ salaries are reduced to the average salary of each education level, separated by [REGION]/Staff Type 1 and assumed that 50% of those teachers accept the reduction.
+For the stretch case, we
+assumed that 75% of those [ENTITY 3] teachers accept the reduction.
+Value creation potential
+Summary of analysis
+Teacher salary optimisation can be realised from potential restructuring of the teacher salary package. There is a potential to reduce salary for faculty staff to align with the average as well as to identify roles that can be outsourced where cost benefits exist.
+1
+3
+5
+4
+2
+Source: (1) Employee census, (2) KPMG analysis
+Timeline to implement: 6-12 months
+USD 27.4-55.0M (EBITDA improvement)
+Teacher salary ranges by level in [ENTITY 1], [ENTITY 2], and [ENTITY 3]
+(USD’000/month, as of DD MM 20[X]3)
+[ENTITY 1]
+[ENTITY 2]
+Average
+[ENTITY 3]
+Avg.
+16.5
+Avg.
+25.7
+Avg.
+26.6
+Avg.
+30.2
+Staff Type 1 teachers
+[REGION] teachers
+Avg.
+51.5
+Avg.
+95.2
+Avg.
+107.5
+Kindergarten
+Primary
+Secondary
+Kindergarten
+Primary
+Secondary
+Student support
+Stretch case
+40.3
+Base case
+26.9
+1
+3
+5
+4
+2
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

@@ -1,0 +1,33 @@
+Please note that the adjusted net working capital does not represent a complete list of potential adjustments. Readers of this report should be aware that there are likely to be additional factors affecting reported net working capital of the business.
+[ENTITY 3]: Net working capital (2/2)
+Potential adjustments (cont’d)
+We propose to exclude accrued interest expenses of loan from [SUBSIDIARY 1] and [SHAREHOLDER 1], which are recorded in other accrued expenses, from net working capital due to its debt-like nature.
+Accrued pension
+represents the allocated budget for the contribution up to a maximum of 8.3% of gross investment made by Staff Type 1 staff.
+We propose to adjust accrued pension from working capital due to its debt-like nature.
+We proposed to exclude fixed asset payable from working capital and treat it as a debt-like item. However, the total amount of CAPEX payable has not been provided by Management.
+Management informed us that the deposits collected from students will be returned when students decide to leave and inform the school at least a Term in advance. The refund amount will be less any damages, such as lost books. This amount represents the liability that [ENTITY 3] has towards its students if students graduate or depart. We proposed to adjust the deposits out of working capital and include as a debt-like item
+This represents deposits for construction and the purchase of fixed assets. We propose to exclude this
+deposit from net working capital due to its CAPEX-related nature.
+According to Management, there were some expenses that [ENTITY 3] has paid for on behalf of [SUBSIDIARY 1] ([SUBSIDIARY 1]), because [SUBSIDIARY 1] school has not started to operate yet. Thus, the amount was recorded as receivable to [ENTITY 3], we viewed that this should be excluded from net working capital due to it being non-trade in nature.
+Net working capital (cont’d)
+Please refer to
+QoE
+Adj. No.9.
+Currently, [ENTITY 3] still have not paid for USD 3.5 million of share capital payment to [ENTITY 1] (34.5% of total investment value). We consider this to be a non-working capital item in nature, and have treated as a debt-like.
+We proposed to exclude the withholding tax assets from net working capital because Management did not plan to request a refund and we understand that the withholding tax outstanding prior to 20X9 has been written off in the XM2X period.
+Based on the information provided by Management, there were long outstanding bonus payables due to [ENTITY 3]’s staff of Mr. NAME XXXX (current teacher) that was initially intended to net off with his children’s tuition fee payment. However, we understand that this bonus will now be settled as cash. We proposed to adjust the full bonus payable from net working capital due to being non-trade item in nature.
+[ENTITY 3] rented an advertising billboard at the
+xxxx
+airport for 6 months during [MONTH] - [MONTH] 20X3. However, Management informed us that this will not recur after [MONTH] 20X3. We, therefore, proposed to remove this as it was one-off item.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |
+[ENTITY 3]
+|
+Related party arrangements
+|
+Value creation
+|
+Basis of preparation
+|
+Appendices

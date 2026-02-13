@@ -1,0 +1,75 @@
+Business risk
+There is intense competition from peers in terms of discount offering and student acquisition.
+1
+3
+5
+4
+2
+[ENTITY 3] offered on average an 8.6% tuition fee discount. Wide discount dispersion could be observed in Year 7 to Year 13
+We quantified the potential revenue upside in the base case by decreasing
+discounts that were above
+average to the average level by grade.
+For the stretch case, the discount dispersion
+is estimated based on reducing discounts
+to the average by-grade average discount, calculated
+using
+all students.
+Value creation potential
+Summary of analysis
+Discount offering can be optimised as there are significant discounts being given with wide dispersion across Year 7 to Year 13. Whilst we understand a discount policy is in place, this could be optimised to reduce total discounts
+issued.
+USD 10.0-46.7M (EBITDA improvement)
+Source: (1) Student List as of April 20[X]3 (2) Income from FY19 to FY[X]3 (3) KPMG analysis
+Note: (*) Staff’s child discount is excluded since making an adjustment to this discount type could be challenging (2) Pre-nursery students are excluded since there are alternative courses within this grade, resulting in varying tuition fees among Pre-nursery students.
+Implementation consideration
+Complexity
+Rendering a change in policy may be required in order to implement the discount adjustment.
+Next steps to validate the opportunity
+Key findings
+1
+3
+5
+4
+2
+Timeline to implement: >12 months
+Excluding staff’s children and LD students, [ENTITY 3] offered an average of 8.6% discount across 15 grades (ranging from Nursery to Grade 13) in AY[X]3.
+Excluding non-discount students, we can observe a wide discount dispersion in Grade 7 to Grade 13
+,
+where Gr
+ade 13 had the highest discount offering at an average of 76.0%.
+Discount levels outside of interquartile range may also represent a potential
+rationalisation
+opportunity across multiple grades so as to narrow the discount gap among students.
+Undertake a detailed
+review of the discount policy and criteria in any given grade or given student.
+Further
+analyse
+to understand the correlation between discount and student retention rate.
+Determine the appropriate disco
+unt level across grade groups.
+3%
+6%
+13%
+Other discounts
+Staff Discount
+Special Discount
+Fee after discount
+Tuition fee discount by grade
+*,**
+(%, YTD20[X]3)
+Discount dispersion by grade
+*,**
+(%, YTD20[X]3, excld. non-discount students)
+Discount contribution
+(%, YTD20[X]3)
+Base case
+Stretch case
+10.0
+46.7
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

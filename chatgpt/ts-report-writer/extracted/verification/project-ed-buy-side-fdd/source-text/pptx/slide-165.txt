@@ -1,0 +1,9 @@
+Appendix 10: [ENTITY 3] Monthly net working capital (5/5)
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices
+Source: (1) Trial balances and General ledger during MM 20XX-MM 20XX  (2) Detail of unearned revenue (3) Management discussion (4) KPMG Analysis
+Note: Monthly unearned revenue balances are prepared and provided by the Target
+Basis of preparation – Indicative monthly net working capital
+Indicative adjusted monthly NWC is prepared for an indicative purpose only, we were not provided with the breakdown details by month such as current portion of deposits from students, non-current portion of unearned revenue, CAPEX payables, deposits paid for PPE and other receivables with related party.
+We have therefore assumed that the current portion of deposits from students by month is equal to the ending balance of each fiscal year as it represents the deposits of students who will graduate at the end of next fiscal year. Moreover, for monthly non-current portion of unearned revenue and other receivables with related party, we used average ending balance of each fiscal year. However, we did not receive the detail of non-current portion of unearned revenue as at DD MM 20XX so we used the balance of non-current portion of unearned revenue as at DD MM 20XX for FYXX.

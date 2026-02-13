@@ -1,0 +1,72 @@
+Shareholder structure
+Source: Corpus
+1.
+[DIRECTOR 1]
+2.
+[DIRECTOR 2]
+3. [DIRECTOR 3]
+4. [DIRECTOR 4]
+5. [DIRECTOR 5]
+6. [DIRECTOR 6]
+7. [DIRECTOR 7]
+8. [DIRECTOR 8]
+1.
+[DIRECTOR 1]
+2. [DIRECTOR 6]
+3.[DIRECTOR 9]
+1.
+[DIRECTOR 1]
+2. [DIRECTOR 3]
+3. [DIRECTOR 4]
+4. [DIRECTOR 6]
+5. [DIRECTOR 10]
+6. [DIRECTOR 11]
+[ENTITY 3 FULL NAME]. (“[ENTITY 3]”)
+[ENTITY 1 FULL NAME] (“[ENTITY 1]”)
+[ENTITY 2 FULL NAME]
+(“[ENTITY 2]”)
+[SHAREHOLDER 1]
+[SHAREHOLDER 2]
+[SHAREHOLDER 3]
+[SHAREHOLDER 4]
+Other
+shareholders
+Other shareholders
+[DIRECTOR 6]
+[DIRECTOR 12]
+[DIRECTOR 1]
+30.01%
+30.00%
+20.00%
+4.00%
+38.00%
+58.03%
+25.00%
+8.40%
+73.82%
+8.20%
+6.86%
+11.11%
+List of Directors
+[ENTITY 1 FULL NAME]
+[ENTITY 2 FULL NAME]
+[ENTITY 3 FULL NAME]
+19.99%
+[ENTITY 3]
+78.50%
+5.00%
+Note :
+1
+The owners of COMPANY X consist of [DIRECTOR 3] 30%, [DIRECTOR 4] 30%, [DIRECTOR 6] 30% and [DIRECTOR 1]10%.
+[ENTITY 1] xxx
+(“[ENTITY 1] xxx”)
+[ENTITY 1]
+xxxx
+(“[ENTITY 1]
+xxxx
+”)
+51.0%
+n/p
+The Targets in the transaction perimeter
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

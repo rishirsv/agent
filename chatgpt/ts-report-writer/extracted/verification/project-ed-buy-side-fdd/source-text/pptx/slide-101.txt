@@ -1,0 +1,17 @@
+[ENTITY 3]: Monthly cash and unearned revenue profile
+After [ENTITY 3] received the refinancing loan from [BANK X] in FY[X]2, together with an operating profit during XM2X, we observe the increasing trend of cash level.
+The liquidity has been improved which was in line with a significant increase in revenue from USD 423.7 million in FY[X]2 to USD 564.7 million in XM2X. In addition, spikes in unearned revenue graph represent the timing at which [ENTITY 3] issues invoices to parents during [MONTH], [MONTH] and [MONTH].
+[ENTITY 3] normally issues invoices 2-3 months before the start of the next term, which normally is in [MONTH] (for Term 1), [MONTH] (for Term 2), and [MONTH] (for Term 3) of each year.
+Source: (1) Trial balances and General ledger during [MONTH] 20X9-[MONTH] 20X3  (2) Detail of unearned revenue
+Note: Monthly unearned revenue balances are prepared and provided by the Target
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |
+[ENTITY 3]
+|
+Related party arrangements
+|
+Value creation
+|
+Basis of preparation
+|
+Appendices

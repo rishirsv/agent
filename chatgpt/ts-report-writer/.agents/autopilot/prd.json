@@ -290,7 +290,7 @@
       "priority": 9,
       "dependsOn": [],
       "passes": false,
-      "attempts": 0,
+      "attempts": 1,
       "blocked": true,
       "blockedReason": "Source file is CDFV2 Encrypted/unreadable; strict extraction and source-text export fail with File is not a zip file.",
       "files": [
@@ -323,8 +323,8 @@
       "verificationCommand": "./.venv/bin/python scripts/qa_provenance.py --markdown extracted/project-ed-buy-side-fdd.md --source-manifest extracted/verification/project-ed-buy-side-fdd/source-text/manifest.json --out-dir extracted/verification/project-ed-buy-side-fdd/qa && ./.venv/bin/python scripts/qa_gates.py --report-id project-ed-buy-side-fdd",
       "priority": 10,
       "dependsOn": [],
-      "passes": false,
-      "attempts": 0,
+      "passes": true,
+      "attempts": 1,
       "blocked": false,
       "blockedReason": "",
       "files": [

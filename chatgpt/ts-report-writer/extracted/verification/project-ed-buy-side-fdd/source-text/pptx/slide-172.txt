@@ -1,0 +1,27 @@
+Area
+Description
+Status
+Comment
+Quality of earnings
+Discuss with management the impact of unusual revenue or expense items, non-trading or other non-representative items, non-recurring or unusual items on EBITDA. The historical results may be impacted by:
+One off/non-recurring items and non-trading items
+Owner’s personal expenses
+Changes to accounting policies
+Non arms length related party transactions including transactions within and outside entities under transaction perimeter
+In the event that elements of our terms of reference relate to 'underlying' earnings and working capital, our work will be restricted to assisting you in the identification and documentation of items which may be 'non-recurring' or 'exceptional' or otherwise unrepresentative of the trend in earnings or working capital using criteria established by you.  Because there is no authoritative literature or common standard with respect to the calculation of 'underlying' earnings and working capital, there is no basis to state whether all appropriate and comparable adjustments have been made.  In addition, while the adjustments may indeed relate to items which are 'non-recurring' or 'exceptional' or otherwise unrepresentative of the trend, it is possible that earnings for future periods may be affected by such items, which may be different from the historical items.
+
+Completed
+Net working capital
+Comment at a high level on the quality of working capital as at the most recent available balance sheet date.
+Summarise
+Target’s net working capital, identify any potential component /
+normalisation
+adjustments and comment at a high level on key working capital balances and metrics.
+Understand and comment on the usual billing and payment cycle of tuition fees, impact on deferred revenue and potential commitments based on discounts provided for payments in advance.
+In the event that elements of our terms of reference relate to 'underlying' working capital, our work will be restricted to assisting you in the identification and documentation of items which may be 'non-recurring' or 'exceptional' or otherwise unrepresentative of the trend in working capital using criteria established by you. Because there is no authoritative literature or common standard with respect to the calculation of 'underlying' working capital, there is no basis to state whether all appropriate and comparable adjustments have been made. In addition, while the adjustments may indeed relate to items which are 'non-recurring' or 'exceptional' or otherwise unrepresentative of the trend, it is possible that working capital for future periods may be affected by such items, which may be different from the historical items.
+
+Completed
+Scope of work – Financial due diligence (2/5)
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

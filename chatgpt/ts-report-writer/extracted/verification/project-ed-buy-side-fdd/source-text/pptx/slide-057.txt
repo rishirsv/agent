@@ -1,0 +1,25 @@
+Employee benefit oblgations (EBO) are based on management estimation. As at DD MM 20X3, employee benefit obligations amount to USD 2.75 million, based on the salary report as at DD MM 20X2. Management has informed us that they only update their EBO liability balance once a year.
+Employee benefit obligations
+Employee benefit obligations
+Under the [REGION] Labor Protection Act (1998), [ENTITY 1] is required to pay legal severance payments to staff when they reach their retirement age, or are terminated by the Company without cause, according to the payment rates as follows.
+Employee retirement benefits are required under [REGION]
+Labour
+Law. [REGION] Financial Reporting Standards for Non-publicly Accountable Entities (TFRS for NPAEs’) requires [ENTITY 1] to recognise a provision for employee benefit obligations using the “best estimate” method.
+Management has also stated that they have not adjusted the amount as at DD MM 20X3 and have only recorded the payments made to the employees who have retired during the year.
+The EBO is calculated using the
+“
+best estimate
+”
+method based on the following assumptions:
+Retirment age of 65 years.
+Only permanent employees ([REGION] teachers and administrative employees) eligible for retirement benefits.
+Estimated based on current sa
+l
+ary.
+Only employees who are 55 or older.
+Only the [REGION] teachers and administrative employees are eligible for employee benefit obligations, since they are the only ones with permanent contracts (a total of 126 employees). However, Management has only recorded [REGION] employees who are above 55 years of age, so the total number of employees with EBO provided for is 11 out of 126.
+We estimated the maximum severance payment to be USD 18.9 million if all permanent staff are terminated as at DD MM 20X3.
+Comments on the employee benefit obligations
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

@@ -1,0 +1,48 @@
+Appendix 5: Benchmarking analysis - DPO & CCC
+[ENTITY 3]’s DPO and CCC outperformed
+the
+peer group median. However, room for DPO and CCC improvement exists for [ENTITY 1] and [ENTITY 2].
+Median DPO across the peer set is
+xxx
+days.
+[ENTITY 3]’s DPO of xxx days is higher than the peer group median and is in the first quartile.
+[ENTITY 1]
+’s
+and [ENTITY 2]’s DSO of
+xx
+and xx days
+, respectively,
+are lower than the peer group median and are in the fourth quartile.
+Increasing the number of DPO by
+xxx
+and xxx days
+, respectively,
+to match with the peer median indicates cash release opportunities for [ENTITY 1] and [ENTITY 2] of USD
+xx.x
+million. and USD
+xx.x
+million, respectively
+Median CCC across the peer set is (
+xxx
+) days.
+[ENTITY 3]s CCC of (
+xxx
+) days is lower than the peer group median and is in the first quartile.
+[ENTITY 2]’s and
+[ENTITY 1]’
+s
+CCC of
+xx
+and xx days
+, respectively,
+are higher than the peer group median and are in the fourth quartile.
+CCC*** - Peer analysis
+DPO*** - Peer analysis
+Source: (1) Audited financial statement FYXX (2) Corpus (3) KPMG analysis
+Note: (*) International schools includes [ENTITY 3] (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (**) Bilingual schools includes [ENTITY 1] (ENTITY FULL NAME), [ENTITY 2] (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (***) Due to the unavailability of peer’s unearned revenue, unearned revenue was carved out of CCC calculation. The discrepancy of CCC – Peer analysis and other CCC analyses is expected. DSO, DIO and DPO are calculated based on the ending balance of trade receivables, inventory and trade payables.
+International school*
+Bilingual school**
+Targets
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

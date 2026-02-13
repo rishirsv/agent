@@ -1,0 +1,37 @@
+Source: (1) Audited financial statement FYXX (2) Corpus (3) KPMG analysis
+Note: (*) International schools includes [ENTITY 3] (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (**) Bilingual schools includes [ENTITY 1] (ENTITY FULL NAME), [ENTITY 2] (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME)
+Appendix 5: Benchmarking analysis - Gross margin & EBIT margin
+[ENTITY 1] and [ENTITY 2]’s gross margin and EBIT margin are higher than the peer group median, while [ENTITY 3]’s margins are below, indicating [ENTITY 3]’s opportunities for improvement.
+Comments
+Median gross margin across the peer set is
+xx.x
+%.
+[ENTITY 1] and [ENTITY 2]’s gross margin of
+xx.x
+% and
+xx.x
+% are higher than the peer group median and are in the first quartile.
+[ENTITY 3]’s gross margin of
+xx.x
+% is lower than the peer group median and is in the fourth quartile.
+Median EBIT margin across the peer set is
+x.x
+%.
+[ENTITY 1] and [ENTITY 2]’s EBIT margin of
+xx.x
+% and
+xx.x
+% are higher than the peer group median and are in the first and second quartile, respectively.
+[ENTITY 3]’s EBIT margin of
+(
+x.x
+)% is lower than the peer group median and is in the fourth quartile.
+EBIT margin
+Comments
+Gross margin
+International school*
+Bilingual school**
+Targets
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

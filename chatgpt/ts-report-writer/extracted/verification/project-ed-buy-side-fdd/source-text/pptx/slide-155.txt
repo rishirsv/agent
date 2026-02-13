@@ -1,0 +1,53 @@
+Appendix 5: Benchmarking analysis - DSO & DIO
+There are room for [ENTITY 1] and [ENTITY 3] to improve their DSO and room for [ENTITY 1] and [ENTITY 2] for DIO improvement.
+Comments
+Median DSO across the peer set is
+xx
+days.
+[ENTITY 2]’s DSO of
+xx
+days is lower than the peer group median and is in the
+second
+quartile.
+[ENTITY 1] and [ENTITY 3]’s DSO of
+xx
+and xx
+days are higher than the peer group median and are in the third and fourth quartiles respectively.
+Reducing the number of DSO by
+xx
+and xx days to match with the peer median indicates cash release opportunities for [ENTITY 1] and [ENTITY 3] of USD
+xx.x
+million and USD
+xxx.x
+million, respectively.
+Median DIO across the peer set is x days.
+[ENTITY 3]’s,
+[ENTITY 1]’s and [ENTITY 2]’s
+DIO of x,
+x
+, and
+xx
+days are higher than the peer group median and are in the third and fourth quartile
+s.
+Reducing the number of DSO by x,
+x
+, and
+xx
+days to match with the peer median indicates cash release opportunities for [ENTITY 3], [ENTITY 1], and [ENTITY 2] of USD
+x.x
+,
+x.x
+million and USD
+x.x
+million, respectively.
+DIO*** - Peer analysis
+Comments
+DSO*** - Peer analysis
+Source: (1) Audited financial statement FYXX (2) Corpus (3) KPMG analysis
+Note: (*) International schools includes [ENTITY 3] (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX(ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), ENTITY XXXX (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (**) Bilingual schools includes [ENTITY 1] (ENTITY FULL NAME), [ENTITY 2] (ENTITY FULL NAME), and ENTITY XXXX (ENTITY FULL NAME) (***) Due to the unavailability of peer’s unearned revenue, unearned revenue was carved out of DSO calculation. The discrepancy of DSO – Peer analysis and other DSO analyses is expected. DSO, DIO and DPO are calculated based on the ending balance of trade receivables, inventory and trade payables.
+International school*
+Bilingual school**
+Targets
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |
+Appendices

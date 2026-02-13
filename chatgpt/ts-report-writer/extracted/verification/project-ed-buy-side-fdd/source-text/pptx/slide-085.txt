@@ -1,0 +1,25 @@
+As at 30 [MONTH] 20X3 [ENTITY 2] reported NBV of fixed assets totaling USD 328.0 million, mainly comprising
+:
+buildings and building improvements (79.6%), and land and land improvements (18.1%). All land and buildings are used as collateral for a loan with [BANK 1].
+Fixed and intangible assets (1/2)
+Comments on fixed assets
+Overview
+Land is stated at cost less allowance for devaluation (if any).
+Fixed assets are stated at cost less accumulated depreciation, the depreciation is calculated on a straight-line basis over the estimated useful life of each asset group.
+Land mainly consists of 23 land deeds comprising the school area of 28 [UNITS]1 [UNITS] 41 [UNITS].
+Buildings consists of (1) buildings used in the school’s operation; (2) dormitories; and (3) administrative building. The large decrease of the cost of buildings and building improvements between DD [MONTH] 20X0 and DD [MONTH] 20X1 mainly comes from fully depreciated assets being written off.
+Furniture, fixtures, and equipment mainly consists of projectors, tables, chairs, and lockers. The increase of costs from 31 [MONTH] 20X1 to 30 [MONTH] 20X3 mainly related to the
+rise in student headcount during the period.
+[ENTITY 2] does not record depreciation on a monthly basis, but will record all depreciation expenses at the end of the fiscal year.
+Physical count of fixed assets
+According to Management, [ENTITY 2] does not perform a physical count of fixed assets
+Collateral
+All 23 land deeds and buildings located thereon are pledged against the
+loan with [BANK 1].
+Insurance coverage
+According to the loan with [BANK 1], [ENTITY 2] is required to insure its building and building improvements.
+Based on the latest industrial all risk insurance policy made with [REGIONAL INSURANCE CO.] covering the period between 5 [MONTH] 20XX and 5 [MONTH] 20XX.
+All buildings including [ENTITY 2] schools and any land improvements such as football fields are insured under this agreement. This insurance has a total coverage of USD 400.0 million, which is higher than the net book value of land and land improvements and buildings and building improvements.
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

@@ -1,0 +1,55 @@
+Basis of preparation
+All financial statements are prepared in accordance with TFRS for NPAEs. The financial statements were issued with unqualified opinion for FYXX, FYXX and FYXX. Notes to financial statements of [ENTITY 2] for FYXX-FYXX  also includes the going concern issues due to the negative NAV and accumulated losses. There was no change in significant accounting policies, according to Management.
+Basis of preparation
+Frequency and lead time for accounts closing
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+[ENTITY 1] and [ENTITY 2] close their accounts on a yearly basis within 3 months after the period ended
+Accounting standards
+xxxx
+Fiscal year
+end
+31 May
+Accounting systems
+xxxx
+xxxx
+Auditor
+Auditor’s opinion
+Change in accounting policies
+[COMPANY X]
+Unqualified opinion for FYXX, FYXX and FYXX
+There was no change in accounting policies during analysis periods
+Significant accounting policies
+31 July
+31 May
+[COMPANY Y]
+[ENTITY 3] closes its accounts on a monthly basis within 10-15 days after the period ended
+Revenue recognition and unearned income
+[ENTITY 1] and [ENTITY 2] :
+Revenue is
+recognised
+based on the issued invoices and
+will be reclassified as unearned revenue at year end.
+[ENTITY 3]: Revenue is recognised on a straight line basis over the period. Deferred revenue is recognised based on the issued invoices and amortised over the period.
+Cost recognition
+[ENTITY 1] and [ENTITY 2]: Staff cost and other costs such as utilities expenses, meal cost and other school’s related expenses is recorded
+based on a cash basis and will be adjusted to an accrual basis at year end.. Cost of goods sold (uniform and school supplies) such
+as books and uniforms will be recorded only at year end. The bonus will be recorded on a cash basis.
+[ENTITY 3]: Costs such as staff cost, utilities expenses and meal cost are recorded based on accrual basis. The bonus will be recorded on a cash basis.
+Trade receivables
+[ENTITY 1] and [ENTITY 2]: AR are carried at the invoice amount and no allowance for doubtful debt is recorded
+[ENTITY 3]: AR are carried at net realizable value. The allowance for doubtful debt is
+recognised
+based on the estimated uncollectible calculated using [ENTITY 3]’s experiences.
+Fixed asset and Intangible asset
+All: Fixed asset are stated at cost less accumulated depreciation. Depreciation are calculated on a straight line basis over the estimated useful lives as follows:
+Please note that [ENTITY 1] and [ENTITY 2] will record depreciation expenses only at the year end.
+Trade and other payables and other liabilities
+[ENTITY 1] and [ENTITY 2]: Trade and other payables are stated at cost based on accrual basis. Accrued expenses will be adjusted annually at the year end.
+[ENTITY 3]: Trade and other payables are stated at cost based on accrual basis.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |
+Basis of preparation
+|
+Appendices

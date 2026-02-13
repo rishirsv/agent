@@ -1,0 +1,90 @@
+Headlines (3/4)
+Observation
+Topic
+Implication
+Value impact
+Timeline to implement
+Observation
+Topic
+Valuation
+SPA
+Other
+Impact
+Proposed adjustments
+(USD)
+Upside potential
+(USD)
+Fixed assets and CAPEX
+FDD
+Land XXX
+is used for [ENTITY 1]’s operation, which is owned by [SHAREHOLDER 3], related party. Management plans to transfer the ownership of this land to [ENTITY 1] prior to Closing.
+[ENTITY 1], [ENTITY 2], and [ENTITY 3] have total outstanding CAPEX of USD 5.2 million, USD 11.5 million, and USD 77.6 million, respectively, mainly related to the improvement of school facilities to attract
+additional students.
+✘
+🗸
+🗸
+🗸
+✘
+🗸
+n/a
+Net debt
+n/a
+[ENTITY 1]: 5.2mn
+[ENTITY 2]: 11.5mn
+[ENTITY 3]: 77.7mn
+n/a
+n/a
+n/a
+n/a
+Value Creation
+Class utilisation:
+Opportunity to optimise operating costs through faculty cost reduction and/or faculty headcount reduction
+🗸
+✘
+✘
+EBITDA
+UQ
+0.4mn-1.5mn
+>12
+months
+Fixed asset optimisation:
+Monetising underutilised assets for immediate cash release to support business expansion and future growth
+🗸
+✘
+✘
+Cash
+UQ
+UQ
+>12
+months
+Related party transaction
+FDD
+Related party balances (including loans, receivables, and payables) were long outstanding due to internal cash management within the Targets’ Group. There were also
+long
+term
+loans provided to shareholders.
+✘
+🗸
+🗸
+n/a
+n/a
+n/a
+n/a
+Litigation case
+Litigation case
+FDD
+As at DD MM X2, there are two ongoing litigations under [ENTITY 2]
+. Management did not record a provision for contingent liability on these matters as they believe they will receive favorable decisions.
+🗸
+🗸
+✘
+Net debt
+UQ
+n/a
+n/a
+Read more
+Read more
+Read more
+Read more
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

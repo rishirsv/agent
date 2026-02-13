@@ -1,0 +1,45 @@
+Adjusted net debt of [ENTITY 3] as at 30 [MONTH] 20X3 consists
+of
+long-term loans from [BANK X], short-term loans from related parties ([SHAREHOLDER 1] and [SUBSIDIARY 1]), and debt-like items such as employee benefits obligations, CAPEX, and accrued pension.
+The adjusted net debt does not represent a complete list of potential adjustments. Readers of this report should be aware that there may be additional factors affecting reported net debt of the business.
+[ENTITY 3]: Net debt
+General debt items
+Long-term loan from financial institutions
+relates to a
+loan from [BANK X], bearing interest rate of MLR% p.a. The purpose of the loan is to refinance prior debt obligations with [Loan Entity].
+Short-term loans from related parties consists of loans from  ([SHAREHOLDER 1]) and [SUBSIDIARY 1]. Both of these loans bear
+the
+interest rate of 2.5% p.a.
+Debt and debt-like items
+Please refer to NWC Adj. No.1. Non-current portion of unearned revenue that has its corresponding receivable settled by the parent is unquantifiable, i.e. the portion that has been paid, which represents the obligation the school has to provide the service.
+Please refer to NWC Adj. No. 2
+Please refer to NWC Adj. No. 4
+Employee benefit obligations is recorded based on Management’s estimation
+of the legal severance payment required under [REGION]
+Labour
+Law
+. [ENTITY 3] only records employee benefit obligations for permanent employees who are not under fixed-term contracts.
+Please refer to NWC Adj. No. 3
+These represent both committed and non-committed CAPEX of [ENTITY 3]. The key CAPEX covers the construction of a c
+overed football pitch (with total budget of USD 28.0 million). Management expects the construction will be completed in August 20X3.
+Please refer to NWC Adj. No. 8
+Deposit from students refer to deposits that the parents have made before the Term begins. This deposit will be returned upon student graduation or when the student has left the school. However, they must notify the school 1 Term in advance order to be eligible for the deposit return.
+Please refer to NWC Adj. No. 11
+This represents potential tax implication and exposure mainly arising from non-compliance of accounting and tax reporting and under-remitted payroll withholding tax. Please refer to Due diligence report – Volume 2 Tax.
+Other consideration
+This represents unpaid share receivable of USD 40.3 million from a shareholder, [SHAREHOLDER 3] Co., Ltd. Based on the
+audited financial statement of [ENTITY 3], [SHAREHOLDER 3] agrees to repay this receivable if
+[ENTITY 3] has liquidity issues and cannot make the loan payment to [BANK X]. However, the accounting manager informed us that the settlement/repayment of this loan is subject to Management’s
+decision.
+Comments on net debt
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |
+[ENTITY 3]
+|
+Related party arrangements
+|
+Value creation
+|
+Basis of preparation
+|
+Appendices

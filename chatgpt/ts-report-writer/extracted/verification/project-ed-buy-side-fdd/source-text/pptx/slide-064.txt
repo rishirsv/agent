@@ -1,0 +1,27 @@
+Basis of preparation
+Reported net working capital is prepared based on a general definition of net working capital, which is current assets less current liabilities, excluding cash and cash equivalents and debt items.
+Pro-forma adjustment
+Management informed us that all issued invoices during the period will be recorded as revenue regardless of the period that the revenue should be recognised. At the end of each year, the accounting team will adjust the revenue that was recorded in incorrect period to unearned revenue indicating that unearned revenue as at DD MM 20X3 was understated. We have therefore proposed to adjust for unearned revenue balance for an indicative purpose.
+Please refer to Appendix
+2
+Debt and debt-like items
+Unearned revenue has both debt-like and working capital characteristics. The current portion of unearned revenue is currently treated as part of net working capital item with services due to be delivered within the next 12 months. With the nature of the school operation where invoices are usually sent ahead of the next academic year, unearned revenue balance is therefore a usual liability balance to appear on Balance sheet and part of working capital.
+We’ve proposed to exclude the non-current portion of unearned revenue from working capital as it relates to the service to be provided in more than 12 months. In the non-current balance, for the portion that the school has already received cash in advance for, we have treated this as a debt-like item as this represents the liability and obligation that the School has towards its students, and that while cash collected may have already been used by the school for working capital purpose, there's a risk of returning this cash, if students request for the refund in accordance with the school refund policy.
+Please note that the adjusted net working capital does not represent a complete list of potential adjustments. Readers of this report should be aware that there are likely to be additional factors affecting reported net working capital of the business.
+[ENTITY 2]: Net working capital (2/3)
+Net working capital (cont’d)
+There is no authoritative literature or common standard with respect to the identification of items which may form part of ‘debt’ or ‘net debt’, and the decision as to what items should be included or excluded is highly judgmental. We understand that You have not finalized on the treatment of unearned revenue. You should discuss with the Seller on the final treatment of unearned revenue as this may have an impact to your Enterprise-Equity value bridge.
+Management informed that during FY[X]1, interest expenses and loan repayment to [BANK 1]
+were deducted twice. After [ENTITY 2] informed [BANK 1], the refund was made to bank accounts in MM 20X1, so [ENTITY 2] recorded this amount as prepaid cheque, which we have adjusted out of working capital.
+We proposed to adjust accrued interest expenses from net working capital due to its debt-like nature.
+Based on the information provided by Management, advances received as at DD MM 20X1 and DD MM 20X3 from [ENTITY 1] also included a loan from [ENTITY 1] amounting to USD 450,000.
+Potential adjustments
+This represents
+construction and the purchase of fixed assets
+. We propose to exclude this
+deposit from net working capital due to its CAPEX-related nature.
+Based on the trial balance as at DD MM 20X3, [ENTITY 2] recorded staff costs (e.g., salary and wages) incurred up to MM 20X3. Management confirmed that [ENTITY 2] paid staff salary on time. The accounting staff did not record salary payment as staff expense but they recorded a debit to accrued expenses and a credit to cash as a contra accounts of accrued expenses (resulting in a positive amount of accrued expenses as at DD MM 20X3).
+Net working capital
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

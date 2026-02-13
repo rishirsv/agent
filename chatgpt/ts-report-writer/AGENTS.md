@@ -116,6 +116,13 @@ Required verification artifacts include:
 ### Learnings (Newest First)
 
 - Date: 2026-02-13
+- Report ID: `project-ed-buy-side-fdd`
+- Issue observed: initial strict PPTX extraction produced fragment-heavy markdown and passed provenance but failed fail-closed cleanup quality/manual checklist completion.
+- Root cause: auto-selected PPTX XML lines retained many low-context/table-adjacent bullets; template evidence/checklist fields remained incomplete.
+- Fix applied: regenerated strict source-text, performed full-report cleanup by pruning selected lines and resyncing markdown/render-trace/section-map/section-accounting, added required source-evidence + coverage-map metadata, completed montage slide reconciliation in review notes, and reran provenance + gates to pass.
+- Prevention rule: for PPTX stories, when adding template metadata sections before content, re-align render-trace line numbers to the final markdown and rerun `qa_gates.py`; otherwise markdown-trace sync will fail despite clean content.
+
+- Date: 2026-02-13
 - Report ID: `project-dental-report-25july2025-vs`
 - Issue observed: strict PDF extraction produced predominantly fragmented/chart-label bullets and non-verbatim splits that failed provenance exact-match and cleanup-quality gates.
 - Root cause: auto-selected catalog lines included many partial strings that did not map exactly to `source-text` artifacts and were not suitable report-body sentences after full cleanup policy.

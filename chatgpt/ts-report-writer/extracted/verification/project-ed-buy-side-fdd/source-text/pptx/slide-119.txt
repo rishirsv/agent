@@ -1,0 +1,36 @@
+As at DD MM 20[X]3, fixed assets mainly consist of buildings and building improvements (48.5%), land and land improvements (28.9%), and furniture, fixture, and school supplies (12.9%). All land and buildings are pledged against long-term loan from [BANK 3]. In additIon, [ENTITY 3] has made all risk insurance policies for fixed as
+sets
+with a total insurance coverage of USD 560.0 million, which is in compliance with the requirement of loan from [BANK 3].
+Fixed and intangible assets (1/2)
+Fixed assets
+Physical
+count
+of fixed assets
+According to Management, [ENTITY 3] performs a fixed assets physical count on an annual basis by the internal team (on a sampling basis). The auditor of [ENTITY 3] did not attend the fixed asset physical count. Management confirmed that all fixed assets are in good condition and useable as at DD MM 20[X]3.
+Collaterals
+Land and buildings located on land title deed no. 39143 and the 15 land deeds comprising INDY II are pledged against loan with [BANK 3].
+In addition, [SUBSIDIARY 1]’s land title deed no.
+11776, 11927, 11929, 11935, 11940, 11941, 11949, 14988, 20961, 20962, 20963, and 47518 are pledged against loan with [BANK 3].
+Insurance coverage
+Under the loan agreement with [BANK 3], [ENTITY 3] is required to enter into an insurance policy to insure its building and building improvements with an all risk insurance where the sum insured higher than the credit limit of the loan (USD 98 million) or as high as possible. The beneficiary for this insurance is [BANK 3].
+Based on the latest insurance policy made with [Insurance Entity]. covering from DD MM 20[X]2 to DD MM 20[X]3, [ENTITY 3] has made all risk insurance policies for INDY II with a total insurance coverage of USD 60.0 million, which was higher than book value of fixed asset (USD 32.7 million) as at DD MM 20[X]3.
+In addition, [ENTITY 3] enters into an insurance policy with LMG Insurance PCL covering from DD MM 20[X]2 to DD MM 20[X]3 for school buildings with a total insurance coverage of USD 500.0 million which appears to cover the total building NBV. [ENTITY 3] is in compliance with the insurance coverage clause of loan agreement with [BANK 3].
+Overview
+Land is stated at cost less allowance for devaluation
+(if any).
+Fixed assets are stated at cost less accumulated depreciation which are calculated on a straight-line basis over the estimated useful life of each asset group.
+Allowance for value of lost books is calculated based on historical lost book data (estimated at 5% of total value of books) and actual book lost value during the year.
+Lands mainly comprise land title deed no. 39143 (105 [UNITS]1 [UNITS] 84.7 [UNITS]), no. 39146 (12 [UNITS]2 [UNITS] 92.2 [UNITS]), and 15 land deeds comprising INDY II (1 [UNITS]3 [UNITS] 17.8 [UNITS]).
+Buildings consists of (1) 15 houses for staff (named INDY II); and (2) building for the school’s operation.
+Furniture, fixtures, and school supplies mainly consist of tables and chairs used in the classroom along with other items such as school textbooks. The costs for the assets have decreased greatly when comparing between the periods DD MM 20[X]2 and DD MM 20[X]3, which mainly comes from disposals of items which have already fully depreciated, but have not been replaced.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |
+[ENTITY 3]
+|
+Related party arrangements
+|
+Value creation
+|
+Basis of preparation
+|
+Appendices

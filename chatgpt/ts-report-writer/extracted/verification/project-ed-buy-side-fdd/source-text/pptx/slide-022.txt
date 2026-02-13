@@ -1,0 +1,98 @@
+Key findings — Financial (9/9)
+Consider the overall funding structure and
+liquidity, and the usage of your capital injection.
+Policy for dividend payment and profit distribution to shareholders should also be mutually discussed and agreed prior to Closing and factored into the forecast.
+Liquidity issue
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+[ENTITY 2] reported a retained earning deficit and negative NAV and [ENTITY 2]’s liquidity has been stretched, with D/E ratio being (2.25)-(2.94) during the analyzed periods, suggesting potential difficulty in meeting short-term obligations as well as repaying debt and funding CAPEX. In addition, the note to audited financial statement during FY[X]0-FY[X]1 mentions going concern issue due to the negative NAV. However, [ENTITY 2] relies on financial support from shareholders to support the School’s working capital and CAPEX.
+[ENTITY 3] also appears to face a liquidity issue as the school reported a retained earning deficit during FY[X]0-FY[X]2 from the impact of COVID-19. However, [ENTITY 3] just refinanced a loan with [BANK X] (outstanding balance as at DD MM 20X3: USD 89.3 million) to repay the previous loans with SCB. The maturity of such loan is in July 2027.
+Litigation cases
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+As at
+DD MM 20X3, there are two ongoing litigations in which [ENTITY 1] is the defendant:
+On DD MM 20X3, a Chinese parent filed a lawsuit against [ENTITY 1] in relation to a claim for a school fee refund. The school was unable to request documents from the Ministry of Education used for applying for a student visa before the term started, and the student was unable to enter [REGION]. The plaintiff demanded [ENTITY 1] pay for damages of USD 301,350 plus 5% annual interest from the date of filing the lawsuit.
+On DD MM 20X3, an employee filed a lawsuit against the school for unfair dismissal. The plaintiff claimed that she performed her work according to tasks assigned and that she was being treated unfairly by Management. A warning letter regarding the plaintiff’s misconduct was issued in English but was not verbally explained. Eventually the school decided to terminate the employee’s contract and provided a severance pay of 180 days according to the [REGION] labor law. The amount of the damages sought is unquantifiable as it was not provided by Management.
+Management informed us that both cases are pending judgement from the court. Management did not record a provision for contingent liability on these matters as they strongly believe they will not lose the lawsuits.
+Value
+SPA
+Other
+Source: (1) Trial balance (2) Audited financial statements (3) KPMG analysis
+There is a potential liability for litigation which is not provided for. Therefore, you should confirm the status of litigation cases with your legal advisor and factor the impact into your valuation model.
+You should seek representations and warranties in the SPA that all litigation have been disclosed, and consider requesting an indemnity against potential future claims prior to transaction Closing.
+Read more
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 2] and [ENTITY 3]: Liquidity analysis
+USD'000
+31-May-20
+31-Jul-21
+31-Jul-22
+30-Apr-23
+[ENTITY 2]
+Current ratio
+1.3
+0.9
+1.0
+1.6
+Net profit/(loss)
+(24,502)
+(11,052)
+85
+76,996
+NAV
+(261,527)
+(272,549)
+(272,465)
+(195,469)
+RE/ (Deficit)
+(317,027)
+(328,049)
+(327,965)
+(250,969)
+D/E ratio
+(2.39)
+(2.25)
+(2.27)
+(2.94)
+USD'000
+31-May-20
+31-May-21
+31-May-22
+30-Apr-23
+[ENTITY 3]
+Current ratio
+0.5
+0.4
+0.6
+0.7
+Net profit/(loss)
+20,494
+(26,859)
+(37,251)
+103,270
+NAV
+269,015
+242,156
+204,905
+308,176
+RE/ (Deficit)
+(21,058)
+(47,917)
+(85,168)
+18,103
+D/E ratio
+0.52
+0.49
+0.69
+0.43
+Source: (1) TB (2) Audited financial statements (3) KPMG analysis
+DD MM XO  DD MM X1  DD MM X2  DD MM X3

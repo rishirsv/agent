@@ -1,0 +1,110 @@
+The adjusted net cash as at DD MM 20X3 is USD 160.2 million, which mainly consists of long-term loan from BBL, non-current portion of unearned revenue, and deposit payables.
+The adjusted net debt does not represent a complete list of potential adjustments. Readers of this report should be aware that there may be additional factors affecting reported net debt of the business.
+[ENTITY 1]: Net cash (1/2)
+General cash items:
+Short-term investments refer to investments in BBL mutual fund and 3-months fixed deposit with GSB.
+General debt items:
+Long-term loans from financial institution represent loans with BBL in order to finance their land purchase and construction of buildings. These loans bear interest rates ranging from MLR% to MLR -1.0% p.a.
+Debt and debt-like items:
+Please refer to NWC Adj. No. 1. Non-current portion of unearned revenue used in our debt-like adjustment calculation is the portion of unearned revenue [ENTITY 1] has received cash for, as these represent potential service obligations in the future, the following table represents the breakdown of non-current portion of unearned revenue as follows :
+Please refer to NWC Adj No. 2
+Please refer to NWC Adj No. 3
+Employee benefit obligations were recorded based on Management’s estimation based on legal severance payment required under the [REGION] Labour Law. Currently there are 11 employees recorded on the estimation out of a total 126 applicable employees. For the rest of the employees where Management did not estimate the value of EBO, there may be potential additional EBO liability, however this amount is unquantifiable. We estimated t
+he maximum severance payment to be USD 18.9 million if all permanent staff are terminated as at DD MM 20X3.
+These represent both committed and non-committed CAPEX of [ENTITY 1] as at DD 20X3.
+[ENTITY 1] is in the process of developing a community center located on the school campus to attract the parents and the students from other schools nearby and also promote “[ENTITY 1]” branding. Management informed us that the development project was
+completed in DD MM 20X3 without any cost overruns.
+Comments on adjusted net cash items
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Net cash
+USD'000
+Note
+DD MM 20X3
+General cash items
+Cash and cash equivalents
+276,731
+Short-term investments
+1
+58,981
+General debt items
+Current portion of loans from financial institution
+2
+(42,630)
+Long-term loans from financial institution
+2
+(82,569)
+Reported net cash
+210,513
+Debt and debt-like items
+Non-current portion of unearned revenue
+3
+(19,684)
+CAPEX payables
+4
+(287)
+Dividend payables
+5
+(990)
+Employee benefit obligations
+6
+(2,751)
+Adjustments to EBO
+6
+-[UQ]
+Committed CAPEX
+7
+(5,818)
+Non-committed CAPEX
+7
+(484)
+Payable of investments to [ENTITY 1]
+xxxx
+8
+(30)
+Deposit from students
+9
+(20,259)
+Potential tax exposure
+10
+[UQ]
+Total adjustments
+(50,303)
+Adjusted net cash
+160,210
+Other considerations
+Interest receivables
+A
+39,447
+Long-term loans to related parties
+B
+490,310
+Litigation claims
+C
+-[UQ]
+Source:
+(1) Trial balance as at
+DD MM
+20X3
+Source:
+(2) Management discussion
+Source:
+(3) KPMG analysis
+[ENTITY 1]: Non-current portion of unearned revenue
+USD'000
+Non-current portion of unearned revenue
+(20,335)
+Net receivable outstanding for the next academic year
+651
+Total
+(19,684)
+Source: (1) Trial balance as at
+DD
+MM 20X3
+Source:
+(2) AR aging as at
+DD MM
+20X3
+Source:
+(3) KPMG analysis

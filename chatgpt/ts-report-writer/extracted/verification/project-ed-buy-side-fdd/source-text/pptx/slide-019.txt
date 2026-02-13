@@ -1,0 +1,173 @@
+Related party transactions mainly relate to
+related party loans, advances to support related party’s working capital, and share receivables. The key related party balances are
+summarised
+below:
+Share receivable with [SHAREHOLDER 3] Co., Ltd. (shareholder of [ENTITY 3])
+This represents unpaid share capital
+receivable of USD 40.3 million from a shareholder of [ENTITY 3], [SHAREHOLDER 3] Co., Ltd. Based on the audited financial statement, [SHAREHOLDER 3] agrees to repay this receivable in case [ENTITY 3] has liquidity issues and cannot make the loan payment to the bank.
+Loan to [ENTITY 1]
+xxxx
+Co., Ltd. ([ENTITY 1])
+[ENTITY 1]
+xxxx
+was just recently established in
+MMMM YYYY
+for the campus expansion of [ENTITY 1]. [ENTITY 1] provided a loan to [ENTITY 1]
+xxxx
+for the campus construction.
+The loan is payable at call and is a non-interest bearing debt.
+Loans to Ms. [DIRECTOR 6] ([ENTITY 2])
+Based on discussion with Management, the school provided an advance to Ms. [DIRECTOR 6] (a shareholder) to pay for the School’s building construction (total USD 54.9 million). Management informed
+us that there is no supporting document in relation to expenses arising from construction. The school therefore recorded as a loan to Ms. [DIRECTOR 6]. We understand that [ENTITY 2] plans to settle the loan by recording a miscellaneous expense in the accounts to offset with the loan receivable account. During FY[X]1, FY[X]2, and XM2X, [ENTITY 2] recorded such miscellaneous expenses of USD 0.7 million, USD 1.9 million, and USD 0.6 million, respectively.
+Investment in British International Samui Co., Ltd. (“BIS”) and loans from BIS ([ENTITY 3])
+Management initially plan to establish another international school on XXXX province. [ENTITY 3] owns a 78.5% shareholding of BIS, which is currently a non-operating company as the plan is on hold and Management has not yet finalized the future plan. BIS provides loan to [ENTITY 3] as BIS has not yet operated. The loan bears interest at 2.5% per annum and is payable at call.
+Key findings — Financial (6/9)
+Appropriate representations and warranties regarding the accuracy and completeness of related party transactions disclosed should be obtained in the SPA.
+Related party balances (including loans, receivables, and payables) were long outstanding due to internal cash management within the Targe
+ts’ Group
+. We recommend You discuss with the Seller regarding the plan on related party
+balances and whether
+these balances should be settled prior to Closing or
+should be identified and defined as such in the SPA, with an appropriate mechanism to deduct these items from the purchase price consideration.
+Related party balances
+Power BI dashboard
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+Read more
+Management informed us that [ENTITY 2] and [ENTITY 3] have never paid interest expenses to related parties.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+Related party balances as at  DD MM 20X3
+USD'000
+Detail
+[
+ENTITY
+1]
+[
+ENTITY
+2]
+[
+ENTITY
+3]
+Trade and other receivebles
+- [SHAREHOLDER 3]
+Share receivable
+-
+-
+40,289
+- [ENTITY 2]
+Advance
+1,503
+-
+-
+- BIS
+Other receivables
+-
+-
+1,954
+- [ENTITY 1] CE
+Other receivables
+-
+59
+-
+Loans to related parties
+- [ENTITY 2]
+Interest rate at MLR/MLR-1% p.a.
+372,414
+-
+-
+- [ENTITY 1]
+xxxx
+No interest
+110,000
+-
+-
+- Pimtara
+Interest rate at 5% p.a.
+7,896
+-
+-
+- Ms.[DIRECTOR 6]
+No interest
+-
+44,042
+-
+- Interest receivables
+42,295
+-
+-
+Subtotal
+532,605
+44,042
+-
+Investment in subsidiaries
+- [ENTITY 1]
+5% shareholding
+-
+-
+10,000
+- [ENTITY 2]
+19.99% shareholding
+15,500
+-
+-
+- BIS
+78.5% shareholding
+-
+-
+78,500
+- [ENTITY 1]
+xxxx
+Not provided with % shareholding
+10
+-
+- [ENTITY 1] CE
+51.0% shareholding
+-
+7,650
+-
+Subtotal
+15,510
+7,650
+88,500
+Trade and other payables
+- [ENTITY 1]
+Share payables
+-
+-
+(3,455)
+- [ENTITY 1]
+Advance
+-
+(1,503)
+-
+Loans from related parties
+- BIS
+Interest rate at 2.5% p.a.
+-
+-
+(18,000)
+- RSU
+Interest rate at 2.5% p.a.
+-
+-
+(25,000)
+- [ENTITY 1]
+Interest rate at MLR/MLR-1% p.a.
+-
+(372,414)
+-
+- Interest payables
+-
+(38,887)
+(1,759)
+Subtotal
+-
+(411,301)
+(44,759)
+Source: (1) TB (2) Loan summary

@@ -1,0 +1,157 @@
+Non-compliance with key covenants
+Based on loan agreements between [ENTITY 3] and [BANK X], and [ENTITY 2] and SCB, [ENTITY 3] and [ENTITY 2]
+appear to be non-compliant with the DSCR covenent and the shareholidng structure requirement, respectively. Management is not aware of the potential breach and has never received the waiver letter from Banks.
+Other arrangement
+There are certain restrictions in place especially on
+dividend payment to shareholder ([ENTITY 3]), related party loan repayment ([ENTITY 2] and [ENTITY 3]), and loan to related party ([ENTITY 2] and [ENTITY 3]).
+[ENTITY 1] entered into a loan with BBL, which [ENTITY 1] lends to [ENTITY 2]. We observe that
+[ENTITY 2] directly
+pa
+id
+loan principal and interest to BBL during FY[X]0-XM2X. We recommend you to consult with your legal advisor on any potential breach regarding the repayment to BBL (on behalf of [ENTITY 1]).
+Collaterals
+There are assets whose ownership belong to other legal entities outside the scope of this transaction which are currently being used as collateral for loan with banks.
+[ENTITY 1]: Land and building of [SHAREHOLDER 3] and RSU
+[ENTITY 3]: Land of BIS
+Key findings — Financial (8/9)
+Financing
+arrangements
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+Read more ([ENTITY 3])
+Bank loan under COMPANY Z
+[ENTITY 1]’s outstanding loan of USD 3.7 million from BBL as of DD MM 20X3 relates to a loan agreement between BBL and [SHAREHOLDER 3], where [SHAREHOLDER 3] entered into a loan agreement with BBL for [ENTITY 1]. A portion of this loan is used for [ENTITY 1]’s land purchase. [ENTITY 1] records the loan under its accounts, and [ENTITY 1] normally pays loan principal and interest directly to BBL. Under this loan agreement, the land and buildings of [ENTITY 1] are pledged against this loan.
+Read more ([ENTITY 2])
+Read more ([ENTITY 1])
+Written consent letters regarding chage of shareholding structure from financial institutions should be obtained as a condition precedent to Closing in the SPA.
+We recommend you seek advice from your legal advisor and obtain appropriate representations and warranties and indemnities in the SPA regarding any non-compliance with the credit facility agreements.
+The restriction on dividend payment of [ENTITY 3] may impact your expected investment return.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+Financing arrangement as at  DD MM 20X3
+USD'
+000
+Purpose
+Outstanding
+DD MM 20X3
+Maturity
+Collateral
+Change of
+shareholding
+structure
+Financial
+covenant
+Dividend
+payment
+Related party loan
+repayment/lending to
+related party
+[ENTITY 1]
+BBL
+Purchase of land
+3,693
+DD MM
+X3
+Y
+N
+N
+N
+N
+BBL
+CAPEX
+25,931
+DD MM
+X5
+Y
+N
+N
+N
+N
+BBL
+CAPEX
+95,575
+DD MM
+X
+7
+Y
+N
+N
+N
+N
+Total
+125,199
+[ENTITY 2]
+SCB
+CAPEX
+200,500
+DD MM X9
+Y
+Y
+1
+N
+N
+Y
+[ENTITY 1]
+Working capital
+276,839
+At call
+N
+N
+N
+N
+N
+[ENTITY 1]
+CAPEX
+95,575
+At call
+N
+N
+N
+N
+N
+Total
+572,914
+[ENTITY 3]
+[BANK X]
+Refinance
+89,302
+DD MM X7
+Y
+Y
+2
+Y
+Y
+Y
+RSU
+Working capital
+25,000
+At call
+N
+N
+N
+N
+N
+BIS
+Working capital
+18,000
+At call
+N
+N
+N
+N
+N
+Total
+132,302
+Source: (1) Trial balance (2) Loan agreements (3) Summary of bank loans
+Note:
+1
+The shareholding of XXXXXX, XXXXXX, and XXXXXX shall be more than 75%,
+2
+COMPANY Z shall own more than
+70% of shareholding in [ENTITY 3]
+Restriction

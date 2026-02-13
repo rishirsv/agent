@@ -1,0 +1,103 @@
+Based on trial balance as at DD MM 20X3, we observe [ENTITY 1] and [ENTITY 2] recorded staff costs (e.g., salary and wages) incurred up to DD MM 20X3 only, with 3 months of staff cost not being recorded. Management confirmed that the Schools paid staff salary on time, however instead of recording the staff expense in the P&L, they recorded as a debit to accrued expense. We have provided adjustments to both Quality of earning and Net working capital to reflect these.
+Management informed us that staff cost per month is relatively stable. We have therefore proposed the cost adjustment based on a pro-rata basis.
+Key findings — Financial (1/9)
+[ENTITY 1], [ENTITY 2], and [ENTITY 3]’s stand-alone audited financial statements are prepared in accordance with
+[REGION] Financial Reporting Standards for Non-Publicly Accountable Entities (TFRS for NPAEs). Their external auditors are local auditors, who have issued unqualified opinions
+on the statutory financial statements
+of these entities throughout FY [X[0-FY [X]2. However, the
+FY [X[0-FY [X]2 auditor’s reports of [ENTITY 2] also mentioned the going concern issue due to the negative NAV.
+[ENTITY 3] generally closes its accounts on a monthly basis with the closing process taking approximately 10-15 days, while [ENTITY 1] and [ENTITY 2] close their accounts on an
+annual basis
+with the  closing process taking approximately
+3
+m
+onth
+s
+.
+We understand that
+some
+transactions of [ENTITY 1] and [ENTITY 2]
+are recognised and adjusted only at the
+year-end for audited financial statements purposes (e.g., accrued expenses, deferred revenue,
+interest receivables and payables, and understated expense for some accounts
+). In addition, the schools recorded staff expenses incurred only during
+DD MM 20X3
+-DD MM 20X3 in YTDX3. This resulted in the misstatement of management accounts of YTDX3 (as at DD MM
+20X3).
+Representations and warranties relating to accuracy and completeness of financial information disclosed by the Targets should be obtained in the SPA.
+The presentation of YTDX3 period financials are for an indicative purpose only. You should request
+the Targets to provide
+the management accounts, which are correctly prepared in accordance to the accounting standard
+, or to perform confirmatory due diligence if deemed critical for your analysis and investment approval process.
+Financial reporting
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+Basis of preparation and our analysis
+Our due diligence analysis is based on the audited accounts for FY[X]0-FY[X]2, and management accounts for YTD23 period (
+XM2X for [ENTITY 1] and [ENTITY 3], and 9MX3 for [ENTITY 2]).
+As the YTDX3 management accounts for [ENTITY 1] and [ENTITY 2] may not represent the actual performance of the period (especially revenue and staff costs), we have prepared an indicative pro forma financial performance of YTDX3, which is derived from supporting documents and certain assumptions. Please see reconciliation details in Appendix 1.
+Revenue/ Unearned revenue
+[ENTITY 1] and [ENTITY 2] record revenue (i.e., tuition and non-tuition fees) when the schools issue invoices to the parents. The schools normally adjust the unearned revenue only at the year end resulting in the overstatement of monthly revenue, and the understatement of monthly deferred revenue balance.
+We obtained the detail of unearned revenue as of DD MM 20X3 and general ledger for YTDX3 period to analyze and estimate the indicative revenue and unearned revenue balance.
+Staff costs
+Read more
+Read more
+Depreciation/interest income and expenses
+Depreciation and interest income/expense may not represent the actual amount as the Schools normally adjust such expenses at the year end.
+We estimate pro-forma depreciation expense for YTDX3 period based on average depreciation expense during FY [X[0-FY [X]2 .
+The interest income and expense for YTDX3 are estimated based on loan detail provided by the Targets.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1] and [ENTITY 2]: Pro-forma financial performance of YTD23
+USD'000
+Mgt.
+Pro-forma
+Mgt.
+Pro-forma
+Revenue
+485,015
+290,547
+121,837
+86,670
+Cost of service
+(93,563)
+(135,136)
+(27,434)
+(42,963)
+Gross profit
+391,452
+155,411
+94,403
+43,708
+Net profit
+365,302
+131,231
+76,996
+12,373
+EBITDA
+366,884
+146,613
+84,687
+35,730
+%GP
+80.7%
+53.5%
+77.5%
+50.4%
+%EBITDA
+75.6%
+50.5%
+69.5%
+41.2%
+Note: *YTDX3 of [ENTITY 1] and [ENTITY 2] are XM2X and
+X
+M2X, respectively
+[ENTITY 1]
+[ENTITY 2]
+Source: (1) Trial balance (2) Unearned revenue detail (3) Fixed asset register (4) Loan summary
+(5) KPMG analysis

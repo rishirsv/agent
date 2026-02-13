@@ -1,0 +1,36 @@
+Balance sheet overview (2/3)
+Comments on balance sheet items
+Cash
+and cash equivalents
+represent petty cash and cash at bank, totaling USD 37.7 million, of which USD 852,000 is restricted cash for bank guarantee of electricity usage. Management informed us that the bank reconciliation is performed on a monthly basis depending on the accounting staff availability. The balance as at 30 [MONTH] 20X3 decreased from 31 [MONTH] 20X2 due to a repayment of the loan from [BANK 1] of USD 24 million.
+Trade and other receivables
+as at 30 [MONTH] 20X3 show negative balance due to the credit note of tuition fee and cash paid in advance by parents during [MONTH] that has not been invoiced. Invoices for Term 1 for the next academic year will be issued in [MONTH], and the credit balance will be used to offset the invoices to be issued.
+Inventory
+as at 30 [MONTH] 20X3 consists of textbooks (57.2%) and uniforms 42.8%. The inventory balance did not change from 31 [MONTH] 20X2 because [ENTITY 2] normally adjusts the inventory and cost of sales on a yearly basis. The physical count will be performed at the end of the year and the inventory purchased during the period will be recorded as expenses and will be adjusted at the end of period. Management informed us that there were outdated textbooks, as [ENTITY 2] changes textbook every year. The outdated textbooks will be sold at a discount. [ENTITY 2] does not have an accounting policy to record allowance for inventory obsolescence.
+Short-term loans to related party
+represents loan
+s
+to a shareholder (Ms. [DIRECTOR 6] ). At the beginning of the school operation, [ENTITY 2] provided an advance to Ms. [DIRECTOR 6]to pay the construction companies and suppliers. However, Ms. [DIRECTOR 6] could not provide any supporting documents (such as receipt
+s
+and invoice
+s
+). [ENTITY 2] therefore recorded such fixed assets cost as a loan to shareholder.
+Other current assets
+as at 30 [MONTH] 20X3 mainly comprise advances (80.9%), and WHT receivable (17.7%). The balance of advances as at 30 [MONTH] 20X3 increased from 31 [MONTH] 20X2 from advances paid for construction of a football pitch and a swimming pool amounting to USD 3.5 million and USD 3.7 million, respectively.
+Long-term investment
+as at 30 [MONTH] 20X3 solely relates to investment in [ENTITY 1] CE, where [ENTITY 2] holds 51% of total shares (765 shares at par value 100 USD). Other shareholders of [ENTITY 1] are Chinese investors from the “[GROUP NAME]” educational group in [COUNTRY 1]). The objective of this investment is to bring students from [COUNTRY 1] to study at [ENTITY 2]. [ENTITY 1] CE pays [ENTITY 2] service and dormitory rental fees.
+Fixed assets
+as at 30 [MONTH] 20X3 reported NBV totaling USD 328 million, mainly consisting of buildings and building improvements (79.6%) and land and land improvements (18.1%). [ENTITY 2] has not recorded depreciation expenses for XM2X as accounting staff normally record depreciation only at the year end.
+Other non-current assets
+represent a deposit paid for the construction of dormitories. The construction is already completed. However, the supplier has not yet returned such deposit to [ENTITY 2].
+Bank overdraft
+as at 31 [MONTH] 20X0 relates to bank overdraft from [BANK 1] with interest rate of 12.1% p.a. The balance has already been paid, and there was no outstanding balance as at 30 [MONTH] 20X3.
+Trade and other payables
+as at 30 [MONTH] 20X3 mainly comprise payables to [ENTITY 1]. As [ENTITY 2] does not have its own corporate credit card, [ENTITY 1] pays certain expenses on behalf of [ENTITY 2].
+Unearned revenue
+represents tuition fee and non-tuition fee (such as admission fee and meal fee based on invoices issued in the period that relates to the future fiscal years. Management informed us that unearned revenue balance is adjusted on an annual basis at the year end. All invoices issued are recorded as revenue in the year, before the accounting staff provides adjustment at the year end, for the portion that relates to the next fiscal year and treat as unearned revenue. The balance as at 31 [MONTH] 20X0 is significantly low comparing to other
+analysed
+periods because the invoices for Term 1 were issued in [MONTH], while the invoices for other periods were issued in [MONTH].
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

@@ -1,0 +1,194 @@
+An increase in EBITDA margin after adjustments from reported EBITDA was mainly driven by excluding GP from COVID-19 medical supplies and services in FY[X]2. A significant decrease in adjusted EBITDA by 25.5 percentage point in XM2X was mainly due to deferred revenue adjustment and understated staff cost. The
+QoE
+analysis does not represent a complete list of potential adjustments. Readers of this report should be aware that there may be additional factors which affected the EBITDA
+of the business.
+[ENTITY 1]: Quality of earnings (
+1/3
+)
+Pro-forma adjustments
+As discussed in Key Finding 1, certain accounting adjustments are only made at the year end by the Management. We have therefore provided pro-forma adjustments, and presented a pro-forma P&L account for indicative purpose only. Please see more details in Appendix 1.
+The school normally provides adjustment for unearned revenue only at the year end resulting in the overstatement of monthly revenue and the understatement of monthly unearned revenue balance. We have therefore proposed the revenue adjustment to exclude the portion of revenue, which should have been recognized in MM 20X3, FY[X]4, FY[X]5 and FY[X]6 accounts. Please see Appendix
+2
+for further adjustment details.
+In the XM2X period, the school recorded staff costs (e.g., salary and wages) incurred for 8 months up to JMM 20X3. Management confirmed that the school paid staff salary on time.
+We have calculated an indicative adjustment of staff expenses for the 11 months period based on a pro-rata basis.
+Quality of earnings
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: Quality of earnings
+Audited
+Audited
+Audited
+Mgt.Acct.
+USD'000
+Note
+FY[X]0
+FY[X]1
+FY[X]2
+XM2X
+Reported revenue
+256,469
+272,089
+260,594
+485,015
+Reported EBITDA
+106,068
+134,001
+132,880
+366,884
+Pro-forma adjustments
+Unearned revenue adjustment
+1
+-
+-
+-
+(194,468)
+Pro-forma revenue
+256,469
+272,089
+260,594
+290,547
+Unearned revenue adjustment (recorded in other income)
+1
+-
+-
+-
+(120)
+Understated staff cost
+2
+-
+-
+-
+(25,683)
+Reported EBITDA after pro-forma Adj.
+106,068
+134,001
+132,880
+146,613
+Potential adjustments
+Non-recurring events due to COVID-19 pandemic
+GP from COVID-19 medical supplies and services
+3
+-
+-
+4,912
+(1,232)
+Reduction in SSF and PVD contribution rates
+4
+-[UQ]
+-[UQ]
+-[UQ]
+-[UQ]
+COVID-19 discount and refund
+5
++[UQ]
++[UQ]
++[UQ]
++[UQ]
+Due diligence adjustments
+Shareholder's remuneration
+6
+-
+-
+-
+2,000
+Gain on investment fund
+7
+(207)
+(62)
+(82)
+-
+Loss on lawsuit relating to electrical appliances
+8
+-
+-
+-
+911
+Unrecorded prepaid expenses
+9
+-
+-
++[UQ]
++[UQ]
+Overstated repair and maintenance expense
+10
+-
+-
+-
++[UQ]
+Understated period-ended expenses
+8
+- Audit fee
+11
+-
+-
+-
+(55)
+- Uniform expense and textbook
+12
+-
+-
+-
+(2,798)
+Potential understated expenses
+13
+-
+-
+-
+-[UQ]
+Potential provision for inventory
+14
+-[UQ]
+-[UQ]
+-[UQ]
+-[UQ]
+Total potential adjustments
+(207)
+(62)
+4,830
+(1,174)
+Adjusted EBITDA
+105,861
+133,939
+137,710
+145,439
+% Reported EBITDA
+41.4%
+49.2%
+51.0%
+75.6%
+% Reported EBITDA after pro-forma Adj.
+41.4%
+49.2%
+51.0%
+50.5%
+% Adjusted EBITDA
+41.3%
+49.2%
+52.8%
+50.1%
+Source: (1) Audited financial statements for FY[X]0, FY[X]1 and FY[X]2
+Source:
+(2) Management accounts for FY[X]0, FY[X[1, FY[X][2 and XM2X
+Source:
+(3) Management discussion
+Source:
+(4) KPMG analysis
+[ENTITY 1]: Salary
+USD'000
+X
+M2X
+Staff cost recorded for 8 months (
+MM
+X2 – MM X3)
+(68,488)
+Prorated cost for 11 months
+(94,171)
+Indicative staff cost for XM2X
+25,683
+Source: (1) Trial balance for
+X
+M2X
+Source:
+(2) KPMG analysis

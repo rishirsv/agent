@@ -1,0 +1,31 @@
+[ENTITY 2] appears to be non-compliant with the ownership and related party loan repayment clause in the loan agreement with [BANK 1] as at 31 [MONTH] 20X2 and 30 [MONTH] 20X3. However, Management was not aware of this
+non-compliance
+, with no waiver letter from [BANK 1] sighted.
+Financing arrangement (2/2)
+Comments on loan from [BANK 1]
+The
+USD 260 million credit facility made with [BANK 1]
+states that [ENTITY 2] cannot repay loans to related parties, shareholders, or directors.
+However, [ENTITY 1] entered into a loan with [BANK 2], which [ENTITY 1] lent to [ENTITY 2]. We observe that [ENTITY 2] directly pays loan principal and interest to [BANK 2] during FY[X]0-XM2X. We recommend you consult with your legal advisor on any potential breach regarding the repayment to [BANK 2] (on behalf of [ENTITY 1]).
+[ENTITY 2] entered into 2 loan agreements with [ENTITY 1]. The first loan agreement was entered in order to obtain working capital. The second was entered into for [ENTITY 2] to obtain funding for their building construction projects.
+[ENTITY 2] has entered into a loan agreement with [BANK 1] in order to obtain funding for the construction of initial school buildings such as primary and secondary school buildings.
+Collaterals
+Based on the credit facility with [BANK 1], collaterals required against the credit facility are summarized below:
+[ENTITY 2]’s land deed no. 13237, 13238, 13239, 13240, 17215, 17234, 17285, 17294, 18125, 18126, 42156, 50301, 50334, 50725, 50726, 50727, 50728, 50729, 50730, 50731, 50732, 59564, 61917 and buildings thereon in
+xxxx
+province.
+Other conditions
+The
+agreement states that Mr. [DIRECTOR 1] O., Ms. [DIRECTOR 6]O., and
+Mr. [DIRECTOR 9] C.
+must own at least 75% of the outstanding shares in [ENTITY 2] until the credit facility is fully repaid. T
+he current shareholders are:
+Ms. [DIRECTOR 6]O. (30% of outstanding shares)
+Mr. [DIRECTOR 12] O. (30% of outstanding shares)
+Mr. [DIRECTOR 1] O. (20% of outstanding shares)
+[ENTITY 1] (20% of outstanding shares)
+As of 30 [MONTH] 20X3, [ENTITY 2] appears not to be compliant with this requirement due to the fact that aggregately, the shareholders mentioned currently hold 50% of the outstanding shares.
+The agreement states that any changes of shareholding ratios or directors must be approved by [BANK 1].
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

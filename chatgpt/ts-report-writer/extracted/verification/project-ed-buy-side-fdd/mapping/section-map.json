@@ -1,0 +1,61 @@
+{
+  "report_id": "project-ed-buy-side-fdd",
+  "heading_hits": {
+    "Executive Summary": 0,
+    "Key Findings": 0,
+    "Business Overview": 0,
+    "Summary Financials": 0,
+    "Profit and Loss Overview / Financial Performance": 0,
+    "Quality of Earnings": 0,
+    "Income Statement": 2,
+    "Balance Sheet": 0,
+    "Net Working Capital": 0,
+    "Net Debt (Cash)": 0,
+    "Cash Flows": 0,
+    "Related Parties": 0,
+    "Reporting Environment": 0,
+    "Forecast Trading": 0,
+    "Industry Analysis": 0,
+    "Quality of Net Assets": 0,
+    "Gross Margin by LOB": 0,
+    "Appendices": 0
+  },
+  "heading_events": [
+    {
+      "line_id": "pptx_xml:036:0002",
+      "text": "Comments on the historical profit and loss (cont’d)",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    },
+    {
+      "line_id": "pptx_xml:104:0002",
+      "text": "Comments on the historical profit and loss (cont’d)",
+      "mapped_section": "Income Statement",
+      "score": 95,
+      "exact": false
+    }
+  ],
+  "unresolved_headings": [],
+  "section_disposition": {
+    "Executive Summary": "present",
+    "Key Findings": "not_present",
+    "Business Overview": "not_present",
+    "Summary Financials": "not_present",
+    "Profit and Loss Overview / Financial Performance": "not_present",
+    "Quality of Earnings": "not_present",
+    "Income Statement": "present",
+    "Balance Sheet": "not_present",
+    "Net Working Capital": "not_present",
+    "Net Debt (Cash)": "not_present",
+    "Cash Flows": "not_present",
+    "Related Parties": "not_present",
+    "Reporting Environment": "not_present",
+    "Forecast Trading": "not_present",
+    "Industry Analysis": "not_present",
+    "Quality of Net Assets": "not_present",
+    "Gross Margin by LOB": "not_present",
+    "Appendices": "not_present"
+  },
+  "section_accounting_status": "pass"
+}

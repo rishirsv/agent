@@ -1,0 +1,20 @@
+Adjusted net debt as at DD MM 20X3 mainly
+consisted of long-term loans from [BANK 1] and related parties, accrued interest expenses, and
+CAPEX.
+The adjusted net debt does not represent a complete list of potential adjustments. Readers of this report should be aware that there may be additional factors affecting reported net debt of the business.
+[ENTITY 2]: Net debt (1/2)
+General cash items
+This represents restriced cash against bank guarantee made with [BANK 1] of USD 852,000 for electricity usage.
+General debt items
+This represents a loan from [BANK 1] for the purposes of building contruction. This loan currently bears an interest rate of MLR -1.00% p.a. Based on detail of loans as at DD MM 20X3 provided by Management, loan from [BANK 1] is USD 200.5 million (USD 211.5 million per trial balance). We understand that the difference of USD 11 million was a repayment which Management has recorded in Loan from related party instead.
+Long-term loan from related party entirely consists of loans from [ENTITY 1] for the purposes of working capital and for the purposes of building construction. The portion borrowed for the purposes of working capital bears an interest rate of MLR% p.a., while the portion borrowed for the purposes of construction bears an interest rate of MLR -1.00% p.a.
+Based on detail of loans at DD MM 20X3 provided by Management, loan from [ENTITY 1] is USD 372.4 million (USD 362.2 million per trial balance).We have therefore proposed adjustment based on the number per the supporting details.
+Debt and debt-like items
+Please refer to NWC Adj. No.1. Non-current portion of unearned revenue used in our calculation is the portion of unearned revenue [ENTITY 1] has received cash for, as these represent potential service obligations in the future, the following table represents the breakdown of non-current portion of unearned revenue as follows:
+This
+represents
+accrued interest expense from loans with related parties, which should be considerd as a debt-like item.
+Comments on net debt
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

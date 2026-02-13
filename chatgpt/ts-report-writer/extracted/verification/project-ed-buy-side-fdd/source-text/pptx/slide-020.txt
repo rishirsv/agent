@@ -1,0 +1,97 @@
+Land ownership ([ENTITY 1])
+Based on discussion with Management, land XXX is used for the school operation (secondary school building), which is owned by [SHAREHOLDER 3]. Management informed us that they plan to transfer the ownership of this land to [ENTITY 1] prior to Closing. However, [ENTITY 1] already recorded such land cost in its accounts. (Management could not provide cost balance of each land plot to us).
+Understatement of fixed assets ([ENTITY 2])
+Based on discussion with Management, fixed assets of [ENTITY 2] is potentially understated as [ENTITY 2] provided the advance to Ms. [DIRECTOR 6] to pay the construction companies and suppliers. However, Ms. [DIRECTOR 6] could not provide any supporting documents (such as receipt and invoice) to the School. [ENTITY 2] therefore recorded such fixed assets cost as a loan to shareholder.
+Capital expenditure
+Key findings — Financial (7/9)
+Fixed assets
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+Plans for future CAPEX as well as source of funding should be mutually agreed prior to Closing and factored into your valuation.
+Unplanned CAPEX required for future operation should also be considered.
+Value
+SPA
+Other
+[ENTITY 2]
+The key CAPEX plan of [ENTITY 2] is the construction of a swimming pool, with total budget of USD 12.4 million. It is expected to be completed
+DD MMMM YYYY
+. In AY23/24, the school is focusing on facility improvement. However, [ENTITY 2]
+has not yet committed with any other suppliers.
+[ENTITY 3]
+A covered football pitch project (with total budget of USD 28.0 million) is the key CAPEX plan of [ENTITY 2]. The goal is to attract more students who are interested and experienced in football. Management expects the construction will be completed in MM 20X3.
+The construction of tennis court coverings and a medical center (with total budget of USD 290.5 million) may be postponed from AY[X]3/[X]4 to AY[X]4/[X]5.
+As the current utilization rate is 86.6%, Management plan to open an additional classroom for Student Year 6 and renovate the building (with total budget of USD 2.0 million) to relocate back office’s working area (for administration staff) to the building in order to
+utilise
+more space and classroom.
+Source of funding and timeline
+Management informed us that they plan to utilize internal operating cash flow for CAPEX spending.
+All CAPEX plans are expected to be completed within the estimated timelines without any cost overruns.
+Read more ([ENTITY 1])
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+The
+ownership transfer of land should b
+e completed prior to Closing and be a condition precedent to Closing (“CP”) in the SPA.
+The settlement plan of the loan to Ms. [DIRECTOR 6] should be agreed with the Seller.
+Read more ([ENTITY 3])
+Read more ([ENTITY 2])
+Read more ([ENTITY 1])
+[ENTITY 1]
+[ENTITY 1] is in the process of developing a community center located on the school campus to attract parents and students from other nearby schools and also to promote “[ENTITY 1]” branding. Management informed us that the development project was completed in
+MMMM YYYY
+without any cost overruns.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+Read more ([ENTITY 2])
+[ENTITY 1]: Land and land improvement as at DD MM 20X3
+Title
+deed
+Area
+Ownership
+Cost
+(USD'000)
+64206
+21 [UNITS] 3 [UNITS] 63 [UNITS]
+[SHAREHOLDER 3]
+4333
+20 [UNITS]
+[ENTITY 1]
+Source: (1) Summary of land (2) Title deed (3) Trial balance as at
+DD
+MM 20X3
+87,736
+CAPEX
+USD'000
+AY[X2]/[X]3
+AY[X]3/[X]4
+Total
+Paid
+[ENTITY 1]
+12,089
+6,637
+18,726
+12,424
+6,302
+[ENTITY 2]
+20,703
+3,422
+24,125
+12,659
+11,466
+[ENTITY 3]
+35,498
+55,422
+90,920
+13,246
+77,674
+Source CAPEX detail
+Budget
+Outstanding
+budget

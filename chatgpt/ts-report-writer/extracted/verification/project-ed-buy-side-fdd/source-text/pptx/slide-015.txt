@@ -1,0 +1,55 @@
+Loan from related parties
+Interest expense and income from loans with related party were misstated as [ENTITY 1] and [ENTITY 2] adjust interest income/expenses at the year end.
+In addition, we found human error made by [ENTITY 2]’s accounting staff on incorrect recording of loan repayment with SCB and related party. Accounting staff
+debited the wrong loan account when they recorded their payment of the bank loan principal
+resulting in an overstated loan balance from SCB and understated loan from [ENTITY 1].
+Personal expense (only [ENTITY 2])
+[ENTITY 2] recorded personal expense of shareholder (Ms. [DIRECTOR 6]) during FY [X]1-XM2X (FY[X]1: USD 0.7 million, FY[X]2: USD 1.9 million, XM2X: USD 0.6 million), which we have adjusted out of the underlying EBITDA in the
+QoE
+Adj No. 5.
+For further detail, please see Page 63.
+Fixed assets
+[ENTITY 1] and [ENTITY 2] have never performed a fixed assets physical count nor an impairment assessment. Management confirmed that the schools’
+fixed assets are usable and in good condition.
+In addition,
+[ENTITY 1] and [ENTITY 2]’s fixed asset balance as at DD MM 20X3
+appears to be incorrect as the schools have not recorded depreciation and amortization for the YTDX3 period.
+Inventory
+[ENTITY 1] and [ENTITY 2] normally adjust inventory balance (e.g., uniforms and books) based on the physical count at the year end. This results in a potential misstatement of inventory balance and cost of sales as at DD MM 20X3.
+Employee benefit obligations
+Employee benefit obligations are only updated at the year end for the audited financial statement purposes and therefore this balance is not updated at each month-end.
+Management report and financial information
+As [ENTITY 1] and [ENTITY 2] close their accounts on an annual basis, the monthly trial balances/ management accounts may not represent the actual financial performance and position of the schools.
+Some
+transactions of [ENTITY 1] and [ENTITY 2]
+are recognised and adjusted only at the year-end for audited financial statement purposes such as:
+Revenue and deferred revenue
+Depreciation and amortisation of fixed and intangible assets
+Interest income and expense
+Employee benefit obligations
+Cost of sales and inventory (uniform and books)
+Incorrect monthly revenue and unearned revenue recognition
+[ENTITY 1] and [ENTITY 2] record revenue (i.e., tuition and non-tuition fees) when the schools issue invoices to the parents. The schools normally adjust the unearned revenue only at year end resulting in overstated monthly revenue and understated monthly unearned revenue balances.
+Understated staff costs
+As accounting staff manually input salary and wages of staff to the accounting system and [ENTITY 1] and [ENTITY 2] normally close the accounts only at the year end, the management accounts do not include all staff costs. Based on the trial balance as at DD MM 20X3, the schools recorded staff costs (e.g., salary and wages) incurred up to DD MM 20X3 only.
+Discount
+[ENTITY 1] and [ENTITY 2] record some discount transactions by off-setting with revenue resulting in lack of records to track and monitor the total discount provided under [ENTITY 1] and [ENTITY 2].
+Key findings — Financial (2/9)
+Improvements in internal processes, controls, and policies are likely to be required post-transaction. In addition, proper management accounts should be prepared on a monthly basis
+to allow COMPANY Y
+to accurately track and monitor performance.
+There are internal control areas which should be improved post-Closing
+All entities
+[ENTITY 1]
+[ENTITY 2]
+[ENTITY 3]
+Value
+SPA
+Other
+During our fieldwork we identified
+a number of
+internal control areas
+of [ENTITY 1] and
+[ENTITY 2] which likely need to be improved post-Closing.
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

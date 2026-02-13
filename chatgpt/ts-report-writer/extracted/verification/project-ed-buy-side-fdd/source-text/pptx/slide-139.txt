@@ -1,0 +1,146 @@
+[ENTITY 3]’s employee headcount of 409 FTEs has an aggregated monthly cost base of USD 25.7m, with 189 faculty staff accounting for 80.5% of total HC costs
+Teaching staff:
+Total 189 employees*
+80.5% of total HC costs**
+Non-teaching staff:
+Total 214 employees*
+23.4% of total HC costs**
+2
+7
+5
+Secondary
+7
+6
+HR
+2
+Intern teacher
+Admin
+11
+Finance and accounting
+9
+Refectory
+2
+Kindergarten
+Transport
+3
+9
+6
+6
+Marketing
+Purchasing
+10
+6
+38
+Nurse
+Student support
+7
+Bangkok staff
+Other
+***
+5
+90
+Management
+2
+Total headcounts
+Primary
+31
+1
+Security
+6
+53
+11
+26
+10
+9
+53
+6
+409
+Expat
+Thai
+No. of employees
+(headcount, %)
+Headcount cost
+(USD million, %)
+134 (32.8%)
+19.7 (69.3%)
+275 (67.2%)
+8.7 (30.7%)
+No. of employees, salary and total HC cost by department and division of [ENTITY 3 FULL NAME]
+(as of MM DD, 20[X]3)
+Management:
+Total 6 employees*
+5.0% of total HC costs**
+100.0%
+2.2%
+9.3%
+22.0%
+11.0%
+1.7%
+13.0%
+2.7%
+7.6%
+6.4%
+2.4%
+2.2%
+1.7%
+1.5%
+1.5%
+0.5%
+13.0%
+1.5%
+25,674.1
+167.4
+5,826.9
+13,093.0
+1,513.6
+74.3
+2,198.9
+440.7
+553.6
+430.9
+224.4
+519.4
+187.9
+217.8
+225.4
+50.7
+997.4
+1,284.1
+73.8
+18.6
+153.3
+145.5
+33.6
+10.6
+41.5
+40.1
+17.9
+16.6
+22.4
+57.7
+26.8
+36.3
+37.6
+25.3
+18.8
+214.0
+Source:
+Census and payroll provided by the company
+Note:	(*)  The number of employees is based on the Company’s census and payroll as of April 20[X]3, which is not an average headcount YTD20[X]3. (**) Total headcount costs include all bonus, benefits, and allowances
+, (***) Other functions include: School shop, Housekeeping, Gardening, and Boarding, (****) Average cost per FTE is calculated by dividing fully-loaded cost by number of employees in each division.
+,
+Functions grouping differs across the schools due to the
+availability and details of information.
+Headcount by division
+(%)
+Fully-loaded cost
+(USD’000)
+Average cost per FTE****
+(USD’000)
+Executive summary
+| [ENTITY 1]  |  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |
+Value creation
+|
+Basis of preparation
+|
+Appendices

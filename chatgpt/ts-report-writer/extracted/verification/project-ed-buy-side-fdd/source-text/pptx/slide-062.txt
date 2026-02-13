@@ -1,0 +1,38 @@
+[ENTITY 2]: Quality of earnings (2/2)
+Potential adjustments
+During the COVID-19 pandemic, Social Security Office (SSO) announced a reduction of the mandatory social security contribution rate
+,
+as well as PVD as a temporary relief to help businesses. However, due to limitation of information,
+we were unable to quantify the impact of this temporary reduction.
+During the COVID-19 pandemic, the students were provided with a discount on meal fee
+during Term 2 in AY[X]0/[X]1, Term 1 in AY[X]1/[X]2,
+since the school was
+mostly conducting learning through online classes (please see further details on Page
+73
+). We proposed to adjust for this temporary discount in order to present the normalized underlying earning level.
+According to Management, this relates to personal expenses of [DIRECTOR 6]. We propose to remove this expense from the underlying EBITDA due to it being unrelated to normal school operation.
+[ENTITY 2] has entered into service and rental contracts with [ENTITY 1] CE (related company) to provide services for [ENTITY 1] CE’s students to study at [ENTITY 2]. The tuition fee is paid to [ENTITY 2] directly and will be transferred to [ENTITY 1] CE after offsetting with service and rental fees. According to Management, as of DD MM 20X3, [ENTITY 2] and [ENTITY 1] CE have not yet
+finalised
+the service and rental fee of FY[X]3. Therefore, we propose to adjust service and rental fee of USD 7.4 million in XM2X based on
+a draft invoice provided by Management.
+According to Management, costs of uniform and textbook are recorded on a yearly basis, while revenues generated from sales of these items are recorded on a cash basis. We propose to adjust costs of uniform and textbook for the XM2X period.
+Source: […]
+Quality of earnings
+As [ENTITY 2]’s XM2X accounts have not yet been audited and the accounting closing is usually performed at the year end, Management informed us that [ENTITY 2] may not completely record all accruals in the accounts as at DD MM 20X3 such as meal fee, security services, audit fee and utilities expenses. We have summarized potential under-recorded expenses as follows:
+According to Management, there is obsolete inventory (i.e., outdated textbooks) that still sits on the account as [ENTITY 2] normally upgrades the textbook annually. However, [ENTITY 1] has never
+recognised
+provision nor written off any obsolete inventory. We propose to adjust the provision for obsolete inventory during FY[X]0-XM2X.
+Based on the information provided by Management, the prepaid expenses normally represents prepaid insurance for staff, students and buildings. The balance will be adjusted annually at the end of the period, indicating that the expense as at DD MM 20X3 was overstated.
+We propose to remove one-off bad debt expenses of USD 1.5 MB in FY[X]2 mainly related to (i) a double recording revenue of summer camp of [REGIONAL] students
+recognised
+in FY19 totaling USD 1.0 million; and (ii) ELS income primarily
+recognised
+in FY[X]2. Management stated that ELS students refused to pay this balance as they did not take any classes due to COVID-19 pandemic or passing a standard of English level requirement prior to starting such sessions.
+Quality of earnings
+The
+QoE
+analysis does not represent a complete list of potential adjustments. Readers of this report should be aware that there may be additional factors which affected the EBITDA
+of the business.
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

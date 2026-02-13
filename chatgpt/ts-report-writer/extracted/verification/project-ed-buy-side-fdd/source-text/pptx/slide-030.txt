@@ -1,0 +1,28 @@
+Basis of preparation
+Reported net working capital is prepared based on a general definition of net working capital, which is current assets less current liabilities, excluding cash and cash equivalents and debt items.
+Pro-forma adjustment
+According to [ENTITY 1]’s accounting policy, all issued invoices during the period will be recorded as revenue regardless of the period that the revenue should be recognized. At the end of each year, the accounting team will adjust the revenue that was recorded in incorrect periods to unearned revenue, indicating that unearned revenue as at DD MM 20X3 was understated. Please refer to Appendix
+2
+for further details.
+Debt and debt-like items
+Unearned revenue has both debt-like and working capital characteristics. The current portion of unearned revenue is currently treated as part of net working capital item with services due to be delivered within the next 12 months. With the nature of the school operation where invoices are usually sent ahead of the next academic year, unearned revenue balance is therefore a usual liability balance to appear on Balance sheet and part of working capital.
+We’ve proposed to exclude the non-current portion of unearned revenue from working capital as it relates to the service to be provided in more than 12 months. In the non-current balance, for the portion that the school has already received cash in advance for, we have treated this as a debt-like item as this represents the liability and obligation that the School has towards its students, and that while cash collected may have already been used by the school for working capital purpose, there's a risk of returning this cash, if students request for the refund in accordance with the school refund policy.
+There is no authoritative literature or common standard with respect to the identification of items which may form part of ‘debt’ or ‘net debt’, and the decision as to what items should be included or excluded is highly judgmental. We understand that You have not finalized on the treatment of unearned revenue. You should discuss with the Seller on the final treatment of unearned revenue as this may have an impact to your Enterprise-Equity value bridge.
+[ENTITY 1]: Net working capital (2/3)
+Net working capital
+(cont’d)
+Potential adjustments
+We proposed to exclude fixed asset payable from working capital and treat as a debt-like item due to its debt-like nature.
+We proposed to adjust dividend payable included in accrued other expenses out of working capital and include as a debt-like item.
+Management informed us that the deposits collected from students will be returned when students decide to leave and inform the school at least a Term in advance. The refund amount will be deducted by any damages made by students, such as lost books. This amount represents the liability that [ENTITY 1] has towards its students if students graduate or depart. We proposed to adjust the deposits out of working capital and include as a debt-like item.
+This represents interest receivables from loans to related parties ([ENTITY 2], Pimtara and [ENTITY 1] [REGION]). This amount should be excluded from net working capital
+due to
+being a non-trade item in nature.
+As [ENTITY 1] has no allowance for doubtful debt policy, and we observe that there are long outstanding trade and other receivables balance of longer than one year. We propose to exclude long-outstanding receivables from net working capital due to being a non-current item in nature.
+Please refer to
+QoE
+Adj. No.11
+Net working capital
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |

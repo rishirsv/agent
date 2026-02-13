@@ -1,0 +1,51 @@
+Potential adjustments (Cont’d)
+In FY[X]2, [ENTITY 1] provided ATK test kits and RT-PCR to staff and students free of charge. However, in XM2X period, [ENTITY 1] appears to charge fee to staff and students as per the table below. As we consider this medical supplies expense
+to be one-off in nature, we therefore proposed to remove
+this expense from the underlying EBITDA in FY[X]2, and on a GP level in XM2X period.
+During the COVID-19 pandemic, Social Security Office (SSO) announced a reduction of the mandatory social security contribution rate as well as PVD as a temporary relief to help businesses. However, due to limitation of information,
+we were unable to quantify the impact of this temporary reduction.
+During the COVID-19 pandemic, the students were provided with a discount on the meal fee
+during Term 2 in FY[X]1, Term 1 in FY[X]2 and FY[X]3,
+since the school was
+mostly conducting learning through online. We proposed to adjust for this temporary discount in order to remove one-time effect and present the underlying earnings.
+According to Management, [ENTITY 1] paid remuneration of USD 2.0 million to [DIRECTOR 1]
+(Honorary Chairman of the Board) in XM2X; however, we have not been provided with the rationale, and have therefore deemed this to be one-off in nature on the assumption that it will not recur in future
+.
+Quality of earnings
+Quality of earnings
+We propose to remove gain on short-term investment as this transaction does not relate to the [ENTITY 1]’s core business.
+In XM2X, [ENTITY 1] purchased electrical appliances which did not work as expected.
+[ENTITY 1] paid a deposit but did not pay the remaining balance.
+Therefore, t
+he supplier filed a lawsuit against
+[ENTITY 1] for nonpayment. Subsequently, [ENTITY 1] lost the lawsuit and was charged
+USD 0.9 million. We have therefore proposed to remove this item as we consider it to be a one-off item.
+During FY[X]2 - XM2X, [ENTITY 1] did not record any prepaid expenses as Management considered that prepaid expenses were insignificant. Most of the prepaid expenses are insurance and software fees that will overlap one to two months of each fiscal year. Therefore, the balance is likely to be understated. Due to the limitation of information, we were unable to quantify the impact.
+In the XM2X management account, the repair and maintenance expenses were likely to be overstated, as normally
+,
+an accounting team will check whether the expense should be capitalized as an asset at the year end.
+We, therefore, propose to adjust for any repair and maintenance expense that should have been capitalized in the XM2X period, but due to the limitation of information, we were unable to quantify the impact.
+During FY[X]0-FY[X]2, [ENTITY 1]’s statutory accounts were audited by COMPANY XXX who will also audit the FY[X]3 account at a service fee of USD 60k, according to Management. However, the audit fee for XM2X has not been recorded yet, and we have therefore proposed an adjustment to recognize this on a pro-rata basis.
+[ENTITY 1]: Quality of earnings (2/3
+)
+Executive summary  |
+[ENTITY 1]
+|  [ENTITY 2]  |  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
+[ENTITY 1]: GP from COVID-19 medical supplies and services
+USD'000
+FY[X]2
+XM2X
+Sale from COVID-19 medical supplies
+-
+4,636
+Expenses from COVID-19 medical supplies and services
+(4,912)
+(3,404)
+GP from COVID-19 medical supplies and services
+(4,912)
+1,232
+Source: (1) Summary details of COVID-19 medical supplies and services for FY[X]2 and XM2X
+Source:
+(2) Discussion with Management
+Source:
+(3) KPMG analysis

@@ -1,0 +1,14 @@
+[ENTITY 2]: Monthly cash and unearned revenue profile for LTM23
+[ENTITY 2] normally
+issues invoices 2-3 months before the start of the next term, which normally is in May/June (for Term 1) and November/December (for Term 2) of each year. As at DD MM 20X3, USD 3.2 million of unearned revenue is cash advance from parents and deemed as non-current, and to be
+realised
+as revenue in the next academic year.
+Source: (1) Trial balances during MM 20X2-MM 20X3 (2) Detail of unearned revenue (3) General ledger during MM 20X2-MM 20X3
+Note: *Due to the limitation of information, we estimate monthly unearned revenue during MM 20X2- MM 20X3 from detail of unearned revenue as at DD MM 20X3 and general ledger.
+The balance of unearned revenue as at DD MM 20X2
+significantly increased as the invoices for Term 2 AY[X]2/[X]3 were
+issued in MM and the due date was during MM 20X2
+A
+Executive summary  | [ENTITY 1]  |
+[ENTITY 2]
+|  [ENTITY 3] | Related party arrangements |Value creation |  Basis of preparation  |  Appendices |
