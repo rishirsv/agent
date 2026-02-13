@@ -34,3 +34,12 @@ Run: 20260213-142610-36275 (iteration 1)
   - Enforcing a full-report cleanup pass before provenance/gates prevents executive-summary boilerplate regressions.
 
 ---
+## [2026-02-13 14:33:24 EST] - 2.0: Extract and fully clean FDD and Value Creation example 1 (Consumer & Retail).pptx (BLOCKED)
+
+Run: 20260213-142610-36275 (iteration 2)
+
+- Blocked reason: Source report `reports/FDD and Value Creation example 1 (Consumer & Retail).pptx` is `CDFV2 Encrypted`, and strict source-text extraction via `scripts/extract_source_text.py` fails with `File is not a zip file`.
+- Attempted: Ran single-report pipeline in strict/fail-closed mode using isolated reports dir; then ran `./.venv/bin/python scripts/extract_source_text.py --source "reports/FDD and Value Creation example 1 (Consumer & Retail).pptx" --out-dir extracted/verification/fdd-and-value-creation-example-1-consumer-retail/source-text --verbatim-mode strict`, which failed due to encryption.
+- Recommendation: Provide a decryptable `.pptx`/`.pdf` source or an unlocked export, then rerun story 2.0.
+
+---

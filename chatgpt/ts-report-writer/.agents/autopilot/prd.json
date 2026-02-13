@@ -52,9 +52,9 @@
       "priority": 2,
       "dependsOn": [],
       "passes": false,
-      "attempts": 0,
-      "blocked": false,
-      "blockedReason": "",
+      "attempts": 1,
+      "blocked": true,
+      "blockedReason": "Source file is CDFV2 Encrypted; strict source-text extraction fails (File is not a zip file).",
       "files": [
         "reports/FDD and Value Creation example 1 (Consumer & Retail).pptx",
         "extracted/fdd-and-value-creation-example-1-consumer-retail.md",
