@@ -41,9 +41,3 @@ Quick checks:
 - Acknowledge user actions immediately (visual, textual, or both).
 - Keep loading states stable; do not shift nearby content.
 - Prefer inline field-level feedback for local issues and page-level summaries for global issues.
-
-Sources:
-- https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
-- https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html
-- https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
-- https://web.dev/learn/design/interaction

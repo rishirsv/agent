@@ -6,22 +6,40 @@ description: Create distinctive, production-grade frontend interfaces with stron
 Build distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics.
 Implement real working code with strong visual taste and disciplined interaction design.
 
+## iOS Native UI Routing
+
+For native iPhone UI work in React Native or Expo, load in this order:
+1. `references/native-ios-ui/apple-human-interface-guidelines.md`
+2. `references/native-ios-ui/building-native-ui.md`
+3. Only the relevant file(s) under `references/native-ios-ui/references/`
+
+Routing map:
+- Navigation structure: `references/native-ios-ui/references/route-structure.md`
+- Tabs: `references/native-ios-ui/references/tabs.md`
+- Headers, toolbar, menus: `references/native-ios-ui/references/toolbar-and-headers.md`
+- Search UX: `references/native-ios-ui/references/search.md`
+- Sheets: `references/native-ios-ui/references/form-sheet.md`
+- Native controls: `references/native-ios-ui/references/controls.md`
+- Icons/SF symbols: `references/native-ios-ui/references/icons.md`
+- Motion/animations: `references/native-ios-ui/references/animations.md`
+- Blur/material effects: `references/native-ios-ui/references/visual-effects.md`
+- Media capture/playback: `references/native-ios-ui/references/media.md`
+- Local persistence: `references/native-ios-ui/references/storage.md`
+- 3D/WebGPU: `references/native-ios-ui/references/webgpu-three.md`
+- Zoom transitions: `references/native-ios-ui/references/zoom-transitions.md`
+- Gradients: `references/native-ios-ui/references/gradients.md`
+
+Always apply the `Frontend Aesthetics Guidelines` section in this file while implementing iPhone UI work.
+
 ## Workflow
 
-0. Initialize and load repo UI context for iterative design
+0. Optional: load repo UI context for iterative design
 
-- `.design/*` is volatile working context, not canonical project docs.
-- You may always read existing `.design/*.md` files.
-- You may create or update `.design/*.md` only when the user explicitly asks in natural language.
-- Approved explicit ask examples:
-  - "Set up design context files for this repo."
-  - "Create the `.design` context docs before we iterate."
-  - "Refresh the design context files from current code."
-  - "Update the `.design` context."
-- If `.design/*` is missing or stale and no explicit ask is given, do not write files. Continue by reading source files directly.
-- Use `references/repo-ui-init-and-context.md` for `.design/` context generation rules.
-- Use `references/design-token-sync.md` for `.design/theme.md` extraction rules.
-- On iterative design tasks, read existing `.design/*.md` first when present.
+- Use `references/repo-ui-init-and-context.md` for `.design/` context files.
+- Use `references/design-token-sync.md` for theme token extraction when needed.
+- Run `init design context` only when the user explicitly asks to create design context files.
+- Run `update design context` only when the user explicitly asks to refresh design context files.
+- When `.design/` files already exist, read only the files relevant to the requested surface.
 
 1. Understand intent and constraints
 
@@ -33,7 +51,6 @@ Implement real working code with strong visual taste and disciplined interaction
 
 3. If redesigning existing UI, create baseline first
 
-- Use `references/pixel-perfect-baseline-and-review.md`.
 - Create a faithful, pixel-accurate baseline of current UI before proposing changes.
 - Gather the current design state before presenting recommendations.
 
@@ -41,18 +58,14 @@ Implement real working code with strong visual taste and disciplined interaction
 
 - Use `references/iterative-evidence-loop.md`.
 - For web iteration evidence, use Agent Browser.
-- For React Native/Expo iOS evidence, use iOS Simulator with iPhone 17 Pro framing.
+- For React Native/Expo iOS evidence, use iOS Simulator with consistent framing (prefer iPhone 17 Pro when available).
 
 5. Load only the needed guideline modules
 
-- `references/ui-principles-and-heuristics.md`: hierarchy, typography, spacing, color, accessibility baseline.
-- `references/rhythm-and-visual-storytelling.md`: section pacing, reading order, scan anchors.
+- `references/ui-principles-and-heuristics.md`: hierarchy, typography, spacing, color, accessibility baseline, responsive behavior, input modality, and performance stability checks.
 - `references/motion-and-microinteractions.md`: purposeful motion, reduced-motion handling, state feedback.
 - `references/interaction-states-and-feedback.md`: hover/focus/pressed/disabled/loading/success/error behavior.
 - `references/forms-validation-and-recovery.md`: labels, instructions, validation timing, error recovery.
-- `references/responsive-layout-and-performance.md`: responsive behavior, input modality, performance polish.
-- `references/research-foundations.md`: primary-source evidence and concrete thresholds.
-- `references/react-native-ios-native-ui.md`: required when building iOS apps with React Native/Expo.
 
 6. Implement production code
 
@@ -66,13 +79,6 @@ Implement real working code with strong visual taste and disciplined interaction
 8. Explain design rationale briefly
 
 - State the chosen direction, key tradeoffs, and why changes improve usability.
-
-## Platform-specific loading rule
-
-When the request is for a React Native iOS app (including Expo):
-
-- Always load `references/react-native-ios-native-ui.md` first.
-- Then apply only the relevant sections (controls, navigation, motion, feedback, and accessibility) based on the feature being built.
 
 ## Design Thinking
 
@@ -115,9 +121,9 @@ Focus on:
 - Respect motion preferences via `prefers-reduced-motion`.
 - Avoid layout-jank patterns (reserve space for late content; prefer transform/opacity motion).
 
-NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
+Avoid defaulting to generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
 
-Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
+Interpret creatively and make unexpected choices that feel genuinely designed for the context. Vary themes, typography, and visual direction when appropriate to the task, and avoid repeatedly converging on the same defaults.
 
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
 

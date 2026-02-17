@@ -1,11 +1,11 @@
 ---
 description: Explain a topic in plain, non-technical language so I can make a decision.
 argument-hint: [TOPIC="<optional: what to explain>"]
---- 
+---
 
 # Explain
 
-Explain a topic (or the thing we’re currently discussing) in plain, non-technical language so I can make a decision.
+Explain a topic (or the current discussion) in plain, non-technical language so I can make a decision quickly.
 
 ## Inputs (optional)
 
@@ -14,70 +14,51 @@ Explain a topic (or the thing we’re currently discussing) in plain, non-techni
 ```
 
 ```text
-[CONTEXT: snippet, code, error message, constraints, what you’re trying to decide]
+[CONTEXT: snippet, code, error, constraints, goal]
+```
+
+```text
+[CHANGED FILES + WHAT CHANGED]
 ```
 
 ## Operating rules
 
-- Assume I’m smart, but new to this. Avoid jargon. If you must use a technical term, define it in one short sentence.
-- Use short paragraphs. Use concise bullets when it’s clearer than prose. Use subheadings to separate ideas.
-- If no topic is provided, infer it from the current conversation and start by confirming what you’re about to explain.
-- If the topic is ambiguous, ask **up to 2** clarifying questions before explaining.
-- Optimize for understanding and decision-making:
-  - Explain what it is and why it matters (in plain words).
-  - Explain the parts/pieces and how they relate (simple mental model).
-  - If there’s a choice to make, lay out options and explain **trade-offs and benefits** in concrete terms.
-- Keep it manageable by default (aim for ~1 screen). Offer a deeper dive only if I ask.
-- Do not be patronizing. Do not hide uncertainty—state assumptions clearly.
+- Assume I am smart but new to this topic. Avoid jargon. If needed, define a term in one short sentence.
+- If no topic is given, infer it from context and confirm in one line.
+- If ambiguous, ask up to **1** clarifying question before explaining.
+- Keep the default response short (roughly one screen).
+- Focus on decision support: what it is, why it matters, and trade-offs.
+- After a large change (or many changed files), **always** include:
+  - A plain-language summary of what changed and why.
+  - A file-by-file section covering each modified file and why it matters.
+- State assumptions and uncertainty clearly.
+- In code review or planning discussions, present each potential option simply and explain 2-3 options each with their benefits and tradeoffs.
 
 ## Output format (Markdown)
 
 ## In plain words
 
-[2–5 short sentences. No jargon.]
+[2-4 short sentences. No jargon.]
 
-## The big idea (mental model)
+## What changed (large change default)
 
-[A simple analogy or “think of it like…” explanation.]
+[Simple summary of the change and impact.]
 
-## How it works (simplified)
+## File-by-file changes
 
-- [Step or component 1]
-- [Step or component 2]
-- [Step or component 3]
+- `path/to/file` - [What changed in simple terms, and why it matters]
+- `path/to/file` - [What changed in simple terms, and why it matters]
 
-## Trade-offs (what you gain vs. what you give up)
+## Trade-offs (if choosing between options)
 
-For each option, use:
-- **You gain:** …
-- **You give up:** …
-- **Best when:** …
-- **Watch out for:** …
+- **Option A:** gain / give up / best when
+- **Option B:** gain / give up / best when
 
-## What I should do (if I’m deciding)
+## Recommendation
 
-[A short, conditional recommendation. Example: “If you care most about X, do Y. If you care most about A, do B.”]
+[Short conditional recommendation: "If X matters most, choose Y. If A matters most, choose B."]
 
-## Questions for you (pick what to explore next)
+## Quick questions (condensed)
 
-Reply with the letter(s) and any quick notes.
-
-1) What do you want right now?
-   A. A simpler explanation (ELI5)
-   B. A deeper explanation (still non-technical)
-   C. A concrete example using my exact context
-   D. Compare options and recommend one
-   E. Other: …
-
-2) What decision are you trying to make (if any)?
-   A. Pick an approach
-   B. Debug/understand a problem
-   C. Evaluate risk / trade-offs
-   D. Other: …
-
-3) What constraints matter most?
-   A. Speed/time-to-ship
-   B. Reliability/safety
-   C. Simplicity/maintainability
-   D. Performance/cost
-   E. Other: …
+1. What do you want next? `simpler` / `deeper` / `example` / `recommendation`
+2. What matters most? `speed` / `reliability` / `simplicity` / `cost`

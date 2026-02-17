@@ -30,8 +30,3 @@ If motion is part of the iteration, capture:
 - a short recording
 - one still screenshot showing pre state
 - one still screenshot showing post state
-
-Sources:
-- https://developer.mozilla.org/en-US/docs/Web/CSS/%40media/prefers-reduced-motion
-- https://support.apple.com/en-lb/guide/accessibility-for-iphone/iph0b691d3ed/ios
-- https://web.dev/articles/optimize-cls

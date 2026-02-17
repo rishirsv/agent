@@ -31,7 +31,3 @@ Quick checks:
 - Let users correct issues without re-entering unaffected data.
 - Confirm success clearly and show the next step.
 - For destructive form actions, provide confirm/undo patterns where feasible.
-
-Sources:
-- https://www.w3.org/WAI/tutorials/forms/instructions/
-- https://www.w3.org/WAI/tutorials/forms/notifications/
