@@ -1,0 +1,810 @@
+version: v1.1-packF-validated
+source_workbook: output/spreadsheet/databook-template-v1-final-validated.xlsx
+template_note: 'Template scaffold v1: Packs A-F merged and validated; synthetic harness
+  loaded, anchors/keys under release governance.'
+sheet_order:
+- Cover
+- Control | Setup
+- Control | QC
+- Template | Index
+- Data | TB
+- Data | AR Aging
+- Data | AP Aging
+- Map | COA to Lines
+- Map | NWC & NetDebt Class
+- Map | Entities
+- Financials>>
+- Combined | IS
+- Combined | BS
+- Combined | CF
+- Entity 1 | IS
+- Entity 1 | BS
+- Entity 1 | CF
+- QofE>>
+- QofE | Summary
+- QofE | Detail
+- NWC>>
+- NWC | Summary
+- NWC | Detail
+- NWC | Days
+- Stratified | BS
+- Net_debt
+- Recons
+- Agings
+- Personnel
+- Capex
+- Leases
+- Other | Analysis
+sheet_view:
+  default:
+    show_gridlines: false
+    zoom_scale: 100
+    zoom_scale_normal: 100
+  divider_overrides:
+    view: pageBreakPreview
+    sheets:
+    - Financials>>
+    - QofE>>
+    - NWC>>
+structure:
+  use_standard_ranges_only: true
+  no_excel_tables: true
+  no_merged_cells_in_output_blocks: true
+  no_named_ranges_required_for_logic: true
+  b8_units_required_for_analysis_grids: true
+  source_line_required_at_a2_non_divider_sheets: true
+format_scope_rules:
+  qofe_summary_last_formatted_column: J
+  nwc_summary_last_formatted_column: L
+  remove_styled_rows_below_final_totals: true
+manifest:
+- module_key: CORE_CONTROLS
+  module_name: Controls
+  sheet_names: Control | Setup; Control | QC
+  purpose: Template controls and QC center
+  primary_inputs: Manual setup
+  dependencies: None
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_DATA
+  module_name: Data intake
+  sheet_names: Data | TB; Data | AR Aging; Data | AP Aging
+  purpose: Standardized data ingestion blocks
+  primary_inputs: Client exports
+  dependencies: Control | Setup
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_MAPPING
+  module_name: Mappings
+  sheet_names: Map | COA to Lines; Map | NWC & NetDebt Class; Map | Entities
+  purpose: Account and classification mappings
+  primary_inputs: TB + team mapping decisions
+  dependencies: Data | TB
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_FINANCIALS
+  module_name: Financial statements
+  sheet_names: Financials>>; Combined | IS; Combined | BS; Combined | CF; Entity 1
+    | IS; Entity 1 | BS; Entity 1 | CF
+  purpose: Core financial statement scaffolds for combined and placeholder entity
+    views
+  primary_inputs: Control | Setup; Data | TB; Map | COA to Lines
+  dependencies: Pack A tabs
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'TRUE'
+- module_key: CORE_QOFE
+  module_name: QofE
+  sheet_names: QofE>>; QofE | Summary; QofE | Detail
+  purpose: QofE scaffold outputs
+  primary_inputs: Control | Setup; Data | TB; Map | COA to Lines
+  dependencies: Pack A
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_NWC
+  module_name: NWC
+  sheet_names: NWC>>; NWC | Summary; NWC | Detail; NWC | Days; Stratified | BS
+  purpose: NWC and stratification scaffolds
+  primary_inputs: Control | Setup; Data | TB; Map | NWC & NetDebt Class
+  dependencies: Pack A
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_NETDEBT
+  module_name: Net debt
+  sheet_names: Net_debt
+  purpose: Net debt scaffold output
+  primary_inputs: Map | NWC & NetDebt Class; Stratified | BS
+  dependencies: CORE_NWC
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_RECONS
+  module_name: Reconciliations
+  sheet_names: Recons
+  purpose: Cross-tab reconciliation mini-grids
+  primary_inputs: Core output checks
+  dependencies: Combined | IS; Combined | BS; Combined | CF
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_AGINGS
+  module_name: Agings
+  sheet_names: Agings
+  purpose: AR/AP aging blocks with canonical buckets and tie-outs
+  primary_inputs: Data | AR Aging; Data | AP Aging
+  dependencies: Combined | BS
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_QC
+  module_name: QC dashboard
+  sheet_names: Control | QC
+  purpose: Centralized workbook check status
+  primary_inputs: Check cells across core sheets
+  dependencies: All core modules
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: CORE_COVER
+  module_name: Cover
+  sheet_names: Cover
+  purpose: Workbook landing and navigation dashboard
+  primary_inputs: Control | QC
+  dependencies: All modules
+  typical_use_cases: All deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: MOD_PERSONNEL
+  module_name: Personnel
+  sheet_names: Personnel
+  purpose: Personnel analytics scaffold
+  primary_inputs: Data | TB
+  dependencies: Control | Setup; Map | COA to Lines
+  typical_use_cases: Deals with payroll workstreams
+  can_instantiate_multiple: 'FALSE'
+- module_key: MOD_CAPEX
+  module_name: Capex
+  sheet_names: Capex
+  purpose: Capex analytics scaffold
+  primary_inputs: Data | TB
+  dependencies: Control | Setup; Map | COA to Lines
+  typical_use_cases: Capex-heavy deals
+  can_instantiate_multiple: 'FALSE'
+- module_key: MOD_LEASES
+  module_name: Leases
+  sheet_names: Leases
+  purpose: Leases analytics scaffold
+  primary_inputs: Lease schedules; Data | TB
+  dependencies: Control | Setup; Map | COA to Lines
+  typical_use_cases: Deals with material leasing
+  can_instantiate_multiple: 'FALSE'
+- module_key: MOD_OTHER_ANALYSIS
+  module_name: Other analysis
+  sheet_names: Other | Analysis
+  purpose: Flexible analysis scaffold
+  primary_inputs: Deal-specific supporting data
+  dependencies: Control | Setup
+  typical_use_cases: Custom analyses
+  can_instantiate_multiple: 'FALSE'
+block_index:
+- sheet_name: Control | Setup
+  block_key: CONTROL_SETUP_FIELDS
+  top_left_cell: A7
+  header_row_number: 7
+  first_data_row_number: 8
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: FYEndMonth in B12; LatestMonthEnd in B13
+- sheet_name: Control | Setup
+  block_key: PERIODS_BLOCK
+  top_left_cell: A20
+  header_row_number: 20
+  first_data_row_number: 22
+  period_start_column: A
+  period_header_row_number: 21
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: A22:A299 must be month-end dates
+- sheet_name: Template | Index
+  block_key: MANIFEST_MAIN
+  top_left_cell: A3
+  header_row_number: 4
+  first_data_row_number: 5
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Module keys should be stable
+- sheet_name: Template | Index
+  block_key: INDEX_MAIN
+  top_left_cell: A32
+  header_row_number: 33
+  first_data_row_number: 34
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Update when block anchors move
+- sheet_name: Data | TB
+  block_key: TB_WIDE_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Month columns map to Control | Setup A22:A57
+- sheet_name: Data | AR Aging
+  block_key: AR_AGING_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Total column should equal bucket sum
+- sheet_name: Data | AP Aging
+  block_key: AP_AGING_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Total column should equal bucket sum
+- sheet_name: Map | COA to Lines
+  block_key: COA_MAP_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: LineKey values must be stable
+- sheet_name: Map | NWC & NetDebt Class
+  block_key: CLASS_MAP_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: ClassKey values must be stable
+- sheet_name: Map | Entities
+  block_key: ENTITIES_MAP_INPUT
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: SortOrder should be sequential
+- sheet_name: Financials>>
+  block_key: FINANCIALS_DIVIDER
+  top_left_cell: A1
+  header_row_number: 1
+  first_data_row_number: 4
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Navigation links should point to Pack B sheets
+- sheet_name: Combined | IS
+  block_key: IS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: Combined | IS
+  block_key: IS_CHECKS
+  top_left_cell: A27
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Check values should resolve to 0
+- sheet_name: Combined | BS
+  block_key: BS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: Combined | BS
+  block_key: BS_CHECKS
+  top_left_cell: A27
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Balance check should resolve to 0
+- sheet_name: Combined | CF
+  block_key: CF_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: Combined | CF
+  block_key: CF_CHECKS
+  top_left_cell: A27
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Check values should resolve to 0
+- sheet_name: Entity 1 | IS
+  block_key: ENTITY1_IS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: Entity 1 | BS
+  block_key: ENTITY1_BS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: Entity 1 | CF
+  block_key: ENTITY1_CF_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Header row uses B8="$'000" (units). Parse FS columns by fixed positions,
+    not header text.
+- sheet_name: QofE>>
+  block_key: QOFE_DIVIDER
+  top_left_cell: A1
+  header_row_number: 1
+  first_data_row_number: 4
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Navigation divider
+- sheet_name: QofE | Summary
+  block_key: QOFE_SUMMARY_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: QofE | Summary
+  block_key: QOFE_SUMMARY_CHECKS
+  top_left_cell: A19
+  header_row_number: 19
+  first_data_row_number: 20
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: QofE | Detail
+  block_key: QOFE_DETAIL_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: QofE | Detail
+  block_key: QOFE_DETAIL_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: NWC>>
+  block_key: NWC_DIVIDER
+  top_left_cell: A1
+  header_row_number: 1
+  first_data_row_number: 4
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Navigation divider
+- sheet_name: NWC | Summary
+  block_key: NWC_SUMMARY_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: NWC | Summary
+  block_key: NWC_SUMMARY_CHECKS
+  top_left_cell: A16
+  header_row_number: 16
+  first_data_row_number: 17
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: NWC | Detail
+  block_key: NWC_DETAIL_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: NWC | Detail
+  block_key: NWC_DETAIL_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: NWC | Days
+  block_key: NWC_DAYS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: B
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: NWC | Days
+  block_key: NWC_DAYS_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: B
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Review-based check block
+- sheet_name: Stratified | BS
+  block_key: STRAT_BS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Stratified | BS
+  block_key: STRAT_BS_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: Net_debt
+  block_key: NETDEBT_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Net_debt
+  block_key: NETDEBT_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: Control | QC
+  block_key: QC_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: PassFlag TRUE when check resolves
+- sheet_name: Recons
+  block_key: RECONS_IS
+  top_left_cell: A7
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Recons
+  block_key: RECONS_BS
+  top_left_cell: A16
+  header_row_number: 17
+  first_data_row_number: 18
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Section-level variances should resolve to 0
+- sheet_name: Recons
+  block_key: RECONS_CF
+  top_left_cell: A25
+  header_row_number: 26
+  first_data_row_number: 27
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Section-level variances should resolve to 0
+- sheet_name: Recons
+  block_key: RECONS_OTHER
+  top_left_cell: A34
+  header_row_number: 35
+  first_data_row_number: 36
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Section-level variances should resolve to 0
+- sheet_name: Recons
+  block_key: RECONS_CHECKS
+  top_left_cell: A43
+  header_row_number: 43
+  first_data_row_number: 44
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Overall open fails should resolve to 0
+- sheet_name: Agings
+  block_key: AGING_AR
+  top_left_cell: A7
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Agings
+  block_key: AGING_AP
+  top_left_cell: A23
+  header_row_number: 24
+  first_data_row_number: 25
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B24 stores units as $'000
+- sheet_name: Agings
+  block_key: AGING_CHECKS
+  top_left_cell: A39
+  header_row_number: 39
+  first_data_row_number: 40
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: AR/AP tie-out should resolve to 0
+- sheet_name: Cover
+  block_key: COVER_NAV
+  top_left_cell: A7
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Navigation links should open core sheets
+- sheet_name: Cover
+  block_key: COVER_STATUS
+  top_left_cell: A20
+  header_row_number: 20
+  first_data_row_number: 21
+  period_start_column: null
+  period_header_row_number: null
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Overall status should tie to Control | QC!B4
+- sheet_name: Personnel
+  block_key: PERSONNEL_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Personnel
+  block_key: PERSONNEL_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: Capex
+  block_key: CAPEX_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Capex
+  block_key: CAPEX_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: Leases
+  block_key: LEASES_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Leases
+  block_key: LEASES_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+- sheet_name: Other | Analysis
+  block_key: OTHER_ANALYSIS_MAIN
+  top_left_cell: A8
+  header_row_number: 8
+  first_data_row_number: 9
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: B8 stores units as $'000
+- sheet_name: Other | Analysis
+  block_key: OTHER_ANALYSIS_CHECKS
+  top_left_cell: A27
+  header_row_number: 27
+  first_data_row_number: 28
+  period_start_column: G
+  period_header_row_number: 8
+  notes_panel_top_left_cell: null
+  output_type: grid
+  refresh_required: 'FALSE'
+  validation_rule: Checks should resolve to 0 once linked
+release_controls:
+- control: Anchor map
+  value: FROZEN
+  rule: Do not change BlockKey/TopLeftCell without version bump + changelog.
+  status: ENFORCED
+  notes: Governed via Template | Index + Control | Setup change log
+- control: Manifest keys
+  value: FROZEN
+  rule: Do not rename ModuleKey values after release.
+  status: ENFORCED
+  notes: Additive rows only for new modules
+- control: Current release
+  value: ='Control | Setup'!B9
+  rule: Version must increment if anchors move.
+  status: TRACKED
+  notes: Validated with synthetic 2-entity load

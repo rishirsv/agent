@@ -1,0 +1,334 @@
+version: v1.1-packF-validated
+source_workbook: output/spreadsheet/databook-template-v1-final-validated.xlsx
+template_version_cell: Control | Setup!B9
+template_version: v1.1-packF-validated
+global:
+  font_family: Arial
+  font_size: 10
+  source_line_font_size: 8
+  source_line_italic: true
+  source_line_color_rgb: FF666666
+  left_align_default: true
+  show_gridlines: false
+  zoom_scale: 100
+  zoom_scale_normal: 100
+  divider_sheet_view: pageBreakPreview
+  divider_sheets:
+  - Financials>>
+  - QofE>>
+  - NWC>>
+  no_merged_cells: true
+  no_excel_tables: true
+  units_text: $'000
+  units_primary_cell: B8
+color_palette:
+  navy_dark: FF00338D
+  cobalt_header: FF1E49E2
+  input_fill: FFD9E1F2
+  check_fill: FFFFF2CC
+  note_label_fill: FFF2F2F2
+  grid_border: FFD9D9D9
+  white_text: FFFFFFFF
+  black_text: FF000000
+  source_gray_text: FF666666
+tokens:
+  title:
+    from_cell: Control | Setup!A1
+    font:
+      name: Arial
+      size: 10.0
+      bold: true
+      italic: false
+      color_rgb: FF000000
+    fill:
+      type: null
+      fg_rgb: '00000000'
+      bg_rgb: '00000000'
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: null
+        color_rgb: null
+      right:
+        style: null
+        color_rgb: null
+      top:
+        style: null
+        color_rgb: null
+      bottom:
+        style: null
+        color_rgb: null
+  source:
+    from_cell: Control | Setup!A2
+    font:
+      name: Arial
+      size: 8.0
+      bold: false
+      italic: true
+      color_rgb: FF666666
+    fill:
+      type: null
+      fg_rgb: '00000000'
+      bg_rgb: '00000000'
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: null
+        color_rgb: null
+      right:
+        style: null
+        color_rgb: null
+      top:
+        style: null
+        color_rgb: null
+      bottom:
+        style: null
+        color_rgb: null
+  note_label:
+    from_cell: Control | Setup!A4
+    font:
+      name: Arial
+      size: 10.0
+      bold: true
+      italic: false
+      color_rgb: '00000000'
+    fill:
+      type: solid
+      fg_rgb: FFF2F2F2
+      bg_rgb: FFF2F2F2
+    alignment:
+      horizontal: left
+      vertical: null
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: null
+        color_rgb: null
+      right:
+        style: null
+        color_rgb: null
+      top:
+        style: null
+        color_rgb: null
+      bottom:
+        style: null
+        color_rgb: null
+  section_bar:
+    from_cell: Combined | IS!A7
+    font:
+      name: Arial
+      size: 10.0
+      bold: true
+      italic: false
+      color_rgb: FFFFFFFF
+    fill:
+      type: solid
+      fg_rgb: FF00338D
+      bg_rgb: FF00338D
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: null
+        color_rgb: null
+      right:
+        style: null
+        color_rgb: null
+      top:
+        style: null
+        color_rgb: null
+      bottom:
+        style: null
+        color_rgb: null
+  header:
+    from_cell: Combined | IS!A8
+    font:
+      name: Arial
+      size: 10.0
+      bold: true
+      italic: false
+      color_rgb: FFFFFFFF
+    fill:
+      type: solid
+      fg_rgb: FF1E49E2
+      bg_rgb: FF1E49E2
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: thin
+        color_rgb: FFD9D9D9
+      right:
+        style: thin
+        color_rgb: FFD9D9D9
+      top:
+        style: thin
+        color_rgb: FFD9D9D9
+      bottom:
+        style: thin
+        color_rgb: FFD9D9D9
+  data:
+    from_cell: Combined | IS!A9
+    font:
+      name: Arial
+      size: 10.0
+      bold: false
+      italic: false
+      color_rgb: null
+    fill:
+      type: null
+      fg_rgb: '00000000'
+      bg_rgb: '00000000'
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: thin
+        color_rgb: FFD9D9D9
+      right:
+        style: thin
+        color_rgb: FFD9D9D9
+      top:
+        style: thin
+        color_rgb: FFD9D9D9
+      bottom:
+        style: thin
+        color_rgb: FFD9D9D9
+  input:
+    from_cell: Combined | IS!G9
+    font:
+      name: Arial
+      size: 10.0
+      bold: false
+      italic: false
+      color_rgb: FF1E49E2
+    fill:
+      type: solid
+      fg_rgb: FFD9E1F2
+      bg_rgb: FFD9E1F2
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: thin
+        color_rgb: FFD9D9D9
+      right:
+        style: thin
+        color_rgb: FFD9D9D9
+      top:
+        style: thin
+        color_rgb: FFD9D9D9
+      bottom:
+        style: thin
+        color_rgb: FFD9D9D9
+  check:
+    from_cell: Combined | IS!G28
+    font:
+      name: Arial
+      size: 10.0
+      bold: false
+      italic: false
+      color_rgb: null
+    fill:
+      type: solid
+      fg_rgb: FFFFF2CC
+      bg_rgb: FFFFF2CC
+    alignment:
+      horizontal: left
+      vertical: center
+      wrap_text: false
+      indent: 0.0
+    border:
+      left:
+        style: thin
+        color_rgb: FFD9D9D9
+      right:
+        style: thin
+        color_rgb: FFD9D9D9
+      top:
+        style: thin
+        color_rgb: FFD9D9D9
+      bottom:
+        style: thin
+        color_rgb: FFD9D9D9
+special_rules:
+  section_bar_has_no_borders: true
+  row7_bar_extends_to_last_header_column: true
+  row8_entire_header_segment_is_cobalt: true
+  source_line_required_on_non_divider_tabs: true
+  center_across_selection_allowed_instead_of_merge: true
+  do_not_use_merge_and_center: true
+source_line_sheets:
+- Cover
+- Control | Setup
+- Control | QC
+- Template | Index
+- Data | TB
+- Data | AR Aging
+- Data | AP Aging
+- Map | COA to Lines
+- Map | NWC & NetDebt Class
+- Map | Entities
+- Combined | IS
+- Combined | BS
+- Combined | CF
+- Entity 1 | IS
+- Entity 1 | BS
+- Entity 1 | CF
+- QofE | Summary
+- QofE | Detail
+- NWC | Summary
+- NWC | Detail
+- NWC | Days
+- Stratified | BS
+- Net_debt
+- Recons
+- Agings
+- Personnel
+- Capex
+- Leases
+- Other | Analysis
+units_locations:
+- Agings!B24
+- Agings!B8
+- Capex!B8
+- Combined | BS!B8
+- Combined | CF!B8
+- Combined | IS!B8
+- Entity 1 | BS!B8
+- Entity 1 | CF!B8
+- Entity 1 | IS!B8
+- Leases!B8
+- NWC | Detail!B8
+- NWC | Summary!B8
+- Net_debt!B8
+- Other | Analysis!B8
+- Personnel!B8
+- QofE | Detail!B8
+- QofE | Summary!B8
+- Recons!B17
+- Recons!B26
+- Recons!B35
+- Recons!B8
+- Stratified | BS!B8
