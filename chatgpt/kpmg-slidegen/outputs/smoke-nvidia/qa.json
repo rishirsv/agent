@@ -1,0 +1,2677 @@
+{
+  "generatedAt": "2026-02-24T15:03:23.042Z",
+  "template": "kpmg-diligence",
+  "valid": false,
+  "errors": [
+    "slides[2]: Missing required: insights",
+    "slides[2]: Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+    "slides[5]: Missing required: insights",
+    "slides[5]: Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+    "slides[6]: Missing required: insights",
+    "slides[6]: Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+    "slides[8]: Missing required: insights",
+    "slides[8]: Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+    "slides[15]: Missing required: insights",
+    "slides[15]: Slide content too sparse, should be repaired or flagged (density 0.25 < 0.61)",
+    "slides[33]: Missing required: insights",
+    "slides[33]: Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)"
+  ],
+  "warnings": [
+    "Repeated body line appears on 26 slides: \"Diligence focus: confirm revenue sustainability, backlog conversion, and pricing disc...\"",
+    "Repeated body line appears on 26 slides: \"Validate margin trajectory, mix shift, and inventory provisioning methodology.\"",
+    "Repeated body line appears on 26 slides: \"Assess customer concentration, renewal cadence, and contract terms for key accounts.\"",
+    "Repeated body line appears on 26 slides: \"Quantify working capital impacts from lead times, supply commitments, and buffer stock.\"",
+    "Repeated body line appears on 26 slides: \"Stress-test downside scenarios tied to hyperscaler capex cycles and platform transiti...\""
+  ],
+  "densityFindings": [
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.65,
+      "acceptableFloor": 0.552,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.248,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 27,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 36,
+      "slideType": "titleStrapline4TextBoxes",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 37,
+      "slideType": "backCover",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0,
+      "acceptableFloor": 1,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    }
+  ],
+  "densitySummary": {
+    "ok": 34,
+    "thin": 0,
+    "sparse": 6
+  },
+  "missingSlots": [
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights"
+    }
+  ],
+  "thinSlides": [],
+  "sparseSlides": [
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.248,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "status": "too sparse, should be repaired or flagged",
+      "score": 0.189,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": true
+    }
+  ],
+  "slotIssues": [
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+      "severity": "error",
+      "actual": 0.189,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+      "severity": "error",
+      "actual": 0.189,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+      "severity": "error",
+      "actual": 0.189,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+      "severity": "error",
+      "actual": 0.189,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.25 < 0.61)",
+      "severity": "error",
+      "actual": 0.248,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "code": "missing_required",
+      "message": "Missing required: insights",
+      "severity": "error",
+      "actual": null,
+      "target": null,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "kind": "textArray",
+      "code": "density_too_sparse",
+      "message": "Slide content too sparse, should be repaired or flagged (density 0.19 < 0.61)",
+      "severity": "error",
+      "actual": 0.189,
+      "target": 0.72,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 37,
+      "slideType": "backCover",
+      "slot": "disclaimer",
+      "kind": "text",
+      "code": "below_target",
+      "message": "disclaimer is below density target (0 < 80)",
+      "severity": "warning",
+      "actual": 0,
+      "target": 80,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets or paragraph text to reach the minimum content density."
+    },
+    {
+      "slideIndex": 37,
+      "slideType": "backCover",
+      "slot": "url",
+      "kind": "text",
+      "code": "below_target",
+      "message": "url is below density target (0 < 5)",
+      "severity": "warning",
+      "actual": 0,
+      "target": 5,
+      "hook": "addBullets",
+      "suggestedRemedy": "Add bullets or paragraph text to reach the minimum content density."
+    }
+  ],
+  "slotMetrics": [
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "slot": "subtitle",
+      "kind": "text",
+      "actual": 79,
+      "target": 12,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "slot": "title",
+      "kind": "text",
+      "actual": 37,
+      "target": 8,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 17,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 119,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 4,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 18,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1523,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 137,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 13,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1466,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 141,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 30,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 185,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 8,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 35,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 123,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 4,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 47,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 18,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 110,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 9,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 17,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1180,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 3,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 163,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 21,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 33,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 153,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1911,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 28,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 151,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1862,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 39,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 177,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2228,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 19,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1357,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 179,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 36,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 509,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 120,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 13,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 43,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 3098,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 145,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2835,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 93,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 29,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 158,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1988,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 29,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 172,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2047,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 29,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 145,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2021,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 15,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1440,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 150,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 38,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 22,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 36,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 146,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2126,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 23,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1500,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 183,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 31,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 24,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 31,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 166,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2003,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 3,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 25,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 44,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 176,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2182,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 4,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 26,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 27,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 27,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 15,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1400,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 154,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 15,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 28,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1761,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 197,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 43,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 29,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 642,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 109,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 30,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 631,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 109,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 31,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 704,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 109,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 32,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 86,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 8,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 22,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 0,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 33,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1387,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 167,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 30,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 34,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 28,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 201,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 2116,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 4,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 35,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 36,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "columns",
+      "kind": "columns",
+      "actual": 4,
+      "target": 4,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 36,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 91,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 36,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "title",
+      "kind": "text",
+      "actual": 27,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 36,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 37,
+      "slideType": "backCover",
+      "slot": "disclaimer",
+      "kind": "text",
+      "actual": 0,
+      "target": 80,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 37,
+      "slideType": "backCover",
+      "slot": "url",
+      "kind": "text",
+      "actual": 0,
+      "target": 5,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 554,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 28,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 33,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 38,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 33,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 28,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 482,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 39,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    }
+  ],
+  "repairSuggestions": [
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "hook": "addBullets",
+      "severity": "error",
+      "issueCode": "missing_required",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisNarrowTable",
+      "slot": "_slide",
+      "hook": "addBullets",
+      "severity": "error",
+      "issueCode": "density_too_sparse",
+      "suggestedRemedy": "Add bullets and supporting text to this slot."
+    }
+  ],
+  "pagination": [],
+  "overflowRisks": [],
+  "masterApplied": [],
+  "paginationDecisions": [],
+  "overflowEvents": [],
+  "fallbacks": [],
+  "overlapSummary": null,
+  "strictOverflow": null,
+  "inputSlideCount": 40,
+  "outputSlideCount": 0,
+  "outputPptx": "outputs/smoke-nvidia/deck.pptx",
+  "summary": {
+    "status": "fail",
+    "inputSlides": 40,
+    "renderedSlides": 0,
+    "blockingIssues": 18,
+    "advisoryIssues": 25,
+    "counts": {
+      "errors": 12,
+      "warnings": 5,
+      "missingSlots": 6,
+      "sparseSlides": 6,
+      "thinSlides": 0,
+      "slotIssues": 14,
+      "overflowEvents": 0,
+      "overlapSevere": 0,
+      "overlapWarnings": 0,
+      "repairSuggestions": 2
+    },
+    "strict": {
+      "requested": false,
+      "failed": false,
+      "overflowStatus": null,
+      "overflowSkipped": false
+    }
+  }
+}

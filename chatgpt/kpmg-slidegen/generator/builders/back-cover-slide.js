@@ -76,7 +76,7 @@ export function addBackCover(
     addImageSmart(slide, gradient, { x: 0, y: 0, w: 13.333, h: 7.5, altText: 'Decorative gradient' });
   }
 
-  const logo = resolveAsset(assets, resolveAssetPath, 'closingLogoWhite', 'logoWhitePng');
+  const logo = resolveAsset(assets, resolveAssetPath, 'closingLogoWhite');
   const socialIcons = [
     resolveAsset(assets, resolveAssetPath, 'closingSocialTwitter'),
     resolveAsset(assets, resolveAssetPath, 'closingSocialLinkedin'),

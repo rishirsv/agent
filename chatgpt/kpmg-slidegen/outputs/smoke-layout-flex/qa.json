@@ -1,0 +1,710 @@
+{
+  "generatedAt": "2026-02-24T15:17:52.872Z",
+  "template": "kpmg-diligence",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "densityFindings": [
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.65,
+      "acceptableFloor": 0.552,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "dividerDark",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "dividerLight",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "divider",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "contents",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.8,
+      "acceptableFloor": 0.68,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.72,
+      "acceptableFloor": 0.612,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "backCover",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0,
+      "acceptableFloor": 1,
+      "shouldRepair": false
+    }
+  ],
+  "densitySummary": {
+    "ok": 12,
+    "thin": 0,
+    "sparse": 0
+  },
+  "missingSlots": [],
+  "thinSlides": [],
+  "sparseSlides": [],
+  "slotIssues": [],
+  "slotMetrics": [
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "slot": "subtitle",
+      "kind": "text",
+      "actual": 85,
+      "target": 12,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "slot": "title",
+      "kind": "text",
+      "actual": 41,
+      "target": 8,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "dividerDark",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "dividerDark",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 20,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "dividerLight",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "dividerLight",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 21,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "divider",
+      "slot": "sectionNumber",
+      "kind": "text",
+      "actual": 2,
+      "target": 2,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "divider",
+      "slot": "sectionTitle",
+      "kind": "text",
+      "actual": 30,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "contents",
+      "slot": "title",
+      "kind": "text",
+      "actual": 8,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "contents",
+      "slot": "sections",
+      "kind": "contentsSections",
+      "actual": 8,
+      "target": 8,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 756,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 128,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "slot": "source",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 38,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 10,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "slot": "leftBody",
+      "kind": "textArray",
+      "actual": 495,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "slot": "rightBody",
+      "kind": "textArray",
+      "actual": 486,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 94,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 37,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 10,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "notes",
+      "kind": "text",
+      "actual": 89,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 85,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "table",
+      "kind": "table",
+      "actual": 6,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "title",
+      "kind": "text",
+      "actual": 31,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "insights",
+      "kind": "textArray",
+      "actual": 433,
+      "target": 80,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "slot": "insightTitle",
+      "kind": "text",
+      "actual": 0,
+      "target": 0,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 946,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 88,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 29,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 10,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 37,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 91,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "heading",
+      "kind": "text",
+      "actual": 59,
+      "target": 6,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 491,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "table",
+      "kind": "table",
+      "actual": 4,
+      "target": 3,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "noteSource",
+      "kind": "text",
+      "actual": 43,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 10,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "columns",
+      "kind": "columns",
+      "actual": 4,
+      "target": 4,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 83,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "title",
+      "kind": "text",
+      "actual": 27,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 10,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "backCover",
+      "slot": "disclaimer",
+      "kind": "text",
+      "actual": 142,
+      "target": 80,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "backCover",
+      "slot": "url",
+      "kind": "text",
+      "actual": 12,
+      "target": 5,
+      "priority": "low"
+    }
+  ],
+  "repairSuggestions": [],
+  "pagination": [],
+  "overflowRisks": [],
+  "masterApplied": [
+    {
+      "slideIndex": 0,
+      "slideType": "cover",
+      "expectedMaster": "KPMG_COVER",
+      "appliedMaster": "KPMG_COVER",
+      "matched": true
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "dividerDark",
+      "expectedMaster": "KPMG_SECTION_DARK",
+      "appliedMaster": "KPMG_SECTION_DARK",
+      "matched": true
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "dividerLight",
+      "expectedMaster": "KPMG_SECTION_LIGHT",
+      "appliedMaster": "KPMG_SECTION_LIGHT",
+      "matched": true
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "divider",
+      "expectedMaster": "KPMG_SECTION_DARK",
+      "appliedMaster": "KPMG_SECTION_DARK",
+      "matched": true
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "contents",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "oneColumnText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "twoColumnText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisNarrowTable",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChartTableText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "titleStrapline4TextBoxes",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "backCover",
+      "expectedMaster": "KPMG_CLOSING",
+      "appliedMaster": "KPMG_CLOSING",
+      "matched": true
+    }
+  ],
+  "paginationDecisions": [],
+  "overflowEvents": [],
+  "fallbacks": [
+    {
+      "layout": "titleStrapline4TextBoxes",
+      "reason": "invalid_extracted_columns",
+      "details": {
+        "columns": [
+          {
+            "h": 0.5275590551181102,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 2.191147200349956
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 4.219412729658792
+          }
+        ]
+      }
+    }
+  ],
+  "overlapSummary": {
+    "slideCount": 12,
+    "overlapCount": 1,
+    "severeCount": 0,
+    "warningCount": 1,
+    "containmentCount": 0
+  },
+  "overlapFindings": [
+    {
+      "slideNumber": 10,
+      "severeCount": 0,
+      "warningCount": 1,
+      "examples": [
+        {
+          "severity": "warning",
+          "elementPair": "shape vs text",
+          "suggestion": "Reposition elements vertically."
+        }
+      ]
+    }
+  ],
+  "strictOverflow": {
+    "status": 0
+  },
+  "inputSlideCount": 12,
+  "outputSlideCount": 12,
+  "outputPptx": "outputs/smoke-layout-flex/deck.pptx",
+  "summary": {
+    "status": "pass",
+    "inputSlides": 12,
+    "renderedSlides": 12,
+    "blockingIssues": 0,
+    "advisoryIssues": 0,
+    "counts": {
+      "errors": 0,
+      "warnings": 0,
+      "missingSlots": 0,
+      "sparseSlides": 0,
+      "thinSlides": 0,
+      "slotIssues": 0,
+      "overflowEvents": 0,
+      "overlapSevere": 0,
+      "overlapWarnings": 1,
+      "repairSuggestions": 0
+    },
+    "strict": {
+      "requested": false,
+      "failed": false,
+      "overflowStatus": null,
+      "overflowSkipped": false
+    }
+  }
+}

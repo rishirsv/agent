@@ -184,8 +184,7 @@ export function addAnalysisWideChartTableText(
   const hasChartData = Boolean(chart?.type && Array.isArray(chart?.data) && chart.data.length > 0);
   const hasTableData = Boolean(table?.headers && Array.isArray(table?.rows) && table.rows.length > 0);
   // Render charts whenever data is available; flags only influence preferred chart slot.
-  const shouldRenderChart = hasChartData;
-  const chartBase = shouldRenderChart
+  const chartBase = hasChartData
     ? hasTableData
       ? (showSummaryChart ? (g.summaryChart || g.chart || g.bottomChart || null) : (g.chart || g.bottomChart || g.summaryChart || null))
       : (g.table || g.chart || g.bottomChart || g.summaryChart || null)

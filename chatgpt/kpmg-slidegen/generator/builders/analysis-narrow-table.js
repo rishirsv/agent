@@ -201,21 +201,20 @@ function computeRowH({ boxH, rows, colW, fontSize = 9 }) {
   const bodyRows = Array.isArray(rows) ? rows : [];
   const n = Math.max(1, bodyRows.length);
   const headerH = 0.32;
-  const chromeH = TABLE_CHROME.titleBarHeight + TABLE_CHROME.separatorHeight;
   const estimatedHeights = bodyRows.length
     ? bodyRows.map((row) => estimateRowHeight(row, colW, fontSize))
     : Array.from({ length: n }, () => 0.22);
-  const estimatedTotal = chromeH + headerH + estimatedHeights.reduce((sum, h) => sum + h, 0);
+  const estimatedTotal = headerH + estimatedHeights.reduce((sum, h) => sum + h, 0);
   const available = Number(boxH || 3.5);
   if (estimatedTotal <= available) return [headerH, ...estimatedHeights];
 
   const minBodyH = 0.16;
-  const minTotal = chromeH + headerH + n * minBodyH;
+  const minTotal = headerH + n * minBodyH;
   if (minTotal >= available) return [headerH, ...Array.from({ length: n }, () => minBodyH)];
 
   const flexSum = estimatedHeights.reduce((sum, h) => sum + Math.max(0, h - minBodyH), 0);
   if (flexSum <= 0) return [headerH, ...Array.from({ length: n }, () => minBodyH)];
-  const availableFlex = available - chromeH - headerH - n * minBodyH;
+  const availableFlex = available - headerH - n * minBodyH;
   return [
     headerH,
     ...estimatedHeights.map((h) => minBodyH + (Math.max(0, h - minBodyH) / flexSum) * availableFlex),
@@ -229,12 +228,7 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
     h = 2.5,
   } = opts;
   const tableTitle = String(opts.tableTitle ?? '').toLowerCase();
-  const tableHeading = String(
-    opts.tableHeading ??
-      tableData?.title ??
-      tableData?.heading ??
-      '',
-  ).trim();
+  const tableHeading = String(opts.tableHeading ?? '').trim();
   const showTitleBar = opts.showTitleBar !== false;
   const isFinancialSummary = tableTitle.includes('financial summary') || tableTitle.includes('summary financial');
 
@@ -476,7 +470,7 @@ export function addAnalysisNarrowTable(
       });
     } else {
       // Full-width table (dense), takeaways beneath to keep slide “finished”.
-      const fullTableBox = { x: 1.0919, y: 1.9156 + yShift, w: 11.1596, h: 4.5079 };
+      const fullTableBox = { x: 1.0919, y: 1.9156 + yShift, w: FULL_TABLE_W, h: 4.5079 };
       addAnalysisTable(slide, table, {
         ...fullTableBox,
         tableTitle: title,
@@ -485,7 +479,7 @@ export function addAnalysisNarrowTable(
 
       const fullColW = computeColW({ w: fullTableBox.w, headers: table.headers, rows: table.rows });
       const rowH = computeRowH({ boxH: fullTableBox.h, rows: table.rows, colW: fullColW, fontSize: cols >= 7 ? 8 : 9 });
-      const tableH = rowH.reduce((a, b) => a + b, 0);
+      const tableH = (TABLE_CHROME.titleBarHeight + TABLE_CHROME.separatorHeight) + rowH.reduce((a, b) => a + b, 0);
       const takeY = fullTableBox.y + tableH + 0.18;
       const safeTop = footerSafeTop ?? 6.7;
       const takeH = Math.max(0.8, safeTop - takeY);
@@ -518,9 +512,9 @@ export function addAnalysisNarrowTable(
 
   if (notes) {
     const notesBox = {
-      x: (TWO_COL.table.x ?? 1.0919),
-      y: (TWO_COL.table.y + TWO_COL.table.h + 0.15),
-      w: (TWO_COL.table.w ?? 5.5),
+      x: TWO_COL.table.x,
+      y: TWO_COL.table.y + TWO_COL.table.h + 0.15,
+      w: TWO_COL.table.w,
       h: 0.9,
     };
     const safeNotes = clampToMasterFooter(notesBox, masterName);

@@ -88,7 +88,7 @@ export function addTwoColumnTextWithStrapline(
     ? {
         ...titleGeo,
         x: iconMode === 'titleLeft' ? titleGeo.x + iconSize + iconPad : titleGeo.x,
-        w: iconMode === 'titleRight' ? titleGeo.w - (iconSize + iconPad) : titleGeo.w - (iconSize + iconPad),
+        w: titleGeo.w - (iconSize + iconPad),
       }
     : titleGeo;
 
