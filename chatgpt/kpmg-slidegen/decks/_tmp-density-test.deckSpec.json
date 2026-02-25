@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "title": "Density Test",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Test",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca"
+    }
+  },
+  "slides": [
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Test shows 12% gain yields $24M",
+      "strapline": "This is a one-sentence so what tagline showing the quantified implication and why leaders should act now.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Evidence bullet one quantifies baseline productivity at 100 units and expected uplift at 12%. The resulting delta supports an estimated $24M annualized impact after applying a 0.8 realization factor.",
+        "Evidence bullet two links process cycle-time reduction from 9.5 days to 6.8 days under pilot conditions. This implies capacity release equivalent to 120 FTE without changing service-level commitments.",
+        "Callout insight 1: What most leaders miss is that adoption variance, not model quality, explains over half of value dispersion across business units. A ten-point adoption swing changes annual value by roughly $6M.",
+        "Callout insight 2: Counterargument says governance gates slow delivery and erase gains in year one. Rebuttal is that gated deployment reduced rework by 35%, preserving timeline certainty and net economics."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Baseline vs Target",
+            "labels": ["Baseline", "Target"],
+            "values": [100, 112]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Index"
+        },
+        "source": "Source: Internal pilot logs (Q4 FY2025, n=14 teams); assumptions include 80% realization and stable demand mix."
+      }
+    }
+  ]
+}

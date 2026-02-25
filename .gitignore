@@ -15,7 +15,6 @@ desktop.ini
 *~
 
 # ---- kpmg-pptx-gen ----
-chatgpt/kpmg-pptx-gen/outputs/
 chatgpt/kpmg-pptx-gen/**/__pycache__/
 # ---- /kpmg-pptx-gen ----
 
@@ -35,3 +34,7 @@ chatgpt/kpmg-slidegen/outputs/runs/
 # ---- oracle ----
 .agents/oracle/
 # ---- oracle ----
+
+# Node
+node_modules
+pycache

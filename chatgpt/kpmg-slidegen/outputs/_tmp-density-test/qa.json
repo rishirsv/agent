@@ -1,0 +1,175 @@
+{
+  "generatedAt": "2026-02-25T16:01:42.211Z",
+  "template": "kpmg-diligence",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "densityFindings": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    }
+  ],
+  "densitySummary": {
+    "ok": 1,
+    "thin": 0,
+    "sparse": 0
+  },
+  "missingSlots": [],
+  "thinSlides": [],
+  "sparseSlides": [],
+  "slotIssues": [],
+  "slotMetrics": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 820,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 105,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 31,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    }
+  ],
+  "repairSuggestions": [],
+  "pagination": [],
+  "overflowRisks": [],
+  "masterApplied": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    }
+  ],
+  "paginationDecisions": [],
+  "overflowEvents": [],
+  "tableWarnings": [],
+  "fallbacks": [],
+  "overlapSummary": {
+    "slideCount": 1,
+    "overlapCount": 0,
+    "severeCount": 0,
+    "warningCount": 0,
+    "containmentCount": 0
+  },
+  "overlapFindings": [],
+  "strictOverflow": {
+    "status": 0
+  },
+  "inputSlideCount": 1,
+  "outputSlideCount": 1,
+  "outputPptx": "outputs/_tmp-density-test/deck.pptx",
+  "postprocess": {
+    "availability": {
+      "slidesSkill": true,
+      "reason": null,
+      "slidesDir": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/generator/postprocess/slides-runtime",
+      "python": "python3"
+    },
+    "preview": {
+      "attempted": true,
+      "status": "ok",
+      "reason": null,
+      "stderr": null,
+      "outputDir": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/_tmp-density-test/preview",
+      "slideImageCount": 1,
+      "width": 1600,
+      "height": 900
+    },
+    "montage": {
+      "attempted": true,
+      "status": "ok",
+      "reason": null,
+      "stderr": null,
+      "path": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/_tmp-density-test/montage.png",
+      "numCol": 5,
+      "labelMode": "number"
+    },
+    "overflowVisual": {
+      "attempted": true,
+      "status": "pass",
+      "reason": null,
+      "stderr": null,
+      "failingSlides": [],
+      "imagePaths": []
+    }
+  },
+  "summary": {
+    "status": "pass",
+    "inputSlides": 1,
+    "renderedSlides": 1,
+    "blockingIssues": 0,
+    "advisoryIssues": 0,
+    "counts": {
+      "errors": 0,
+      "warnings": 0,
+      "missingSlots": 0,
+      "sparseSlides": 0,
+      "thinSlides": 0,
+      "slotIssues": 0,
+      "overflowEvents": 0,
+      "overlapSevere": 0,
+      "overlapWarnings": 0,
+      "repairSuggestions": 0
+    },
+    "strict": {
+      "requested": false,
+      "failed": false,
+      "overflowStatus": null,
+      "overflowSkipped": false
+    },
+    "postprocess": {
+      "previewAttempted": 1,
+      "previewFailed": 0,
+      "previewStatus": "ok",
+      "montageAttempted": 1,
+      "montageFailed": 0,
+      "montageStatus": "ok",
+      "overflowVisualAttempted": 1,
+      "overflowVisualFailed": 0,
+      "overflowVisualStatus": "pass"
+    }
+  }
+}

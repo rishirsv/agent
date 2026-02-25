@@ -1,0 +1,4570 @@
+{
+  "generatedAt": "2026-02-21T03:45:53.098Z",
+  "types": {
+    "analysisNarrowTable": {
+      "description": "Analysis with narrow table",
+      "geometry": {
+        "strapline": {
+          "h": 0.5275590551181102,
+          "w": 11.149606299212598,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        "table": {
+          "h": 4.5078740157480315,
+          "w": 4.035978783902012,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        "title": {
+          "h": 0.5833333333333334,
+          "w": 11.149606299212598,
+          "x": 1.0918635170603674,
+          "y": 0.4722222222222222
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.5275590551181102,
+            "w": 11.149606299212598,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 6.9763779527559056,
+            "x": 5.266138451443569,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 4.232283464566929,
+            "w": 6.975332458442694,
+            "x": 5.266138451443569,
+            "y": 2.191146106736658
+          }
+        ]
+      },
+      "slots": {
+        "notes": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "table": {
+          "kind": "table",
+          "required": true,
+          "minItems": 3,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "table",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "insights": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 2,
+          "minChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "insightTitle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 6,
+          "maxChars": 80,
+          "allowEmpty": true,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "templateLayout": "Analysis_narrow table",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.72
+      }
+    },
+    "analysisWideChart2ColsText": {
+      "description": "Analysis with chart (right) and commentary (left)",
+      "geometry": {
+        "strapline": null,
+        "title": null,
+        "bodyBoxes": [
+          {
+            "h": 0.5275590551181102,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 2.204724409448819,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 4.220471347331584
+          },
+          {
+            "h": 2.204724409448819,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 4.2204724409448815
+          }
+        ],
+        "chart": {
+          "h": 1.9291338582677164,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 2.191146106736658
+        }
+      },
+      "slots": {
+        "body": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 4,
+          "minChars": 180,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "chart": {
+          "kind": "chart",
+          "required": true,
+          "minItems": 1,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "chart",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "bodyStyle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 7,
+          "maxChars": 10,
+          "pattern": "^(bullets|paragraphs)$",
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "templateLayout": "Analysis_wide chart + 2 cols text",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "analysisWideChartTableText": {
+      "description": "Analysis with chart, table, and commentary",
+      "geometry": {
+        "title": null,
+        "strapline": {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        "heading": {
+          "h": 0.2755905511811024,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        "body": {
+          "h": 2.204724409448819,
+          "w": 5.505083114610674,
+          "x": 6.7362204724409445,
+          "y": 4.2194116360454945
+        },
+        "chart": {
+          "h": 0.7416262029746282,
+          "w": 2.707489063867017,
+          "x": 9.533981846019248,
+          "y": 1.0758639545056867
+        },
+        "table": {
+          "h": 2.204724409448819,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 4.219412729658792
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.5275590551181102,
+            "w": 8.298253499562554,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 2.204724409448819,
+            "w": 5.505083114610674,
+            "x": 6.7362204724409445,
+            "y": 4.2194116360454945
+          }
+        ]
+      },
+      "slots": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "heading": {
+          "kind": "text",
+          "required": false,
+          "minChars": 6,
+          "maxChars": 120,
+          "allowEmpty": true,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "body": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 4,
+          "minChars": 180,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "chart": {
+          "kind": "chart",
+          "required": true,
+          "minItems": 1,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "chart",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "table": {
+          "kind": "table",
+          "required": false,
+          "minItems": 3,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "table",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "noteSource": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "bodyStyle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 7,
+          "maxChars": 10,
+          "pattern": "^(bullets|paragraphs)$",
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "templateLayout": "Analysis_wide chart+table+text",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "backCover": {
+      "description": "Back cover with disclaimer",
+      "slots": {
+        "disclaimer": {
+          "kind": "text",
+          "required": false,
+          "minChars": 80,
+          "maxChars": 700,
+          "allowEmpty": true,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        },
+        "url": {
+          "kind": "text",
+          "required": false,
+          "minChars": 5,
+          "maxChars": 60,
+          "allowEmpty": true,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "templateLayout": "Back cover_2",
+      "geometry": {
+        "body": {
+          "h": 0.8751301399825022,
+          "w": 11.39366469816273,
+          "x": 1.0070767716535434,
+          "y": 5.0667322834645665
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.8751301399825022,
+            "w": 11.39366469816273,
+            "x": 1.0070767716535434,
+            "y": 5.0667322834645665
+          }
+        ],
+        "logo": {
+          "h": 0.4028280839895013,
+          "w": 1,
+          "x": 1.0919466316710411,
+          "y": 0.4060706474190726
+        }
+      },
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0
+      }
+    },
+    "cover": {
+      "description": "Cover with blue background, left title, right image window",
+      "geometry": {
+        "body": {
+          "h": 0.8858267716535433,
+          "w": 4.043974190726159,
+          "x": 1.0919488188976378,
+          "y": 5.475732720909886
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.8858267716535433,
+            "w": 4.043974190726159,
+            "x": 1.0919488188976378,
+            "y": 5.475732720909886
+          }
+        ],
+        "chart": null,
+        "logo": {
+          "h": 0.4028280839895013,
+          "w": 1,
+          "x": 1.0919466316710411,
+          "y": 0.4060706474190726
+        },
+        "photo": {
+          "h": 4.77361220472441,
+          "w": 6.872099737532809,
+          "x": 5.37616469816273,
+          "y": 1.5927252843394575
+        },
+        "picture": {
+          "h": 4.77361220472441,
+          "w": 6.872099737532809,
+          "x": 5.37616469816273,
+          "y": 1.5927252843394575
+        },
+        "strapline": null,
+        "subtitle": null,
+        "table": null,
+        "title": {
+          "h": 3.7486253280839894,
+          "w": 4.043974190726159,
+          "x": 1.0919488188976378,
+          "y": 1.5927252843394575
+        },
+        "window": null
+      },
+      "slots": {
+        "subtitle": {
+          "kind": "text",
+          "maxLength": 200,
+          "required": true,
+          "minChars": 12,
+          "maxChars": 200,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "maxLength": 100,
+          "required": true,
+          "minChars": 8,
+          "maxChars": 100,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "templateLayout": "Cover page_Right Horizontal Window",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.65
+      }
+    },
+    "divider": {
+      "description": "Section divider with gradient window",
+      "geometry": {
+        "gradient": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        },
+        "number": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "title": {
+          "h": 0.7620100612423447,
+          "w": 6.913194444444445,
+          "x": 1.410609142607174,
+          "y": 2.385036089238845
+        },
+        "body": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.8885936132983377,
+            "w": 1.1840277777777777,
+            "x": 1.4106080489938757,
+            "y": 1.246794619422572
+          }
+        ],
+        "table": {
+          "h": 2.975310586176728,
+          "w": 6.914634733158355,
+          "x": 1.414633639545057,
+          "y": 3.3051771653543307
+        },
+        "window": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        }
+      },
+      "slots": {
+        "sectionNumber": {
+          "kind": "text",
+          "pattern": "^\\d{2}$",
+          "required": true,
+          "minChars": 2,
+          "maxChars": 2,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "sectionTitle": {
+          "kind": "text",
+          "maxLength": 80,
+          "required": true,
+          "minChars": 6,
+          "maxChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "templateLayout": "Divider slide_5",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "oneColumnText": {
+      "description": "Single-column body text layout",
+      "geometry": {
+        "body": null,
+        "source": null,
+        "strapline": null,
+        "title": null
+      },
+      "slots": {
+        "body": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 3,
+          "minChars": 180,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "source": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "bodyStyle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 7,
+          "maxChars": 10,
+          "pattern": "^(bullets|paragraphs)$",
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.72
+      }
+    },
+    "titleStrapline4TextBoxes": {
+      "description": "Title + strapline + 4 text boxes",
+      "geometry": {
+        "columns": [
+          {
+            "h": 0.5275590551181102,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 2.191147200349956
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 4.219412729658792
+          }
+        ],
+        "strapline": null,
+        "title": null,
+        "bodyBoxes": [
+          {
+            "h": 0.5275590551181102,
+            "w": 11.14643372703412,
+            "x": 1.088540026246719,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 1.9155555555555555
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 2.191147200349956
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 2.191147200349956
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 4.219412729658792
+          },
+          {
+            "h": 0.2755905511811024,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 4.219412729658792
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 1.088540026246719,
+            "y": 4.495002187226596
+          },
+          {
+            "h": 1.9291338582677164,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 4.495002187226596
+          }
+        ]
+      },
+      "slots": {
+        "columns": {
+          "kind": "columns",
+          "required": true,
+          "minItems": 4,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "columns",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "bodyStyle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 7,
+          "maxChars": 10,
+          "pattern": "^(bullets|paragraphs)$",
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "templateLayout": "Title+strapline+4 text boxes",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "twoColumnText": {
+      "description": "Two-column body text layout",
+      "geometry": {
+        "left": {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 1.0905511811023623,
+          "y": 1.2899311023622047
+        },
+        "right": {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        "strapline": null,
+        "title": {
+          "h": 0.5833333333333334,
+          "w": 11.149606299212598,
+          "x": 1.0918635170603674,
+          "y": 0.4722222222222222
+        },
+        "bodyBoxes": [
+          {
+            "h": 5.133858267716535,
+            "w": 5.5078740157480315,
+            "x": 1.0905511811023623,
+            "y": 1.2899311023622047
+          },
+          {
+            "h": 5.133858267716535,
+            "w": 5.5078740157480315,
+            "x": 6.7362204724409445,
+            "y": 1.2899311023622047
+          }
+        ],
+        "leftBody": {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 1.0905511811023623,
+          "y": 1.2899311023622047
+        },
+        "rightBody": {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        }
+      },
+      "slots": {
+        "leftBody": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 2,
+          "minChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "rightBody": {
+          "kind": "textArray",
+          "required": true,
+          "minItems": 2,
+          "minChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "bullet",
+            "keepTogether": false,
+            "priority": "high"
+          }
+        },
+        "strapline": {
+          "kind": "text",
+          "required": false,
+          "minChars": 12,
+          "maxChars": 700,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          }
+        },
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 12,
+          "maxChars": 50,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "paragraph",
+            "keepTogether": true,
+            "priority": "medium"
+          },
+          "enforceMaxChars": true
+        },
+        "bodyStyle": {
+          "kind": "text",
+          "required": false,
+          "minChars": 7,
+          "maxChars": 10,
+          "pattern": "^(bullets|paragraphs)$",
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "low"
+          }
+        }
+      },
+      "templateLayout": "Two columns text",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.72
+      }
+    },
+    "dividerDark": {
+      "description": "Section divider (dark variant)",
+      "geometry": {
+        "gradient": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        },
+        "number": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "title": {
+          "h": 0.7620100612423447,
+          "w": 6.913194444444445,
+          "x": 1.410609142607174,
+          "y": 2.385036089238845
+        },
+        "body": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.8885936132983377,
+            "w": 1.1840277777777777,
+            "x": 1.4106080489938757,
+            "y": 1.246794619422572
+          }
+        ],
+        "table": {
+          "h": 2.975310586176728,
+          "w": 6.914634733158355,
+          "x": 1.414633639545057,
+          "y": 3.3051771653543307
+        },
+        "window": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        }
+      },
+      "slots": {
+        "sectionNumber": {
+          "kind": "text",
+          "pattern": "^\\d{2}$",
+          "required": true,
+          "minChars": 2,
+          "maxChars": 2,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "sectionTitle": {
+          "kind": "text",
+          "maxLength": 80,
+          "required": true,
+          "minChars": 6,
+          "maxChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "templateLayout": "Divider slide_5",
+      "variant": "dark",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "dividerLight": {
+      "description": "Section divider (light variant)",
+      "geometry": {
+        "gradient": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        },
+        "number": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "title": {
+          "h": 0.7620100612423447,
+          "w": 6.913194444444445,
+          "x": 1.410609142607174,
+          "y": 2.385036089238845
+        },
+        "body": {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        },
+        "bodyBoxes": [
+          {
+            "h": 0.8885936132983377,
+            "w": 1.1840277777777777,
+            "x": 1.4106080489938757,
+            "y": 1.246794619422572
+          }
+        ],
+        "table": {
+          "h": 2.975310586176728,
+          "w": 6.914634733158355,
+          "x": 1.414633639545057,
+          "y": 3.3051771653543307
+        },
+        "window": {
+          "h": 5.364583333333333,
+          "w": 7.722863079615048,
+          "x": 1.0919466316710411,
+          "y": 1.0674245406824148
+        }
+      },
+      "slots": {
+        "sectionNumber": {
+          "kind": "text",
+          "pattern": "^\\d{2}$",
+          "required": true,
+          "minChars": 2,
+          "maxChars": 2,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "label",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "sectionTitle": {
+          "kind": "text",
+          "maxLength": 80,
+          "required": true,
+          "minChars": 6,
+          "maxChars": 80,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "templateLayout": "Divider slide_2",
+      "variant": "light",
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.75
+      }
+    },
+    "contents": {
+      "description": "Table of contents slide with two rows of section blocks",
+      "templateLayout": "Contents",
+      "geometry": {
+        "title": {
+          "x": 1.089,
+          "y": 0.472,
+          "w": 11.1457,
+          "h": 0.6181
+        },
+        "topRow": {
+          "x": 1.089,
+          "y": 1.38,
+          "w": 11.153,
+          "h": 2.35
+        },
+        "bottomRow": {
+          "x": 1.089,
+          "y": 4.04,
+          "w": 11.153,
+          "h": 2.35
+        }
+      },
+      "slots": {
+        "title": {
+          "kind": "text",
+          "required": true,
+          "minChars": 6,
+          "maxChars": 40,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "heading",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        },
+        "sections": {
+          "kind": "contentsSections",
+          "required": true,
+          "minItems": 8,
+          "allowEmpty": false,
+          "renderingHints": {
+            "mode": "contents",
+            "keepTogether": true,
+            "priority": "high"
+          }
+        }
+      },
+      "densityTarget": {
+        "mode": "balanced",
+        "minScore": 0.8
+      }
+    }
+  },
+  "detectedLayoutSlots": {
+    "Analysis_2 columns text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 6
+      },
+      "staticCount": 6
+    },
+    "Analysis_2 columns text+chart": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "text": 6
+      },
+      "staticCount": 6
+    },
+    "Analysis_50-50 table+text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 1,
+        "text": 4
+      },
+      "staticCount": 6
+    },
+    "Analysis_50-50 table+text+chart": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "table": 1,
+        "text": 4
+      },
+      "staticCount": 6
+    },
+    "Analysis_narrow table": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 1,
+        "text": 4
+      },
+      "staticCount": 6
+    },
+    "Analysis_narrow table+2 col text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 1,
+        "text": 5
+      },
+      "staticCount": 6
+    },
+    "Analysis_narrow table+2 col text+chart": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "table": 1,
+        "text": 5
+      },
+      "staticCount": 6
+    },
+    "Analysis_narrow table+chart": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "table": 1,
+        "text": 4
+      },
+      "staticCount": 6
+    },
+    "Analysis_wide chart + 2 cols text": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "text": 5
+      },
+      "staticCount": 7
+    },
+    "Analysis_wide chart+table+text": {
+      "chartNames": [
+        "Chart Placeholder 43",
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 2,
+        "image": 1,
+        "table": 1,
+        "text": 4
+      },
+      "staticCount": 7
+    },
+    "Back cover_1": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "text": 2
+      },
+      "staticCount": 15
+    },
+    "Back cover_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 3,
+        "text": 2
+      },
+      "staticCount": 14
+    },
+    "Basis of preparation": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 7
+      },
+      "staticCount": 6
+    },
+    "Benchmarking_1": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "text": 5
+      },
+      "staticCount": 7
+    },
+    "Benchmarking_2": {
+      "chartNames": [
+        "Chart Placeholder 43",
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 2,
+        "image": 1,
+        "text": 8
+      },
+      "staticCount": 9
+    },
+    "Color palette": {
+      "chartNames": [],
+      "slotTypes": {
+        "text": 68
+      },
+      "staticCount": 3
+    },
+    "Cover page_1": {
+      "chartNames": [],
+      "slotTypes": {
+        "text": 2
+      },
+      "staticCount": 3
+    },
+    "Cover page_Left Horizontal Window": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "text": 2
+      },
+      "staticCount": 3
+    },
+    "Cover page_Left Vertical Window": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "text": 2
+      },
+      "staticCount": 2
+    },
+    "Cover page_Right Horizontal Window": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "text": 2
+      },
+      "staticCount": 3
+    },
+    "Cover page_Right Vertical Window": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "text": 2
+      },
+      "staticCount": 3
+    },
+    "Divider slide_1": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 7
+    },
+    "Divider slide_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 7
+    },
+    "Divider slide_3": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 7
+    },
+    "Divider slide_4": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 7
+    },
+    "Divider slide_5": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 7
+    },
+    "Divider slide_6": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 2,
+        "table": 2,
+        "text": 2
+      },
+      "staticCount": 8
+    },
+    "Headlines": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 1,
+        "text": 22
+      },
+      "staticCount": 6
+    },
+    "Headlines_VC": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "table": 1,
+        "text": 28
+      },
+      "staticCount": 6
+    },
+    "Key findings_1 finding": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 5
+      },
+      "staticCount": 6
+    },
+    "Key findings_1 finding2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 5
+      },
+      "staticCount": 5
+    },
+    "Key findings_1 finding_large": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 6
+      },
+      "staticCount": 6
+    },
+    "Key findings_2 per page": {
+      "chartNames": [
+        "Chart Placeholder 16",
+        "Chart Placeholder 16"
+      ],
+      "slotTypes": {
+        "chart": 2,
+        "image": 1,
+        "text": 9
+      },
+      "staticCount": 6
+    },
+    "Key findings_2 per page_2": {
+      "chartNames": [
+        "Chart Placeholder 16",
+        "Chart Placeholder 16"
+      ],
+      "slotTypes": {
+        "chart": 2,
+        "image": 1,
+        "text": 7
+      },
+      "staticCount": 6
+    },
+    "Key findings_2 per page_text only": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 9
+      },
+      "staticCount": 5
+    },
+    "Key findings_2 per page_text only_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 7
+      },
+      "staticCount": 5
+    },
+    "Key findings_3 per page": {
+      "chartNames": [
+        "Chart Placeholder 16",
+        "Chart Placeholder 16",
+        "Chart Placeholder 16"
+      ],
+      "slotTypes": {
+        "chart": 3,
+        "image": 1,
+        "text": 13
+      },
+      "staticCount": 6
+    },
+    "Key findings_3 per page_2": {
+      "chartNames": [
+        "Chart Placeholder 16",
+        "Chart Placeholder 16",
+        "Chart Placeholder 16"
+      ],
+      "slotTypes": {
+        "chart": 3,
+        "image": 1,
+        "text": 10
+      },
+      "staticCount": 6
+    },
+    "Key findings_3 per page_text only": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 13
+      },
+      "staticCount": 5
+    },
+    "Key findings_3 per page_text only_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 10
+      },
+      "staticCount": 5
+    },
+    "Key findings_6 per page": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 25
+      },
+      "staticCount": 5
+    },
+    "Key findings_6 per page_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 19
+      },
+      "staticCount": 5
+    },
+    "One column text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 2
+      },
+      "staticCount": 5
+    },
+    "Summary financials": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 7
+      },
+      "staticCount": 11
+    },
+    "Summary financials_2": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 5
+      },
+      "staticCount": 10
+    },
+    "Summary financials_3": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 6
+      },
+      "staticCount": 11
+    },
+    "Three columns text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 4
+      },
+      "staticCount": 6
+    },
+    "Title and strapline only": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 2
+      },
+      "staticCount": 5
+    },
+    "Title only": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 1
+      },
+      "staticCount": 5
+    },
+    "Title+strapline+4 text boxes": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 10
+      },
+      "staticCount": 5
+    },
+    "Transmittal letter": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 8
+      },
+      "staticCount": 8
+    },
+    "Two columns text": {
+      "chartNames": [],
+      "slotTypes": {
+        "image": 1,
+        "text": 3
+      },
+      "staticCount": 6
+    },
+    "Value Creation analysis": {
+      "chartNames": [
+        "Chart Placeholder 43"
+      ],
+      "slotTypes": {
+        "chart": 1,
+        "image": 1,
+        "text": 6
+      },
+      "staticCount": 6
+    }
+  },
+  "detectedLayoutGeometry": {
+    "Analysis_2 columns text": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.149606299212598,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 2.1911450131233594
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.1911450131233594
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Analysis_2 columns text+chart": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 2.1911450131233594
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.1911450131233594
+        }
+      ],
+      "chart": {
+        "h": 0.7409186351706036,
+        "w": 2.707489063867017,
+        "x": 9.533981846019248,
+        "y": 1.0765715223097112
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Analysis_50-50 table+text": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.1496052055993,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.1911450131233594
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 5.5078740157480315,
+        "x": 1.088540026246719,
+        "y": 1.9155544619422573
+      },
+      "title": null,
+      "window": null
+    },
+    "Analysis_50-50 table+text+chart": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.1911450131233594
+        }
+      ],
+      "chart": {
+        "h": 0.7409186351706036,
+        "w": 2.707489063867017,
+        "x": 9.533981846019248,
+        "y": 1.0765715223097112
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 5.5078740157480315,
+        "x": 1.088540026246719,
+        "y": 1.9155544619422573
+      },
+      "title": null,
+      "window": null
+    },
+    "Analysis_narrow table": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.149606299212598,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 6.9763779527559056,
+          "x": 5.266138451443569,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 6.975332458442694,
+          "x": 5.266138451443569,
+          "y": 2.191146106736658
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": {
+        "h": 0.5275590551181102,
+        "w": 11.149606299212598,
+        "x": 1.088540026246719,
+        "y": 1.2899311023622047
+      },
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 4.035978783902012,
+        "x": 1.088540026246719,
+        "y": 1.9155555555555555
+      },
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Analysis_narrow table+2 col text": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.149606299212598,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 6.9763779527559056,
+          "x": 5.266137357830271,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 3.4173228346456694,
+          "x": 5.266137357830271,
+          "y": 2.191146106736658
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 3.4173228346456694,
+          "x": 8.826771653543307,
+          "y": 2.191146106736658
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": {
+        "h": 0.5275590551181102,
+        "w": 11.149606299212598,
+        "x": 1.088540026246719,
+        "y": 1.2899311023622047
+      },
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 4.035978783902012,
+        "x": 1.088540026246719,
+        "y": 1.9155555555555555
+      },
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Analysis_narrow table+2 col text+chart": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 6.9763779527559056,
+          "x": 5.266137357830271,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 3.4173228346456694,
+          "x": 5.266137357830271,
+          "y": 2.191146106736658
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 3.4173228346456694,
+          "x": 8.826771653543307,
+          "y": 2.191146106736658
+        }
+      ],
+      "chart": {
+        "h": 0.740919728783902,
+        "w": 2.707489063867017,
+        "x": 9.533981846019248,
+        "y": 1.0765704286964128
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": {
+        "h": 0.5275590551181102,
+        "w": 8.298253499562554,
+        "x": 1.088540026246719,
+        "y": 1.2899311023622047
+      },
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 4.035978783902012,
+        "x": 1.088540026246719,
+        "y": 1.9155555555555555
+      },
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Analysis_narrow table+chart": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 6.9763779527559056,
+          "x": 5.267716535433071,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 6.975332458442694,
+          "x": 5.267716535433071,
+          "y": 2.191146106736658
+        }
+      ],
+      "chart": {
+        "h": 0.740919728783902,
+        "w": 2.707489063867017,
+        "x": 9.533980752405949,
+        "y": 1.0765704286964128
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": {
+        "h": 0.5275590551181102,
+        "w": 8.298253499562554,
+        "x": 1.088540026246719,
+        "y": 1.2899311023622047
+      },
+      "subtitle": null,
+      "table": {
+        "h": 4.5078740157480315,
+        "w": 4.035978783902012,
+        "x": 1.088540026246719,
+        "y": 1.9155555555555555
+      },
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Analysis_wide chart + 2 cols text": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 2.204724409448819,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 4.220471347331584
+        },
+        {
+          "h": 2.204724409448819,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 4.2204724409448815
+        }
+      ],
+      "chart": {
+        "h": 1.9291338582677164,
+        "w": 11.14643372703412,
+        "x": 1.088540026246719,
+        "y": 2.191146106736658
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Analysis_wide chart+table+text": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 2.204724409448819,
+          "w": 5.505083114610674,
+          "x": 6.7362204724409445,
+          "y": 4.2194116360454945
+        }
+      ],
+      "chart": {
+        "h": 0.7416262029746282,
+        "w": 2.707489063867017,
+        "x": 9.533981846019248,
+        "y": 1.0758639545056867
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.204724409448819,
+        "w": 5.5078740157480315,
+        "x": 1.088540026246719,
+        "y": 4.219412729658792
+      },
+      "title": null,
+      "window": null
+    },
+    "Back cover_1": {
+      "body": {
+        "h": 0.8751301399825022,
+        "w": 11.39366469816273,
+        "x": 1.0070767716535434,
+        "y": 5.0667322834645665
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8751301399825022,
+          "w": 11.39366469816273,
+          "x": 1.0070767716535434,
+          "y": 5.0667322834645665
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Back cover_2": {
+      "body": {
+        "h": 0.8751301399825022,
+        "w": 11.39366469816273,
+        "x": 1.0070767716535434,
+        "y": 5.0667322834645665
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8751301399825022,
+          "w": 11.39366469816273,
+          "x": 1.0070767716535434,
+          "y": 5.0667322834645665
+        }
+      ],
+      "chart": null,
+      "logo": {
+        "h": 0.4028280839895013,
+        "w": 1,
+        "x": 1.0919466316710411,
+        "y": 0.4060706474190726
+      },
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Basis of preparation": {
+      "bodyBoxes": [
+        {
+          "h": 0.4744324146981627,
+          "w": 2.817227690288714,
+          "x": 1.0918646106736658,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 1.6535433070866141,
+          "w": 8.212472659667542,
+          "x": 4.02884842519685,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.4744324146981627,
+          "w": 2.817227690288714,
+          "x": 1.0918646106736658,
+          "y": 3.0306944444444444
+        },
+        {
+          "h": 1.6535433070866141,
+          "w": 8.21259842519685,
+          "x": 4.02884842519685,
+          "y": 3.0306944444444444
+        },
+        {
+          "h": 0.4744324146981627,
+          "w": 2.817227690288714,
+          "x": 1.0918646106736658,
+          "y": 4.7714577865266845
+        },
+        {
+          "h": 1.6535433070866141,
+          "w": 8.212471566054242,
+          "x": 4.02884842519685,
+          "y": 4.7714577865266845
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Benchmarking_1": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 8.298762029746282,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 2.716535433070866,
+          "x": 9.531300306211724,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 4.232283464566929,
+          "w": 2.716535433070866,
+          "x": 9.531729002624672,
+          "y": 2.1911450131233594
+        }
+      ],
+      "chart": {
+        "h": 4.232283464566929,
+        "w": 8.298762029746282,
+        "x": 1.088540026246719,
+        "y": 2.191162510936133
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Benchmarking_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 8.298762029746282,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 2.716535433070866,
+          "x": 9.531300306211724,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 2.716535433070866,
+          "x": 9.531729002624672,
+          "y": 2.191146106736658
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 8.298762029746282,
+          "x": 1.088540026246719,
+          "y": 4.219412729658792
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 2.716535433070866,
+          "x": 9.531300306211724,
+          "y": 4.219412729658792
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 2.716535433070866,
+          "x": 9.531300306211724,
+          "y": 4.491699475065617
+        }
+      ],
+      "chart": {
+        "h": 1.9291338582677164,
+        "w": 8.298762029746282,
+        "x": 1.088540026246719,
+        "y": 2.1911636045494314
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Color palette": {
+      "bodyBoxes": [],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Cover page_1": {
+      "body": {
+        "h": 0.8937007874015748,
+        "w": 6.307086614173229,
+        "x": 1.3941830708661418,
+        "y": 5.197017716535433
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8937007874015748,
+          "w": 6.307086614173229,
+          "x": 1.3941830708661418,
+          "y": 5.197017716535433
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 3.177165354330709,
+        "w": 6.307086614173229,
+        "x": 1.3941830708661418,
+        "y": 1.9298982939632545
+      },
+      "window": {
+        "h": 4.807726377952756,
+        "w": 6.921211723534558,
+        "x": 1.0919477252843395,
+        "y": 1.6242836832895888
+      }
+    },
+    "Cover page_Left Horizontal Window": {
+      "body": {
+        "h": 0.8858267716535433,
+        "w": 3.883624234470691,
+        "x": 8.364641294838146,
+        "y": 5.190674759405074
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8858267716535433,
+          "w": 3.883624234470691,
+          "x": 8.364641294838146,
+          "y": 5.190674759405074
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": {
+        "h": 4.470661636045494,
+        "w": 6.435972222222222,
+        "x": 1.0919477252843395,
+        "y": 1.6058398950131234
+      },
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 3.3881332020997377,
+        "w": 3.883624234470691,
+        "x": 8.357761373578303,
+        "y": 1.6058398950131234
+      },
+      "window": null
+    },
+    "Cover page_Left Vertical Window": {
+      "body": {
+        "h": 0.8858267716535433,
+        "w": 5.798252405949256,
+        "x": 6.003838582677165,
+        "y": 5.417295494313211
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8858267716535433,
+          "w": 5.798252405949256,
+          "x": 6.003838582677165,
+          "y": 5.417295494313211
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": {
+        "h": 5.897051618547682,
+        "w": 4.07657261592301,
+        "x": 1.0919477252843395,
+        "y": 0.4060706474190726
+      },
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 3.7688353018372704,
+        "w": 5.798252405949256,
+        "x": 6.003838582677165,
+        "y": 1.5898764216972878
+      },
+      "window": null
+    },
+    "Cover page_Right Horizontal Window": {
+      "body": {
+        "h": 0.8858267716535433,
+        "w": 4.043974190726159,
+        "x": 1.0919488188976378,
+        "y": 5.475732720909886
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8858267716535433,
+          "w": 4.043974190726159,
+          "x": 1.0919488188976378,
+          "y": 5.475732720909886
+        }
+      ],
+      "chart": null,
+      "logo": {
+        "h": 0.4028280839895013,
+        "w": 1,
+        "x": 1.0919466316710411,
+        "y": 0.4060706474190726
+      },
+      "picture": {
+        "h": 4.77361220472441,
+        "w": 6.872099737532809,
+        "x": 5.37616469816273,
+        "y": 1.5927252843394575
+      },
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 3.7486253280839894,
+        "w": 4.043974190726159,
+        "x": 1.0919488188976378,
+        "y": 1.5927252843394575
+      },
+      "window": null
+    },
+    "Cover page_Right Vertical Window": {
+      "body": {
+        "h": 0.8858267716535433,
+        "w": 5.740891294838145,
+        "x": 1.0919488188976378,
+        "y": 5.475731627296588
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8858267716535433,
+          "w": 5.740891294838145,
+          "x": 1.0919488188976378,
+          "y": 5.475731627296588
+        }
+      ],
+      "chart": null,
+      "logo": {
+        "h": 0.4028280839895013,
+        "w": 1,
+        "x": 1.0919466316710411,
+        "y": 0.4060706474190726
+      },
+      "picture": {
+        "h": 5.9554877515310585,
+        "w": 4.116969597550306,
+        "x": 8.124417104111986,
+        "y": 0.4060706474190726
+      },
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 3.764961723534558,
+        "w": 5.740891294838145,
+        "x": 1.0919488188976378,
+        "y": 1.5927252843394575
+      },
+      "window": null
+    },
+    "Divider slide_1": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.410609142607174,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.410609142607174,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.387097550306212,
+        "w": 7.755275590551181,
+        "x": 1.1182622484689413,
+        "y": 1.0564512248468942
+      }
+    },
+    "Divider slide_2": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.4106080489938757,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.364583333333333,
+        "w": 7.722864173228347,
+        "x": 1.0919466316710411,
+        "y": 1.0625
+      }
+    },
+    "Divider slide_3": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.4106080489938757,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.364583333333333,
+        "w": 7.722864173228347,
+        "x": 1.0919466316710411,
+        "y": 1.0625
+      }
+    },
+    "Divider slide_4": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.4106080489938757,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.364583333333333,
+        "w": 7.722863079615048,
+        "x": 1.0919466316710411,
+        "y": 1.0674245406824148
+      }
+    },
+    "Divider slide_5": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.4106080489938757,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.364583333333333,
+        "w": 7.722863079615048,
+        "x": 1.0919466316710411,
+        "y": 1.0674245406824148
+      }
+    },
+    "Divider slide_6": {
+      "body": {
+        "h": 0.8885936132983377,
+        "w": 1.1840277777777777,
+        "x": 1.4106080489938757,
+        "y": 1.246794619422572
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.8885936132983377,
+          "w": 1.1840277777777777,
+          "x": 1.4106080489938757,
+          "y": 1.246794619422572
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 2.975310586176728,
+        "w": 6.914634733158355,
+        "x": 1.414633639545057,
+        "y": 3.3051771653543307
+      },
+      "title": {
+        "h": 0.7620100612423447,
+        "w": 6.913194444444445,
+        "x": 1.410609142607174,
+        "y": 2.385036089238845
+      },
+      "window": {
+        "h": 5.364583333333333,
+        "w": 7.722863079615048,
+        "x": 1.0919466316710411,
+        "y": 1.0674245406824148
+      }
+    },
+    "Headlines": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 1.992836832895888
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 9.537741688538933,
+          "y": 2.28081583552056
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 10.914029965004374,
+          "y": 2.28081583552056
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.626989282589676,
+          "y": 2.2808180227471566
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.678872484689414,
+          "y": 2.2808180227471566
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 8.71634842519685,
+          "y": 2.2808180227471566
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 2.2821030183727036
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 3.314080271216098
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.626989282589676,
+          "y": 3.597716535433071
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.678872484689414,
+          "y": 3.597716535433071
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 8.71634842519685,
+          "y": 3.597716535433071
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 9.537741688538933,
+          "y": 3.597716535433071
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 10.914029965004374,
+          "y": 3.597716535433071
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 3.6080249343832023
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 4.635323709536308
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 5.2362204724409445,
+          "x": 1.0905511811023623,
+          "y": 4.928265529308836
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 9.537741688538933,
+          "y": 4.935049212598425
+        },
+        {
+          "h": 0.5193591426071741,
+          "w": 1.2861636045494313,
+          "x": 10.914029965004374,
+          "y": 4.935049212598425
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.626989282589676,
+          "y": 4.935051399825022
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.678872484689414,
+          "y": 4.935051399825022
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 8.71634842519685,
+          "y": 4.935051399825022
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 0.65748031496063,
+        "w": 11.156402012248469,
+        "x": 1.0905511811023623,
+        "y": 1.2899311023622047
+      },
+      "title": null,
+      "window": null
+    },
+    "Headlines_VC": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 4.866347331583552,
+          "x": 1.0905511811023623,
+          "y": 1.992836832895888
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 8.45490704286964,
+          "y": 2.2713757655293088
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 9.460475721784777,
+          "y": 2.2713757655293088
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 10.461455599300088,
+          "y": 2.2713757655293088
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 11.409646762904638,
+          "y": 2.2713757655293088
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.252260498687664,
+          "y": 2.2740332458442696
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.107916666666667,
+          "y": 2.2740332458442696
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.8006353893263345,
+          "y": 2.2740332458442696
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 4.8663484251968505,
+          "x": 1.0905511811023623,
+          "y": 2.2852515310586177
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 4.866346237970253,
+          "x": 1.0905511811023623,
+          "y": 3.314080271216098
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.252260498687664,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.107916666666667,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.8006353893263345,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 8.45490704286964,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 9.460475721784777,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 10.461455599300088,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 11.409646762904638,
+          "y": 3.5896708223972005
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 4.8663484251968505,
+          "x": 1.0905511811023623,
+          "y": 3.6102898075240595
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 4.8663429571303585,
+          "x": 1.0905511811023623,
+          "y": 4.635323709536308
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 6.252260498687664,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.107916666666667,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5193602362204724,
+          "w": 0.47244094488188976,
+          "x": 7.8006353893263345,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 8.45490704286964,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 9.460475721784777,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.8267716535433071,
+          "x": 10.461455599300088,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.5118110236220472,
+          "w": 0.7874015748031497,
+          "x": 11.409646762904638,
+          "y": 4.91091426071741
+        },
+        {
+          "h": 0.905511811023622,
+          "w": 4.8663484251968505,
+          "x": 1.0905511811023623,
+          "y": 4.931533245844269
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": {
+        "h": 0.65748031496063,
+        "w": 11.146287182852143,
+        "x": 1.0905511811023623,
+        "y": 1.2899311023622047
+      },
+      "title": null,
+      "window": null
+    },
+    "Key findings_1 finding": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.044071522309712,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.039370078740157,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 6.112159886264217,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_1 finding2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.0408617672790905,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.5655227471566053
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.039370078740157,
+          "x": 6.7362204724409445,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 11.762036307961505,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_1 finding_large": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 11.14472331583552,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.044071522309712,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 4.044071522309712,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 10.675473534558181,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 11.764011373578303,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_2 per page": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.039370078740157,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 6.112159886264217,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.029512248468941,
+          "x": 6.7362204724409445,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 11.766435914260718,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": {
+        "h": 1.8815354330708662,
+        "w": 5.5078740157480315,
+        "x": 1.0885378390201226,
+        "y": 1.5655227471566053
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_2 per page_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.736923665791776,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 5.5078740157480315,
+          "x": 6.736923665791776,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.5078740157480315,
+          "x": 6.736923665791776,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": {
+        "h": 1.8815354330708662,
+        "w": 5.5078740157480315,
+        "x": 1.0885378390201226,
+        "y": 1.5655227471566053
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_2 per page_text only": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.0408617672790905,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.5655227471566053
+        },
+        {
+          "h": 4.0408617672790905,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.5655227471566053
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.039370078740157,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 6.112159886264217,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.039370078740157,
+          "x": 6.7362204724409445,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.484251968503937,
+          "x": 11.762036307961505,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_2 per page_text only_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.0408617672790905,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 1.5655227471566053
+        },
+        {
+          "h": 4.0408617672790905,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.5655227471566053
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.5078740157480315,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_3 per page": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.858267716535433,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.619422572178477,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 8.619422572178477,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 4.2223961067366576,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 4.859858923884515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 7.997160979877515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 11.7640124671916,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": {
+        "h": 1.8815354330708662,
+        "w": 3.622047244094488,
+        "x": 1.0885378390201226,
+        "y": 1.5655227471566053
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_3 per page_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.858267716535433,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.619422572178477,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 2.170931758530184,
+          "w": 3.622047244094488,
+          "x": 8.619422572178477,
+          "y": 3.447057086614173
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 4.859858923884515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": {
+        "h": 1.8815354330708662,
+        "w": 3.622047244094488,
+        "x": 1.0885378390201226,
+        "y": 1.5655227471566053
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_3 per page_text only": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.858267716535433,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622047244094488,
+          "x": 4.858267716535433,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622691382327209,
+          "x": 8.629510061242344,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 4.2223961067366576,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 4.859858923884515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 7.997160979877515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 11.7640124671916,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_3 per page_text only_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622047244094488,
+          "x": 4.859024496937883,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 4.0382206911636045,
+          "w": 3.622691382327209,
+          "x": 8.629510061242344,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 4.85616469816273,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_6 per page": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 1.0885378390201226,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 4.2223961067366576,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 4.85955271216098,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 7.997160979877515,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 8.618110236220472,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 11.7640124671916,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 4.2223961067366576,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 4.859858923884515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 7.997160979877515,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.1496062992125986,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 0.4881889763779528,
+          "x": 11.7640124671916,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Key findings_6 per page_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 1.4566929133858268,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 1.5655216535433072
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 4.853323490813648,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 8.618110236220472,
+          "y": 3.0913309273840768
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 3.921519028871391
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 4.859346019247594,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 1.4173228346456692,
+          "w": 3.622047244094488,
+          "x": 8.630154199475065,
+          "y": 4.197109580052493
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 1.0885378390201226,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 4.85616469816273,
+          "y": 5.686026902887139
+        },
+        {
+          "h": 0.7401574803149606,
+          "w": 3.622047244094488,
+          "x": 8.623792650918634,
+          "y": 5.686026902887139
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "One column text": {
+      "body": {
+        "h": 5.133858267716535,
+        "w": 11.149606299212598,
+        "x": 1.0905511811023623,
+        "y": 1.2899311023622047
+      },
+      "bodyBoxes": [
+        {
+          "h": 5.133858267716535,
+          "w": 11.149606299212598,
+          "x": 1.0905511811023623,
+          "y": 1.2899311023622047
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Summary financials": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 1.0885411198600174,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 4.857378608923884,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 8.62621609798775,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 1.0885411198600174,
+          "y": 3.9170570866141734
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 4.857378608923884,
+          "y": 3.9170570866141734
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 8.62621609798775,
+          "y": 3.9170570866141734
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Summary financials_2": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 5.507871828521435,
+          "x": 1.0885411198600174,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.507871828521435,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.507871828521435,
+          "x": 1.088540026246719,
+          "y": 3.9170570866141734
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.497819335083115,
+          "x": 6.7362204724409445,
+          "y": 3.9170570866141734
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Summary financials_3": {
+      "bodyBoxes": [
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 1.0885411198600174,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 4.857378608923884,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 3.6119925634295713,
+          "x": 8.62621609798775,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 3.9170570866141734
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 3.9170570866141734
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Three columns text": {
+      "bodyBoxes": [
+        {
+          "h": 5.133858267716535,
+          "w": 3.622047244094488,
+          "x": 1.0905511811023623,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 5.133858267716535,
+          "w": 3.622047244094488,
+          "x": 4.859595363079615,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 5.133858267716535,
+          "w": 3.622047244094488,
+          "x": 8.628640638670166,
+          "y": 1.2899311023622047
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Title and strapline only": {
+      "body": {
+        "h": 0.5275590551181102,
+        "w": 11.14643372703412,
+        "x": 1.088540026246719,
+        "y": 1.2899311023622047
+      },
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Title only": {
+      "bodyBoxes": [],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Title+strapline+4 text boxes": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 2.191147200349956
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.191147200349956
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 4.219412729658792
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 4.219412729658792
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 4.495002187226596
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 4.495002187226596
+        }
+      ],
+      "chart": null,
+      "columns": [
+        {
+          "h": 0.5275590551181102,
+          "w": 11.14643372703412,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 2.191147200349956
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 4.219412729658792
+        }
+      ],
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Transmittal letter": {
+      "bodyBoxes": [
+        {
+          "h": 0.8408792650918635,
+          "w": 5.433070866141732,
+          "x": 1.088540026246719,
+          "y": 1.4606299212598426
+        },
+        {
+          "h": 0.33923665791776025,
+          "w": 2.9007469378827646,
+          "x": 9.340722878390201,
+          "y": 1.4606299212598426
+        },
+        {
+          "h": 4.028571741032371,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 2.4
+        },
+        {
+          "h": 4.028571741032371,
+          "w": 5.5078740157480315,
+          "x": 6.733595800524935,
+          "y": 2.4
+        }
+      ],
+      "chart": null,
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    },
+    "Two columns text": {
+      "bodyBoxes": [
+        {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 1.0905511811023623,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 5.133858267716535,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.2899311023622047
+        }
+      ],
+      "chart": null,
+      "leftBody": {
+        "h": 5.133858267716535,
+        "w": 5.5078740157480315,
+        "x": 1.0905511811023623,
+        "y": 1.2899311023622047
+      },
+      "logo": null,
+      "picture": null,
+      "rightBody": {
+        "h": 5.133858267716535,
+        "w": 5.5078740157480315,
+        "x": 6.7362204724409445,
+        "y": 1.2899311023622047
+      },
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": {
+        "h": 0.5833333333333334,
+        "w": 11.149606299212598,
+        "x": 1.0918635170603674,
+        "y": 0.4722222222222222
+      },
+      "window": null
+    },
+    "Value Creation analysis": {
+      "bodyBoxes": [
+        {
+          "h": 0.5275590551181102,
+          "w": 8.298253499562554,
+          "x": 1.088540026246719,
+          "y": 1.2899311023622047
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 1.088540026246719,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 0.2755905511811024,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 1.9155555555555555
+        },
+        {
+          "h": 1.9291338582677164,
+          "w": 5.4953248031496065,
+          "x": 1.088540026246719,
+          "y": 2.1911450131233594
+        },
+        {
+          "h": 1.3779527559055118,
+          "w": 5.5078740157480315,
+          "x": 6.7362204724409445,
+          "y": 2.191146106736658
+        }
+      ],
+      "chart": {
+        "h": 0.7416262029746282,
+        "w": 2.707489063867017,
+        "x": 9.533981846019248,
+        "y": 1.0758639545056867
+      },
+      "logo": null,
+      "picture": null,
+      "strapline": null,
+      "subtitle": null,
+      "table": null,
+      "title": null,
+      "window": null
+    }
+  },
+  "densityRules": {
+    "twoColumnText": {
+      "minLeftBodyItems": 2
+    },
+    "oneColumnText": {
+      "minBodyItems": 3
+    },
+    "contents": {},
+    "analysisWideChart2ColsText": {
+      "minBodyItems": 4
+    },
+    "analysisWideChartTableText": {
+      "minBodyItems": 4
+    },
+    "analysisNarrowTable": {
+      "minTableRows": 3
+    }
+  },
+  "masters": {
+    "footerChrome": {
+      "logo": {
+        "x": 1.097,
+        "y": 6.854,
+        "w": 0.529,
+        "h": 0.215
+      },
+      "legalText": {
+        "x": 2.062,
+        "y": 6.854,
+        "w": 6.937,
+        "h": 0.202,
+        "fontFace": "Arial",
+        "fontSize": 6,
+        "color": "666666",
+        "text": "© [year] [legal member firm name], a [jurisdiction] [legal structure] and a member firm of the KPMG global organization of independent member firms affiliated with KPMG International Limited, a private English company limited by guarantee. All rights reserved."
+      },
+      "officeContactText": {
+        "x": 8.95,
+        "y": 6.854,
+        "w": 0.82,
+        "h": 0.202,
+        "fontFace": "Arial",
+        "fontSize": 6,
+        "color": "666666",
+        "text": "",
+        "align": "left"
+      },
+      "classificationText": {
+        "x": 9.807,
+        "y": 6.854,
+        "w": 2.041,
+        "h": 0.101,
+        "fontFace": "Arial",
+        "fontSize": 6,
+        "color": "666666",
+        "text": "Document Classification: KPMG Confidential",
+        "align": "right"
+      },
+      "separatorLine": {
+        "x": 11.892,
+        "y": 6.854,
+        "w": 0,
+        "h": 0.163,
+        "line": {
+          "color": "1E49E2",
+          "pt": 0.5
+        }
+      },
+      "slideNumber": {
+        "x": 11.971,
+        "y": 6.854,
+        "w": 0.265,
+        "h": 0.163,
+        "fontFace": "Arial",
+        "fontSize": 8,
+        "color": "00338D",
+        "align": "right"
+      }
+    },
+    "variants": {
+      "white": {
+        "masterName": "KPMG_WHITE",
+        "backgroundColor": "FFFFFF",
+        "includeFooter": true
+      },
+      "summary": {
+        "masterName": "KPMG_SUMMARY",
+        "backgroundColor": "FFFFFF",
+        "includeFooter": true,
+        "overlays": [
+          {
+            "assetKey": "gradientAccentChip",
+            "x": 12.614,
+            "y": 0.113,
+            "w": 0.243,
+            "h": 0.243
+          }
+        ]
+      },
+      "cover": {
+        "masterName": "KPMG_COVER",
+        "backgroundColor": "1E49E2",
+        "includeFooter": false
+      },
+      "sectionDark": {
+        "masterName": "KPMG_SECTION_DARK",
+        "backgroundColor": "1E49E2",
+        "includeFooter": false,
+        "overlays": [
+          {
+            "assetKey": "gradientDividerWindow",
+            "x": 1.092,
+            "y": 1.067,
+            "w": 7.723,
+            "h": 5.365
+          }
+        ]
+      },
+      "section": {
+        "masterName": "KPMG_SECTION",
+        "backgroundColor": "1E49E2",
+        "includeFooter": false,
+        "overlays": [
+          {
+            "assetKey": "gradientDividerWindow",
+            "x": 1.092,
+            "y": 1.067,
+            "w": 7.723,
+            "h": 5.365
+          }
+        ]
+      },
+      "sectionLight": {
+        "masterName": "KPMG_SECTION_LIGHT",
+        "backgroundColor": "FFFFFF",
+        "includeFooter": false
+      },
+      "closing": {
+        "masterName": "KPMG_CLOSING",
+        "backgroundColor": "1E49E2",
+        "includeFooter": false,
+        "overlays": [
+          {
+            "assetKey": "gradientBackCover",
+            "x": 0,
+            "y": 0,
+            "w": 13.333,
+            "h": 7.5
+          }
+        ]
+      }
+    }
+  }
+}

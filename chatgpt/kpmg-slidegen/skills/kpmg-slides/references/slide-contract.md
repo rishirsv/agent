@@ -198,3 +198,22 @@ Each column is typically:
 2. **Missing required slots**: fill required fields before polishing optional ones.
 3. **Overflow risk**: shorten text, convert long sentences to bullets, add subheaders, or split the slide.
 4. **Two-column misuse**: if one side is much longer, use `oneColumnText` or split into two slides.
+
+## Structural Preflight Rules (Must Pass)
+
+Before finalizing any `deckSpec`, enforce this checklist:
+
+1. Each slide uses a supported `type`.
+2. Every required slot for that type exists and is non-empty.
+3. No unsupported slots are attached (for example, `chart` on `oneColumnText`).
+4. `bodyStyle` is exactly `"bullets"` or `"paragraphs"` where used.
+5. `chart.data[].values` are numeric arrays and align with labels.
+
+## Split Policy Rules
+
+Use these heuristics to decide when to split content into multiple slides:
+
+1. Split when a slide would exceed about 6 bullets, or when bullets consistently run beyond 2 lines.
+2. Split when one side of `twoColumnText` is more than 2x the length of the other side.
+3. Split when a table has more than 8-10 meaningful rows, or when cells become multi-line paragraphs.
+4. Split intentionally into two slides with distinct claims instead of relying on auto-pagination, unless the user explicitly requests `readability_first` behavior.

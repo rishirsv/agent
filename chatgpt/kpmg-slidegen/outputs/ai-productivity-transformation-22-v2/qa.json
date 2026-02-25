@@ -1,0 +1,1456 @@
+{
+  "generatedAt": "2026-02-25T16:07:18.112Z",
+  "template": "kpmg-diligence",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "densityFindings": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "status": "OK",
+      "score": 1,
+      "minScore": 0.75,
+      "acceptableFloor": 0.637,
+      "shouldRepair": false
+    }
+  ],
+  "densitySummary": {
+    "ok": 22,
+    "thin": 0,
+    "sparse": 0
+  },
+  "missingSlots": [],
+  "thinSlides": [],
+  "sparseSlides": [],
+  "slotIssues": [],
+  "slotMetrics": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1027,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 129,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 40,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1042,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 129,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 50,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1023,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 127,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 50,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1087,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 116,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 50,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 979,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 121,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 45,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 928,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 129,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 47,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1021,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 127,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 990,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 128,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 932,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 117,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 47,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 995,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 116,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 42,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 902,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 127,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 44,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 874,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 116,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 978,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 119,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 44,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 901,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 129,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 943,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 118,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 47,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1009,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 111,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 50,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 974,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 131,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 49,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 982,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 134,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 47,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 933,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 115,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 48,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 914,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 136,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 48,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 957,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 1,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 108,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 45,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "body",
+      "kind": "textArray",
+      "actual": 1003,
+      "target": 180,
+      "priority": "high"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "chart",
+      "kind": "chart",
+      "actual": 2,
+      "target": 1,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "strapline",
+      "kind": "text",
+      "actual": 129,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "title",
+      "kind": "text",
+      "actual": 48,
+      "target": 12,
+      "priority": "medium"
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "slot": "bodyStyle",
+      "kind": "text",
+      "actual": 7,
+      "target": 7,
+      "priority": "low"
+    }
+  ],
+  "repairSuggestions": [],
+  "pagination": [],
+  "overflowRisks": [],
+  "masterApplied": [
+    {
+      "slideIndex": 0,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 1,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 2,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 3,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 4,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 5,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 6,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 7,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 8,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 9,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 10,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 11,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 12,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 13,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 14,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 15,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 16,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 17,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 18,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 19,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 20,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    },
+    {
+      "slideIndex": 21,
+      "slideType": "analysisWideChart2ColsText",
+      "expectedMaster": "KPMG_WHITE",
+      "appliedMaster": "KPMG_WHITE",
+      "matched": true
+    }
+  ],
+  "paginationDecisions": [],
+  "overflowEvents": [],
+  "tableWarnings": [],
+  "fallbacks": [],
+  "overlapSummary": {
+    "slideCount": 22,
+    "overlapCount": 0,
+    "severeCount": 0,
+    "warningCount": 0,
+    "containmentCount": 0
+  },
+  "overlapFindings": [],
+  "strictOverflow": {
+    "status": 0
+  },
+  "inputSlideCount": 22,
+  "outputSlideCount": 22,
+  "outputPptx": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/ai-productivity-transformation-22-v2/deck.pptx",
+  "postprocess": {
+    "availability": {
+      "slidesSkill": true,
+      "reason": null,
+      "slidesDir": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/skills/kpmg-slides/assets/slidegen/generator/postprocess/slides-runtime",
+      "python": "python3"
+    },
+    "preview": {
+      "attempted": true,
+      "status": "ok",
+      "reason": null,
+      "stderr": null,
+      "outputDir": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/ai-productivity-transformation-22-v2/preview",
+      "slideImageCount": 22,
+      "width": 1600,
+      "height": 900
+    },
+    "montage": {
+      "attempted": true,
+      "status": "ok",
+      "reason": null,
+      "stderr": null,
+      "path": "/Users/rishi/Code/ai-tools/chatgpt/kpmg-slidegen/outputs/ai-productivity-transformation-22-v2/montage.png",
+      "numCol": 5,
+      "labelMode": "number"
+    },
+    "overflowVisual": {
+      "attempted": true,
+      "status": "pass",
+      "reason": null,
+      "stderr": null,
+      "failingSlides": [],
+      "imagePaths": []
+    }
+  },
+  "summary": {
+    "status": "pass",
+    "inputSlides": 22,
+    "renderedSlides": 22,
+    "blockingIssues": 0,
+    "advisoryIssues": 0,
+    "counts": {
+      "errors": 0,
+      "warnings": 0,
+      "missingSlots": 0,
+      "sparseSlides": 0,
+      "thinSlides": 0,
+      "slotIssues": 0,
+      "overflowEvents": 0,
+      "overlapSevere": 0,
+      "overlapWarnings": 0,
+      "repairSuggestions": 0
+    },
+    "strict": {
+      "requested": false,
+      "failed": false,
+      "overflowStatus": null,
+      "overflowSkipped": false
+    },
+    "postprocess": {
+      "previewAttempted": 1,
+      "previewFailed": 0,
+      "previewStatus": "ok",
+      "montageAttempted": 1,
+      "montageFailed": 0,
+      "montageStatus": "ok",
+      "overflowVisualAttempted": 1,
+      "overflowVisualFailed": 0,
+      "overflowVisualStatus": "pass"
+    }
+  }
+}

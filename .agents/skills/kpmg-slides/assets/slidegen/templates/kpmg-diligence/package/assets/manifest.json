@@ -1,0 +1,62 @@
+{
+  "templateName": "kpmg-diligence",
+  "generatedAt": "2026-02-21T03:45:53.099Z",
+  "templateDir": ".",
+  "assets": {
+    "logoSvg": {
+      "path": "assets/kpmg-logo.svg"
+    },
+    "logoWhiteSvg": {
+      "path": "assets/kpmg-logo-white.svg"
+    },
+    "logoWhitePng": {
+      "path": "assets/kpmg-logo-white.png"
+    },
+    "closingLogoWhite": {
+      "path": "assets/closing-logo-white.png"
+    },
+    "closingSocialTwitter": {
+      "path": "assets/closing-social-twitter.png"
+    },
+    "closingSocialLinkedin": {
+      "path": "assets/closing-social-linkedin.png"
+    },
+    "closingSocialFacebook": {
+      "path": "assets/closing-social-facebook.png"
+    },
+    "closingSocialInstagram": {
+      "path": "assets/closing-social-instagram.png"
+    },
+    "closingSocialYoutube": {
+      "path": "assets/closing-social-youtube.png"
+    },
+    "coverPhoto": {
+      "path": "assets/cover-photo.jpeg"
+    },
+    "gradientDividerWindow": {
+      "path": "assets/gradient_divider_window_300dpi.png"
+    },
+    "gradientBackCover": {
+      "path": "assets/gradient_back_cover_300dpi.png"
+    },
+    "gradientAccentChip": {
+      "path": "assets/gradient_accent_chip_300dpi.png"
+    }
+  },
+  "files": [
+    "assets/closing-logo-white.png",
+    "assets/closing-nav-icons.png",
+    "assets/closing-social-facebook.png",
+    "assets/closing-social-instagram.png",
+    "assets/closing-social-linkedin.png",
+    "assets/closing-social-twitter.png",
+    "assets/closing-social-youtube.png",
+    "assets/cover-photo.jpeg",
+    "assets/gradient_accent_chip_300dpi.png",
+    "assets/gradient_back_cover_300dpi.png",
+    "assets/gradient_divider_window_300dpi.png",
+    "assets/kpmg-logo-white.png",
+    "assets/kpmg-logo-white.svg",
+    "assets/kpmg-logo.svg"
+  ]
+}

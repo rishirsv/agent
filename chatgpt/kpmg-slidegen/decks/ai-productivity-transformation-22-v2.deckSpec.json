@@ -1,0 +1,1064 @@
+{
+  "metadata": {
+    "title": "AI Productivity Transformation Approval Deck",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "12-18 month enterprise transformation decision package",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca"
+    }
+  },
+  "slides": [
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Waiting 12 months risks $58M EBITDA drag",
+      "strapline": "Delaying enterprise AI rollout by one budget cycle compounds margin pressure and pushes performance below peer productivity pace.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Revenue is tracking at $3.4B with operating margin pressure already visible in shared services and technology delivery. A delay scenario leaves the company absorbing wage inflation and rework costs without offsetting productivity gains through FY2027.",
+        "Peer organizations in the same revenue band accelerated copilots into production during the last two planning cycles, creating a structural speed advantage. If this company waits, cycle-time gaps widen from 9% to 17%, which converts directly into cost and customer responsiveness penalties.",
+        "Callout insight 1: What most leaders miss is that the first-year penalty is mostly foregone learning, not just foregone savings. Missing two release waves now means lower model fit and lower adoption even after funding is eventually approved.",
+        "Callout insight 2: The downside case is not failed technology; it is strategic drift while competitors lock in new operating baselines. Acting in the next quarter preserves option value and keeps margin recovery timing in management control."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "EBITDA uplift if approved now ($M)",
+            "labels": [
+              "FY2026",
+              "FY2027",
+              "FY2028"
+            ],
+            "values": [
+              12,
+              39,
+              58
+            ]
+          },
+          {
+            "name": "EBITDA uplift if delayed 12 months ($M)",
+            "labels": [
+              "FY2026",
+              "FY2027",
+              "FY2028"
+            ],
+            "values": [
+              2,
+              18,
+              33
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Internal planning baseline (FY2026 operating plan), synthetic peer benchmark panel (n=46, $2-5B revenue firms), and management assumptions on wage inflation at 4.2%."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Peer AI adoption gap could widen margin by 220 bps",
+      "strapline": "Competitor deployment depth has reached an inflection where non-adopters face measurable margin disadvantage within 12-18 months.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Upper-quartile peers have moved from pilots to enterprise workflows, with 62% of priority processes already AI-enabled versus this company at 24%. The benchmark spread maps to a 180-220 bps SG&A margin difference once scaled governance and training are in place.",
+        "Scenario modeling shows that matching median peer adoption by month 12 protects about $31M of annual margin contribution. Remaining in the bottom quartile through month 18 increases catch-up cost because enablement, retraining, and platform debt accumulate simultaneously.",
+        "Callout insight 1: Benchmark deltas are not driven by model sophistication alone; they are driven by workflow integration discipline. Firms with formal process owners delivered 1.7x better value realization than firms running tool-centric deployments.",
+        "Callout insight 2: Base, downside, and upside differ primarily on adoption velocity and manager reinforcement frequency. The breakpoint is a sustained 55% weekly active usage level by month 6; below that, expected margin convergence does not materialize."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "AI-enabled priority workflows (%)",
+            "labels": [
+              "Lower quartile",
+              "Median",
+              "Upper quartile",
+              "Current company"
+            ],
+            "values": [
+              18,
+              43,
+              62,
+              24
+            ]
+          },
+          {
+            "name": "Observed SG&A margin improvement (bps)",
+            "labels": [
+              "Lower quartile",
+              "Median",
+              "Upper quartile",
+              "Current company"
+            ],
+            "values": [
+              40,
+              110,
+              220,
+              35
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "%, bps"
+        },
+        "source": "Source: Synthetic external benchmark range (2024-2025, n=140 mid-large enterprises), internal AI maturity self-assessment, and normalized SG&A definitions."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Labor inflation adds $36M cost without AI leverage",
+      "strapline": "Current cost pressure can be neutralized only if productivity gains scale faster than compensation and compliance spend growth.",
+      "bodyStyle": "bullets",
+      "body": [
+        "The company carries about $1.58B in annual labor-related spend across operations, corporate functions, and technology. At a conservative 4% inflation trajectory, this creates a $36M run-rate cost increase by FY2027 if ways-of-working remain unchanged.",
+        "Base-case transformation effects reduce repetitive effort by 9-11% in targeted workflows, offsetting inflation and freeing capacity for growth support. Downside still offsets roughly half of inflation burden, while upside creates net structural margin expansion rather than simple cost containment.",
+        "Callout insight 1: What most leaders miss is that inflation impact is nonlinear because overtime and contractor use typically rise when process friction is unresolved. Automation in queue-heavy work cuts surge labor first, which is where cost leakage is often highest.",
+        "Callout insight 2: The critical sensitivity is ramp timing, not target-state potential. Every three-month delay to scale shifts approximately $9M of avoidable inflation burden back into the P&L baseline."
+      ],
+      "chart": {
+        "type": "area",
+        "data": [
+          {
+            "name": "Projected labor spend without program ($M)",
+            "labels": [
+              "FY2025",
+              "FY2026",
+              "FY2027"
+            ],
+            "values": [
+              1580,
+              1643,
+              1686
+            ]
+          },
+          {
+            "name": "Projected labor spend with program ($M)",
+            "labels": [
+              "FY2025",
+              "FY2026",
+              "FY2027"
+            ],
+            "values": [
+              1580,
+              1628,
+              1650
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: FY2025 cost baseline, HR labor forecasts, procurement contractor trend file; assumptions include 4.0% wage inflation and phased realization from month 4 onward."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Cross-functional AI pool totals $142M annual value",
+      "strapline": "Function-owned value pools provide a MECE path to enterprise impact while preserving clear executive accountability.",
+      "bodyStyle": "bullets",
+      "body": [
+        "The enterprise value pool is quantified bottom-up by function owner and mapped to controllable workflows rather than abstract capability claims. Formula: Value = Addressable hours x automatable share x loaded rate x realization factor, with conservative realization anchored at 82% in base case.",
+        "CEO, COO, CFO, CHRO, and CIO pools sum to $142M gross annual opportunity, of which $117M is expected realized in base case after adoption and controls. Downside assumes slower adoption and reduced process readiness, while upside assumes faster frontline pull and stronger manager reinforcement.",
+        "Callout insight 1: What most leaders miss is that unowned cross-functional benefits are rarely captured, even when tools are deployed. Assigning pool ownership to each C-suite role reduces leakage and accelerates decision velocity at integration points.",
+        "Callout insight 2: Breakpoint analysis shows that dropping enterprise adoption below 56% lowers realized value under run-cost breakeven. Governance must therefore treat adoption KPIs as financial controls, not change-management nice-to-haves."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Gross annual value pool by executive owner ($M)",
+            "labels": [
+              "CEO",
+              "COO",
+              "CFO",
+              "CHRO",
+              "CIO"
+            ],
+            "values": [
+              29,
+              51,
+              24,
+              14,
+              24
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Functional workflow inventory (n=126), time-and-motion samples (n=2,140 tasks), and standardized realization assumptions approved by transformation PMO draft model."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "CEO-led growth levers add $29M EBIT in year 2",
+      "strapline": "Commercial AI use cases create measurable revenue and margin lift when tied to pricing, conversion, and retention levers.",
+      "bodyStyle": "bullets",
+      "body": [
+        "CEO-owned impact concentrates in win-rate improvement, account expansion velocity, and churn prevention for high-value segments. Formula: EBIT impact = Revenue uplift x contribution margin - enablement cost, with year-2 net estimated at $29M in base case.",
+        "Pipeline analytics and proposal co-authoring reduce cycle time by about 22%, increasing opportunity throughput without proportional headcount growth. Benchmark range shows top-quartile peers sustaining 3-5 point conversion improvements after integrating AI into sales governance.",
+        "Callout insight 1: Growth value depends on tighter qualification discipline as much as content generation speed. Organizations that automate low-quality opportunity work increase activity volume but dilute conversion economics.",
+        "Callout insight 2: Base, downside, and upside differ on frontline adoption and pricing compliance. If discount leakage exceeds 80 bps, upside assumptions should be discounted until deal-desk controls are stabilized."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "CEO value levers ($M EBIT)",
+            "labels": [
+              "Win-rate",
+              "Cross-sell",
+              "Retention",
+              "Pricing quality"
+            ],
+            "values": [
+              9,
+              8,
+              7,
+              5
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Commercial funnel extracts (last 18 months), pricing waterfall diagnostics, and peer conversion benchmark range from synthetic panel of 58 enterprises."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "COO automations unlock $51M via cycle-time cuts",
+      "strapline": "Operations value is the largest pool because process latency, defect rework, and queue imbalance are already measurable at scale.",
+      "bodyStyle": "bullets",
+      "body": [
+        "COO-owned workflows represent 36% of addressable effort and have the highest repeatability, making them suitable for staged automation. Formula: Savings = Volume x minutes saved per case x loaded minute rate x quality retention factor.",
+        "Cycle time reductions from 11.2 days to 7.4 days in targeted chains free capacity equivalent to 410 FTE while maintaining SLA commitments. Downside assumes only 60% of expected automation efficacy and still yields $34M gross annual value.",
+        "Callout insight 1: What most leaders miss is that defect-rate control is the real multiplier in operations AI economics. A one-point drop in rework rate protects roughly $4M that would otherwise erode apparent time savings.",
+        "Callout insight 2: Queue orchestration should be implemented before broad copilots in complex operations. Teams that reverse this sequence usually see temporary productivity spikes followed by stability loss and manager pushback."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Average cycle time (days)",
+            "labels": [
+              "Current",
+              "Wave 1",
+              "Wave 2",
+              "Wave 3"
+            ],
+            "values": [
+              11.2,
+              9.8,
+              8.3,
+              7.4
+            ]
+          },
+          {
+            "name": "Defect rework rate (%)",
+            "labels": [
+              "Current",
+              "Wave 1",
+              "Wave 2",
+              "Wave 3"
+            ],
+            "values": [
+              4.9,
+              4.3,
+              3.7,
+              3.2
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Days, %"
+        },
+        "source": "Source: Operations workflow telemetry, service-ops SLA logs, and assumptions calibrated to 12-month pilot evidence in comparable business units."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "CFO controls and forecasting can deliver $24M net",
+      "strapline": "Finance-led use cases are lower variance and improve both productivity and controllership quality in the same investment cycle.",
+      "bodyStyle": "bullets",
+      "body": [
+        "CFO impact comes from faster close, improved forecast accuracy, and procurement decision support with policy compliance embedded. Formula: Net value = labor savings + working-capital benefit + leakage reduction - operating run-cost allocated to finance use cases.",
+        "Reducing forecast error from 8.4% to 5.9% lowers buffer spend and improves capital allocation decisions across the portfolio. Procurement recommendation engines also reduce maverick spend by 90 bps in base case, contributing durable savings not dependent on hiring freezes.",
+        "Callout insight 1: Finance value is often understated because benefits are distributed across business units while costs sit centrally. Explicit transfer-pricing of benefits improves accountability and prevents underinvestment in shared finance capability.",
+        "Callout insight 2: Counterargument suggests close-cycle automation adds model risk to financial reporting. Rebuttal is that human-in-the-loop controls with auditable prompts reduced exception rates by 28% in controlled pilots."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "CFO value components ($M)",
+            "labels": [
+              "Close cycle",
+              "Forecasting",
+              "Procurement",
+              "Controls productivity"
+            ],
+            "values": [
+              6,
+              7,
+              8,
+              3
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Finance process diagnostics, forecast back-testing file (12 quarters), procurement spend cube, and control design assumptions reviewed with controllership team."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "CHRO enablement captures $14M via talent velocity",
+      "strapline": "People-function use cases monetize faster onboarding, manager capacity release, and lower voluntary attrition in critical roles.",
+      "bodyStyle": "bullets",
+      "body": [
+        "CHRO value is concentrated in recruiting throughput, onboarding productivity, and manager self-service effectiveness. Formula: Talent value = reduction in time-to-productivity x role value per day + avoided attrition replacement cost.",
+        "Reducing time-to-productivity from 24 weeks to 18 weeks across priority roles yields direct productivity gain and lowers shadow-support burden. Base case assumes voluntary attrition in critical roles improves by 0.9 points, while upside reaches 1.5 points with stronger coaching cadence.",
+        "Callout insight 1: Most organizations over-index on recruiting automation and underinvest in manager enablement. The larger value driver is often reducing manager administrative load so coaching quality and team adoption both improve.",
+        "Callout insight 2: Downside occurs if learning pathways are generic and disconnected from role moments of truth. Embedding AI support into real workflows keeps adoption above the 56% breakeven threshold used in enterprise economics."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Time to productivity (weeks)",
+            "labels": [
+              "Current",
+              "Wave 1",
+              "Wave 2",
+              "Target"
+            ],
+            "values": [
+              24,
+              22,
+              20,
+              18
+            ]
+          },
+          {
+            "name": "Critical-role voluntary attrition (%)",
+            "labels": [
+              "Current",
+              "Wave 1",
+              "Wave 2",
+              "Target"
+            ],
+            "values": [
+              13.4,
+              12.9,
+              12.3,
+              11.9
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Weeks, %"
+        },
+        "source": "Source: HRIS extracts (24 months), talent acquisition workflow timing, and replacement-cost assumptions validated with finance workforce planning model."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "CIO platform and engineering gains produce $24M",
+      "strapline": "Technology-function value comes from engineering throughput, service reliability, and lower incident-handling effort.",
+      "bodyStyle": "bullets",
+      "body": [
+        "CIO-owned value includes code modernization acceleration, ticket deflection, and reliability engineering productivity. Formula: Tech value = development hours saved x cost rate + incident minutes avoided x outage cost per minute.",
+        "Engineering cycle lead time improves from 19 days to 13 days in base case when copilots are combined with standard prompt libraries and testing guardrails. Service desk deflection to trusted self-service is modeled at 18% base and 26% upside with strong knowledge curation.",
+        "Callout insight 1: Platform standardization is the hidden prerequisite for sustained engineering gains. Teams running fragmented toolchains show higher short-term novelty usage but lower long-term throughput impact.",
+        "Callout insight 2: Security-by-design controls add early effort but prevent costly rework later in the program. The economic trade-off is positive when model access policies are set before broad endpoint rollout."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "CIO value components ($M)",
+            "labels": [
+              "Engineering throughput",
+              "Service desk",
+              "Reliability ops",
+              "Knowledge reuse"
+            ],
+            "values": [
+              10,
+              6,
+              5,
+              3
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: DevOps telemetry, ITSM ticket history, incident cost model, and architecture baseline assumptions from enterprise platform team."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Scoring model raises ROI from 1.9x to 2.8x",
+      "strapline": "A transparent use-case scoring method improves portfolio quality and avoids overfunding low-feasibility experiments.",
+      "bodyStyle": "bullets",
+      "body": [
+        "The prioritization model evaluates each use case on value, feasibility, control readiness, and dependency complexity with weighted scoring. Formula: Composite score = 0.35 Value + 0.25 Feasibility + 0.20 Control readiness + 0.20 Time-to-value inverse.",
+        "Applying the model to 42 candidates re-ranked the top portfolio and increased expected ROI from 1.9x to 2.8x without increasing budget. Benchmark comparison shows mature peers keep at least 70% of spend on top-quartile score use cases, versus 44% in the current draft pipeline.",
+        "Callout insight 1: What most leaders miss is that low-feasibility use cases consume scarce change capacity even when direct spend is small. Portfolio discipline protects organizational bandwidth, which is the true constraint in months 1-9.",
+        "Callout insight 2: Counterargument says weighted models are too rigid for fast-moving technology. Rebuttal is that monthly rescoring preserves flexibility while keeping decisions tied to objective economics and risk criteria."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Composite score (0-100)",
+            "labels": [
+              "Agentic close support",
+              "Claims triage",
+              "Proposal copilot",
+              "HR policy assistant",
+              "Code remediation",
+              "Contract review"
+            ],
+            "values": [
+              88,
+              84,
+              82,
+              76,
+              74,
+              71
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Score"
+        },
+        "source": "Source: Portfolio scoring workshop outputs (42 use cases), benchmark allocation ranges from synthetic panel, and agreed weighting rubric from transformation steering design."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Wave sequencing advances payback by 4 months",
+      "strapline": "Sequencing high-readiness, high-value use cases first accelerates cash impact while lowering implementation risk concentration.",
+      "bodyStyle": "bullets",
+      "body": [
+        "The recommended sequence starts with mature data and clear process ownership, then expands into cross-functional orchestration after controls stabilize. Formula: Sequence index = score x readiness multiplier x dependency penalty inverse.",
+        "Compared with an unsorted launch plan, the sequenced portfolio reaches cumulative breakeven in month 12 instead of month 16. Downside still breakevens by month 20 under sequenced deployment, while unsequenced downside remains negative through month 24.",
+        "Callout insight 1: Value speed and control are not opposites when sequencing is explicit. Front-loading low-regret automations creates financing headroom for harder use cases without raising board risk exposure.",
+        "Callout insight 2: What most leaders miss is that sequencing errors are expensive to reverse after change fatigue sets in. Early wins must be architecturally extensible, not isolated point solutions."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Cumulative net cash - sequenced plan ($M)",
+            "labels": [
+              "M3",
+              "M6",
+              "M9",
+              "M12",
+              "M15",
+              "M18"
+            ],
+            "values": [
+              -18,
+              -12,
+              -4,
+              3,
+              24,
+              47
+            ]
+          },
+          {
+            "name": "Cumulative net cash - unsorted plan ($M)",
+            "labels": [
+              "M3",
+              "M6",
+              "M9",
+              "M12",
+              "M15",
+              "M18"
+            ],
+            "values": [
+              -21,
+              -17,
+              -11,
+              -4,
+              8,
+              28
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Sequencing simulation model v3.2, use-case dependency map, and realization ramp assumptions validated with domain leads in planning workshops."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Speed-with-gates captures 85% value at lower risk",
+      "strapline": "The recommended speed-vs-control posture balances rapid deployment with explicit risk gates at each scale threshold.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Three operating postures were tested: sprint-first, speed-with-gates, and heavy-control sequencing. Speed-with-gates captures 85% of upside value while keeping modeled control-loss events 40% lower than sprint-first approaches.",
+        "Decision logic uses stage gates at pilot exit, business-unit scale, and enterprise expansion to protect compliance and reliability. Formula: Risk-adjusted value = gross value x control pass rate x adoption velocity.",
+        "Callout insight 1: What most leaders miss is that governance friction is mostly a design problem, not a compliance inevitability. Pre-agreed control artifacts reduce approval latency and preserve implementation momentum.",
+        "Callout insight 2: Counterargument says any gate slows innovation beyond relevance. Rebuttal is that structured gates reduced rollback incidents by 63%, resulting in higher net speed over the 18-month horizon."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Value captured vs upside (%)",
+            "labels": [
+              "Sprint-first",
+              "Speed-with-gates",
+              "Heavy-control"
+            ],
+            "values": [
+              92,
+              85,
+              66
+            ]
+          },
+          {
+            "name": "Control incident index (100=high risk)",
+            "labels": [
+              "Sprint-first",
+              "Speed-with-gates",
+              "Heavy-control"
+            ],
+            "values": [
+              100,
+              60,
+              38
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "% and index"
+        },
+        "source": "Source: Transformation risk simulation set (1,000 runs), pilot incident logs, and control design benchmark assumptions from prior enterprise programs."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Federated model delivers 18% faster adoption",
+      "strapline": "A hub-and-spoke operating model outperforms strict centralization by combining standards with local business ownership.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Comparative testing across operating models shows federated governance reaches target adoption in 9.8 months versus 12.0 months under centralized-only control. Local domain product owners accelerate workflow fit while central teams enforce architecture, risk, and vendor policy standards.",
+        "Recommendation: centralize platform, policy, and model operations; federate use-case design, change execution, and KPI ownership. Formula: Effective adoption rate = local activation x central enablement quality x manager reinforcement consistency.",
+        "Callout insight 1: What most leaders miss is that central teams cannot sustain behavior change alone at enterprise scale. Adoption compounds only when line leaders own business outcomes tied to specific workflow metrics.",
+        "Callout insight 2: Counterargument says federation increases fragmentation and tool sprawl. Rebuttal is that federated delivery with mandatory platform guardrails preserves consistency while avoiding central bottlenecks."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Months to 70% target adoption",
+            "labels": [
+              "Centralized",
+              "Federated",
+              "Fully local"
+            ],
+            "values": [
+              12.0,
+              9.8,
+              11.5
+            ]
+          },
+          {
+            "name": "Operating consistency score (0-100)",
+            "labels": [
+              "Centralized",
+              "Federated",
+              "Fully local"
+            ],
+            "values": [
+              87,
+              82,
+              61
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Months, score"
+        },
+        "source": "Source: Operating model benchmark synthesis (n=34 programs), internal org design constraints, and pilot governance performance data from three business units."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Hybrid sourcing improves NPV by $34M vs build-all",
+      "strapline": "Hybrid sourcing delivers superior economics by buying commodity capabilities and building workflows that create unique advantage.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Three sourcing paths were modeled: build-all, buy-all, and hybrid buy-core/build-differentiators. Hybrid lowers time-to-value and technical debt while preserving strategic control over high-value process IP.",
+        "Formula: NPV = discounted net benefits - implementation costs - switching costs, with separate risk premiums by sourcing strategy. Hybrid improves five-year NPV by $34M versus build-all and by $21M versus buy-all under base assumptions.",
+        "Callout insight 1: Counterargument says vendor dependence in buy-core weakens long-term leverage. Rebuttal is that contract architecture with portability clauses and model abstraction layers materially reduces lock-in risk.",
+        "Callout insight 2: What most leaders miss is that build-all strategies often hide opportunity cost from delayed deployment. Missing early waves reduces cumulative learning and suppresses value far beyond development budget overruns."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Five-year NPV by sourcing strategy ($M)",
+            "labels": [
+              "Build-all",
+              "Buy-all",
+              "Hybrid"
+            ],
+            "values": [
+              142,
+              155,
+              176
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Sourcing option model v2.4, vendor commercial assumptions, internal engineering cost curves, and architecture portability constraints."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Governance cadence cuts decision latency by 60%",
+      "strapline": "Explicit decision rights and a fixed operating rhythm convert governance from a blocker into an execution accelerator.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Recommended governance uses weekly operating reviews, biweekly risk councils, and monthly executive steering with predefined decision packets. This cadence reduces average decision latency from 15 days to 6 days and removes repeated escalation loops.",
+        "Decision rights are split into value ownership, risk ownership, and platform ownership with RACI clarity at each gate. Formula: Time-to-decision = issue intake to accountable approval, tracked as a KPI alongside adoption and realized value.",
+        "Callout insight 1: Governance quality is measurable and should be managed as a core productivity lever. Programs that instrument decision latency early achieve faster deployment without sacrificing control quality.",
+        "Callout insight 2: The KPI set should include weekly active usage, automation success rate, model exception rate, and realized dollar impact by function. These metrics create shared truth for CEO, COO, CFO, CHRO, and CIO accountability."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Average decision latency (days)",
+            "labels": [
+              "Current",
+              "Month 3",
+              "Month 6",
+              "Month 9"
+            ],
+            "values": [
+              15,
+              10,
+              7,
+              6
+            ]
+          },
+          {
+            "name": "Escalations per month",
+            "labels": [
+              "Current",
+              "Month 3",
+              "Month 6",
+              "Month 9"
+            ],
+            "values": [
+              28,
+              20,
+              14,
+              11
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Days, count"
+        },
+        "source": "Source: PMO operating model design, historical decision log sample (n=186 decisions), and transformation governance benchmark assumptions."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Prevent-detect-respond lowers incident loss by 70%",
+      "strapline": "A layered control framework materially reduces security, legal, model, and workforce risk while enabling scale.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Risk controls are designed across prevent, detect, and respond domains with measurable effectiveness targets by risk type. Baseline expected incident loss of $20M falls to $6M when policy enforcement, model monitoring, and response playbooks are fully active.",
+        "Prevent controls include data classification, access policies, prompt guardrails, and approved use-case boundaries. Detect controls include drift alerts, anomaly detection, and legal-policy breach scanning; respond controls include kill-switch protocols and structured incident retrospectives.",
+        "Callout insight 1: What most leaders miss is that control maturity increases adoption because frontline teams trust the system boundaries. Programs with visible safeguards report lower shadow-tool usage and better data integrity.",
+        "Callout insight 2: Workforce risk should be managed as role redesign, not just communication. Defining new role accountabilities early lowers resistance and prevents hidden process workarounds that undermine model governance."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Expected annual incident loss before controls ($M)",
+            "labels": [
+              "Security",
+              "Legal",
+              "Model",
+              "Workforce"
+            ],
+            "values": [
+              7,
+              5,
+              4,
+              4
+            ]
+          },
+          {
+            "name": "Expected annual incident loss after controls ($M)",
+            "labels": [
+              "Security",
+              "Legal",
+              "Model",
+              "Workforce"
+            ],
+            "values": [
+              2,
+              1.5,
+              1.2,
+              1.3
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Enterprise risk baseline, incident taxonomy mapping, and control effectiveness assumptions from internal cyber/legal/model governance working sessions."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Controls cut downside probability from 35% to 18%",
+      "strapline": "Robust controls materially shift scenario probabilities, improving confidence in the base case without reducing upside optionality.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Scenario probabilities were re-estimated after applying the prevent-detect-respond control stack and governance cadence. Downside probability drops from 35% to 18%, base case rises to 57%, and upside remains viable at 25% given stronger execution certainty.",
+        "Breakpoints are explicit: adoption below 56%, model exception rate above 2.5%, or control gate pass rate below 85% triggers downside migration. Formula: Scenario probability update uses weighted Bayesian adjustment from observed control performance indicators.",
+        "Callout insight 1: Counterargument says controls reduce upside by slowing experimentation. Rebuttal is that controlled experimentation improves reuse and reduces rollback losses, preserving net upside over the full 18-month horizon.",
+        "Callout insight 2: What matters to the board is not eliminating risk but making risk economically transparent. This probability shift strengthens capital allocation confidence and supports milestone-based release of funds."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Scenario probability before controls (%)",
+            "labels": [
+              "Downside",
+              "Base",
+              "Upside"
+            ],
+            "values": [
+              35,
+              45,
+              20
+            ]
+          },
+          {
+            "name": "Scenario probability after controls (%)",
+            "labels": [
+              "Downside",
+              "Base",
+              "Upside"
+            ],
+            "values": [
+              18,
+              57,
+              25
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "%"
+        },
+        "source": "Source: Monte Carlo scenario model (10,000 draws), control gate performance assumptions, and pilot variance data from month-0 readiness assessment."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Program requires $49M upfront and $27M run-cost",
+      "strapline": "Investment is material but proportionate to value potential, with spend staged to align funding with demonstrated delivery milestones.",
+      "bodyStyle": "bullets",
+      "body": [
+        "One-time investment of $49M covers platform setup, integration, controls, enablement, and program mobilization over 12-18 months. Steady-state run-cost is $27M annually, including licenses, model operations, governance staffing, and continuous learning support.",
+        "Formula: Total cost of ownership = upfront program cost + discounted run-cost - decommissioned legacy tooling savings. Unit economics are favorable at $0.58 cost per dollar of realized gross benefit in base case and $0.86 in downside.",
+        "Callout insight 1: Front-loading architecture and controls reduces later remediation costs that are often 2-3x more expensive. Phased funding should keep this discipline by tying releases to gate evidence instead of fixed calendar timing.",
+        "Callout insight 2: What most leaders miss is that underfunding change enablement is a hidden cost amplifier. Programs that cut enablement budgets early frequently fail adoption thresholds and lose economic return despite sound technology choices."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Upfront cost by category ($M)",
+            "labels": [
+              "Platform",
+              "Integration",
+              "Controls",
+              "Enablement",
+              "PMO"
+            ],
+            "values": [
+              14,
+              12,
+              8,
+              9,
+              6
+            ]
+          },
+          {
+            "name": "Annual run-cost by category ($M)",
+            "labels": [
+              "Platform",
+              "Integration",
+              "Controls",
+              "Enablement",
+              "PMO"
+            ],
+            "values": [
+              9,
+              5,
+              4,
+              6,
+              3
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Program budget model v4.0, vendor commercial estimates, internal labor allocation assumptions, and legacy tool decommission plan."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Base case yields $176M NPV with 12-month payback",
+      "strapline": "The business case is robust across scenarios, with downside still value-accretive and upside materially attractive.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Base case delivers $176M five-year NPV, 48% IRR, and 12-month payback from launch under conservative realization assumptions. Downside remains positive at $41M NPV with 20-month payback, while upside reaches $301M NPV with 8-month payback.",
+        "Formula set: NPV = sum(net cash flow_t/(1+r)^t), IRR solves NPV=0, and payback is first month cumulative cash turns positive. Discount rate is 10% with scenario-specific risk adjustments applied to realization factors.",
+        "Callout insight 1: What most leaders miss is that run-cost discipline matters more than initial capex once scale is reached. A 15% run-cost overrun removes about $18M of NPV if not offset by adoption and process improvements.",
+        "Callout insight 2: Decision confidence improves because value is diversified across five executive owners rather than concentrated in one function. This portfolio effect lowers volatility and improves probability of meeting board return thresholds."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Five-year NPV by scenario ($M)",
+            "labels": [
+              "Downside",
+              "Base",
+              "Upside"
+            ],
+            "values": [
+              41,
+              176,
+              301
+            ]
+          },
+          {
+            "name": "Payback month",
+            "labels": [
+              "Downside",
+              "Base",
+              "Upside"
+            ],
+            "values": [
+              20,
+              12,
+              8
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M, month"
+        },
+        "source": "Source: Integrated financial model v5.1, scenario drivers from adoption and control assumptions, and treasury-approved 10% discount rate."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "NPV stays positive above 56% adoption breakpoint",
+      "strapline": "Sensitivity analysis identifies clear breakpoints, allowing management to monitor leading indicators and intervene before value erosion.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Adoption is the strongest value driver, followed by run-cost control and deployment timing. NPV remains positive above 56% sustained adoption, but declines sharply below that threshold as fixed run-cost dominates realized benefit.",
+        "Tornado sensitivity shows a 10-point adoption shift moves NPV by approximately $44M, while a three-month delay reduces NPV by about $26M. Formula: Delta NPV_i = partial derivative of NPV with respect to driver i multiplied by expected variance range.",
+        "Callout insight 1: Scenario discipline should be embedded into monthly governance, not reserved for quarterly board reviews. Leading indicators can trigger corrective actions before financial outcomes materially deviate.",
+        "Callout insight 2: Counterargument says sensitivity models overstate uncertainty and slow decisions. Rebuttal is that explicit sensitivities speed decisions by pre-agreeing trigger points and response playbooks."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "NPV vs sustained adoption (%)",
+            "labels": [
+              "40",
+              "50",
+              "56",
+              "60",
+              "70",
+              "80",
+              "90"
+            ],
+            "values": [
+              -18,
+              9,
+              31,
+              58,
+              131,
+              214,
+              297
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "NPV ($M)"
+        },
+        "source": "Source: Sensitivity model run set (2,500 cases), adoption telemetry assumptions, and planned control-trigger thresholds for governance intervention."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "30-60-90 roadmap reaches $90M run-rate by M15",
+      "strapline": "A sequenced execution plan with hard gates translates strategy into an achievable 12-18 month delivery path.",
+      "bodyStyle": "bullets",
+      "body": [
+        "The first 30 days mobilize governance, baseline metrics, and top ten use cases with named executive owners. By day 60, pilots run in COO/CFO/CIO domains; by day 90, gate reviews approve scale decisions using quantified quality and risk evidence.",
+        "Month 4-9 focuses on enterprise rollout in high-readiness workflows, while month 10-15 expands into cross-functional orchestration and advanced controls. Cumulative net value turns positive in month 12, and run-rate net value reaches about $90M by month 15.",
+        "Callout insight 1: Delivery certainty improves when each roadmap stage has explicit gate criteria for adoption, controls, and economics. This prevents premature scaling and protects credibility with frontline teams and the board.",
+        "Callout insight 2: What most leaders miss is that roadmap clarity must include decommission decisions for legacy ways of working. Without deliberate sunset plans, savings are delayed and organizational complexity increases."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Monthly net value run-rate ($M annualized)",
+            "labels": [
+              "M1",
+              "M3",
+              "M6",
+              "M9",
+              "M12",
+              "M15",
+              "M18"
+            ],
+            "values": [
+              0,
+              8,
+              28,
+              49,
+              72,
+              90,
+              98
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M annualized"
+        },
+        "source": "Source: Roadmap implementation plan v2.1, wave sequencing output, and milestone gate definitions drafted with functional transformation leads."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Board approval now secures $90M annual net value",
+      "strapline": "Immediate approval with stage-gated funding maximizes value capture while preserving oversight and optionality at each milestone.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Board decision package requests approval for $49M upfront funding, authorization of $27M annual run-cost envelope, and endorsement of the operating model. Funding should be released in tranches tied to gate criteria on adoption, control pass rates, and realized economics.",
+        "Required decisions today are clear: confirm risk appetite, approve speed-with-gates posture, and ratify hybrid buy-core/build-differentiators sourcing. Deferring by two quarters lowers five-year NPV by about $52M and pushes payback from month 12 to month 17.",
+        "Callout insight 1: Counterargument says macro uncertainty warrants waiting for more evidence. Rebuttal is that staged capital with explicit exit gates limits downside while preserving first-mover learning and margin protection.",
+        "Callout insight 2: Success should be judged against five board-level gate criteria: adoption above 56%, control pass rate above 85%, net value trajectory on plan, no critical unresolved incidents, and functional owner accountability sustained."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Five-year NPV by board decision timing ($M)",
+            "labels": [
+              "Approve now",
+              "Defer 2 quarters",
+              "Pilot only"
+            ],
+            "values": [
+              176,
+              124,
+              58
+            ]
+          },
+          {
+            "name": "Steady-state annual net value ($M)",
+            "labels": [
+              "Approve now",
+              "Defer 2 quarters",
+              "Pilot only"
+            ],
+            "values": [
+              90,
+              71,
+              29
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: Executive business case model, governance gate framework draft, and board-level risk threshold assumptions aligned to enterprise policy standards."
+      }
+    }
+  ]
+}
