@@ -171,6 +171,16 @@ Use these as generation targets above template minima.
 Variable expenses mainly consist of cost of goods sold (“COGS”) of $x.x million relating to cloud hosting and customer support and $x.x million in pass-through expenses, relating to third-party software licenses and data services. The Company generated a gross margin of xx.x% in the trailing twelve-month period.
 ```
 
+#### Nested bullet decision rules
+
+- Use flat bullets by default.
+- Use nested bullets only when a child bullet is dependent detail for a specific parent bullet.
+- Keep nested depth shallow for readability (usually 1-2 child levels).
+- `deckSpec` shape for nesting is object `children`:
+  - `{ "text": "Parent", "children": [{ "text": "Child" }] }`
+- Do not emit legacy nested arrays (for example `[["Child"]]`); they are invalid.
+- Do not attach `children` to `header`/`subheader` label lines.
+
 #### Tier-based slide count policy (when user did not specify count)
 
 - `sm`: 8-12 slides

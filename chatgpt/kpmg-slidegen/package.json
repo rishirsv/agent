@@ -18,6 +18,8 @@
     "test:postprocess": "node scripts/test-postprocess-flows.mjs",
     "test:visual:layouts": "node scripts/test-layout-visual-regressions.mjs",
     "test:visual:one-column": "node scripts/test-one-column-visual-regressions.mjs",
+    "test:visual:bullet-nesting": "node scripts/test-bullet-nesting-visual-regressions.mjs",
+    "test:validation:bullet-nesting": "node scripts/test-bullet-nesting-validation.mjs",
     "validate:visual": "node scripts/validate-visual.mjs",
     "dev:cover": "node scripts/dev/render-cover-sample.mjs",
     "dev:analysis-narrow": "node scripts/dev/render-analysis-narrow-sample.mjs"

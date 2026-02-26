@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "title": "Nested Bullets Dense Baseline",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "oneColumnText",
+      "title": "Revenue quality pressure points",
+      "strapline": "Concentrated churn, price resets, and working-capital drag are tightening quality of revenue in FY2025.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Customer concentration", "subheader": true },
+        "Top ten customers represent 61% of recurring revenue and two enterprise contracts are approaching renewal with explicit rebid language.",
+        "Logo retention remained high at 94%, but gross dollar retention fell to 86% as legacy contracts were repriced at lower volume commitments.",
+        { "text": "Commercial adjustments", "subheader": true },
+        "Sales incentives shifted to upfront discounting in Q4, increasing ACV conversion but pulling forward margin impact into the next two quarters.",
+        "Implementation overruns on three strategic accounts required unplanned service credits and delayed milestone billing by six to eight weeks.",
+        { "text": "Implication", "subheader": true },
+        "Base-case underwriting should ring-fence near-term revenue confidence to contracted backlog and apply explicit downside sensitivity to FY2026 growth assumptions."
+      ],
+      "source": "Source: CRM cohort extract, contract register, and monthly bridge pack (FY2024-FY2025)."
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Risk and mitigation priorities",
+      "strapline": "Execution risk is manageable if commercial controls and delivery governance are tightened in the first 90 days.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        { "text": "Commercial risk", "subheader": true },
+        "Repricing cadence is inconsistent across enterprise cohorts, creating avoidable renewal leakage and non-standard discount terms.",
+        "Pipeline staging quality is weak in two regions where close dates are repeatedly rolled without clear owner-level escalation.",
+        { "text": "Operating risk", "subheader": true },
+        "Resource utilization volatility in implementation teams has increased rework and extended cash conversion on fixed-fee projects."
+      ],
+      "rightBody": [
+        { "text": "Pricing controls", "subheader": true },
+        "Introduce approval guardrails for non-standard terms with weekly exception review at CRO and FP&A level.",
+        "Standardize renewal playbooks by cohort with mandatory deal-margin checkpoints before final quote issuance.",
+        { "text": "Delivery governance", "subheader": true },
+        "Deploy account-level burn monitoring and milestone gating so scope drift is surfaced before it affects billing confidence."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Growth slowed after pricing reset",
+      "strapline": "Revenue growth decelerated after the FY2024 price reset while churn remained elevated in lower-margin cohorts.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Trend", "subheader": true },
+        "Quarterly revenue growth declined from 18% to 9% across the period, with the steepest deceleration in accounts exposed to contract rebasing.",
+        "Churn rate remained above the long-run average after Q2 FY2025 despite improved new-logo bookings in mid-market channels.",
+        { "text": "Driver", "subheader": true },
+        "Discount-heavy renewal tactics preserved volume but compressed realized price and reduced expansion contribution from existing customers.",
+        { "text": "Implication", "subheader": true },
+        "Investment case should separate temporary pricing actions from structural demand and model a staged recovery path tied to renewal quality improvements."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Revenue growth %",
+            "labels": ["Q1 FY24", "Q2 FY24", "Q3 FY24", "Q4 FY24", "Q1 FY25", "Q2 FY25"],
+            "values": [18, 16, 14, 12, 10, 9]
+          },
+          {
+            "name": "Churn %",
+            "labels": ["Q1 FY24", "Q2 FY24", "Q3 FY24", "Q4 FY24", "Q1 FY25", "Q2 FY25"],
+            "values": [6, 7, 8, 8, 9, 9]
+          }
+        ],
+        "source": "Source: Management monthly KPI pack, cohort bridge, and revenue analytics cube."
+      }
+    }
+  ]
+}

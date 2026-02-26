@@ -22,6 +22,7 @@ This repo converts `deckSpec` JSON files into `.pptx` outputs with a consolidate
 - Keep docs and code consistent when changing slide types, slot rules, or QA shape.
 - Validate changes by running the generator with explicit `--in`, `--out`, and `--qa-out`.
 - Keep postprocess runtime portable: repo runs and skill runs must work without external `.agents` dependencies.
+- This repo is pre-release. Do not add backward-compatibility fallbacks or dual-path parsers unless explicitly requested.
 
 ## Quick Start
 ```bash

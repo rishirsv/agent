@@ -58,6 +58,9 @@ Use this standard by deck length:
 - Prefer quantified evidence over generic descriptors.
 - Keep bullets precise and decision-linked, not descriptive for its own sake.
 - Use subheadings to group dense bullets instead of long undifferentiated lists.
+- Use nested bullets only when a child point directly depends on its parent point.
+- Prefer 1-2 nested levels for readability; use deeper nesting only when detail is essential.
+- For nested bullets in `deckSpec`, use `{ "text": "...", "children": [...] }` rather than nested arrays.
 
 ## Language Controls (Mandatory)
 

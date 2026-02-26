@@ -24,9 +24,14 @@ Pick the slide `type` based on the evidence shape (narrative vs comparison vs ch
 ### `textArray`
 
 - Array of strings and/or objects of shape `{ "text": "..." }`.
+- Nested bullets use object `children` only:
+  - `{ "text": "Parent bullet", "children": [{ "text": "Child bullet" }] }`
+- Do not use array-in-array legacy nesting (`[["..."]]`); it is not supported.
 - You can add inline headings inside `textArray` with:
   - `{ "text": "Heading", "subheader": true }`
   - `{ "text": "Heading", "header": true }`
+- Max nesting depth is 4 total levels (top bullet + 3 child levels).
+- `header`/`subheader` lines are section labels and must not have `children`.
 
 Use headings to keep dense slides scannable and split-friendly.
 

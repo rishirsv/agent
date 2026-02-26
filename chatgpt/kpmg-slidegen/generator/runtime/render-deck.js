@@ -26,6 +26,8 @@ const DENSITY_STATUS = Object.freeze({
 });
 const DIVIDER_TYPES = new Set(['divider', 'dividerDark', 'dividerLight']);
 const EXCLUDED_FROM_LOGICAL_PAGING = new Set(['cover', 'backCover', ...DIVIDER_TYPES]);
+const MAX_TEXT_ARRAY_LEVELS = 4;
+const MAX_TEXT_ARRAY_CHILD_DEPTH = MAX_TEXT_ARRAY_LEVELS - 1;
 
 function isPlainObject(value) {
   return Boolean(value && typeof value === 'object' && !Array.isArray(value));
@@ -33,8 +35,58 @@ function isPlainObject(value) {
 
 function extractText(value) {
   if (typeof value === 'string') return value.trim();
-  if (isPlainObject(value) && typeof value.text === 'string') return value.text.trim();
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => extractText(item))
+      .filter(Boolean)
+      .join(' ')
+      .trim();
+  }
+  if (isPlainObject(value) && typeof value.text === 'string') {
+    const ownText = value.text.trim();
+    if (!Array.isArray(value.children)) return ownText;
+    const childText = extractText(value.children);
+    return `${ownText} ${childText}`.trim();
+  }
   return '';
+}
+
+function countTextArrayItems(value) {
+  if (!Array.isArray(value)) return 0;
+  let count = 0;
+
+  function visitNode(node) {
+    if (typeof node === 'string') {
+      count += 1;
+      return;
+    }
+    if (!isPlainObject(node) || typeof node.text !== 'string') return;
+    count += 1;
+    if (!Array.isArray(node.children)) return;
+    node.children.forEach((child) => visitNode(child));
+  }
+
+  value.forEach((item) => visitNode(item));
+  return count;
+}
+
+function countTextArrayCharacters(value) {
+  if (!Array.isArray(value)) return 0;
+  let chars = 0;
+
+  function visitNode(node) {
+    if (typeof node === 'string') {
+      chars += node.trim().length;
+      return;
+    }
+    if (!isPlainObject(node) || typeof node.text !== 'string') return;
+    chars += node.text.trim().length;
+    if (!Array.isArray(node.children)) return;
+    node.children.forEach((child) => visitNode(child));
+  }
+
+  value.forEach((item) => visitNode(item));
+  return chars;
 }
 
 function isMissingSlotValue(value, def = {}) {
@@ -53,6 +105,9 @@ function isMissingSlotValue(value, def = {}) {
 
 function countCharacters(value, kind = 'text') {
   if (kind === 'text') return extractText(value).length;
+  if (kind === 'textArray' || kind === 'stringArray') {
+    return countTextArrayCharacters(value);
+  }
   if (Array.isArray(value)) {
     return value.map((v) => extractText(v)).join(' ').trim().length;
   }
@@ -81,7 +136,10 @@ function countCharacters(value, kind = 'text') {
 function getSlotQuantity(def, value) {
   const kind = def?.kind;
   if (kind === 'text') return countCharacters(value, kind);
-  if (kind === 'textArray' || kind === 'stringArray' || kind === 'kpiArray' || kind === 'columns' || kind === 'contentsSections') {
+  if (kind === 'textArray' || kind === 'stringArray') {
+    return countTextArrayItems(value);
+  }
+  if (kind === 'kpiArray' || kind === 'columns' || kind === 'contentsSections') {
     return Array.isArray(value) ? value.length : 0;
   }
   if (kind === 'table') return Array.isArray(value?.rows) ? value.rows.length : 0;
@@ -162,8 +220,56 @@ function validateTypedSlotValue(slotName, def, value) {
       fail('must be an array');
       return { errors, warnings, quantity, charCount };
     }
-    const blankEntries = value.filter((item) => extractText(item).length === 0).length;
-    if (blankEntries === value.length && value.length > 0) {
+
+    let itemCount = 0;
+    let blankEntries = 0;
+
+    function visitNode(node, { path = '', depth = 0 } = {}) {
+      if (Array.isArray(node)) {
+        fail(`contains legacy nested array at ${path}; use object children instead`);
+        return;
+      }
+      if (typeof node === 'string') {
+        itemCount += 1;
+        if (node.trim().length === 0) blankEntries += 1;
+        return;
+      }
+      if (!isPlainObject(node)) {
+        fail(`contains invalid item at ${path}; expected string or object`);
+        return;
+      }
+      if (typeof node.text !== 'string') {
+        fail(`contains object without string text at ${path}`);
+        return;
+      }
+
+      itemCount += 1;
+      if (node.text.trim().length === 0) blankEntries += 1;
+
+      if (!Object.prototype.hasOwnProperty.call(node, 'children')) return;
+
+      if (node.header || node.subheader) {
+        fail(`item ${path} cannot define children when header/subheader is true`);
+      }
+
+      if (!Array.isArray(node.children)) {
+        fail(`item ${path} children must be an array`);
+        return;
+      }
+
+      if (depth >= MAX_TEXT_ARRAY_CHILD_DEPTH && node.children.length > 0) {
+        fail(`item ${path} exceeds max nesting depth (${MAX_TEXT_ARRAY_LEVELS} levels)`);
+        return;
+      }
+
+      node.children.forEach((child, idx) =>
+        visitNode(child, { path: `${path}.children[${idx}]`, depth: depth + 1 }),
+      );
+    }
+
+    value.forEach((item, idx) => visitNode(item, { path: `[${idx}]`, depth: 0 }));
+
+    if (blankEntries === itemCount && itemCount > 0) {
       fail('array has no non-whitespace text items');
     } else if (blankEntries > 0) {
       warn(`contains ${blankEntries} empty text item(s)`);
@@ -424,10 +530,24 @@ function formatTableWarningMessage(warning = {}) {
 
 function collectRepeatedBodyLineWarnings(slides = []) {
   const lineMap = new Map();
+
+  function visitBodyItems(items, emit) {
+    if (!Array.isArray(items)) return;
+    items.forEach((item) => {
+      if (typeof item === 'string') {
+        emit(item);
+        return;
+      }
+      if (!isPlainObject(item) || typeof item.text !== 'string') return;
+      emit(item.text);
+      if (Array.isArray(item.children)) visitBodyItems(item.children, emit);
+    });
+  }
+
   slides.forEach((slideSpec, slideIndex) => {
     const body = Array.isArray(slideSpec?.body) ? slideSpec.body : [];
-    body.forEach((item) => {
-      const text = extractText(item).replace(/\s+/g, ' ').trim();
+    visitBodyItems(body, (rawText) => {
+      const text = String(rawText ?? '').replace(/\s+/g, ' ').trim();
       if (!text || text.length < 40) return;
       const key = text.toLowerCase();
       if (!lineMap.has(key)) {

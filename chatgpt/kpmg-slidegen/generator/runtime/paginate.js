@@ -27,6 +27,10 @@ function isTextObject(value) {
   return Boolean(value && typeof value === 'object' && value.text !== undefined);
 }
 
+function isBulletObject(value) {
+  return Boolean(value && typeof value === 'object' && !Array.isArray(value) && value.text !== undefined);
+}
+
 function safeStr(s) {
   if (isTextObject(s)) return String(s.text ?? '');
   return String(s ?? '');
@@ -67,6 +71,11 @@ function normalizeBulletPairs(items) {
   return out;
 }
 
+function bulletPrefixForDepth(depth) {
+  // Match rendering behavior: deeper level swaps to dash.
+  return depth === 2 ? '- ' : '• ';
+}
+
 function countWrappedLines(text, charsPerLine) {
   const s = safeStr(text).replace(/\r/g, '');
   const parts = s.split('\n');
@@ -101,12 +110,29 @@ function chunkBullets(lines, { maxLines, charsPerLine }) {
   let cur = [];
   let used = 0;
 
+  function estimateNodeLines(node, depth = 0) {
+    if (Array.isArray(node)) return 0;
+
+    if (isBulletObject(node)) {
+      const text = safeStr(node).trim();
+      const isHeader = Boolean(node.header || node.subheader);
+      const prefix = isHeader ? '' : bulletPrefixForDepth(depth);
+      let linesNeeded = text ? countWrappedLines(`${prefix}${text}`, charsPerLine) : 0;
+      if (!isHeader && Array.isArray(node.children)) {
+        for (const child of node.children) linesNeeded += estimateNodeLines(child, depth + 1);
+      }
+      return linesNeeded;
+    }
+
+    const text = safeStr(node).trim();
+    if (!text) return 0;
+    const prefix = depth > 0 ? bulletPrefixForDepth(depth) : (isLikelyHeading(text) ? '' : bulletPrefixForDepth(0));
+    return countWrappedLines(`${prefix}${text}`, charsPerLine);
+  }
+
   for (const item of items) {
-    const t = safeStr(item).trim();
-    if (!t) continue;
-    const isHeader = isTextObject(item) && item.header;
-    const prefix = isHeader ? '' : '• ';
-    const need = countWrappedLines(`${prefix}${t}`, charsPerLine);
+    const need = estimateNodeLines(item, 0);
+    if (need <= 0) continue;
     if (cur.length && used + need > maxLines) {
       chunks.push(cur);
       cur = [];

@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "title": "Validation failing legacy nested bullets",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "oneColumnText",
+      "title": "Legacy nested bullet format",
+      "bodyStyle": "bullets",
+      "body": [
+        "Parent bullet uses legacy nested arrays.",
+        [
+          "Legacy child bullet should be rejected by validation."
+        ],
+        "Another parent bullet for density."
+      ]
+    }
+  ]
+}

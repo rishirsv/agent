@@ -161,6 +161,12 @@
             },
             "header": {
               "type": "boolean"
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/textRun"
+              }
             }
           }
         }

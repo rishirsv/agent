@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "title": "Nested Bullets Dense Children",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "oneColumnText",
+      "title": "Revenue quality pressure points",
+      "strapline": "Concentrated churn, price resets, and working-capital drag are tightening quality of revenue in FY2025.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Customer concentration", "subheader": true },
+        {
+          "text": "Top ten customers represent 61% of recurring revenue, increasing renewal concentration risk.",
+          "children": [
+            {
+              "text": "Two enterprise contracts are in active rebid cycles and include downside volume clauses.",
+              "children": [
+                {
+                  "text": "Commercial teams estimate a 3-5 point margin drag if these contracts reset below current floor pricing.",
+                  "children": [
+                    "Sensitivity case assumes only partial volume recovery by H2 FY2026 and slower expansion conversion."
+                  ]
+                }
+              ]
+            },
+            "Gross dollar retention dropped to 86% as repriced legacy cohorts renewed at lower committed volume."
+          ]
+        },
+        { "text": "Commercial adjustments", "subheader": true },
+        {
+          "text": "Upfront discounting accelerated ACV conversion in Q4 but pulled margin pressure into subsequent quarters.",
+          "children": [
+            "Implementation overruns on three strategic accounts triggered service credits and delayed milestone billing.",
+            "Working-capital conversion weakened as invoice disputes increased on custom scope statements."
+          ]
+        },
+        { "text": "Implication", "subheader": true },
+        "Base-case underwriting should ring-fence near-term revenue confidence to contracted backlog and apply explicit downside sensitivity to FY2026 growth assumptions."
+      ],
+      "source": "Source: CRM cohort extract, contract register, and monthly bridge pack (FY2024-FY2025)."
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Risk and mitigation priorities",
+      "strapline": "Execution risk is manageable if commercial controls and delivery governance are tightened in the first 90 days.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        { "text": "Commercial risk", "subheader": true },
+        {
+          "text": "Repricing cadence is inconsistent across enterprise cohorts.",
+          "children": [
+            "Non-standard discount terms are approved late and reduce renewal visibility.",
+            {
+              "text": "Pipeline staging quality is weak in two regions with repeated close-date slippage.",
+              "children": [
+                "Owner-level escalation is inconsistent and forecast confidence declines near quarter-end."
+              ]
+            }
+          ]
+        },
+        { "text": "Operating risk", "subheader": true },
+        {
+          "text": "Utilization volatility in implementation teams has increased rework.",
+          "children": [
+            "Scope drift now extends cash conversion on fixed-fee projects by roughly three weeks."
+          ]
+        }
+      ],
+      "rightBody": [
+        { "text": "Pricing controls", "subheader": true },
+        {
+          "text": "Introduce approval guardrails for non-standard terms with weekly exception review.",
+          "children": [
+            "Require deal-margin checkpoints before final quote issuance.",
+            "Standardize renewal playbooks by cohort and renewal type."
+          ]
+        },
+        { "text": "Delivery governance", "subheader": true },
+        {
+          "text": "Deploy account-level burn monitoring and milestone gating.",
+          "children": [
+            "Escalate accounts when labor mix or timeline variance exceeds threshold before billing confidence is affected."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Growth slowed after pricing reset",
+      "strapline": "Revenue growth decelerated after the FY2024 price reset while churn remained elevated in lower-margin cohorts.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Trend", "subheader": true },
+        {
+          "text": "Quarterly revenue growth declined from 18% to 9% across the period.",
+          "children": [
+            "The steepest deceleration appears in cohorts exposed to contract rebasing.",
+            {
+              "text": "Churn stayed above long-run average after Q2 FY2025 despite improved new-logo bookings.",
+              "children": [
+                "Momentum from new logos was offset by weaker expansion and lower realized price on renewals."
+              ]
+            }
+          ]
+        },
+        { "text": "Driver", "subheader": true },
+        {
+          "text": "Discount-heavy renewal tactics preserved volume but compressed realized price.",
+          "children": [
+            "Expansion contribution from existing customers decreased as pricing exceptions widened."
+          ]
+        },
+        { "text": "Implication", "subheader": true },
+        "Investment case should separate temporary pricing actions from structural demand and model a staged recovery path tied to renewal quality improvements."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Revenue growth %",
+            "labels": ["Q1 FY24", "Q2 FY24", "Q3 FY24", "Q4 FY24", "Q1 FY25", "Q2 FY25"],
+            "values": [18, 16, 14, 12, 10, 9]
+          },
+          {
+            "name": "Churn %",
+            "labels": ["Q1 FY24", "Q2 FY24", "Q3 FY24", "Q4 FY24", "Q1 FY25", "Q2 FY25"],
+            "values": [6, 7, 8, 8, 9, 9]
+          }
+        ],
+        "source": "Source: Management monthly KPI pack, cohort bridge, and revenue analytics cube."
+      }
+    }
+  ]
+}
