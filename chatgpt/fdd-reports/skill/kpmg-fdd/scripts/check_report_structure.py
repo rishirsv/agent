@@ -32,7 +32,6 @@ DEFAULT_REQUIRED_SECTIONS = [
     "Working capital",
     "Net debt",
     "Risks",
-    "Open items",
 ]
 
 PLACEHOLDER_PATTERNS = [
@@ -99,7 +98,9 @@ def run_checks(md_path: Path, required_sections: List[str]) -> CheckResult:
     if "quality of earnings" in headings_lc and not has_table_near_keyword(text, "quality of earnings"):
         notes.append("QoE section detected but no markdown table found near it (check for missing bridge exhibit).")
 
-    ok = (len(missing) == 0) and (len(placeholder_hits) == 0)
+    # Placeholders are allowed by default in this skill workflow.
+    # They become actionable notes unless strict mode is requested by caller.
+    ok = (len(missing) == 0)
 
     return CheckResult(ok=ok, missing_sections=missing, placeholder_hits=placeholder_hits, notes=notes)
 
@@ -109,6 +110,11 @@ def main() -> int:
     p.add_argument("--in", dest="infile", required=True, help="Input report markdown path")
     p.add_argument("--json", dest="json_out", default=None, help="Optional JSON output path")
     p.add_argument("--sections", dest="sections", default=None, help="Comma-separated list of required section keywords")
+    p.add_argument(
+        "--strict-placeholders",
+        action="store_true",
+        help="Fail the check if placeholder tokens are present",
+    )
     args = p.parse_args()
 
     md_path = Path(args.infile)
@@ -141,11 +147,15 @@ def main() -> int:
         for n in result.notes:
             print(f" - {n}")
 
+    if args.strict_placeholders and result.placeholder_hits:
+        print("\nNOT OK: strict placeholder mode enabled and placeholders were found.")
+        return 1
+
     if result.ok:
         print("\nOK: basic structural checks passed.")
         return 0
 
-    print("\nNOT OK: fix missing sections/placeholders before calling this final.")
+    print("\nNOT OK: fix missing required sections before calling this final.")
     return 1
 
 

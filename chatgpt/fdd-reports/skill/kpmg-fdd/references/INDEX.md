@@ -1,51 +1,18 @@
-# KPMG FDD Report Writer references index
+# KPMG FDD references (canonical)
 
-Use this index to load only what you need.
+Use this as the router for the active, forward-only contract system.
 
-## Workflow and structure
+## Global standards (apply to all sections)
 
-- [workflow.md](workflow.md)  
-  Use when you need the full end-to-end workflow (new report, revision, QC) with default assumptions, scoping gates, and iteration protocol.
+- [global-writing-conventions.md](global-writing-conventions.md)
+- [section-contract-standard.md](section-contract-standard.md)
 
-- [report-structure.md](report-structure.md)  
-  Canonical FDD report outline and section purposes. Includes “short vs standard vs deep” report variants and where to place exhibits.
+## Section contracts (single source per section)
 
-## Writing standards and defensibility
+- [business-overview.md](business-overview.md)
+- [qoe-and-earnings-adjustments.md](qoe-and-earnings-adjustments.md)
 
-- [writing-standards.md](writing-standards.md)  
-  Tone, claim logic, defensibility rules, sourcing conventions, and “fact vs judgment” guidance.
+## Canonical section templates (quick scaffolds)
 
-- [exhibits-and-tables.md](exhibits-and-tables.md)  
-  When to use tables vs charts, exhibit captions, units and sign conventions, and table formatting standards.
-
-## Quality control
-
-- [qc-checklist.md](qc-checklist.md)  
-  “Do not deliver if…” checks, number tie-outs, evidence coverage checks, and a standardized QC issue log format.
-
-## Section templates
-
-Use these when drafting report sections.
-
-- [section-templates/executive-summary.md](section-templates/executive-summary.md)
 - [section-templates/business-overview.md](section-templates/business-overview.md)
-- [section-templates/pnl-overview.md](section-templates/pnl-overview.md)
-- [section-templates/qoe-adjustments.md](section-templates/qoe-adjustments.md)
-- [section-templates/working-capital.md](section-templates/working-capital.md)
-- [section-templates/net-debt.md](section-templates/net-debt.md)
-- [section-templates/capex.md](section-templates/capex.md)
-- [section-templates/tax.md](section-templates/tax.md)
-- [section-templates/accounting-policies.md](section-templates/accounting-policies.md)
-- [section-templates/pro-forma.md](section-templates/pro-forma.md)
-- [section-templates/risks-and-red-flags.md](section-templates/risks-and-red-flags.md)
-- [section-templates/open-items-and-data-requests.md](section-templates/open-items-and-data-requests.md)
-
-## Analysis playbooks
-
-Use these when you need guidance on how to reason, what to test, and what to tie.
-
-- [analysis-playbooks/qoe-playbook.md](analysis-playbooks/qoe-playbook.md)
-- [analysis-playbooks/working-capital-playbook.md](analysis-playbooks/working-capital-playbook.md)
-- [analysis-playbooks/net-debt-playbook.md](analysis-playbooks/net-debt-playbook.md)
-- [analysis-playbooks/capex-playbook.md](analysis-playbooks/capex-playbook.md)
-- [analysis-playbooks/tax-playbook.md](analysis-playbooks/tax-playbook.md)
+- [section-templates/qoe-and-earnings-adjustments.md](section-templates/qoe-and-earnings-adjustments.md)
