@@ -96,7 +96,7 @@ If a recommendation changes behavior, look for prior commits touching that behav
 
 ### 4) Write and Save the Brief
 
-Save to: `<project-root>/docs/<feature-slug>research-<feature-slug>.md` when the project uses a `docs/` convention. Otherwise, ask the user where they want the brief saved (or propose a sensible docs path).
+Save to: `<project-root>/docs/research/<feature-slug>-research.md` when the project uses a `docs/` convention. Otherwise, ask the user where they want the brief saved (or propose a sensible docs path).
 
 Mandatory sections: Research Questions, Summary, Key Points, Recommendations, Sources.  
 Optional add-ons: Comparison, Risks & Considerations, Codebase Patterns, Detailed Analysis (include only when helpful).
@@ -160,6 +160,6 @@ Include these sections only when needed:
 
 Say:
 
-> "Research saved to `<path>`. Next: `$plan`."
+> "Research saved to `<path>`.
 
 Then summarize the key points for the user and design recommendations.

@@ -40,6 +40,7 @@ Continue brainstorming as long as the user is engaged and wants to continue. Whe
 - Clearly tell the user how to answer a batch (for example: "Reply with the option letter/number for each question.").
 - Adapt each batch based on previous answers.
 - Stop when you can describe the solution without guessing.
+- Use the RequestUserInput or AskUserQuestion tool to ask questions if available; otherwise, ask questions in plain text.
 
 **Areas to explore** (as needed):
 

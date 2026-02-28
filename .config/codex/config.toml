@@ -24,7 +24,6 @@ writable_roots = []
 ###############################################################################
 
 [features]
-web_search = "live"
 apps = true
 multi_agent = true
 prevent_idle_sleep = true
