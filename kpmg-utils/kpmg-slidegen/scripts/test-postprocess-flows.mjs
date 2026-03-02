@@ -166,10 +166,11 @@ assert.equal(failure.qa.summary.postprocess.montageFailed, 0);
 assert.equal(failure.qa.summary.postprocess.overflowVisualFailed, 1);
 
 const unavailable = await runCase('unavailable', unavailableAdapter);
-assert.equal(unavailable.result.strictFailed, false, 'Unavailable case should skip strict checker safely');
+assert.equal(unavailable.result.strictFailed, true, 'Unavailable case should fail strict checks (fail-closed)');
 assert.equal(unavailable.qa.postprocess.availability.slidesSkill, false);
 assert.equal(unavailable.qa.postprocess.preview.status, 'skipped');
 assert.equal(unavailable.qa.postprocess.overflowVisual.status, 'skipped');
+assert.equal(unavailable.qa.strictOverflow.status, 1, 'Unavailable case should mark strict overflow as failed');
 assert.equal(unavailable.qa.summary.postprocess.previewFailed, 0);
 assert.equal(unavailable.qa.summary.postprocess.overflowVisualFailed, 0);
 

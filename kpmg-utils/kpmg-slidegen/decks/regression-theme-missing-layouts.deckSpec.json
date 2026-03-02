@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "title": "Theme Coverage Missing Layouts",
+    "allowSparse": true,
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Theme Coverage\nVisual Regression",
+      "subtitle": "Targeted regression deck for slide types that were previously outside visual coverage."
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "Executive Summary"
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        { "number": "01", "title": "Executive Summary", "items": ["Thesis", "Recommendation"] },
+        { "number": "02", "title": "Market", "items": ["Demand", "Competition"] },
+        { "number": "03", "title": "Commercial", "items": ["Pricing", "Retention"] },
+        { "number": "04", "title": "Operations", "items": ["Fulfillment", "Service"] },
+        { "number": "05", "title": "Technology", "items": ["Architecture", "Security"] },
+        { "number": "06", "title": "People", "items": ["Leadership", "Capability"] },
+        { "number": "07", "title": "Financial", "items": ["Quality of earnings", "Working capital"] },
+        { "number": "08", "title": "Legal", "items": ["Contracts", "Compliance"] },
+        { "number": "09", "title": "Tax", "items": ["Structure", "Risks"] },
+        { "number": "10", "title": "ESG", "items": ["Targets", "Controls"] },
+        { "number": "11", "title": "Synergies", "items": ["Revenue", "Cost"] },
+        { "number": "12", "title": "Implementation", "items": ["Roadmap", "Governance"] }
+      ]
+    },
+    {
+      "type": "titleStrapline4TextBoxes",
+      "title": "Workstream Priorities and Initial Owners",
+      "strapline": "Program structure aligns initiative owners with measurable outcomes and clear sequencing.",
+      "columns": [
+        {
+          "heading": "Revenue",
+          "body": [
+            "Prioritize retention interventions in top churn cohorts and reprice low-margin contracts.",
+            "Establish pipeline conversion governance with weekly owner accountability."
+          ]
+        },
+        {
+          "heading": "Cost",
+          "body": [
+            "Consolidate duplicative vendors and sequence procurement events by spend category.",
+            "Launch zero-based spend reviews for discretionary functions."
+          ]
+        },
+        {
+          "heading": "Risk",
+          "body": [
+            "Harden controls around privileged access and regulatory reporting deadlines.",
+            "Track remediation closure evidence with executive-level escalation thresholds."
+          ]
+        },
+        {
+          "heading": "Execution",
+          "body": [
+            "Stand up PMO rituals with clear entry and exit criteria for each workstream.",
+            "Publish a fortnightly steering committee dashboard for decision support."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Diligence Requests and Priority Ranking",
+      "strapline": "Data requests are prioritized based on decision impact and near-term transaction readiness.",
+      "table": {
+        "title": "Priority Requests",
+        "heading": "Request backlog",
+        "keyTakeawayTitle": "Key takeaways",
+        "headers": ["Priority", "Data request", "Rationale"],
+        "rows": [
+          ["High", "Monthly customer retention cohorts by segment", "Required to validate topline durability assumptions and downside sensitivity."],
+          ["Medium", "Contract-level pricing waterfall and discount approvals", "Supports margin bridge substantiation and pricing control design."],
+          ["Low", "Historical office lease schedule by location", "Confirms non-core fixed cost exposure and relocation flexibility."]
+        ]
+      },
+      "insightTitle": "Key takeaways",
+      "insights": [
+        "High-priority asks directly influence valuation confidence and should be completed before confirmatory work begins.",
+        "Medium-priority asks can run in parallel if owners commit to documented weekly delivery milestones."
+      ],
+      "notes": "Source: management data room index and diligence tracker export as of February 2026."
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "02",
+      "sectionTitle": "Appendix and Contacts"
+    },
+    {
+      "type": "backCover",
+      "url": "example.com",
+      "disclaimer": "This report has been prepared for discussion purposes only and should be considered together with supporting schedules, management presentations, and diligence workpapers provided under confidentiality restrictions."
+    }
+  ]
+}

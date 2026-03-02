@@ -4,7 +4,8 @@
  * Returns TextProps[] for bullet lists with per-run styling.
  */
 
-import { BULLETS, COLORS } from '../tokens.js';
+import { BULLETS } from '../tokens.js';
+import { resolveTheme } from './theme.js';
 
 const DASH_BULLET_DEPTH = 2;
 const MAX_BULLET_DEPTH = 3;
@@ -83,7 +84,7 @@ function bulletParaRuns(text, { depth = 0, baseStyle = {} } = {}) {
   return [{ text: safeText(text), options: { ...paraOpts, breakLine: true } }];
 }
 
-function headerRuns(text, { gapBefore = false } = {}) {
+function headerRuns(text, { gapBefore = false, color } = {}) {
   const clean = safeText(text).trim();
   if (!clean) return [];
   return [
@@ -91,7 +92,7 @@ function headerRuns(text, { gapBefore = false } = {}) {
       text: clean,
       options: {
         bold: true,
-        color: COLORS.kpmgBlue,
+        color,
         ...(gapBefore ? { paraSpaceBefore: 14 } : { paraSpaceBefore: BULLETS.paraSpaceBeforePt }),
         paraSpaceAfter: BULLETS.paraSpaceAfterPt,
         breakLine: true,
@@ -104,10 +105,14 @@ function isTextObject(item) {
   return Boolean(item && typeof item === 'object' && !Array.isArray(item) && item.text !== undefined);
 }
 
-export function toBulletRuns(lines) {
+export function toBulletRuns(lines, { theme = null, headingColor = null } = {}) {
   if (!lines) return '';
   if (typeof lines === 'string') return lines;
   if (!Array.isArray(lines)) return String(lines ?? '');
+  const resolvedHeadingColor =
+    typeof headingColor === 'string' && headingColor.trim()
+      ? headingColor.trim()
+      : resolveTheme(theme).colors.kpmgBlue;
 
   const runs = [];
   let prdHeaderCount = 0;
@@ -117,7 +122,7 @@ export function toBulletRuns(lines) {
 
     if (isTextObject(item)) {
       if (item.header || item.subheader) {
-        runs.push(...headerRuns(item.text));
+        runs.push(...headerRuns(item.text, { color: resolvedHeadingColor }));
         return;
       }
 
@@ -133,7 +138,7 @@ export function toBulletRuns(lines) {
       const isPrdHeader = ['Problem:', 'How we solve it:', 'Outcome / ROI:'].includes(clean);
       const gapBefore = isPrdHeader && prdHeaderCount > 0;
       if (isPrdHeader) prdHeaderCount += 1;
-      runs.push(...headerRuns(clean, { gapBefore }));
+      runs.push(...headerRuns(clean, { gapBefore, color: resolvedHeadingColor }));
       return;
     }
 
@@ -144,10 +149,14 @@ export function toBulletRuns(lines) {
   return runs;
 }
 
-export function toParagraphRuns(lines) {
+export function toParagraphRuns(lines, { theme = null, headingColor = null } = {}) {
   if (!lines) return '';
   if (typeof lines === 'string') return lines;
   if (!Array.isArray(lines)) return String(lines ?? '');
+  const resolvedHeadingColor =
+    typeof headingColor === 'string' && headingColor.trim()
+      ? headingColor.trim()
+      : resolveTheme(theme).colors.kpmgBlue;
 
   const runs = [];
   const addParagraph = (text, style = {}) => {
@@ -167,7 +176,7 @@ export function toParagraphRuns(lines) {
     if (Array.isArray(item)) return;
 
     if (isTextObject(item)) {
-      const style = item.header || item.subheader ? { bold: true, color: COLORS.kpmgBlue } : toInlineStyle(item);
+      const style = item.header || item.subheader ? { bold: true, color: resolvedHeadingColor } : toInlineStyle(item);
       addParagraph(item.text, style);
       if (Array.isArray(item.children) && !(item.header || item.subheader)) {
         item.children.forEach((child) => emit(child));
@@ -182,8 +191,8 @@ export function toParagraphRuns(lines) {
   return runs;
 }
 
-export function toBodyRuns(lines, bodyStyle = 'bullets') {
+export function toBodyRuns(lines, bodyStyle = 'bullets', options = {}) {
   return String(bodyStyle || '').toLowerCase() === 'paragraphs'
-    ? toParagraphRuns(lines)
-    : toBulletRuns(lines);
+    ? toParagraphRuns(lines, options)
+    : toBulletRuns(lines, options);
 }

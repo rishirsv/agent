@@ -7,7 +7,7 @@
   "scripts": {
     "generate": "node generator/index.js --in decks/deckspec-starter-template.deckSpec.json --out outputs/my-run/deck.pptx --qa-out outputs/my-run/qa.json",
     "generate:layouts": "node generator/index.js --in decks/layout-flex-one-per-layout.deckSpec.json --out outputs/layout-flex/deck.pptx --qa-out outputs/layout-flex/qa.json",
-    "qa": "npm run -s test:contracts && npm run -s smoke",
+    "qa": "npm run -s test:contracts && npm run -s smoke && npm run -s test:drift:grep",
     "test:contracts": "node scripts/test-layout-contracts.mjs",
     "test:qa:golden": "node scripts/test-qa-golden.mjs",
     "test:validation:failure": "node scripts/test-validation-failure.mjs",
@@ -16,12 +16,14 @@
     "skill:smoke": "node scripts/verify-skill-bundle.mjs",
     "smoke": "node scripts/smoke-generate.mjs",
     "test:postprocess": "node scripts/test-postprocess-flows.mjs",
+    "test:strict:overflow-fail-closed": "node scripts/test-strict-overflow-fail-closed.mjs",
     "test:visual:layouts": "node scripts/test-layout-visual-regressions.mjs",
     "test:visual:one-column": "node scripts/test-one-column-visual-regressions.mjs",
     "test:visual:analysis-bridge": "node scripts/test-analysis-bridge-visual-regressions.mjs",
     "test:visual:business-overview": "node scripts/test-business-overview-visual-regressions.mjs",
     "test:visual:callouts-dense": "node scripts/test-callouts-dense-visual-regressions.mjs",
     "test:visual:bullet-nesting": "node scripts/test-bullet-nesting-visual-regressions.mjs",
+    "test:visual:theme-missing-layouts": "node scripts/test-theme-missing-layouts-visual-regressions.mjs",
     "test:pagination:one-column-merge": "node scripts/test-pagination-one-column-merge-regression.mjs",
     "test:pagination:contents-sections": "node scripts/test-pagination-contents-sections-regression.mjs",
     "test:pagination:contents-qa": "node scripts/test-contents-pagination-qa-regression.mjs",
@@ -29,6 +31,12 @@
     "test:strict:overlap-sizing": "node scripts/test-overlap-sizing-bounds-regression.mjs",
     "test:validation:bullet-nesting": "node scripts/test-bullet-nesting-validation.mjs",
     "test:validation:table-shape": "node scripts/test-validation-table-shape-regression.mjs",
+    "test:render-context:refactor": "node scripts/test-render-context-refactor-regression.mjs",
+    "test:footnote:margin-override": "node scripts/test-footnote-margin-override-regression.mjs",
+    "test:drift:ast": "node scripts/test-style-drift-ast.mjs",
+    "test:drift:ast:strict": "node scripts/test-style-drift-ast.mjs --strict",
+    "test:drift:grep": "node scripts/test-builder-style-grep.mjs",
+    "test:drift:grep:strict": "node scripts/test-builder-style-grep.mjs --strict",
     "validate:visual": "node scripts/validate-visual.mjs",
     "dev:cover": "node scripts/dev/render-cover-sample.mjs",
     "dev:analysis-narrow": "node scripts/dev/render-analysis-narrow-sample.mjs"
@@ -36,5 +44,8 @@
   "dependencies": {
     "image-size": "^2.0.2",
     "pptxgenjs": "^4.0.1"
+  },
+  "devDependencies": {
+    "acorn": "^8.15.0"
   }
 }

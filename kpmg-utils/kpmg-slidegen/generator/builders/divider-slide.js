@@ -1,12 +1,13 @@
 import path from 'node:path';
-import { FONTS, COLORS, TEXT_BOX } from '../tokens.js';
-import { normalizeImageSource } from '../helpers/media.js';
+import { addImageSmart } from '../helpers/media.js';
 import { sanitizeText } from '../helpers/text.js';
+import {
+  THEME_COMPONENT_KEYS,
+  resolveTextBoxOptions,
+  resolveTheme,
+  resolveTokenTextStyle,
+} from '../helpers/theme.js';
 import { resolveTemplateAssetsDir } from '../runtime/template-roots.js';
-
-function addImageSmart(slide, asset, opts) {
-  slide.addImage({ ...normalizeImageSource(asset), ...opts });
-}
 
 export const TOKENS = {
   geometry: {
@@ -14,25 +15,34 @@ export const TOKENS = {
     number: { x: 1.25, y: 1.2, w: 2.6, h: 1.2 },
     title: { x: 1.25, y: 2.6, w: 7.0, h: 2.0 },
   },
-  textStyles: {
+};
+
+function resolveTextStyles(theme = null) {
+  const resolvedTheme = resolveTheme(theme);
+  const componentTokens = resolvedTheme.components?.[THEME_COMPONENT_KEYS.dividerSlide] || {};
+  const fontSizes = componentTokens.fontSizes || {};
+  const sectionNumber = resolveTokenTextStyle(resolvedTheme, 'sectionNumber', {
+    fontFace: resolvedTheme.fonts.heading,
+    fontSize: Number(fontSizes.sectionNumber || resolvedTheme.typeSizes.title),
+    color: resolvedTheme.colors.white,
+    bold: true,
+  });
+  return {
     sectionNumber: {
-      fontFace: FONTS.heading,
-      fontSize: 48,
-      color: COLORS.white,
-      bold: true,
+      ...sectionNumber,
       align: 'left',
       valign: 'top',
     },
     sectionTitle: {
-      fontFace: FONTS.heading,
-      fontSize: 24,
-      color: COLORS.white,
+      fontFace: resolvedTheme.fonts.heading,
+      fontSize: Number(fontSizes.sectionTitle || resolvedTheme.typeSizes.h2),
+      color: resolvedTheme.colors.white,
       bold: true,
       align: 'left',
       valign: 'top',
     },
-  },
-};
+  };
+}
 
 const TEMPLATE_ASSETS_DIR = resolveTemplateAssetsDir('kpmg-diligence');
 const DEFAULT_ASSETS = {
@@ -41,8 +51,13 @@ const DEFAULT_ASSETS = {
 
 export function addDivider(
   pptx,
-  { sectionNumber, sectionTitle, assets, geometry, masterName, textStyles } = {},
+  slideSpec = {},
+  ctx = {},
 ) {
+  const { sectionNumber, sectionTitle } = slideSpec;
+  const { assets, geometry, masterName, textStyles, theme } = ctx;
+  const resolvedStyles = resolveTextStyles(theme);
+  const textBox = resolveTextBoxOptions(theme);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
 
   const gradientDivider = assets?.gradientDivider ?? DEFAULT_ASSETS.gradientDivider;
@@ -58,10 +73,9 @@ export function addDivider(
 
   slide.addText(sectionNumber ?? '', {
     ...(g.number || TOKENS.geometry.number),
-    ...TOKENS.textStyles.sectionNumber,
+    ...resolvedStyles.sectionNumber,
     ...(textStyles?.sectionNumber || {}),
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
+    ...textBox,
   });
 
   // Strip embedded newlines from section titles to prevent awkward mid-phrase wrapping.
@@ -69,10 +83,10 @@ export function addDivider(
   const cleanTitle = sanitizeText(sectionTitle ?? '');
   slide.addText(cleanTitle, {
     ...(g.title || TOKENS.geometry.title),
-    ...TOKENS.textStyles.sectionTitle,
+    ...resolvedStyles.sectionTitle,
     ...(textStyles?.sectionTitle || {}),
     wrap: true,
-    margin: TEXT_BOX.marginPt,
+    margin: textBox.margin,
   });
 
   return slide;

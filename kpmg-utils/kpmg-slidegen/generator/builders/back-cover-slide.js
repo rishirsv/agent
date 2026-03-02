@@ -1,6 +1,6 @@
 import path from 'node:path';
-import { COLORS, FONTS, TYPE_SIZES } from '../tokens.js';
-import { normalizeImageSource } from '../helpers/media.js';
+import { addImageSmart } from '../helpers/media.js';
+import { THEME_COMPONENT_KEYS, resolveTheme } from '../helpers/theme.js';
 import { resolveTemplateAssetsDir } from '../runtime/template-roots.js';
 
 const TEMPLATE_ASSETS_DIR = resolveTemplateAssetsDir('kpmg-diligence');
@@ -14,36 +14,45 @@ const DEFAULT_ASSETS = {
   closingSocialYoutube: path.join(TEMPLATE_ASSETS_DIR, 'closing-social-youtube.png'),
 };
 
-function addImageSmart(slide, asset, opts) {
-  if (!asset) return;
-  slide.addImage({ ...normalizeImageSource(asset), ...opts });
-}
+const DEFAULT_CONTACTS = Object.freeze([
+  {
+    name: 'Firstname Lastname',
+    role: 'Job Title',
+    phone: 'T: +1 000 000 0001',
+    email: 'E: firstname.lastname@kpmg.ca',
+  },
+  {
+    name: 'Firstname Lastname',
+    role: 'Job Title',
+    phone: 'T: +1 000 000 0002',
+    email: 'E: firstname.lastname@kpmg.ca',
+  },
+  {
+    name: 'Firstname Lastname',
+    role: 'Job Title',
+    phone: 'T: +1 000 000 0003',
+    email: 'E: firstname.lastname@kpmg.ca',
+  },
+]);
 
 function resolveAsset(assets = {}, resolveAssetPath, key, fallbackKey = null) {
   return assets?.[key] || (typeof resolveAssetPath === 'function' ? resolveAssetPath(key) : null) || DEFAULT_ASSETS[key] || (fallbackKey ? DEFAULT_ASSETS[fallbackKey] : null);
 }
 
-function buildContacts() {
-  return [
-    {
-      name: 'Firstname Lastname',
-      role: 'Job Title',
-      phone: 'T: +1 000 000 0001',
-      email: 'E: firstname.lastname@kpmg.ca',
-    },
-    {
-      name: 'Firstname Lastname',
-      role: 'Job Title',
-      phone: 'T: +1 000 000 0002',
-      email: 'E: firstname.lastname@kpmg.ca',
-    },
-    {
-      name: 'Firstname Lastname',
-      role: 'Job Title',
-      phone: 'T: +1 000 000 0003',
-      email: 'E: firstname.lastname@kpmg.ca',
-    },
-  ];
+function buildContacts(rawContacts = []) {
+  const normalized = Array.isArray(rawContacts)
+    ? rawContacts
+        .filter((item) => item && typeof item === 'object')
+        .map((item) => ({
+          name: String(item.name || '').trim(),
+          role: String(item.role || '').trim(),
+          phone: String(item.phone || '').trim(),
+          email: String(item.email || '').trim(),
+        }))
+        .filter((item) => item.name || item.role || item.phone || item.email)
+        .slice(0, 3)
+    : [];
+  return normalized.length > 0 ? normalized : DEFAULT_CONTACTS.map((contact) => ({ ...contact }));
 }
 
 function legalFooterLines(footerValues = {}) {
@@ -63,10 +72,22 @@ function legalFooterLines(footerValues = {}) {
   };
 }
 
-export function addBackCover(
-  pptx,
-  { disclaimer, url, assets, geometry, masterName, footerValues, resolveAssetPath } = {},
-) {
+function normalizeHyperlink(url) {
+  const trimmed = String(url || '').trim();
+  if (!trimmed) return null;
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://${trimmed}`;
+}
+
+export function addBackCover(pptx, slideSpec = {}, ctx = {}) {
+  const { disclaimer, url, contacts: customContacts } = slideSpec;
+  const { assets, geometry, masterName, footerValues, resolveAssetPath, theme } = ctx;
+  const resolvedTheme = resolveTheme(theme);
+  const textColor = resolvedTheme.colors.white;
+  const headingFont = resolvedTheme.fonts.heading;
+  const bodyFont = resolvedTheme.fonts.body;
+  const backCoverTokens = resolvedTheme.components?.[THEME_COMPONENT_KEYS.backCover] || {};
+  const backCoverFontSizes = backCoverTokens.fontSizes || {};
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const g = geometry || {};
 
@@ -84,17 +105,19 @@ export function addBackCover(
     resolveAsset(assets, resolveAssetPath, 'closingSocialInstagram'),
     resolveAsset(assets, resolveAssetPath, 'closingSocialYoutube'),
   ].filter(Boolean);
-  const contacts = buildContacts();
+  const contacts = buildContacts(customContacts);
   const legal = legalFooterLines(footerValues);
+  const normalizedUrl = normalizeHyperlink(url);
+  const defaultWebsiteText = backCoverTokens.defaultWebsiteText || 'www.kpmg.com';
 
   addImageSmart(slide, logo, { x: 1.095, y: 0.45, w: 1.33, h: 0.45, altText: 'KPMG logo' });
 
   slide.addText('The contacts at KPMG in connection with this report are:', {
     ...(g.heading || { x: 1.095, y: 1.11, w: 10.25, h: 1.05 }),
-    fontFace: FONTS.heading,
-    fontSize: 30,
+    fontFace: headingFont,
+    fontSize: Number(backCoverFontSizes.heading || resolvedTheme.typeSizes.title),
     bold: true,
-    color: COLORS.white,
+    color: textColor,
     valign: 'top',
     wrap: true,
   });
@@ -108,9 +131,9 @@ export function addBackCover(
       y: colY,
       w: colW,
       h: 0.22,
-      fontFace: FONTS.body,
-      fontSize: 13,
-      color: COLORS.white,
+      fontFace: bodyFont,
+      fontSize: Number(backCoverFontSizes.contactName || resolvedTheme.typeSizes.body),
+      color: textColor,
       bold: true,
       margin: 0,
       valign: 'top',
@@ -120,9 +143,9 @@ export function addBackCover(
       y: colY + 0.28,
       w: colW,
       h: 0.74,
-      fontFace: FONTS.body,
-      fontSize: 11,
-      color: COLORS.white,
+      fontFace: bodyFont,
+      fontSize: Number(backCoverFontSizes.contactDetails || resolvedTheme.typeSizes.body),
+      color: textColor,
       wrap: true,
       margin: 0,
       valign: 'top',
@@ -142,9 +165,9 @@ export function addBackCover(
 
   slide.addText(disclaimer || legal.legal1, {
     ...(g.disclaimer || { x: 1.09, y: 6.45, w: 10.65, h: 0.42 }),
-    fontFace: FONTS.body,
-    fontSize: 9,
-    color: COLORS.white,
+    fontFace: bodyFont,
+    fontSize: Number(backCoverFontSizes.disclaimer || resolvedTheme.typeSizes.source),
+    color: textColor,
     valign: 'top',
     wrap: true,
     margin: 0,
@@ -155,9 +178,9 @@ export function addBackCover(
     y: 6.92,
     w: 10.5,
     h: 0.2,
-    fontFace: FONTS.body,
-    fontSize: 8,
-    color: COLORS.white,
+    fontFace: bodyFont,
+    fontSize: Number(backCoverFontSizes.legalBody || resolvedTheme.typeSizes.source),
+    color: textColor,
     valign: 'top',
     wrap: true,
     margin: 0,
@@ -168,22 +191,22 @@ export function addBackCover(
     y: 7.36,
     w: 3.5,
     h: 0.1,
-    fontFace: FONTS.body,
-    fontSize: 8,
-    color: COLORS.white,
+    fontFace: bodyFont,
+    fontSize: Number(backCoverFontSizes.classification || resolvedTheme.typeSizes.source),
+    color: textColor,
     bold: true,
     margin: 0,
     valign: 'mid',
   });
 
-  slide.addText(url || 'www.kpmg.com', {
+  slide.addText(url || defaultWebsiteText, {
     ...(g.url || { x: 1.09, y: 7.18, w: 2.3, h: 0.16 }),
-    fontFace: FONTS.body,
-    fontSize: TYPE_SIZES.body,
-    color: COLORS.white,
+    fontFace: bodyFont,
+    fontSize: resolvedTheme.typeSizes.body,
+    color: textColor,
     bold: true,
-    underline: true,
-    hyperlink: { url: 'https://kpmg.com' },
+    underline: Boolean(normalizedUrl),
+    ...(normalizedUrl ? { hyperlink: { url: normalizedUrl } } : {}),
     margin: 0,
     valign: 'top',
   });

@@ -22,6 +22,8 @@ import {
 } from '../helpers/business-structure.js';
 import { normalizeBodyStyle } from '../helpers/layout.js';
 import { paginateDeckSpec } from './paginate.js';
+import { buildRenderContext } from './render-context.js';
+import { resolveSlideGeometry } from './layout-contract.js';
 
 function deepClone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -1054,7 +1056,7 @@ function addFooterChromeObjects(templatePackage, footerChrome, footerValues = {}
   return objects;
 }
 
-function defineMasters(pptx, templatePackage, footerValues = {}) {
+function defineMasters(pptx, templatePackage, footerValues = {}, theme = null) {
   const masters = templatePackage.layouts?.masters || {};
   const variants = masters.variants || {};
   const footerChrome = masters.footerChrome || null;
@@ -1067,7 +1069,13 @@ function defineMasters(pptx, templatePackage, footerValues = {}) {
 
     pptx.defineSlideMaster({
       title: variantConfig.masterName,
-      background: { color: variantConfig.backgroundColor || 'FFFFFF' },
+      background: {
+        color:
+          variantConfig.backgroundColor ||
+          theme?.colors?.white ||
+          templatePackage.tokens?.colors?.semantic?.bgLight ||
+          'FFFFFF',
+      },
       ...(objects.length ? { objects } : {}),
     });
   }
@@ -1183,7 +1191,13 @@ function buildSlide(pptx, rawSlideSpec, templatePackage, runtimeContext = {}) {
   const masterName = getMasterNameForSlide(slideSpec, templatePackage);
   const layouts = templatePackage.layouts?.types || {};
   const layout = layouts[slideSpec.type] || null;
-  const geometry = layout?.geometry || null;
+  const geometry = resolveSlideGeometry(runtimeContext.layoutContract, slideSpec.type, layout?.geometry || null);
+  const sharedCtx = {
+    masterName,
+    geometry,
+    theme: runtimeContext.theme || null,
+    footerSafeTopByMaster: runtimeContext.footerSafeTopByMaster || null,
+  };
 
   if (slideSpec.type === 'cover') {
     const logoWhite = requireAssetPath(
@@ -1196,26 +1210,34 @@ function buildSlide(pptx, rawSlideSpec, templatePackage, runtimeContext = {}) {
       'coverPhoto',
       'cover',
     );
-    return addCover(pptx, {
-      title: slideSpec.title,
-      subtitle: slideSpec.subtitle,
-      masterName,
-      geometry,
-      assets: { logoWhite, coverPhoto },
-    });
+    return addCover(
+      pptx,
+      {
+        title: slideSpec.title,
+        subtitle: slideSpec.subtitle,
+      },
+      {
+        ...sharedCtx,
+        assets: { logoWhite, coverPhoto },
+      },
+    );
   }
   if (slideSpec.type === 'divider' || slideSpec.type === 'dividerDark' || slideSpec.type === 'dividerLight') {
-    return addDivider(pptx, {
-      sectionNumber: slideSpec.sectionNumber,
-      sectionTitle: slideSpec.sectionTitle,
-      masterName,
-      geometry,
-      assets: { gradientDivider: templatePackage.resolveAssetPath('gradientDividerWindow') },
-      textStyles:
-        slideSpec.type === 'dividerLight' || slideSpec.variant === 'light'
-          ? { sectionNumber: { color: '00338D' }, sectionTitle: { color: '00338D' } }
-          : null,
-    });
+    return addDivider(
+      pptx,
+      {
+        sectionNumber: slideSpec.sectionNumber,
+        sectionTitle: slideSpec.sectionTitle,
+      },
+      {
+        ...sharedCtx,
+        assets: { gradientDivider: templatePackage.resolveAssetPath('gradientDividerWindow') },
+        textStyles:
+          slideSpec.type === 'dividerLight' || slideSpec.variant === 'light'
+            ? { sectionNumber: { color: '00338D' }, sectionTitle: { color: '00338D' } }
+            : null,
+      },
+    );
   }
 
   const builderByType = {
@@ -1230,21 +1252,23 @@ function buildSlide(pptx, rawSlideSpec, templatePackage, runtimeContext = {}) {
     titleStrapline4TextBoxes: addTitleStrapline4TextBoxes,
   };
   const builder = builderByType[slideSpec.type];
-  if (builder) return builder(pptx, { ...slideSpec, masterName, geometry });
+  if (builder) return builder(pptx, slideSpec, sharedCtx);
   if (slideSpec.type === 'backCover') {
     const gradientBackCover = requireAssetPath(
       templatePackage.resolveAssetPath('gradientBackCover'),
       'gradientBackCover',
       'backCover',
     );
-    return addBackCover(pptx, {
-      ...slideSpec,
-      masterName,
-      geometry,
-      assets: { gradientBackCover },
-      footerValues: runtimeContext.footerValues || {},
-      resolveAssetPath: templatePackage.resolveAssetPath,
-    });
+    return addBackCover(
+      pptx,
+      slideSpec,
+      {
+        ...sharedCtx,
+        assets: { gradientBackCover },
+        footerValues: runtimeContext.footerValues || {},
+        resolveAssetPath: templatePackage.resolveAssetPath,
+      },
+    );
   }
   throw new Error(`Unknown type: ${slideSpec.type}`);
 }
@@ -1260,8 +1284,9 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
     throw new Error(validation.errors.join('\n'));
   }
 
+  const renderContext = buildRenderContext(templatePackage);
   const pptx = new PptxGenJS();
-  const dims = templatePackage.tokens?.dimensions || { w: 13.333, h: 7.5 };
+  const dims = renderContext.theme?.dimensions || templatePackage.tokens?.dimensions || { w: 13.333, h: 7.5 };
   pptx.defineLayout({ name: 'KPMG_WIDE', width: dims.w, height: dims.h });
   pptx.layout = 'KPMG_WIDE';
 
@@ -1272,12 +1297,12 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
     if (deckSpec.metadata.subject) pptx.subject = deckSpec.metadata.subject;
   }
 
-  const headFontFace = templatePackage.tokens?.fonts?.heading || 'Arial';
-  const bodyFontFace = templatePackage.tokens?.fonts?.body || 'Arial';
+  const headFontFace = renderContext.theme?.fonts?.heading || templatePackage.tokens?.fonts?.heading || 'Arial';
+  const bodyFontFace = renderContext.theme?.fonts?.body || templatePackage.tokens?.fonts?.body || 'Arial';
   pptx.theme = { headFontFace, bodyFontFace };
 
   const footerValues = buildFooterValues(deckSpec, { allowSparse });
-  defineMasters(pptx, templatePackage, footerValues);
+  defineMasters(pptx, templatePackage, footerValues, renderContext.theme);
 
   const normalized = {
     ...deckSpec,
@@ -1311,7 +1336,10 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
     if (!v.valid) throw new Error(v.errors.join(', '));
 
     const expectedMaster = getMasterNameForSlide(slideSpec, templatePackage);
-    const slide = buildSlide(pptx, slideSpec, templatePackage, { footerValues });
+    const slide = buildSlide(pptx, slideSpec, templatePackage, {
+      footerValues,
+      ...renderContext,
+    });
     const appliedMaster = slide?._slideLayout?._name || slide?._name || expectedMaster;
     masterApplied.push({
       slideIndex: masterApplied.length,

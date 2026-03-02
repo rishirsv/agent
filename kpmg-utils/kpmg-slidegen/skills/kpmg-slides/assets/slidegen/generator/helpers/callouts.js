@@ -1,21 +1,31 @@
-import { COLORS, FONTS } from '../tokens.js';
 import { sanitizeText } from './text.js';
+import { resolveTheme } from './theme.js';
 
 const MAX_CALLOUTS = 4;
 const CALLOUT_GAP = 0.12;
 const CONNECTOR_GAP = 0.12;
-const STYLE = Object.freeze({
-  lineColor: COLORS.kpmgBlue,
+const DEFAULT_STYLE = Object.freeze({
   linePt: 1,
-  fillColor: COLORS.white,
-  headingColor: COLORS.black,
-  bodyColor: COLORS.black,
-  fontFace: FONTS.body,
   headingSize: 8,
   bodySize: 7.5,
-  connectorColor: COLORS.kpmgBlue,
   connectorPt: 0.9,
 });
+
+function resolveStyle(theme = null) {
+  const resolvedTheme = resolveTheme(theme);
+  return {
+    lineColor: resolvedTheme.colors.kpmgBlue,
+    linePt: DEFAULT_STYLE.linePt,
+    fillColor: resolvedTheme.colors.white,
+    headingColor: resolvedTheme.colors.black,
+    bodyColor: resolvedTheme.colors.black,
+    fontFace: resolvedTheme.fonts.body,
+    headingSize: DEFAULT_STYLE.headingSize,
+    bodySize: DEFAULT_STYLE.bodySize,
+    connectorColor: resolvedTheme.colors.kpmgBlue,
+    connectorPt: DEFAULT_STYLE.connectorPt,
+  };
+}
 
 function isFiniteNumber(value) {
   return Number.isFinite(value);
@@ -167,7 +177,7 @@ export function resolveCalloutLayout({
   };
 }
 
-function drawLineSegment(pptx, slide, from, to) {
+function drawLineSegment(pptx, slide, from, to, style) {
   const horizontal = Math.abs(from.y - to.y) < 0.001;
   const vertical = Math.abs(from.x - to.x) < 0.001;
   if (!horizontal && !vertical) return;
@@ -181,19 +191,19 @@ function drawLineSegment(pptx, slide, from, to) {
     y,
     w,
     h,
-    line: { color: STYLE.connectorColor, pt: STYLE.connectorPt },
+    line: { color: style.connectorColor, pt: style.connectorPt },
   });
 }
 
-function drawLeader(pptx, slide, anchor, box) {
+function drawLeader(pptx, slide, anchor, box, style) {
   if (!anchor || !isGeometryBox(box)) return;
   const boxTargetY = clamp(anchor.y, box.y + 0.06, box.y + box.h - 0.06);
   const boxEdgeX = anchor.x <= box.x ? box.x : box.x + box.w;
   const elbowX = anchor.x <= box.x ? boxEdgeX - CONNECTOR_GAP : boxEdgeX + CONNECTOR_GAP;
 
-  drawLineSegment(pptx, slide, anchor, { x: elbowX, y: anchor.y });
-  drawLineSegment(pptx, slide, { x: elbowX, y: anchor.y }, { x: elbowX, y: boxTargetY });
-  drawLineSegment(pptx, slide, { x: elbowX, y: boxTargetY }, { x: boxEdgeX, y: boxTargetY });
+  drawLineSegment(pptx, slide, anchor, { x: elbowX, y: anchor.y }, style);
+  drawLineSegment(pptx, slide, { x: elbowX, y: anchor.y }, { x: elbowX, y: boxTargetY }, style);
+  drawLineSegment(pptx, slide, { x: elbowX, y: boxTargetY }, { x: boxEdgeX, y: boxTargetY }, style);
 }
 
 function autoAnchor({ index, count, slideType, textBox, chartBox, tableBox, tableMeta }) {
@@ -235,7 +245,7 @@ function toBodyRuns(lines = []) {
   return runs;
 }
 
-function toCalloutRuns(callout = {}) {
+function toCalloutRuns(callout = {}, style) {
   const runs = [];
   const heading = sanitizeText(callout.heading);
   const bodyRuns = toBodyRuns(callout.body);
@@ -244,8 +254,8 @@ function toCalloutRuns(callout = {}) {
       text: heading,
       options: {
         bold: true,
-        color: STYLE.headingColor,
-        fontSize: STYLE.headingSize,
+        color: style.headingColor,
+        fontSize: style.headingSize,
         breakLine: bodyRuns.length > 0,
         paraSpaceAfter: 2,
         lineSpacing: 9,
@@ -267,9 +277,11 @@ export function renderCallouts(
     chartBox,
     tableBox,
     tableMeta,
+    theme = null,
   } = {},
 ) {
   if (!pptx || !slide || !Array.isArray(callouts) || !Array.isArray(boxes)) return;
+  const style = resolveStyle(theme);
   const count = Math.min(callouts.length, boxes.length, MAX_CALLOUTS);
 
   for (let idx = 0; idx < count; idx += 1) {
@@ -286,9 +298,9 @@ export function renderCallouts(
       tableBox,
       tableMeta,
     });
-    drawLeader(pptx, slide, anchor, box);
+    drawLeader(pptx, slide, anchor, box, style);
 
-    const calloutRuns = toCalloutRuns(callout);
+    const calloutRuns = toCalloutRuns(callout, style);
     if (calloutRuns.length === 0) continue;
 
     slide.addText(calloutRuns, {
@@ -296,11 +308,11 @@ export function renderCallouts(
       y: box.y,
       w: box.w,
       h: box.h,
-      fontFace: STYLE.fontFace,
-      fontSize: STYLE.bodySize,
-      color: STYLE.bodyColor,
-      line: { color: STYLE.lineColor, pt: STYLE.linePt },
-      fill: { color: STYLE.fillColor },
+      fontFace: style.fontFace,
+      fontSize: style.bodySize,
+      color: style.bodyColor,
+      line: { color: style.lineColor, pt: style.linePt },
+      fill: { color: style.fillColor },
       margin: [3, 4, 3, 4],
       wrap: true,
       fit: 'shrink',

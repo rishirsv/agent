@@ -16,6 +16,7 @@ import {
   computeAnalysisWideChartTableTextGeometry,
 } from '../helpers/analysis-wide-layout.js';
 const BODY_FONT_SIZE = 10;
+const CONTENTS_SECTIONS_PER_SLIDE = 10;
 const TABLE_ROW_HEIGHT_CAP = 0.9;
 const TABLE_ROW_DENSITY_LINE_THRESHOLD = 7;
 const TABLE_ROW_DENSITY_HEIGHT_THRESHOLD = 0.82;
@@ -105,8 +106,9 @@ function estimateMaxLines(boxHInches, fontSizePt) {
   return Math.max(1, Math.floor(hPt / lineHeight) - 1);
 }
 
-function chunkBullets(lines, { maxLines, charsPerLine }) {
-  const items = normalizeBulletPairs(Array.isArray(lines) ? lines : (lines ? [lines] : []));
+function chunkBullets(lines, { maxLines, charsPerLine, alreadyNormalized = false }) {
+  const sourceItems = Array.isArray(lines) ? lines : (lines ? [lines] : []);
+  const items = alreadyNormalized ? sourceItems : normalizeBulletPairs(sourceItems);
   const chunks = [];
   let cur = [];
   let used = 0;
@@ -215,9 +217,10 @@ function paginateOneColumnBullets(
   const safeFirstBox = applyFooterSafe(firstBox, footerSafe);
   const safeContinuationBox = applyFooterSafe(nextBox, footerSafe);
   const fontSize = BODY_FONT_SIZE;
-  const sourceItems = Array.isArray(slideSpec[fieldName]) ? [...slideSpec[fieldName]] : [];
+  const sourceItems = Array.isArray(slideSpec[fieldName]) ? slideSpec[fieldName] : (slideSpec[fieldName] ? [slideSpec[fieldName]] : []);
+  const normalizedItems = normalizeBulletPairs(sourceItems);
   const chunks = [];
-  let remaining = sourceItems;
+  let remaining = normalizedItems;
   let page = 0;
 
   while (remaining.length > 0) {
@@ -225,6 +228,7 @@ function paginateOneColumnBullets(
     const pageChunks = chunkBullets(remaining, {
       maxLines: estimateMaxLines(box.h, fontSize),
       charsPerLine: estimateCharsPerLine(box.w, fontSize),
+      alreadyNormalized: true,
     });
     const chunk = Array.isArray(pageChunks) && pageChunks.length > 0 ? pageChunks[0] : [];
     if (chunk.length === 0) {
@@ -315,6 +319,20 @@ function paginateBridgeAnalysisColumns(slideSpec, geometry, { titleMaxChars = nu
       ...column,
       body: chunksPerColumn[idx][page] ?? [],
     }));
+    out.push(s);
+  }
+  return out;
+}
+
+function paginateContentsSections(slideSpec, { titleMaxChars = null } = {}) {
+  const sections = Array.isArray(slideSpec?.sections) ? slideSpec.sections : [];
+  if (sections.length <= CONTENTS_SECTIONS_PER_SLIDE) return [slideSpec];
+
+  const out = [];
+  for (let start = 0; start < sections.length; start += CONTENTS_SECTIONS_PER_SLIDE) {
+    const s = clone(slideSpec);
+    s.title = contTitle(slideSpec.title, out.length, titleMaxChars);
+    s.sections = sections.slice(start, start + CONTENTS_SECTIONS_PER_SLIDE);
     out.push(s);
   }
   return out;
@@ -429,10 +447,8 @@ function paginateTableRows(
   for (const [start, end] of chunks) {
     const s = clone(slideSpec);
     s.title = contTitle(slideSpec.title, out.length, titleMaxChars);
-    s.table = {
-      headers,
-      rows: table.rows.slice(start, end),
-    };
+    s.table.headers = headers;
+    s.table.rows = table.rows.slice(start, end);
     // Keep notes only on the last page to reduce clutter.
     if (end < table.rows.length) delete s.notes;
     out.push(s);
@@ -622,6 +638,14 @@ export function paginateDeckSpec(deckSpec, layouts) {
       });
       const originalCount = Array.isArray(slideSpec?.table?.rows) ? slideSpec.table.rows.length : 0;
       recordSplit(slideIndex, type, 'table-rows', originalCount, paged.length);
+      out.slides.push(...paged);
+      continue;
+    }
+
+    if (type === 'contents') {
+      const paged = paginateContentsSections(slideSpec, { titleMaxChars });
+      const originalCount = Array.isArray(slideSpec.sections) ? slideSpec.sections.length : 0;
+      recordSplit(slideIndex, type, 'contents-sections', originalCount, paged.length);
       out.slides.push(...paged);
       continue;
     }

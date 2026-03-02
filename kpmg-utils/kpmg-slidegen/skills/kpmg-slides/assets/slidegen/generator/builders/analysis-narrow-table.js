@@ -1,6 +1,6 @@
-import { FONTS, COLORS as T, TYPE_SIZES, TEXT_BOX } from '../tokens.js';
 import { addTitle } from '../helpers/title.js';
-import { toBulletRuns } from '../helpers/bullets.js';
+import { THEME_COMPONENT_KEYS, resolveTextBoxOptions, resolveTheme } from '../helpers/theme.js';
+import { addBodyBlock, addStraplineBlock, addTableBlock } from '../helpers/slide-components.js';
 import {
   clampToMasterFooter,
   computeStrapShift,
@@ -8,19 +8,39 @@ import {
 } from '../helpers/layout.js';
 import { sanitizeText } from '../helpers/text.js';
 
-// ----
-// Palette (derived from central tokens)
-// ----
-const COLORS = {
-  KPMG_DARK_BLUE: T.kpmgDarkBlue,
-  KPMG_LIGHT_GREY: T.lightGrey,
-  GRID_GREY: 'D9D9D9',
-  GRID_GREY_LIGHT: 'E5E7EB',
-  WHITE: T.white,
-  BLACK: T.black,
-  ACCENT_CYAN: T.kpmgCyan,
-  ACCENT_PURPLE: T.kpmgPurple,
-};
+const TABLE_COLUMN_KEYS = Object.freeze({
+  PRIORITY: 'priority',
+  DIRECTION: 'direction',
+  DATA_REQUEST: 'data request',
+  RATIONALE: 'rationale',
+  DETAIL: 'detail',
+});
+
+function resolveStyleTokens(resolvedTheme) {
+  return {
+    fonts: {
+      body: resolvedTheme.fonts.body,
+    },
+    typeSizes: {
+      strapline: resolvedTheme.typeSizes.strapline,
+      body: resolvedTheme.typeSizes.body,
+      source: resolvedTheme.typeSizes.source,
+    },
+    colors: {
+      KPMG_DARK_BLUE: resolvedTheme.colors.kpmgDarkBlue,
+      KPMG_LIGHT_GREY: resolvedTheme.colors.lightGrey,
+      GRID_GREY: resolvedTheme.colors.neutral[300],
+      GRID_GREY_LIGHT: resolvedTheme.colors.neutral[200],
+      WHITE: resolvedTheme.colors.white,
+      BLACK: resolvedTheme.colors.black,
+      ACCENT_CYAN: resolvedTheme.colors.kpmgCyan,
+      ACCENT_PURPLE: resolvedTheme.colors.kpmgPurple,
+      PRIORITY_MEDIUM: resolvedTheme.colors.priority.medium,
+      PRIORITY_LOW: resolvedTheme.colors.priority.low,
+      NOTE: resolvedTheme.colors.darkNavy,
+    },
+  };
+}
 
 // Two-column table + insights layout (derived from extracted "Analysis_50-50 table+text").
 const TWO_COL = {
@@ -37,12 +57,30 @@ const TWO_COL = {
 // template shape width, not the intended data table width).
 const FULL_TABLE_W = 11.1596;
 const TABLE_CHROME = {
-  titleBarFill: T.kpmgDarkBlue,
-  headerFill: '1E49E2',
-  separatorColor: T.kpmgBlue,
   titleBarHeight: 0.24,
   separatorHeight: 0.02,
 };
+
+function resolveTableTokens(resolvedTheme, styleTokens = resolveStyleTokens(resolvedTheme)) {
+  const palette = resolvedTheme.colors;
+  const colors = styleTokens.colors;
+  const component = resolvedTheme.components?.[THEME_COMPONENT_KEYS.analysisNarrowTable] || {};
+  const chrome = component?.tableChrome || {};
+  return {
+    fullTableWidth: Number(component.fullTableWidth || FULL_TABLE_W),
+    tableHeadingFontSize: Number(component?.fontSizes?.tableHeading || resolvedTheme.typeSizes.body),
+    tableChrome: {
+      titleBarFill: chrome.titleBarFill || colors.KPMG_DARK_BLUE,
+      headerFill: chrome.headerFill || palette.tableHeader,
+      separatorColor: chrome.separatorColor || palette.kpmgBlue,
+      titleBarHeight: Number(chrome.titleBarHeight || TABLE_CHROME.titleBarHeight),
+      separatorHeight: Number(chrome.separatorHeight || TABLE_CHROME.separatorHeight),
+      gridColor: chrome.gridColor || colors.GRID_GREY,
+      gridLightColor: chrome.gridLightColor || colors.GRID_GREY_LIGHT,
+    },
+    priority: palette.priority || { high: palette.primary, medium: colors.PRIORITY_MEDIUM, low: colors.PRIORITY_LOW },
+  };
+}
 
 function isNumericLike(s) {
   const t = String(s ?? '').trim();
@@ -96,8 +134,8 @@ function computeColW({ w, headers, rows }) {
   if (
     cols === 3 &&
     meta.some((m) => m.isPriorityCol) &&
-    meta.some((m) => headerEquals(m.header, ['data request'])) &&
-    meta.some((m) => headerEquals(m.header, ['rationale']))
+    meta.some((m) => headerEquals(m.header, [TABLE_COLUMN_KEYS.DATA_REQUEST])) &&
+    meta.some((m) => headerEquals(m.header, [TABLE_COLUMN_KEYS.RATIONALE]))
   ) {
     const priorityW = 0.95;
     const remaining = Math.max(0.1, w - priorityW);
@@ -154,7 +192,7 @@ function computeColAlignments(headers, rows) {
       continue;
     }
     // Force common narrative columns to left-align.
-    if (headerEquals(m.header, ['data request', 'rationale', 'detail'])) {
+    if (headerEquals(m.header, [TABLE_COLUMN_KEYS.DATA_REQUEST, TABLE_COLUMN_KEYS.RATIONALE, TABLE_COLUMN_KEYS.DETAIL])) {
       aligns.push('left');
       continue;
     }
@@ -187,10 +225,10 @@ function estimateRowHeight(row, colW, fontSize = 9) {
   return Math.max(0.19, Math.min(0.85, maxLines * lineHeight + 0.04));
 }
 
-function estimateTableHeight({ rows, colW, fontSize = 9 }) {
+function estimateTableHeight({ rows, colW, fontSize = 9, tableChrome = TABLE_CHROME }) {
   const bodyRows = Array.isArray(rows) ? rows : [];
   const headerH = 0.32;
-  const chromeH = TABLE_CHROME.titleBarHeight + TABLE_CHROME.separatorHeight;
+  const chromeH = tableChrome.titleBarHeight + tableChrome.separatorHeight;
   if (!bodyRows.length) return chromeH + headerH;
   const rowHeights = bodyRows.map((row) => estimateRowHeight(row, colW, fontSize));
   return chromeH + headerH + rowHeights.reduce((sum, h) => sum + h, 0);
@@ -222,6 +260,12 @@ function computeRowH({ boxH, rows, colW, fontSize = 9 }) {
 }
 
 export function addAnalysisTable(slide, tableData, opts = {}) {
+  const resolvedTheme = opts.resolvedTheme || resolveTheme(opts.theme);
+  const styleTokens = opts.styleTokens || resolveStyleTokens(resolvedTheme);
+  const colors = styleTokens.colors;
+  const fonts = styleTokens.fonts;
+  const tableTokens = opts.tableTokens || resolveTableTokens(resolvedTheme, styleTokens);
+  const tableChrome = tableTokens.tableChrome || TABLE_CHROME;
   const {
     x = 1.0919,
     y = 1.9156,
@@ -234,16 +278,16 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
 
   // Default to full-width, but allow callers (e.g., 50/50 table+text layouts)
   // to explicitly set a narrower table width.
-  const w = typeof opts.w === 'number' ? opts.w : FULL_TABLE_W;
+  const w = typeof opts.w === 'number' ? opts.w : tableTokens.fullTableWidth;
 
   const headers = Array.isArray(tableData?.headers) ? tableData.headers : [];
   const tableRows = Array.isArray(tableData?.rows) ? tableData.rows : [];
   const cols = headers.length;
 
-  const isNarrow = w < (FULL_TABLE_W - 0.25);
+  const isNarrow = w < (tableTokens.fullTableWidth - 0.25);
   const baseFontSize = isNarrow ? (cols >= 6 ? 7 : 8) : (cols >= 7 ? 8 : 9);
   const headerFontSize = Math.min(10, baseFontSize + (isNarrow ? 0 : 1));
-  const tableChromeH = showTitleBar ? TABLE_CHROME.titleBarHeight + TABLE_CHROME.separatorHeight : 0;
+  const tableChromeH = showTitleBar ? tableChrome.titleBarHeight + tableChrome.separatorHeight : 0;
   const tableY = y + tableChromeH;
   const tableH = Math.max(0.8, h - tableChromeH);
   const colW = computeColW({ w, headers, rows: tableRows });
@@ -273,19 +317,19 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
       x,
       y,
       w,
-      h: TABLE_CHROME.titleBarHeight,
-      fill: { color: TABLE_CHROME.titleBarFill },
-      line: { color: TABLE_CHROME.titleBarFill, transparency: 100, pt: 0 },
+      h: tableChrome.titleBarHeight,
+      fill: { color: tableChrome.titleBarFill },
+      line: { color: tableChrome.titleBarFill, transparency: 100, pt: 0 },
     });
     if (tableHeading) {
       slide.addText(tableHeading, {
         x: x + 0.06,
         y: y + 0.015,
         w: Math.max(0.5, w - 0.12),
-        h: TABLE_CHROME.titleBarHeight - 0.02,
-        fontFace: FONTS.body,
-        fontSize: 9,
-        color: COLORS.WHITE,
+        h: tableChrome.titleBarHeight - 0.02,
+        fontFace: fonts.body,
+        fontSize: tableTokens.tableHeadingFontSize,
+        color: colors.WHITE,
         bold: true,
         margin: 0,
         valign: 'mid',
@@ -293,32 +337,32 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
     }
     slide.addShape('line', {
       x,
-      y: y + TABLE_CHROME.titleBarHeight,
+      y: y + tableChrome.titleBarHeight,
       w,
       h: 0,
-      line: { color: TABLE_CHROME.separatorColor, pt: 1.2 },
+      line: { color: tableChrome.separatorColor, pt: 1.2 },
     });
   }
 
   // Border tokens (PptxGenJS border order: [top, right, bottom, left])
   const B_NONE = { type: 'none' };
-  const B_OUT = { type: 'solid', pt: 0.6, color: COLORS.GRID_GREY };
-  const B_ROW = { type: 'solid', pt: 0.5, color: COLORS.GRID_GREY };
-  const B_COL = { type: 'solid', pt: 0.35, color: COLORS.GRID_GREY_LIGHT };
+  const B_OUT = { type: 'solid', pt: 0.6, color: tableChrome.gridColor };
+  const B_ROW = { type: 'solid', pt: 0.5, color: tableChrome.gridColor };
+  const B_COL = { type: 'solid', pt: 0.35, color: tableChrome.gridLightColor };
 
   // Build header row.
   const headerRow = headers.map((t, idx) => {
     const headerAlign = idx === 0 ? 'left' : 'center';
-    const align = headerEquals(t, ['data request', 'rationale', 'detail']) ? 'left' : headerAlign;
+    const align = headerEquals(t, [TABLE_COLUMN_KEYS.DATA_REQUEST, TABLE_COLUMN_KEYS.RATIONALE, TABLE_COLUMN_KEYS.DETAIL]) ? 'left' : headerAlign;
     const left = idx === 0 ? B_OUT : B_NONE;
     const right = idx === cols - 1 ? B_OUT : B_NONE;
     return {
       text: t,
       options: {
-        fill: TABLE_CHROME.headerFill,
-        color: COLORS.WHITE,
+        fill: tableChrome.headerFill,
+        color: colors.WHITE,
         bold: true,
-        fontFace: FONTS.body,
+        fontFace: fonts.body,
         fontSize: headerFontSize,
         valign: 'middle',
         align,
@@ -326,7 +370,7 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
         border: [
           B_NONE,
           right,
-          { type: 'solid', pt: 1, color: TABLE_CHROME.separatorColor },
+          { type: 'solid', pt: 1, color: tableChrome.separatorColor },
           left,
         ],
       },
@@ -335,7 +379,7 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
 
   // Build body rows. Dense, “financial table” look: no zebra banding; use subtle row rules.
   const bodyRows = tableRows.map((r, rIdx) => {
-    const fill = COLORS.WHITE;
+    const fill = colors.WHITE;
     const metricLabel = String((Array.isArray(r) ? r[0] : '') ?? '').trim().toLowerCase();
     const highlightRow = isFinancialSummary && (metricLabel === 'gross margin' || metricLabel === 'net income');
 
@@ -346,28 +390,28 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
 
       // Body styling: first column should be black and non-bold, matching the
       // current narrow-table layout review requirement.
-      let color = COLORS.BLACK;
+      let color = colors.BLACK;
       let bold = false;
       if (highlightRow && !isMetricCol) bold = true;
 
-      if (header === 'direction') {
+      if (header === TABLE_COLUMN_KEYS.DIRECTION) {
         bold = true;
-        if (/up/i.test(txt)) color = COLORS.ACCENT_CYAN;
-        if (/down/i.test(txt)) color = COLORS.ACCENT_PURPLE;
+        if (/up/i.test(txt)) color = colors.ACCENT_CYAN;
+        if (/down/i.test(txt)) color = colors.ACCENT_PURPLE;
       }
 
-      if (header === 'priority') {
+      if (header === TABLE_COLUMN_KEYS.PRIORITY) {
         bold = true;
-        if (/high/i.test(txt)) color = COLORS.KPMG_DARK_BLUE;
-        else if (/medium/i.test(txt)) color = '1E49E2';
-        else if (/low/i.test(txt)) color = '666666';
+        if (/high/i.test(txt)) color = tableTokens.priority.high || colors.KPMG_DARK_BLUE;
+        else if (/medium/i.test(txt)) color = tableTokens.priority.medium || colors.PRIORITY_MEDIUM;
+        else if (/low/i.test(txt)) color = tableTokens.priority.low || colors.PRIORITY_LOW;
       }
 
       return {
         text: String(cellText ?? ''),
         options: {
           fill,
-          fontFace: FONTS.body,
+          fontFace: fonts.body,
           fontSize: baseFontSize,
           bold,
           color,
@@ -395,9 +439,9 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
     colW,
     rowH,
     border: { type: 'none' },
-    fontFace: FONTS.body,
+    fontFace: fonts.body,
     fontSize: baseFontSize,
-    color: COLORS.BLACK,
+    color: colors.BLACK,
     // Pagination is handled by our paginator; autoPage can create surprise
     // continuation slides (e.g., splitting a table that already fits).
     autoPage: false,
@@ -415,27 +459,36 @@ export function addAnalysisTable(slide, tableData, opts = {}) {
 
 export function addAnalysisNarrowTable(
   pptx,
-  { title, strapline, table, notes, insightTitle, insights: customInsights, geometry, masterName } = {},
+  slideSpec = {},
+  ctx = {},
 ) {
+  const { title, strapline, table, notes, insightTitle, insights: customInsights } = slideSpec;
+  const { geometry, masterName, footerSafeTopByMaster, theme } = ctx;
+  const resolvedTheme = resolveTheme(theme);
+  const styleTokens = resolveStyleTokens(resolvedTheme);
+  const textBox = resolveTextBoxOptions(resolvedTheme);
+  const colors = styleTokens.colors;
+  const fonts = styleTokens.fonts;
+  const typeSizes = styleTokens.typeSizes;
+  const tableTokens = resolveTableTokens(resolvedTheme, styleTokens);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const g = geometry || {};
   const strapText = sanitizeText(strapline);
   let straplineBox = null;
 
-  addTitle(slide, title, g.title || { x: 1.0919, y: 0.4722, w: 11.1596, h: 0.5833 });
+  addTitle(slide, title, g.title || { x: 1.0919, y: 0.4722, w: 11.1596, h: 0.5833 }, { theme });
 
   if (strapText) {
     straplineBox = g.strapline || { x: 1.0919, y: 1.2899, w: 11.1596, h: 0.5276 };
-    slide.addText(strapText, {
-      ...straplineBox,
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.strapline,
-      color: COLORS.ACCENT_PURPLE,
-      bold: true,
-      italic: true,
-      wrap: TEXT_BOX.wrap,
-      margin: TEXT_BOX.marginPt,
-      valign: 'top',
+    addStraplineBlock(slide, strapText, straplineBox, {
+      theme,
+      style: {
+        fontFace: fonts.body,
+        fontSize: typeSizes.strapline,
+        color: colors.ACCENT_PURPLE,
+        bold: true,
+        italic: true,
+      },
     });
   }
 
@@ -458,54 +511,64 @@ export function addAnalysisNarrowTable(
       rows: table.rows,
       colW: twoColColW,
       fontSize: cols >= 6 ? 8 : 9,
+      tableChrome: tableTokens.tableChrome,
     });
     const useTwoCol = cols > 0 && cols <= 6 && rows <= 14 && estimatedTwoColHeight <= twoColTableBox.h;
 
-    const footerSafeTop = footerSafeTopForMaster(masterName);
-    if (useTwoCol) {
-      const tableBox = twoColTableBox;
-      addAnalysisTable(slide, table, {
-        ...tableBox,
-        tableTitle: title,
-        tableHeading: table?.title || table?.heading || title,
-      });
+      const footerSafeTop = footerSafeTopForMaster(masterName, footerSafeTopByMaster);
+      if (useTwoCol) {
+        const tableBox = twoColTableBox;
+        addTableBlock(slide, table, tableBox, {
+          renderTable: addAnalysisTable,
+          renderOptions: {
+            tableTitle: title,
+            tableHeading: table?.title || table?.heading || title,
+            resolvedTheme,
+            tableTokens,
+            styleTokens,
+          },
+        });
 
       const rightTitleBase = g.rightTitle || TWO_COL.rightTitle;
       const rightBodyBase = g.rightBody || TWO_COL.rightBody;
-      const rightTitleBox = clampToMasterFooter(rightTitleBase, masterName);
-      const rightBodyBox = clampToMasterFooter(rightBodyBase, masterName);
+      const rightTitleBox = clampToMasterFooter(rightTitleBase, masterName, 0, footerSafeTopByMaster);
+      const rightBodyBox = clampToMasterFooter(rightBodyBase, masterName, 0, footerSafeTopByMaster);
 
       slide.addText(insightsHeading, {
         ...rightTitleBox,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
+        fontFace: fonts.body,
+        fontSize: typeSizes.body,
         bold: true,
-        color: COLORS.KPMG_DARK_BLUE,
-        wrap: TEXT_BOX.wrap,
-        margin: TEXT_BOX.marginPt,
+        color: colors.KPMG_DARK_BLUE,
+        ...textBox,
         valign: 'top',
       });
-      slide.addText(toBulletRuns(insights), {
-        ...rightBodyBox,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
-        color: COLORS.BLACK,
-        wrap: TEXT_BOX.wrap,
-        margin: TEXT_BOX.marginPt,
-        valign: 'top',
+      addBodyBlock(slide, insights, rightBodyBox, {
+        theme,
+        bodyStyle: 'bullets',
+        style: {
+          fontFace: fonts.body,
+          fontSize: typeSizes.body,
+          color: colors.BLACK,
+        },
       });
     } else {
       // Full-width table (dense), takeaways beneath to keep slide “finished”.
-      const fullTableBox = { x: 1.0919, y: 1.9156 + yShift, w: FULL_TABLE_W, h: 4.5079 };
-      addAnalysisTable(slide, table, {
-        ...fullTableBox,
-        tableTitle: title,
-        tableHeading: table?.title || table?.heading || title,
+      const fullTableBox = { x: 1.0919, y: 1.9156 + yShift, w: tableTokens.fullTableWidth, h: 4.5079 };
+      addTableBlock(slide, table, fullTableBox, {
+        renderTable: addAnalysisTable,
+        renderOptions: {
+          tableTitle: title,
+          tableHeading: table?.title || table?.heading || title,
+          resolvedTheme,
+          tableTokens,
+          styleTokens,
+        },
       });
 
       const fullColW = computeColW({ w: fullTableBox.w, headers: table.headers, rows: table.rows });
       const rowH = computeRowH({ boxH: fullTableBox.h, rows: table.rows, colW: fullColW, fontSize: cols >= 7 ? 8 : 9 });
-      const tableH = (TABLE_CHROME.titleBarHeight + TABLE_CHROME.separatorHeight) + rowH.reduce((a, b) => a + b, 0);
+      const tableH = (tableTokens.tableChrome.titleBarHeight + tableTokens.tableChrome.separatorHeight) + rowH.reduce((a, b) => a + b, 0);
       const takeY = fullTableBox.y + tableH + 0.18;
       const safeTop = footerSafeTop ?? 6.7;
       const takeH = Math.max(0.8, safeTop - takeY);
@@ -515,23 +578,25 @@ export function addAnalysisNarrowTable(
         y: takeY,
         w: fullTableBox.w,
         h: 0.22,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
+        fontFace: fonts.body,
+        fontSize: typeSizes.body,
         bold: true,
-        color: COLORS.KPMG_DARK_BLUE,
+        color: colors.KPMG_DARK_BLUE,
         valign: 'top',
       });
-      slide.addText(toBulletRuns(insights), {
+      addBodyBlock(slide, insights, {
         x: fullTableBox.x,
         y: takeY + 0.22,
         w: fullTableBox.w,
         h: takeH - 0.22,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
-        color: COLORS.BLACK,
-        wrap: TEXT_BOX.wrap,
-        margin: TEXT_BOX.marginPt,
-        valign: 'top',
+      }, {
+        theme,
+        bodyStyle: 'bullets',
+        style: {
+          fontFace: fonts.body,
+          fontSize: typeSizes.body,
+          color: colors.BLACK,
+        },
       });
     }
   }
@@ -543,12 +608,12 @@ export function addAnalysisNarrowTable(
       w: TWO_COL.table.w,
       h: 0.9,
     };
-    const safeNotes = clampToMasterFooter(notesBox, masterName);
+    const safeNotes = clampToMasterFooter(notesBox, masterName, 0, footerSafeTopByMaster);
     slide.addText(String(notes), {
       ...safeNotes,
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.source,
-      color: '333333',
+      fontFace: fonts.body,
+      fontSize: typeSizes.source,
+      color: colors.NOTE,
       italic: true,
       paraSpaceAfter: 0,
       valign: 'top',

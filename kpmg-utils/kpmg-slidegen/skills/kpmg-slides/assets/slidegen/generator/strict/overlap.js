@@ -31,6 +31,42 @@ export function inferElementType(obj) {
   return 'unknown';
 }
 
+function resolveObjectSource(obj) {
+  return obj?.data || obj?.options || {};
+}
+
+/**
+ * Resolve overlap bounds from a slide object in a sizing-aware way.
+ * For image sizing modes (`crop`, `cover`, `contain`), use sizing w/h as the visible box.
+ * @param {object} obj
+ * @returns {{x:number,y:number,w:number,h:number,x2:number,y2:number,fill:any,line:any}}
+ */
+export function resolveObjectBounds(obj) {
+  const source = resolveObjectSource(obj);
+  const x = typeof source.x === 'number' ? source.x : 0;
+  const y = typeof source.y === 'number' ? source.y : 0;
+  let w = typeof source.w === 'number' ? source.w : 0;
+  let h = typeof source.h === 'number' ? source.h : 0;
+
+  const sizingType = source?.sizing?.type;
+  const usesSizingBox = sizingType === 'crop' || sizingType === 'cover' || sizingType === 'contain';
+  if (usesSizingBox) {
+    if (typeof source.sizing.w === 'number') w = source.sizing.w;
+    if (typeof source.sizing.h === 'number') h = source.sizing.h;
+  }
+
+  return {
+    x,
+    y,
+    w,
+    h,
+    x2: x + w,
+    y2: y + h,
+    fill: source.fill,
+    line: source.line,
+  };
+}
+
 /**
  * Compare positions of two elements on a slide.
  * @param {object} slide
@@ -55,23 +91,9 @@ export function compareElementPosition(slide, firstIndex, secondIndex) {
     throw new Error('Element index out of bounds for compareElementPosition().');
   }
 
-  // Resolve bounds for the pair.
   const EPS = 1e-4;
-  const getBounds = (obj) => {
-    const source = obj?.data || obj?.options || {};
-    let x = typeof source.x === 'number' ? source.x : 0;
-    let y = typeof source.y === 'number' ? source.y : 0;
-    let w = typeof source.w === 'number' ? source.w : 0;
-    let h = typeof source.h === 'number' ? source.h : 0;
-    if (source.sizing && source.sizing.type === 'crop') {
-      if (typeof source.sizing.w === 'number') w = source.sizing.w;
-      if (typeof source.sizing.h === 'number') h = source.sizing.h;
-    }
-    return { x, y, w, h, x2: x + w, y2: y + h };
-  };
-
-  const boundsA = getBounds(elements[firstIndex]);
-  const boundsB = getBounds(elements[secondIndex]);
+  const boundsA = resolveObjectBounds(elements[firstIndex]);
+  const boundsB = resolveObjectBounds(elements[secondIndex]);
   const separated =
     boundsA.x2 < boundsB.x - EPS ||
     boundsB.x2 < boundsA.x - EPS ||
@@ -172,7 +194,7 @@ export function analyzeSlideOverlaps(slide, pptx, options = {}) {
   const slideLabel = slideIndex >= 0 ? `Slide ${slideIndex + 1}` : '(Unknown slide index)';
 
   const elements = slide._slideObjects.map((obj, i) => {
-    const { x = 0, y = 0, w = 0, h = 0, fill, line } = obj.data || obj.options || {};
+    const { x, y, w, h, fill, line } = resolveObjectBounds(obj);
     const type = inferElementType(obj);
     const isDecorative = (() => {
       if (!opts.ignoreDecorativeShapes) return false;

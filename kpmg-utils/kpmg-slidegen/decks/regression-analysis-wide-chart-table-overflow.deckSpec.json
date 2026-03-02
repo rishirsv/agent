@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Regression Analysis Wide Overflow",
+    "allowSparse": true,
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership"
+    }
+  },
+  "slides": [
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Function Maturity Overflow Validation",
+      "strapline": "Function-level score distributions and commentary are intentionally dense to exercise chart+table+text continuation behavior.",
+      "heading": "Function snapshot and interpretation",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "What the scores indicate", "header": true },
+        "Respond and Recover remain comparatively stronger across assessed artifacts, supported by clearer operational ownership and more consistent reporting practices.",
+        "Detect and Protect remain pressure points with lower control maturity, especially where process documentation is not yet fully standardized.",
+        "Govern and Identify show moderate performance but still exhibit uneven quality in closure evidence and issue classification consistency.",
+        "Score dispersion across subcategories suggests localized strengths, with recurring underperformance in monitoring discipline and escalation hygiene.",
+        "Observed improvements are real but not yet durable across teams, indicating a need for tighter institutional controls and governance routines.",
+        "Comparative review across periods shows positive movement, though trend stability depends on successful remediation execution over upcoming cycles.",
+        { "text": "Management implications", "header": true },
+        "Prioritize monitoring governance and policy-to-practice execution in the weakest subdomains to reduce residual risk concentrations.",
+        "Set explicit near-term milestones with measurable outcomes and owner-level accountability for each high-priority corrective action.",
+        "Increase challenge sessions on outlier findings to improve consistency in evidence quality and decision rationale.",
+        "Improve linkage between remediation plans and business continuity outcomes so governance forums can prioritize by operational impact.",
+        "Expand quality assurance sampling to identify implementation drift before it accumulates into material risk.",
+        "Reinforce leadership review cadence with sharper decision asks, trade-off framing, and timeline accountability.",
+        "Strengthen cross-functional handoffs so control improvements remain coordinated across technology, operations, and risk teams.",
+        "Track remediation velocity and reopen rates to distinguish superficial closure from sustained control effectiveness.",
+        "Introduce periodic maturity calibration workshops to align interpretation standards across assessment teams.",
+        "Integrate scenario-based readiness checks to validate whether documented practices perform under realistic stress conditions.",
+        "Tie incentive mechanisms to sustained control outcomes rather than short-term closure volume metrics.",
+        "Ensure root-cause documentation quality standards are enforced before issues are closed and reported upstream.",
+        "Publish concise board-level summaries connecting maturity changes to expected resilience and business impact outcomes."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Average Maturity Score",
+            "labels": ["GOVERN", "IDENTIFY", "PROTECT", "DETECT", "RESPOND", "RECOVER"],
+            "values": [2.3, 2.3, 2.2, 2.0, 2.8, 2.5]
+          }
+        ],
+        "source": "Source: consolidatedReport.xlsx Summary tab, Maturity Score by subcategory"
+      },
+      "table": {
+        "title": "Function summary",
+        "heading": "Score distribution",
+        "headers": ["Function", "Avg Score", "Maturity Band", "Categories"],
+        "rows": [
+          ["GOVERN", "2.33", "Developing", "6"],
+          ["IDENTIFY", "2.33", "Developing", "3"],
+          ["PROTECT", "2.20", "Developing", "5"],
+          ["DETECT", "2.00", "Developing", "2"],
+          ["RESPOND", "2.75", "Managed", "4"],
+          ["RECOVER", "2.50", "Managed", "2"]
+        ]
+      },
+      "noteSource": "Source: consolidatedReport.xlsx Summary tab, Maturity Score by subcategory"
+    }
+  ]
+}

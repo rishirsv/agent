@@ -35,6 +35,45 @@ export function normalizeImageSource(source) {
   return { path: source };
 }
 
+function toFinite(value, fallback = null) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+export function normalizeImagePlacement(options = {}) {
+  const out = { ...options };
+  for (const key of ['x', 'y', 'w', 'h']) {
+    const numeric = toFinite(options[key], null);
+    if (numeric === null) delete out[key];
+    else out[key] = numeric;
+  }
+
+  if (out.sizing && typeof out.sizing === 'object') {
+    const sizing = { ...out.sizing };
+    const sx = toFinite(sizing.x, null);
+    const sy = toFinite(sizing.y, null);
+    const sw = toFinite(sizing.w, null);
+    const sh = toFinite(sizing.h, null);
+    if (sx === null) delete sizing.x;
+    else sizing.x = sx;
+    if (sy === null) delete sizing.y;
+    else sizing.y = sy;
+    sizing.w = sw ?? out.w;
+    sizing.h = sh ?? out.h;
+    out.sizing = sizing;
+  }
+
+  return out;
+}
+
+export function addImageSmart(slide, asset, options = {}) {
+  if (!slide || !asset) return;
+  slide.addImage({
+    ...normalizeImageSource(asset),
+    ...normalizeImagePlacement(options),
+  });
+}
+
 /**
  * Read an image source into a buffer for probing.
  * @param {string|Buffer} source

@@ -50,6 +50,21 @@ function parseFailingSlides(output = '') {
 }
 
 /**
+ * Probe whether a configured Python executable is invokable.
+ * Uses direct process spawning (no shell) to avoid interpolation issues.
+ *
+ * @param {string} pythonBin
+ * @returns {boolean}
+ */
+function detectPythonAvailability(pythonBin) {
+  const probe = spawnSync(pythonBin, ['-c', 'import sys; sys.exit(0)'], {
+    stdio: 'ignore',
+  });
+  if (probe.error) return false;
+  return probe.status === 0;
+}
+
+/**
  * Build a resilient adapter around embedded oai-skills/slides scripts.
  * All methods return status objects; none throw.
  * @returns {object}
@@ -62,8 +77,7 @@ export function createSlidesAdapter() {
     montage: slidesDir ? path.join(slidesDir, 'create_montage.py') : null,
     overflow: slidesDir ? path.join(slidesDir, 'slides_test.py') : null,
   };
-  const pythonExists =
-    spawnSync('bash', ['-lc', `command -v ${python} >/dev/null 2>&1`], { stdio: 'ignore' }).status === 0;
+  const pythonExists = detectPythonAvailability(python);
 
   const availability = (() => {
     if (!slidesDir) {

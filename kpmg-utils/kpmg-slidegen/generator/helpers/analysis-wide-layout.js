@@ -16,6 +16,7 @@ export const ANALYSIS_WIDE_LAYOUT_DEFAULTS = Object.freeze({
 export function computeAnalysisWideChart2ColsTextGeometry({
   geometry,
   masterName = 'KPMG_WHITE',
+  footerSafeTopByMaster = null,
   strapline,
   chart = null,
   callouts = [],
@@ -31,7 +32,7 @@ export function computeAnalysisWideChart2ColsTextGeometry({
   const yShift = computeStrapShift(straplineBox, Math.min(leftBase.y, rightBase.y));
   const textBox = shiftBox(leftBase, yShift);
   const chartBox = shiftBox(rightBase, yShift);
-  const safeTextBoxBase = clampToMasterFooter(textBox, masterName);
+  const safeTextBoxBase = clampToMasterFooter(textBox, masterName, 0, footerSafeTopByMaster);
   const calloutLayout = resolveCalloutLayout({
     slideType: 'analysisWideChart2ColsText',
     callouts,
@@ -40,7 +41,7 @@ export function computeAnalysisWideChart2ColsTextGeometry({
   });
   const safeTextBox = calloutLayout.adjustedTextBox || safeTextBoxBase;
   const sourcePad = chart?.source ? 0.3 : 0;
-  const safeChartBox = clampToMasterFooter(chartBox, masterName, sourcePad);
+  const safeChartBox = clampToMasterFooter(chartBox, masterName, sourcePad, footerSafeTopByMaster);
 
   return {
     geometry: g,
@@ -56,6 +57,7 @@ export function computeAnalysisWideChart2ColsTextGeometry({
 export function computeAnalysisWideChartTableTextGeometry({
   geometry,
   masterName = 'KPMG_WHITE',
+  footerSafeTopByMaster = null,
   strapline,
   chart,
   table,
@@ -86,7 +88,7 @@ export function computeAnalysisWideChartTableTextGeometry({
     : null;
   const tableBase = g.table || null;
   const headingBase = g.heading || g.bodyBoxes?.[1] || null;
-  const footerSafeTop = footerSafeTopForMaster(masterName) || FOOTER_SAFE_TOP;
+  const footerSafeTop = footerSafeTopForMaster(masterName, footerSafeTopByMaster) || FOOTER_SAFE_TOP;
 
   let textBox = shiftBox(topBase, yShift);
   let chartBox = chartBase ? shiftBox(chartBase, yShift) : null;
@@ -120,10 +122,10 @@ export function computeAnalysisWideChartTableTextGeometry({
     tableBox = { x: leftX, y: lowerY, w: leftW, h: lowerH };
   }
 
-  const safeTextBoxBase = clampToMasterFooter(textBox, masterName);
+  const safeTextBoxBase = clampToMasterFooter(textBox, masterName, 0, footerSafeTopByMaster);
   const sourcePad = chart?.source ? 0.3 : 0;
-  const safeChartBox = chartBox ? clampToMasterFooter(chartBox, masterName, sourcePad) : null;
-  const safeTableBox = tableBox ? clampToMasterFooter(tableBox, masterName) : null;
+  const safeChartBox = chartBox ? clampToMasterFooter(chartBox, masterName, sourcePad, footerSafeTopByMaster) : null;
+  const safeTableBox = tableBox ? clampToMasterFooter(tableBox, masterName, 0, footerSafeTopByMaster) : null;
   const calloutLayout = resolveCalloutLayout({
     slideType: 'analysisWideChartTableText',
     callouts,

@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Bridge Layout Alternating Up/Down Regression",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "analysisBridge",
+      "title": "Operating bridge with alternating movement",
+      "bridge": {
+        "unitPrefix": "$",
+        "unitSuffix": "m",
+        "decimals": 0,
+        "startLabel": "FY23 EBITDA",
+        "endLabel": "FY24 EBITDA",
+        "startValue": 210,
+        "endValue": 248,
+        "steps": [
+          { "label": "Volume gain", "delta": 52 },
+          { "label": "Pricing pressure", "delta": -44 },
+          { "label": "Mix improvement", "delta": 39 },
+          { "label": "Cost inflation", "delta": -31 },
+          { "label": "Efficiency", "delta": 27 },
+          { "label": "One-off cost", "delta": -5 }
+        ]
+      },
+      "analysisColumns": [
+        {
+          "heading": "Commercial effects:",
+          "body": [
+            "Demand recovery and mix optimization drove several upward bars.",
+            "Pricing resets created downward moves that start above prior bar endpoints."
+          ]
+        },
+        {
+          "heading": "Cost and execution:",
+          "body": [
+            "Inflation and one-off project spend pulled performance down intermittently.",
+            "Efficiency actions helped restore momentum in later bridge steps."
+          ]
+        }
+      ],
+      "bodyStyle": "paragraphs",
+      "source": "Source: Management bridge analysis pack."
+    }
+  ]
+}

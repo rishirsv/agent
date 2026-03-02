@@ -20,12 +20,21 @@ export function shiftBox(box, shift = 0) {
   return { ...box, y: box.y + shift, h: box.h - shift };
 }
 
-export function footerSafeTopForMaster(masterName) {
+function lookupSafeTop(masterName, footerSafeTopByMaster) {
+  if (!footerSafeTopByMaster || typeof footerSafeTopByMaster !== 'object') return null;
+  if (!Object.prototype.hasOwnProperty.call(footerSafeTopByMaster, masterName)) return null;
+  const value = footerSafeTopByMaster[masterName];
+  return Number.isFinite(value) ? value : null;
+}
+
+export function footerSafeTopForMaster(masterName, footerSafeTopByMaster = null) {
+  const configured = lookupSafeTop(masterName, footerSafeTopByMaster);
+  if (Number.isFinite(configured)) return configured;
   return masterName === 'KPMG_WHITE' ? FOOTER_SAFE_TOP : null;
 }
 
-export function clampToMasterFooter(box, masterName, pad = 0) {
-  const safeTop = footerSafeTopForMaster(masterName);
+export function clampToMasterFooter(box, masterName, pad = 0, footerSafeTopByMaster = null) {
+  const safeTop = footerSafeTopForMaster(masterName, footerSafeTopByMaster);
   if (!safeTop) return box;
   return clampBoxToBottom(box, safeTop - pad);
 }

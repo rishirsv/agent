@@ -1,59 +1,75 @@
-import {
-  FONTS,
-  COLORS,
-  CHART_COLORS,
-  TYPE_SIZES,
-  TEXT_BOX,
-} from "../tokens.js";
-import { toBodyRuns } from "../helpers/bullets.js";
-import { addTitle } from "../helpers/title.js";
-import { pickDataLabelColor } from "../helpers/chart.js";
-import { renderCallouts } from "../helpers/callouts.js";
-import { sanitizeText } from "../helpers/text.js";
-import {
-  normalizeBodyStyle,
-} from "../helpers/layout.js";
+import { addTitle } from '../helpers/title.js';
+import { renderCallouts } from '../helpers/callouts.js';
+import { addBodyBlock, addChartBlock, addStraplineBlock, addTableBlock } from '../helpers/slide-components.js';
+import { sanitizeText } from '../helpers/text.js';
+import { normalizeBodyStyle } from '../helpers/layout.js';
+import { resolveTextBoxOptions, resolveTheme } from '../helpers/theme.js';
 import {
   ANALYSIS_WIDE_LAYOUT_DEFAULTS,
   computeAnalysisWideChart2ColsTextGeometry,
   computeAnalysisWideChartTableTextGeometry,
-} from "../helpers/analysis-wide-layout.js";
-import { addAnalysisTable } from "./analysis-narrow-table.js";
+} from '../helpers/analysis-wide-layout.js';
+import { addAnalysisTable } from './analysis-narrow-table.js';
 
 const TOKENS = {
   geometry: ANALYSIS_WIDE_LAYOUT_DEFAULTS.geometry,
-  textStyles: {
-    strapline: {
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.strapline,
-      color: COLORS.kpmgPurple,
-      italic: true,
-      bold: true,
-    },
-    body: {
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.body,
-      color: COLORS.black,
-      paraSpaceAfter: 6,
-    },
-    source: {
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.source,
-      color: COLORS.kpmgBlue,
-      italic: true,
-      paraSpaceAfter: 0,
-    },
-  },
 };
 
-const CHART_ANNOTATION_STYLE = Object.freeze({
-  borderColor: COLORS.kpmgBlue,
-  fillColor: COLORS.white,
-  titleColor: COLORS.kpmgBlue,
-  textColor: COLORS.black,
-  titleSize: 7.5,
-  textSize: 7.5,
-});
+function resolveStyles(theme = null) {
+  const resolvedTheme = resolveTheme(theme);
+  return {
+    textStyles: {
+      strapline: {
+        fontFace: resolvedTheme.fonts.body,
+        fontSize: resolvedTheme.typeSizes.strapline,
+        color: resolvedTheme.colors.kpmgPurple,
+        italic: true,
+        bold: true,
+      },
+      body: {
+        fontFace: resolvedTheme.fonts.body,
+        fontSize: resolvedTheme.typeSizes.body,
+        color: resolvedTheme.colors.black,
+        paraSpaceAfter: 6,
+      },
+      source: {
+        fontFace: resolvedTheme.fonts.body,
+        fontSize: resolvedTheme.typeSizes.source,
+        color: resolvedTheme.colors.kpmgBlue,
+        italic: true,
+        paraSpaceAfter: 0,
+      },
+    },
+    headingBand: {
+      fill: resolvedTheme.colors.kpmgBlue,
+      line: resolvedTheme.colors.kpmgBlue,
+      textColor: resolvedTheme.colors.white,
+      textFont: resolvedTheme.fonts.body,
+      textSize: resolvedTheme.typeSizes.body,
+    },
+    chart: {
+      palette: resolvedTheme.chart.palette,
+      legendFontSize: Number(resolvedTheme.chart.fontSizes.legend || 7),
+      labelFontSize: Number(resolvedTheme.chart.fontSizes.label || 8),
+      dataLabelFontSize: Number(resolvedTheme.chart.fontSizes.dataLabel || 7),
+      background: resolvedTheme.colors.chart.background,
+      fontFace: resolvedTheme.fonts.body,
+      lightLabelColor: resolvedTheme.colors.white,
+      darkLabelColor: resolvedTheme.colors.black,
+      seriesLabelBg: resolvedTheme.colors.kpmgBlue,
+      dataBorder: resolvedTheme.colors.white,
+    },
+    annotation: {
+      borderColor: resolvedTheme.colors.kpmgBlue,
+      fillColor: resolvedTheme.colors.white,
+      titleColor: resolvedTheme.colors.kpmgBlue,
+      textColor: resolvedTheme.colors.black,
+      titleSize: 7.5,
+      textSize: 7.5,
+      fontFace: resolvedTheme.fonts.body,
+    },
+  };
+}
 
 function clamp(value, min, max) {
   if (!Number.isFinite(value)) return min;
@@ -64,12 +80,12 @@ function normalizeChartAnnotations(raw) {
   if (!Array.isArray(raw)) return [];
   const out = [];
   for (const item of raw) {
-    if (!item || typeof item !== "object") continue;
+    if (!item || typeof item !== 'object') continue;
     const title = sanitizeText(item.title || item.heading);
     const text = sanitizeText(item.text || item.body);
     if (!title && !text) continue;
-    const anchor = sanitizeText(item.anchor || "topRight");
-    if (!["topLeft", "topRight", "bottomLeft", "bottomRight"].includes(anchor)) continue;
+    const anchor = sanitizeText(item.anchor || 'topRight');
+    if (!['topLeft', 'topRight', 'bottomLeft', 'bottomRight'].includes(anchor)) continue;
     out.push({ title, text, anchor });
     if (out.length >= 4) break;
   }
@@ -82,13 +98,13 @@ function chartAnnotationBox(chartGeo, anchor, slotIndex = 0) {
   const margin = 0.07;
   const offset = slotIndex * (boxH + 0.04);
 
-  if (anchor === "topLeft") {
+  if (anchor === 'topLeft') {
     return { x: chartGeo.x + margin, y: chartGeo.y + margin + offset, w: boxW, h: boxH };
   }
-  if (anchor === "bottomLeft") {
+  if (anchor === 'bottomLeft') {
     return { x: chartGeo.x + margin, y: chartGeo.y + chartGeo.h - boxH - margin - offset, w: boxW, h: boxH };
   }
-  if (anchor === "bottomRight") {
+  if (anchor === 'bottomRight') {
     return {
       x: chartGeo.x + chartGeo.w - boxW - margin,
       y: chartGeo.y + chartGeo.h - boxH - margin - offset,
@@ -104,15 +120,15 @@ function chartAnnotationBox(chartGeo, anchor, slotIndex = 0) {
   };
 }
 
-function toChartAnnotationRuns(item) {
+function toChartAnnotationRuns(item, annotationStyle) {
   const runs = [];
   if (item.title) {
     runs.push({
       text: item.title,
       options: {
         bold: true,
-        color: CHART_ANNOTATION_STYLE.titleColor,
-        fontSize: CHART_ANNOTATION_STYLE.titleSize,
+        color: annotationStyle.titleColor,
+        fontSize: annotationStyle.titleSize,
         breakLine: Boolean(item.text),
         paraSpaceAfter: item.text ? 1 : 0,
       },
@@ -122,8 +138,8 @@ function toChartAnnotationRuns(item) {
     runs.push({
       text: item.text,
       options: {
-        color: CHART_ANNOTATION_STYLE.textColor,
-        fontSize: CHART_ANNOTATION_STYLE.textSize,
+        color: annotationStyle.textColor,
+        fontSize: annotationStyle.textSize,
         breakLine: false,
       },
     });
@@ -131,7 +147,7 @@ function toChartAnnotationRuns(item) {
   return runs;
 }
 
-function renderChartAnnotations(pptx, slide, chart, chartGeo) {
+function renderChartAnnotations(pptx, slide, chart, chartGeo, styles) {
   if (!pptx || !slide || !chart || !chartGeo) return;
   const annotations = normalizeChartAnnotations(chart.annotations);
   if (annotations.length === 0) return;
@@ -141,86 +157,49 @@ function renderChartAnnotations(pptx, slide, chart, chartGeo) {
     const idx = slotsUsed.get(item.anchor) || 0;
     slotsUsed.set(item.anchor, idx + 1);
     const box = chartAnnotationBox(chartGeo, item.anchor, idx);
-    const runs = toChartAnnotationRuns(item);
+    const runs = toChartAnnotationRuns(item, styles.annotation);
     if (runs.length === 0) continue;
     slide.addText(runs, {
       x: box.x,
       y: box.y,
       w: box.w,
       h: box.h,
-      fontFace: FONTS.body,
-      fontSize: CHART_ANNOTATION_STYLE.textSize,
-      color: CHART_ANNOTATION_STYLE.textColor,
-      line: { color: CHART_ANNOTATION_STYLE.borderColor, pt: 0.8 },
-      fill: { color: CHART_ANNOTATION_STYLE.fillColor },
+      fontFace: styles.annotation.fontFace,
+      fontSize: styles.annotation.textSize,
+      color: styles.annotation.textColor,
+      line: { color: styles.annotation.borderColor, pt: 0.8 },
+      fill: { color: styles.annotation.fillColor },
       margin: [2, 3, 2, 3],
       wrap: true,
-      fit: "shrink",
-      valign: "top",
+      fit: 'shrink',
+      valign: 'top',
     });
   }
 }
 
-function addChart(pptx, slide, chart, geo) {
+function addChart(pptx, slide, chart, geo, styles) {
   if (!chart || !chart.type || !chart.data) return;
-  const typeMap = {
-    bar: pptx.ChartType?.bar || "bar",
-    bar3d: pptx.ChartType?.bar3D || "bar3D",
-    line: pptx.ChartType?.line || "line",
-    pie: pptx.ChartType?.pie || "pie",
-    doughnut: pptx.ChartType?.doughnut || "doughnut",
-    area: pptx.ChartType?.area || "area",
-    scatter: pptx.ChartType?.scatter || "scatter",
-    radar: pptx.ChartType?.radar || "radar",
-  };
+  const chartType = String(chart.type).toLowerCase();
 
-  const darkBarTypes = ["bar", "bar3d", "area"];
-  const useLightLabels = darkBarTypes.includes(chart.type);
+  const darkBarTypes = ['bar', 'bar3d', 'area'];
+  const useLightLabels = darkBarTypes.includes(chartType);
+  const palette = styles.chart.palette;
 
-  const opts = {
-    showLegend: true,
-    legendPos: "b",
-    legendFontSize: 7,
-    legendFontFace: FONTS.body,
-    catAxisLabelFontSize: 7,
-    valAxisLabelFontSize: 7,
-    catAxisLabelFontFace: FONTS.body,
-    valAxisLabelFontFace: FONTS.body,
-    dataLabelFontFace: FONTS.body,
-    dataLabelFontSize: 7,
-    dataLabelColor: useLightLabels ? COLORS.white : COLORS.black,
-    dataLabelBkgrdColors: useLightLabels ? [COLORS.kpmgBlue] : undefined,
-    showValue: true,
-    ...(useLightLabels && chart.type === "bar"
-      ? { dataLabelPosition: "inEnd" }
-      : {}),
-    // Cleaner due-diligence chart style: no background gridlines.
-    valGridLine: { style: "none" },
-    catGridLine: { style: "none" },
-    // Match template: white background (no gray plot-area tint)
-    chartArea: { fill: { color: "FFFFFF" } },
-    plotArea: { fill: { color: "FFFFFF" } },
-    dataBorder: { pt: 0.5, color: COLORS.white },
-    chartColors: CHART_COLORS,
-    ...(chart.opts || {}),
-  };
-
-  // For single-series bar/area charts, use one consistent color instead of
-  // cycling through the palette (which implies different categories).
   const seriesCount = Array.isArray(chart.data) ? chart.data.length : 0;
-  if (seriesCount === 1 && ["bar", "bar3d", "area"].includes(chart.type)) {
-    opts.chartColors = [CHART_COLORS[0]];
-  } else {
-    opts.chartColors = CHART_COLORS;
-  }
-
-  if (chart.type === "pie" || chart.type === "doughnut") {
-    opts.dataLabelColor = pickDataLabelColor(opts.chartColors);
-  }
-
-  slide.addChart(typeMap[chart.type] || chart.type, chart.data, {
-    ...geo,
-    ...opts,
+  const chartColors = seriesCount === 1 && ['bar', 'bar3d', 'area'].includes(chartType)
+    ? [palette[0]]
+    : palette;
+  addChartBlock(pptx, slide, chart, geo, styles, {
+    legendPos: 'b',
+    useLightLabels,
+    lightLabelColor: styles.chart.lightLabelColor,
+    darkLabelColor: styles.chart.darkLabelColor,
+    seriesLabelBg: styles.chart.seriesLabelBg,
+    dataBorder: { pt: 0.5, color: styles.chart.dataBorder },
+    extraOptions: {
+      chartColors,
+      ...(useLightLabels && chartType === 'bar' ? { dataLabelPosition: 'inEnd' } : {}),
+    },
   });
 
   if (chart.source) {
@@ -229,37 +208,41 @@ function addChart(pptx, slide, chart, geo) {
       y: geo.y + geo.h + 0.05,
       w: geo.w,
       h: 0.2,
-      ...TOKENS.textStyles.source,
+      ...styles.textStyles.source,
     });
   }
 }
 
-function addHeadingBand(pptx, slide, heading, geo) {
+function addHeadingBand(pptx, slide, heading, geo, styles, textBox) {
   if (!heading || !geo) return;
   slide.addShape(pptx.ShapeType.rect, {
     ...geo,
-    line: { color: COLORS.kpmgBlue, pt: 1 },
-    fill: { color: COLORS.kpmgBlue },
+    line: { color: styles.headingBand.line, pt: 1 },
+    fill: { color: styles.headingBand.fill },
   });
   slide.addText(String(heading), {
     x: geo.x + 0.08,
     y: geo.y + 0.02,
     w: Math.max(0.4, geo.w - 0.16),
     h: geo.h,
-    fontFace: FONTS.body,
-    fontSize: TYPE_SIZES.body,
-    color: COLORS.white,
+    fontFace: styles.headingBand.textFont,
+    fontSize: styles.headingBand.textSize,
+    color: styles.headingBand.textColor,
     bold: true,
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
-    valign: "mid",
+    ...textBox,
+    valign: 'mid',
   });
 }
 
 export function addAnalysisWideChart2ColsText(
   pptx,
-  { title, strapline, body, callouts, bodyStyle, chart, geometry, masterName } = {},
+  slideSpec = {},
+  ctx = {},
 ) {
+  const { title, strapline, body, callouts, bodyStyle, chart } = slideSpec;
+  const { geometry, masterName, footerSafeTopByMaster, theme } = ctx;
+  const styles = resolveStyles(theme);
+  const textBox = resolveTextBoxOptions(theme);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const {
     geometry: g,
@@ -272,38 +255,25 @@ export function addAnalysisWideChart2ColsText(
   } = computeAnalysisWideChart2ColsTextGeometry({
     geometry,
     masterName,
+    footerSafeTopByMaster,
     strapline,
     chart,
     callouts,
   });
   const effectiveBodyStyle = normalizeBodyStyle(bodyStyle);
 
-  addTitle(slide, title, g.title || TOKENS.geometry.title);
-  if (strapText && straplineBox) {
-    slide.addText(String(strapText), {
-      ...straplineBox,
-      ...TOKENS.textStyles.strapline,
-      wrap: TEXT_BOX.wrap,
-      margin: TEXT_BOX.marginPt,
-      valign: "top",
-    });
-  }
-
-  slide.addText(toBodyRuns(body, effectiveBodyStyle), {
-    ...safeTextBox,
-    ...TOKENS.textStyles.body,
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
-    valign: "top",
-  });
-  addChart(pptx, slide, chart, safeChartBox);
-  renderChartAnnotations(pptx, slide, chart, safeChartBox);
+  addTitle(slide, title, g.title || TOKENS.geometry.title, { theme });
+  addStraplineBlock(slide, strapText, straplineBox, { theme, style: styles.textStyles.strapline, textBox });
+  addBodyBlock(slide, body, safeTextBox, { theme, bodyStyle: effectiveBodyStyle, style: styles.textStyles.body, textBox });
+  addChart(pptx, slide, chart, safeChartBox, styles);
+  renderChartAnnotations(pptx, slide, chart, safeChartBox, styles);
   renderCallouts(pptx, slide, {
     callouts: resolvedCallouts,
     boxes: calloutBoxes,
-    slideType: "analysisWideChart2ColsText",
+    slideType: 'analysisWideChart2ColsText',
     textBox: safeTextBox,
     chartBox: safeChartBox,
+    theme,
   });
 
   return slide;
@@ -311,7 +281,10 @@ export function addAnalysisWideChart2ColsText(
 
 export function addAnalysisWideChartTableText(
   pptx,
-  {
+  slideSpec = {},
+  ctx = {},
+) {
+  const {
     title,
     strapline,
     heading,
@@ -322,10 +295,10 @@ export function addAnalysisWideChartTableText(
     table,
     noteSource,
     showSummaryChart = false,
-    geometry,
-    masterName,
-  } = {},
-) {
+  } = slideSpec;
+  const { geometry, masterName, footerSafeTopByMaster, theme } = ctx;
+  const styles = resolveStyles(theme);
+  const textBox = resolveTextBoxOptions(theme);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const {
     geometry: g,
@@ -340,6 +313,7 @@ export function addAnalysisWideChartTableText(
   } = computeAnalysisWideChartTableTextGeometry({
     geometry,
     masterName,
+    footerSafeTopByMaster,
     strapline,
     chart,
     table,
@@ -349,16 +323,8 @@ export function addAnalysisWideChartTableText(
   });
   const effectiveBodyStyle = normalizeBodyStyle(bodyStyle);
 
-  addTitle(slide, title, g.title || TOKENS.geometry.title);
-  if (strapText && straplineBox) {
-    slide.addText(String(strapText), {
-      ...straplineBox,
-      ...TOKENS.textStyles.strapline,
-      wrap: TEXT_BOX.wrap,
-      margin: TEXT_BOX.marginPt,
-      valign: "top",
-    });
-  }
+  addTitle(slide, title, g.title || TOKENS.geometry.title, { theme });
+  addStraplineBlock(slide, strapText, straplineBox, { theme, style: styles.textStyles.strapline, textBox });
   const hasChartData = Boolean(
     chart?.type && Array.isArray(chart?.data) && chart.data.length > 0,
   );
@@ -366,50 +332,45 @@ export function addAnalysisWideChartTableText(
     table?.headers && Array.isArray(table?.rows) && table.rows.length > 0,
   );
 
-  addHeadingBand(pptx, slide, heading, headingBase);
+  addHeadingBand(pptx, slide, heading, headingBase, styles, textBox);
 
   let tableMeta = null;
   if (safeTableBox && hasTableData) {
-    tableMeta = addAnalysisTable(slide, table, {
-      x: safeTableBox.x,
-      y: safeTableBox.y,
-      w: safeTableBox.w,
-      h: safeTableBox.h,
-      tableTitle: title,
-      tableHeading: heading || table?.title || table?.heading || title,
-      showTitleBar: false,
+    tableMeta = addTableBlock(slide, table, safeTableBox, {
+      renderTable: addAnalysisTable,
+      renderOptions: {
+        tableTitle: title,
+        tableHeading: heading || table?.title || table?.heading || title,
+        showTitleBar: false,
+        theme,
+      },
     });
   }
 
-  slide.addText(toBodyRuns(body, effectiveBodyStyle), {
-    ...safeTextBox,
-    ...TOKENS.textStyles.body,
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
-    valign: "top",
-  });
+  addBodyBlock(slide, body, safeTextBox, { theme, bodyStyle: effectiveBodyStyle, style: styles.textStyles.body, textBox });
   if (safeChartBox && hasChartData) {
-    addChart(pptx, slide, chart, safeChartBox);
-    renderChartAnnotations(pptx, slide, chart, safeChartBox);
+    addChart(pptx, slide, chart, safeChartBox, styles);
+    renderChartAnnotations(pptx, slide, chart, safeChartBox, styles);
   }
   if (noteSource && g.note) {
     slide.addText(String(noteSource), {
       ...g.note,
-      ...TOKENS.textStyles.source,
-      wrap: TEXT_BOX.wrap,
+      ...styles.textStyles.source,
+      wrap: textBox.wrap,
       margin: 0,
-      valign: "top",
+      valign: 'top',
       breakLine: true,
     });
   }
   renderCallouts(pptx, slide, {
     callouts: resolvedCallouts,
     boxes: calloutBoxes,
-    slideType: "analysisWideChartTableText",
+    slideType: 'analysisWideChartTableText',
     textBox: safeTextBox,
     chartBox: safeChartBox,
     tableBox: safeTableBox,
     tableMeta,
+    theme,
   });
 
   return slide;

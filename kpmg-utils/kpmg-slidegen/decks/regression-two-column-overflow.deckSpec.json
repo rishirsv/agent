@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Regression Two Column Overflow",
+    "allowSparse": true,
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership"
+    }
+  },
+  "slides": [
+    {
+      "type": "twoColumnText",
+      "title": "Two-Column Pagination Stress Scenario",
+      "strapline": "RESPOND | Dense bilateral narrative designed to enforce continuation slide behavior in two-column layouts.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        { "text": "Current-state observations", "header": true },
+        "Incident detection escalation roles are defined, but handoffs between first-line and specialist teams vary by region and time zone.",
+        "Triage intake uses a common template, though severity calibration criteria are interpreted inconsistently across operating units.",
+        "Containment actions are tracked in multiple systems, creating reconciliation overhead and occasional lag in executive visibility.",
+        "External communication playbooks exist for key scenarios, but legal review dependencies can extend response timelines.",
+        "Cross-functional drills are conducted, yet lessons learned are not always mapped into formal procedure updates.",
+        "Root-cause capture quality differs by team maturity, reducing comparability in trend analysis and remediation planning.",
+        "Escalation rehearsals cover high-level sequencing but rarely test edge conditions where dependencies fail simultaneously.",
+        "Metrics focus on volume and closure counts, with limited emphasis on quality-of-response indicators and business impact.",
+        "Partner coordination is documented, though SLA terms do not always reflect practical after-hours operating realities.",
+        "Post-incident governance forums identify improvements, but action ownership tracking is fragmented across committees.",
+        "Control evidence stores are incomplete for some legacy workflows, increasing effort during audit and assurance reviews.",
+        "Process documentation is periodically updated but lacks explicit versioned linkages to training and competency records.",
+        "Scenario libraries cover top risks, with limited representation of compound failures involving technology and third parties.",
+        "Leadership reporting packages are informative but could improve decision speed through tighter issue framing and options.",
+        "Coordination with business continuity teams is active, though joint planning assumptions are not uniformly documented."
+      ],
+      "rightBody": [
+        { "text": "Target-state actions", "header": true },
+        "Standardize escalation decision criteria with concrete examples and mandatory calibration sessions across all response hubs.",
+        "Consolidate incident workflow tracking into a single system of record with API bridges for dependent operational tools.",
+        "Introduce quarterly scenario validation for edge cases, including simulated dependency loss and concurrent critical events.",
+        "Define communication decision trees with pre-cleared language for priority scenarios to reduce legal-review bottlenecks.",
+        "Establish response quality KPIs, including timeliness, decision quality, cross-team coordination, and containment effectiveness.",
+        "Align partner contracts to operationally realistic SLAs and include periodic evidence-based performance assessments.",
+        "Implement centralized action registers from post-incident reviews with strict ownership and due-date governance.",
+        "Link procedure updates to mandatory refresher training and role-based certification requirements.",
+        "Upgrade trend reporting to include repeat-pattern detection, unresolved root-cause clusters, and control-interaction views.",
+        "Create executive dashboard slices for major incidents with explicit decisions needed, options, and expected risk outcomes.",
+        "Add assurance checkpoints to validate closure evidence quality before findings are marked complete.",
+        "Expand scenario coverage to include sector-specific threat patterns and high-impact third-party disruption paths.",
+        "Set minimum rehearsal participation thresholds and track readiness maturity by function and geography.",
+        "Introduce rolling governance retrospectives to convert lessons into measurable process improvements.",
+        "Publish quarterly heatmaps linking response capability improvements to observed business resilience outcomes."
+      ]
+    }
+  ]
+}

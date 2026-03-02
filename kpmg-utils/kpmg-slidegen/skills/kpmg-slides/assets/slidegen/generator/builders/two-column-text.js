@@ -1,31 +1,34 @@
-import { FONTS, COLORS, TYPE_SIZES, TEXT_BOX } from '../tokens.js';
-import { toBodyRuns } from '../helpers/bullets.js';
 import { addTitle } from '../helpers/title.js';
 import { isValidColumnGeometry } from '../helpers/geometry.js';
 import { sanitizeText } from '../helpers/text.js';
 import { recordFallback } from '../runtime/diagnostics.js';
 import { normalizeBodyStyle } from '../helpers/layout.js';
+import { resolveBodyTextStyle, resolveStraplineTextStyle, resolveTheme } from '../helpers/theme.js';
 import {
   computeTwoColumnLayoutGeometry,
   TWO_COLUMN_LAYOUT_DEFAULTS,
 } from '../helpers/two-column-layout.js';
+import { addBodyBlock, addStraplineBlock } from '../helpers/slide-components.js';
 import fs from 'node:fs';
 import { normalizeImageSource } from '../helpers/media.js';
 import { svgToDataUri } from '../helpers/svg.js';
 
 export const TOKENS = {
   geometry: TWO_COLUMN_LAYOUT_DEFAULTS.geometry,
-  textStyles: {
+};
+
+function resolveTextStyles(theme = null) {
+  const resolvedTheme = resolveTheme(theme);
+  return {
     body: {
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.body,
-      color: COLORS.black,
+      ...resolveBodyTextStyle(resolvedTheme),
       align: 'left',
       valign: 'top',
-      paraSpaceAfter: 6,
     },
-  },
-};
+    strapline: resolveStraplineTextStyle(resolvedTheme),
+    typeSizes: resolvedTheme.typeSizes,
+  };
+}
 
 function addIconChip(pptx, slide, iconPath, geo) {
   if (!iconPath) return;
@@ -54,8 +57,12 @@ function addIconChip(pptx, slide, iconPath, geo) {
 
 export function addTwoColumnTextWithStrapline(
   pptx,
-  { title, strapline, leftBody, rightBody, bodyStyle, geometry, masterName, icon, iconPlacement, style } = {},
+  slideSpec = {},
+  ctx = {},
 ) {
+  const { title, strapline, leftBody, rightBody, bodyStyle, icon, iconPlacement, style } = slideSpec;
+  const { geometry, masterName, footerSafeTopByMaster, theme } = ctx;
+  const textStyles = resolveTextStyles(theme);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const candidate = geometry || TOKENS.geometry;
   const useExtracted = isValidColumnGeometry([candidate.left, candidate.right], 2);
@@ -94,48 +101,33 @@ export function addTwoColumnTextWithStrapline(
   }
 
   let strapBox = null;
-  addTitle(slide, title, adjustedTitleGeo);
+  addTitle(slide, title, adjustedTitleGeo, { theme });
   const layoutGeo = computeTwoColumnLayoutGeometry({
     geometry: g,
     masterName,
+    footerSafeTopByMaster,
     strapline: strapText,
-    straplineFontSize: style?.straplineFontSize ?? TYPE_SIZES.strapline,
+    straplineFontSize: style?.straplineFontSize ?? textStyles.typeSizes.strapline,
   });
   strapBox = layoutGeo.strapBox;
   if (strapText && strapBox) {
-    slide.addText(sanitizeText(strapText), {
-      ...strapBox,
-      fontFace: FONTS.body,
-      fontSize: style?.straplineFontSize ?? TYPE_SIZES.strapline,
-      color: COLORS.kpmgPurple,
-      italic: true,
-      bold: true,
-      wrap: TEXT_BOX.wrap,
-      margin: TEXT_BOX.marginPt,
-      valign: 'top',
+    addStraplineBlock(slide, sanitizeText(strapText), strapBox, {
+      theme,
+      style: {
+        ...textStyles.strapline,
+        fontSize: style?.straplineFontSize ?? textStyles.strapline.fontSize,
+      },
     });
   }
   const { safeLeftGeo, safeRightGeo } = layoutGeo;
 
-  const bodyTextStyle = { ...TOKENS.textStyles.body, fontSize: style?.bodyFontSize ?? TOKENS.textStyles.body.fontSize };
-  slide.addText(toBodyRuns(leftBody, effectiveBodyStyle), {
-    ...safeLeftGeo,
-    ...bodyTextStyle,
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
-    valign: 'top',
-  });
+  const bodyTextStyle = { ...textStyles.body, fontSize: style?.bodyFontSize ?? textStyles.body.fontSize };
+  addBodyBlock(slide, leftBody, safeLeftGeo, { theme, bodyStyle: effectiveBodyStyle, style: bodyTextStyle });
 
   // Optional enhancement: `icon` adds an icon chip at the top-right of the right column.
   const iconInRightColumn = Boolean(icon) && !iconInTitle;
   if (iconInRightColumn) addIconChip(pptx, slide, icon, safeRightGeo);
-  slide.addText(toBodyRuns(rightBody, effectiveBodyStyle), {
-    ...safeRightGeo,
-    ...bodyTextStyle,
-    wrap: TEXT_BOX.wrap,
-    margin: TEXT_BOX.marginPt,
-    valign: 'top',
-  });
+  addBodyBlock(slide, rightBody, safeRightGeo, { theme, bodyStyle: effectiveBodyStyle, style: bodyTextStyle });
 
   return slide;
 }

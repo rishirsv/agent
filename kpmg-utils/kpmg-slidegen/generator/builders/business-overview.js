@@ -1,9 +1,11 @@
-import { FONTS, COLORS, CHART_COLORS, TYPE_SIZES, TEXT_BOX } from '../tokens.js';
 import { addTitle } from '../helpers/title.js';
 import { toBodyRuns } from '../helpers/bullets.js';
 import { sanitizeText } from '../helpers/text.js';
-import { footerSafeTopForMaster, normalizeBodyStyle } from '../helpers/layout.js';
+import { normalizeBodyStyle } from '../helpers/layout.js';
 import { validateBusinessStructureSpec } from '../helpers/business-structure.js';
+import { buildThemedChartOptions, resolveChartType } from '../helpers/chart.js';
+import { addChartBlock, addFootnoteBlock } from '../helpers/slide-components.js';
+import { resolveTextBoxOptions, resolveTheme } from '../helpers/theme.js';
 
 const DEFAULT_GEOMETRY = Object.freeze({
   title: { x: 1.0919, y: 0.4722, w: 11.1496, h: 0.5833 },
@@ -14,6 +16,33 @@ const DEFAULT_GEOMETRY = Object.freeze({
   chart: { x: 9.34, y: 5.08, w: 2.88, h: 1.56 },
   source: { x: 1.1008, y: 6.4648, w: 6.0, h: 0.2 },
 });
+
+function resolveStyles(theme = null) {
+  const resolvedTheme = resolveTheme(theme);
+  return {
+    fonts: resolvedTheme.fonts,
+    colors: {
+      primary: resolvedTheme.colors.primary,
+      white: resolvedTheme.colors.white,
+      black: resolvedTheme.colors.black,
+      pink: resolvedTheme.colors.pink,
+      kpmgBlue: resolvedTheme.colors.kpmgBlue,
+      kpmgCyan: resolvedTheme.colors.kpmgCyan,
+      orange: resolvedTheme.colors.orange,
+    },
+    typeSizes: {
+      body: resolvedTheme.typeSizes.body,
+      source: resolvedTheme.typeSizes.source,
+    },
+    chart: {
+      palette: resolvedTheme.chart.palette,
+      legendFontSize: Number(resolvedTheme.chart.fontSizes.legend || 7),
+      labelFontSize: Number(resolvedTheme.chart.fontSizes.axis || resolvedTheme.chart.fontSizes.label || 7),
+      dataLabelFontSize: Number(resolvedTheme.chart.fontSizes.dataLabel || 7),
+      background: resolvedTheme.colors.chart.background,
+    },
+  };
+}
 
 function toFinite(value, fallback) {
   const n = Number(value);
@@ -39,16 +68,16 @@ function resolveGeometry(geometry = {}) {
   };
 }
 
-function addSubheading(slide, text, box) {
+function addSubheading(slide, text, box, styles) {
   if (!text) return;
   slide.addText(sanitizeText(text), {
     x: box.x,
     y: box.y,
     w: box.w,
     h: box.h,
-    fontFace: FONTS.body,
-    fontSize: TYPE_SIZES.body,
-    color: COLORS.primary,
+    fontFace: styles.fonts.body,
+    fontSize: styles.typeSizes.body,
+    color: styles.colors.primary,
     bold: true,
     margin: 0,
     valign: 'top',
@@ -56,7 +85,7 @@ function addSubheading(slide, text, box) {
   });
 }
 
-function renderStructurePanel(slide, structure, panelBox) {
+function renderStructurePanel(slide, structure, panelBox, styles) {
   const panelPadX = 0.12;
   const topTier = structure.topTier || [];
   const midTier = structure.midTier || [];
@@ -73,8 +102,8 @@ function renderStructurePanel(slide, structure, panelBox) {
       y: panelBox.y,
       w: panelBox.w,
       h: panelBox.h,
-      fill: { color: COLORS.white, transparency: 100 },
-      line: { color: COLORS.pink, pt: 1, dash: 'dash' },
+      fill: { color: styles.colors.white, transparency: 100 },
+      line: { color: styles.colors.pink, pt: 1, dash: 'dash' },
     });
 
     if (structure.perimeter.label) {
@@ -83,9 +112,9 @@ function renderStructurePanel(slide, structure, panelBox) {
         y: panelBox.y + 0.06,
         w: panelBox.w - 0.2,
         h: 0.14,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
-        color: COLORS.kpmgBlue,
+        fontFace: styles.fonts.body,
+        fontSize: styles.typeSizes.body,
+        color: styles.colors.kpmgBlue,
         bold: true,
         margin: 0,
         valign: 'top',
@@ -98,9 +127,9 @@ function renderStructurePanel(slide, structure, panelBox) {
         y: panelBox.y + 0.23,
         w: panelBox.w - 0.2,
         h: 0.14,
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
-        color: COLORS.kpmgBlue,
+        fontFace: styles.fonts.body,
+        fontSize: styles.typeSizes.body,
+        color: styles.colors.kpmgBlue,
         bold: true,
         margin: 0,
         valign: 'top',
@@ -119,7 +148,7 @@ function renderStructurePanel(slide, structure, panelBox) {
 
     nodes.forEach((node, idx) => {
       const x = panelBox.x + panelPadX + idx * (nodeW + gap);
-      const fill = tierName === 'bottom' && count === 1 ? COLORS.kpmgCyan : COLORS.primary;
+      const fill = tierName === 'bottom' && count === 1 ? styles.colors.kpmgCyan : styles.colors.primary;
       const box = { x, y, w: nodeW, h: height };
 
       slide.addShape('rect', {
@@ -133,9 +162,9 @@ function renderStructurePanel(slide, structure, panelBox) {
         y: y + 0.03,
         w: Math.max(0.2, nodeW - 0.1),
         h: Math.max(0.2, height - 0.06),
-        fontFace: FONTS.body,
-        fontSize: TYPE_SIZES.body,
-        color: COLORS.white,
+        fontFace: styles.fonts.body,
+        fontSize: styles.typeSizes.body,
+        color: styles.colors.white,
         bold: true,
         align: 'center',
         valign: 'mid',
@@ -152,9 +181,9 @@ function renderStructurePanel(slide, structure, panelBox) {
           y: pctY,
           w: nodeW,
           h: 0.14,
-          fontFace: FONTS.body,
-          fontSize: TYPE_SIZES.body,
-          color: COLORS.black,
+          fontFace: styles.fonts.body,
+          fontSize: styles.typeSizes.body,
+          color: styles.colors.black,
           align: 'center',
           margin: 0,
           valign: 'mid',
@@ -185,62 +214,28 @@ function renderStructurePanel(slide, structure, panelBox) {
       y: y1,
       w: 0,
       h: Math.max(0, elbowY - y1),
-      line: { color: COLORS.kpmgBlue, pt: 0.8 },
+      line: { color: styles.colors.kpmgBlue, pt: 0.8 },
     });
     slide.addShape('line', {
       x: Math.min(x1, x2),
       y: elbowY,
       w: Math.abs(x2 - x1),
       h: 0,
-      line: { color: COLORS.kpmgBlue, pt: 0.8 },
+      line: { color: styles.colors.kpmgBlue, pt: 0.8 },
     });
     slide.addShape('line', {
       x: x2,
       y: Math.min(elbowY, y2),
       w: 0,
       h: Math.abs(y2 - elbowY),
-      line: { color: COLORS.kpmgBlue, pt: 0.8 },
+      line: { color: styles.colors.kpmgBlue, pt: 0.8 },
     });
   }
 }
 
-function addInlineChart(pptx, slide, chart, box) {
+function addInlineChart(pptx, slide, chart, box, styles) {
   if (!chart || typeof chart !== 'object' || !Array.isArray(chart.data) || chart.data.length === 0) return;
-
-  const typeMap = {
-    bar: pptx.ChartType?.bar || 'bar',
-    bar3d: pptx.ChartType?.bar3D || 'bar3D',
-    line: pptx.ChartType?.line || 'line',
-    pie: pptx.ChartType?.pie || 'pie',
-    doughnut: pptx.ChartType?.doughnut || 'doughnut',
-    area: pptx.ChartType?.area || 'area',
-    scatter: pptx.ChartType?.scatter || 'scatter',
-    radar: pptx.ChartType?.radar || 'radar',
-  };
-
-  slide.addChart(typeMap[chart.type] || chart.type || 'bar', chart.data, {
-    x: box.x,
-    y: box.y,
-    w: box.w,
-    h: box.h,
-    showLegend: true,
-    legendPos: 'r',
-    legendFontFace: FONTS.body,
-    legendFontSize: 7,
-    catAxisLabelFontFace: FONTS.body,
-    valAxisLabelFontFace: FONTS.body,
-    catAxisLabelFontSize: 7,
-    valAxisLabelFontSize: 7,
-    showValue: true,
-    dataLabelFontFace: FONTS.body,
-    dataLabelFontSize: 7,
-    chartColors: CHART_COLORS,
-    valGridLine: { style: 'none' },
-    catGridLine: { style: 'none' },
-    chartArea: { fill: { color: COLORS.white } },
-    plotArea: { fill: { color: COLORS.white } },
-    ...(chart.opts || {}),
-  });
+  addChartBlock(pptx, slide, chart, box, styles, { legendPos: 'r' });
 
   if (chart.source) {
     slide.addText(String(chart.source), {
@@ -248,9 +243,9 @@ function addInlineChart(pptx, slide, chart, box) {
       y: box.y + box.h + 0.02,
       w: box.w,
       h: 0.16,
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.source,
-      color: COLORS.kpmgBlue,
+      fontFace: styles.fonts.body,
+      fontSize: styles.typeSizes.source,
+      color: styles.colors.kpmgBlue,
       italic: true,
       margin: 0,
       wrap: true,
@@ -259,36 +254,12 @@ function addInlineChart(pptx, slide, chart, box) {
   }
 }
 
-function renderFootnotes(slide, g, { source, note, masterName }) {
-  const lines = [source, note].map((item) => String(item || '').trim()).filter(Boolean);
-  if (lines.length === 0) return;
-
-  const text = lines.join('\n');
-  const safeTop = footerSafeTopForMaster(masterName);
-  const minHeight = g.source.h;
-  const estimatedLines = Math.max(1, Math.ceil(text.length / Math.max(24, Math.floor(g.source.w * 13))));
-  const desiredH = Math.max(minHeight, Math.min(0.44, estimatedLines * ((TYPE_SIZES.source * 1.15) / 72) + 0.02));
-  const y = safeTop ? Math.max(g.source.y, safeTop - desiredH) : g.source.y;
-  const h = safeTop ? Math.max(0.1, Math.min(desiredH, safeTop - y)) : desiredH;
-
-  slide.addText(text, {
-    x: g.source.x,
-    y,
-    w: g.source.w,
-    h,
-    fontFace: FONTS.body,
-    fontSize: TYPE_SIZES.source,
-    color: COLORS.kpmgBlue,
-    italic: true,
-    margin: 0,
-    wrap: TEXT_BOX.wrap,
-    valign: 'top',
-  });
-}
-
 export function addBusinessOverview(
   pptx,
-  {
+  slideSpec = {},
+  ctx = {},
+) {
+  const {
     title,
     leftHeading,
     rightHeading,
@@ -298,16 +269,16 @@ export function addBusinessOverview(
     source,
     note,
     bodyStyle,
-    geometry,
-    masterName,
-  } = {},
-) {
+  } = slideSpec;
+  const { geometry, masterName, footerSafeTopByMaster, theme } = ctx;
+  const styles = resolveStyles(theme);
+  const textBox = resolveTextBoxOptions(theme);
   const slide = masterName ? pptx.addSlide({ masterName }) : pptx.addSlide();
   const g = resolveGeometry(geometry);
 
-  addTitle(slide, title, g.title);
-  addSubheading(slide, leftHeading || 'Legal chart', g.leftHeading);
-  addSubheading(slide, rightHeading || 'Company overview', g.rightHeading);
+  addTitle(slide, title, g.title, { theme });
+  addSubheading(slide, leftHeading || 'Legal chart', g.leftHeading, styles);
+  addSubheading(slide, rightHeading || 'Company overview', g.rightHeading, styles);
 
   const validated = validateBusinessStructureSpec(structure || {});
   if (!validated.normalized) {
@@ -316,16 +287,16 @@ export function addBusinessOverview(
       y: g.leftPanel.y,
       w: g.leftPanel.w,
       h: 0.4,
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.body,
-      color: COLORS.orange,
+      fontFace: styles.fonts.body,
+      fontSize: styles.typeSizes.body,
+      color: styles.colors.orange,
       bold: true,
       margin: 0,
       wrap: true,
       valign: 'top',
     });
   } else {
-    renderStructurePanel(slide, validated.normalized, g.leftPanel);
+    renderStructurePanel(slide, validated.normalized, g.leftPanel, styles);
   }
 
   let overviewBox = { ...g.overviewBody };
@@ -336,24 +307,37 @@ export function addBusinessOverview(
   }
 
   if (Array.isArray(overviewBody) && overviewBody.length > 0) {
-    slide.addText(toBodyRuns(overviewBody, normalizeBodyStyle(bodyStyle)), {
+    slide.addText(toBodyRuns(overviewBody, normalizeBodyStyle(bodyStyle), { theme }), {
       x: overviewBox.x,
       y: overviewBox.y,
       w: overviewBox.w,
       h: overviewBox.h,
-      fontFace: FONTS.body,
-      fontSize: TYPE_SIZES.body,
-      color: COLORS.black,
+      fontFace: styles.fonts.body,
+      fontSize: styles.typeSizes.body,
+      color: styles.colors.black,
       paraSpaceAfter: 6,
-      margin: TEXT_BOX.marginPt,
-      wrap: TEXT_BOX.wrap,
+      ...textBox,
       valign: 'top',
       fit: 'shrink',
     });
   }
 
-  addInlineChart(pptx, slide, chart, g.chart);
-  renderFootnotes(slide, g, { source, note, masterName });
+  addInlineChart(pptx, slide, chart, g.chart, styles);
+  addFootnoteBlock(slide, {
+    lines: [source, note],
+    box: g.source,
+    theme,
+    masterName,
+    footerSafeTopByMaster,
+    minHeight: g.source.h,
+    style: {
+      fontFace: styles.fonts.body,
+      fontSize: styles.typeSizes.source,
+      color: styles.colors.kpmgBlue,
+      italic: true,
+      margin: 0,
+    },
+  });
 
   return slide;
 }

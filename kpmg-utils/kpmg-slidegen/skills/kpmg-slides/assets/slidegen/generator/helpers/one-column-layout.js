@@ -1,4 +1,3 @@
-import { TYPE_SIZES } from '../tokens.js';
 import { computeDynamicStraplineBox, sanitizeText } from './text.js';
 import { resolveCalloutLayout } from './callouts.js';
 import {
@@ -22,18 +21,30 @@ export const ONE_COLUMN_LAYOUT_DEFAULTS = Object.freeze({
     minHeight: 0.2,
     maxHeight: 0.44,
   },
+  typography: {
+    straplineFontSize: 10,
+    sourceFontSize: 6,
+  },
 });
 
 export function computeOneColumnLayoutGeometry({
   geometry,
   masterName = 'KPMG_WHITE',
+  footerSafeTopByMaster = null,
   strapline,
   source,
   callouts = [],
-  straplineFontSize = TYPE_SIZES.strapline,
-  sourceFontSize = TYPE_SIZES.source,
+  straplineFontSize,
+  sourceFontSize,
 } = {}) {
   const g = geometry || ONE_COLUMN_LAYOUT_DEFAULTS.geometry;
+  const typography = ONE_COLUMN_LAYOUT_DEFAULTS.typography;
+  const resolvedStraplineSize = Number.isFinite(straplineFontSize)
+    ? Number(straplineFontSize)
+    : typography.straplineFontSize;
+  const resolvedSourceSize = Number.isFinite(sourceFontSize)
+    ? Number(sourceFontSize)
+    : typography.sourceFontSize;
   const strapText = strapline;
   const sourceText = sanitizeText(source);
 
@@ -43,11 +54,11 @@ export function computeOneColumnLayoutGeometry({
     const strapBase = g.strapline || ONE_COLUMN_LAYOUT_DEFAULTS.geometry.strapline;
     strapGeo = computeDynamicStraplineBox({
       strapline: strapText,
-      titleGeo,
-      strapBase,
-      defaultStrapGeo: ONE_COLUMN_LAYOUT_DEFAULTS.geometry.strapline,
-      fontSize: straplineFontSize,
-    });
+        titleGeo,
+        strapBase,
+        defaultStrapGeo: ONE_COLUMN_LAYOUT_DEFAULTS.geometry.strapline,
+        fontSize: resolvedStraplineSize,
+      });
   }
 
   const bodyBase = g.body || ONE_COLUMN_LAYOUT_DEFAULTS.geometry.body;
@@ -56,10 +67,10 @@ export function computeOneColumnLayoutGeometry({
   const sourcePad = sourceText
     ? sourceFootprintBelow(bodyGeo, sourceText, {
         ...ONE_COLUMN_LAYOUT_DEFAULTS.sourceLayout,
-        fontSize: sourceFontSize,
+        fontSize: resolvedSourceSize,
       })
     : 0;
-  const safeBodyGeoBase = clampToMasterFooter(bodyGeo, masterName, sourcePad);
+  const safeBodyGeoBase = clampToMasterFooter(bodyGeo, masterName, sourcePad, footerSafeTopByMaster);
   const calloutLayout = resolveCalloutLayout({
     slideType: 'oneColumnText',
     callouts,
@@ -70,18 +81,18 @@ export function computeOneColumnLayoutGeometry({
   if (sourceText) {
     const effectiveSourcePad = sourceFootprintBelow(safeBodyGeo, sourceText, {
       ...ONE_COLUMN_LAYOUT_DEFAULTS.sourceLayout,
-      fontSize: sourceFontSize,
+      fontSize: resolvedSourceSize,
     });
-    safeBodyGeo = clampToMasterFooter(safeBodyGeo, masterName, effectiveSourcePad);
+    safeBodyGeo = clampToMasterFooter(safeBodyGeo, masterName, effectiveSourcePad, footerSafeTopByMaster);
   }
 
   let sourceGeo = null;
   if (sourceText) {
     const sourceHeight = estimateSourceTextHeight(sourceText, safeBodyGeo.w, {
       ...ONE_COLUMN_LAYOUT_DEFAULTS.sourceLayout,
-      fontSize: sourceFontSize,
+      fontSize: resolvedSourceSize,
     });
-    const safeTop = footerSafeTopForMaster(masterName);
+    const safeTop = footerSafeTopForMaster(masterName, footerSafeTopByMaster);
     sourceGeo =
       g.source ||
       (safeTop

@@ -14,3 +14,7 @@ outputs/**/montage.png
 
 # Dependencies
 node_modules/
+
+# Python cache artifacts
+__pycache__/
+*.pyc

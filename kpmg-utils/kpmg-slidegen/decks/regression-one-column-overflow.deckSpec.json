@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "title": "Regression One Column Overflow",
+    "allowSparse": true,
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership"
+    }
+  },
+  "slides": [
+    {
+      "type": "oneColumnText",
+      "title": "Operational Resilience Findings Summary",
+      "strapline": "GOVERN | Dense evidence narrative used to validate one-column pagination and continuation behavior under stress conditions.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Question", "header": true },
+        "What controls are in place to monitor priority cybersecurity objectives and ensure governance actions are tracked with clear ownership and timelines?",
+        { "text": "Evidence summary", "header": true },
+        "Transcripts: Operating reviews include recurring discussions on control execution and ownership for target remediation items across several governance workstreams and steering meetings.",
+        "Documents: Governance records reference objective tracking, progress checkpoints, and leadership escalation routines with named accountability for closure milestones and overdue actions.",
+        "Questionnaires: Reported cadence indicates documented risk and performance reviews with ownership, due dates, and committee-level reporting where action plans remain open.",
+        "Interviews: Team leads described process dependencies that can delay remediation if upstream approvals are not aligned to a shared prioritization framework across business units.",
+        "Policy mapping: Multiple policy statements align to the target control domains, but evidence of operational testing frequency is inconsistent by function and geography.",
+        "Control testing: Sampled test packs show periodic execution and closure tracking, with variability in root-cause documentation quality and severity assignment consistency.",
+        "Issue trends: Open findings have declined over two quarters, but aging analysis indicates a subset of high-impact items exceeding expected closure windows.",
+        "Management response: Leadership has initiated corrective workstreams and monthly forums to improve visibility, but metric definitions are still being standardized.",
+        "Risk implication: Delayed remediation could increase residual risk exposure in core operational areas if governance checkpoints are not consistently enforced.",
+        "Recommendation: Define consistent remediation playbooks, standard evidence templates, and decision-rights for escalations with explicit turnaround expectations.",
+        "Recommendation: Introduce quarterly control-health dashboards with trend lines, completion velocity, and risk-adjusted prioritization to guide interventions.",
+        "Recommendation: Tighten accountability by linking milestone completion to named owners and governance reporting commitments at each committee layer.",
+        "Recommendation: Validate implementation effectiveness through independent sampling and periodic challenge sessions for high-impact controls.",
+        "Recommendation: Establish quality gates for closure evidence to reduce rework and improve audit-readiness across recurring remediation activities.",
+        "Recommendation: Align remediation dependencies with enterprise planning cycles to reduce bottlenecks and improve on-time closure rates.",
+        "Recommendation: Create a risk-based trigger model to accelerate escalation for items with high potential business impact.",
+        "Recommendation: Standardize communication packs for leadership decision-making and ensure corrective actions are tracked to completion.",
+        "Recommendation: Maintain a central decision log for major control exceptions, rationale, and expected revisit timelines.",
+        "Recommendation: Review governance effectiveness quarterly and recalibrate thresholds based on incident trends and control performance outcomes.",
+        "Recommendation: Expand training for control owners on evidence standards and closure documentation requirements.",
+        "Recommendation: Embed retrospective reviews after major remediation waves to capture lessons learned and improve future execution speed.",
+        "Recommendation: Monitor implementation drift with targeted spot checks and recurring independent oversight reviews.",
+        "Recommendation: Strengthen cross-functional coordination routines so dependency risks are surfaced earlier in planning cycles.",
+        "Recommendation: Ensure executive sponsors receive concise risk-focused updates with clear ask/decision framing each period.",
+        "Recommendation: Define a minimum remediation evidence bar and automate validation checks where feasible.",
+        "Recommendation: Map control changes to business outcomes and include impact indicators in quarterly governance reporting.",
+        "Recommendation: Schedule recurring risk appetite calibration workshops to keep prioritization aligned to current operating context.",
+        "Recommendation: Institutionalize continuous improvement cadences so governance controls evolve as threats and business models change."
+      ],
+      "source": "Source: consolidatedReport.xlsx Observations tab and governance interview transcripts."
+    }
+  ]
+}

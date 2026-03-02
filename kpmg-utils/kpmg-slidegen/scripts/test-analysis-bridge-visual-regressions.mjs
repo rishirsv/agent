@@ -104,6 +104,17 @@ const scenarios = [
     },
   },
   {
+    name: 'analysis-bridge-alternating-up-down',
+    deckPath: path.join(process.cwd(), 'decks', 'regression-analysis-bridge-alternating-up-down.deckSpec.json'),
+    expect: {
+      minSlides: 1,
+      maxSlides: 1,
+      expectsSplit: false,
+      maxOverlapWarnings: 2,
+      maxOverlapSevere: 0,
+    },
+  },
+  {
     name: 'analysis-bridge-overflow',
     deckPath: path.join(process.cwd(), 'decks', 'regression-analysis-bridge-overflow.deckSpec.json'),
     expect: {
