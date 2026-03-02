@@ -105,8 +105,9 @@ function estimateMaxLines(boxHInches, fontSizePt) {
   return Math.max(1, Math.floor(hPt / lineHeight) - 1);
 }
 
-function chunkBullets(lines, { maxLines, charsPerLine }) {
-  const items = normalizeBulletPairs(Array.isArray(lines) ? lines : (lines ? [lines] : []));
+function chunkBullets(lines, { maxLines, charsPerLine, alreadyNormalized = false }) {
+  const sourceItems = Array.isArray(lines) ? lines : (lines ? [lines] : []);
+  const items = alreadyNormalized ? sourceItems : normalizeBulletPairs(sourceItems);
   const chunks = [];
   let cur = [];
   let used = 0;
@@ -215,9 +216,10 @@ function paginateOneColumnBullets(
   const safeFirstBox = applyFooterSafe(firstBox, footerSafe);
   const safeContinuationBox = applyFooterSafe(nextBox, footerSafe);
   const fontSize = BODY_FONT_SIZE;
-  const sourceItems = Array.isArray(slideSpec[fieldName]) ? [...slideSpec[fieldName]] : [];
+  const sourceItems = Array.isArray(slideSpec[fieldName]) ? slideSpec[fieldName] : (slideSpec[fieldName] ? [slideSpec[fieldName]] : []);
+  const normalizedItems = normalizeBulletPairs(sourceItems);
   const chunks = [];
-  let remaining = sourceItems;
+  let remaining = normalizedItems;
   let page = 0;
 
   while (remaining.length > 0) {
@@ -225,6 +227,7 @@ function paginateOneColumnBullets(
     const pageChunks = chunkBullets(remaining, {
       maxLines: estimateMaxLines(box.h, fontSize),
       charsPerLine: estimateCharsPerLine(box.w, fontSize),
+      alreadyNormalized: true,
     });
     const chunk = Array.isArray(pageChunks) && pageChunks.length > 0 ? pageChunks[0] : [];
     if (chunk.length === 0) {
@@ -429,10 +432,8 @@ function paginateTableRows(
   for (const [start, end] of chunks) {
     const s = clone(slideSpec);
     s.title = contTitle(slideSpec.title, out.length, titleMaxChars);
-    s.table = {
-      headers,
-      rows: table.rows.slice(start, end),
-    };
+    s.table.headers = headers;
+    s.table.rows = table.rows.slice(start, end);
     // Keep notes only on the last page to reduce clutter.
     if (end < table.rows.length) delete s.notes;
     out.push(s);

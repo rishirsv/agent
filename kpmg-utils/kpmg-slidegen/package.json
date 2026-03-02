@@ -22,7 +22,10 @@
     "test:visual:business-overview": "node scripts/test-business-overview-visual-regressions.mjs",
     "test:visual:callouts-dense": "node scripts/test-callouts-dense-visual-regressions.mjs",
     "test:visual:bullet-nesting": "node scripts/test-bullet-nesting-visual-regressions.mjs",
+    "test:pagination:one-column-merge": "node scripts/test-pagination-one-column-merge-regression.mjs",
+    "test:pagination:table-metadata": "node scripts/test-pagination-analysis-narrow-table-metadata-regression.mjs",
     "test:validation:bullet-nesting": "node scripts/test-bullet-nesting-validation.mjs",
+    "test:validation:table-shape": "node scripts/test-validation-table-shape-regression.mjs",
     "validate:visual": "node scripts/validate-visual.mjs",
     "dev:cover": "node scripts/dev/render-cover-sample.mjs",
     "dev:analysis-narrow": "node scripts/dev/render-analysis-narrow-sample.mjs"

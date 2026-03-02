@@ -104,7 +104,7 @@ function isMissingSlotValue(value, def = {}) {
   if (kind === 'textArray' || kind === 'stringArray' || kind === 'kpiArray' || kind === 'columns' || kind === 'contentsSections') {
     return !Array.isArray(value) || value.length === 0;
   }
-  if (kind === 'table') return !isPlainObject(value) || !Array.isArray(value.rows) || value.rows.length === 0;
+  if (kind === 'table') return !isPlainObject(value);
   if (kind === 'chart') return !isPlainObject(value) || !Array.isArray(value.data) || value.data.length === 0;
   if (kind === 'bridge') return !isPlainObject(value) || !Array.isArray(value.steps) || value.steps.length === 0;
   if (kind === 'businessStructure') return !isPlainObject(value);
@@ -369,12 +369,29 @@ function validateTypedSlotValue(slotName, def, value) {
       fail('must be an object');
       return { errors, warnings, quantity, charCount };
     }
-    if (!Array.isArray(value.headers)) fail('must include headers array');
-    if (!Array.isArray(value.rows)) fail('must include rows array');
-    if (Array.isArray(value.rows)) {
-      const invalidRows = value.rows.filter((row) => !Array.isArray(row)).length;
-      if (invalidRows > 0) fail(`contains ${invalidRows} non-array row(s)`);
+    if (!Array.isArray(value.headers)) {
+      fail('must include headers array');
+      return { errors, warnings, quantity, charCount };
     }
+    if (!Array.isArray(value.rows)) {
+      fail('must include rows array');
+      return { errors, warnings, quantity, charCount };
+    }
+    if (value.headers.length === 0) {
+      fail('headers must contain at least 1 item');
+    }
+    if (value.rows.length === 0) {
+      fail('rows must contain at least 1 row');
+    }
+    value.rows.forEach((row, rowIdx) => {
+      if (!Array.isArray(row)) {
+        fail(`row ${rowIdx + 1} must be an array`);
+        return;
+      }
+      if (value.headers.length > 0 && row.length !== value.headers.length) {
+        fail(`row ${rowIdx + 1} has ${row.length} cell(s); expected ${value.headers.length} to match headers`);
+      }
+    });
     return { errors, warnings, quantity, charCount };
   }
 
