@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-02T20:58:46.250Z",
+  "generatedAt": "2026-03-02T21:10:37.721Z",
   "entries": [
     {
       "source": "generator/app/cli.js",
@@ -215,8 +215,8 @@
     {
       "source": "generator/postprocess/slides-runtime/ensure_raster_image.py",
       "target": "skills/kpmg-slides/assets/slidegen/generator/postprocess/slides-runtime/ensure_raster_image.py",
-      "size": 6364,
-      "sha256": "3708b8ade8c7d6c46bb0915fbdfdbbd9880725db06aeb822ccebecc434ebe835"
+      "size": 2106,
+      "sha256": "6f2b2de26121505857bf42e5937e36a9e346e8eff9dfa7ce9236e967792b155a"
     },
     {
       "source": "generator/postprocess/slides-runtime/render_slides.py",

@@ -12,14 +12,14 @@ This skill is a **general-purpose, consulting-grade slide writer** that generate
 ## Dependencies
 
 - `npm install` - installs `pptxgenjs` and `image-size` used by the generator
-- `python3 -m pip install pdf2image Pillow` - preview and montage runtime
+- `python3 -m pip install pdf2image Pillow numpy python-pptx` - preview, montage, and overflow runtime
 - LibreOffice (`soffice`) - PPTX to PDF conversion
 - Poppler (`pdftoppm`, `pdfinfo`) - PDF to images
 
 Install location:
 
 - Run `npm install` from the repo root (`kpmg-slidegen/`).
-- `python3 -m pip install pdf2image Pillow` can be run from any directory.
+- `python3 -m pip install pdf2image Pillow numpy python-pptx` can be run from any directory.
 
 ## Workflow Decision Tree
 

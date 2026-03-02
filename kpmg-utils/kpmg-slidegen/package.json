@@ -24,6 +24,7 @@
     "test:visual:callouts-dense": "node scripts/test-callouts-dense-visual-regressions.mjs",
     "test:visual:bullet-nesting": "node scripts/test-bullet-nesting-visual-regressions.mjs",
     "test:visual:theme-missing-layouts": "node scripts/test-theme-missing-layouts-visual-regressions.mjs",
+    "test:visual:reference-parity": "node scripts/test-reference-slide-parity.mjs",
     "test:pagination:one-column-merge": "node scripts/test-pagination-one-column-merge-regression.mjs",
     "test:pagination:contents-sections": "node scripts/test-pagination-contents-sections-regression.mjs",
     "test:pagination:contents-qa": "node scripts/test-contents-pagination-qa-regression.mjs",

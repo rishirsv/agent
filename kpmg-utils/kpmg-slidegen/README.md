@@ -278,6 +278,17 @@ npm run dev:analysis-narrow
 - Validates montage exists and is non-empty.
 - Validates overflow result structure and indices.
 
+For deterministic new-layout onboarding against a reference PPTX slide, use:
+
+```bash
+npm run test:visual:reference-parity -- \
+  --reference-pptx /abs/path/reference.pptx \
+  --reference-slide 1 \
+  --candidate-deck decks/<candidate>.deckSpec.json
+```
+
+This gate only passes when candidate and reference slide PNGs have matching dimensions and identical SHA-256 hashes.
+
 ## 9.1) Golden QA Contract Workflow
 
 `node scripts/test-qa-golden.mjs` verifies QA report contract shape against a checked-in golden fixture.
@@ -321,3 +332,4 @@ Prerequisites for visual checks:
 - Machine-readable slot schema: `docs/DECKSPEC-SLOTS-SCHEMA.json`
 - Model authoring playbook: `docs/DECK-AUTHORING-PLAYBOOK.md`
 - Current implementation checklist: `docs/refactor-implementation-plan.md`
+- Deterministic layout onboarding workflow: `docs/workflows/deterministic-layout-onboarding.md`
