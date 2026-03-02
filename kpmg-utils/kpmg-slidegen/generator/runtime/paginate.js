@@ -16,6 +16,7 @@ import {
   computeAnalysisWideChartTableTextGeometry,
 } from '../helpers/analysis-wide-layout.js';
 const BODY_FONT_SIZE = 10;
+const CONTENTS_SECTIONS_PER_SLIDE = 10;
 const TABLE_ROW_HEIGHT_CAP = 0.9;
 const TABLE_ROW_DENSITY_LINE_THRESHOLD = 7;
 const TABLE_ROW_DENSITY_HEIGHT_THRESHOLD = 0.82;
@@ -323,6 +324,20 @@ function paginateBridgeAnalysisColumns(slideSpec, geometry, { titleMaxChars = nu
   return out;
 }
 
+function paginateContentsSections(slideSpec, { titleMaxChars = null } = {}) {
+  const sections = Array.isArray(slideSpec?.sections) ? slideSpec.sections : [];
+  if (sections.length <= CONTENTS_SECTIONS_PER_SLIDE) return [slideSpec];
+
+  const out = [];
+  for (let start = 0; start < sections.length; start += CONTENTS_SECTIONS_PER_SLIDE) {
+    const s = clone(slideSpec);
+    s.title = contTitle(slideSpec.title, out.length, titleMaxChars);
+    s.sections = sections.slice(start, start + CONTENTS_SECTIONS_PER_SLIDE);
+    out.push(s);
+  }
+  return out;
+}
+
 function paginateTableRows(
   slideSpec,
   geometry,
@@ -623,6 +638,14 @@ export function paginateDeckSpec(deckSpec, layouts) {
       });
       const originalCount = Array.isArray(slideSpec?.table?.rows) ? slideSpec.table.rows.length : 0;
       recordSplit(slideIndex, type, 'table-rows', originalCount, paged.length);
+      out.slides.push(...paged);
+      continue;
+    }
+
+    if (type === 'contents') {
+      const paged = paginateContentsSections(slideSpec, { titleMaxChars });
+      const originalCount = Array.isArray(slideSpec.sections) ? slideSpec.sections.length : 0;
+      recordSplit(slideIndex, type, 'contents-sections', originalCount, paged.length);
       out.slides.push(...paged);
       continue;
     }
