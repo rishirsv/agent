@@ -1,0 +1,439 @@
+{
+  "metadata": {
+    "title": "PartyThrow Tech Diligence Storyline",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Mid-size SaaS commercial and financial diligence",
+    "documentClassification": "KPMG Confidential",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca"
+    },
+    "textAmount": "md",
+    "densityProfile": "dense",
+    "slideCountPolicy": "user",
+    "styleIntent": "diligence",
+    "allowSparse": false
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "PartyThrow Tech: Mid-Market SaaS Diligence",
+      "subtitle": "Management diligence storyline for simulated EdTech target, period covered January 2023 to December 2025"
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        {
+          "number": "01",
+          "title": "Executive Summary",
+          "items": [
+            "What the numbers say about investment quality",
+            "Why growth quality is good but not risk free"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Market and Product",
+          "items": [
+            "Positioning in EdTech SaaS and packaging model",
+            "Commercial design supports upsell path"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Growth Quality",
+          "items": [
+            "ARR and customer trend evidence",
+            "Net new MRR durability and churn pressure"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Unit Economics",
+          "items": [
+            "Margins, operating leverage, and cash conversion",
+            "Collections and working capital discipline"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Risks and Recommendations",
+          "items": [
+            "Priority diligence risks",
+            "100-day actions and next-step asks"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "Executive Summary"
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Revenue scaled 27.5% CAGR with margin resilience",
+      "strapline": "Top-line expansion and stable gross margin indicate a scalable software model, with operating margin recovery visible in 2025.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Revenue expanded from $64.7M in 2023 to $105.1M in 2025, implying 27.5% CAGR across the observed period and sustained demand momentum.",
+        "Gross margin remained 73.2% in each year, suggesting limited gross margin dilution as the company scaled customer and ARR volume.",
+        "Operating margin dipped to 13.2% in 2024 during growth investment then recovered to 14.9% in 2025, indicating emerging operating discipline.",
+        "Implication: the baseline case supports a quality-growth narrative if churn and working-capital volatility are contained in underwriting assumptions."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Revenue ($M)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [64.7, 83.2, 105.1]
+          },
+          {
+            "name": "Gross margin (%)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [73.2, 73.2, 73.2]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M / %"
+        },
+        "source": "Source: income_statement.xlsx (2023-2025)"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Investment case is attractive with clear watchouts",
+      "strapline": "The core thesis is growth at scale with strong software margins, balanced by concentration of execution risks in churn and QoE items.",
+      "table": {
+        "headers": ["Dimension", "Evidence", "Read-through", "Diligence view"],
+        "rows": [
+          ["Scale trajectory", "Revenue +62.5% (2023-2025)", "Demand and GTM execution", "Strength"],
+          ["Recurring engine", "ARR $80.5M to $135.2M", "Contracted base improving", "Strength"],
+          ["Margin profile", "Gross margin 73.2% each year", "Healthy SaaS economics", "Strength"],
+          ["Retention pressure", "7 customer losses, -$8.0M impact", "Potential growth volatility", "Watchout"],
+          ["QoE complexity", "10 flagged QoE issues", "Normalization needed", "Watchout"]
+        ]
+      },
+      "insights": [
+        "Core strengths support the investment case, but quality of growth remains sensitive to retention outcomes and EBITDA normalization assumptions.",
+        "Underwriting should include churn downside and explicit QoE adjustments before valuation and leverage are finalized."
+      ],
+      "notes": "Source: verification_report.json, income_statement.xlsx, mrr_analysis.xlsx, nwc_schedule.xlsx"
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "02",
+      "sectionTitle": "Market and Product"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "EdTech positioning supports continued expansion",
+      "strapline": "The company is positioned as a mid-market cloud platform with a credible path to grow share through product depth and enterprise motion.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Market context", "subheader": true },
+        "PartyThrow Tech operates in the EdTech software segment where buyers prioritize reliability, integration quality, and measurable learning outcomes.",
+        "Management has built a base of 1,834 customers with growth milestones since launch, indicating product-market fit beyond early adopter cohorts.",
+        { "text": "Competitive posture", "subheader": true },
+        "Current positioning is strongest in mid-market accounts where the platform offers meaningful functionality at lower complexity than large-suite alternatives.",
+        "Commercial momentum suggests room to move up-market if implementation quality and customer success coverage stay aligned to higher-contract accounts.",
+        { "text": "Implication", "subheader": true },
+        "Market narrative supports upside, but diligence should validate win-loss dynamics and pipeline conversion assumptions by segment before value creation planning."
+      ],
+      "source": "Source: company_seed.json, cim.md, customer_master.xlsx"
+    },
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Three-tier packaging supports land-and-expand",
+      "strapline": "Plan architecture offers clear entry, growth, and enterprise tiers, which supports segmentation and staged upsell motions.",
+      "heading": "Current packaging and list pricing",
+      "bodyStyle": "bullets",
+      "body": [
+        "Starter, Professional, and Enterprise plans create a natural progression path that can support both SMB acquisition and upmarket expansion.",
+        "Current active subscriptions skew to enterprise count and MRR in the simulated dataset, which boosts scale but can raise concentration sensitivity.",
+        "Average monthly prices of $99, $299, and $999 create clear value ladders, making packaging understandable for sales and finance forecasting.",
+        "Implication: value creation should focus on expansion playbooks and retention controls to protect enterprise-heavy recurring revenue streams."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Active customers by plan",
+            "labels": ["Starter", "Professional", "Enterprise"],
+            "values": [511, 484, 578]
+          },
+          {
+            "name": "Base MRR by plan ($000)",
+            "labels": ["Starter", "Professional", "Enterprise"],
+            "values": [64.3, 287.2, 3184.6]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Customers / $000 MRR"
+        },
+        "source": "Source: subscription_register.xlsx (active status)"
+      },
+      "table": {
+        "headers": ["Plan", "Monthly Price", "Annual Price", "Target segment"],
+        "rows": [
+          ["Starter", "$99", "$990", "Entry and pilot buyers"],
+          ["Professional", "$299", "$2,990", "Growth accounts"],
+          ["Enterprise", "$999", "$9,990", "Scaled institutions"]
+        ]
+      },
+      "noteSource": "Source: product_plan_master.xlsx, subscription_register.xlsx"
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "03",
+      "sectionTitle": "Growth Quality"
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "ARR reached $135.2M with sustained momentum",
+      "strapline": "Year-end recurring revenue increased each year, supporting a durable growth narrative at the topline recurring level.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Year-end ARR increased from $80.5M in 2023 to $101.2M in 2024 and $135.2M in 2025, reflecting broad recurring base expansion.",
+        "The largest absolute increase occurred in 2025, showing acceleration despite known churn events and prior investment-cycle variability.",
+        "Recurring revenue growth remained ahead of fixed overhead growth, which supports the case for margin resilience over the medium term.",
+        "Implication: valuation can anchor on recurring scale, but diligence should test retention durability and cohort behavior by plan tier."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Year-end ARR ($M)",
+            "labels": ["2023-12", "2024-12", "2025-12"],
+            "values": [80.5, 101.2, 135.2]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: mrr_analysis.xlsx"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Customer base tripled as ARPU normalized",
+      "strapline": "Scale came from a large increase in active customers, with expected ARPU normalization as the company broadened into lower-ticket cohorts.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Active customers increased from 562 at 2023 year-end to 1,649 at 2025 year-end, which demonstrates strong customer acquisition throughput.",
+        "Average MRR per active customer declined from $11.9k to $6.8k over the same period as mix broadened across plans and newer cohorts.",
+        "This mix shift is not inherently negative, but it raises the importance of disciplined upsell and retention motions to protect lifetime value.",
+        "Implication: growth quality remains favorable if future bookings maintain healthy cohort retention and expansion rates post-onboarding."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Active customers",
+            "labels": ["2023-12", "2024-12", "2025-12"],
+            "values": [562, 1102, 1649]
+          },
+          {
+            "name": "Avg MRR per customer ($)",
+            "labels": ["2023-12", "2024-12", "2025-12"],
+            "values": [11934, 7649, 6832]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Count / $"
+        },
+        "source": "Source: mrr_analysis.xlsx"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Net new MRR stayed positive despite churn",
+      "strapline": "Quarterly acquisition and expansion generally outpaced churn, though churn volatility remains a material diligence watchpoint.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Across quarter-end snapshots, new plus expansion MRR exceeded churn in each period, producing positive net new recurring contribution.",
+        "Churn spikes are visible in multiple quarters and align with verification flags that identify seven customer losses totaling about $8.0M impact.",
+        "Growth durability therefore depends on reducing preventable churn while preserving expansion productivity across mature cohorts.",
+        "Implication: value creation should prioritize customer health scoring, renewal process rigor, and at-risk account intervention capacity."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "New MRR ($000)",
+            "labels": ["Q1-23", "Q2-23", "Q3-23", "Q4-23", "Q1-24", "Q2-24", "Q3-24", "Q4-24", "Q1-25", "Q2-25", "Q3-25", "Q4-25"],
+            "values": [234.5, 164.7, 337.5, 242.5, 249.8, 266.7, 259.9, 275.1, 259.5, 617.4, 406.6, 462.8]
+          },
+          {
+            "name": "Churned MRR ($000)",
+            "labels": ["Q1-23", "Q2-23", "Q3-23", "Q4-23", "Q1-24", "Q2-24", "Q3-24", "Q4-24", "Q1-25", "Q2-25", "Q3-25", "Q4-25"],
+            "values": [124.8, 54.5, 172.2, 100.6, 91.4, 202.3, 98.0, 87.4, 278.9, 170.1, 256.1, 269.7]
+          },
+          {
+            "name": "Expansion MRR ($000)",
+            "labels": ["Q1-23", "Q2-23", "Q3-23", "Q4-23", "Q1-24", "Q2-24", "Q3-24", "Q4-24", "Q1-25", "Q2-25", "Q3-25", "Q4-25"],
+            "values": [132.1, 107.9, 71.4, 73.0, 69.6, 163.7, 170.6, 115.7, 180.9, 112.3, 263.4, 229.1]
+          }
+        ],
+        "opts": {
+          "showValue": false,
+          "showLegend": true,
+          "valAxisTitle": "$000"
+        },
+        "source": "Source: mrr_analysis.xlsx (quarter-end periods)"
+      }
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "04",
+      "sectionTitle": "Unit Economics"
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Gross profit expanded with stable unit economics",
+      "strapline": "Consistent gross margin and rising gross profit indicate favorable unit economics at current product and support cost structure.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Gross profit increased from $47.3M in 2023 to $76.9M in 2025 while gross margin remained flat at 73.2% throughout the period.",
+        "This pattern indicates that incremental revenue was not purchased through structural COGS inflation, supporting confidence in SaaS cost architecture.",
+        "As scale grows, stable gross margin provides room to absorb controlled GTM and product investments without impairing core economics.",
+        "Implication: management can prioritize growth initiatives while maintaining disciplined margin guardrails in annual planning cycles."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Revenue ($M)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [64.7, 83.2, 105.1]
+          },
+          {
+            "name": "Gross profit ($M)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [47.3, 60.9, 76.9]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M"
+        },
+        "source": "Source: income_statement.xlsx"
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Operating leverage is improving post-2024 dip",
+      "strapline": "Operating margin compression in 2024 appears temporary, with recovery in 2025 as revenue growth outpaced opex growth.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Operating income rose from $10.3M in 2023 to $15.6M in 2025 despite a temporary margin trough in 2024.",
+        "Operating margin moved from 15.9% to 13.2% then recovered to 14.9%, consistent with investment-led compression followed by scale efficiency.",
+        "Opex increased in absolute terms but remained manageable relative to recurring growth, supporting an improving leverage trajectory.",
+        "Implication: base-case underwriting can assume modest margin expansion if retention and GTM productivity are actively managed."
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Operating margin (%)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [15.9, 13.2, 14.9]
+          },
+          {
+            "name": "Net margin (%)",
+            "labels": ["2023", "2024", "2025"],
+            "values": [15.9, 13.2, 14.9]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "%"
+        },
+        "source": "Source: income_statement.xlsx"
+      }
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Collections and NWC need tighter controls",
+      "strapline": "Aging quality is currently acceptable, but working-capital volatility signals the need for stronger forecasting and collections cadence.",
+      "table": {
+        "headers": ["Metric", "Current", "Observation", "Implication"],
+        "rows": [
+          ["AR Current bucket", "$11.4M (70.1%)", "Majority current", "Healthy baseline"],
+          ["AR >60 days", "$0.36M (2.2%)", "Limited deep aging", "Manageable risk"],
+          ["AP Current bucket", "$4.27M (77.5%)", "Timely payables profile", "No immediate stress"],
+          ["Dec-25 AR balance", "$16.23M", "Large absolute receivables", "Cash timing sensitive"],
+          ["Q4-25 operating NWC", "-$3.34M", "Sharp quarter-end swing", "Forecast discipline needed"],
+          ["NWC as % revenue", "-29.7% (Dec-25)", "High volatility over quarters", "Underwrite with caution"]
+        ]
+      },
+      "insights": [
+        "Aging buckets do not show severe delinquency today, but large receivables and volatile operating NWC can distort near-term cash conversion.",
+        "Diligence should stress-test collections assumptions, deferred revenue behavior, and quarter-end working-capital mechanics before close planning."
+      ],
+      "notes": "Source: ar_aging.xlsx, ap_aging.xlsx, nwc_schedule.xlsx"
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "05",
+      "sectionTitle": "Risks and Recommendations"
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Primary risks are identifiable and actionable",
+      "strapline": "Most material risks are concentrated in retention volatility and QoE normalization, both of which can be addressed through focused diligence.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        { "text": "Key risks", "subheader": true },
+        "Customer churn risk: seven identified losses with aggregate impact around $8.0M indicate vulnerability in renewal and customer health coverage.",
+        "QoE adjustment complexity: ten flagged issues include one-time items and standard normalization topics that can change reported run-rate earnings.",
+        "Working-capital timing risk: quarter-end swings in operating NWC can pressure cash conversion and short-term leverage headroom."
+      ],
+      "rightBody": [
+        { "text": "Mitigations", "subheader": true },
+        "Retention program: launch top-account health scoring, executive renewal governance, and early-warning churn intervention in customer success.",
+        "QoE workstream: establish normalized EBITDA bridge with documented treatment for one-time events and owner-related adjustments.",
+        "Cash discipline: set weekly receivables and billing cadence controls with rolling 13-week cash visibility through integration planning."
+      ]
+    },
+    {
+      "type": "oneColumnText",
+      "title": "Next steps for diligence-to-value creation handoff",
+      "strapline": "The immediate objective is to close open diligence items while preparing a practical 100-day plan tied to retention, margin, and cash outcomes.",
+      "bodyStyle": "bullets",
+      "body": [
+        { "text": "Transaction diligence priorities", "subheader": true },
+        "Complete QoE normalization with explicit treatment of one-time product launch effects and churn-driven revenue sensitivity scenarios.",
+        "Validate cohort retention and upsell assumptions by plan tier, including renewal timing and customer concentration in top enterprise accounts.",
+        "Reconcile working-capital mechanics to close model, with specific tests on AR collections and deferred revenue conversion behavior.",
+        { "text": "100-day execution priorities", "subheader": true },
+        "Stand up retention control tower, enforce renewal operating rhythm, and align sales-customer success incentives on net revenue outcomes.",
+        "Implement cost governance around growth investments while preserving product roadmap milestones tied to enterprise expansion.",
+        "Define integration KPI pack with monthly tracking for ARR, net new MRR, churn, gross margin, operating margin, and cash conversion."
+      ],
+      "source": "Source: verification_report.json, mrr_analysis.xlsx, income_statement.xlsx, nwc_schedule.xlsx"
+    },
+    {
+      "type": "backCover",
+      "disclaimer": "The information in this presentation is based on a simulated data room and is intended solely for diligence workflow testing. It does not represent investment advice, an audited opinion, or a recommendation to pursue any transaction.",
+      "url": "home.kpmg"
+    }
+  ]
+}

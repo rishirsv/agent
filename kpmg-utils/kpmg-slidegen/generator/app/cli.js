@@ -25,6 +25,15 @@ function parseArgMap(argv = []) {
 }
 
 /**
+ * Build a stable default output root for generation runs.
+ * @returns {string}
+ */
+function buildDefaultOutDir() {
+  const runId = new Date().toISOString().replace(/[:.]/g, '-');
+  return path.join(process.cwd(), 'outputs', 'kpmg-slidegen', runId);
+}
+
+/**
  * Parse and validate generation CLI args.
  * @param {string[]} argv
  * @returns {object}
@@ -32,11 +41,17 @@ function parseArgMap(argv = []) {
 export function parseCliOptions(argv = []) {
   const args = parseArgMap(argv);
   const inPath = args.get('in');
-  const outPath = args.get('out');
+  const outDirArg = args.get('out-dir');
+  const resolvedOutDir = outDirArg
+    ? (path.isAbsolute(outDirArg) ? outDirArg : path.resolve(process.cwd(), outDirArg))
+    : buildDefaultOutDir();
+  const outPath = args.get('out')
+    ? args.get('out')
+    : path.join(resolvedOutDir, 'deck.pptx');
 
-  if (!inPath || !outPath) {
+  if (!inPath) {
     throw new Error(
-      'Usage: node generator/index.js --in <deck.json> --out <out.pptx> [--qa-out <out.qa.json>] [--allow-sparse] [--strict] [--skip-overlap] [--template <name>] [--with-preview] [--with-montage] [--with-visual-overflow] [--preview-width <px>] [--preview-height <px>] [--montage-cols <n>] [--montage-label-mode <number|filename|none>] [--visual-overflow-pad-px <px>]',
+      'Usage: node generator/index.js --in <deck.json> [--out <out.pptx> | --out-dir <dir>] [--qa-out <qa.json>] [--allow-sparse] [--strict] [--skip-overlap] [--template <name>] [--with-preview] [--with-montage] [--with-visual-overflow] [--preview-width <px>] [--preview-height <px>] [--montage-cols <n>] [--montage-label-mode <number|filename|none>] [--visual-overflow-pad-px <px>]',
     );
   }
 
@@ -50,7 +65,8 @@ export function parseCliOptions(argv = []) {
   return {
     inPath,
     outPath,
-    qaOutPath: args.get('qa-out'),
+    outDir: resolvedOutDir,
+    qaOutPath: args.get('qa-out') || path.join(path.dirname(outPath), 'qa.json'),
     templateName: args.get('template') || 'kpmg-diligence',
     allowSparse: Boolean(args.get('allow-sparse')),
     strict,

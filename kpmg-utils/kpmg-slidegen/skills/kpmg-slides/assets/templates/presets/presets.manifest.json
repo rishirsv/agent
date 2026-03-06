@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "presets": [
+    {
+      "id": "minimal",
+      "aliases": [
+        "minimal",
+        "simple"
+      ],
+      "label": "Minimal",
+      "textAmount": "sm",
+      "densityProfile": "dense",
+      "deckSpec": "minimal.deckSpec.json"
+    },
+    {
+      "id": "concise",
+      "aliases": [
+        "concise"
+      ],
+      "label": "Concise",
+      "textAmount": "md",
+      "densityProfile": "dense",
+      "deckSpec": "concise.deckSpec.json"
+    },
+    {
+      "id": "detailed",
+      "aliases": [
+        "detailed"
+      ],
+      "label": "Detailed",
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "deckSpec": "detailed.deckSpec.json"
+    },
+    {
+      "id": "extensive",
+      "aliases": [
+        "extensive",
+        "highest density",
+        "densest"
+      ],
+      "label": "Extensive",
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "deckSpec": "extensive.deckSpec.json"
+    }
+  ]
+}

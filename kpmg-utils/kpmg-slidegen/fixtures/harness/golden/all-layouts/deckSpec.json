@@ -1,0 +1,1170 @@
+{
+  "metadata": {
+    "title": "QA Golden All Layouts Stress Fixture",
+    "textAmount": "lg",
+    "densityProfile": "denser",
+    "subject": "Comprehensive render and pagination regression fixture",
+    "company": "KPMG LLP",
+    "author": "Slidegen QA Harness",
+    "allowSparse": true,
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca/contact"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Slidegen Gold Standard Regression Deck",
+      "subtitle": "All layouts, all slot families, and stress-level content density for deterministic QA and visual baselining."
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        {
+          "number": "01",
+          "title": "Executive framing",
+          "items": [
+            "Objective",
+            "Decision context"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Commercial performance",
+          "items": [
+            "Growth drivers",
+            "Retention quality"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Margin and cost dynamics",
+          "items": [
+            "Bridge",
+            "Sustainability"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Operational resilience",
+          "items": [
+            "Service continuity",
+            "Incident response"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Technology and security",
+          "items": [
+            "Architecture",
+            "Control maturity"
+          ]
+        },
+        {
+          "number": "06",
+          "title": "Data and reporting quality",
+          "items": [
+            "Evidence",
+            "Governance"
+          ]
+        },
+        {
+          "number": "07",
+          "title": "Management actions",
+          "items": [
+            "Roadmap",
+            "Ownership"
+          ]
+        },
+        {
+          "number": "08",
+          "title": "Risk and mitigation",
+          "items": [
+            "Priorities",
+            "Escalations"
+          ]
+        },
+        {
+          "number": "09",
+          "title": "Integration implications",
+          "items": [
+            "Dependencies",
+            "Readiness"
+          ]
+        },
+        {
+          "number": "10",
+          "title": "Synergy perspective",
+          "items": [
+            "Revenue",
+            "Cost"
+          ]
+        },
+        {
+          "number": "11",
+          "title": "Value creation plan",
+          "items": [
+            "Milestones",
+            "KPIs"
+          ]
+        },
+        {
+          "number": "12",
+          "title": "Appendix",
+          "items": [
+            "Methodology",
+            "Definitions"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "Narrative Layout Stress Tests"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "One-Column Compact Governance Summary",
+      "strapline": "Compact narrative to validate non-split one-column behavior with optional callouts and source rendering.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Management introduced tighter monthly governance routines with owner-level accountability, improving closure predictability in routine remediation areas.",
+        "Decision logs now capture rationale and trade-offs, increasing auditability while preserving execution speed in cross-functional workstreams.",
+        "Residual variability remains in evidence quality, but trend direction is favorable relative to prior quarters."
+      ],
+      "callouts": [
+        {
+          "heading": "Compact Case",
+          "body": [
+            "No continuation expected.",
+            "Callout rendering should align to reserved geometry."
+          ]
+        }
+      ],
+      "source": "Source: governance committee minutes and remediation tracker extracts."
+    },
+    {
+      "type": "oneColumnText",
+      "title": "One-Column Deep Dive with Nested Bullets",
+      "strapline": "Dense content designed to force continuation and exercise nested bullet parsing, headers, subheaders, and children.",
+      "bodyStyle": "bullets",
+      "body": [
+        {
+          "text": "What changed across the period",
+          "header": true
+        },
+        "Leadership tightened evidence thresholds for closure and now requires explicit owner sign-off with traceable decision rationale.",
+        {
+          "text": "Execution observations",
+          "children": [
+            "Cross-team handoffs improved after introducing weekly blocker triage with named escalation owners.",
+            {
+              "text": "Residual constraints",
+              "children": [
+                "Capacity remains uneven during release windows, increasing variance in closure timing for dependency-heavy actions.",
+                "Documentation quality still varies by workstream, requiring additional QA cycles before control sign-off."
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Implications for leadership",
+          "subheader": true
+        },
+        "Program governance should prioritize aging high-severity items and align remediation sequencing to operational risk exposure.",
+        "Quarterly calibration workshops should be retained to keep evidence standards consistent across assurance and operations.",
+        "Decision forums should require explicit trade-off logs when remediation timelines are adjusted due to execution constraints.",
+        "KPI reporting should distinguish throughput from durable control effectiveness to avoid superficial closure incentives.",
+        "Management should sustain challenge cadence and use root-cause themes to prioritize systemic fixes over local workarounds.",
+        "Escalation governance recommendation: standardize decision-right thresholds by severity and explicitly document accountable decision owners for every remediation gate to reduce stall risk and coordination ambiguity.",
+        "Evidence quality recommendation: implement a closure-evidence checklist that requires observable control outcome proof, reviewer challenge notes, and cross-functional sign-off before issue completion status changes.",
+        "Operating cadence recommendation: run fortnightly risk-review forums with aging analysis, dependency maps, and unblock decisions so high-impact actions are not delayed by upstream approvals.",
+        "Control design recommendation: codify minimum preventive and detective control design elements so remediation proposals are assessed against consistent quality standards rather than local interpretation.",
+        "Execution integrity recommendation: track reopen rates, exception justifications, and on-time completion confidence indicators to surface recurring quality gaps before audit or regulator challenge.",
+        "Portfolio prioritization recommendation: align remediation sequencing to risk-weighted impact and concentration metrics so scarce delivery capacity is deployed against the highest downside exposures.",
+        "Dependency transparency recommendation: require milestone plans to declare external dependencies, fallback owners, and latest acceptable decision dates for each critical control initiative.",
+        "Management reporting recommendation: provide concise executive packs that explicitly separate status updates from decisions requested, enabling faster intervention on blocked remediation pathways.",
+        "Sustainability recommendation: embed post-implementation checks at 30/60/90 days to validate that controls remain effective after go-live and are not eroded by operational handoff friction.",
+        "Capability recommendation: train control owners on evidence standards, severity calibration, and issue-writing quality so governance data remains decision-useful across all business units.",
+        "Assurance recommendation: introduce periodic independent challenge sessions on a sample of closed items to confirm root-cause remediation was durable and not merely administratively closed.",
+        "Risk appetite recommendation: recalibrate escalation triggers quarterly using incident trends and near-miss indicators to preserve alignment between governance practice and current risk profile.",
+        "Process harmonization recommendation: unify action-tracking taxonomies across teams to reduce reporting translation overhead and improve comparability of closure performance over time.",
+        "Accountability recommendation: publish decision logs with rationale, owner, due date, and revisit criteria to increase transparency and avoid recurring debates on previously resolved exceptions.",
+        "Quality loop recommendation: capture implementation lessons learned in structured retrospectives and convert them into mandatory control design and execution playbook updates."
+      ],
+      "callouts": [
+        {
+          "heading": "Escalation Priority",
+          "body": [
+            "Focus leadership attention on high-severity aging outliers.",
+            "Track reopen rates alongside closure velocity.",
+            "Require evidence quality checks before closure sign-off."
+          ]
+        },
+        {
+          "heading": "Expected Outcome",
+          "body": [
+            "Lower variance in closure timing.",
+            "Higher reliability in executive reporting."
+          ]
+        }
+      ],
+      "source": "Source: control assurance logs, operating review packs, and management status updates."
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "02",
+      "sectionTitle": "Two-Column and Table Stress Tests"
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Two-Column Compact Operating Snapshot",
+      "strapline": "Balanced short-form comparison to validate two-column fit without continuation.",
+      "bodyStyle": "paragraphs",
+      "leftBody": [
+        "Revenue retention remained stable due to stronger account governance and earlier renewal engagement in the quarter.",
+        "Pricing discipline improved through structured approval gates and tighter exception documentation."
+      ],
+      "rightBody": [
+        "Operational reliability benefited from standard incident playbooks and clearer escalation ownership.",
+        "QA throughput improved modestly, though complexity-driven work still exhibits timing variance."
+      ]
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Two-Column Dense Comparative Analysis",
+      "strapline": "Continuation scenario validating split behavior under high-density bilateral narratives.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        {
+          "text": "Commercial pressure points",
+          "header": true
+        },
+        "Pricing governance control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Retention risk control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        {
+          "text": "Near-term mitigations",
+          "children": [
+            "Contract discipline control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Renewal playbooks control narrative 4: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+          ]
+        },
+        "Pipeline quality control narrative 5: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Commercial risk observation 6: regional pricing exceptions continue to expand without consistent approval rationale, reducing comparability and creating uneven margin governance outcomes.",
+        "Commercial risk observation 7: pipeline stage definitions are used inconsistently across teams, weakening forward visibility and reducing confidence in near-term conversion assumptions.",
+        "Commercial risk observation 8: renewal rescue motions often begin late, limiting time for executive intervention and increasing dependency on concession-based retention tactics.",
+        "Commercial risk observation 9: discount governance metrics focus on averages, obscuring tail-risk deals that drive disproportionate value leakage in concentrated segments.",
+        "Commercial risk observation 10: customer health indicators are tracked, but cross-functional follow-through on escalation actions remains variable by account cluster.",
+        "Commercial risk observation 11: forecast challenge forums exist, yet evidence quality for downside assumptions varies enough to delay alignment on corrective actions.",
+        "Commercial risk observation 12: pursuit governance incorporates approval gates, though waiver practices are not centrally trended for repeat-pattern diagnosis.",
+        "Commercial risk observation 13: account transition handoffs are documented, but ownership continuity remains fragile during peak operating periods."
+      ],
+      "rightBody": [
+        {
+          "text": "Operating model pressure points",
+          "header": true
+        },
+        "Delivery capacity control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Control adherence control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        {
+          "text": "Execution safeguards",
+          "children": [
+            "Escalation clarity control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Issue lifecycle hygiene control narrative 4: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+          ]
+        },
+        "QA depth control narrative 5: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Operating model action 6: mandate end-to-end ownership for incident lifecycle stages so accountability remains clear from detection through validated closure.",
+        "Operating model action 7: introduce dependency heatmaps in weekly operations reviews to expose bottlenecks before they cascade into remediation delays.",
+        "Operating model action 8: align role-specific training refresh cycles to process updates so procedure changes are adopted consistently across geographies.",
+        "Operating model action 9: standardize evidence repositories and metadata conventions to reduce review friction and improve assurance traceability.",
+        "Operating model action 10: require executive-ready issue framing with options, trade-offs, and risk impacts in every major escalation pack.",
+        "Operating model action 11: embed challenge checkpoints before closure approvals to verify remediation quality and reduce reopen probability.",
+        "Operating model action 12: automate exception aging alerts tied to risk thresholds so unresolved items trigger timely governance attention.",
+        "Operating model action 13: run quarterly operating retrospectives that track adoption of prior lessons learned and measure realized process lift."
+      ]
+    },
+    {
+      "type": "divider",
+      "sectionNumber": "03",
+      "sectionTitle": "Table and Chart Hybrid Tests"
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Narrow Table Compact Request Register",
+      "strapline": "Compact request table validates baseline table layout, insight panel, and optional notes.",
+      "insightTitle": "Immediate takeaways",
+      "table": {
+        "title": "Priority requests",
+        "heading": "Compact backlog",
+        "headers": [
+          "Priority",
+          "Data request",
+          "Rationale"
+        ],
+        "rows": [
+          [
+            "High",
+            "Customer cohort retention file",
+            "Required for topline durability assessment."
+          ],
+          [
+            "Medium",
+            "Pricing waterfall by segment",
+            "Supports margin bridge validation."
+          ],
+          [
+            "Low",
+            "Legacy lease schedule",
+            "Confirms non-core fixed cost commitments."
+          ]
+        ]
+      },
+      "insights": [
+        "High-priority asks directly affect valuation confidence and should be resolved before confirmatory work starts.",
+        "Medium-priority asks can proceed in parallel with clear owner-level weekly checkpoints."
+      ],
+      "notes": "Source: diligence tracker export and management data room index."
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Narrow Table Dense Direction and Priority Stress",
+      "strapline": "Dense request matrix intentionally exercises direction and priority cell treatment plus insight continuation pressure.",
+      "insightTitle": "Execution implications",
+      "table": {
+        "title": "Detailed request matrix",
+        "heading": "Stress backlog",
+        "headers": [
+          "Priority",
+          "Direction",
+          "Data request",
+          "Rationale",
+          "Detail"
+        ],
+        "rows": [
+          [
+            "High",
+            "up",
+            "Daily churn bridge by cohort and contract tier",
+            "Validates retention risk concentration and forecast quality.",
+            "Needed to reconcile weekly operational updates to monthly reported outcomes."
+          ],
+          [
+            "High",
+            "up",
+            "Gross-to-net pricing movement by product family",
+            "Assesses margin sustainability under changing mix.",
+            "Requires tie-out to discount approval logs and contract metadata."
+          ],
+          [
+            "Medium",
+            "flat",
+            "Implementation backlog aging by dependency class",
+            "Quantifies execution drag in delivery pipeline.",
+            "Used to test staffing adequacy and scheduling discipline assumptions."
+          ],
+          [
+            "Medium",
+            "down",
+            "Incident recurrence by severity and root cause",
+            "Tests whether remediation is durable.",
+            "Links closure evidence quality to repeat-event frequency."
+          ],
+          [
+            "Low",
+            "flat",
+            "Facilities and lease flexibility inventory",
+            "Supports downside case for fixed cost exposure.",
+            "Primarily contextual unless transaction perimeter changes."
+          ]
+        ]
+      },
+      "insights": [
+        "Direction and priority metadata should render predictably while maintaining table readability under denser narrative cells.",
+        "Long-form rationale and detail text is included to pressure row sizing, wrapping, and continuation behavior in deterministic ways."
+      ],
+      "notes": "Source: integrated request tracker and governance commentary extracts."
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Bar with Callouts and Annotations",
+      "strapline": "Primary chart stress case combining dense bullets, callouts, annotations, and chart options pass-through.",
+      "bodyStyle": "bullets",
+      "body": [
+        {
+          "text": "Observed pattern",
+          "header": true
+        },
+        "Bar performance control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Bar performance control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Bar performance control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        {
+          "text": "Interpretation",
+          "subheader": true
+        },
+        "Bar interpretation control narrative 4: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Bar interpretation control narrative 5: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Bar interpretation control narrative 6: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+      ],
+      "callouts": [
+        {
+          "heading": "Action now",
+          "body": [
+            "Prioritize aging high-severity items.",
+            "Increase cadence on dependency triage."
+          ]
+        },
+        {
+          "heading": "Expected effect",
+          "body": [
+            "Lower closure-cycle variance.",
+            "More reliable governance reporting."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Primary Bar",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              44,
+              51,
+              58,
+              66,
+              72,
+              79
+            ]
+          },
+          {
+            "name": "Secondary Bar",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              39,
+              47,
+              53,
+              60,
+              67,
+              73
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for bar chart rendering and label treatment.",
+        "opts": {
+          "showLegend": true,
+          "legendPos": "b"
+        },
+        "annotations": [
+          {
+            "anchor": "topRight",
+            "title": "Inflection",
+            "text": "Momentum accelerates after Q3."
+          },
+          {
+            "anchor": "bottomLeft",
+            "title": "Baseline",
+            "text": "Starting point remains below target range."
+          }
+        ]
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Bar3D",
+      "strapline": "Bar3D chart type coverage with compact narrative and single callout.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Bar3D rendering should preserve value-label readability and palette consistency with the themed chart options pipeline.",
+        "Series progression demonstrates directional improvement while preserving enough variation to test axis and legend behavior.",
+        "The narrative remains compact to represent non-split behavior for chart-heavy layouts.",
+        "Result interpretation remains focused on trend direction and leadership actionability."
+      ],
+      "callouts": [
+        {
+          "heading": "Coverage",
+          "body": [
+            "Bar3D enum validation for schema and renderer mapping."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "bar3d",
+        "data": [
+          {
+            "name": "Primary Bar3D",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              12,
+              16,
+              18,
+              21,
+              25,
+              28
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for bar3d chart rendering and label treatment."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Line",
+      "strapline": "Line chart coverage with multi-series trend data.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Line rendering validates marker and legend behavior under multi-series trend data.",
+        "Trend divergence across the series creates a realistic comparison scenario for management interpretation.",
+        "The test checks that line charts remain legible with standard themed axis settings.",
+        "Callout anchors should remain stable with chart geometry updates."
+      ],
+      "callouts": [
+        {
+          "heading": "Line test",
+          "body": [
+            "Confirms line mapping and series rendering."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Primary Line",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              72,
+              70,
+              68,
+              65,
+              63,
+              60
+            ]
+          },
+          {
+            "name": "Secondary Line",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              69,
+              67,
+              66,
+              63,
+              61,
+              59
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for line chart rendering and label treatment."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Pie",
+      "strapline": "Pie chart coverage focusing on label contrast and segment rendering.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Pie segments test label contrast logic where light and dark wedges coexist in the same chart.",
+        "Distribution intentionally avoids tiny slices to keep readability deterministic across rendering environments.",
+        "Narrative text validates standard paragraph treatment with chart-focused layouts.",
+        "Coverage ensures enum-to-chart-type mapping remains stable for pie rendering."
+      ],
+      "callouts": [
+        {
+          "heading": "Pie test",
+          "body": [
+            "Validates label color adaptation for radial charts."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "pie",
+        "data": [
+          {
+            "name": "Portfolio mix",
+            "labels": [
+              "Core",
+              "Growth",
+              "Transform",
+              "Exit"
+            ],
+            "values": [
+              42,
+              28,
+              19,
+              11
+            ]
+          }
+        ],
+        "source": "Source: portfolio weighting stress fixture."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Doughnut",
+      "strapline": "Doughnut chart coverage for alternate radial geometry.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Doughnut chart behavior should match pie label and color handling while preserving inner-ring composition.",
+        "Segment mix is tuned to verify label placement in both dominant and minority categories.",
+        "This case confirms deterministic rendering across preview and montage pipelines.",
+        "Narrative remains concise to isolate chart behavior from pagination effects."
+      ],
+      "callouts": [
+        {
+          "heading": "Doughnut test",
+          "body": [
+            "Validates radial geometry mapping and contrast handling."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "doughnut",
+        "data": [
+          {
+            "name": "Exposure mix",
+            "labels": [
+              "Stable",
+              "Improving",
+              "Watchlist",
+              "Critical"
+            ],
+            "values": [
+              37,
+              33,
+              20,
+              10
+            ]
+          }
+        ],
+        "source": "Source: risk segmentation stress fixture."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Area",
+      "strapline": "Area chart coverage for cumulative trend visual behavior.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Area rendering checks fill behavior, label color handling, and legend readability for stacked-looking trends.",
+        "Series values are designed to avoid flat-line artifacts while still preserving realistic quarter-over-quarter movement.",
+        "This case is intended to catch regressions in dark-label vs light-label chart treatment.",
+        "Callout placement should stay deterministic as chart area grows with axis scaling."
+      ],
+      "callouts": [
+        {
+          "heading": "Area test",
+          "body": [
+            "Validates area-specific fill and label behavior."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "area",
+        "data": [
+          {
+            "name": "Primary Area",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              18,
+              22,
+              27,
+              31,
+              36,
+              40
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for area chart rendering and label treatment."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Scatter",
+      "strapline": "Scatter chart coverage with ordered label axis and numeric variation.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Scatter rendering validates that numeric series remain visible and interpretable under themed axis settings.",
+        "Point dispersion is intentionally moderate to reduce overlap while still surfacing trend-like movement.",
+        "This scenario helps detect regressions in chart-type map resolution for less-common chart families.",
+        "Supporting narrative remains compact to keep focus on chart mechanics."
+      ],
+      "callouts": [
+        {
+          "heading": "Scatter test",
+          "body": [
+            "Confirms scatter enum mapping and point rendering."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "scatter",
+        "data": [
+          {
+            "name": "Primary Scatter",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              3,
+              5,
+              4,
+              7,
+              6,
+              8
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for scatter chart rendering and label treatment."
+      }
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart Coverage: Radar",
+      "strapline": "Radar chart coverage for radial multi-axis plotting behavior.",
+      "bodyStyle": "paragraphs",
+      "body": [
+        "Radar rendering validates chart-type support for radial comparisons across capability dimensions.",
+        "Values are balanced to test both high and low spokes without collapsing chart geometry.",
+        "This case is a key canary for compatibility drift in third-party chart APIs.",
+        "Callout keeps the slide format consistent with the rest of the chart-coverage suite."
+      ],
+      "callouts": [
+        {
+          "heading": "Radar test",
+          "body": [
+            "Ensures radar chart support remains operational."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "radar",
+        "data": [
+          {
+            "name": "Capability profile",
+            "labels": [
+              "Govern",
+              "Identify",
+              "Protect",
+              "Detect",
+              "Respond",
+              "Recover"
+            ],
+            "values": [
+              61,
+              58,
+              52,
+              49,
+              66,
+              63
+            ]
+          }
+        ],
+        "source": "Source: capability scoring stress fixture."
+      }
+    },
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Wide Chart+Table Dense Continuation Stress",
+      "strapline": "Combined chart, table, body, heading, callouts, and note source to pressure hybrid layout continuation decisions.",
+      "heading": "Function-level synthesis",
+      "bodyStyle": "bullets",
+      "body": [
+        {
+          "text": "Executive interpretation",
+          "header": true
+        },
+        "Hybrid layout interpretation control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid layout interpretation control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid layout interpretation control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid layout interpretation control narrative 4: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        {
+          "text": "Program implication",
+          "subheader": true
+        },
+        "Hybrid program implication control narrative 5: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid program implication control narrative 6: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid program implication control narrative 7: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Hybrid program implication control narrative 8: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+      ],
+      "callouts": [
+        {
+          "heading": "Priority actions",
+          "body": [
+            "Stabilize weak functions before sequencing expansion initiatives.",
+            "Align remediation milestones to operating risk concentration."
+          ]
+        }
+      ],
+      "chart": {
+        "type": "line",
+        "data": [
+          {
+            "name": "Primary Hybrid",
+            "labels": [
+              "Q1",
+              "Q2",
+              "Q3",
+              "Q4",
+              "Q5",
+              "Q6"
+            ],
+            "values": [
+              2.1,
+              2.2,
+              2.3,
+              2.4,
+              2.5,
+              2.6
+            ]
+          }
+        ],
+        "source": "Source: stress dataset for line chart rendering and label treatment."
+      },
+      "table": {
+        "title": "Function summary table",
+        "heading": "Score and actionability",
+        "headers": [
+          "Function",
+          "Avg Score",
+          "Band",
+          "Action window"
+        ],
+        "rows": [
+          [
+            "Govern",
+            "2.3",
+            "Developing",
+            "Q2-Q3"
+          ],
+          [
+            "Identify",
+            "2.2",
+            "Developing",
+            "Q2-Q4"
+          ],
+          [
+            "Protect",
+            "2.0",
+            "Developing",
+            "Q1-Q4"
+          ],
+          [
+            "Detect",
+            "1.9",
+            "Initial",
+            "Q1-Q4"
+          ],
+          [
+            "Respond",
+            "2.7",
+            "Managed",
+            "Q2-Q3"
+          ],
+          [
+            "Recover",
+            "2.5",
+            "Managed",
+            "Q3-Q4"
+          ]
+        ]
+      },
+      "noteSource": "Source: consolidated maturity workbook and function-level remediation tracker."
+    },
+    {
+      "type": "analysisBridge",
+      "title": "Adjusted EBITDA Bridge with Narrative Analysis",
+      "strapline": "Bridge plus multi-column analysis to validate bar rendering, subtotal handling, and dense commentary fit.",
+      "bodyStyle": "paragraphs",
+      "bridge": {
+        "startLabel": "FY22 EBITDA",
+        "endLabel": "TTM FY25 EBITDA",
+        "startValue": 118,
+        "endValue": 176,
+        "unitPrefix": "$",
+        "unitSuffix": "m",
+        "decimals": 0,
+        "tolerance": 0.5,
+        "steps": [
+          {
+            "label": "Volume growth",
+            "delta": 36
+          },
+          {
+            "label": "Pricing discipline",
+            "delta": 18
+          },
+          {
+            "label": "Cost inflation",
+            "delta": -14
+          },
+          {
+            "label": "FY23 subtotal",
+            "kind": "subtotal",
+            "value": 158
+          },
+          {
+            "label": "Efficiency program",
+            "delta": 12
+          },
+          {
+            "label": "Risk controls investment",
+            "delta": -8
+          },
+          {
+            "label": "FY24 subtotal",
+            "kind": "subtotal",
+            "value": 162
+          },
+          {
+            "label": "Mix improvement",
+            "delta": 21
+          },
+          {
+            "label": "Execution drag",
+            "delta": -7
+          }
+        ]
+      },
+      "analysisColumns": [
+        {
+          "heading": "Growth drivers",
+          "body": [
+            "Growth narrative control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Growth narrative control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Growth narrative control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+          ]
+        },
+        {
+          "heading": "Cost offsets",
+          "body": [
+            "Cost narrative control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Cost narrative control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Cost narrative control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+          ]
+        },
+        {
+          "heading": "Forward view",
+          "body": [
+            "Forward narrative control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Forward narrative control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+            "Forward narrative control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+          ]
+        }
+      ],
+      "source": "Source: management bridge pack and audited financial statements.",
+      "note": "Bridge values are illustrative for regression coverage and deterministic rendering checks."
+    },
+    {
+      "type": "businessOverview",
+      "title": "Business Overview with Structure and Trend",
+      "leftHeading": "Legal and ownership structure",
+      "rightHeading": "Operating and performance summary",
+      "bodyStyle": "paragraphs",
+      "structure": {
+        "topTier": [
+          {
+            "label": "Investor A",
+            "pct": "40%"
+          },
+          {
+            "label": "Investor B",
+            "pct": "35%"
+          },
+          {
+            "label": "Investor C",
+            "pct": "25%"
+          }
+        ],
+        "midTier": [
+          {
+            "label": "HoldCo",
+            "pct": "100%"
+          }
+        ],
+        "bottomTier": [
+          {
+            "label": "OpCo North",
+            "pct": "100%"
+          },
+          {
+            "label": "OpCo South",
+            "pct": "85%"
+          },
+          {
+            "label": "Shared Services",
+            "pct": "100%"
+          }
+        ],
+        "links": [
+          {
+            "fromTier": "top",
+            "fromIndex": 0,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 1,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 2,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 1
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 2
+          }
+        ],
+        "perimeter": {
+          "enabled": true,
+          "label": "Transaction perimeter",
+          "subLabel": "Entities under diligence scope"
+        }
+      },
+      "overviewBody": [
+        "Overview narrative control narrative 1: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Overview narrative control narrative 2: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Overview narrative control narrative 3: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage.",
+        "Overview narrative control narrative 4: management reported multi-quarter actions, quantified owner accountability, and evidence quality checks that allow independent challenge on delivery completeness and timeline slippage."
+      ],
+      "chart": {
+        "type": "area",
+        "data": [
+          {
+            "name": "Revenue trend",
+            "labels": [
+              "FY21",
+              "FY22",
+              "FY23",
+              "FY24",
+              "TTM FY25"
+            ],
+            "values": [
+              102,
+              121,
+              139,
+              154,
+              168
+            ]
+          }
+        ],
+        "source": "Source: management accounts trend summary."
+      },
+      "source": "Source: management accounts, legal structure pack, and board reporting extracts.",
+      "note": "Structure and trend are included to stress mixed-shape rendering and spacing rules."
+    },
+    {
+      "type": "titleStrapline4TextBoxes",
+      "title": "Program Workstreams and Ownership",
+      "strapline": "Four-column structure validates heading and body wrapping under compact but meaningful narrative density.",
+      "bodyStyle": "paragraphs",
+      "columns": [
+        {
+          "heading": "Commercial",
+          "body": [
+            "Stabilize renewal execution and improve pricing controls for low-margin cohorts.",
+            "Align pipeline governance with conversion quality metrics."
+          ]
+        },
+        {
+          "heading": "Operations",
+          "body": [
+            "Reduce dependency-driven cycle-time delays with tighter blocker management.",
+            "Standardize delivery QA checkpoints and evidence thresholds."
+          ]
+        },
+        {
+          "heading": "Technology",
+          "body": [
+            "Prioritize control instrumentation in high-change services.",
+            "Sequence release governance improvements with platform migration milestones."
+          ]
+        },
+        {
+          "heading": "Governance",
+          "body": [
+            "Enhance decision logs and escalation clarity for cross-functional initiatives.",
+            "Track durable outcomes, not only closure volume, in executive scorecards."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "backCover",
+      "url": "www.kpmg.com/ca",
+      "disclaimer": "This material has been prepared for discussion purposes in connection with diligence and value-creation planning. It should be read together with supporting schedules, management commentary, and workpapers provided under applicable confidentiality constraints. Distribution, reproduction, or reliance by unauthorized parties is not permitted without prior consent."
+    }
+  ]
+}

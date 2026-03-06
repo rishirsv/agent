@@ -4,9 +4,9 @@ import path from 'node:path';
 import { parseCliOptions } from './app/cli.js';
 import {
   buildPostprocessOptions,
-  buildPostprocessSummary,
   runPostprocessPipelines,
 } from './app/postprocess.js';
+import { buildQaReport } from './app/qa-report.js';
 import { resolveStrictOverflowStatus } from './app/strict-overflow.js';
 import { createSlidesAdapter } from './postprocess/slides-adapter.js';
 import { checkDeckOverlaps } from './strict/overlap.js';
@@ -24,33 +24,9 @@ function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-function isMissingSlotValue(value) {
-  if (value === null || value === undefined) return true;
-  if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'string') return value.trim().length === 0;
-  return false;
-}
-
-function collectMissingSlots(deckSpec, templatePackage) {
-  const missing = [];
-  const slides = Array.isArray(deckSpec?.slides) ? deckSpec.slides : [];
-  slides.forEach((slideSpec, idx) => {
-    const layout = templatePackage?.layouts?.types?.[slideSpec.type];
-    const slots = layout?.slots || {};
-    for (const [slotName, slotDef] of Object.entries(slots)) {
-      if (!slotDef?.required) continue;
-      if (isMissingSlotValue(slideSpec[slotName])) {
-        missing.push({ slideIndex: idx, slideType: slideSpec.type, slot: slotName });
-      }
-    }
-  });
-  return missing;
-}
-
 function getQaPath(outPath, overridePath) {
   if (overridePath) return overridePath;
-  if (/\.pptx$/i.test(outPath)) return outPath.replace(/\.pptx$/i, '.qa.json');
-  return `${outPath}.qa.json`;
+  return path.join(path.dirname(outPath), 'qa.json');
 }
 
 function writeQaReport(qaPath, qaReport) {
@@ -58,114 +34,13 @@ function writeQaReport(qaPath, qaReport) {
   fs.writeFileSync(qaPath, JSON.stringify(qaReport, null, 2));
 }
 
-function dedupeList(items = [], keyFn = (v) => JSON.stringify(v)) {
-  const out = [];
-  const seen = new Set();
-  for (const item of items) {
-    const key = keyFn(item);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(item);
-  }
-  return out;
-}
-
-function buildOverflowRepairSuggestions(overflowEvents = []) {
-  return overflowEvents
-    .filter((event) => Number(event?.splitInto || 0) > 1)
-    .map((event) => ({
-      slideType: event.slideType,
-      slot: null,
-      hook: 'splitSlide',
-      severity: 'info',
-      issueCode: 'auto_split',
-      suggestedRemedy: `Slide was auto-split into ${event.splitInto} pages; keep as split or tighten bullet text.`,
-    }));
-}
-
-function buildOverflowRisks(overflowEvents = []) {
-  return overflowEvents
-    .filter((event) => Number(event?.splitInto || 0) > 1)
-    .map((event) => ({
-      slideIndex: event?.slideIndex,
-      slideType: event?.slideType,
-      mode: event?.mode || 'unknown',
-      splitInto: Number(event?.splitInto || 0),
-      severity: Number(event?.splitInto || 0) >= 3 ? 'warning' : 'info',
-      reason: 'auto_split',
-      suggestedRemedy: `Slide was auto-split into ${event?.splitInto} pages; keep split or tighten content.`,
-    }));
-}
-
-function buildDensitySummary(findings = []) {
-  const summary = { ok: 0, thin: 0, sparse: 0 };
-  for (const finding of findings) {
-    if (finding?.status === 'OK') summary.ok += 1;
-    else if (finding?.status === 'thin but acceptable') summary.thin += 1;
-    else if (finding?.status === 'too sparse, should be repaired or flagged') summary.sparse += 1;
-  }
-  return summary;
-}
-
-function buildOverlapFindings(overlapReport) {
-  if (!overlapReport || !Array.isArray(overlapReport.slides)) return [];
-  const findings = [];
-  overlapReport.slides.forEach((slideReport, idx) => {
-    const overlaps = Array.isArray(slideReport?.overlaps) ? slideReport.overlaps : [];
-    if (!overlaps.length) return;
-    const severe = overlaps.filter((item) => item?.severity === 'severe');
-    const warning = overlaps.filter((item) => item?.severity !== 'severe');
-    findings.push({
-      slideNumber: idx + 1,
-      severeCount: severe.length,
-      warningCount: warning.length,
-      examples: overlaps.slice(0, 3).map((item) => ({
-        severity: item?.severity || 'warning',
-        elementPair: `${item?.a?.type || 'unknown'} vs ${item?.b?.type || 'unknown'}`,
-        suggestion: item?.suggestion || '',
-      })),
-    });
-  });
-  return findings;
-}
-
-function buildQaSummary(qaReport, { strictRequested = false } = {}) {
-  const counts = {
-    errors: Array.isArray(qaReport?.errors) ? qaReport.errors.length : 0,
-    warnings: Array.isArray(qaReport?.warnings) ? qaReport.warnings.length : 0,
-    missingSlots: Array.isArray(qaReport?.missingSlots) ? qaReport.missingSlots.length : 0,
-    sparseSlides: Array.isArray(qaReport?.sparseSlides) ? qaReport.sparseSlides.length : 0,
-    thinSlides: Array.isArray(qaReport?.thinSlides) ? qaReport.thinSlides.length : 0,
-    slotIssues: Array.isArray(qaReport?.slotIssues) ? qaReport.slotIssues.length : 0,
-    overflowEvents: Array.isArray(qaReport?.overflowEvents) ? qaReport.overflowEvents.length : 0,
-    overlapSevere: Number(qaReport?.overlapSummary?.severeCount || 0),
-    overlapWarnings: Number(qaReport?.overlapSummary?.warningCount || 0),
-    repairSuggestions: Array.isArray(qaReport?.repairSuggestions)
-      ? qaReport.repairSuggestions.length
-      : 0,
-  };
-  const strictOverflowStatus = Number(qaReport?.strictOverflow?.status ?? 0);
-  const strictFailed = strictRequested && (counts.overlapSevere > 0 || strictOverflowStatus !== 0);
-  const blockingIssues = counts.errors + counts.missingSlots + counts.overlapSevere;
-  return {
-    status: qaReport?.valid && blockingIssues === 0 ? 'pass' : 'fail',
-    inputSlides: Number(qaReport?.inputSlideCount || 0),
-    renderedSlides: Number(qaReport?.outputSlideCount || 0),
-    blockingIssues,
-    advisoryIssues:
-      counts.warnings +
-      counts.sparseSlides +
-      counts.thinSlides +
-      counts.slotIssues +
-      counts.overflowEvents,
-    counts,
-    strict: {
-      requested: strictRequested,
-      failed: strictFailed,
-      overflowStatus: strictRequested ? strictOverflowStatus : null,
-      overflowSkipped: Boolean(qaReport?.strictOverflow?.skipped),
-    },
-  };
+function didStrictChecksFail(qaReport = {}) {
+  return (qaReport?.checks || []).some(
+    (check) =>
+      check?.blocking &&
+      ['overlap', 'visual_overflow'].includes(check?.id) &&
+      ['fail', 'error'].includes(String(check?.status || '')),
+  );
 }
 
 export async function generateToFile(deckSpec, outPath, options = {}) {
@@ -184,46 +59,25 @@ export async function generateToFile(deckSpec, outPath, options = {}) {
       recordWarning(warning);
     }
   }
-  for (const missing of validation?.qa?.missingSlots || collectMissingSlots(deckSpec, templatePackage)) {
+  for (const missing of validation?.qa?.missingSlots || []) {
     recordMissingSlot(missing.slideIndex, missing.slideType, missing.slot);
   }
 
   if (!validation.valid) {
     const diag = stopDiagnostics() || {};
-    const baseRepair = validation?.qa?.repairSuggestions || [];
-    const qaReport = {
-      generatedAt: new Date().toISOString(),
-      template: templatePackage.templateName,
-      valid: false,
-      errors: validation.errors || [],
-      warnings: dedupeList(validation.warnings || [], (item) => String(item)),
-      densityFindings: validation?.qa?.densityFindings || [],
-      densitySummary: buildDensitySummary(validation?.qa?.densityFindings || []),
-      missingSlots: validation?.qa?.missingSlots || [],
-      thinSlides: validation?.qa?.thinSlides || [],
-      sparseSlides: validation?.qa?.sparseSlides || [],
-      slotIssues: validation?.qa?.slotIssues || [],
-      slotMetrics: validation?.qa?.slotMetrics || [],
-      repairSuggestions: dedupeList(
-        baseRepair,
-        (item) =>
-          `${item?.slideIndex ?? ''}|${item?.slideType ?? ''}|${item?.slot ?? ''}|${item?.hook ?? ''}|${item?.suggestedRemedy ?? ''}`,
-      ),
-      pagination: [],
-      overflowRisks: [],
-      masterApplied: [],
-      paginationDecisions: [],
-      overflowEvents: [],
-      tableWarnings: [],
-      recomputeFields: [],
-      fallbacks: diag?.fallbacks || [],
-      overlapSummary: null,
-      strictOverflow: null,
-      inputSlideCount: Array.isArray(deckSpec?.slides) ? deckSpec.slides.length : 0,
-      outputSlideCount: 0,
-      outputPptx: outPath,
-    };
-    qaReport.summary = buildQaSummary(qaReport, { strictRequested: Boolean(options.strict) });
+    const qaReport = buildQaReport({
+      deckSpec,
+      templatePackage,
+      outPath,
+      qaPath,
+      runRoot: options.runRoot || path.dirname(outPath),
+      validation,
+      renderQa: null,
+      overlapReport: null,
+      postprocess: null,
+      strictRequested: Boolean(options.strict),
+      diagnostics: diag,
+    });
     writeQaReport(qaPath, qaReport);
     throw new Error(validation.errors.join('\n'));
   }
@@ -277,61 +131,27 @@ export async function generateToFile(deckSpec, outPath, options = {}) {
   });
 
   const report = stopDiagnostics() || {};
-  const densityFindings = renderQa?.densityFindings || validation?.qa?.densityFindings || [];
-  const overflowRepairSuggestions = buildOverflowRepairSuggestions(renderQa?.overflowEvents || []);
-  const overflowRisks = renderQa?.overflowRisks || buildOverflowRisks(renderQa?.overflowEvents || []);
-  const baseRepairSuggestions = renderQa?.repairSuggestions || validation?.qa?.repairSuggestions || [];
-  const pagination = renderQa?.paginationDecisions || [];
-
-  const qaReport = {
-    generatedAt: new Date().toISOString(),
-    template: templatePackage.templateName,
-    valid: true,
-    errors: [],
-    warnings: dedupeList(
-      [...(validation.warnings || []), ...(renderQa?.warnings || []), ...(report?.warnings || [])],
-      (item) => String(item),
-    ),
-    densityFindings,
-    densitySummary: buildDensitySummary(densityFindings),
-    missingSlots: validation?.qa?.missingSlots || [],
-    thinSlides: validation?.qa?.thinSlides || [],
-    sparseSlides: validation?.qa?.sparseSlides || [],
-    slotIssues: validation?.qa?.slotIssues || [],
-    slotMetrics: renderQa?.slotMetrics || validation?.qa?.slotMetrics || [],
-    repairSuggestions: dedupeList(
-      [...baseRepairSuggestions, ...overflowRepairSuggestions],
-      (item) =>
-        `${item?.slideIndex ?? ''}|${item?.slideType ?? ''}|${item?.slot ?? ''}|${item?.hook ?? ''}|${item?.suggestedRemedy ?? ''}`,
-    ),
-    pagination,
-    overflowRisks,
-    masterApplied: renderQa?.masterApplied || [],
-    paginationDecisions: renderQa?.paginationDecisions || [],
-    overflowEvents: renderQa?.overflowEvents || [],
-    tableWarnings: renderQa?.tableWarnings || [],
-    recomputeFields: renderQa?.recomputeFields || [],
-    fallbacks: report?.fallbacks || [],
-    overlapSummary: overlapReport?.summary || null,
-    overlapFindings: buildOverlapFindings(overlapReport),
-    strictOverflow,
-    inputSlideCount: Array.isArray(deckSpec?.slides) ? deckSpec.slides.length : 0,
-    outputSlideCount: Array.isArray(pptx?._slides) ? pptx._slides.length : 0,
-    outputPptx: outPath,
-  };
-
-  if (postprocess) qaReport.postprocess = postprocess;
-  qaReport.summary = buildQaSummary(qaReport, { strictRequested: Boolean(options.strict) });
-
-  const postprocessSummary = buildPostprocessSummary(postprocess);
-  if (postprocessSummary) {
-    qaReport.summary.postprocess = postprocessSummary;
-  }
+  const qaReport = buildQaReport({
+    deckSpec,
+    templatePackage,
+    outPath,
+    qaPath,
+    runRoot: options.runRoot || path.dirname(outPath),
+    validation: {
+      ...validation,
+      warnings: [...(validation.warnings || []), ...(renderQa?.warnings || []), ...(report?.warnings || [])],
+    },
+    renderQa,
+    overlapReport,
+    postprocess,
+    strictRequested: Boolean(options.strict),
+    diagnostics: report,
+  });
 
   writeQaReport(qaPath, qaReport);
 
   return {
-    strictFailed: qaReport.summary.strict.failed,
+    strictFailed: Boolean(options.strict) && didStrictChecksFail(qaReport),
     strictSummary: qaReport,
     qaPath,
   };
@@ -355,6 +175,7 @@ export async function main(argv = process.argv.slice(2)) {
     template: cli.templateName,
     templatePackage,
     qaPath: cli.qaOutPath,
+    runRoot: cli.outDir,
     allowSparse: cli.allowSparse,
     postprocess: cli.postprocess,
   });
@@ -366,18 +187,18 @@ export async function main(argv = process.argv.slice(2)) {
   console.log(`Generated: ${cli.outPath}`);
   console.log(`QA report: ${result.qaPath}`);
 
-  const postprocess = result?.strictSummary?.postprocess;
-  if (postprocess?.preview?.status === 'ok') {
-    console.log(`Preview images: ${postprocess.preview.outputDir}`);
+  const artifacts = result?.strictSummary?.artifacts || {};
+  if (artifacts?.preview?.status === 'pass') {
+    console.log(`Preview images: ${artifacts.preview.outputDir}`);
   }
-  if (postprocess?.montage?.status === 'ok') {
-    console.log(`Montage: ${postprocess.montage.path}`);
+  if (artifacts?.montage?.status === 'pass') {
+    console.log(`Montage: ${artifacts.montage.path}`);
   }
-  if (postprocess?.overflowVisual?.attempted) {
-    console.log(`Visual overflow: ${postprocess.overflowVisual.status}`);
+  if (artifacts?.overflowVisual?.status) {
+    console.log(`Visual overflow: ${artifacts.overflowVisual.status}`);
   }
 }
 
-if (import.meta.url === `file://${path.resolve(process.argv[1])}`) {
+if (process.argv[1] && import.meta.url === `file://${path.resolve(process.argv[1])}`) {
   main();
 }

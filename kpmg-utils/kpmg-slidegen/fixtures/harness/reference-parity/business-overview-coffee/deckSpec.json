@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "Business Overview Coffee Regression",
+    "textAmount": "xl",
+    "densityProfile": "densest",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "businessOverview",
+      "title": "Business overview",
+      "leftHeading": "Group structure",
+      "rightHeading": "Company overview",
+      "structure": {
+        "topTier": [
+          { "label": "[FAMILY MEMBER 1]", "pct": "21%" },
+          { "label": "[FAMILY MEMBER 2]", "pct": "21%" },
+          { "label": "[FAMILY MEMBER 3]", "pct": "20%" },
+          { "label": "[FAMILY MEMBER 4]", "pct": "19%" },
+          { "label": "[FAMILY MEMBER 5]", "pct": "19%" }
+        ],
+        "midTier": [
+          { "label": "[GROUP FULL NAME]", "pct": "100%" }
+        ],
+        "bottomTier": [
+          { "label": "[ENTITY 1 FULL NAME]", "pct": "79.7%" },
+          { "label": "[ENTITY 2 FULL NAME]", "pct": "40.8%" },
+          { "label": "[ENTITY 3 FULL NAME]", "pct": "37.9%" }
+        ],
+        "perimeter": {
+          "enabled": true,
+          "label": "Transaction perimeter",
+          "subLabel": "Entities under FDD scope of work"
+        }
+      },
+      "overviewBody": [
+        "[GROUP FULL NAME] operates a coffee shop platform under the [BRAND 1] name and adjacent bakery and catering services.",
+        "[ENTITY 1]: Manufactures coffee beans and is the non-exclusive dealer of coffee beverages and machines.",
+        "[ENTITY 2]: Operates [BRAND 1] coffee shops with nationwide coverage and supports owned, franchised, and co-invested stores.",
+        "[ENTITY 3]: Produces bakery products and provides one-stop support for bakery product development.",
+        "[ENTITY 1], [ENTITY 2], and [ENTITY 3] are held by [GROUP NAME] and related family shareholders.",
+        "Shareholder detail and legal ownership considerations are included in Appendix 1."
+      ],
+      "bodyStyle": "bullets",
+      "chart": {
+        "type": "pie",
+        "data": [
+          {
+            "name": "Store mix",
+            "labels": ["Gas station", "Hospital", "Standalone", "Office", "Community mall", "University", "Franchise"],
+            "values": [54, 18, 7, 10, 5, 6, 10]
+          }
+        ],
+        "source": "Source: Brand performance report"
+      },
+      "source": "Source: Presentation of [BRAND 1] business and management interviews."
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "title": "Extensive Starter Deck",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Extensive starter structure",
+    "allowSparse": false,
+    "textAmount": "xl",
+    "densityProfile": "densest",
+    "slideCountPolicy": "auto",
+    "styleIntent": "diligence",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "[Client name] extensive review",
+      "subtitle": "[Scope, audience, timing, and decision focus for the extensive deck]"
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        {
+          "number": "01",
+          "title": "[Executive summary]",
+          "items": [
+            "[Headline findings and investment implications]"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "[Market and operating context]",
+          "items": [
+            "[External context and internal positioning]"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "[Current-state assessment]",
+          "items": [
+            "[Strengths, gaps, and supporting evidence]"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "[Quantitative analysis]",
+          "items": [
+            "[Metrics, trends, and diagnostic evidence]"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "[Risks and controls]",
+          "items": [
+            "[Material risks, root causes, and mitigations]"
+          ]
+        },
+        {
+          "number": "06",
+          "title": "[Recommendations]",
+          "items": [
+            "[Action plan, ownership, and sequencing]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "[Section heading]"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "[One extensive claim]",
+      "strapline": "[One sentence that states the claim, evidence base, and why leadership should care now.]",
+      "bodyStyle": "bullets",
+      "body": [
+        {
+          "text": "[Context]",
+          "subheader": true
+        },
+        "[Summarize the current state with a concrete fact, timing, and ownership implication.]",
+        "[Explain the main pressure point with one piece of evidence and the likely consequence if it is not addressed.]",
+        "[Describe the operational or financial implication in the language of decision-making and sequencing.]",
+        {
+          "text": "[Recommended action]",
+          "subheader": true
+        },
+        "[State the priority action, the first milestone, and the expected benefit.]",
+        "[Name the dependency or risk that could slow execution.]"
+      ],
+      "source": "Source: [Insert source]"
+    },
+    {
+      "type": "twoColumnText",
+      "title": "[Current vs target]",
+      "strapline": "[Use when the audience needs a dense side-by-side comparison with implications.]",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        {
+          "text": "[Current]",
+          "subheader": true
+        },
+        "[Describe today's operating model with evidence.]",
+        "[Explain the control or efficiency gap.]",
+        "[State the business consequence.]",
+        "[Name the risk owner or affected team.]"
+      ],
+      "rightBody": [
+        {
+          "text": "[Target]",
+          "subheader": true
+        },
+        "[Describe the future-state approach.]",
+        "[Explain how it closes the current gap.]",
+        "[State the implementation owner and milestone.]",
+        "[Name the expected benefit or KPI shift.]"
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "[Extensive evidence table]",
+      "strapline": "[Use for a dense metric comparison supported by multiple takeaways.]",
+      "table": {
+        "headers": [
+          "Metric",
+          "Current",
+          "Target",
+          "Gap"
+        ],
+        "rows": [
+          [
+            "Metric A",
+            "12",
+            "15",
+            "3"
+          ],
+          [
+            "Metric B",
+            "5%",
+            "7%",
+            "2%"
+          ],
+          [
+            "Metric C",
+            "10",
+            "12",
+            "2"
+          ],
+          [
+            "Metric D",
+            "3",
+            "4",
+            "1"
+          ],
+          [
+            "Metric E",
+            "72%",
+            "80%",
+            "8%"
+          ],
+          [
+            "Metric F",
+            "8",
+            "10",
+            "2"
+          ],
+          [
+            "Metric G",
+            "14",
+            "18",
+            "4"
+          ],
+          [
+            "Metric H",
+            "22",
+            "28",
+            "6"
+          ],
+          [
+            "Metric I",
+            "31",
+            "36",
+            "5"
+          ],
+          [
+            "Metric J",
+            "44",
+            "50",
+            "6"
+          ]
+        ]
+      },
+      "insights": [
+        "[Call out the largest gap.]",
+        "[Explain the operational implication.]",
+        "[Explain the financial implication.]",
+        "[Name the likely root cause.]",
+        "[State the priority action.]"
+      ]
+    },
+    {
+      "type": "backCover"
+    }
+  ]
+}

@@ -46,35 +46,12 @@ function strictStatusFromVisualOverflow(visualOverflow) {
  */
 export function resolveStrictOverflowStatus({
   strictRequested,
-  adapter,
-  outPath,
   postprocess,
-  postprocessOptions,
 }) {
   if (!strictRequested) return { strictOverflow: { status: 0 }, postprocess };
 
   // Strict mode fails closed: if visual overflow cannot be verified, strict fails.
-  let strictStatus = strictStatusFromVisualOverflow(postprocess?.overflowVisual || null);
-
-  // If strict mode is enabled and visual overflow wasn't run yet, run it once here.
-  if (!strictStatus && postprocess?.availability?.slidesSkill) {
-    const strictVisual = adapter.runVisualOverflow({
-      pptxPath: outPath,
-      width: postprocessOptions.previewWidth,
-      height: postprocessOptions.previewHeight,
-      padPx: postprocessOptions.visualOverflowPadPx,
-    });
-    postprocess.overflowVisual = {
-      attempted: true,
-      status: strictVisual?.status || 'error',
-      reason: strictVisual?.reason || null,
-      stderr: strictVisual?.stderr || null,
-      failingSlides: strictVisual?.failingSlides || [],
-      imagePaths: strictVisual?.imagePaths || [],
-    };
-    strictStatus = strictStatusFromVisualOverflow(postprocess.overflowVisual);
-  }
-
+  const strictStatus = strictStatusFromVisualOverflow(postprocess?.overflowVisual || null);
   if (strictStatus) return { strictOverflow: strictStatus, postprocess };
 
   return {

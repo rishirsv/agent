@@ -3,7 +3,7 @@ status: active
 last-reviewed: 2026-03-06
 review-cycle-days: 14
 source-of-truth: repo audit of kpmg-slidegen tests/docs/scripts plus OpenAI evaluation guidance
-verification-state: partially-verified
+verification-state: verified
 ---
 
 # Agent Harness Engineering Plan
@@ -24,6 +24,72 @@ When this plan is complete, adding a new layout should feel like a guided produc
 4. Get a machine-readable scorecard with exact reasons for failure.
 5. Let the harness drive bounded repair iterations until the layout clears the bar or is explicitly kicked to human review.
 6. Promote the layout into the baseline set only when its fixture pack, artifacts, and docs are complete.
+
+## Phase Outcomes
+
+### Phase 1: Reset the surface
+
+Outcome:
+- The repo has one fixture system, one preset system, and one public harness surface.
+- The old `decks/` pile and one-off test scripts are gone, so contributors cannot accidentally extend the wrong system.
+
+### Phase 2: Normalize machine feedback
+
+Outcome:
+- Every generation run emits one `qa.json` contract that is easy for tests, agents, and humans to read.
+- Verbosity and density settings stop being prompt-only guidance and start showing up in runtime checks.
+
+### Phase 3: Rebuild confidence lanes
+
+Outcome:
+- Fast checks cover contracts, fixtures, structure, render, and distribution.
+- Slower checks cover visual inspection and onboarding evidence without bloating the PR lane.
+
+### Phase 4: Make the bundle portable
+
+Outcome:
+- Parent repo testing remains deep, while the skill bundle only proves sync, portability, and smoke execution.
+- Default output paths work from the caller's working directory instead of repo-local assumptions.
+
+## Implementation Checklist
+
+- [x] 1.0 Replace the legacy fixture and test surface
+  - [x] 1.1 Create curated `fixtures/harness/` fixture packs
+  - [x] 1.2 Create `presets/authoring/` starter deckSpecs for `sm|md|lg|xl`
+  - [x] 1.3 Remove legacy `decks/*.deckSpec.json` inputs and old one-off test scripts
+- [x] 2.0 Re-architect `qa.json`
+  - [x] 2.1 Normalize the report around `schemaVersion`, `run`, `outcome`, `checks`, `findings`, `slides`, and `artifacts`
+  - [x] 2.2 Add runtime verbosity-contract evaluation tied to `textAmount` and `densityProfile`
+  - [x] 2.3 Store artifact paths relative to the run root
+- [x] 3.0 Rebuild the public harness lanes
+  - [x] 3.1 Add contract, fixture, structure, render, visual, onboarding, PR, nightly, and distribution lane scripts
+  - [x] 3.2 Update `package.json` to expose the new lane commands
+  - [x] 3.3 Run and stabilize every lane against the new QA contract
+- [x] 4.0 Make the skill bundle portable and preset-aware
+  - [x] 4.1 Sync parent presets into the bundle
+  - [x] 4.2 Update the runner default output root to `outputs/kpmg-slidegen/<timestamp>/`
+  - [x] 4.3 Repoint bundle smoke verification to the synced presets
+- [x] 5.0 Align docs and close verification
+  - [x] 5.1 Update README, architecture, skill, and QA reference docs for the new contract
+  - [x] 5.2 Record final verification results in this plan
+
+## Final Verification Results
+
+Completed on 2026-03-06:
+
+- `node scripts/test-contracts.mjs`
+- `node scripts/test-fixtures.mjs`
+- `node scripts/test-structure.mjs`
+- `node scripts/test-render.mjs`
+- `node scripts/test-visual.mjs`
+- `node scripts/test-onboarding.mjs`
+- `node scripts/test-dist.mjs`
+- `node scripts/test-pr.mjs`
+- `node scripts/test-nightly.mjs`
+- `npm run -s generate:minimal`
+- `npm run -s generate:concise`
+- `npm run -s generate:detailed`
+- `npm run -s generate:extensive`
 
 ## Harness Principles
 

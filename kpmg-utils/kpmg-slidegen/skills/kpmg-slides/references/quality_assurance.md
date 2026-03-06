@@ -70,24 +70,29 @@ Expected artifacts:
 - `<out-dir>/montage.png`
 
 Classify `qa.json` findings:
-- Blocking: `errors`, missing required slots, unknown types, hard validation failures.
-- High-priority non-blocking: severe overflow/overlap risk, repeated density failures, major visual risk.
-- Advisory: minor warnings that do not prevent delivery.
+- Blocking: `qa.outcome.blockingIssueCount`, blocking `qa.findings`, and blocking checks with status `fail` or `error`.
+- Blocking by policy: missing or invalid `metadata.textAmount` / `metadata.densityProfile` is a hard contract failure, not a warning.
+- High-priority non-blocking: `qa.checks` with status `warn`, repeated verbosity-contract findings, and visual-overflow findings when strict mode is off.
+- Advisory: informational or warning findings that do not prevent delivery.
 
 ## Pagination Policy QA Checks (Mandatory for Paginated Decks)
 
 Run these checks whenever any slide can paginate (`oneColumnText`, `analysisWide*`, `analysisBridge`, `businessOverview`, `analysisNarrowTable`, `contents`):
 
-1. Check `qa.paginationDecisions` (or `qa.pagination`) for:
-   - unexpected `splitInto` spikes
+1. Check the `pagination` entry inside `qa.checks` for:
+   - unexpected split spikes in `details.decisions`
    - incorrect `mode` for slide type
    - missing `policyKey` metadata in decision details
-2. Check `qa.recomputeFields`:
+2. Check `qa.findings` for `auto_split` and table warning codes:
+   - unexpected `splitInto` spikes
+   - incorrect `mode` for slide type
+   - repeat split behavior on slides that should stay single-page
+3. Check `qa.checks[].details.recomputeFields` on the `pagination` check:
    - if contents slides exist and page ranges should update, `contentsPageRanges` should be present.
-3. Check continuation side-effects against expected policy behavior:
+4. Check continuation side-effects against expected policy behavior:
    - `oneColumnText`, `analysisWideChart2ColsText`, `analysisWideChartTableText`: continuation slides should drop `callouts`.
    - `businessOverview`: continuation slides should drop `chart`.
-4. If continuation drops remove essential narrative or evidence unexpectedly, treat as high-priority non-blocking and refactor content (split intentionally or move key content to retained slots).
+5. If continuation drops remove essential narrative or evidence unexpectedly, treat as high-priority non-blocking and refactor content (split intentionally or move key content to retained slots).
 
 ## Phase 2: Deterministic Fix Recipes
 
@@ -201,7 +206,7 @@ pdftoppm -jpeg -r 150 -f N -l N output.pdf slide-fixed
 
 Before delivery, provide:
 - QA mode used (`full`, `fast`, or `skip_subagent_visual`).
-- QA status (`pass`, `pass_with_warnings`, or `blocked`).
+- QA status from `qa.outcome.status` (`pass`, `warn`, `fail`, or `error`).
 - Blocking vs non-blocking summary.
 - Residual risks and recommended next actions.
 - Paths to updated `deckSpec`, `.pptx`, `qa.json`, and preview images.

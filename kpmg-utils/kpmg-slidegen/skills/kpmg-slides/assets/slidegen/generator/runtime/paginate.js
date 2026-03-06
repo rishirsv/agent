@@ -913,6 +913,7 @@ export function paginateDeckSpec(deckSpec, runtimeContext = {}) {
   const out = {
     ...spec,
     slides: [],
+    slideTrace: [],
     paginationDecisions: [],
     overflowEvents: [],
     tableWarnings: [],
@@ -1039,6 +1040,23 @@ export function paginateDeckSpec(deckSpec, runtimeContext = {}) {
 
     applyContinuationDropFields(paged, policy);
     recordSplit(slideIndex, rawType, mode, originalCount, paged.length, { policyKey: policy.key });
+    const outputOffset = out.slides.length;
+    paged.forEach((pagedSlide, pageIndex) => {
+      out.slideTrace.push({
+        inputSlideIndex: slideIndex,
+        outputSlideIndex: outputOffset + pageIndex,
+        slideType: pagedSlide?.type || rawType,
+        sourceSlideType: rawType,
+        pagination: {
+          mode,
+          policyKey: policy.key,
+          pageIndex,
+          pageCount: paged.length,
+          split: paged.length > 1,
+          originalCount,
+        },
+      });
+    });
     out.slides.push(...paged);
   }
 

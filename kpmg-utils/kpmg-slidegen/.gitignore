@@ -5,6 +5,7 @@
 outputs/my-run/
 outputs/strict/
 outputs/runs/
+outputs/kpmg-slidegen/
 outputs/**/preview/
 outputs/**/montage.png
 

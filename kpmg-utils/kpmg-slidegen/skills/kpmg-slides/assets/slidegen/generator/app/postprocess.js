@@ -1,3 +1,5 @@
+import { listPreviewImages } from './artifacts.js';
+
 /**
  * Parse a positive integer-like CLI value with fallback.
  * @param {string|boolean|undefined|number|null} raw
@@ -29,6 +31,7 @@ function createInitialPostprocessReport(availability = {}) {
       reason: null,
       outputDir: null,
       slideImageCount: 0,
+      imagePaths: [],
     },
     montage: {
       attempted: false,
@@ -124,6 +127,7 @@ export function runPostprocessPipelines({ adapter, outPath, options, onWarning }
       stderr: previewResult?.stderr || null,
       outputDir: previewResult?.outputDir || options.previewOutputDir,
       slideImageCount: Number(previewResult?.slideImageCount || 0),
+      imagePaths: listPreviewImages(previewResult?.outputDir || options.previewOutputDir),
       width: options.previewWidth,
       height: options.previewHeight,
     };

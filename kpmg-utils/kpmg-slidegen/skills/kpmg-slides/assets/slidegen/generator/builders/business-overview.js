@@ -16,13 +16,16 @@ import { requireGeometryBox } from '../runtime/geometry-contract.js';
 
 function resolveStyles(theme = null) {
   const resolvedTheme = resolveTheme(theme);
+  const component = resolvedTheme.components?.[THEME_COMPONENT_KEYS.businessOverview] || {};
+  const lines = component.lines || {};
+  const textTokens = resolveTextThemePrimitives(resolvedTheme);
   return {
     fonts: resolvedTheme.fonts,
     colors: {
       primary: resolvedTheme.colors.primary,
       white: resolvedTheme.colors.white,
       black: resolvedTheme.colors.black,
-      pink: resolvedTheme.colors.pink,rr
+      pink: resolvedTheme.colors.pink,
       kpmgBlue: resolvedTheme.colors.kpmgBlue,
       kpmgCyan: resolvedTheme.colors.kpmgCyan,
       orange: resolvedTheme.colors.orange,

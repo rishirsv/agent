@@ -7,7 +7,7 @@ Usage:
   run_kpmg_slides.sh --in <deckspec.json> [--out-dir <dir>]
 
 Defaults:
-  --out-dir outputs/skill-run
+  --out-dir outputs/kpmg-slidegen/<timestamp>
 
 This runner always enables visual postprocess:
   --with-preview --with-montage --with-visual-overflow
@@ -15,7 +15,8 @@ EOF
 }
 
 IN_PATH=""
-OUT_DIR="outputs/skill-run"
+RUN_ID="$(date -u +"%Y-%m-%dT%H-%M-%SZ")"
+OUT_DIR="outputs/kpmg-slidegen/$RUN_ID"
 CALLER_ROOT="$(pwd -P)"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 SKILL_ROOT="$(cd "$SCRIPT_DIR/.." && pwd -P)"
@@ -106,7 +107,7 @@ if [[ "$missing" -ne 0 ]]; then
   exit 1
 fi
 
-POSTPROCESS_SUMMARY=$(node -e "const fs=require('fs');const q=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));const pp=q.postprocess||{};const s=(k)=>pp?.[k]?.status||'not-run';console.log('preview='+s('preview')+' montage='+s('montage')+' overflowVisual='+s('overflowVisual'));" "$QA_OUT")
+POSTPROCESS_SUMMARY=$(node -e "const fs=require('fs');const q=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));const a=q.artifacts||{};const s=(k)=>a?.[k]?.status||'not-run';console.log('preview='+s('preview')+' montage='+s('montage')+' overflowVisual='+s('overflowVisual'));" "$QA_OUT")
 
 echo "DeckSpec: $IN_PATH"
 echo "PPTX: $DECK_OUT"

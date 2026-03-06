@@ -14,12 +14,12 @@ verification-state: partially-verified
 
 # Architecture
 
-This repo converts typed `deckSpec` JSON into a branded `.pptx` and a consolidated QA JSON report. Optional postprocess steps generate preview PNGs, montage PNGs, and visual-overflow diagnostics.
+This repo converts typed `deckSpec` JSON into a branded `.pptx` and a normalized `qa.json` report. Optional postprocess steps generate preview PNGs, montage PNGs, and visual-overflow diagnostics.
 
 ## System Boundary
 
 - Input: `deckSpec` JSON from `--in` (`generator/index.js`).
-- Required outputs: deck at `--out`, QA at `--qa-out` (or auto-derived `.qa.json`).
+- Required outputs: deck at `--out` and `qa.json` beside it by default.
 - Optional outputs: preview/montage/overflow artifacts (`generator/app/postprocess.js`).
 - In scope: generation + validation runtime in `generator/`, template contracts in `templates/kpmg-diligence/package/`.
 - Out of scope: authoring UI, external APIs, long-running services.
@@ -28,7 +28,8 @@ This repo converts typed `deckSpec` JSON into a branded `.pptx` and a consolidat
 
 | Boundary | Responsibility | Primary files |
 | --- | --- | --- |
-| CLI orchestration | Parse flags, load input/template, run generation lifecycle, set exit behavior | `generator/index.js`, `generator/app/cli.js` |
+| CLI orchestration | Parse flags, load input/template, choose portable output paths, run generation lifecycle, set exit behavior | `generator/index.js`, `generator/app/cli.js` |
+| QA assembly | Normalize validation/render/postprocess signal into `qa.json` | `generator/app/qa-report.js` |
 | Postprocess orchestration | Normalize options, run preview/montage/overflow pipelines, publish summary counters | `generator/app/postprocess.js` |
 | Strict overflow policy | Map overflow result to strict status (fail-closed), run overflow when strict needs it | `generator/app/strict-overflow.js` |
 | Template loading | Load token/layout/pagination/assets package and resolve asset paths | `generator/runtime/template-package.js`, `generator/runtime/template-roots.js` |
@@ -61,14 +62,14 @@ flowchart LR
 ```
 
 Flow details:
-1. CLI parsing (`generator/app/cli.js`) requires `--in` and `--out`.
+1. CLI parsing (`generator/app/cli.js`) requires `--in` and defaults output to `outputs/kpmg-slidegen/<timestamp>/` when `--out` is omitted.
 2. Template package loads contract files (`tokens.json`, `layouts.json`, `pagination-policy.json`, `assets/manifest.json`).
 3. Pre-render validation enforces slot shape + density and emits invalid QA when validation fails.
 4. Render path paginates first, then dispatches builder functions by slide type.
 5. Overlap scan runs unless `--skip-overlap` is set.
 6. Optional postprocess runs for explicit flags or strict mode.
 7. Strict overflow is derived from visual overflow only and fails closed.
-8. QA summary determines pass/fail and strict failure status.
+8. QA assembly writes one normalized machine contract with `run`, `outcome`, `checks`, `findings`, `slides`, and `artifacts`.
 
 ## Slide Types and Policy Keys
 
@@ -112,14 +113,14 @@ Source of truth: `generator/runtime/slide-registry.js` plus `templates/kpmg-dili
 
 ## Validation and QA
 
-Validation and QA assembly are centralized in `generator/runtime/render-deck.js` and `generator/index.js`.
+Validation and QA assembly are centralized in `generator/runtime/render-deck.js`, `generator/app/qa-report.js`, and `generator/index.js`.
 
 - Slot kinds validated: `text`, `textArray`, `stringArray`, `kpiArray`, `columns`, `contentsSections`, `table`, `chart`, `bridge`, `businessStructure`.
-- Density statuses: `OK`, `thin but acceptable`, `too sparse, should be repaired or flagged`.
-- Invalid decks still emit QA with `valid: false` and `outputSlideCount: 0`.
-- Render QA includes pagination decisions, overflow events/risks, table warnings, master checks.
-- Overlap QA contributes `overlapSummary`/`overlapFindings`.
-- Strict failure condition: strict requested and (`overlapSevere > 0` or `strictOverflow.status !== 0`).
+- Density statuses remain internal, but the public QA surface normalizes them into `checks`, `findings`, and per-slide summaries.
+- Invalid decks still emit `qa.json`; the `validation` check fails and `run.outputSlideCount` remains `0`.
+- Render QA includes pagination decisions, table warnings, master checks, and per-output-slide trace data.
+- Overlap QA and visual overflow are normalized into blocking/non-blocking findings rather than bespoke top-level fields.
+- Strict failure condition remains fail-closed on overlap and visual overflow.
 
 ## Postprocess Runtime
 
@@ -134,26 +135,25 @@ Validation and QA assembly are centralized in `generator/runtime/render-deck.js`
 ## Verification
 
 ```bash
-node generator/index.js \
-  --in decks/qa-golden-all-layouts.deckSpec.json \
-  --out outputs/verify-arch/deck.pptx \
-  --qa-out outputs/verify-arch/qa.json
+node generator/index.js --in presets/authoring/detailed.deckSpec.json
 ```
 
 ```bash
 node generator/index.js \
-  --in decks/qa-golden-all-layouts.deckSpec.json \
-  --out outputs/verify-arch/strict-deck.pptx \
-  --qa-out outputs/verify-arch/strict-qa.json \
-  --strict
+  --in fixtures/harness/golden/all-layouts/deckSpec.json \
+  --strict \
+  --with-preview \
+  --with-montage \
+  --with-visual-overflow
 ```
 
 ```bash
 npm run -s test:contracts
-npm run -s test:contracts:registry
+npm run -s test:render
 ```
 
 Expected signals:
 - QA files are written.
-- Strict run populates `strictOverflow` and `summary.strict`.
+- `qa.json` includes the normalized sections and relative artifact paths.
+- Strict run fails closed on overlap or visual overflow.
 - Contract tests pass for template/registry/policy consistency.

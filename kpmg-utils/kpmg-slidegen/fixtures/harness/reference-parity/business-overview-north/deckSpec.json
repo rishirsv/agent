@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "Business Overview North Regression",
+    "textAmount": "lg",
+    "densityProfile": "denser",
+    "allowSparse": true
+  },
+  "slides": [
+    {
+      "type": "businessOverview",
+      "title": "Business overview",
+      "leftHeading": "Legal chart",
+      "rightHeading": "Company overview",
+      "structure": {
+        "topTier": [
+          { "label": "Credit Union Central Alberta (CUCA)", "pct": "33.33%" },
+          { "label": "Credit Union Central Manitoba (CUCM)", "pct": "33.33%" },
+          { "label": "Credit Union Central Saskatchewan (CUCS)", "pct": "33.33%" }
+        ],
+        "midTier": [
+          { "label": "Velera", "pct": "51%" },
+          { "label": "Celero Solutions", "pct": "49%" }
+        ],
+        "bottomTier": [
+          { "label": "Everlink Payment Services Inc." }
+        ],
+        "perimeter": {
+          "enabled": true,
+          "label": "Transaction perimeter",
+          "subLabel": "Entities under FDD scope of work"
+        }
+      },
+      "overviewBody": [
+        "Everlink Payment Services Inc. (\"Everlink\") provides payment solutions to financial institutions across Canada.",
+        "Mobile payments and gateway services support transaction processing, settlement, and reporting.",
+        "Card issuance and ATM managed services provide infrastructure and operational support.",
+        "Fraud management and digital solutions support real-time risk controls and payment use cases.",
+        "Growth has been supported by volume expansion across core channels."
+      ],
+      "bodyStyle": "paragraphs",
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "FY22",
+            "labels": ["Mobile", "Gateway", "Card", "Retail", "Fraud"],
+            "values": [13000, 14200, 5100, 2900, 1900]
+          },
+          {
+            "name": "FY23",
+            "labels": ["Mobile", "Gateway", "Card", "Retail", "Fraud"],
+            "values": [17600, 14800, 6400, 3600, 2400]
+          }
+        ],
+        "opts": {
+          "valAxisTitle": "$'000"
+        },
+        "source": "Source: Management reporting pack"
+      },
+      "source": "Source: Audited financial statements and management information.",
+      "note": "Note: Legal ownership percentages shown as at reporting date."
+    }
+  ]
+}

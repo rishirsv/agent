@@ -15,10 +15,10 @@ Template-driven generator that converts `deckSpec` JSON inputs into:
 
 - Edit generation logic only in `generator/`.
 - Keep template contracts in `templates/kpmg-diligence/package/`.
-- Treat `decks/` as input fixtures (not schema source).
+- Treat `fixtures/harness/` as the curated test surface and `presets/authoring/` as user-facing starters.
 - Keep runtime minimal; avoid unnecessary frameworks.
 - Keep docs and code aligned when changing slide types, slot rules, or QA shape.
-- Validate with explicit CLI paths (`--in`, `--out`, `--qa-out`).
+- Validate with explicit CLI paths when you need deterministic artifact locations.
 - Do not add backward-compatibility fallback paths unless explicitly requested.
 
 ## Prerequisites
@@ -40,30 +40,17 @@ npm install
 
 ## Quick Start
 
-Preferred baseline command (explicit input/output paths):
+Preferred baseline command:
 
 ```bash
-node generator/index.js \
-  --in decks/scenario02-saas-mid-diligence.deckSpec.json \
-  --out outputs/my-run/deck.pptx \
-  --qa-out outputs/my-run/qa.json
+npm run generate:detailed
 ```
 
-Strict mode (fail-closed overflow gate):
+Explicit fixture run:
 
 ```bash
 node generator/index.js \
-  --in decks/scenario02-saas-mid-diligence.deckSpec.json \
-  --out outputs/my-run/deck.pptx \
-  --qa-out outputs/my-run/qa.json \
-  --strict
-```
-
-With visual postprocess artifacts:
-
-```bash
-node generator/index.js \
-  --in decks/scenario02-saas-mid-diligence.deckSpec.json \
+  --in fixtures/harness/scenario/saas-mid-diligence/deckSpec.json \
   --out outputs/my-run/deck.pptx \
   --qa-out outputs/my-run/qa.json \
   --with-preview \
@@ -71,11 +58,19 @@ node generator/index.js \
   --with-visual-overflow
 ```
 
+Strict mode (fail-closed overflow gate):
+
+```bash
+node generator/index.js \
+  --in presets/authoring/extensive.deckSpec.json \
+  --strict
+```
+
 ## CLI Reference
 
 ```bash
-node generator/index.js --in <deck.json> --out <out.pptx> \
-  [--qa-out <out.qa.json>] \
+node generator/index.js --in <deck.json> [--out <out.pptx> | --out-dir <dir>] \
+  [--qa-out <qa.json>] \
   [--allow-sparse] \
   [--strict] \
   [--skip-overlap] \
@@ -92,46 +87,45 @@ node generator/index.js --in <deck.json> --out <out.pptx> \
   [--visual-overflow-pad-px <px>]
 ```
 
+If `--out` is omitted, generation writes to `./outputs/kpmg-slidegen/<timestamp>/`.
+
 ## Common Workflows
 
-- `npm run smoke`: fast end-to-end generation smoke test.
-- `npm run qa`: contract + registry + smoke + strict drift checks.
-- `npm run test:contracts`: layout contract coverage.
-- `npm run test:contracts:registry`: registry/policy/template parity checks.
-- `npm run test:qa:golden`: QA golden snapshot regression.
-- `UPDATE_GOLDEN=1 npm run test:qa:golden`: refresh QA golden snapshot intentionally.
-- `npm run test:postprocess`: postprocess success/failure/unavailable matrix.
-- `npm run test:strict:overflow-fail-closed`: strict overflow fail-closed behavior.
-- `npm run test:visual:all`: visual regression suites.
-- `npm run validate:visual`: visual runtime dependency preflight.
-- `npm run skill:sync && npm run skill:verify`: skill bundle sync + portability verification.
+- `npm run generate:minimal|generate:concise|generate:detailed|generate:extensive`: run the four authoring presets.
+- `npm run qa`: fast PR-grade harness lane.
+- `npm run test:contracts`: template, registry, geometry, and pagination-policy parity.
+- `npm run test:fixtures`: curated fixture and preset governance.
+- `npm run test:structure`: validation, pagination, continuation, and verbosity behavior.
+- `npm run test:render`: end-to-end generation plus normalized `qa.json` assertions.
+- `npm run test:visual`: preview, montage, and visual-overflow lane.
+- `npm run test:onboarding`: reference-parity onboarding scorecard lane.
+- `npm run test:dist`: skill bundle sync, portability, and smoke verification.
+- `npm run test:nightly`: full parent harness sweep.
 
 ## Output Artifacts
 
 Main outputs per run:
-- `<out>.pptx`
-- `<qa-out>.json` (or `<out>.qa.json` if `--qa-out` is omitted)
+- `<run-root>/deck.pptx`
+- `<run-root>/qa.json`
 
 QA report includes:
-- `summary` and issue counters
-- `errors`, `warnings`, `missingSlots`, `slotIssues`, `slotMetrics`
-- `densityFindings`, `thinSlides`, `sparseSlides`
-- `pagination`, `overflowEvents`, `overflowRisks`
-- `overlapSummary`, `overlapFindings`
-- `strictOverflow`
-- optional `postprocess` and `summary.postprocess`
+- `schemaVersion`
+- `run`
+- `outcome`
+- `checks`
+- `findings`
+- `slides`
+- `artifacts`
 
 Optional postprocess artifacts:
 - `preview/slide-<n>.png`
 - `montage.png`
-- overflow diagnostic image paths in QA
+- overflow diagnostic image paths in `qa.artifacts.overflowVisual.imagePaths`
 
 ## Troubleshooting
 
-- `npm run generate` or `npm run generate:layouts` fails with missing deck file:
-  - Those scripts currently point at fixtures not present in `decks/`; use explicit CLI commands above.
-- `Usage: node generator/index.js --in ... --out ...`:
-  - `--in` and `--out` are required.
+- `Usage: node generator/index.js --in ...`:
+  - `--in` is required; output paths default to `outputs/kpmg-slidegen/<timestamp>/`.
 - `Unknown type: <type>`:
   - Type must exist in both `templates/kpmg-diligence/package/layouts.json` and `generator/runtime/slide-registry.js`.
 - `Missing required template package file: ...`:
@@ -144,11 +138,10 @@ Optional postprocess artifacts:
 ## Documentation Map
 
 - `ARCHITECTURE.md`: runtime architecture and module boundaries.
-- `docs/project-specs/kpmg-slidegen-spec.md`: system-level specification.
+- `docs/exec-plans/active/agent-harness-engineering-plan.md`: active harness reset plan and implementation checklist.
 - `AGENTS.md`: working rules and repo scope.
-- `docs/workflows/add-layout-contract.md`: add/extend layout contract workflow.
-- `docs/workflows/deterministic-layout-onboarding.md`: deterministic layout onboarding.
-- `docs/workflows/golden-regression-fixture.md`: QA golden fixture workflow.
+- `skills/kpmg-slides/SKILL.md`: portable skill instructions and preset vocabulary.
+- `skills/kpmg-slides/references/quality_assurance.md`: QA triage guide for the normalized `qa.json`.
 - `testing/README.md`: data preparation helpers.
 - `testing/manual-test-plan.md`: manual verification plan.
 - `testing/data/SCENARIO_INPUTS.md`: scenario fixture map.

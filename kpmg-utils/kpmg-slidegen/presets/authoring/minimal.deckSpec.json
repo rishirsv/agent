@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "title": "Minimal Starter Deck",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Minimal starter structure",
+    "allowSparse": false,
+    "textAmount": "sm",
+    "densityProfile": "dense",
+    "slideCountPolicy": "auto",
+    "styleIntent": "diligence",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "[Client name] key messages",
+      "subtitle": "[Scope, audience, and timing]"
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        {
+          "number": "01",
+          "title": "[Executive summary]",
+          "items": [
+            "[Top takeaways]"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "[Evidence]",
+          "items": [
+            "[Supporting facts]"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "[Actions]",
+          "items": [
+            "[Near-term next steps]"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "[Section heading]"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "[One clear claim]",
+      "strapline": "[Explain why this matters now and what decision the audience should make next.]",
+      "bodyStyle": "bullets",
+      "body": [
+        {
+          "text": "[Context]",
+          "subheader": true
+        },
+        "[State the current fact pattern succinctly, including one concrete fact or observation that anchors the discussion.]",
+        {
+          "text": "[Risk]",
+          "subheader": true
+        },
+        "[Name the most material issue and why it affects timing, control, or performance.]",
+        "[State the single management implication and the action leadership should take next.]"
+      ],
+      "source": "Source: [Insert source]"
+    },
+    {
+      "type": "twoColumnText",
+      "title": "[Current vs target]",
+      "strapline": "[Use when leadership needs a compact comparison.]",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        {
+          "text": "[Current]",
+          "subheader": true
+        },
+        "[Summarize today's state with one concrete fact about performance, process, or control.]",
+        "[Name the single most important weakness or constraint in the current approach.]"
+      ],
+      "rightBody": [
+        {
+          "text": "[Target]",
+          "subheader": true
+        },
+        "[State the recommended move and how it improves the current situation.]",
+        "[Name the first action or owner required to start the transition.]"
+      ]
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "[Compact evidence table]",
+      "strapline": "[Use for a small metric comparison.]",
+      "table": {
+        "headers": [
+          "Metric",
+          "Current",
+          "Target"
+        ],
+        "rows": [
+          [
+            "Metric A",
+            "12",
+            "15"
+          ],
+          [
+            "Metric B",
+            "5%",
+            "7%"
+          ],
+          [
+            "Metric C",
+            "10",
+            "12"
+          ],
+          [
+            "Metric D",
+            "3",
+            "4"
+          ]
+        ]
+      },
+      "insights": [
+        "[Call out the largest gap and why it matters for execution or performance.]",
+        "[State the priority action leadership should take in response to the table.]",
+        "[Note the expected benefit if the gap is closed on plan.]"
+      ]
+    },
+    {
+      "type": "backCover"
+    }
+  ]
+}

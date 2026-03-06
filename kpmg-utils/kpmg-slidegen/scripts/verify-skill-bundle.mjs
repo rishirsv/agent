@@ -1,24 +1,18 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
-const REPO_ROOT = process.cwd();
-const SKILL_ROOT = path.join(REPO_ROOT, 'skills', 'kpmg-slides');
+import { REPO_ROOT, resolveRepoPath } from './support.mjs';
+
+const SKILL_ROOT = resolveRepoPath('skills', 'kpmg-slides');
 const MANIFEST_PATH = path.join(SKILL_ROOT, 'assets', 'bundle-manifest.json');
 const SKILL_MD_PATH = path.join(SKILL_ROOT, 'SKILL.md');
 const OPENAI_YAML_PATH = path.join(SKILL_ROOT, 'agents', 'openai.yaml');
 const SKILL_RUNNER_PATH = path.join(SKILL_ROOT, 'scripts', 'run_kpmg_slides.sh');
-const SMOKE_FIXTURE_PATH = path.join(SKILL_ROOT, 'assets', 'templates', 'deckspec-starter.json');
-const SMOKE_OUT_DIR = path.join(REPO_ROOT, 'outputs', 'qa-golden-fixture', 'skill-smoke');
-const BUNDLED_POSTPROCESS_RUNTIME = path.join(
-  SKILL_ROOT,
-  'assets',
-  'slidegen',
-  'generator',
-  'postprocess',
-  'slides-runtime',
-);
+const SMOKE_FIXTURE_PATH = path.join(SKILL_ROOT, 'assets', 'templates', 'presets', 'detailed.deckSpec.json');
+const BUNDLED_POSTPROCESS_RUNTIME = path.join(SKILL_ROOT, 'assets', 'slidegen', 'generator', 'postprocess', 'slides-runtime');
 const REQUIRED_POSTPROCESS_FILES = [
   'render_slides.py',
   'create_montage.py',
@@ -183,23 +177,28 @@ function runSmoke() {
       `Missing canonical smoke fixture: ${path.relative(REPO_ROOT, SMOKE_FIXTURE_PATH)}`,
     );
   }
-  const smoke = spawnSync(
-    'bash',
-    [SKILL_RUNNER_PATH, '--in', SMOKE_FIXTURE_PATH, '--out-dir', SMOKE_OUT_DIR],
-    {
+  const smokeOutDir = fs.mkdtempSync(path.join(os.tmpdir(), 'kpmg-slidegen-skill-smoke-'));
+  try {
+    const smoke = spawnSync(
+      'bash',
+      [SKILL_RUNNER_PATH, '--in', SMOKE_FIXTURE_PATH, '--out-dir', smokeOutDir],
+      {
     cwd: REPO_ROOT,
     encoding: 'utf8',
     env: {
       ...process.env,
       PYTHONDONTWRITEBYTECODE: '1',
     },
-    },
-  );
-  if (smoke.status !== 0) {
-    throw new Error(`Skill smoke failed.\n${smoke.stdout || ''}\n${smoke.stderr || ''}`.trim());
+      },
+    );
+    if (smoke.status !== 0) {
+      throw new Error(`Skill smoke failed.\n${smoke.stdout || ''}\n${smoke.stderr || ''}`.trim());
+    }
+    const output = (smoke.stdout || '').trim();
+    if (output) console.log(output);
+  } finally {
+    fs.rmSync(smokeOutDir, { recursive: true, force: true });
   }
-  const output = (smoke.stdout || '').trim();
-  if (output) console.log(output);
 }
 
 function main() {

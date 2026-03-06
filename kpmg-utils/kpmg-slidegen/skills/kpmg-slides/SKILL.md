@@ -58,11 +58,20 @@ Resolve settings into a deterministic contract before writing any slides.
 Store the contract in `deckSpec.metadata` for traceability:
 
 - `metadata.textAmount`: `sm|md|lg|xl`
-- `metadata.densityProfile`: `dense|denser|densest` (or mirror `textAmount`)
+- `metadata.densityProfile`: `dense|denser|densest`
 - `metadata.slideCountPolicy`: `user|auto`
 - `metadata.styleIntent`: `diligence|strategy|generic`
 
+Always write both `metadata.textAmount` and `metadata.densityProfile` explicitly. The generator no longer infers or defaults missing verbosity metadata.
+
 Set `metadata.allowSparse` to `false` by default. Only set `true` when the user explicitly wants a sparse draft.
+
+Start from the matching starter when possible:
+
+- `assets/templates/presets/minimal.deckSpec.json`
+- `assets/templates/presets/concise.deckSpec.json`
+- `assets/templates/presets/detailed.deckSpec.json`
+- `assets/templates/presets/extensive.deckSpec.json`
 
 #### Settings precedence (binding)
 
@@ -73,6 +82,9 @@ Set `metadata.allowSparse` to `false` by default. Only set `true` when the user 
 - `Concise -> md`
 - `Detailed -> lg`
 - `Extensive -> xl`
+- `simple -> sm + dense`
+- `detailed deck -> lg + denser`
+- `highest density` or `densest -> xl + densest` unless the user explicitly sets a different `textAmount`
 
 3. Else default to `lg`.
 
@@ -354,7 +366,11 @@ Requirements: include slide-level changes, reasons tied to request/contract/QA, 
 Run these from `kpmg-slides/`.
 
 - Copy starter:
-  `cp assets/templates/deckspec-starter.json <name>.deckSpec.json`
+  `cp assets/templates/presets/detailed.deckSpec.json <name>.deckSpec.json`
+- Copy a specific verbosity tier:
+  `cp assets/templates/presets/minimal.deckSpec.json <name>.deckSpec.json`
+  `cp assets/templates/presets/concise.deckSpec.json <name>.deckSpec.json`
+  `cp assets/templates/presets/extensive.deckSpec.json <name>.deckSpec.json`
 - Generate:
   `scripts/run_kpmg_slides.sh --in <name>.deckSpec.json --out-dir <out-dir>`
 

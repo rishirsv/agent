@@ -14,6 +14,7 @@ import {
 } from './paginate.js';
 import { buildRenderContext } from './render-context.js';
 import { resolveRegistryTypeForSlide } from './slide-registry.js';
+import { evaluateVerbosityContract } from './verbosity-contract.js';
 
 function deepClone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -748,6 +749,11 @@ export function validateDeckSpecWithTemplate(deckSpec, templatePackage, options 
   const slotMetrics = [];
   const repairSuggestions = [];
   const allowSparse = Boolean(options.allowSparse || deckSpec?.metadata?.allowSparse);
+  const verbosityContract = evaluateVerbosityContract(deckSpec);
+
+  for (const finding of verbosityContract?.metadata?.errors || []) {
+    errors.push(`metadata: ${finding.message}`);
+  }
 
   if (!deckSpec || typeof deckSpec !== 'object') {
     return {
@@ -762,6 +768,8 @@ export function validateDeckSpecWithTemplate(deckSpec, templatePackage, options 
         slotIssues,
         slotMetrics,
         repairSuggestions,
+        verbosityContract,
+        allowSparse,
       },
     };
   }
@@ -778,6 +786,8 @@ export function validateDeckSpecWithTemplate(deckSpec, templatePackage, options 
         slotIssues,
         slotMetrics,
         repairSuggestions,
+        verbosityContract,
+        allowSparse,
       },
     };
   }
@@ -898,6 +908,8 @@ export function validateDeckSpecWithTemplate(deckSpec, templatePackage, options 
       slotIssues: dedupeSlotIssueRows(slotIssues),
       slotMetrics,
       repairSuggestions: dedupeRepairSuggestions(repairSuggestions),
+      verbosityContract,
+      allowSparse,
     },
   };
 }
@@ -1199,6 +1211,7 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
   const paginationDecisions = paginated?.paginationDecisions || [];
   const overflowEvents = paginated?.overflowEvents || [];
   const tableWarnings = paginated?.tableWarnings || [];
+  const slideTrace = paginated?.slideTrace || [];
   const tableWarningMessages = tableWarnings.map((warning) => formatTableWarningMessage(warning));
   const pagination = paginationDecisions.map((event) => ({ ...event }));
   const overflowRisks = overflowEvents
@@ -1259,6 +1272,8 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
       tableWarnings,
       recomputeFields,
       masterApplied,
+      slideTrace,
+      outputSlideCount: Array.isArray(pptx?._slides) ? pptx._slides.length : 0,
       densityFindings: validation?.qa?.densityFindings || [],
       thinSlides: validation?.qa?.thinSlides || [],
       sparseSlides: validation?.qa?.sparseSlides || [],
@@ -1266,6 +1281,7 @@ export function renderDeck(deckSpec, templatePackage, options = {}) {
       slotIssues: validation?.qa?.slotIssues || [],
       slotMetrics: validation?.qa?.slotMetrics || [],
       repairSuggestions: validation?.qa?.repairSuggestions || [],
+      verbosityContract: validation?.qa?.verbosityContract || null,
     },
   };
 }

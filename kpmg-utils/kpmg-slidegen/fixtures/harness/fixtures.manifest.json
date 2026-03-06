@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "golden-all-layouts",
+      "class": "golden",
+      "owner": "slidegen",
+      "families": [
+        "all"
+      ],
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": true,
+      "origin": "synthetic",
+      "deckSpec": "golden/all-layouts/deckSpec.json"
+    },
+    {
+      "id": "scenario-saas-mid-diligence",
+      "class": "scenario",
+      "owner": "slidegen",
+      "families": [
+        "diligence"
+      ],
+      "textAmount": "md",
+      "densityProfile": "dense",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "scenario/saas-mid-diligence/deckSpec.json"
+    },
+    {
+      "id": "scenario-manufacturing-qoe-extensive",
+      "class": "scenario",
+      "owner": "slidegen",
+      "families": [
+        "qoe"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": false,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "scenario/manufacturing-qoe-extensive/deckSpec.json"
+    },
+    {
+      "id": "scenario-retail-ic-extensive",
+      "class": "scenario",
+      "owner": "slidegen",
+      "families": [
+        "ic"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": false,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "scenario/retail-ic-extensive/deckSpec.json"
+    },
+    {
+      "id": "regression-one-column-overflow",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "oneColumnText"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "regression/one-column-overflow/deckSpec.json"
+    },
+    {
+      "id": "regression-two-column-overflow",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "twoColumnText"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "regression/two-column-overflow/deckSpec.json"
+    },
+    {
+      "id": "regression-analysis-wide-chart-table-overflow",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "analysisWideChartTableText"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "regression/analysis-wide-chart-table-overflow/deckSpec.json"
+    },
+    {
+      "id": "regression-business-overview-overflow",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "businessOverview"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "regression/business-overview-overflow/deckSpec.json"
+    },
+    {
+      "id": "regression-nested-bullets-children",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "oneColumnText"
+      ],
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "regression/nested-bullets-children/deckSpec.json"
+    },
+    {
+      "id": "regression-theme-e2e-all-types",
+      "class": "regression",
+      "owner": "slidegen",
+      "families": [
+        "theme"
+      ],
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": true,
+      "origin": "synthetic",
+      "deckSpec": "regression/theme-e2e-all-types/deckSpec.json"
+    },
+    {
+      "id": "stress-analysis-bridge-overflow",
+      "class": "stress",
+      "owner": "slidegen",
+      "families": [
+        "analysisBridge"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "stress/analysis-bridge-overflow/deckSpec.json"
+    },
+    {
+      "id": "invalid-legacy-nested-bullets",
+      "class": "invalid",
+      "owner": "slidegen",
+      "families": [
+        "oneColumnText"
+      ],
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "expectedOutcome": "fail",
+      "blockingSafe": true,
+      "baselineBearing": false,
+      "origin": "synthetic",
+      "deckSpec": "invalid/legacy-nested-bullets/deckSpec.json"
+    },
+    {
+      "id": "reference-parity-business-overview-coffee",
+      "class": "reference-parity",
+      "owner": "slidegen",
+      "families": [
+        "businessOverview"
+      ],
+      "textAmount": "xl",
+      "densityProfile": "densest",
+      "expectedOutcome": "pass",
+      "blockingSafe": false,
+      "baselineBearing": false,
+      "origin": "reference-derived",
+      "deckSpec": "reference-parity/business-overview-coffee/deckSpec.json",
+      "reference": {
+        "pptx": "../../references/coffee_fdd.pptx",
+        "slideNumber": 1,
+        "candidateSlideNumber": 1
+      }
+    },
+    {
+      "id": "reference-parity-business-overview-north",
+      "class": "reference-parity",
+      "owner": "slidegen",
+      "families": [
+        "businessOverview"
+      ],
+      "textAmount": "lg",
+      "densityProfile": "denser",
+      "expectedOutcome": "pass",
+      "blockingSafe": false,
+      "baselineBearing": false,
+      "origin": "reference-derived",
+      "deckSpec": "reference-parity/business-overview-north/deckSpec.json",
+      "reference": {
+        "pptx": "../../references/north_fdd.pptx",
+        "slideNumber": 1,
+        "candidateSlideNumber": 1
+      }
+    }
+  ]
+}

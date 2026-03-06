@@ -2,8 +2,9 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const REPO_ROOT = process.cwd();
-const SKILL_ROOT = path.join(REPO_ROOT, 'skills', 'kpmg-slides');
+import { REPO_ROOT, resolveRepoPath } from './support.mjs';
+
+const SKILL_ROOT = resolveRepoPath('skills', 'kpmg-slides');
 const MANIFEST_PATH = path.join(SKILL_ROOT, 'assets', 'bundle-manifest.json');
 
 const DIRECTORY_SYNC_MAP = [
@@ -15,13 +16,17 @@ const DIRECTORY_SYNC_MAP = [
     source: path.join(REPO_ROOT, 'templates', 'kpmg-diligence'),
     target: path.join(SKILL_ROOT, 'assets', 'slidegen', 'templates', 'kpmg-diligence'),
   },
+  {
+    source: path.join(REPO_ROOT, 'presets', 'authoring'),
+    target: path.join(SKILL_ROOT, 'assets', 'templates', 'presets'),
+  },
 ];
 
 const FILE_SYNC_MAP = [
   {
-    source: path.join(REPO_ROOT, 'decks', 'deckspec-starter-template.deckSpec.json'),
+    source: path.join(REPO_ROOT, 'presets', 'authoring', 'detailed.deckSpec.json'),
     target: path.join(SKILL_ROOT, 'assets', 'templates', 'deckspec-starter.json'),
-    required: false,
+    required: true,
   },
 ];
 
