@@ -1,4 +1,0 @@
-interface:
-  display_name: "KPMG Slides"
-  short_description: "Create and revise KPMG-branded PowerPoint decks with QA"
-  default_prompt: "Use $kpmg-slides to plan, draft, generate, and QA a KPMG-branded deck from my inputs."
