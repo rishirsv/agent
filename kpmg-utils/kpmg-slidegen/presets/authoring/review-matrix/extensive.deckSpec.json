@@ -1,0 +1,532 @@
+{
+  "metadata": {
+    "title": "Verbosity Review Extensive",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Review sample for Extensive",
+    "allowSparse": false,
+    "textAmount": "xl",
+    "slideCountPolicy": "auto",
+    "styleIntent": "diligence",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Extensive review deck",
+      "subtitle": "Review deck calibrated to the approved three-level consulting payload model."
+    },
+    {
+      "type": "contents",
+      "title": "Contents",
+      "sections": [
+        {
+          "number": "01",
+          "title": "Settings summary",
+          "items": [
+            "Extensive preset using XL"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Narrative samples",
+          "items": [
+            "One-column, two-column, and chart-led commentary"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Constrained layouts",
+          "items": [
+            "Table, bridge, overview, and four-box samples"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerDark",
+      "sectionNumber": "01",
+      "sectionTitle": "Settings summary"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "How to review this sample",
+      "strapline": "Narrative bullets should fill the slide with consulting-style detail before the layout adds more count.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Review focus commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 5 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 6 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "Review focus commentary point 7 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue."
+      ],
+      "source": "Source: generated review matrix sample."
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "02",
+      "sectionTitle": "Narrative samples"
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Current vs target operating model",
+      "strapline": "Two-column example showing richer evidence as the text amount increases.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        "Current-state commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating."
+      ],
+      "rightBody": [
+        "Target-state commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Revenue and margin trend",
+      "strapline": "Chart-right, commentary-left example using the calibrated narrative budgets.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Revenue trend commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 5 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Revenue ($M)",
+            "labels": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "values": [
+              74,
+              88,
+              109
+            ]
+          },
+          {
+            "name": "Gross margin (%)",
+            "labels": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "values": [
+              69,
+              71,
+              73
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M / %"
+        },
+        "source": "Source: generated review matrix metrics."
+      }
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "03",
+      "sectionTitle": "Constrained layouts"
+    },
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Packaging and performance view",
+      "strapline": "Wide chart/table example using hard row caps and richer commentary.",
+      "heading": "Plan mix and current run-rate",
+      "bodyStyle": "bullets",
+      "body": [
+        "Packaging view commentary point 1 explains the operating pattern and why it matters for diligence outcomes.",
+        "Packaging view commentary point 2 explains the operating pattern and why it matters for diligence outcomes.",
+        "Packaging view commentary point 3 explains the operating pattern and why it matters for diligence outcomes.",
+        "Packaging view commentary point 4 explains the operating pattern and why it matters for diligence outcomes."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Customers",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              118,
+              86,
+              42
+            ]
+          },
+          {
+            "name": "MRR ($000)",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              76,
+              214,
+              468
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Count / $000"
+        },
+        "source": "Source: generated review matrix metrics."
+      },
+      "table": {
+        "headers": [
+          "Plan",
+          "Customers",
+          "MRR",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Plan 1",
+            "50",
+            "$80k",
+            "Plan read-through 1 explains the commercial plan."
+          ],
+          [
+            "Plan 2",
+            "57",
+            "$115k",
+            "Plan read-through 2 explains the commercial plan."
+          ],
+          [
+            "Plan 3",
+            "64",
+            "$150k",
+            "Plan read-through 3 explains the commercial plan."
+          ],
+          [
+            "Plan 4",
+            "71",
+            "$185k",
+            "Plan read-through 4 explains the commercial plan."
+          ]
+        ]
+      },
+      "noteSource": "Source: generated review matrix metrics."
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Metric gap assessment",
+      "strapline": "Table-led example with insight bullets tuned to the approved caps.",
+      "table": {
+        "headers": [
+          "Metric",
+          "Current",
+          "Target",
+          "Gap",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Operational 1",
+            "68%",
+            "72%",
+            "4%",
+            "Operational read-through 1 explains the gap."
+          ],
+          [
+            "Operational 2",
+            "71%",
+            "75%",
+            "4%",
+            "Operational read-through 2 explains the gap."
+          ],
+          [
+            "Operational 3",
+            "74%",
+            "78%",
+            "4%",
+            "Operational read-through 3 explains the gap."
+          ],
+          [
+            "Operational 4",
+            "77%",
+            "81%",
+            "4%",
+            "Operational read-through 4 explains the gap."
+          ]
+        ]
+      },
+      "insights": [
+        "Metric implication commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence."
+      ],
+      "notes": "Source: generated review matrix metrics."
+    },
+    {
+      "type": "analysisBridge",
+      "title": "Adjusted EBITDA bridge",
+      "strapline": "Bridge example showing that richer commentary can work if bullet count stays disciplined.",
+      "bodyStyle": "paragraphs",
+      "bridge": {
+        "startLabel": "FY23 EBITDA",
+        "endLabel": "FY25 EBITDA",
+        "startValue": 122,
+        "endValue": 168,
+        "unitPrefix": "$",
+        "unitSuffix": "m",
+        "decimals": 0,
+        "tolerance": 0.5,
+        "steps": [
+          {
+            "label": "Volume growth",
+            "delta": 18
+          },
+          {
+            "label": "Pricing discipline",
+            "delta": 10
+          },
+          {
+            "label": "Customer retention",
+            "delta": 8
+          },
+          {
+            "label": "Mix improvement",
+            "delta": 7
+          },
+          {
+            "label": "Support efficiency",
+            "delta": 6
+          },
+          {
+            "label": "Control remediation",
+            "delta": -4
+          },
+          {
+            "label": "Automation",
+            "delta": 5
+          },
+          {
+            "label": "Vendor savings",
+            "delta": 4
+          },
+          {
+            "label": "Headcount ramp",
+            "delta": -3
+          },
+          {
+            "label": "Implementation drag",
+            "delta": -5
+          }
+        ]
+      },
+      "analysisColumns": [
+        {
+          "heading": "Growth drivers",
+          "body": [
+            "Growth drivers point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Growth drivers point 2 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        },
+        {
+          "heading": "Execution risks",
+          "body": [
+            "Execution risks point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Execution risks point 2 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        },
+        {
+          "heading": "Forward view",
+          "body": [
+            "Forward view point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Forward view point 2 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        }
+      ],
+      "source": "Source: generated review matrix metrics.",
+      "note": "Use richer evidence before adding more bridge commentary boxes."
+    },
+    {
+      "type": "businessOverview",
+      "title": "Business overview and trend",
+      "leftHeading": "Legal and ownership structure",
+      "rightHeading": "Operating and performance summary",
+      "bodyStyle": "paragraphs",
+      "structure": {
+        "topTier": [
+          {
+            "label": "Investor A",
+            "pct": "45%"
+          },
+          {
+            "label": "Investor B",
+            "pct": "35%"
+          },
+          {
+            "label": "Founder",
+            "pct": "20%"
+          }
+        ],
+        "midTier": [
+          {
+            "label": "HoldCo",
+            "pct": "100%"
+          }
+        ],
+        "bottomTier": [
+          {
+            "label": "OpCo North",
+            "pct": "100%"
+          },
+          {
+            "label": "OpCo Central",
+            "pct": "100%"
+          },
+          {
+            "label": "Shared Services",
+            "pct": "100%"
+          }
+        ],
+        "links": [
+          {
+            "fromTier": "top",
+            "fromIndex": 0,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 1,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 2,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 1
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 2
+          }
+        ],
+        "perimeter": {
+          "enabled": true,
+          "label": "Transaction perimeter",
+          "subLabel": "Entities under diligence scope"
+        }
+      },
+      "overviewBody": [
+        "Overview summary commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction.",
+        "Overview summary commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction.",
+        "Overview summary commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction.",
+        "Overview summary commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction."
+      ],
+      "chart": {
+        "type": "area",
+        "data": [
+          {
+            "name": "Revenue trend",
+            "labels": [
+              "FY21",
+              "FY22",
+              "FY23",
+              "FY24",
+              "FY25"
+            ],
+            "values": [
+              96,
+              108,
+              121,
+              142,
+              164
+            ]
+          }
+        ],
+        "source": "Source: generated review matrix metrics."
+      },
+      "source": "Source: generated review matrix metrics.",
+      "note": "Keep the overview bullet count flat and increase richness across levels."
+    },
+    {
+      "type": "titleStrapline4TextBoxes",
+      "title": "Program workstreams and ownership",
+      "strapline": "Four-box example showing that richer commentary works if each box stays at three bullets.",
+      "bodyStyle": "paragraphs",
+      "columns": [
+        {
+          "heading": "Commercial",
+          "body": [
+            "Commercial workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Commercial workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes.",
+            "Commercial workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        },
+        {
+          "heading": "Operations",
+          "body": [
+            "Operations workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Operations workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes.",
+            "Operations workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        },
+        {
+          "heading": "Technology",
+          "body": [
+            "Technology workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Technology workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes.",
+            "Technology workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        },
+        {
+          "heading": "Governance",
+          "body": [
+            "Governance workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes.",
+            "Governance workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes.",
+            "Governance workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "backCover"
+    }
+  ]
+}

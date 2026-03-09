@@ -67,24 +67,24 @@ assert.ok(
   'Overflow regression should exercise one-column pagination splits.',
 );
 
-const minimalPreset = readJson(path.join(PRESET_ROOT, 'minimal.deckSpec.json'));
-const minimalValidation = validateDeckSpecWithTemplate(minimalPreset, templatePackage, {
+const concisePreset = readJson(path.join(PRESET_ROOT, 'concise.deckSpec.json'));
+const conciseValidation = validateDeckSpecWithTemplate(concisePreset, templatePackage, {
   allowSparse: false,
 });
 assert.equal(
-  minimalValidation?.qa?.verbosityContract?.summary?.status,
+  conciseValidation?.qa?.verbosityContract?.summary?.status,
   'pass',
-  'Minimal preset should satisfy the runtime verbosity contract.',
+  'Concise preset should satisfy the runtime verbosity contract.',
 );
-const minimalPaged = paginateDeckSpec(minimalPreset, renderContext);
+const concisePaged = paginateDeckSpec(concisePreset, renderContext);
 assert.ok(
-  !minimalPaged.paginationDecisions.some(
+  !concisePaged.paginationDecisions.some(
     (entry) =>
       entry?.slideType === 'oneColumnText' &&
       entry?.mode === 'one-column-bullets' &&
       Number(entry?.splitInto || 0) > 1,
   ),
-  'Minimal preset should not force one-column continuation splits.',
+  'Concise preset should not force one-column continuation splits.',
 );
 
 const extensivePreset = readJson(path.join(PRESET_ROOT, 'extensive.deckSpec.json'));

@@ -6,7 +6,6 @@
   "description": "Template-driven PPTX generator with QA and optional visual postprocess checks.",
   "scripts": {
     "generate": "node generator/index.js --in presets/authoring/detailed.deckSpec.json",
-    "generate:minimal": "node generator/index.js --in presets/authoring/minimal.deckSpec.json",
     "generate:concise": "node generator/index.js --in presets/authoring/concise.deckSpec.json",
     "generate:detailed": "node generator/index.js --in presets/authoring/detailed.deckSpec.json",
     "generate:extensive": "node generator/index.js --in presets/authoring/extensive.deckSpec.json",

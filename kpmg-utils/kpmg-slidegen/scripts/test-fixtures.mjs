@@ -21,7 +21,6 @@ const VALID_CLASSES = new Set([
   'invalid',
 ]);
 const VALID_TEXT_AMOUNTS = new Set(['sm', 'md', 'lg', 'xl']);
-const VALID_DENSITY_PROFILES = new Set(['dense', 'denser', 'densest']);
 
 /**
  * Ensure a path exists on disk.
@@ -67,7 +66,6 @@ for (const entry of fixtureEntries) {
   assert.ok(VALID_CLASSES.has(entry.class), `Invalid fixture class for ${entry.id}`);
   assert.ok(Array.isArray(entry.families) && entry.families.length > 0, `Fixture families missing for ${entry.id}`);
   assert.ok(VALID_TEXT_AMOUNTS.has(entry.textAmount), `Invalid textAmount for ${entry.id}`);
-  assert.ok(VALID_DENSITY_PROFILES.has(entry.densityProfile), `Invalid densityProfile for ${entry.id}`);
   assert.ok(['pass', 'fail'].includes(entry.expectedOutcome), `Invalid expectedOutcome for ${entry.id}`);
   assert.equal(typeof entry.blockingSafe, 'boolean', `blockingSafe must be boolean for ${entry.id}`);
   assert.ok(entry.origin, `origin missing for ${entry.id}`);
@@ -84,40 +82,26 @@ for (const entry of fixtureEntries) {
       `Fixture metadata.textAmount mismatch for ${entry.id}`,
     );
   }
-  if (entry.expectedOutcome === 'pass') {
-    assert.equal(
-      deckSpec.metadata.densityProfile,
-      entry.densityProfile,
-      `Fixture metadata.densityProfile mismatch for ${entry.id}`,
-    );
-  }
 }
 
 const presetManifest = readJson(PRESET_MANIFEST_PATH);
 const presetEntries = presetManifest.presets || [];
 assert.deepEqual(
   presetEntries.map((entry) => entry.id).sort(),
-  ['concise', 'detailed', 'extensive', 'minimal'],
-  'Authoring presets must cover the four supported verbosity tiers.',
+  ['concise', 'detailed', 'extensive'],
+  'Authoring presets must cover the approved three starter tiers.',
 );
 
 for (const entry of presetEntries) {
   assert.ok(Array.isArray(entry.aliases) && entry.aliases.length > 0, `Preset aliases missing for ${entry.id}`);
   assert.ok(VALID_TEXT_AMOUNTS.has(entry.textAmount), `Invalid preset textAmount for ${entry.id}`);
-  assert.ok(VALID_DENSITY_PROFILES.has(entry.densityProfile), `Invalid preset densityProfile for ${entry.id}`);
 
   const deckSpecPath = path.join(PRESET_ROOT, entry.deckSpec);
   assertExists(deckSpecPath);
   const deckSpec = readJson(deckSpecPath);
   assert.equal(deckSpec?.metadata?.textAmount, entry.textAmount, `Preset textAmount mismatch for ${entry.id}`);
-  assert.equal(
-    deckSpec?.metadata?.densityProfile,
-    entry.densityProfile,
-    `Preset densityProfile mismatch for ${entry.id}`,
-  );
   const resolved = resolveVerbosityMetadata(deckSpec.metadata || {});
   assert.equal(resolved.textAmount, entry.textAmount, `Resolved textAmount mismatch for ${entry.id}`);
-  assert.equal(resolved.densityProfile, entry.densityProfile, `Resolved densityProfile mismatch for ${entry.id}`);
   assert.deepEqual(resolved.errors || [], [], `Preset verbosity metadata must be explicit for ${entry.id}`);
 }
 

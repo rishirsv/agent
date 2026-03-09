@@ -1,12 +1,4 @@
-const TEXT_AMOUNT_TO_DENSITY = Object.freeze({
-  sm: 'dense',
-  md: 'dense',
-  lg: 'denser',
-  xl: 'densest',
-});
-
-const SUPPORTED_TEXT_AMOUNTS = new Set(Object.keys(TEXT_AMOUNT_TO_DENSITY));
-const SUPPORTED_DENSITY_PROFILES = new Set(['dense', 'denser', 'densest']);
+const SUPPORTED_TEXT_AMOUNTS = new Set(['sm', 'md', 'lg', 'xl']);
 
 const SLIDE_RULES = Object.freeze({
   oneColumnText: {
@@ -16,9 +8,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Tighten or expand the body bullets so the slide matches the requested verbosity tier.',
         ranges: {
           sm: [4, 5],
-          md: [5, 6],
-          lg: [6, 7],
-          xl: [7, 9],
+          md: [5, 5],
+          lg: [6, 6],
+          xl: [7, 7],
+        },
+      },
+      bodyAverageChars: {
+        label: 'body bullet length',
+        hint: 'Use richer diligence-style bullets so the body fills the slide without adding extra rows.',
+        errorDelta: 35,
+        ranges: {
+          sm: [80, 135],
+          md: [135, 175],
+          lg: [180, 220],
+          xl: [220, 255],
         },
       },
     },
@@ -30,9 +33,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Rebalance the left column so it lands inside the requested verbosity tier.',
         ranges: {
           sm: [2, 3],
-          md: [3, 4],
-          lg: [4, 5],
-          xl: [5, 6],
+          md: [3, 3],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      leftAverageChars: {
+        label: 'left-column bullet length',
+        hint: 'Increase or trim the left-column bullet depth to match the selected tier.',
+        errorDelta: 30,
+        ranges: {
+          sm: [80, 120],
+          md: [100, 135],
+          lg: [130, 165],
+          xl: [165, 200],
         },
       },
       rightItems: {
@@ -40,9 +54,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Rebalance the right column so it lands inside the requested verbosity tier.',
         ranges: {
           sm: [2, 3],
-          md: [3, 4],
-          lg: [4, 5],
-          xl: [5, 6],
+          md: [3, 3],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      rightAverageChars: {
+        label: 'right-column bullet length',
+        hint: 'Increase or trim the right-column bullet depth to match the selected tier.',
+        errorDelta: 30,
+        ranges: {
+          sm: [80, 120],
+          md: [100, 135],
+          lg: [130, 165],
+          xl: [165, 200],
         },
       },
     },
@@ -54,9 +79,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Use the narrative bullets to match the requested evidence density for the chart slide.',
         ranges: {
           sm: [4, 4],
-          md: [4, 5],
-          lg: [5, 6],
-          xl: [6, 7],
+          md: [4, 4],
+          lg: [5, 5],
+          xl: [5, 5],
+        },
+      },
+      bodyAverageChars: {
+        label: 'body bullet length',
+        hint: 'Deepen the commentary rather than adding more bullets to the chart slide.',
+        errorDelta: 35,
+        ranges: {
+          sm: [90, 140],
+          md: [155, 195],
+          lg: [195, 230],
+          xl: [225, 260],
         },
       },
     },
@@ -68,19 +104,41 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Adjust the body bullets so the chart/table narrative matches the requested tier.',
         ranges: {
           sm: [4, 4],
-          md: [4, 5],
-          lg: [5, 5],
-          xl: [5, 6],
+          md: [4, 4],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      bodyAverageChars: {
+        label: 'body bullet length',
+        hint: 'Increase or trim the commentary depth before changing the bullet count on the chart/table layout.',
+        errorDelta: 30,
+        ranges: {
+          sm: [90, 140],
+          md: [95, 125],
+          lg: [100, 135],
+          xl: [105, 145],
         },
       },
       tableRows: {
         label: 'table rows',
-        hint: 'Adjust the supporting table row count to match the requested density tier.',
+        hint: 'Adjust the supporting table row count so the chart/table layout stays inside its safe geometry budget.',
         ranges: {
-          sm: [4, 6],
-          md: [4, 6],
-          lg: [6, 8],
-          xl: [8, 12],
+          sm: [4, 4],
+          md: [4, 4],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      tableLastColMaxChars: {
+        label: 'table read-through length',
+        hint: 'Shorten the read-through cells so the chart/table layout stays on one page.',
+        errorDelta: 20,
+        ranges: {
+          sm: [0, 70],
+          md: [0, 80],
+          lg: [0, 92],
+          xl: [0, 100],
         },
       },
     },
@@ -92,19 +150,41 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Adjust the insight bullets so the narrow-table commentary matches the requested tier.',
         ranges: {
           sm: [2, 3],
-          md: [3, 4],
-          lg: [4, 5],
-          xl: [4, 6],
+          md: [3, 3],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      insightAverageChars: {
+        label: 'insight bullet length',
+        hint: 'Deepen the right-side takeaway bullets without adding more of them.',
+        errorDelta: 30,
+        ranges: {
+          sm: [85, 130],
+          md: [135, 175],
+          lg: [165, 205],
+          xl: [180, 220],
         },
       },
       tableRows: {
         label: 'table rows',
-        hint: 'Adjust the table row count so the slide fits the requested density tier.',
+        hint: 'Adjust the table row count so the narrow-table layout stays inside its safe geometry budget.',
         ranges: {
-          sm: [4, 6],
-          md: [6, 8],
-          lg: [8, 12],
-          xl: [10, 16],
+          sm: [4, 4],
+          md: [4, 4],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      tableLastColMaxChars: {
+        label: 'read-through cell length',
+        hint: 'Shorten the table read-through cells so the narrow-table layout stays on one page.',
+        errorDelta: 18,
+        ranges: {
+          sm: [0, 68],
+          md: [0, 80],
+          lg: [0, 88],
+          xl: [0, 95],
         },
       },
     },
@@ -116,9 +196,9 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Adjust the number of analysis phases so the bridge matches the requested tier.',
         ranges: {
           sm: [1, 2],
-          md: [2, 3],
+          md: [2, 2],
           lg: [3, 3],
-          xl: [3, 4],
+          xl: [3, 3],
         },
       },
       bridgeSteps: {
@@ -126,9 +206,9 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Adjust the bridge step count so the reconciliation feels right for the requested tier.',
         ranges: {
           sm: [5, 10],
-          md: [8, 14],
-          lg: [10, 18],
-          xl: [12, 22],
+          md: [8, 10],
+          lg: [9, 11],
+          xl: [10, 11],
         },
       },
       phaseBodyAverage: {
@@ -136,9 +216,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Rebalance bullets within each phase to match the requested tier.',
         ranges: {
           sm: [2, 2],
-          md: [2, 3],
-          lg: [2, 4],
-          xl: [3, 4],
+          md: [2, 2],
+          lg: [2, 2],
+          xl: [2, 2],
+        },
+      },
+      phaseBodyAverageChars: {
+        label: 'phase bullet length',
+        hint: 'Make the phase commentary denser before adding more bullets to each bridge phase.',
+        errorDelta: 30,
+        ranges: {
+          sm: [80, 120],
+          md: [85, 115],
+          lg: [90, 120],
+          xl: [95, 125],
         },
       },
     },
@@ -150,9 +241,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Adjust the right-side overview bullets so the slide matches the requested verbosity tier.',
         ranges: {
           sm: [2, 3],
-          md: [3, 4],
-          lg: [4, 6],
-          xl: [6, 8],
+          md: [4, 4],
+          lg: [4, 4],
+          xl: [4, 4],
+        },
+      },
+      overviewAverageChars: {
+        label: 'overview bullet length',
+        hint: 'Deepen the business-overview commentary instead of adding more bullets.',
+        errorDelta: 30,
+        ranges: {
+          sm: [90, 140],
+          md: [160, 200],
+          lg: [190, 225],
+          xl: [205, 225],
         },
       },
     },
@@ -164,9 +266,20 @@ const SLIDE_RULES = Object.freeze({
         hint: 'Balance the box bullets so each column lands inside the requested tier.',
         ranges: {
           sm: [3, 3],
-          md: [3, 4],
-          lg: [4, 4],
-          xl: [4, 5],
+          md: [3, 3],
+          lg: [3, 3],
+          xl: [3, 3],
+        },
+      },
+      boxBodyAverageChars: {
+        label: 'column bullet length',
+        hint: 'Use richer box commentary before adding more bullets to the four-column layout.',
+        errorDelta: 20,
+        ranges: {
+          sm: [70, 110],
+          md: [100, 122],
+          lg: [105, 126],
+          xl: [110, 130],
         },
       },
     },
@@ -200,6 +313,45 @@ function countTextItems(value) {
 }
 
 /**
+ * Normalize freeform text for character-based checks.
+ * @param {unknown} value
+ * @returns {string}
+ */
+function normalizeText(value) {
+  return typeof value === 'string' ? value.replace(/\s+/g, ' ').trim() : '';
+}
+
+/**
+ * Collect substantive bullet text lengths from a text array.
+ * @param {unknown} value
+ * @returns {number[]}
+ */
+function collectTextLengths(value) {
+  if (!Array.isArray(value)) return [];
+  const lengths = [];
+
+  function visit(node) {
+    if (typeof node === 'string') {
+      const normalized = normalizeText(node);
+      if (normalized) lengths.push(normalized.length);
+      return;
+    }
+    if (!node || typeof node !== 'object' || Array.isArray(node) || typeof node.text !== 'string') {
+      return;
+    }
+    if (!node.subheader) {
+      const normalized = normalizeText(node.text);
+      if (normalized) lengths.push(normalized.length);
+    }
+    if (!Array.isArray(node.children)) return;
+    node.children.forEach((child) => visit(child));
+  }
+
+  value.forEach((item) => visit(item));
+  return lengths;
+}
+
+/**
  * Count rows in a table-like slot.
  * @param {unknown} table
  * @returns {number}
@@ -209,17 +361,48 @@ function countRows(table) {
 }
 
 /**
- * Resolve the effective textAmount and densityProfile contract for a deck.
+ * Measure string lengths from a table column.
+ * @param {unknown} table
+ * @param {number} columnIndex
+ * @returns {number[]}
+ */
+function collectTableColumnLengths(table, columnIndex) {
+  if (!Array.isArray(table?.rows)) return [];
+  return table.rows
+    .map((row) => normalizeText(Array.isArray(row) ? row[columnIndex] : ''))
+    .filter(Boolean)
+    .map((value) => value.length);
+}
+
+/**
+ * Compute the average of numeric values.
+ * @param {number[]} values
+ * @returns {number}
+ */
+function average(values) {
+  if (!Array.isArray(values) || values.length === 0) return 0;
+  return Number((values.reduce((sum, value) => sum + Number(value || 0), 0) / values.length).toFixed(2));
+}
+
+/**
+ * Compute the maximum of numeric values.
+ * @param {number[]} values
+ * @returns {number}
+ */
+function maximum(values) {
+  if (!Array.isArray(values) || values.length === 0) return 0;
+  return Number(Math.max(...values));
+}
+
+/**
+ * Resolve the effective textAmount contract for a deck.
  * @param {object} metadata
- * @returns {{textAmount: string, densityProfile: string, warnings: object[]}}
+ * @returns {{textAmount: string, warnings: object[]}}
  */
 export function resolveVerbosityMetadata(metadata = {}) {
   const warnings = [];
   const errors = [];
   const textAmount = SUPPORTED_TEXT_AMOUNTS.has(metadata?.textAmount) ? metadata.textAmount : null;
-  let densityProfile = SUPPORTED_DENSITY_PROFILES.has(metadata?.densityProfile)
-    ? metadata.densityProfile
-    : null;
 
   if (!textAmount) {
     errors.push({
@@ -231,30 +414,8 @@ export function resolveVerbosityMetadata(metadata = {}) {
     });
   }
 
-  if (SUPPORTED_TEXT_AMOUNTS.has(metadata?.densityProfile)) {
-    densityProfile = null;
-    errors.push({
-      code: 'legacy_density_profile_alias',
-      severity: 'error',
-      status: 'fail',
-      message: `metadata.densityProfile used legacy alias "${metadata.densityProfile}".`,
-      suggestedRemedy: `Use densityProfile values dense, denser, or densest instead of "${TEXT_AMOUNT_TO_DENSITY[metadata.densityProfile]}".`,
-    });
-  }
-
-  if (!densityProfile) {
-    errors.push({
-      code: 'missing_density_profile',
-      severity: 'error',
-      status: 'fail',
-      message: 'metadata.densityProfile is required and must be one of dense, denser, or densest.',
-      suggestedRemedy: 'Set metadata.densityProfile to dense, denser, or densest.',
-    });
-  }
-
   return {
     textAmount,
-    densityProfile,
     errors,
     warnings,
   };
@@ -269,23 +430,36 @@ function measureSlide(slideSpec = {}) {
   const columns = Array.isArray(slideSpec?.columns) ? slideSpec.columns : [];
   const analysisColumns = Array.isArray(slideSpec?.analysisColumns) ? slideSpec.analysisColumns : [];
   const boxBodies = columns.map((column) => countTextItems(column?.body));
+  const boxTextLengths = columns.flatMap((column) => collectTextLengths(column?.body));
   const phaseBodies = analysisColumns.map((column) => countTextItems(column?.body));
-  const average = (values) => {
-    if (!Array.isArray(values) || values.length === 0) return 0;
-    return Number((values.reduce((sum, value) => sum + Number(value || 0), 0) / values.length).toFixed(2));
-  };
+  const phaseTextLengths = analysisColumns.flatMap((column) => collectTextLengths(column?.body));
+  const bodyTextLengths = collectTextLengths(slideSpec?.body);
+  const leftTextLengths = collectTextLengths(slideSpec?.leftBody);
+  const rightTextLengths = collectTextLengths(slideSpec?.rightBody);
+  const insightTextLengths = collectTextLengths(slideSpec?.insights);
+  const overviewTextLengths = collectTextLengths(slideSpec?.overviewBody);
+  const lastColumnIndex = Array.isArray(slideSpec?.table?.headers) ? slideSpec.table.headers.length - 1 : -1;
+  const tableLastColLengths = lastColumnIndex >= 0 ? collectTableColumnLengths(slideSpec?.table, lastColumnIndex) : [];
 
   return {
     bodyItems: countTextItems(slideSpec?.body),
+    bodyAverageChars: average(bodyTextLengths),
     leftItems: countTextItems(slideSpec?.leftBody),
+    leftAverageChars: average(leftTextLengths),
     rightItems: countTextItems(slideSpec?.rightBody),
+    rightAverageChars: average(rightTextLengths),
     tableRows: countRows(slideSpec?.table),
+    tableLastColMaxChars: maximum(tableLastColLengths),
     insightItems: countTextItems(slideSpec?.insights),
+    insightAverageChars: average(insightTextLengths),
     bridgeSteps: Array.isArray(slideSpec?.bridge?.steps) ? slideSpec.bridge.steps.length : 0,
     phaseCount: analysisColumns.length,
     phaseBodyAverage: average(phaseBodies),
+    phaseBodyAverageChars: average(phaseTextLengths),
     overviewItems: countTextItems(slideSpec?.overviewBody),
+    overviewAverageChars: average(overviewTextLengths),
     boxBodyAverage: average(boxBodies),
+    boxBodyAverageChars: average(boxTextLengths),
   };
 }
 
@@ -303,6 +477,7 @@ function compareMetric({
   metricLabel,
   hint,
   textAmount,
+  errorDelta,
 }) {
   if (!Array.isArray(range) || range.length !== 2) return null;
   const [min, max] = range.map((value) => Number(value || 0));
@@ -310,7 +485,7 @@ function compareMetric({
   if (actual >= min && actual <= max) return null;
 
   const delta = actual < min ? min - actual : actual - max;
-  const severity = delta >= 2 ? 'error' : 'warning';
+  const severity = delta >= Number(errorDelta || 2) ? 'error' : 'warning';
   const direction = actual < min ? 'below' : 'above';
   const target = min === max ? String(min) : `${min}-${max}`;
 
@@ -338,7 +513,7 @@ export function evaluateVerbosityContract(deckSpec = {}) {
   const findings = [...metadata.errors, ...metadata.warnings];
   const slides = Array.isArray(deckSpec?.slides) ? deckSpec.slides : [];
 
-  if (!metadata.textAmount || !metadata.densityProfile) {
+  if (!metadata.textAmount) {
     return {
       metadata,
       findings,
@@ -368,6 +543,7 @@ export function evaluateVerbosityContract(deckSpec = {}) {
         metricLabel: metricRule.label || metricKey,
         hint: metricRule.hint || 'Adjust the slide content to match the requested verbosity tier.',
         textAmount: metadata.textAmount,
+        errorDelta: metricRule.errorDelta,
       });
       if (finding) findings.push(finding);
     }

@@ -92,7 +92,7 @@ If `--out` is omitted, generation writes to `./outputs/kpmg-slidegen/<timestamp>
 
 ## Common Workflows
 
-- `npm run generate:minimal|generate:concise|generate:detailed|generate:extensive`: run the four authoring presets.
+- `npm run generate:concise|generate:detailed|generate:extensive`: run the three authoring presets.
 - `npm run qa`: fast PR-grade harness lane.
 - `npm run test:contracts`: template, registry, geometry, and pagination-policy parity.
 - `npm run test:fixtures`: curated fixture and preset governance.

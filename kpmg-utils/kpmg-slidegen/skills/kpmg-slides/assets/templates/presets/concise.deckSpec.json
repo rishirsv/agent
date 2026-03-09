@@ -6,7 +6,6 @@
     "subject": "Concise starter structure",
     "allowSparse": false,
     "textAmount": "md",
-    "densityProfile": "dense",
     "slideCountPolicy": "auto",
     "styleIntent": "diligence",
     "footer": {
@@ -21,7 +20,7 @@
     {
       "type": "cover",
       "title": "[Client name] concise review",
-      "subtitle": "[Purpose, scope, and timing]"
+      "subtitle": "[Purpose, scope, decision focus, and timing for the working diligence pack]"
     },
     {
       "type": "contents",
@@ -31,28 +30,28 @@
           "number": "01",
           "title": "[Executive summary]",
           "items": [
-            "[Top takeaways]"
+            "[Headline findings and decision implications]"
           ]
         },
         {
           "number": "02",
           "title": "[Current state]",
           "items": [
-            "[Main strengths and gaps]"
+            "[Operating facts, risks, and priority actions]"
           ]
         },
         {
           "number": "03",
           "title": "[Quantitative evidence]",
           "items": [
-            "[Metrics and trends]"
+            "[Metrics, gaps, and management read-through]"
           ]
         },
         {
           "number": "04",
           "title": "[Recommendations]",
           "items": [
-            "[Priority actions]"
+            "[Owners, milestones, and dependencies]"
           ]
         }
       ]
@@ -64,100 +63,81 @@
     },
     {
       "type": "oneColumnText",
-      "title": "[One clear claim]",
-      "strapline": "[Add one sentence on why this matters now and what decision the audience should be prepared to make.]",
+      "title": "[One clear diligence claim]",
+      "strapline": "[State why the issue matters now, what evidence supports it, and what decision leadership should be ready to take.]",
       "bodyStyle": "bullets",
       "body": [
-        {
-          "text": "[Context]",
-          "subheader": true
-        },
-        "[Summarize the current state with one concrete fact and enough context for the audience to understand why it matters.]",
-        "[Call out the most material pressure point and the evidence that makes it important.]",
-        {
-          "text": "[Implication]",
-          "subheader": true
-        },
-        "[State the management implication in practical terms, including who should act and what should change next.]"
+        "[Summarize the current state with one concrete operating or financial fact that gives the audience immediate context for the diligence issue.]",
+        "[Explain the most material gap with supporting evidence from management, data, or process observation so the slide does real analytical work.]",
+        "[State the practical implication for timing, ownership, or transaction value creation rather than leaving the point at a descriptive level.]",
+        "[Name the action leadership should sponsor next and connect it to the expected benefit, mitigation, or decision milestone.]",
+        "[Call out the dependency, execution risk, or unanswered question that still needs follow-up work before the conclusion is fully closed.]"
       ],
       "source": "Source: [Insert source]"
     },
     {
       "type": "twoColumnText",
       "title": "[Current vs target]",
-      "strapline": "[Use for a balanced side-by-side comparison.]",
+      "strapline": "[Use for a balanced side-by-side comparison that still reads like consulting commentary instead of short presentation bullets.]",
       "bodyStyle": "bullets",
       "leftBody": [
-        {
-          "text": "[Current]",
-          "subheader": true
-        },
-        "[Describe today's state with one operational or financial fact that grounds the story.]",
-        "[Name the core risk and explain the consequence if it is not addressed.]"
+        "[Describe the current state with one grounded fact and explain the operational consequence if the issue remains unresolved.]",
+        "[Explain the root cause or control gap in practical terms so the audience understands why the current model is underperforming.]",
+        "[Name the most visible business consequence in revenue, margin, timing, or execution confidence.]"
       ],
       "rightBody": [
-        {
-          "text": "[Target]",
-          "subheader": true
-        },
-        "[Describe the future state and explain how it improves the current situation.]",
-        "[Name the first action and the owner who should take it forward.]"
+        "[Describe the target state and explain how it resolves the current issue with a clearer operating model, control, or decision path.]",
+        "[State the first action, responsible owner, and the near-term milestone that proves the change is underway.]",
+        "[Connect the target state to a measurable benefit, risk reduction, or transaction-readiness outcome.]"
       ]
     },
     {
       "type": "analysisNarrowTable",
       "title": "[Structured evidence table]",
-      "strapline": "[Use for a medium-density metric comparison.]",
+      "strapline": "[Use for a compact evidence table with real read-through instead of a high row count.]",
       "table": {
         "headers": [
           "Metric",
           "Current",
           "Target",
-          "Gap"
+          "Gap",
+          "Read-through"
         ],
         "rows": [
           [
             "Metric A",
             "12",
             "15",
-            "3"
+            "3",
+            "Explain why the gap matters and what management must do next."
           ],
           [
             "Metric B",
             "5%",
             "7%",
-            "2%"
+            "2%",
+            "Link the shortfall to execution discipline, ownership, or timing."
           ],
           [
             "Metric C",
             "10",
             "12",
-            "2"
+            "2",
+            "State the implication for the diligence conclusion or action plan."
           ],
           [
             "Metric D",
-            "3",
-            "4",
-            "1"
-          ],
-          [
-            "Metric E",
             "72%",
             "80%",
-            "8%"
-          ],
-          [
-            "Metric F",
-            "8",
-            "10",
-            "2"
+            "8%",
+            "Keep the read-through concise so the layout stays on one page."
           ]
         ]
       },
       "insights": [
-        "[Call out the largest gap and why it matters for performance or execution.]",
-        "[State the operational implication in terms of timing, ownership, or risk.]",
-        "[Name the priority action leadership should sponsor next.]"
+        "[Call out the most material gap and explain why it matters for performance, execution certainty, transaction readiness, and the broader diligence conclusion.]",
+        "[State the operational implication in terms of timing, ownership, and the control step management must strengthen next to close the gap credibly.]",
+        "[Name the priority action leadership should sponsor and the evidence needed to close the remaining diligence question with confidence.]"
       ]
     },
     {

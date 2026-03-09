@@ -71,7 +71,7 @@ Expected artifacts:
 
 Classify `qa.json` findings:
 - Blocking: `qa.outcome.blockingIssueCount`, blocking `qa.findings`, and blocking checks with status `fail` or `error`.
-- Blocking by policy: missing or invalid `metadata.textAmount` / `metadata.densityProfile` is a hard contract failure, not a warning.
+- Blocking by policy: missing or invalid `metadata.textAmount` is a hard contract failure, not a warning.
 - High-priority non-blocking: `qa.checks` with status `warn`, repeated verbosity-contract findings, and visual-overflow findings when strict mode is off.
 - Advisory: informational or warning findings that do not prevent delivery.
 

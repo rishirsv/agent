@@ -62,17 +62,15 @@ Resolve settings into a deterministic contract before writing any slides.
 Store the contract in `deckSpec.metadata` for traceability:
 
 - `metadata.textAmount`: `sm|md|lg|xl`
-- `metadata.densityProfile`: `dense|denser|densest`
 - `metadata.slideCountPolicy`: `user|auto`
 - `metadata.styleIntent`: `diligence|strategy|generic`
 
-Always write both `metadata.textAmount` and `metadata.densityProfile` explicitly. The generator no longer infers or defaults missing verbosity metadata.
+Always write `metadata.textAmount` explicitly. The generator no longer infers or defaults missing verbosity metadata.
 
 Set `metadata.allowSparse` to `false` by default. Only set `true` when the user explicitly wants a sparse draft.
 
 Start from the matching starter when possible:
 
-- `assets/templates/presets/minimal.deckSpec.json`
 - `assets/templates/presets/concise.deckSpec.json`
 - `assets/templates/presets/detailed.deckSpec.json`
 - `assets/templates/presets/extensive.deckSpec.json`
@@ -82,13 +80,12 @@ Start from the matching starter when possible:
 1. If the user provides explicit numeric constraints (slide count, bullets per slide, table rows), follow them.
 2. Else follow verbosity tier mapping:
 
-- `Minimal -> sm`
 - `Concise -> md`
 - `Detailed -> lg`
 - `Extensive -> xl`
-- `simple -> sm + dense`
-- `detailed deck -> lg + denser`
-- `highest density` or `densest -> xl + densest` unless the user explicitly sets a different `textAmount`
+- `simple -> md`
+- `detailed deck -> lg`
+- `most detailed` or `extensive -> xl` unless the user explicitly sets a different `textAmount`
 
 3. Else default to `lg`.
 
@@ -320,7 +317,7 @@ Use these three shapes with minimal fields.
 - Objective: <decision/problem>
 - Audience: <primary audience>
 - Style intent: <diligence|strategy|generic>
-- Verbosity contract: <textAmount, densityProfile, slideCountPolicy>
+- Verbosity contract: <textAmount, slideCountPolicy>
 
 | #   | Type  | Title (claim) | Evidence shape | Slot plan       |
 | --- | ----- | ------------- | -------------- | --------------- |
@@ -340,7 +337,7 @@ Requirements: each line includes `type`, claim title, evidence shape, and slot p
 - QA: <path>
 - QA mode: <full|fast|skip_subagent_visual>
 - Slide counts: <input -> output>
-- Settings: <textAmount, densityProfile, slideCountPolicy, styleIntent, allowSparse>
+- Settings: <textAmount, slideCountPolicy, styleIntent, allowSparse>
 
 ## QA Summary
 
@@ -375,7 +372,6 @@ Use two locations intentionally:
 
 - Copy a starter from the skill bundle into the working directory as `<name>.deckSpec.json`.
 - Preferred starter source files:
-  - `assets/templates/presets/minimal.deckSpec.json`
   - `assets/templates/presets/concise.deckSpec.json`
   - `assets/templates/presets/detailed.deckSpec.json`
   - `assets/templates/presets/extensive.deckSpec.json`

@@ -149,7 +149,6 @@ function upsertReferenceParityFixture({ layoutId, source, candidateDeckSpec }) {
     owner: 'slidegen',
     families: [layoutId],
     textAmount: candidateDeckSpec?.metadata?.textAmount || 'lg',
-    densityProfile: candidateDeckSpec?.metadata?.densityProfile || 'dense',
     expectedOutcome: 'pass',
     blockingSafe: false,
     baselineBearing: false,

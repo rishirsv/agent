@@ -343,7 +343,6 @@ export function buildCandidateDeckSpecScaffold({ family, layoutId }) {
       metadata: {
         title: `Draft ${layoutId}`,
         textAmount: 'md',
-        densityProfile: 'dense',
         allowSparse: true,
       },
       slides: [],
@@ -354,7 +353,6 @@ export function buildCandidateDeckSpecScaffold({ family, layoutId }) {
     metadata: {
       title: `Draft ${layoutId}`,
       textAmount: 'lg',
-      densityProfile: 'denser',
       allowSparse: true,
     },
     slides: [buildStarterSlideFromFamily(family, layoutId)],

@@ -72,14 +72,6 @@
             "xl"
           ]
         },
-        "densityProfile": {
-          "type": "string",
-          "enum": [
-            "dense",
-            "denser",
-            "densest"
-          ]
-        },
         "slideCountPolicy": {
           "type": "string",
           "enum": [

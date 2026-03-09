@@ -1,0 +1,766 @@
+{
+  "metadata": {
+    "title": "Payload Calibration Extensive",
+    "author": "KPMG LLP",
+    "company": "KPMG LLP",
+    "subject": "Calibration deck for Extensive",
+    "allowSparse": false,
+    "textAmount": "xl",
+    "slideCountPolicy": "auto",
+    "styleIntent": "diligence",
+    "footer": {
+      "year": 2026,
+      "legalEntityName": "KPMG LLP",
+      "jurisdiction": "Ontario",
+      "legalStructure": "limited liability partnership",
+      "documentClassification": "KPMG Confidential",
+      "officeContactText": "kpmg.com/ca"
+    }
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Extensive payload calibration",
+      "subtitle": "Controlled character-budget deck for visual and text-density calibration."
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "01",
+      "sectionTitle": "Narrative layouts"
+    },
+    {
+      "type": "oneColumnText",
+      "title": "One-column narrative (7x235)",
+      "strapline": "Testing richer diligence bullets without changing the slide family.",
+      "bodyStyle": "bullets",
+      "body": [
+        "One-column commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 5 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 6 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue.",
+        "One-column commentary point 7 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue."
+      ],
+      "source": "Source: payload calibration sample."
+    },
+    {
+      "type": "twoColumnText",
+      "title": "Two-column narrative (4x185 per side)",
+      "strapline": "Testing balanced left/right evidence at controlled character budgets.",
+      "bodyStyle": "bullets",
+      "leftBody": [
+        "Current-state commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Current-state commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating."
+      ],
+      "rightBody": [
+        "Target-state commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+        "Target-state commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating."
+      ]
+    },
+    {
+      "type": "analysisWideChart2ColsText",
+      "title": "Chart with text (5x245)",
+      "strapline": "Testing the chart-right, commentary-left narrative budget.",
+      "bodyStyle": "bullets",
+      "body": [
+        "Revenue trend commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin.",
+        "Revenue trend commentary point 5 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through revenue, margin."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Revenue ($M)",
+            "labels": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "values": [
+              74,
+              88,
+              109
+            ]
+          },
+          {
+            "name": "Gross margin (%)",
+            "labels": [
+              "2023",
+              "2024",
+              "2025"
+            ],
+            "values": [
+              69,
+              71,
+              73
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "$M / %"
+        },
+        "source": "Source: payload calibration metrics."
+      }
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "02",
+      "sectionTitle": "Constrained layouts"
+    },
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Chart + table (4 bullets, 6 rows)",
+      "strapline": "Testing combined chart/table/commentary density under controlled text cells.",
+      "heading": "Plan mix and current run-rate",
+      "bodyStyle": "bullets",
+      "body": [
+        "Packaging view commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Packaging view commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Packaging view commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Packaging view commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Customers",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              118,
+              86,
+              42
+            ]
+          },
+          {
+            "name": "MRR ($000)",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              76,
+              214,
+              468
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Count / $000"
+        },
+        "source": "Source: payload calibration metrics."
+      },
+      "table": {
+        "headers": [
+          "Plan",
+          "Customers",
+          "MRR",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Plan 1",
+            "50",
+            "$80k",
+            "Plan read-through 1 explains the commercial plan, the management response, and the implication for."
+          ],
+          [
+            "Plan 2",
+            "57",
+            "$115k",
+            "Plan read-through 2 explains the commercial plan, the management response, and the implication for."
+          ],
+          [
+            "Plan 3",
+            "64",
+            "$150k",
+            "Plan read-through 3 explains the commercial plan, the management response, and the implication for."
+          ],
+          [
+            "Plan 4",
+            "71",
+            "$185k",
+            "Plan read-through 4 explains the commercial plan, the management response, and the implication for."
+          ],
+          [
+            "Plan 5",
+            "78",
+            "$220k",
+            "Plan read-through 5 explains the commercial plan, the management response, and the implication for."
+          ],
+          [
+            "Plan 6",
+            "85",
+            "$255k",
+            "Plan read-through 6 explains the commercial plan, the management response, and the implication for."
+          ]
+        ]
+      },
+      "noteSource": "Source: payload calibration metrics."
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Narrow table (7 rows, 4 insights)",
+      "strapline": "Testing table-led density with controlled right-side insight text.",
+      "table": {
+        "headers": [
+          "Metric",
+          "Current",
+          "Target",
+          "Gap",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Operational metric 1",
+            "68%",
+            "72%",
+            "4%",
+            "Operational read-through 1 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 2",
+            "71%",
+            "75%",
+            "4%",
+            "Operational read-through 2 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 3",
+            "74%",
+            "78%",
+            "4%",
+            "Operational read-through 3 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 4",
+            "77%",
+            "81%",
+            "4%",
+            "Operational read-through 4 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 5",
+            "80%",
+            "84%",
+            "4%",
+            "Operational read-through 5 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 6",
+            "83%",
+            "87%",
+            "4%",
+            "Operational read-through 6 explains the gap, the management response, and the implication for."
+          ],
+          [
+            "Operational metric 7",
+            "86%",
+            "90%",
+            "4%",
+            "Operational read-through 7 explains the gap, the management response, and the implication for."
+          ]
+        ]
+      },
+      "insights": [
+        "Metric implication commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Metric implication commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence."
+      ],
+      "notes": "Source: payload calibration metrics."
+    },
+    {
+      "type": "analysisBridge",
+      "title": "Bridge (12 steps, 3 phases)",
+      "strapline": "Testing how far bridge commentary can stretch before the slide becomes visually overloaded.",
+      "bodyStyle": "paragraphs",
+      "bridge": {
+        "startLabel": "FY23 EBITDA",
+        "endLabel": "FY25 EBITDA",
+        "startValue": 122,
+        "endValue": 172,
+        "unitPrefix": "$",
+        "unitSuffix": "m",
+        "decimals": 0,
+        "tolerance": 0.5,
+        "steps": [
+          {
+            "label": "Volume growth",
+            "delta": 18
+          },
+          {
+            "label": "Pricing discipline",
+            "delta": 10
+          },
+          {
+            "label": "Customer retention",
+            "delta": 8
+          },
+          {
+            "label": "Mix improvement",
+            "delta": 7
+          },
+          {
+            "label": "Support efficiency",
+            "delta": 6
+          },
+          {
+            "label": "Control remediation",
+            "delta": -4
+          },
+          {
+            "label": "Automation",
+            "delta": 5
+          },
+          {
+            "label": "Vendor savings",
+            "delta": 4
+          },
+          {
+            "label": "Headcount ramp",
+            "delta": -3
+          },
+          {
+            "label": "Implementation drag",
+            "delta": -5
+          },
+          {
+            "label": "Timing variance",
+            "delta": -2
+          },
+          {
+            "label": "Recovery actions",
+            "delta": 6
+          }
+        ]
+      },
+      "analysisColumns": [
+        {
+          "heading": "Growth drivers",
+          "body": [
+            "Growth drivers point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent.",
+            "Growth drivers point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent."
+          ]
+        },
+        {
+          "heading": "Execution risks",
+          "body": [
+            "Execution risks point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent.",
+            "Execution risks point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent."
+          ]
+        },
+        {
+          "heading": "Forward view",
+          "body": [
+            "Forward view point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating.",
+            "Forward view point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating."
+          ]
+        }
+      ],
+      "source": "Source: payload calibration metrics.",
+      "note": "Calibration deck for bridge readability."
+    },
+    {
+      "type": "businessOverview",
+      "title": "Business overview (5x235)",
+      "leftHeading": "Legal and ownership structure",
+      "rightHeading": "Operating and performance summary",
+      "bodyStyle": "paragraphs",
+      "structure": {
+        "topTier": [
+          {
+            "label": "Investor A",
+            "pct": "45%"
+          },
+          {
+            "label": "Investor B",
+            "pct": "35%"
+          },
+          {
+            "label": "Founder",
+            "pct": "20%"
+          }
+        ],
+        "midTier": [
+          {
+            "label": "HoldCo",
+            "pct": "100%"
+          }
+        ],
+        "bottomTier": [
+          {
+            "label": "OpCo North",
+            "pct": "100%"
+          },
+          {
+            "label": "OpCo Central",
+            "pct": "100%"
+          },
+          {
+            "label": "Shared Services",
+            "pct": "100%"
+          }
+        ],
+        "links": [
+          {
+            "fromTier": "top",
+            "fromIndex": 0,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 1,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "top",
+            "fromIndex": 2,
+            "toTier": "mid",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 0
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 1
+          },
+          {
+            "fromTier": "mid",
+            "fromIndex": 0,
+            "toTier": "bottom",
+            "toIndex": 2
+          }
+        ],
+        "perimeter": {
+          "enabled": true,
+          "label": "Transaction perimeter",
+          "subLabel": "Entities under diligence scope"
+        }
+      },
+      "overviewBody": [
+        "Overview summary commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through.",
+        "Overview summary commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through.",
+        "Overview summary commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through.",
+        "Overview summary commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through.",
+        "Overview summary commentary point 5 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact through."
+      ],
+      "chart": {
+        "type": "area",
+        "data": [
+          {
+            "name": "Revenue trend",
+            "labels": [
+              "FY21",
+              "FY22",
+              "FY23",
+              "FY24",
+              "FY25"
+            ],
+            "values": [
+              96,
+              108,
+              121,
+              142,
+              164
+            ]
+          }
+        ],
+        "source": "Source: payload calibration metrics."
+      },
+      "source": "Source: payload calibration metrics.",
+      "note": "Calibration deck for consulting-style overview density."
+    },
+    {
+      "type": "titleStrapline4TextBoxes",
+      "title": "Four-box layout (3x146 per box)",
+      "strapline": "Testing the practical upper bound for four parallel workstream boxes.",
+      "bodyStyle": "paragraphs",
+      "columns": [
+        {
+          "heading": "Commercial",
+          "body": [
+            "Commercial workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Commercial workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Commercial workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management."
+          ]
+        },
+        {
+          "heading": "Operations",
+          "body": [
+            "Operations workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Operations workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Operations workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management."
+          ]
+        },
+        {
+          "heading": "Technology",
+          "body": [
+            "Technology workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Technology workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Technology workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management."
+          ]
+        },
+        {
+          "heading": "Governance",
+          "body": [
+            "Governance workstream commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Governance workstream commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management.",
+            "Governance workstream commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dividerLight",
+      "sectionNumber": "03",
+      "sectionTitle": "Stress tests"
+    },
+    {
+      "type": "analysisWideChartTableText",
+      "title": "Stress: chart + table (7 rows)",
+      "strapline": "Intentional stress case to locate the overflow threshold for the wide chart/table layout.",
+      "heading": "Stress test mix and run-rate",
+      "bodyStyle": "bullets",
+      "body": [
+        "Stress-test commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact.",
+        "Stress-test commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact.",
+        "Stress-test commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact.",
+        "Stress-test commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence, linked to transaction impact."
+      ],
+      "chart": {
+        "type": "bar",
+        "data": [
+          {
+            "name": "Customers",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              118,
+              86,
+              42
+            ]
+          },
+          {
+            "name": "MRR ($000)",
+            "labels": [
+              "Starter",
+              "Growth",
+              "Enterprise"
+            ],
+            "values": [
+              76,
+              214,
+              468
+            ]
+          }
+        ],
+        "opts": {
+          "showValue": true,
+          "showLegend": true,
+          "valAxisTitle": "Count / $000"
+        },
+        "source": "Source: payload calibration metrics."
+      },
+      "table": {
+        "headers": [
+          "Plan",
+          "Customers",
+          "MRR",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Stress plan 1",
+            "50",
+            "$80k",
+            "Stress plan read-through 1 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 2",
+            "57",
+            "$115k",
+            "Stress plan read-through 2 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 3",
+            "64",
+            "$150k",
+            "Stress plan read-through 3 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 4",
+            "71",
+            "$185k",
+            "Stress plan read-through 4 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 5",
+            "78",
+            "$220k",
+            "Stress plan read-through 5 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 6",
+            "85",
+            "$255k",
+            "Stress plan read-through 6 explains the commercial plan, the management response, and the implication for run-rate."
+          ],
+          [
+            "Stress plan 7",
+            "92",
+            "$290k",
+            "Stress plan read-through 7 explains the commercial plan, the management response, and the implication for run-rate."
+          ]
+        ]
+      },
+      "noteSource": "Source: payload calibration metrics."
+    },
+    {
+      "type": "analysisNarrowTable",
+      "title": "Stress: narrow table (8 rows)",
+      "strapline": "Intentional stress case to locate the overflow threshold for the narrow table layout.",
+      "table": {
+        "headers": [
+          "Metric",
+          "Current",
+          "Target",
+          "Gap",
+          "Read-through"
+        ],
+        "rows": [
+          [
+            "Stress metric metric 1",
+            "68%",
+            "72%",
+            "4%",
+            "Stress metric read-through 1 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 2",
+            "71%",
+            "75%",
+            "4%",
+            "Stress metric read-through 2 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 3",
+            "74%",
+            "78%",
+            "4%",
+            "Stress metric read-through 3 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 4",
+            "77%",
+            "81%",
+            "4%",
+            "Stress metric read-through 4 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 5",
+            "80%",
+            "84%",
+            "4%",
+            "Stress metric read-through 5 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 6",
+            "83%",
+            "87%",
+            "4%",
+            "Stress metric read-through 6 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 7",
+            "86%",
+            "90%",
+            "4%",
+            "Stress metric read-through 7 explains the gap, the management response, and the implication for execution."
+          ],
+          [
+            "Stress metric metric 8",
+            "89%",
+            "93%",
+            "4%",
+            "Stress metric read-through 8 explains the gap, the management response, and the implication for execution."
+          ]
+        ]
+      },
+      "insights": [
+        "Stress-test implication commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Stress-test implication commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Stress-test implication commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence.",
+        "Stress-test implication commentary point 4 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and corroborated with recent operating evidence."
+      ],
+      "notes": "Source: payload calibration metrics."
+    },
+    {
+      "type": "titleStrapline4TextBoxes",
+      "title": "Stress: four-box layout (3x160)",
+      "strapline": "Intentional stress case to locate the overflow threshold for the four-box layout.",
+      "bodyStyle": "paragraphs",
+      "columns": [
+        {
+          "heading": "Commercial",
+          "body": [
+            "Commercial stress commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Commercial stress commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Commercial stress commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and."
+          ]
+        },
+        {
+          "heading": "Operations",
+          "body": [
+            "Operations stress commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Operations stress commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Operations stress commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and."
+          ]
+        },
+        {
+          "heading": "Technology",
+          "body": [
+            "Technology stress commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Technology stress commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Technology stress commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and."
+          ]
+        },
+        {
+          "heading": "Governance",
+          "body": [
+            "Governance stress commentary point 1 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Governance stress commentary point 2 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and.",
+            "Governance stress commentary point 3 explains the operating pattern and why it matters for diligence outcomes, supported by management interviews and."
+          ]
+        }
+      ]
+    }
+  ]
+}

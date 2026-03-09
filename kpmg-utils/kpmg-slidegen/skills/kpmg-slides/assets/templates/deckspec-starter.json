@@ -6,7 +6,6 @@
     "subject": "Detailed starter structure",
     "allowSparse": false,
     "textAmount": "lg",
-    "densityProfile": "denser",
     "slideCountPolicy": "auto",
     "styleIntent": "diligence",
     "footer": {
@@ -21,7 +20,7 @@
     {
       "type": "cover",
       "title": "[Client name] detailed review",
-      "subtitle": "[Scope, audience, and timing for the detailed deck]"
+      "subtitle": "[Scope, audience, timing, and decision lens for the standard diligence deck]"
     },
     {
       "type": "contents",
@@ -31,35 +30,35 @@
           "number": "01",
           "title": "[Executive summary]",
           "items": [
-            "[Headline findings and implications]"
+            "[Headline findings and investment implications]"
           ]
         },
         {
           "number": "02",
           "title": "[Current-state assessment]",
           "items": [
-            "[Strengths and pressure points]"
+            "[Strengths, pressure points, and root causes]"
           ]
         },
         {
           "number": "03",
           "title": "[Risks and controls]",
           "items": [
-            "[Material issues and root causes]"
+            "[Material issues, evidence, and mitigation options]"
           ]
         },
         {
           "number": "04",
           "title": "[Quantitative evidence]",
           "items": [
-            "[Metrics, trends, and supporting facts]"
+            "[Metrics, trends, and read-through]"
           ]
         },
         {
           "number": "05",
           "title": "[Recommendations]",
           "items": [
-            "[Action plan and ownership]"
+            "[Action plan, owners, and milestones]"
           ]
         }
       ]
@@ -71,116 +70,85 @@
     },
     {
       "type": "oneColumnText",
-      "title": "[One detailed claim]",
-      "strapline": "[One sentence that frames the decision and urgency.]",
+      "title": "[One detailed diligence claim]",
+      "strapline": "[Frame the issue with the evidence base, why it matters to the deal, and what leadership should do next.]",
       "bodyStyle": "bullets",
       "body": [
-        {
-          "text": "[Context]",
-          "subheader": true
-        },
-        "[Summarize the current state with one specific operational or financial fact.]",
-        "[Call out the most material constraint and the evidence supporting it.]",
-        {
-          "text": "[Implication]",
-          "subheader": true
-        },
-        "[Explain the management implication in terms of timing, ownership, or financial impact.]",
-        "[State the recommended action and the expected benefit.]"
+        "[Summarize the current state with a specific operating or financial fact, then explain why that fact is material to the diligence conclusion.]",
+        "[Describe the most important pressure point with evidence from management, process review, or data analysis so the point feels grounded and defendable.]",
+        "[Explain the operational or financial implication in the language of sequencing, control, margin, or transaction value rather than generic concern.]",
+        "[Set out the recommended action with the owner, timing, and first milestone so the slide points clearly toward an execution response.]",
+        "[Call out the dependency, risk, or open question that could change the recommendation if additional diligence evidence points a different way.]",
+        "[Close with the reason this matters for the broader story, including the decision leadership should be prepared to make.]"
       ],
       "source": "Source: [Insert source]"
     },
     {
       "type": "twoColumnText",
       "title": "[Current vs target]",
-      "strapline": "[Use when the audience needs a richer side-by-side comparison.]",
+      "strapline": "[Use when the audience needs a richer side-by-side comparison with evidence and implications on both sides.]",
       "bodyStyle": "bullets",
       "leftBody": [
-        {
-          "text": "[Current]",
-          "subheader": true
-        },
-        "[Describe today's operating model with concrete evidence.]",
-        "[Explain the main bottleneck or control gap.]",
-        "[Note the observable consequence for the business.]"
+        "[Describe today's operating model with concrete evidence and explain the gap that is driving performance pressure or execution drag.]",
+        "[Explain the root cause in practical terms so the audience can see how process, ownership, or control design is shaping the issue.]",
+        "[State the business consequence in revenue, margin, timing, or decision quality rather than staying at a descriptive level.]",
+        "[Name the affected function, owner, or governance step that currently limits the business from improving the outcome.]"
       ],
       "rightBody": [
-        {
-          "text": "[Target]",
-          "subheader": true
-        },
-        "[Describe the future-state design or action plan.]",
-        "[Explain how the change addresses the current gap.]",
-        "[State the owner and near-term milestone.]"
+        "[Describe the future-state design or management response and explain how it directly resolves the operating issue seen on the left-hand side.]",
+        "[Link the target state to an implementation action, accountable owner, and near-term milestone that leadership can actually sponsor.]",
+        "[State the expected benefit in measurable terms so the target state feels like a genuine management decision instead of a generic aspiration.]",
+        "[Call out the most important dependency or enabler required to move from the current model to the target model.]"
       ]
     },
     {
       "type": "analysisNarrowTable",
       "title": "[Detailed evidence table]",
-      "strapline": "[Use for a richer metric comparison with clear takeaways.]",
+      "strapline": "[Use for a table-led slide with four rich rows and explicit read-through.]",
       "table": {
         "headers": [
           "Metric",
           "Current",
           "Target",
-          "Gap"
+          "Gap",
+          "Read-through"
         ],
         "rows": [
           [
             "Metric A",
             "12",
             "15",
-            "3"
+            "3",
+            "Explain the gap, the management response, and the implication for operating discipline."
           ],
           [
             "Metric B",
             "5%",
             "7%",
-            "2%"
+            "2%",
+            "Link the shortfall to execution cadence, governance, or the need for clearer ownership."
           ],
           [
             "Metric C",
             "10",
             "12",
-            "2"
+            "2",
+            "State what the data says about the root cause and why it matters for the diligence conclusion."
           ],
           [
             "Metric D",
-            "3",
-            "4",
-            "1"
-          ],
-          [
-            "Metric E",
             "72%",
             "80%",
-            "8%"
-          ],
-          [
-            "Metric F",
-            "8",
-            "10",
-            "2"
-          ],
-          [
-            "Metric G",
-            "14",
-            "18",
-            "4"
-          ],
-          [
-            "Metric H",
-            "22",
-            "28",
-            "6"
+            "8%",
+            "Keep the read-through rich enough to be useful but short enough to preserve one-page readability."
           ]
         ]
       },
       "insights": [
-        "[Call out the most material gap.]",
-        "[Explain the operational implication.]",
-        "[Explain the financial implication.]",
-        "[State the priority action.]"
+        "[Call out the most material gap and explain why it matters for execution certainty, management credibility, or transaction value.]",
+        "[Translate the evidence into an operating implication that leadership can act on in the next working session.]",
+        "[State the financial or control implication so the reader understands why the issue matters beyond local process performance.]",
+        "[Name the priority action and the evidence still needed to close the point with confidence.]"
       ]
     },
     {

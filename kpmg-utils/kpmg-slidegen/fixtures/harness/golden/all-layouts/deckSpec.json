@@ -2,7 +2,6 @@
   "metadata": {
     "title": "QA Golden All Layouts Stress Fixture",
     "textAmount": "lg",
-    "densityProfile": "denser",
     "subject": "Comprehensive render and pagination regression fixture",
     "company": "KPMG LLP",
     "author": "Slidegen QA Harness",

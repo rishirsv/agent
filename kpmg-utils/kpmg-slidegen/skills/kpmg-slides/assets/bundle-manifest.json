@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-07T22:39:57.238Z",
+  "generatedAt": "2026-03-08T03:30:36.428Z",
   "entries": [
     {
       "source": "skills/kpmg-slides/agents/openai.yaml",
@@ -35,8 +35,8 @@
     {
       "source": "generator/app/output-naming.js",
       "target": "skills/kpmg-slides/assets/slidegen/generator/app/output-naming.js",
-      "size": 2065,
-      "sha256": "f259addef407b64faf527ec740737561531fe16d62ff16b8dfed9c1de49f8fee"
+      "size": 2057,
+      "sha256": "597d9cffbf8f8563276cd017a659a60e533c5af83b37aa21e5eba725165c0776"
     },
     {
       "source": "generator/app/postprocess.js",
@@ -47,8 +47,8 @@
     {
       "source": "generator/app/qa-report.js",
       "target": "skills/kpmg-slides/assets/slidegen/generator/app/qa-report.js",
-      "size": 27052,
-      "sha256": "20143f92b8c47bfb5045ec9d6918df534096501883b195ef8f449bd197e0f03d"
+      "size": 26918,
+      "sha256": "06a3bca85113b52cb0093b5b689211f1a9cd2c1f208c9943ab6fa0b7066bbbbc"
     },
     {
       "source": "generator/app/strict-overflow.js",
@@ -353,8 +353,8 @@
     {
       "source": "generator/runtime/verbosity-contract.js",
       "target": "skills/kpmg-slides/assets/slidegen/generator/runtime/verbosity-contract.js",
-      "size": 11215,
-      "sha256": "6ff0019f7a113c9143ebbf253dddc2b49a7554a0ce64f655523bf8be03aee900"
+      "size": 16692,
+      "sha256": "e1c78c45efe94710d3bc367d1096dcc6851b668fb510aa49dbb99700ac047eca"
     },
     {
       "source": "generator/strict/overlap.js",
@@ -461,8 +461,8 @@
     {
       "source": "templates/kpmg-diligence/package/layouts.json",
       "target": "skills/kpmg-slides/assets/slidegen/templates/kpmg-diligence/package/layouts.json",
-      "size": 116861,
-      "sha256": "72a6712b40e7cb80c42bc466505cf0ee5e04109c0869859b54c5360faa32faa9"
+      "size": 116862,
+      "sha256": "c206ddf0b1e3dc95eca5969da003a229c8ef5e1990814605202b6e67e998b969"
     },
     {
       "source": "templates/kpmg-diligence/package/pagination-policy.json",
@@ -479,38 +479,68 @@
     {
       "source": "presets/authoring/detailed.deckSpec.json",
       "target": "skills/kpmg-slides/assets/templates/deckspec-starter.json",
-      "size": 4704,
-      "sha256": "635ab22a4df0f83f157c303ec732581d9df84a7b7c631a9f3e80fe401bd167f3"
+      "size": 6257,
+      "sha256": "4825f081f9b367d51e5ea99428c6ec27fa028946c3876bbd659c0b5c0a9c5171"
     },
     {
       "source": "presets/authoring/concise.deckSpec.json",
       "target": "skills/kpmg-slides/assets/templates/presets/concise.deckSpec.json",
-      "size": 4303,
-      "sha256": "d8914764fb942691681073cae945c57a4dfc95eaa4c0889b8b60179ea8fc5a66"
+      "size": 5422,
+      "sha256": "45c661805dc7460feeaa666b3c3fe13d284da5bd0111687120173ebf215fd738"
     },
     {
       "source": "presets/authoring/detailed.deckSpec.json",
       "target": "skills/kpmg-slides/assets/templates/presets/detailed.deckSpec.json",
-      "size": 4704,
-      "sha256": "635ab22a4df0f83f157c303ec732581d9df84a7b7c631a9f3e80fe401bd167f3"
+      "size": 6257,
+      "sha256": "4825f081f9b367d51e5ea99428c6ec27fa028946c3876bbd659c0b5c0a9c5171"
     },
     {
       "source": "presets/authoring/extensive.deckSpec.json",
       "target": "skills/kpmg-slides/assets/templates/presets/extensive.deckSpec.json",
-      "size": 5478,
-      "sha256": "0621a5dad192c3e1aa83d465f838a9781a6488753d19a81c1c3f209ead0d1902"
+      "size": 8016,
+      "sha256": "7f22cd04345170047480aa30c772a61db2a0a00b007f5506447caa4872f549cd"
     },
     {
-      "source": "presets/authoring/minimal.deckSpec.json",
-      "target": "skills/kpmg-slides/assets/templates/presets/minimal.deckSpec.json",
-      "size": 3773,
-      "sha256": "2db9b379216b389b4afa434b3510a5fb22244974544df166e856f72582806ae6"
+      "source": "presets/authoring/payload-calibration/concise/deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/payload-calibration/concise/deckSpec.json",
+      "size": 17355,
+      "sha256": "f02ac93b9cc969bc2fca6688388acf50e7821c2abc0255bd74387d3811488fab"
+    },
+    {
+      "source": "presets/authoring/payload-calibration/detailed/deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/payload-calibration/detailed/deckSpec.json",
+      "size": 20332,
+      "sha256": "87ff1f119c6a0911915a108494d341f7e173a0b1355d25e036605b390dd722ae"
+    },
+    {
+      "source": "presets/authoring/payload-calibration/extensive/deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/payload-calibration/extensive/deckSpec.json",
+      "size": 32477,
+      "sha256": "0e36d280040c5e02dbc16a41c2d2e316707c301042af74583974bd67e6e36fbf"
     },
     {
       "source": "presets/authoring/presets.manifest.json",
       "target": "skills/kpmg-slides/assets/templates/presets/presets.manifest.json",
-      "size": 959,
-      "sha256": "dd81d10ce3200b3de6ac2af426aa883b363f03dc2080b4de04071a1102f45349"
+      "size": 625,
+      "sha256": "4276d8a84c4939bed857ce6a5757f9cd4779845c0396b7ab3c4d74fc98ea3cf5"
+    },
+    {
+      "source": "presets/authoring/review-matrix/concise.deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/review-matrix/concise.deckSpec.json",
+      "size": 17113,
+      "sha256": "47ce51b2efa69a9de627412a2a967d121e10da5eebb8a17a089309a42a243ed0"
+    },
+    {
+      "source": "presets/authoring/review-matrix/detailed.deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/review-matrix/detailed.deckSpec.json",
+      "size": 19292,
+      "sha256": "3a5a19b3c1f60ab340a92d558060eab06b581e0b134411930a0c836e5064928b"
+    },
+    {
+      "source": "presets/authoring/review-matrix/extensive.deckSpec.json",
+      "target": "skills/kpmg-slides/assets/templates/presets/review-matrix/extensive.deckSpec.json",
+      "size": 20547,
+      "sha256": "9dc921c7b63af0ec43edff4cefc609beca6f624c3c724722df0cac15243ae81c"
     },
     {
       "source": "skills/kpmg-slides/package-lock.json",
@@ -533,8 +563,8 @@
     {
       "source": "skills/kpmg-slides/references/deckspec.schema.json",
       "target": "skills/kpmg-slides/references/deckspec.schema.json",
-      "size": 26108,
-      "sha256": "538614d141d8e67bd58d63d8acbe6aadebf50e1a0c3d4126bdc3e0d700005dfa"
+      "size": 25944,
+      "sha256": "ddf2beb9c49401db5cf128827cda14f20eff7f219fb3dbe58ca4f8e7c16f4fd4"
     },
     {
       "source": "skills/kpmg-slides/references/INDEX.md",
@@ -551,8 +581,8 @@
     {
       "source": "skills/kpmg-slides/references/quality_assurance.md",
       "target": "skills/kpmg-slides/references/quality_assurance.md",
-      "size": 8717,
-      "sha256": "901426798644036fbea759fc82213d91a3457b498873492f653f76ef0a9d70ba"
+      "size": 8689,
+      "sha256": "fbe787356b9aa2ceb59c86b4cdc49f6338c953ec0c3b8b61c9708fdfbfbc79fe"
     },
     {
       "source": "skills/kpmg-slides/references/slide-contract.md",
@@ -581,8 +611,8 @@
     {
       "source": "skills/kpmg-slides/SKILL.md",
       "target": "skills/kpmg-slides/SKILL.md",
-      "size": 19043,
-      "sha256": "bcaa427d985d898228a3308f462a498c1d5707172e92bb22ee7ae2730b0b95be"
+      "size": 18775,
+      "sha256": "efb81ffd7ee67b6c35eb22157f12f984d3f09c8495101a011d466640c40724d4"
     }
   ]
 }

@@ -14,7 +14,7 @@ function isGenericStarter(value = '') {
   if (!normalized) return true;
   if (normalized === 'deck') return true;
   if (normalized.includes('starter')) return true;
-  return /^(minimal|concise|detailed|extensive)\b/.test(normalized) && normalized.includes('deck');
+  return /^(concise|detailed|extensive)\b/.test(normalized) && normalized.includes('deck');
 }
 
 function isMeaningfulTopic(value = '') {
