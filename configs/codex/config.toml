@@ -45,6 +45,14 @@ max_threads = 8
 config_file = "agents/fast-explorer.toml"
 description = "Fast explorer subagent for quick codebase investigation and concise findings."
 
+[agents.explore_fast]
+config_file = "agents/explore-fast.toml"
+description = "Fast read-only file search specialist for quick codebase exploration and analysis."
+
+[agents.explore]
+config_file = "agents/explore.toml"
+description = "Read-only file search specialist for codebase exploration and analysis."
+
 [agents.researcher]
 config_file = "agents/researcher.toml"
 description = "Research-focused subagent. For every task, invoke $research first, then summarize sources and recommendations."
@@ -53,17 +61,13 @@ description = "Research-focused subagent. For every task, invoke $research first
 config_file = "agents/reviewer.toml"
 description = "Review-focused subagent. For every task, invoke $review first, then deliver findings."
 
-[agents.worker]
-config_file = "agents/worker.toml"
-description = "Implementation-focused subagent that ships scoped changes, runs simplify/tests/e2e, and reports a PR URL."
-
 [agents.worker_fast]
 config_file = "agents/worker-fast.toml"
 description = "Fast implementation-focused subagent using Codex Spark for quicker scoped changes and PR delivery."
 
-[agents.worker_med]
-config_file = "agents/worker-med.toml"
-description = "Medium-latency implementation-focused subagent using Codex 5.3 with high reasoning for scoped changes and PR delivery."
+[agents.worker_mini]
+config_file = "agents/worker-mini.toml"
+description = "Use for lightweight implementation, edits, and straightforward coding tasks."
 
 [agents.docs_gardener]
 config_file = "agents/docs-gardener.toml"

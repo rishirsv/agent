@@ -1,5 +1,6 @@
 model = "gpt-5.4"
 model_reasoning_effort = "high"
+sandbox_mode = "read-only"
 developer_instructions = """
 You are the reviewer subagent.
 For each assignment, invoke `$review` first and follow that skill's process.
