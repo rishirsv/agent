@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoresearch Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .badge.running  { background: #d4edda; color: #155724; }
+  .badge.complete { background: #cce5ff; color: #004085; }
+  .badge.ready    { background: #e2e3e5; color: #383d41; }
+  .badge.baseline { background: #fff3cd; color: #856404; }
+  .badge.stalled  { background: #f8d7da; color: #721c24; }
+
+  .stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px 20px;
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .stat-card .label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .stat-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  .panel {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .panel h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .chart-container {
+    position: relative;
+    height: 260px;
+  }
+
+  /* Experiment table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 2px solid #e0e0e0;
+    font-weight: 600;
+    color: #666;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  tr.kept td:first-child {
+    border-left: 3px solid #28a745;
+    padding-left: 9px;
+  }
+
+  tr.discarded td:first-child {
+    border-left: 3px solid #dc3545;
+    padding-left: 9px;
+  }
+
+  tr.baseline td:first-child {
+    border-left: 3px solid #007bff;
+    padding-left: 9px;
+  }
+
+  .delta-pos { color: #28a745; font-weight: 600; }
+  .delta-neg { color: #dc3545; font-weight: 600; }
+  .delta-zero { color: #888; }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .tag.kept     { background: #d4edda; color: #155724; }
+  .tag.discarded { background: #f8d7da; color: #721c24; }
+  .tag.baseline  { background: #cce5ff; color: #004085; }
+
+  /* Eval breakdown bars */
+  .eval-bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .eval-bar-label {
+    width: 180px;
+    font-size: 13px;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .eval-bar-track {
+    flex: 1;
+    height: 22px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 12px;
+  }
+
+  .eval-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+
+  .eval-bar-value {
+    width: 60px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .hypothesis {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+  }
+
+  .refresh-note {
+    font-size: 11px;
+    color: #aaa;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1 id="title">Autoresearch Dashboard</h1>
+    <span class="refresh-note">Auto-refreshes every 5s</span>
+  </div>
+  <span id="status-badge" class="badge ready">Loading...</span>
+</header>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="label">Best Score</div>
+    <div class="value" id="best-score">—</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">Experiments</div>
+    <div class="value" id="exp-count">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">Kept</div>
+    <div class="value" id="kept-count">0</div>
+  </div>
+  <div class="stat-card">
+    <div class="label">Stall</div>
+    <div class="value" id="stall-count">0</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Score Progression</h2>
+  <div class="chart-container">
+    <canvas id="score-chart"></canvas>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Experiments</h2>
+  <div id="experiment-table">
+    <div class="empty-state">No experiments yet. Run <code>./run.sh</code> to start.</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Eval Breakdown</h2>
+  <div id="eval-breakdown">
+    <div class="empty-state">No eval data yet.</div>
+  </div>
+</div>
+
+<script>
+let chart = null;
+
+function pct(value) {
+  return (value * 100).toFixed(1) + '%';
+}
+
+function barColor(rate) {
+  if (rate >= 0.8) return '#28a745';
+  if (rate >= 0.5) return '#ffc107';
+  return '#dc3545';
+}
+
+function statusClass(status) {
+  if (status === 'running') return 'running';
+  if (status === 'complete') return 'complete';
+  if (status === 'baseline') return 'baseline';
+  return 'ready';
+}
+
+function statusLabel(status, stall, stall_limit) {
+  if (status === 'running' && stall_limit > 0 && stall >= stall_limit) return 'Stalled';
+  if (status === 'running') return 'Running';
+  if (status === 'complete') return 'Complete';
+  if (status === 'baseline') return 'Baseline';
+  return 'Ready';
+}
+
+function renderChart(experiments) {
+  const ctx = document.getElementById('score-chart').getContext('2d');
+  const labels = experiments.map(e => 'Exp ' + e.id);
+  const scores = experiments.map(e => e.score_after * 100);
+  const colors = experiments.map(e => {
+    if (e.id === 0) return '#007bff';
+    return e.kept ? '#28a745' : '#dc3545';
+  });
+
+  const baseline = experiments.length > 0 ? experiments[0].score_after * 100 : 0;
+
+  if (chart) chart.destroy();
+
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Pass Rate (%)',
+        data: scores,
+        borderColor: '#007bff',
+        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        tension: 0.2,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          ticks: { callback: v => v + '%' }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            const exp = experiments[ctx.dataIndex];
+            const status = exp.id === 0 ? 'baseline' : (exp.kept ? 'kept' : 'discarded');
+            return `${ctx.parsed.y.toFixed(1)}% [${status}]`;
+          }
+        }
+      }
+    }
+  });
+}
+
+function renderTable(experiments) {
+  const container = document.getElementById('experiment-table');
+  if (experiments.length === 0) {
+    container.innerHTML = '<div class="empty-state">No experiments yet.</div>';
+    return;
+  }
+
+  const rows = [...experiments].reverse();
+  let html = `<table>
+    <tr>
+      <th>#</th>
+      <th>Hypothesis</th>
+      <th>Before</th>
+      <th>After</th>
+      <th>Delta</th>
+      <th>Status</th>
+    </tr>`;
+
+  for (const e of rows) {
+    const delta = e.score_after - e.score_before;
+    let deltaClass = 'delta-zero';
+    let deltaStr = '—';
+    if (e.id > 0) {
+      if (delta > 0) { deltaClass = 'delta-pos'; deltaStr = '+' + pct(delta); }
+      else if (delta < 0) { deltaClass = 'delta-neg'; deltaStr = pct(delta); }
+      else { deltaStr = '0%'; }
+    }
+
+    let rowClass = 'baseline';
+    let tagClass = 'baseline';
+    let tagLabel = 'baseline';
+    if (e.id > 0) {
+      rowClass = e.kept ? 'kept' : 'discarded';
+      tagClass = e.kept ? 'kept' : 'discarded';
+      tagLabel = e.kept ? 'kept' : 'discarded';
+    }
+
+    html += `<tr class="${rowClass}">
+      <td>${e.id}</td>
+      <td class="hypothesis" title="${(e.hypothesis || '').replace(/"/g, '&quot;')}">${e.hypothesis || '—'}</td>
+      <td>${pct(e.score_before)}</td>
+      <td>${pct(e.score_after)}</td>
+      <td class="${deltaClass}">${deltaStr}</td>
+      <td><span class="tag ${tagClass}">${tagLabel}</span></td>
+    </tr>`;
+  }
+
+  html += '</table>';
+  container.innerHTML = html;
+}
+
+function renderBreakdown(evalBreakdown) {
+  const container = document.getElementById('eval-breakdown');
+  if (!evalBreakdown || evalBreakdown.length === 0) {
+    container.innerHTML = '<div class="empty-state">No eval data yet.</div>';
+    return;
+  }
+
+  // Sort worst-to-best
+  const sorted = [...evalBreakdown].sort((a, b) => {
+    const rateA = a.total_runs > 0 ? a.total_pass / a.total_runs : 0;
+    const rateB = b.total_runs > 0 ? b.total_pass / b.total_runs : 0;
+    return rateA - rateB;
+  });
+
+  let html = '';
+  for (const ev of sorted) {
+    const rate = ev.total_runs > 0 ? ev.total_pass / ev.total_runs : 0;
+    const widthPct = (rate * 100).toFixed(1);
+    const color = barColor(rate);
+    html += `<div class="eval-bar-row">
+      <div class="eval-bar-label" title="${ev.name}">${ev.name}</div>
+      <div class="eval-bar-track">
+        <div class="eval-bar-fill" style="width: ${widthPct}%; background: ${color};"></div>
+      </div>
+      <div class="eval-bar-value">${ev.total_pass}/${ev.total_runs}</div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+
+async function refresh() {
+  try {
+    const resp = await fetch('/api/state', { cache: 'no-store' });
+    if (!resp.ok) return;
+    const state = await resp.json();
+
+    // Title
+    document.getElementById('title').textContent =
+      state.skill_name ? `Autoresearch: ${state.skill_name}` : 'Autoresearch Dashboard';
+
+    // Status badge
+    const badge = document.getElementById('status-badge');
+    const sl = statusLabel(state.status, state.stall_count, state.stall_limit || 5);
+    badge.textContent = sl;
+    badge.className = 'badge ' + (sl === 'Stalled' ? 'stalled' : statusClass(state.status));
+
+    // Stats
+    document.getElementById('best-score').textContent = pct(state.best_score || 0);
+    document.getElementById('exp-count').textContent = (state.experiments || []).length;
+    document.getElementById('kept-count').textContent =
+      (state.experiments || []).filter(e => e.kept && e.id > 0).length;
+    document.getElementById('stall-count').textContent = state.stall_count || 0;
+
+    // Chart
+    renderChart(state.experiments || []);
+
+    // Table
+    renderTable(state.experiments || []);
+
+    // Eval breakdown
+    renderBreakdown(state.eval_breakdown || []);
+
+  } catch (err) {
+    // Silently ignore fetch errors (server may be restarting)
+  }
+}
+
+// Initial load + auto-refresh
+refresh();
+setInterval(refresh, 5000);
+</script>
+
+</body>
+</html>

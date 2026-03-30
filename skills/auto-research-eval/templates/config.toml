@@ -1,0 +1,41 @@
+[target]
+path = "target.md"
+
+[loop]
+max_experiments = 30
+stall_limit = 5
+
+[agent]
+backend = "claude"                   # "claude" or "codex"
+
+[dashboard]
+port = 8384
+auto_open = true
+
+# Define binary evals below. Each eval checks one specific thing.
+# type = "code" for objective checks, "judge" for interpretive checks.
+#
+# Code-based eval options for 'check':
+#   contains      — pass_condition string is found in the output
+#   not_contains  — pass_condition string is NOT found in the output
+#   regex         — output matches the regex in 'pattern'
+#   valid_json    — output is valid JSON
+#
+# Judge-based evals require a judge_file pointing to a judge prompt in judges/
+
+# [[evals]]
+# name = "Example code eval"
+# type = "code"
+# check = "contains"
+# pattern = "expected text"
+# question = "Does the output contain the expected text?"
+# pass_condition = "The expected text appears in the output"
+# fail_condition = "The expected text is missing"
+
+# [[evals]]
+# name = "Example judge eval"
+# type = "judge"
+# judge_file = "judges/example_judge.md"
+# question = "Is the output well-structured?"
+# pass_condition = "Output follows the expected structure"
+# fail_condition = "Output is disorganized or missing sections"

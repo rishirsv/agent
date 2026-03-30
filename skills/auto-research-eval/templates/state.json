@@ -1,0 +1,11 @@
+{
+  "skill_name": "",
+  "current_experiment": 0,
+  "best_score": 0.0,
+  "best_experiment": 0,
+  "stall_count": 0,
+  "stall_limit": 5,
+  "status": "ready",
+  "experiments": [],
+  "eval_breakdown": []
+}
