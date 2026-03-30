@@ -1,503 +1,310 @@
-# Oracle prompt templates (for ChatGPT Pro)
+# Oracle Prompt Templates
 
-Use these templates to generate `prompt.md` for the ChatGPT Pro web UI when running the Oracle Skill.
+Use these templates to generate `prompt.md` for ChatGPT Pro or another external expert model.
 
-The downstream model will receive `context.zip` (a zip of repo files). These templates assume the model has **zero** other context.
-
----
+Every template assumes the downstream model sees only `context.zip`.
+Copy the smallest template that fits, then trim anything you do not need.
+For reusable building blocks, see [prompt-blocks.md](prompt-blocks.md).
 
 ## Role Values
 
-Replace `{ROLE}` in templates with one of these based on the task:
+Replace `{ROLE}` with one of these:
 
-| Task Type    | Role Value                                                                       |
-| ------------ | -------------------------------------------------------------------------------- |
-| Code review  | a staff engineer doing a careful code review for correctness and maintainability |
-| Debugging    | a senior engineer debugging a tricky issue with limited context                  |
-| Architecture | a principal engineer reviewing system design                                     |
-| Security     | a security engineer threat-modeling and reviewing deployment hardening           |
-| Performance  | a performance engineer identifying bottlenecks and optimization opportunities    |
-| Data/SQL     | a database engineer reviewing correctness and performance                        |
-| UI/UX        | an expert UI/UX designer doing a rigorous visual and interaction review          |
+| Task Type | Role Value |
+|-----------|------------|
+| Code review | a staff engineer doing a careful code review for correctness and maintainability |
+| Debugging | a senior engineer debugging a tricky issue with limited context |
+| Architecture | a principal engineer reviewing system design |
+| Security | a security engineer threat-modeling and reviewing deployment hardening |
+| Performance | a performance engineer identifying bottlenecks and optimization opportunities |
+| Data/SQL | a database engineer reviewing correctness and performance |
+| UI/UX | an expert UI/UX designer doing a rigorous visual and interaction review |
+| Prompting | a prompt engineer improving Codex or GPT-5.4 prompts for reliability and clarity |
 
----
+## Code Review Template
 
-## Contents
-
-- [Code review template](#code-review-template) - "review", "audit", "refactor", "sanity-check"
-- [Debugging template](#debugging-template) - errors, crashes, failing tests
-- [Security review template](#security-review-template) - vulnerabilities, auth, secrets
-- [Performance audit template](#performance-audit-template) - bottlenecks, optimization
-- [Architecture review template](#architecture-review-template) - design, structure, patterns
-- [General template](#general-template) - anything else
-
----
-
-## Code review template
-
-Use this when you want a high-signal review grounded in repo context.
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
+```xml
+<task>
 You are {ROLE}.
-
-## Context
-
-I am uploading a zip called `context.zip` that contains repository files. Treat the contents of those files as the source of truth.
-
-Rules:
-
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Use only what you can support from the zip's files. Do not invent details.
-- For concrete claims, cite file paths (add line numbers if available; otherwise cite the nearest function/type name as an anchor).
-- Keep it tight: focus on the top 5-10 things that change decisions; group nits.
-- Do not ask questions. If something essential is missing, proceed with assumptions and label them.
-
-## What I want you to do
-
-Review the change / design described below. Focus on whether it is correct, safe, and a good fit for the codebase.
-
-**User request / goal:**
-{USER_GOAL}
-
-**Constraints:**
-{CONSTRAINTS}
-
-**What I changed / plan:**
-{CHANGE_SUMMARY}
-
-## Output format
-
-### Summary
-
-One short paragraph describing what the code does (as implemented) and your overall assessment.
-
-### Standard review
-
-Cover these areas, using the minimum detail needed to be convincing:
-
-1. Spec & plan alignment
-
-- Does it implement what the goal implies?
-- Any scope creep or missed parts?
-
-2. Code quality
-
-- Readability, structure, naming, consistency with local patterns
-- Separation of concerns; avoid duplication where it matters
-
-3. Correctness & safety
-
-- Edge cases, validation, error handling, failure modes
-- Data integrity / concurrency issues
-- Security concerns if relevant
-
-4. Performance & scalability (only if relevant)
-
-- Hotspots, expensive operations, unnecessary work
-
-5. Testing & documentation
-
-- What's tested, what's missing, how to verify
-
-When listing issues, tag each with a priority:
-
-- **[P0]** blocking / likely to break users or data
-- **[P1]** urgent (should be fixed next cycle)
-- **[P2]** normal (fix eventually)
-- **[P3]** nice to have
-
-For each issue include:
-
-- What's wrong (plain language)
-- Why it matters (impact / risk)
-- The smallest reasonable fix (concrete guidance; code only if it clarifies, keep it short)
-- The file(s) involved (paths)
-
-### Simplicity review (YAGNI)
-
-Briefly check:
-
-- What is the core purpose (1-3 sentences)?
-- Where is the design more complex than needed?
-- What would be a simpler alternative that still satisfies the goal?
-- Anything that looks like over-engineering / "just in case" abstractions?
-
-### Overall correctness verdict
-
-End with exactly one of:
-
-- **Correct**
-- **Probably correct, with caveats**
-- **Not correct**
-
-Then one short paragraph explaining your verdict.
-
----
-
-## Debugging template
-
-Use this when you have an error, failing tests, or unexpected behavior.
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
-You are {ROLE}.
-
-## Context
 
 I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-Rules:
+Review the change, design, or implementation described below.
+Focus on correctness, maintainability, safety, and fit with the existing codebase.
 
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Don't invent missing details. Do not ask questions; proceed with assumptions and list unknowns as risks.
-- Prefer falsifiable hypotheses over broad speculation.
-- For concrete claims, cite file paths (add line numbers if available; otherwise cite the nearest function/type name as an anchor).
-- Keep it tight: focus on the top 5-10 things that change decisions; group nits.
+User goal: {USER_GOAL}
+Constraints: {CONSTRAINTS}
+What changed or is proposed: {CHANGE_SUMMARY}
+</task>
 
-## The problem
+<structured_output_contract>
+Return:
+1. short summary of what the code does and your overall assessment
+2. findings ordered by severity with why each matters
+3. smallest safe fixes or follow-ups
+4. overall correctness verdict: Correct, Probably correct with caveats, or Not correct
+</structured_output_contract>
 
-**What I expected:**
-{EXPECTED}
+<default_follow_through_policy>
+Keep going until you have enough evidence to identify the material review points.
+Do not ask questions; proceed with assumptions and label them.
+</default_follow_through_policy>
 
-**What happened instead:**
-{ACTUAL}
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+For concrete claims, cite file paths and line numbers when available.
+If a point is an inference, label it clearly.
+</grounding_rules>
 
-**Error / logs (verbatim if available):**
-{ERROR_TEXT}
+<dig_deeper_nudge>
+After finding the first plausible issue, also check for second-order regressions, empty-state behavior, retries, stale state, and rollback paths.
+</dig_deeper_nudge>
 
-**Repro steps:**
-{REPRO_STEPS}
+<verification_loop>
+Before finalizing, verify that each finding is material, actionable, and supported by the bundle.
+</verification_loop>
+```
 
-**Constraints:**
-{CONSTRAINTS}
+## Debugging Template
 
-## What I want
-
-1. Your best diagnosis (most likely root cause), grounded in the files.
-2. The smallest fix that makes it correct.
-3. How to confirm the fix (tests/commands/checks).
-4. Risks/unknowns.
-
-## Output format
-
-### Diagnosis
-
-What's most likely wrong and why.
-
-### Evidence
-
-Bullets citing file paths and the specific facts that support the diagnosis.
-
-### Fix plan
-
-Numbered steps, each concrete and verifiable. Include exact file paths to change.
-
-### Verification
-
-Commands/tests/checks to run to prove it's fixed.
-
-### Risks / unknowns
-
-Bullets of anything that could change the recommendation.
-
-### Assumptions / unknowns
-
-Bullets: what you assumed and what you could not confirm from the zip.
-
----
-
-## Security review template
-
-Use when reviewing for vulnerabilities, auth issues, or deployment hardening.
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
+```xml
+<task>
 You are {ROLE}.
-
-## Context
 
 I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-Rules:
+Diagnose the most likely root cause of this issue.
 
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Use only what you can support from the zip's files. Do not invent details.
-- For concrete claims, cite file paths (add line numbers if available).
-- Focus on high-impact security issues; group low-severity findings.
-- Do not ask questions; state assumptions and unknowns explicitly.
+Expected behavior: {EXPECTED}
+Actual behavior: {ACTUAL}
+Error or logs: {ERROR_TEXT}
+Repro steps: {REPRO_STEPS}
+Constraints: {CONSTRAINTS}
+</task>
 
-## What I want you to review
+<structured_output_contract>
+Return:
+1. most likely root cause
+2. evidence with file-path citations
+3. smallest safe fix
+4. verification steps
+5. risks, assumptions, or unknowns
+</structured_output_contract>
 
-{SECURITY_SCOPE}
+<default_follow_through_policy>
+Keep going until you have enough evidence to identify the most likely root cause confidently.
+Do not ask questions unless a missing detail changes correctness materially.
+</default_follow_through_policy>
 
-**Specific concerns:**
-{CONCERNS}
+<missing_context_gating>
+Do not guess missing repository facts.
+If required context is absent from the bundle, state exactly what remains unknown.
+</missing_context_gating>
 
-## Output format
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+Prefer falsifiable hypotheses over broad speculation.
+</grounding_rules>
 
-### Threat Model Summary
+<verification_loop>
+Before finalizing, verify that the proposed root cause matches the observed evidence.
+</verification_loop>
+```
 
-One paragraph describing the attack surface and trust boundaries.
+## Security Review Template
 
-### Findings
-
-For each finding:
-
-- **Severity**: Critical / High / Medium / Low / Info
-- **Category**: Auth, Input Validation, Secrets, Dependencies, Config, etc.
-- **Description**: What's wrong
-- **Impact**: What an attacker could do
-- **File(s)**: Paths involved
-- **Fix**: Concrete remediation steps
-
-Sort by severity (Critical first).
-
-### Authentication & Authorization
-
-- How is auth implemented?
-- Any privilege escalation risks?
-- Session management concerns?
-
-### Data Handling
-
-- Sensitive data exposure risks
-- Input validation gaps
-- Output encoding issues
-
-### Dependencies & Config
-
-- Known vulnerable packages?
-- Secrets in code or config?
-- Hardening recommendations
-
-### Summary Verdict
-
-One of:
-
-- **Secure** (no critical/high issues)
-- **Needs remediation** (has high/critical issues)
-- **Insufficient context** (cannot fully assess)
-
----
-
-## Performance audit template
-
-Use when reviewing for bottlenecks, scalability issues, or optimization opportunities.
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
+```xml
+<task>
 You are {ROLE}.
-
-## Context
 
 I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-Rules:
+Review this repository slice for material security risks.
 
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Use only what you can support from the zip's files. Do not invent details.
-- For concrete claims, cite file paths and function names.
-- Focus on measurable impact; avoid micro-optimizations.
-- Do not ask questions; state assumptions explicitly.
+Scope: {SECURITY_SCOPE}
+Specific concerns: {CONCERNS}
+</task>
 
-## Performance scope
+<structured_output_contract>
+Return:
+1. short threat model summary
+2. findings ordered by severity
+3. impact and exploitability for each finding
+4. smallest safe remediations
+5. overall verdict: Secure, Needs remediation, or Insufficient context
+</structured_output_contract>
 
-{PERF_SCOPE}
+<default_follow_through_policy>
+Do not ask questions; proceed with assumptions and label them.
+</default_follow_through_policy>
 
-**Known issues or symptoms:**
-{SYMPTOMS}
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+For each finding, cite the relevant file paths.
+</grounding_rules>
 
-**Constraints:**
-{CONSTRAINTS}
+<dig_deeper_nudge>
+Check authentication, authorization, trust boundaries, input validation, secrets handling, and unsafe defaults before finalizing.
+</dig_deeper_nudge>
 
-## Output format
+<verification_loop>
+Before finalizing, verify that each finding is both material and supported by the bundle.
+</verification_loop>
+```
 
-### Executive Summary
+## Performance Audit Template
 
-One paragraph: biggest bottlenecks and estimated impact.
-
-### Hotspots
-
-For each issue:
-
-- **Location**: File path + function/component
-- **Issue**: What's slow/expensive
-- **Impact**: Estimated severity (High/Medium/Low)
-- **Fix**: Concrete optimization
-
-### Database / API Calls
-
-- N+1 queries
-- Missing indexes
-- Unnecessary fetches
-- Caching opportunities
-
-### Frontend Performance (if applicable)
-
-- Bundle size concerns
-- Render blocking
-- Re-render issues
-- Asset optimization
-
-### Scalability Concerns
-
-- Memory usage patterns
-- Connection pooling
-- Rate limiting needs
-
-### Recommended Priorities
-
-Numbered list of optimizations by impact/effort ratio.
-
----
-
-## Architecture review template
-
-Use for system design validation, component structure, or technical decisions.
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
+```xml
+<task>
 You are {ROLE}.
-
-## Context
 
 I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-Rules:
+Review this repository slice for meaningful performance or scalability issues.
 
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Use only what you can support from the zip's files. Do not invent details.
-- For concrete claims, cite file paths.
-- Focus on structural concerns; defer implementation details.
-- Do not ask questions; state assumptions explicitly.
+Performance scope: {PERF_SCOPE}
+Known symptoms: {SYMPTOMS}
+Constraints: {CONSTRAINTS}
+</task>
 
-## Architecture scope
+<structured_output_contract>
+Return:
+1. executive summary of the biggest bottlenecks
+2. hotspots ordered by likely impact
+3. concrete optimization recommendations
+4. verification ideas or measurements to confirm the recommendation
+5. tradeoffs or risks
+</structured_output_contract>
 
-{ARCH_SCOPE}
+<default_follow_through_policy>
+Do not ask questions; proceed with assumptions and label them.
+</default_follow_through_policy>
 
-**What I want validated:**
-{VALIDATION_GOALS}
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+Focus on issues with likely measurable impact; avoid speculative micro-optimizations.
+</grounding_rules>
 
-**Constraints:**
-{CONSTRAINTS}
+<verification_loop>
+Before finalizing, verify that the recommended optimizations are proportionate to the evidence.
+</verification_loop>
+```
 
-## Output format
+## Architecture Review Template
 
-### Architecture Overview
-
-One paragraph summarizing the current design as implemented.
-
-### Component Analysis
-
-For each major component:
-
-- **Purpose**: What it does
-- **Boundaries**: What it owns vs. delegates
-- **Dependencies**: What it relies on
-- **Concerns**: Coupling, cohesion, responsibility issues
-
-### Design Patterns Assessment
-
-- Patterns in use (good fits, anti-patterns)
-- Consistency across the codebase
-- Abstraction level appropriateness
-
-### Scalability & Evolution
-
-- How well does this handle growth?
-- What would break first under load?
-- How easy is it to add features?
-
-### Recommendations
-
-1. **Keep**: What's working well
-2. **Change**: What to refactor (with priority)
-3. **Add**: Missing components or patterns
-
-### Verdict
-
-One of:
-
-- **Sound architecture**
-- **Needs refactoring** (list areas)
-- **Major concerns** (architectural debt)
-
----
-
-## General template
-
-Use this when the request doesn't fit code review or debugging (architecture, research, "how should we do X", etc.).
-
-Pasteable `prompt.md` template:
-
----
-
-## Role
-
+```xml
+<task>
 You are {ROLE}.
 
-## Context
+I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-I am uploading `context.zip` containing repository files. Treat those files as the source of truth.
+Review the architecture or design represented in this repository slice.
 
-Rules:
+Architecture scope: {ARCH_SCOPE}
+What I want validated: {VALIDATION_GOALS}
+Constraints: {CONSTRAINTS}
+</task>
 
-- Start by reading `context/MANIFEST.md` and use it as your index to the bundle.
-- Use only what you can support from the zip's files. Do not invent details.
-- For concrete claims, cite file paths (add line numbers if available; otherwise cite the nearest function/type name as an anchor).
-- Write in clear, non-technical prose.
-- Keep it tight: focus on the top 5-10 things that change decisions; group nits.
-- Do not ask questions; state assumptions and unknowns explicitly.
+<structured_output_contract>
+Return:
+1. current architecture summary
+2. strengths worth keeping
+3. structural concerns or design risks
+4. prioritized recommendations
+5. overall verdict: Sound architecture, Needs refactoring, or Major concerns
+</structured_output_contract>
 
-## Task
+<default_follow_through_policy>
+Do not ask questions; proceed with assumptions and label them.
+</default_follow_through_policy>
 
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+Focus on structural concerns, boundaries, dependencies, and changeability.
+</grounding_rules>
+
+<verification_loop>
+Before finalizing, verify that the recommendations match the actual architecture shown in the bundle rather than a hypothetical redesign.
+</verification_loop>
+```
+
+## General Recommendation Template
+
+```xml
+<task>
+You are {ROLE}.
+
+I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
+
+Use the uploaded repository context to answer this task:
 {TASK}
 
-## Constraints / preferences
+Constraints or preferences: {CONSTRAINTS}
+What good looks like: {SUCCESS_CRITERIA}
+</task>
 
-{CONSTRAINTS}
+<structured_output_contract>
+Return:
+1. observed facts
+2. recommendation
+3. tradeoffs
+4. implementation notes with likely repo touchpoints
+5. risks or open questions
+</structured_output_contract>
 
-## What "good" looks like
+<default_follow_through_policy>
+Do not ask questions; proceed with assumptions and label them.
+</default_follow_through_policy>
 
-{SUCCESS_CRITERIA}
+<research_mode>
+Separate observed facts, reasoned inferences, and open questions.
+Prefer breadth first, then go deeper only where the evidence changes the recommendation.
+</research_mode>
 
-## Output format
+<grounding_rules>
+Ground repo-specific claims in the uploaded bundle.
+</grounding_rules>
+```
 
-### Recommendation
+## Prompt-Patching Template
 
-Your recommended approach.
+Use this when the real object of review is a prompt, skill, or agent instruction set.
 
-### Why this is the best option
+```xml
+<task>
+You are {ROLE}.
 
-Comprehensive discussion in bullets of the main tradeoffs and constraints that drove the decision.
+I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-### Implementation notes
+Diagnose why this prompt, skill, or instruction set is underperforming and propose the smallest high-leverage changes.
 
-Concrete next steps and where in the repo it likely touches (file paths from the zip).
+Target prompt or skill: {PROMPT_SCOPE}
+Observed failure modes: {FAILURE_MODES}
+Constraints: {CONSTRAINTS}
+</task>
 
-### Risks / unknowns
+<structured_output_contract>
+Return:
+1. failure modes
+2. root causes in the current prompt or instructions
+3. revised prompt or instruction blocks
+4. why the revision should work better
+5. residual risks or follow-ups
+</structured_output_contract>
 
-Anything that could change your recommendation.
+<grounding_rules>
+Base your diagnosis on the prompt text, instruction files, and failure examples in the bundle.
+Do not invent failure modes that are not supported by the provided material.
+</grounding_rules>
 
----
+<verification_loop>
+Before finalizing, make sure the revised prompt resolves the cited failure modes without creating contradictory instructions.
+</verification_loop>
+```

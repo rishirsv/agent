@@ -1,101 +1,131 @@
 # Custom Prompt Guide
 
-When no template fits, create a custom prompt following Oracle principles.
+Use a custom prompt when none of the bundled templates fit cleanly.
+
+The goal is not to write a long prompt. The goal is to assemble the smallest set of prompt blocks that makes the downstream model reliable, grounded, and easy to use.
+
+See [prompt-blocks.md](prompt-blocks.md) for the reusable block catalog.
 
 ## Core Rules
 
-1. **Optimize for correctness per token** - Be concise but complete
-2. **Ground all claims in context** - Cite file paths
-3. **No questions** - State assumptions, list unknowns
-4. **Falsifiable hypotheses** - Avoid broad speculation
-5. **Clear verdict** - End with actionable conclusion
+- Start with one concrete task and one desired end state.
+- Use XML blocks so the prompt structure is stable.
+- Add an explicit output contract instead of vague prose.
+- Add grounding and verification only where the task needs them.
+- Tell the model to proceed with assumptions and list unknowns instead of asking questions.
 
-## Prompt Skeleton
+## Minimum Viable Custom Prompt
 
-```markdown
-### Role
-
-You are [expertise] [doing task type] [with constraint].
-
-### Context
+```xml
+<task>
+You are {ROLE}.
 
 I am uploading `context.zip` containing repository files. Treat those files as authoritative.
+Start by reading `context/MANIFEST.md`.
 
-Rules:
+{TASK_DESCRIPTION}
+</task>
 
-- Start by reading `context/MANIFEST.md`
-- Use only what you can support from files
-- For concrete claims, cite file paths
-- Do not ask questions; state assumptions
+<structured_output_contract>
+Return:
+1. {PRIMARY_OUTPUT}
+2. {SUPPORTING_OUTPUT}
+3. {NEXT_STEPS_OR_RISKS}
+</structured_output_contract>
 
-### Task
-
-[1-2 sentences: what you need]
-
-**Specific focus:**
-[Bullets of key concerns]
-
-**Constraints:**
-[Any limitations or preferences]
-
-### Output format
-
-#### [Primary Analysis Section]
-
-[What to include, how to structure]
-
-#### [Evidence/Details Section]
-
-[Supporting information format]
-
-#### Verdict / Recommendation
-
-[Clear conclusion format]
+<default_follow_through_policy>
+Default to the most reasonable low-risk interpretation and keep going.
+Only stop to ask questions when a missing detail changes correctness or safety materially.
+</default_follow_through_policy>
 ```
 
-## Good vs. Bad Examples
+That is often enough. Only add more blocks if they change quality materially.
 
-### Role
+## Block Selection
 
-**Good:** "a database engineer reviewing a complex migration for data integrity risks"
+Add these blocks when needed:
 
-**Bad:** "an expert" (too vague)
+- `compact_output_contract`: when concise prose is better than a schema
+- `verification_loop`: when correctness matters and the model should sanity-check itself before answering
+- `completeness_contract`: when the task should not stop at the first plausible answer
+- `missing_context_gating`: when guessing would be dangerous
+- `grounding_rules`: when claims must stay tied to repo evidence
+- `citation_rules`: when using external research or quoted material
+- `action_safety`: when recommending code or config changes
+- `research_mode`: when comparing options or making recommendations
+- `dig_deeper_nudge`: when you want a more adversarial review for hidden regressions
 
-**Good:** "a senior frontend engineer optimizing React render performance"
+## Recommended Assembly Order
 
-**Bad:** "someone who knows React" (lacks specificity)
+Keep blocks in a predictable order:
 
-### Task
+1. `<task>`
+2. `<structured_output_contract>` or `<compact_output_contract>`
+3. `<default_follow_through_policy>`
+4. `<completeness_contract>` and/or `<verification_loop>` if needed
+5. `<missing_context_gating>`, `<grounding_rules>`, or `<citation_rules>` if needed
+6. `<action_safety>`, `<research_mode>`, or other task-specific blocks if needed
 
-**Good:** "Review the auth middleware for RBAC bypass vulnerabilities. Focus on the permission check in `authMiddleware.ts`."
+## Good vs Bad
 
-**Bad:** "Review the code" (too broad)
+### Task framing
 
-**Good:** "Diagnose why the dashboard takes 5+ seconds to load on initial render. The waterfall shows multiple sequential API calls."
+Good:
 
-**Bad:** "Make it faster" (no specifics)
+```xml
+<task>
+Review the auth middleware and session handling in this repository for RBAC bypass risks.
+Focus on whether the current implementation can allow unauthorized access.
+</task>
+```
 
-### Output sections
+Bad:
 
-**Good:** "For each vulnerability: Severity, File, Description, Fix"
+```text
+Look at the auth stuff and tell me what you think.
+```
 
-**Bad:** "List issues" (vague)
+### Output contract
 
-**Good:** "Numbered steps with exact file paths and line numbers to change"
+Good:
 
-**Bad:** "What to do next" (vague)
+```xml
+<structured_output_contract>
+Return:
+1. top findings ordered by severity
+2. evidence with file paths
+3. smallest safe remediations
+</structured_output_contract>
+```
 
-## When to Use Custom Prompts
+Bad:
 
-Use a custom prompt when:
+```text
+Give me your thoughts.
+```
 
-- Task spans multiple domains (e.g., both security + performance)
-- You need a specialized output format not in templates
-- The task is highly specific to your domain/codebase
-- You're doing research with specific validation criteria
+### Grounding
 
-Stick with templates when:
+Good:
 
-- The task clearly fits an existing category
-- You want consistent, predictable output format
-- You're unsure what structure would work best
+```xml
+<grounding_rules>
+Ground every claim in the uploaded bundle.
+If a point is an inference, label it clearly.
+</grounding_rules>
+```
+
+Bad:
+
+```text
+Tell me exactly why production failed.
+```
+
+## Use Custom Prompts When
+
+- the task spans multiple domains and the canned templates feel awkward
+- you need a specialized output format
+- you are critiquing a prompt, workflow, or agent instruction set
+- the recommendation depends on comparing options with explicit tradeoffs
+
+If a bundled template already fits, use it instead of rebuilding the prompt from scratch.

@@ -5,13 +5,13 @@ description: "Prepare a second-opinion bundle for an external expert model by cr
 
 # Oracle
 
-Prepares an "ask an expert" bundle for ChatGPT Pro (web UI) to get a second opinion with real repo context.
+Prepare an "ask an expert" bundle for ChatGPT Pro or another external model that will review real repo context.
 
 **Produces two artifacts:**
-- `prompt.md`: paste into ChatGPT Pro
-- `context.zip`: upload to ChatGPT Pro (contains files + `MANIFEST.md`)
+- `prompt.md`: paste as the message
+- `context.zip`: upload alongside it (contains files plus `MANIFEST.md`)
 
-**Use cases:** debugging, code review, architecture validation, research, complex logic review.
+**Good fits:** debugging, code review, architecture validation, research, prompt critique, or a careful second opinion on a risky change.
 
 ## Activation Rule
 
@@ -19,106 +19,119 @@ Activate this skill only when the user explicitly asks to prepare, package, or u
 
 Do not auto-activate for:
 - ordinary mentions of Oracle the company or database
-- generic requests for a second opinion that do not ask for a bundle
-- ordinary mentions of ChatGPT Pro that are not asking for repo-context packaging
+- generic requests for a second opinion with no request to package repo context
+- ordinary mentions of ChatGPT Pro that are not asking for a repo-context bundle
 
 ## Output Location
 
-Write artifacts to: `<project_root>/.agents/oracle/<feature-slug>/`
+Write artifacts to `<project_root>/.agents/oracle/<feature-slug>/`.
 
-## Oracle Principles
+## Prompting Principles
 
-Optimize for **correctness per token**. Apply these rules:
+Prompt the downstream model like an operator, not a collaborator.
 
-- Use only provided context; never invent missing facts
-- Prefer falsifiable hypotheses over broad speculation
-- No preambles, no prompt restatement, no giant code blocks
-- If critical info is missing, state assumptions; do not ask questions
+- Keep one clear task per bundle. Split unrelated asks into separate runs.
+- Tell the model what "done" looks like instead of hoping it infers the goal.
+- Use compact XML-style prompt blocks for stable structure.
+- Prefer a better prompt contract over longer prose or "think harder" wording.
+- Ground claims in `context.zip`; if something is inferred, have the model label it.
+- Do not invite questions. Tell the model to proceed with assumptions and list unknowns.
 
-Expected downstream output structure:
-1. **Answer**: 1-3 sentences
-2. **Key Points**: Bullet the minimum reasoning/evidence
-3. **Recommended Next Steps**: Concrete actions (commands/tests/checks)
-4. **Risks / Unknowns**: Anything that could change the recommendation
+Default prompt shape:
+- `<task>`: the concrete job, relevant repo context, and expected end state
+- `<structured_output_contract>` or `<compact_output_contract>`: exact answer shape and brevity
+- `<default_follow_through_policy>`: what to do by default instead of asking routine questions
+- `<verification_loop>` or `<completeness_contract>`: add for debugging, implementation, or high-risk reasoning
+- `<grounding_rules>` or `<citation_rules>`: add for reviews, research, or anything that could drift into unsupported claims
+
+Reusable blocks live in [reference/prompt-blocks.md](reference/prompt-blocks.md).
+Common failure modes live in [reference/prompt-antipatterns.md](reference/prompt-antipatterns.md).
+Ready-to-paste templates live in [reference/prompt-templates.md](reference/prompt-templates.md).
+Custom assembly guidance lives in [reference/custom-prompt-guide.md](reference/custom-prompt-guide.md).
 
 ## Workflow
 
-1. Understand the task
-2. Pick a role for the downstream model
-3. Select a conservative file set
-4. Write `prompt.md`
-5. Create `context.zip`
-6. Tell user what to upload/paste
-
----
+1. Understand the user's real question and reduce it to one clear downstream task.
+2. Pick the downstream role.
+3. Select the smallest file set that can support a grounded answer.
+4. Choose the smallest prompt recipe that fits and add only the blocks that matter.
+5. Write `prompt.md`.
+6. Create `context.zip`.
+7. Tell the user exactly what to paste, upload, and verify locally.
 
 ## Instructions
 
 ### 1) Choose the downstream role
 
-Pick one from `reference/prompt-templates.md#role-values` and encode as `{ROLE}` in prompt:
+Pick one from `reference/prompt-templates.md#role-values` and use it as `{ROLE}` in `prompt.md`:
 
 | Task Type | Role |
 |-----------|------|
-| Code review | staff engineer reviewing for correctness and maintainability |
-| Debugging | senior engineer debugging with limited context |
-| Architecture | principal engineer reviewing system design |
-| Security | security engineer threat-modeling |
-| Performance | performance engineer identifying bottlenecks |
-| Data/SQL | database engineer reviewing correctness and performance |
-| UI/UX | expert UI/UX designer reviewing visual and interaction design |
+| Code review | a staff engineer doing a careful code review for correctness and maintainability |
+| Debugging | a senior engineer debugging a tricky issue with limited context |
+| Architecture | a principal engineer reviewing system design |
+| Security | a security engineer threat-modeling and reviewing deployment hardening |
+| Performance | a performance engineer identifying bottlenecks and optimization opportunities |
+| Data/SQL | a database engineer reviewing correctness and performance |
+| UI/UX | an expert UI/UX designer doing a rigorous visual and interaction review |
+| Prompting | a prompt engineer improving Codex or GPT-5.4 prompts for reliability and clarity |
 
-### 2) Select files (conservative)
+### 2) Select files conservatively
 
-Include the **smallest** set that gets a grounded answer:
+Include the **smallest** set that can support a confident answer:
 
-1. **Documents**: README, relevant docs, architecture notes, conventions
-2. **Feature folder**: entire folder for full local context
-3. **Referenced context**: file paths, endpoints, functions, errors from conversation
-4. **Related files**: what calls this, what it calls, config, types, error handling
-5. **Final review**: "Would I be missing anything important?" Add only what changes decisions.
+1. Start with README, architecture notes, conventions, or docs that define expected behavior.
+2. Include the primary feature folder or the smallest complete slice of code involved.
+3. Add the concrete files mentioned by the user: errors, stack traces, endpoints, functions, configs, or prompt files.
+4. Add nearby dependencies only when they change the answer: callers, callees, shared types, config, validation, error handling.
+5. Do one final check: "Would missing this file materially change the expert's conclusion?" If not, leave it out.
 
-**Never include secrets** (.env, keys, credentials). Redact if truly required.
+Never include secrets such as `.env` files, credentials, tokens, or raw private keys. Redact if a value is required for understanding.
 
-### 3) Select template and write `prompt.md`
+### 3) Write `prompt.md`
 
-Use templates from `reference/prompt-templates.md`:
+Start from the smallest template in [reference/prompt-templates.md](reference/prompt-templates.md). If none fit, assemble a custom prompt using [reference/custom-prompt-guide.md](reference/custom-prompt-guide.md).
 
-| Template | Use when |
-|----------|----------|
-| Code Review | "review", "audit", "refactor", "sanity-check" |
-| Debugging | errors, failing tests, crashes, unexpected behavior |
-| Security Review | vulnerabilities, auth, secrets, hardening |
-| Performance Audit | bottlenecks, slow, optimization, scalability |
-| Architecture Review | design, structure, components, patterns |
-| General | anything else (research, planning, "how should we") |
+Prompt-writing rules:
+- Assume the model knows nothing beyond `context.zip`.
+- Tell it to read `context/MANIFEST.md` first.
+- Use XML blocks consistently so the prompt has stable internal structure.
+- Add only the blocks that matter for this task; do not dump every possible rule into every prompt.
+- Require file-path citations for concrete claims.
+- Prefer explicit output contracts over vague instructions.
+- Do not ask the downstream model to ask questions; have it proceed with assumptions and list unknowns.
 
-**If no template fits**, generate a custom prompt. See `reference/custom-prompt-guide.md`.
-
-Prompt requirements:
-- Assume model knows nothing beyond `context.zip`
-- Tell it to **cite file paths** for concrete claims
-- Prefer clear prose over jargon
-- No questions; proceed with assumptions and label them
+Block-selection defaults:
+- Use `task` in every prompt.
+- Add `structured_output_contract` when the response needs sections or numbered outputs.
+- Add `compact_output_contract` when short prose is better than a rigid schema.
+- Add `default_follow_through_policy` when the model should keep going without routine clarification.
+- Add `verification_loop` for correctness-sensitive tasks.
+- Add `completeness_contract` when the task should not stop at the first plausible answer.
+- Add `grounding_rules` for code review, diagnosis, and repo-based reasoning.
+- Add `citation_rules` for research or quoted source material.
+- Add `action_safety` when asking for fix plans or change recommendations.
+- Add `dig_deeper_nudge` for adversarial review or regression hunting.
 
 ### 4) Create `context.zip`
 
-Use the installed skill path so the workflow works from any local repo, not just a repo that contains a checked-in Oracle copy:
+Use the installed skill path so the workflow works from any local repo:
 
 ```bash
-# Resolve the installed Oracle skill directory once.
 ORACLE_SKILL_DIR="${ORACLE_SKILL_DIR:-$HOME/.codex/skills/oracle}"
 if [ ! -d "$ORACLE_SKILL_DIR" ]; then
   ORACLE_SKILL_DIR="$HOME/.claude/skills/oracle"
 fi
 
-# Quick (using wrapper from any repo)
 REPO_ROOT="$(pwd)" "$ORACLE_SKILL_DIR/scripts/oracle.sh" \
   --out ".agents/oracle/<slug>/context.zip" \
   --task "Summary of what downstream model should do" \
   --entry "path/to/folder::Main feature folder"
+```
 
-# Full (direct Python from any repo)
+Direct Python form:
+
+```bash
 REPO_ROOT="$(pwd)" python3 "$ORACLE_SKILL_DIR/scripts/build-context-zip.py" \
   --repo-root "$REPO_ROOT" \
   --out ".agents/oracle/<slug>/context.zip" \
@@ -129,69 +142,25 @@ REPO_ROOT="$(pwd)" python3 "$ORACLE_SKILL_DIR/scripts/build-context-zip.py" \
   --entry "path/to/file.ts::Reason"
 ```
 
-If Oracle is installed somewhere else, set `ORACLE_SKILL_DIR` explicitly before running either command.
+Useful options:
+- `--entries-from <file>`: read entries from a file with one `PATH::REASON` per line
+- `--dry-run`: preview the manifest without writing the zip
+- `--estimate-tokens`: estimate bundle size before hand-off
 
-Options:
-- `--entries-from <file>`: read entries from file (one `PATH::REASON` per line)
-- `--dry-run`: print manifest without writing zip
-- `--estimate-tokens`: estimate token count and warn if too large
+### 5) Keep the bundle small
 
-### 5) Context Size Guidance
+Run `--estimate-tokens` before hand-off when the bundle might be large.
 
-Use `--estimate-tokens` to check fit:
+If the estimate is big or the scope feels mushy:
+- remove fixtures, snapshots, generated files, and unrelated tests
+- narrow to the feature slice plus direct dependencies
+- split unrelated questions into separate Oracle bundles instead of one overloaded prompt
 
-| Model | Max Tokens | Recommended |
-|-------|-----------|-------------|
-| GPT-4 Turbo | 128K | < 100K |
-| GPT-4o | 128K | < 100K |
-| Claude 3.5 | 200K | < 150K |
-
-If too large: remove non-essential dirs, use `--exclude` for test fixtures/snapshots, focus on feature folder + direct dependencies.
+Smaller, sharper bundles usually produce better answers than giant uploads with a vague task.
 
 ### 6) Hand-off
 
-Tell user:
-- Upload `context.zip` in ChatGPT Pro
-- Paste `prompt.md` contents as the message
-- Verify advice by running tests / checking logs locally
-
----
-
-## Custom Prompts
-
-When no template fits, generate a custom prompt with this structure:
-
-```markdown
-### Role
-You are {ROLE}.
-
-### Context
-I am uploading `context.zip` containing repository files. Treat as authoritative.
-
-Rules:
-- Start by reading `context/MANIFEST.md`
-- Use only what you can support from files
-- For concrete claims, cite file paths
-- Do not ask questions; state assumptions
-
-### Task
-{TASK_DESCRIPTION}
-
-### Output format
-#### {Primary Analysis}
-[What to include]
-
-#### {Evidence/Details}
-[Supporting info format]
-
-#### Verdict / Recommendation
-[Clear conclusion]
-```
-
-Key principles:
-- Lead with outcome, not process
-- Cite file paths for claims
-- Include verdict/recommendation section
-- Keep output format minimal but specific
-
-See `reference/custom-prompt-guide.md` for detailed guidance.
+Tell the user:
+- upload `context.zip`
+- paste the contents of `prompt.md`
+- treat the response as a second opinion, then verify locally with tests, logs, or manual checks
