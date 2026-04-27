@@ -1,0 +1,7 @@
+interface:
+  display_name: "Interface Mockups"
+  short_description: "Generate labeled UI mockup options"
+  default_prompt: "Use $interface-mockups to create labeled UI mockup options for this feature, grounded in the repo design system."
+
+policy:
+  allow_implicit_invocation: false
