@@ -1,4 +1,0 @@
-interface:
-  display_name: "Frontend Skill"
-  short_description: "Design strong interfaces and sharpen UI copy"
-  default_prompt: "Establish a visual direction, content plan, interaction approach, and key interface copy for this landing page, website, app, prototype, demo, or game UI."

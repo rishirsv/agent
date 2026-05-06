@@ -1,4 +1,0 @@
-interface:
-  display_name: "Polish Design"
-  short_description: "Polish, critique, or harden frontend UI"
-  default_prompt: "Review and improve this interface. By default, run a single-agent polish pass. If critique is the goal, use critique-first mode and present findings before editing. If resilience is the goal, use hardening-first mode and prioritize states, edge cases, and layout durability. Use the evaluator-led loop only when explicitly requested."

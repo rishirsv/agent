@@ -1,7 +1,0 @@
-interface:
-  display_name: "Design Init"
-  short_description: "Create or refresh repo design context"
-  default_prompt: "Create or refresh docs/DESIGN.md from the current repository before UI iteration."
-
-policy:
-  allow_implicit_invocation: false
