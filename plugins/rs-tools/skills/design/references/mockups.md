@@ -70,7 +70,7 @@ Defaults:
 - "A/B" means two options.
 - "A/B/C", "a few", "several", or unspecified options means three.
 - More than three usually lowers inspection quality.
-- Label options outside the UI, not inside app navigation or product copy.
+- Label options, variant names, and agent notes outside the UI, not inside app navigation, product copy, or accessibility text.
 - For each variant, define: thesis, what varies, what is preserved, and best-for.
 - Good axes: density, navigation depth, action placement, summary-first vs ledger-first, inline editing vs staged confirmation, current-state vs future-state emphasis, component shape.
 - Poor axes: random palette changes, arbitrary icon changes, different fake data, different product names, more decoration, generic premium vs more generic premium.

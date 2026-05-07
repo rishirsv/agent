@@ -133,7 +133,7 @@ Run two passes before committing to a visual direction:
 - Component vocabulary must be consistent. If the save button looks different in two places without reason, one is wrong.
 - Do not reinvent standard affordances for flavor: custom scrollbars, weird form controls, non-standard modals, unclear tabs.
 - Heavy color and full-saturation accents do not belong on inactive states.
-- Use utility copy. If a sentence could appear in a homepage hero or ad, rewrite it until it sounds like product UI.
+- Use product copy, not implementation leakage. Visible text, accessibility text, alt text, notifications, errors, and mockup UI text must not expose internal states, scopes, flags, enum names, agent rationale, or scaffold-as-UI. For copy work, read [references/ui-copy.md](references/ui-copy.md).
 - App UI should organize around a primary workspace, navigation, secondary context or inspector, and one clear accent for action or state.
 - Avoid dashboard-card mosaics, thick borders on every region, ornamental icons, and decorative gradients behind routine work.
 - Operator scan test: if someone scans only headings, labels, and numbers, can they understand the page immediately?

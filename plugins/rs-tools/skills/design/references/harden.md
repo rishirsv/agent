@@ -52,7 +52,7 @@ Implement useful states:
 
 ### Recovery Copy
 
-Errors should explain what happened and what the user can do next. Validation should be specific. Destructive confirmations should name the object and consequence.
+Errors should explain what happened and what the user can do next. Validation should be specific. Destructive confirmations should name the object and consequence. Errors and unavailable states must explain the user-visible consequence and recovery path, not raw internal states, permission scopes, API names, feature flags, or backing enum values.
 
 ### Accessibility
 

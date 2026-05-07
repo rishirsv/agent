@@ -22,10 +22,11 @@ Use rendered inspection when available: simulator, preview, device screenshot, B
 - Visual hierarchy: scale, weight, spacing, color, grouping, rhythm.
 - Information architecture: sequence, grouping, naming, progressive disclosure.
 - Cognitive load: visible choices, repeated information, needless decisions.
-- Copy: CTAs, labels, empty states, errors, confirmations, tooltips.
-- Product fit: earned familiarity, standard affordances, consistent component vocabulary, utility copy.
+- Copy: CTAs, labels, empty states, errors, confirmations, tooltips, accessibility text, and scaffold-as-UI.
+- Product fit: earned familiarity, standard affordances, consistent component vocabulary, product copy.
 - Brand fit: point of view, first-viewport signal, imagery when expected, memorable composition.
 - AI slop: generic layout, fake metrics, gradient text, glass panels, identical card grids, purple-blue glow, category-reflex palette, second-order aesthetic reflex.
+- Implementation leakage: internal states, scopes, flags, enum names, agent rationale, or scaffold text surfaced as UI.
 - Persona red flags: first-timer, power user, mobile/touch user, accessibility user, skeptical evaluator.
 
 For typography, layout, imagery, motion, copy, and micro-polish specifics, read [lenses.md](lenses.md) when those areas drive findings.
@@ -49,6 +50,8 @@ Use severity for findings:
 - P1: major user or release risk.
 - P2: real issue to fix soon.
 - P3: polish.
+
+Treat implementation leakage or scaffold-as-UI in production product surfaces as P1 when it can damage user trust, confuse task completion, or expose internal model/state. In mockups, treat it as P2 unless the copy is part of the implementation contract.
 
 ## Output
 

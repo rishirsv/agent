@@ -87,18 +87,7 @@ Prefer in-situ photography over abstract gradients or fake 3D objects. Avoid ima
 
 ## Copy
 
-Before writing or rewriting UI copy, look for durable voice guidance in `AGENTS.md`, `docs/DESIGN.md`, the design system, or existing product copy. If none exists, infer 3-4 working voice traits from the product.
-
-Think in dials, not different voices. A calm product can be warmer in onboarding and more matter-of-fact in errors without sounding like a different company.
-
-- If deleting 30% of the copy improves the page, keep deleting.
-- Use specific verbs: Create account, Save changes, Download report.
-- Avoid OK, Yes, No, Submit when a clearer label is possible.
-- For destructive actions, name both paths: Delete file and Keep file, not Confirm and Cancel.
-- Avoid reflexive apologies such as sorry, oops, uh oh unless the brand truly uses them.
-- Keep product terms stable. If the product says workspace, do not alternate with project unless the distinction is real.
-- Empty states should explain what appears here, why it matters, and the next useful action.
-- Error copy should say what happened and how to recover.
+For product copy, accessibility text, empty states, errors, labels, and mockup UI text, read [ui-copy.md](ui-copy.md). It is the canonical source for preventing implementation leakage and scaffold-as-UI.
 
 ## Product Micro-Polish
 
