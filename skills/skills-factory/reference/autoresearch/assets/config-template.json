@@ -1,9 +1,0 @@
-{
-  "mode": "autoresearch",
-  "target_kind": "general-task",
-  "max_iterations": 6,
-  "plateau_limit": 3,
-  "use_git_memory": true,
-  "bounded_by_default": true,
-  "notes": "Do not start the loop until the verification contract is real."
-}

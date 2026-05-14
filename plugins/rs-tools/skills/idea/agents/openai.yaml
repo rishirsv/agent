@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idea"
+  short_description: "Grill and refine serious ideas before execution"
+  default_prompt: "Use $idea to pressure-test and refine this idea one question at a time, grounding only in durable docs or relevant source reality, until the next decision, artifact, plan handoff, research handoff, or implementation handoff is clear."

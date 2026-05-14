@@ -1,14 +1,16 @@
 # TODO
 
-## Completed: Scope Skill
+## Completed: Idea Skill
 
-Status: promoted to `plugins/rs-tools/skills/scope`.
+Status: promoted to `plugins/rs-tools/skills/idea`.
 
-Purpose: pre-plan thinking before implementation.
+Purpose: grill and refine serious ideas before planning or implementation.
 
 Modes:
-- ideate broad options and ranked directions
-- discuss existing ideas or implementation directions
+- ask one question at a time with options and a recommended answer
+- challenge vague, overloaded, or conflicting language
+- ground in durable docs and relevant source reality
+- route durable captures into existing docs or compact fallback templates
 
 Notes:
 - Replaces the active need for a separate `brainstorm` skill.
@@ -28,7 +30,7 @@ References:
 Direction:
 - Merge refactor, tech-debt, and simplify into one sharp coding-improvement skill.
 - Keep `hard-cut` separate as a strict cleanup policy.
-- Treat `scope` as the pre-workflow owner for ideate and discuss behavior.
+- Treat `idea` as the pre-workflow owner for serious ideas before planning or implementation.
 - Keep explicit requirements clarification in the separate `clarify` skill.
 - Avoid heavy candidate matrices unless the user explicitly asks for deep analysis.
 - Default to the highest-leverage cleanup that can be executed and verified safely.

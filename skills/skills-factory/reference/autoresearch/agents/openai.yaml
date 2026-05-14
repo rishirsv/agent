@@ -1,4 +1,0 @@
-interface:
-  display_name: "Autoresearch"
-  short_description: "Run a verified task loop"
-  default_prompt: "Decide whether this task earns a fast autoresearch pass or a deeper loop, define scope and verification, and keep only changes that improve the verified result."

@@ -31,11 +31,11 @@ Bundled skills:
 - `harness-engineering`: deep repo assessment for agent-readiness and harness opportunities.
 - `handoff`: concise continuation briefs.
 - `hard-cut`: one canonical implementation, no legacy compatibility paths.
+- `idea`: grill and refine serious ideas before planning or implementation.
 - `oracle`: repo-context packages for external review or planning.
 - `research`: explicit sourced research with repo context and primary-source guidance.
 - `rs-tools`: guidance for this plugin repo.
 - `simplify`: post-implementation cleanup for clarity, reuse, quality, and efficiency.
-- `scope`: ideate or discuss before planning or implementation.
 - `tech-debt`: explicit architecture debt review that updates `TECH-DEBT.md`.
 - `yeet`: CLI-first commit, push, and draft PR flow.
 

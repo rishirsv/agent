@@ -1,4 +1,0 @@
-interface:
-  display_name: "Scope"
-  short_description: "Run deep pre-plan scoping before substantial work"
-  default_prompt: "Use $scope to run a one-question-at-a-time scoping discussion until the next chat decision, artifact, plan, Codex goal, research handoff, implementation handoff, or decision to stop is genuinely clear."
