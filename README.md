@@ -2,6 +2,21 @@
 
 Source repo for Rishi's personal Perks skills and local Codex/Claude plugin builds.
 
+## Edit Surface
+
+Day to day, only edit:
+
+- `skills/`: active Perks skills.
+- `AGENTS.md`: compact system guidance shared by this repo, Codex, and Claude.
+
+Then run:
+
+```sh
+scripts/sync-plugins.sh
+```
+
+Everything else exists to package, install, sync, or stage those two surfaces.
+
 ## Structure
 
 - `skills/`: canonical Perks skills. This is the source folder to edit.
@@ -14,7 +29,6 @@ Source repo for Rishi's personal Perks skills and local Codex/Claude plugin buil
 - `.codex/config.toml`: repo-local Codex config for working in this repo.
 - `.codex/agents/loader.toml`: active Codex helper agent for Perks repo sync discipline.
 - `scripts/sync-plugins.sh`: rebuilds plugin folders from `skills/`, validates manifests, registers/install plugins, and refreshes local caches.
-- `TODO.md`: improvement backlog for future skill rebuilds.
 
 ## Sync
 

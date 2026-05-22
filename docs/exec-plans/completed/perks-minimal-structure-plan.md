@@ -67,7 +67,7 @@ Final direction from Rishi: make the repo public, make `skills/` the canonical p
 - `find . -maxdepth 3 -type d | sort`
 - `codex plugin list --marketplace perks`
 - `claude plugin list`
-- `rg -n 'plugin-drafts|agent-templates|plugins/perks|references/|docs/skill-reviews' README.md AGENTS.md INSTALL.md TODO.md docs/exec-plans/completed/perks-minimal-structure-plan.md .gitignore --hidden`
+- `rg -n 'plugin-drafts|agent-templates|plugins/perks|references/|docs/skill-reviews' README.md AGENTS.md INSTALL.md docs/exec-plans/completed/perks-minimal-structure-plan.md .gitignore --hidden`
 
 ## Decision Log
 
