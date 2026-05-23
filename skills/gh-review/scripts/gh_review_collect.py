@@ -163,7 +163,8 @@ def gh_graphql(owner: str, repo: str, number: int, cursors: dict[str, str | None
 def list_prs(limit: int, state: str = "all") -> list[dict[str, Any]]:
     fields = (
         "number,title,url,state,isDraft,author,headRefName,baseRefName,"
-        "createdAt,updatedAt,closedAt,mergedAt,comments,reviewDecision"
+        "createdAt,updatedAt,closedAt,mergedAt,comments,reviewDecision,"
+        "mergeable,mergeStateStatus,statusCheckRollup"
     )
     return run_json(["gh", "pr", "list", "--state", state, "--limit", str(limit), "--json", fields])
 
@@ -331,20 +332,99 @@ def one_line(text: str, limit: int = 140) -> str:
     return collapsed[: limit - 1].rstrip() + "..."
 
 
+def status_check_summary(rollup: Any) -> str:
+    if not rollup:
+        return "checks unknown"
+    if not isinstance(rollup, list):
+        return "checks present"
+
+    total = len(rollup)
+    if total == 0:
+        return "no checks reported"
+
+    failing = []
+    pending = []
+    passing = 0
+    for check in rollup:
+        name = check.get("name") or check.get("workflowName") or check.get("context") or "check"
+        conclusion = (check.get("conclusion") or "").upper()
+        status = (check.get("status") or "").upper()
+        if conclusion in {"FAILURE", "CANCELLED", "TIMED_OUT", "ACTION_REQUIRED"}:
+            failing.append(name)
+        elif conclusion in {"SUCCESS", "NEUTRAL", "SKIPPED"}:
+            passing += 1
+        elif status and status != "COMPLETED":
+            pending.append(name)
+        else:
+            pending.append(name)
+
+    parts = []
+    if failing:
+        parts.append(f"{len(failing)} failing")
+    if pending:
+        parts.append(f"{len(pending)} pending")
+    if passing:
+        parts.append(f"{passing} passing")
+    return ", ".join(parts) if parts else f"{total} checks reported"
+
+
+def review_summary(pr: dict[str, Any]) -> str:
+    decision = pr.get("reviewDecision")
+    if decision:
+        return str(decision)
+    comments = pr.get("comments")
+    if comments:
+        return f"review unknown; {comments} comments"
+    return "review unknown"
+
+
+def plain_pr_summary(pr: dict[str, Any]) -> str:
+    title = pr.get("title") or "Untitled PR"
+    lowered = title.lower()
+    if any(word in lowered for word in ("fix", "repair", "restore", "resolve")):
+        return "A fix-oriented PR that likely addresses a bug, regression, or review issue."
+    if any(word in lowered for word in ("add", "ship", "create", "introduce")):
+        return "A feature-oriented PR that likely adds a new capability or user-facing surface."
+    if any(word in lowered for word in ("refactor", "cleanup", "canonicalize", "remove", "consolidate")):
+        return "A maintenance-oriented PR that likely changes structure, ownership, or cleanup behavior."
+    if any(word in lowered for word in ("doc", "tracker", "plan", "roadmap")):
+        return "A documentation or planning PR that likely updates project state or guidance."
+    return "A PR that needs a quick diff/readme pass to classify confidently."
+
+
+def next_step_for_pr(pr: dict[str, Any]) -> str:
+    if pr.get("isDraft"):
+        return "Draft: review context is useful, but do not merge yet."
+    checks = status_check_summary(pr.get("statusCheckRollup")).lower()
+    if "failing" in checks:
+        return "Fix CI before review or merge."
+    decision = (pr.get("reviewDecision") or "").upper()
+    comments = pr.get("comments") or 0
+    if decision in {"CHANGES_REQUESTED", "REVIEW_REQUIRED"} or comments:
+        return "Inspect review comments and decide whether to address or defer them."
+    mergeable = (pr.get("mergeable") or "").upper()
+    if mergeable in {"MERGEABLE", "UNKNOWN"}:
+        return "Ready-looking; do a final review/readiness check before merging."
+    return "Check mergeability and review state before taking action."
+
+
 def render_prs_markdown(prs: list[dict[str, Any]]) -> str:
     if not prs:
         return "No open PRs found."
-    lines = ["# Open PRs", ""]
+    lines = ["# Open PR Triage", ""]
     for pr in prs:
         author = author_login(pr)
         draft = " draft" if pr.get("isDraft") else ""
-        decision = pr.get("reviewDecision") or "review unknown"
+        decision = review_summary(pr)
         comments = pr.get("comments")
+        checks = status_check_summary(pr.get("statusCheckRollup"))
         lines.append(f"- #{pr['number']} {pr['title']} ({pr.get('state')}{draft})")
         lines.append(f"  - URL: {pr.get('url')}")
+        lines.append(f"  - Plain read: {plain_pr_summary(pr)}")
         lines.append(f"  - Branch: {pr.get('headRefName')} -> {pr.get('baseRefName')}")
         lines.append(f"  - Author: {author}; updated: {pr.get('updatedAt')}")
-        lines.append(f"  - Review: {decision}; comments: {comments}")
+        lines.append(f"  - State: review {decision}; comments: {comments}; checks: {checks}; mergeable: {pr.get('mergeable') or 'unknown'}")
+        lines.append(f"  - Initial thought: {next_step_for_pr(pr)}")
     return "\n".join(lines)
 
 
@@ -392,6 +472,14 @@ def cmd_open_prs(args: argparse.Namespace) -> None:
         print(render_prs_markdown(prs))
 
 
+def cmd_triage(args: argparse.Namespace) -> None:
+    prs = list_prs(args.limit, state="open")
+    if args.format == "json":
+        print(json.dumps({"mode": "triage", "pull_requests": prs}, indent=2))
+    else:
+        print(render_prs_markdown(prs))
+
+
 def cmd_comments(args: argparse.Namespace) -> None:
     owner, repo = repo_owner_name()
     if args.pr:
@@ -430,6 +518,11 @@ def build_parser() -> argparse.ArgumentParser:
     open_prs.add_argument("--limit", type=int, default=50)
     open_prs.add_argument("--format", choices=("markdown", "json"), default="markdown")
     open_prs.set_defaults(func=cmd_open_prs)
+
+    triage = sub.add_parser("triage", help="Triage open PRs with review/check/merge signals.")
+    triage.add_argument("--limit", type=int, default=50)
+    triage.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    triage.set_defaults(func=cmd_triage)
 
     comments = sub.add_parser("comments", help="Collect PR review comments.")
     comments.add_argument("--pr", action="append", help="PR number to inspect. Repeat for multiple PRs.")

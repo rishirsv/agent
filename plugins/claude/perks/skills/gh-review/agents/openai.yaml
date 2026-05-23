@@ -1,4 +1,4 @@
 interface:
   display_name: "GH Review"
-  short_description: "Triage PR reviews into debt or fixes"
-  default_prompt: "Use $gh-review to summarize open PRs and collect review comments into the repo tracker."
+  short_description: "Triage, review, address, and merge GitHub PRs"
+  default_prompt: "Use $gh-review to triage open PRs: summarize each one simply, explain state and implementation detail, and recommend the next action."
