@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug"
+  short_description: "Evidence-led runtime bug diagnosis"
+  default_prompt: "Use $debug to diagnose this bug with hypotheses, runtime evidence, a minimal fix, verification, and cleanup."
