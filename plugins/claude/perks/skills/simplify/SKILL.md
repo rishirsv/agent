@@ -34,9 +34,11 @@ For each change:
 2. **Flag any new function that duplicates existing functionality.** Suggest the existing function to use instead.
 3. **Flag any inline logic that could use an existing utility** — hand-rolled string manipulation, manual path handling, custom environment checks, ad-hoc type guards, and similar patterns are common candidates.
 4. **Look for structural simplifications** that preserve behavior while deleting branches, modes, helper layers, special cases, or concepts.
-5. **Flag refactors that move complexity around without reducing it.** Prefer reframing the model, ownership boundary, or default flow so less code is needed.
-6. **Flag feature-specific logic added to shared or unrelated paths.** Push logic toward the canonical package, module, helper, or abstraction that already owns the concept.
-7. **Flag new ad-hoc conditionals and one-off flags** that make an existing flow harder to reason about. Prefer a clearer model, dispatcher, policy object, or focused helper.
+5. **Ask whether a clearer reframing would delete the problem instead of polishing it.** Prefer changing the model, ownership boundary, or default flow when that removes whole concepts, branches, modes, or helper layers.
+6. **Flag refactors that move complexity around without reducing it.** Prefer reframing the model, ownership boundary, or default flow so less code is needed.
+7. **Flag feature-specific logic added to shared or unrelated paths.** Push logic toward the canonical package, module, helper, or abstraction that already owns the concept.
+8. **Flag new ad-hoc conditionals and one-off flags** that make an existing flow harder to reason about. Prefer a clearer model, dispatcher, policy object, or focused helper.
+9. **Notice changed files that are becoming hard to navigate.** Large files are not automatically wrong, especially generated outputs, data files, JSON layouts, or codebases where the format is inherently bulky. When a source file becomes mixed-purpose, crosses a locally unusual size threshold, or nears roughly 1,000 lines without a clear reason, consider whether focused modules with descriptive names would make future changes easier.
 
 ### Agent 2: AI Slop and Code Quality Review
 
