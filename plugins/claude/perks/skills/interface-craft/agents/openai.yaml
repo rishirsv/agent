@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interface Craft"
+  short_description: "Craft, audit, and harden production UI"
+  default_prompt: "Use $interface-craft to improve this interface with rendered evidence."

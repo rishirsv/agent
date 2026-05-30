@@ -1,4 +1,0 @@
-interface:
-  display_name: "Simplify"
-  short_description: "Clean up recent code changes"
-  default_prompt: "Review the recent changes, simplify the implementation, and fix issues affecting clarity, reuse, quality, or efficiency."

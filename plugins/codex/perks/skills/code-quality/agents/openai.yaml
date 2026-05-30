@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Quality"
+  short_description: "Simplify code, hard-cut legacy paths, or record tracker-first architecture findings"
+  default_prompt: "Use $code-quality to simplify recent code changes, apply hard-cut policy when removing legacy paths, or record architecture-refinement findings in the repo tracker."

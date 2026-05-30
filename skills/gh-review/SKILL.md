@@ -122,6 +122,14 @@ gh pr view <number-or-url> --json number,title,url,headRefName,baseRefName,autho
 
 Ask only for ambiguous product decisions, won't-fix decisions, or intentional deferrals. Re-fetch comment state after local fixes when useful. Publish fixes, replies, or thread resolutions only when the user asks.
 
+When multiple PRs have actionable review comments, prefer parallel isolated fixes over editing every PR in the main thread:
+
+- Keep the main thread responsible for triage, assignment, re-triage, merge order, conflict decisions, and final merge.
+- Assign one subagent per PR or tightly related PR stack. Use `Worker High` for these subagents.
+- Tell each subagent to check out only its PR branch in an isolated worktree, collect unresolved review comments, make the narrow fix, run the smallest appropriate focused verification, and report exact changes plus residual risk.
+- Do not let subagents merge PRs. They may push fixes, post replies, or resolve threads only when the user has explicitly asked for those actions.
+- After subagents finish, re-fetch live PR state in the main thread, confirm comments/checks/mergeability, dry-run risky merge combinations in a clean worktree, then merge centrally.
+
 ### Fix CI
 
 Read [references/fix-ci.md](references/fix-ci.md). Inspect failing checks and bounded logs:

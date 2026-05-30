@@ -1,7 +1,0 @@
-interface:
-  display_name: "Refining Architecture"
-  short_description: "Log architecture improvement opportunities"
-  default_prompt: "Use $refining-architecture to scan this repository for architecture and code-quality improvements, then record actionable findings in the repo-native tracker."
-
-policy:
-  allow_implicit_invocation: false

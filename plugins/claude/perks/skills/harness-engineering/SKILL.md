@@ -1,6 +1,6 @@
 ---
 name: harness-engineering
-description: "Use when assessing a repository or project for agent-readiness and harness-engineering opportunities such as repo maps, validation harnesses, feedback loops, observability, architecture enforcement, subagent workflows, and progressive-disclosure docs, producing a report-only Markdown assessment with downstream ExecPlan and architecture artifact options; not for ordinary code cleanup (use $simplify), file-by-file technical-debt logging (use $refining-architecture), PR review (use $gh-review), or directly implementing the changes the assessment proposes."
+description: "Use when assessing a repository or project for agent-readiness and harness-engineering opportunities such as repo maps, validation harnesses, feedback loops, observability, architecture enforcement, subagent workflows, and progressive-disclosure docs, producing a report-only Markdown assessment with downstream ExecPlan and architecture artifact options; not for ordinary code cleanup or architecture-debt tracking (use $code-quality), PR review (use $gh-review), or directly implementing the changes the assessment proposes."
 ---
 
 # Harness Engineering
