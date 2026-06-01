@@ -1,6 +1,6 @@
 ---
 name: excalidraw-diagrams
-description: "Use when creating an Excalidraw diagram, flowchart, architecture diagram, decision tree, process flow, data flow, system overview, or similar visual explanation, or when the user says 'draw this', 'diagram this', 'visualize this', or 'make a chart', producing styled `.excalidraw` files with consistent colors and an optional shareable excalidraw.com URL; not for production UI mockups (use $prototype) or design-system work (use $design)."
+description: "Use when creating an Excalidraw diagram, flowchart, architecture diagram, decision tree, process flow, data flow, system overview, or similar visual explanation, or when the user says 'draw this', 'diagram this', 'visualize this', or 'make a chart', producing styled `.excalidraw` files with consistent colors and an optional shareable excalidraw.com URL; not for production UI mockups (use $prototype) or design-system work (use $interface-craft)."
 ---
 
 # Excalidraw Diagrams

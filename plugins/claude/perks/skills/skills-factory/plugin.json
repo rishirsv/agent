@@ -1,0 +1,34 @@
+{
+  "name": "skills-factory",
+  "version": "0.1.0",
+  "description": "Skills Factory: create, review, and improve reusable skills with a shared skillfactory CLI.",
+  "author": {
+    "name": "Rishi"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "codex",
+    "skill",
+    "skills-factory",
+    "review",
+    "improve",
+    "factory"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Skills Factory",
+    "shortDescription": "Create, review, and improve reusable skills",
+    "longDescription": "Skills Factory bundles three sibling skills under one plugin: skill-create (create or update a reusable skill), skill-review (measure a skill with local evaluation runs), and skill-improve (plan bounded improvements from review evidence). All three share the skillfactory CLI and a common set of references.",
+    "developerName": "Rishi",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Help me create a reusable skill for ...",
+      "Set up a review for this skill.",
+      "Propose a bounded improvement from the latest review evidence."
+    ]
+  }
+}

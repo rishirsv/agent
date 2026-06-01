@@ -2,7 +2,7 @@
 
 Use this reference when creating, auditing, polishing, or hardening frontend UI that could drift into generated-template defaults. These bans are defaults, not taste law: keep an exception only when the brief, brand, or existing system clearly earns it.
 
-## Hard Bands
+## Hard Bans
 
 ### Palette
 
@@ -56,7 +56,6 @@ Use this reference when creating, auditing, polishing, or hardening frontend UI 
 
 Run [scripts/detect-ui-slop.mjs](../scripts/detect-ui-slop.mjs) on focused frontend files near the end of implementation or audit work. Use its output this way:
 
-- `error`: fix unless the existing system or explicit user brief requires it.
 - `warn`: inspect in rendered UI; fix when the pattern is visible or repeated.
 - `info`: consider whether the pattern compounds with other weak defaults.
 

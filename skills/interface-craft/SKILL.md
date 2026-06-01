@@ -31,7 +31,6 @@ Do not use this skill for backend-only work, generic code cleanup, ordinary copy
 6. Decide whether the surface is greenfield, an existing product surface, or a generated prototype being raised to production quality.
 7. Choose one lane and load only the needed reference.
 8. Inspect rendered output whenever tools allow it.
-9. For frontend files, run [scripts/detect-ui-slop.mjs](scripts/detect-ui-slop.mjs) near the end on changed UI files or the relevant source directory; treat findings as prompts to inspect and fix, not as a substitute for visual judgment.
 
 ## Lane Selection
 

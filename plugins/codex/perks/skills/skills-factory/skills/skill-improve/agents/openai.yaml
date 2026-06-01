@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Improve"
+  short_description: "Plan bounded improvements from skill-review evidence"
+  default_prompt: "Use $skill-improve to plan and test bounded skill improvements from skill-review evidence with the skillfactory CLI."

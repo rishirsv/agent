@@ -28,7 +28,7 @@ In scope:
 
 Not in scope:
 
-- design critique or polish on rendered UI (use `$design`)
+- design critique or polish on rendered UI (use `$interface-craft`)
 - planning artifacts, execution plans, specs (use `$improve-plan` for plans)
 - code review or technical debt logging (use `$gh-review` or `$code-quality`)
 - proposals, slide narratives, or reader-facing prose unrelated to project documentation (use `$doc-coauthoring`)

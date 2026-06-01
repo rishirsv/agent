@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+CLI_DIR="$REPO_ROOT/skills/skills-factory"
+
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$CLI_DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -B -m cli "$@"

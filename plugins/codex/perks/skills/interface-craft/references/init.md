@@ -1,6 +1,6 @@
 # Init And Refresh
 
-Create or update the repo's durable design source of truth. Existing repo convention wins: use the design- or taste-related path the project already has, and create a new file only when no convention exists.
+Create or update the repo's durable design source of truth. Existing repo convention wins: use the design- or taste-related path the project already has. When no convention exists, create one obvious project docs file for design guidance and use the default shape below.
 
 ## What To Produce
 

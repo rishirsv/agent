@@ -160,7 +160,7 @@ Radical variation is for "radically different", "north-star", "surprise me", or 
 
 ## Design Boundary
 
-UI prototypes are exploration artifacts. Use this file to compare directions, generate references, or make disposable route variants. Use `$design` for production UI craft, polish, critique, hardening, design docs, or taste distillation.
+UI prototypes are exploration artifacts. Use this file to compare directions, generate references, or make disposable route variants. Use `$interface-craft` for production UI craft, polish, critique, hardening, design docs, or taste distillation.
 
 When analyzing prototype options, prefer the direction that best answers the user question. Do not promote generated visuals, placeholder copy, fake controls, or throwaway route code into production requirements.
 

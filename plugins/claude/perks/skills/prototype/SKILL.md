@@ -15,7 +15,7 @@ Use this skill when the user wants to explore whether an idea works before commi
 - visual direction, option board, contact sheet, or reference mock
 - disposable route variants that can be compared in the running app
 
-Use `$design` instead for production UI craft, polish, critique, hardening, design docs, or taste distillation.
+Use `$interface-craft` instead for production UI craft, polish, critique, hardening, design docs, or taste distillation.
 
 ## Mode Selection
 

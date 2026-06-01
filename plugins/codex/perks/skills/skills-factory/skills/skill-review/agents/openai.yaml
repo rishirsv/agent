@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Review"
+  short_description: "Design and run evidence-backed skill reviews"
+  default_prompt: "Use $skill-review to initialize, run, inspect, or audit a Skills Factory review with the skillfactory CLI."

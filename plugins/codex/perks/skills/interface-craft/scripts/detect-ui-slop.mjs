@@ -14,7 +14,6 @@ const EXTENSIONS = new Set([
   ".html",
   ".js",
   ".jsx",
-  ".mdx",
   ".scss",
   ".svelte",
   ".ts",
@@ -35,6 +34,9 @@ const SKIP_DIRS = new Set([
   "vendor",
 ]);
 
+const MARKUP_EXTENSIONS = new Set([".astro", ".html", ".jsx", ".svelte", ".tsx", ".vue"]);
+const CODE_EXTENSIONS = new Set([".js", ".jsx", ".ts", ".tsx"]);
+
 const RULES = [
   {
     id: "cream-default-palette",
@@ -46,7 +48,7 @@ const RULES = [
     id: "category-gradient-text",
     severity: "warn",
     description: "Gradient text as default emphasis is usually weaker than hierarchy or one solid accent.",
-    test: /background(?:-image)?:\s*(?:linear|radial)-gradient[\s\S]{0,260}(?:background-clip|--webkit-background-clip):\s*text|(?:background-clip|--webkit-background-clip):\s*text[\s\S]{0,260}background(?:-image)?:\s*(?:linear|radial)-gradient/i,
+    test: /background(?:-image)?:\s*(?:linear|radial)-gradient[\s\S]{0,260}(?:background-clip|-webkit-background-clip):\s*text|(?:background-clip|-webkit-background-clip):\s*text[\s\S]{0,260}background(?:-image)?:\s*(?:linear|radial)-gradient/i,
   },
   {
     id: "thick-side-stripe",
@@ -64,12 +66,14 @@ const RULES = [
     id: "over-rounded-surface",
     severity: "info",
     description: "Large radii on cards and controls should be intentional, not a universal default.",
-    test: /border-radius\s*:\s*(?:2[4-9]|[3-8]\d)px|rounded-\[(?:2[4-9]|[3-8]\d)px\]|rounded-(?:2xl|3xl|full)\b/i,
+    test: /border-radius\s*:\s*(?:2[4-9]|[3-8]\d)px|rounded-\[(?:2[4-9]|[3-8]\d)px\]|rounded-(?:2xl|3xl)\b/i,
   },
   {
     id: "numbered-section-markers",
     severity: "warn",
     description: "Decorative 01/02/03 section markers are a frequent generated layout trope.",
+    extensions: MARKUP_EXTENSIONS,
+    visibleText: true,
     test: /(?:^|[\s>])0?1(?:[\s<./:-]|$)[\s\S]{0,180}(?:^|[\s>])0?2(?:[\s<./:-]|$)[\s\S]{0,180}(?:^|[\s>])0?3(?:[\s<./:-]|$)/m,
   },
   {
@@ -88,18 +92,21 @@ const RULES = [
     id: "marketing-filler-copy",
     severity: "info",
     description: "Generic marketing copy usually needs replacement with concrete user outcomes.",
+    visibleText: true,
     test: /\b(?:seamless|supercharge|empower|unlock|next-generation|enterprise-grade|cutting-edge|game-changing|world-class|revolutionary)\b/i,
   },
   {
     id: "not-just-copy",
     severity: "info",
     description: "The 'not just X' pattern is often scaffold copy rather than product language.",
+    visibleText: true,
     test: /\bnot just\b|\bactually\s+\w+|\b\w+\s+theater\b/i,
   },
   {
     id: "implementation-leakage-copy",
     severity: "warn",
     description: "UI copy should not expose flags, enums, scopes, raw states, or scaffold labels.",
+    visibleText: true,
     test: new RegExp(
       "\\b(?:" +
         [
@@ -167,6 +174,70 @@ function lineFor(text, index) {
   return text.slice(0, index).split(/\r?\n/).length;
 }
 
+function blankPreserveLength(match) {
+  return " ".repeat(match.length);
+}
+
+function stripCodeComments(text) {
+  return text
+    .replace(/\/\*[\s\S]*?\*\//g, blankPreserveLength)
+    .replace(/(^|[^:])\/\/.*$/gm, (match, prefix) => prefix + " ".repeat(match.length - prefix.length));
+}
+
+function stripMarkupNoise(text) {
+  return text
+    .replace(/<!--[\s\S]*?-->/g, blankPreserveLength)
+    .replace(/<script[\s\S]*?<\/script>/gi, blankPreserveLength)
+    .replace(/<style[\s\S]*?<\/style>/gi, blankPreserveLength);
+}
+
+function firstStringLiteralMatch(text, regex) {
+  const clean = stripCodeComments(text);
+  const stringLiteral = /(["'`])((?:\\.|(?!\1)[\s\S])*?)\1/g;
+  let literal;
+  while ((literal = stringLiteral.exec(clean))) {
+    regex.lastIndex = 0;
+    const match = regex.exec(literal[2]);
+    if (match) {
+      return { index: literal.index + 1 + match.index };
+    }
+  }
+  return null;
+}
+
+function firstMarkupTextMatch(text, regex) {
+  const clean = stripMarkupNoise(text).replace(/<[^>]+>/g, blankPreserveLength);
+  regex.lastIndex = 0;
+  const match = regex.exec(clean);
+  if (match) {
+    return { index: match.index };
+  }
+  return firstStringLiteralMatch(clean, regex);
+}
+
+function firstVisibleTextMatch(file, text, regex) {
+  const ext = path.extname(file);
+  if (CODE_EXTENSIONS.has(ext)) {
+    return firstStringLiteralMatch(text, regex);
+  }
+  if (MARKUP_EXTENSIONS.has(ext)) {
+    return firstMarkupTextMatch(text, regex);
+  }
+  return null;
+}
+
+function firstRuleMatch(file, text, rule) {
+  const ext = path.extname(file);
+  if (rule.extensions && !rule.extensions.has(ext)) {
+    return null;
+  }
+  if (rule.visibleText) {
+    return firstVisibleTextMatch(file, text, rule.test);
+  }
+  rule.test.lastIndex = 0;
+  return rule.test.exec(text);
+}
+
 const findings = [];
 let files = [];
 
@@ -175,7 +246,7 @@ try {
   for (const file of files) {
     const text = fs.readFileSync(file, "utf8");
     for (const rule of RULES) {
-      const match = rule.test.exec(text);
+      const match = firstRuleMatch(file, text, rule);
       if (!match) continue;
       findings.push({
         file,
@@ -202,4 +273,4 @@ if (json) {
   }
 }
 
-process.exit(strict && findings.length ? 1 : 0);
+process.exit(strict && findings.some((finding) => finding.severity !== "info") ? 1 : 0);
