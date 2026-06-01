@@ -261,6 +261,17 @@ codex_catalog = {
     ]
 }
 
+meta_skill_plugin = root / "plugins" / "meta-skill" / ".codex-plugin" / "plugin.json"
+if meta_skill_plugin.exists():
+    codex_catalog["plugins"].append(
+        {
+            "name": "meta-skill",
+            "source": {"source": "local", "path": "./plugins/meta-skill"},
+            "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+            "category": "Coding",
+        }
+    )
+
 claude_catalog = {
     "name": name,
     "owner": {"name": "Rishi"},
@@ -305,7 +316,7 @@ if command -v codex >/dev/null 2>&1; then
   codex plugin remove "rs-tools@rs-tools" >/dev/null 2>&1 || true
   codex plugin marketplace remove "rs-tools" >/dev/null 2>&1 || true
   codex plugin marketplace remove "$PLUGIN_NAME" >/dev/null 2>&1 || true
-  codex plugin marketplace add "$MARKETPLACE_SOURCE" --sparse .agents --sparse plugins/codex
+  codex plugin marketplace add "$MARKETPLACE_SOURCE" --sparse .agents --sparse plugins/codex --sparse plugins/meta-skill
   codex plugin remove "$PLUGIN_NAME@$PLUGIN_NAME" >/dev/null 2>&1 || true
   codex plugin add "$PLUGIN_NAME@$PLUGIN_NAME"
 fi

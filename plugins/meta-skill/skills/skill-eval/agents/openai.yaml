@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Eval"
+  short_description: "Design and run evidence-backed skill evals"
+  default_prompt: "Use $skill-eval to initialize, run, inspect, or audit a Meta Skill review with the meta-skill CLI."

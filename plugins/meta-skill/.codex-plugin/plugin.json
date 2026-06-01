@@ -1,0 +1,36 @@
+{
+  "name": "meta-skill",
+  "version": "0.1.0",
+  "description": "Create, evaluate, and improve reusable skills with a shared meta-skill CLI.",
+  "author": {
+    "name": "Rishi"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "codex",
+    "skills",
+    "evaluation",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Meta Skill",
+    "shortDescription": "Create, evaluate, and improve reusable skills.",
+    "longDescription": "Meta Skill bundles skill-create, skill-eval, and skill-improve with a shared meta-skill CLI for scaffolding, validation, local eval runs, and bounded improvement loops.",
+    "developerName": "Rishi",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a reusable skill for this workflow.",
+      "Evaluate this skill with local prompts.",
+      "Plan a bounded improvement from eval evidence."
+    ],
+    "brandColor": "#2F6FED",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

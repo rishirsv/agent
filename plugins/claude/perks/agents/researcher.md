@@ -2,7 +2,7 @@
 name: researcher
 description: Research-only agent for sourced briefs, current best practices, trade-off analysis, authoritative evidence gathering, and repo-pattern synthesis.
 model: sonnet
-effort: high
+effort: medium
 tools:
 - Read
 - Grep

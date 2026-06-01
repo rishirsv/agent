@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Improve"
+  short_description: "Plan bounded improvements from skill-eval evidence"
+  default_prompt: "Use $skill-improve to plan and test bounded skill improvements from skill-eval evidence with the meta-skill CLI."
