@@ -8,10 +8,9 @@ exports.listRuns = listRuns;
 exports.listRunSummaries = listRunSummaries;
 exports.openRun = openRun;
 exports.refreshRunEvidence = refreshRunEvidence;
-const node_fs_1 = require("node:fs");
 const node_path_1 = __importDefault(require("node:path"));
 const project_1 = require("../project");
-const report_1 = require("../report");
+const reporting_1 = require("../reporting");
 async function importFeedback(project, runId, feedbackFile) {
     const root = await (0, project_1.requirePortableSkill)(project);
     const p = (0, project_1.projectPaths)(root);
@@ -42,50 +41,11 @@ async function listRuns(project) {
     return rows.map((row) => row.run_id);
 }
 async function listRunSummaries(project, options = {}) {
-    const root = await (0, project_1.requirePortableSkill)(project);
-    const p = (0, project_1.projectPaths)(root);
-    if (!(await (0, project_1.exists)(p.runs)))
-        return [];
-    const index = await ensureRunsIndex(p.runs);
-    let rows = [...index.runs].sort((a, b) => String(a.run_id).localeCompare(String(b.run_id)));
-    if (options.status)
-        rows = rows.filter((row) => row.status === options.status || row.assessment_status === options.status || row.readiness_status === options.status);
-    if (options.limit !== undefined)
-        rows = rows.slice(Math.max(0, rows.length - options.limit));
-    return rows;
+    return (0, reporting_1.listRunSummariesForReport)(project, options, "refresh-if-missing");
 }
 async function openRun(project, runId) {
-    const runs = await listRunSummaries(project);
-    const selected = runId || runs[runs.length - 1]?.run_id;
-    if (!selected)
-        throw new project_1.CliError("no eval runs found; run `meta-skill eval run <project>` first");
-    const root = await (0, project_1.requirePortableSkill)(project);
-    return refreshRunEvidence(root, selected);
+    return (0, reporting_1.openRunForReport)(project, runId, "refresh");
 }
 async function refreshRunEvidence(project, runId) {
-    const root = await (0, project_1.requirePortableSkill)(project);
-    const runRoot = node_path_1.default.join((0, project_1.projectPaths)(root).runs, runId);
-    if (!(await (0, project_1.exists)(runRoot)))
-        throw new project_1.CliError(`run does not exist: ${runId}`);
-    if (!(await (0, project_1.exists)(node_path_1.default.join(runRoot, "run.json"))))
-        throw new project_1.CliError(`run is missing run.json: ${runId}`);
-    const report = await (0, report_1.writeEvalReport)(runRoot);
-    const reportJson = node_path_1.default.join(runRoot, "report.json");
-    const data = await (0, project_1.readJson)(reportJson);
-    return { report, reportJson, runId, data };
-}
-async function ensureRunsIndex(runsRoot) {
-    const indexPath = node_path_1.default.join(runsRoot, "index.json");
-    if (await (0, project_1.exists)(indexPath))
-        return (0, project_1.readJson)(indexPath);
-    if (!(await (0, project_1.exists)(runsRoot)))
-        return { schema_version: 1, updated_at: new Date(0).toISOString(), runs: [] };
-    const dirs = (await node_fs_1.promises.readdir(runsRoot, { withFileTypes: true })).filter((entry) => entry.isDirectory());
-    for (const dir of dirs) {
-        const runRoot = node_path_1.default.join(runsRoot, dir.name);
-        if ((await (0, project_1.exists)(node_path_1.default.join(runRoot, "run.json"))) && !(await (0, project_1.exists)(node_path_1.default.join(runRoot, "report.json")))) {
-            await (0, report_1.writeEvalReport)(runRoot);
-        }
-    }
-    return (0, report_1.updateRunsIndex)(runsRoot);
+    return (0, reporting_1.openRunForReport)(project, runId, "refresh");
 }

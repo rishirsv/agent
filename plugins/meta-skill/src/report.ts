@@ -3,14 +3,18 @@ import path from "node:path";
 import type { EvalSide, EventEnvelope, RunComparison, RunIndex, RunIndexRow, RunReadiness, RunReport, RunReportScenario, RunReportSide } from "./models";
 import { exists, readJson, readText, utcNow, writeJson, writeText } from "./project";
 
-export async function writeEvalReport(runRoot: string): Promise<string> {
+export async function materializeEvalRunReport(runRoot: string, options: { updateIndex?: boolean } = {}): Promise<{ report: string; reportJson: string; runId: string; data: RunReport }> {
   const report = await buildRunReport(runRoot);
   const jsonPath = path.join(runRoot, "report.json");
   await writeJson(jsonPath, report);
   const htmlPath = path.join(runRoot, "report.html");
   await writeText(htmlPath, renderEvalReportHtml(report));
-  await updateRunsIndex(path.dirname(runRoot));
-  return htmlPath;
+  if (options.updateIndex !== false) await updateRunsIndex(path.dirname(runRoot));
+  return { report: htmlPath, reportJson: jsonPath, runId: report.summary.run_id, data: report };
+}
+
+export async function writeEvalReport(runRoot: string): Promise<string> {
+  return (await materializeEvalRunReport(runRoot)).report;
 }
 
 export async function buildRunReport(runRoot: string): Promise<RunReport> {
@@ -157,27 +161,41 @@ export async function updateRunsIndex(runsRoot: string): Promise<RunIndex> {
   return index;
 }
 
-export async function writeReviewReport(reviewRoot: string, review: Record<string, any>): Promise<string> {
-  const quality = review.quality || {};
-  const discoveryRows = vectorRows(review.discovery?.vectors || []);
-  const implementationRows = vectorRows(review.implementation?.vectors || []);
-  const validationRows = (review.validation?.checks || [])
+export async function materializeReviewReport(reviewRoot: string, review: Record<string, unknown>): Promise<string> {
+  const report = path.join(reviewRoot, "report.md");
+  await writeText(report, renderReviewReportMarkdown(review));
+  return report;
+}
+
+export async function writeReviewReport(reviewRoot: string, review: Record<string, unknown>): Promise<string> {
+  return materializeReviewReport(reviewRoot, review);
+}
+
+export function renderReviewReportMarkdown(review: Record<string, unknown>): string {
+  const quality = objectValue(review.quality);
+  const discovery = objectValue(review.discovery);
+  const implementation = objectValue(review.implementation);
+  const validation = objectValue(review.validation);
+  const reviewer = objectValue(review.reviewer);
+  const discoveryRows = vectorRows(arrayValue(discovery.vectors));
+  const implementationRows = vectorRows(arrayValue(implementation.vectors));
+  const validationRows = arrayValue(validation.checks)
     .map((check: Record<string, unknown>) => `| ${pipe(check.name)} | ${pipe(check.message || "")} | ${pipe(check.status)} |`)
     .join("\n");
-  const suggestions = (review.suggestions || [])
+  const suggestions = arrayValue(review.suggestions)
     .map((item: Record<string, unknown>, index: number) => `${index + 1}. **${pipe(item.priority || "medium")}** ${pipe(item.vector || "general")}: ${pipe(item.issue || "")}\n\n   Suggested fix: ${pipe(item.suggested_fix || "")}`)
     .join("\n\n");
-  const md = `# Skill Quality Review
+  return `# Skill Quality Review
 
 Quality: ${quality.score ?? "unavailable"}%
 
-Reviewer: ${review.reviewer?.name || "meta-skill-reviewer"} (${review.reviewer?.status || "represented"})
+Reviewer: ${reviewer.name || "meta-skill-reviewer"} (${reviewer.status || "represented"})
 
 ## Discovery: ${quality.discovery ?? "unavailable"}%
 
 Can an agent discover and select this skill at the right time?
 
-${review.discovery?.assessment || ""}
+${discovery.assessment || ""}
 
 | Dimension | Reasoning | Score |
 |---|---|---:|
@@ -187,7 +205,7 @@ ${discoveryRows || "| none | No discovery vectors were available. | 0 / 0 |"}
 
 Are the instructions useful, concise, and operational?
 
-${review.implementation?.assessment || ""}
+${implementation.assessment || ""}
 
 | Dimension | Reasoning | Score |
 |---|---|---:|
@@ -197,7 +215,7 @@ ${implementationRows || "| none | No implementation vectors were available. | 0 
 
 Does the skill satisfy structural and packaging expectations?
 
-${review.validation?.assessment || ""}
+${validation.assessment || ""}
 
 | Check | Description | Result |
 |---|---|---|
@@ -207,9 +225,6 @@ ${validationRows || "| none | No validation checks were available. | unavailable
 
 ${suggestions || "No material suggestions."}
 `;
-  const report = path.join(reviewRoot, "report.md");
-  await writeText(report, md);
-  return report;
 }
 
 async function readScenarioSnapshot(
@@ -350,7 +365,7 @@ async function walkFiles(root: string, relativeDir = ""): Promise<string[]> {
   return files.sort();
 }
 
-function indexRowFromReport(report: RunReport): RunIndexRow {
+export function indexRowFromReport(report: RunReport): RunIndexRow {
   return {
     run_id: report.summary.run_id,
     label: report.summary.label,
@@ -367,7 +382,7 @@ function indexRowFromReport(report: RunReport): RunIndexRow {
   };
 }
 
-function indexRowFromRun(run: Record<string, unknown>, fallbackId: string): RunIndexRow {
+export function indexRowFromRun(run: Record<string, unknown>, fallbackId: string): RunIndexRow {
   const failures = Array.isArray(run.failure_classifications) ? run.failure_classifications.map(String) : [];
   return {
     run_id: String(run.run_id || fallbackId),
@@ -385,7 +400,7 @@ function indexRowFromRun(run: Record<string, unknown>, fallbackId: string): RunI
   };
 }
 
-function renderEvalReportHtml(report: RunReport): string {
+export function renderEvalReportHtml(report: RunReport): string {
   const scenarioRows = report.scenarios.flatMap((scenario) =>
     scenario.sides.map((side) => {
       const failure = side.failure_classification || side.error || "";
@@ -534,6 +549,14 @@ function renderEventTable(rows: EventEnvelope[], columns: string[]): string {
 
 function vectorRows(vectors: Array<Record<string, unknown>>): string {
   return vectors.map((vector) => `| ${pipe(vector.name)} | ${pipe(vector.reasoning || "")} | ${escapeMarkdown(vector.score)} / ${escapeMarkdown(vector.max)} |`).join("\n");
+}
+
+function objectValue(value: unknown): Record<string, unknown> {
+  return value && typeof value === "object" && !Array.isArray(value) ? (value as Record<string, unknown>) : {};
+}
+
+function arrayValue(value: unknown): Array<Record<string, unknown>> {
+  return Array.isArray(value) ? value.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === "object" && !Array.isArray(item)) : [];
 }
 
 function pipe(value: unknown): string {

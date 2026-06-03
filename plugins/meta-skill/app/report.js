@@ -3,21 +3,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.materializeEvalRunReport = materializeEvalRunReport;
 exports.writeEvalReport = writeEvalReport;
 exports.buildRunReport = buildRunReport;
 exports.updateRunsIndex = updateRunsIndex;
+exports.materializeReviewReport = materializeReviewReport;
 exports.writeReviewReport = writeReviewReport;
+exports.renderReviewReportMarkdown = renderReviewReportMarkdown;
+exports.indexRowFromReport = indexRowFromReport;
+exports.indexRowFromRun = indexRowFromRun;
+exports.renderEvalReportHtml = renderEvalReportHtml;
 const node_fs_1 = require("node:fs");
 const node_path_1 = __importDefault(require("node:path"));
 const project_1 = require("./project");
-async function writeEvalReport(runRoot) {
+async function materializeEvalRunReport(runRoot, options = {}) {
     const report = await buildRunReport(runRoot);
     const jsonPath = node_path_1.default.join(runRoot, "report.json");
     await (0, project_1.writeJson)(jsonPath, report);
     const htmlPath = node_path_1.default.join(runRoot, "report.html");
     await (0, project_1.writeText)(htmlPath, renderEvalReportHtml(report));
-    await updateRunsIndex(node_path_1.default.dirname(runRoot));
-    return htmlPath;
+    if (options.updateIndex !== false)
+        await updateRunsIndex(node_path_1.default.dirname(runRoot));
+    return { report: htmlPath, reportJson: jsonPath, runId: report.summary.run_id, data: report };
+}
+async function writeEvalReport(runRoot) {
+    return (await materializeEvalRunReport(runRoot)).report;
 }
 async function buildRunReport(runRoot) {
     const runJson = await (0, project_1.readJson)(node_path_1.default.join(runRoot, "run.json"));
@@ -163,27 +173,39 @@ async function updateRunsIndex(runsRoot) {
     await (0, project_1.writeJson)(node_path_1.default.join(runsRoot, "index.json"), index);
     return index;
 }
+async function materializeReviewReport(reviewRoot, review) {
+    const report = node_path_1.default.join(reviewRoot, "report.md");
+    await (0, project_1.writeText)(report, renderReviewReportMarkdown(review));
+    return report;
+}
 async function writeReviewReport(reviewRoot, review) {
-    const quality = review.quality || {};
-    const discoveryRows = vectorRows(review.discovery?.vectors || []);
-    const implementationRows = vectorRows(review.implementation?.vectors || []);
-    const validationRows = (review.validation?.checks || [])
+    return materializeReviewReport(reviewRoot, review);
+}
+function renderReviewReportMarkdown(review) {
+    const quality = objectValue(review.quality);
+    const discovery = objectValue(review.discovery);
+    const implementation = objectValue(review.implementation);
+    const validation = objectValue(review.validation);
+    const reviewer = objectValue(review.reviewer);
+    const discoveryRows = vectorRows(arrayValue(discovery.vectors));
+    const implementationRows = vectorRows(arrayValue(implementation.vectors));
+    const validationRows = arrayValue(validation.checks)
         .map((check) => `| ${pipe(check.name)} | ${pipe(check.message || "")} | ${pipe(check.status)} |`)
         .join("\n");
-    const suggestions = (review.suggestions || [])
+    const suggestions = arrayValue(review.suggestions)
         .map((item, index) => `${index + 1}. **${pipe(item.priority || "medium")}** ${pipe(item.vector || "general")}: ${pipe(item.issue || "")}\n\n   Suggested fix: ${pipe(item.suggested_fix || "")}`)
         .join("\n\n");
-    const md = `# Skill Quality Review
+    return `# Skill Quality Review
 
 Quality: ${quality.score ?? "unavailable"}%
 
-Reviewer: ${review.reviewer?.name || "meta-skill-reviewer"} (${review.reviewer?.status || "represented"})
+Reviewer: ${reviewer.name || "meta-skill-reviewer"} (${reviewer.status || "represented"})
 
 ## Discovery: ${quality.discovery ?? "unavailable"}%
 
 Can an agent discover and select this skill at the right time?
 
-${review.discovery?.assessment || ""}
+${discovery.assessment || ""}
 
 | Dimension | Reasoning | Score |
 |---|---|---:|
@@ -193,7 +215,7 @@ ${discoveryRows || "| none | No discovery vectors were available. | 0 / 0 |"}
 
 Are the instructions useful, concise, and operational?
 
-${review.implementation?.assessment || ""}
+${implementation.assessment || ""}
 
 | Dimension | Reasoning | Score |
 |---|---|---:|
@@ -203,7 +225,7 @@ ${implementationRows || "| none | No implementation vectors were available. | 0 
 
 Does the skill satisfy structural and packaging expectations?
 
-${review.validation?.assessment || ""}
+${validation.assessment || ""}
 
 | Check | Description | Result |
 |---|---|---|
@@ -213,9 +235,6 @@ ${validationRows || "| none | No validation checks were available. | unavailable
 
 ${suggestions || "No material suggestions."}
 `;
-    const report = node_path_1.default.join(reviewRoot, "report.md");
-    await (0, project_1.writeText)(report, md);
-    return report;
 }
 async function readScenarioSnapshot(runRoot, folder) {
     const snapshot = node_path_1.default.join(runRoot, "snapshots", folder);
@@ -506,6 +525,12 @@ function renderEventTable(rows, columns) {
 }
 function vectorRows(vectors) {
     return vectors.map((vector) => `| ${pipe(vector.name)} | ${pipe(vector.reasoning || "")} | ${escapeMarkdown(vector.score)} / ${escapeMarkdown(vector.max)} |`).join("\n");
+}
+function objectValue(value) {
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+function arrayValue(value) {
+    return Array.isArray(value) ? value.filter((item) => Boolean(item) && typeof item === "object" && !Array.isArray(item)) : [];
 }
 function pipe(value) {
     return escapeMarkdown(value).replace(/\|/g, "\\|");

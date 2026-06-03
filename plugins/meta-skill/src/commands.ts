@@ -1,11 +1,14 @@
 import { execFile } from "node:child_process";
+import { promises as fs } from "node:fs";
+import os from "node:os";
+import path from "node:path";
 import { promisify } from "node:util";
-import type { RunIndexRow } from "./models";
 import { importFeedback, initEvals, judgeRun, listRunSummaries, openRun, runEval } from "./evals";
 import { decideSession, planImprovement, promotePlan } from "./improve";
-import { formatLintReport, lintProject } from "./lint";
+import { lintProject } from "./lint";
 import { packageProject } from "./package";
 import { CliError } from "./project";
+import { REPORT_VIEWS, buildMetaSkillReport, isReportView, renderLintReportMarkdown, renderReportHtml, renderReportMarkdown, renderRunListMarkdown } from "./reporting";
 import { reviewProject } from "./review";
 import { createSkill, initProject } from "./skills";
 import { releaseProject } from "./versions";
@@ -18,6 +21,7 @@ Usage:
   meta-skill create [skill-dir] [--project] --slug <slug> --title <title> --description <text> --job <text>
   meta-skill project init <skill-dir>
   meta-skill lint <project-or-skill> [--run <run-id>] [--json]
+  meta-skill report <project> [--view status|runs|eval|review|release|full|lint] [--run <run-id>] [--review <review-id>] [--json] [--html] [--refresh] [--open]
   meta-skill review <project> [--json]
   meta-skill eval init <project>
   meta-skill eval generate <project> [--count <n>] [--family <R|F|T|G>] [--topic <topic>] [--strategy merge|replace] [--json]
@@ -48,6 +52,8 @@ export async function runCommand(argv: string[]): Promise<number> {
       return commandProject(rest);
     case "lint":
       return commandLint(rest);
+    case "report":
+      return commandReport(rest);
     case "review":
       return commandReview(rest);
     case "eval":
@@ -104,8 +110,43 @@ async function commandLint(argv: string[]): Promise<number> {
   const target = args.positionals[0] || ".";
   const report = await lintProject(target, { runId: args.one("run") });
   if (args.has("json")) console.log(JSON.stringify(report, null, 2));
-  else console.log(formatLintReport(report));
+  else console.log(renderLintReportMarkdown(report));
   return report.ok ? 0 : 1;
+}
+
+async function commandReport(argv: string[]): Promise<number> {
+  const args = parse(argv, ["view", "run", "review"], ["json", "html", "refresh", "open"]);
+  const project = args.positionals[0] || ".";
+  const view = args.one("view") || "status";
+  if (!isReportView(view)) {
+    throw new CliError(`--view must be one of ${REPORT_VIEWS.join(", ")}`, 2);
+  }
+  if (args.has("json") && args.has("html")) throw new CliError("report accepts only one of --json or --html", 2);
+  const report = await buildMetaSkillReport({
+    project,
+    view,
+    runId: args.one("run"),
+    reviewId: args.one("review"),
+    refresh: args.has("refresh") ? "refresh" : "read"
+  });
+  if (args.has("json")) {
+    console.log(JSON.stringify(report, null, 2));
+    return 0;
+  }
+  if (args.has("html")) {
+    const html = renderReportHtml(report, report.subject.view);
+    if (args.has("open") && process.stdout.isTTY) {
+      const tmp = path.join(os.tmpdir(), `meta-skill-report-${Date.now()}.html`);
+      await fs.writeFile(tmp, html.endsWith("\n") ? html : `${html}\n`, "utf8");
+      await execFileAsync("open", [tmp]).catch(() => undefined);
+      console.log(`html: ${tmp}`);
+    } else {
+      console.log(html);
+    }
+    return 0;
+  }
+  console.log(renderReportMarkdown(report, report.subject.view));
+  return report.readiness.status === "blocked" ? 1 : 0;
 }
 
 async function commandReview(argv: string[]): Promise<number> {
@@ -195,7 +236,7 @@ export function formatEvalRunSummary(
     `manual review required: ${result.manualReviewRequired ? "yes" : "no"}`,
     `failure classifications: ${result.failureClassifications.length ? result.failureClassifications.join(", ") : "none"}`,
     `report: ${result.report}`,
-    `next step: meta-skill eval open ${shellPath(project)} --run ${result.runId}`
+    `next step: meta-skill report ${shellPath(project)} --view eval --run ${result.runId}`
   ];
   if (result.status === "needs_review") {
     lines.push("note: needs_review is unresolved evidence, not pass proof.");
@@ -218,7 +259,7 @@ async function commandEvalJudge(argv: string[]): Promise<number> {
   });
   console.log(`judge annotations: ${result.annotations}`);
   console.log(`report refreshed: .meta-skill/evals/runs/${runId}/report.html`);
-  console.log(`next step: inspect .meta-skill/evals/runs/${runId}/grades.jsonl`);
+  console.log(`next step: meta-skill report ${shellPath(project)} --view eval --run ${runId}`);
   return result.ok ? 0 : 1;
 }
 
@@ -234,7 +275,7 @@ async function commandEvalFeedback(argv: string[]): Promise<number> {
   const result = await importFeedback(project, runId, feedback);
   console.log(`imported feedback rows: ${result.rows}`);
   console.log(`report refreshed: ${result.report}`);
-  console.log(`next step: meta-skill plan ${shellPath(project)} --from-run ${runId}`);
+  console.log(`next step: meta-skill report ${shellPath(project)} --view eval --run ${runId}`);
   return 0;
 }
 
@@ -244,7 +285,7 @@ async function commandEvalOpen(argv: string[], openHtml: boolean): Promise<numbe
   if (args.has("list")) {
     const runs = await listRunSummaries(project, parseRunListOptions(args));
     if (args.has("json")) console.log(JSON.stringify(runs, null, 2));
-    else console.log(formatRunList(runs));
+    else console.log(renderRunListMarkdown(runs));
     return 0;
   }
   const result = await openRun(project, args.one("run"));
@@ -255,8 +296,13 @@ async function commandEvalOpen(argv: string[], openHtml: boolean): Promise<numbe
   if (openHtml && process.stdout.isTTY) {
     await execFileAsync("open", [result.report]).catch(() => undefined);
   }
-  console.log(`report: ${result.report}`);
-  console.log(`json: ${result.reportJson}`);
+  if (openHtml) {
+    console.log(`report: ${result.report}`);
+    console.log(`json: ${result.reportJson}`);
+  } else {
+    const report = await buildMetaSkillReport({ project, view: "eval", runId: result.runId, refresh: "read" });
+    console.log(renderReportMarkdown(report, "eval"));
+  }
   return 0;
 }
 
@@ -265,7 +311,7 @@ async function commandEvalList(argv: string[]): Promise<number> {
   const project = args.positionals[0] || ".";
   const runs = await listRunSummaries(project, parseRunListOptions(args));
   if (args.has("json")) console.log(JSON.stringify(runs, null, 2));
-  else console.log(formatRunList(runs));
+  else console.log(renderRunListMarkdown(runs));
   return 0;
 }
 
@@ -313,26 +359,6 @@ async function commandRelease(argv: string[]): Promise<number> {
   console.log(`files: ${result.files.join(", ")}`);
   console.log(`next step: meta-skill package ${shellPath(project)} --source release`);
   return 0;
-}
-
-export function formatRunList(runs: RunIndexRow[]): string {
-  if (!runs.length) return "No eval runs found.";
-  const header = "Run ID\tStatus\tCreated\tCompleted\tLabel\tCompare\tScenarios\tManual Review\tFailures\tReadiness";
-  const rows = runs.map((run) =>
-    [
-      run.run_id,
-      run.status,
-      run.created_at || "",
-      run.completed_at || "",
-      run.label || "",
-      run.comparison_mode,
-      String(run.scenario_count),
-      run.manual_review_required ? "yes" : "no",
-      run.failure_classifications.length ? run.failure_classifications.join(",") : "none",
-      run.readiness_status
-    ].join("\t")
-  );
-  return [header, ...rows].join("\n");
 }
 
 function parseRunListOptions(args: ParsedArgs): { limit?: number; status?: string } {

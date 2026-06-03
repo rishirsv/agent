@@ -3,7 +3,7 @@ import path from "node:path";
 import type { Issue, LintReport } from "./models";
 import { lintProject } from "./lint";
 import { nextSequencedId, projectPaths, readText, requirePortableSkill, writeJson } from "./project";
-import { writeReviewReport } from "./report";
+import { materializeReviewReport } from "./reporting";
 
 type Vector = { name: string; score: number; max: number; reasoning: string };
 type Suggestion = { priority: "high" | "medium" | "low"; vector: string; issue: string; suggested_fix: string };
@@ -65,7 +65,7 @@ export async function reviewProject(project: string): Promise<{ reviewId: string
     suggestions
   };
   await writeJson(path.join(reviewRoot, "review.json"), data);
-  const report = await writeReviewReport(reviewRoot, data);
+  const report = await materializeReviewReport(reviewRoot, data);
   return { reviewId, reviewRoot, score: quality, report, data };
 }
 

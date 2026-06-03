@@ -8,7 +8,7 @@ const node_fs_1 = require("node:fs");
 const node_path_1 = __importDefault(require("node:path"));
 const lint_1 = require("./lint");
 const project_1 = require("./project");
-const report_1 = require("./report");
+const reporting_1 = require("./reporting");
 async function reviewProject(project) {
     const root = await (0, project_1.requirePortableSkill)(project);
     const p = (0, project_1.projectPaths)(root);
@@ -64,7 +64,7 @@ async function reviewProject(project) {
         suggestions
     };
     await (0, project_1.writeJson)(node_path_1.default.join(reviewRoot, "review.json"), data);
-    const report = await (0, report_1.writeReviewReport)(reviewRoot, data);
+    const report = await (0, reporting_1.materializeReviewReport)(reviewRoot, data);
     return { reviewId, reviewRoot, score: quality, report, data };
 }
 function discoveryReview(skillText) {
