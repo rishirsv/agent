@@ -23,13 +23,13 @@ export async function planImprovement(options: { project: string; fromRun?: stri
       review_id: options.fromReview || null
     },
     status: "planned",
-    summary: "Fill in one bounded candidate edit tied to the cited evidence before promotion.",
+    summary: "Fill in one bounded working-payload edit tied to the cited evidence before promotion.",
     edits: [] as Array<{ path: string; content: string }>
   };
   await writeJson(path.join(planRoot, "plan.json"), plan);
   await writeText(
     path.join(planRoot, "summary.md"),
-    `# Improvement Plan ${planId}\n\nEvidence run: ${options.fromRun || "none"}\nEvidence review: ${options.fromReview || "none"}\n\n## Candidate Edit\n\nAdd exactly one bounded edit to \`plan.json\` under \`edits\` before running \`meta-skill promote\`.\n`
+    `# Improvement Plan ${planId}\n\nEvidence run: ${options.fromRun || "none"}\nEvidence review: ${options.fromReview || "none"}\n\n## Working Payload Edit\n\nAdd exactly one bounded edit to \`plan.json\` under \`edits\` before running \`meta-skill promote\`.\n`
   );
   return { planId, planRoot };
 }

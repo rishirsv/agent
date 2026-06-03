@@ -3,7 +3,7 @@ import { AppServerJsonClient, AppServerUnavailableError, appServerConfig } from 
 import { CliError, appendJsonl, eventEnvelope, exists, projectPaths, readText, relativePath, requirePortableSkill } from "../project";
 import { writeEvalReport } from "../report";
 import { loadRunScenarioSnapshots } from "./scenarios";
-import { sidesInRun } from "./results";
+import { attemptsInRun } from "./results";
 import type { JudgeExecutionInput, JudgeOptions, JudgeRunResult, RunFailureClassification } from "./types";
 
 export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
@@ -40,8 +40,8 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
         if (!(await exists(judgePath))) throw new CliError(`judge does not exist: ${judgeId}`);
         const judgePrompt = await readText(judgePath);
         const threshold = (scenario.criteria.judges || []).find((judge) => judge.id === judgeId)?.threshold;
-        for (const side of await sidesInRun(runRoot, scenario.folder)) {
-          const finalPath = path.join(runRoot, "scenarios", scenario.folder, side, "final.md");
+        for (const attempt of await attemptsInRun(runRoot, scenario.folder)) {
+          const finalPath = path.join(runRoot, attempt.evidencePath, "final.md");
           if (!(await exists(finalPath))) {
             ok = false;
             failureClassifications.add("harness_unavailable");
@@ -51,10 +51,11 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
                 type: "judge_result",
                 run_id: options.runId,
                 scenario_id: scenario.id,
-                side,
+                ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
                 source: judgeId,
                 payload: {
                   judge_id: judgeId,
+                  run_source: attempt.runSource,
                   status: "unavailable",
                   failure_classification: "harness_unavailable",
                   reason: `missing scenario final evidence: ${relativePath(runRoot, finalPath)}`
@@ -65,7 +66,7 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
             continue;
           }
           const final = await readText(finalPath);
-          const result = await judgeExecutor({ projectRoot: root, judgeId, judgePrompt, scenario, side, final });
+          const result = await judgeExecutor({ projectRoot: root, judgeId, judgePrompt, scenario, runSourceLabel: attempt.runSource.label, final });
           const passed = judgePassed(result, threshold);
           ok = ok && passed;
           if (!passed) failureClassifications.add("judge_failure");
@@ -75,10 +76,11 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
               type: "judge_result",
               run_id: options.runId,
               scenario_id: scenario.id,
-              side,
+              ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
               source: judgeId,
               payload: {
                 judge_id: judgeId,
+                run_source: attempt.runSource,
                 status: passed ? "passed" : "failed",
                 failure_classification: passed ? null : "judge_failure",
                 threshold: threshold || null,
@@ -99,17 +101,18 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
     for (const scenario of scenarios) {
       const judgeIds = options.allJudges ? (scenario.criteria.judges || []).map((judge) => judge.id) : [options.judge as string];
       for (const judgeId of judgeIds) {
-        for (const side of await sidesInRun(runRoot, scenario.folder)) {
+        for (const attempt of await attemptsInRun(runRoot, scenario.folder)) {
           await appendJsonl(
             path.join(runRoot, "grades.jsonl"),
             eventEnvelope({
               type: "judge_result",
               run_id: options.runId,
               scenario_id: scenario.id,
-              side,
+              ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
               source: judgeId,
               payload: {
                 judge_id: judgeId,
+                run_source: attempt.runSource,
                 status: "unavailable",
                 failure_classification: classification,
                 reason: message
@@ -150,8 +153,8 @@ async function runJudge(
     "# Judge Prompt",
     input.judgePrompt,
     "# Scenario",
-    JSON.stringify({ id: input.scenario.id, folder: input.scenario.folder, side: input.side, evidence_basis: input.scenario.evidence_basis || "run_snapshot", metadata: input.scenario.metadata, criteria: input.scenario.criteria }, null, 2),
-    "# Candidate Final",
+    JSON.stringify({ id: input.scenario.id, folder: input.scenario.folder, run_source: input.runSourceLabel, evidence_basis: input.scenario.evidence_basis || "run_snapshot", metadata: input.scenario.metadata, criteria: input.scenario.criteria }, null, 2),
+    "# Final Output",
     input.final,
     "# Required Output",
     'Return compact JSON with: {"overall": number from 1 to 5, "pass": boolean, "rationale": string, "dimensions": object}.'

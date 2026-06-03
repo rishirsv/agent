@@ -10,6 +10,8 @@ import { exists, readJson, readText, writeJson, writeText } from "../project";
 import { AppServerScenarioRunner } from "./runner";
 import { AppServerJsonClient } from "./client";
 
+const workingRunSource = { kind: "working_payload", label: "Working payload", skill_root: "../../../..", attached_skill: true } as const;
+
 describe("AppServerScenarioRunner", () => {
   it("writes source-honest App Server evidence with real turn IDs and flushed trace", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "meta-skill-runner-"));
@@ -23,8 +25,9 @@ describe("AppServerScenarioRunner", () => {
     const result = await runner.run({
       projectRoot: skillRoot,
       skillRoot,
+      attachSkill: true,
       scenario,
-      side: "candidate",
+      runSource: workingRunSource,
       runId: "001-test",
       runRoot,
       appServer: {
@@ -37,8 +40,8 @@ describe("AppServerScenarioRunner", () => {
     });
 
     assert.equal(result.status, "needs_review");
-    const sideRoot = path.join(runRoot, "scenarios", scenario.folder, "candidate");
-    const thread = await readJson<{ thread_id: string; turn_ids: string[]; status: string }>(path.join(sideRoot, "thread.json"));
+    const scenarioRoot = path.join(runRoot, "scenarios", scenario.folder);
+    const thread = await readJson<{ thread_id: string; turn_ids: string[]; status: string }>(path.join(scenarioRoot, "thread.json"));
     assert.deepEqual(thread, {
       schema_version: 1,
       thread_id: "thread-1",
@@ -56,8 +59,8 @@ describe("AppServerScenarioRunner", () => {
       status: "completed",
       error: null
     });
-    assert.equal(await readText(path.join(sideRoot, "final.md")), "final turn-2\n");
-    const turns = (await readText(path.join(sideRoot, "turns.jsonl"))).trim().split("\n").map((line) => JSON.parse(line));
+    assert.equal(await readText(path.join(scenarioRoot, "final.md")), "final turn-2\n");
+    const turns = (await readText(path.join(scenarioRoot, "turns.jsonl"))).trim().split("\n").map((line) => JSON.parse(line));
     assert.deepEqual(
       turns.map((turn) => [turn.role, turn.index, turn.turn_id || null]),
       [
@@ -67,7 +70,7 @@ describe("AppServerScenarioRunner", () => {
         ["assistant", 1, "turn-2"]
       ]
     );
-    const traceRows = (await readText(path.join(sideRoot, "rpc.jsonl"))).trim().split("\n").map((line) => JSON.parse(line));
+    const traceRows = (await readText(path.join(scenarioRoot, "rpc.jsonl"))).trim().split("\n").map((line) => JSON.parse(line));
     assert.equal(traceRows.length >= 3, true);
     assert.equal(fake.flushed, true);
 
@@ -84,15 +87,15 @@ describe("AppServerScenarioRunner", () => {
     assert.equal(firstInput.some((item) => item.type === "skill"), true);
     assert.equal((firstInput.find((item) => item.type === "skill") as { name?: string } | undefined)?.name, "runner-skill");
     assert.equal(secondInput.some((item) => item.type === "skill"), false);
-    assert.equal(await exists(path.join(sideRoot, "stage", "scenario", "task.md")), true);
-    assert.equal(await exists(path.join(sideRoot, "stage", "scenario", "scenario.json")), true);
-    assert.equal(await exists(path.join(sideRoot, "stage", "scenario", "criteria.json")), false);
+    assert.equal(await exists(path.join(scenarioRoot, "stage", "scenario", "task.md")), true);
+    assert.equal(await exists(path.join(scenarioRoot, "stage", "scenario", "scenario.json")), true);
+    assert.equal(await exists(path.join(scenarioRoot, "stage", "scenario", "criteria.json")), false);
     assert.equal(result.token_usage.total_tokens.total, 24);
     assert.equal(result.token_usage.input_tokens.total, 10);
     assert.equal(result.token_usage.cached_tokens?.total, 4);
     assert.equal(result.token_usage.output_tokens.total, 14);
     assert.equal(result.token_usage.reasoning_tokens?.total, 0);
-    const usage = await readJson<{ availability: string; turns: Array<{ usage: unknown; cumulative_usage?: unknown; source_event?: string }>; summary: { total_tokens: { total: number } } }>(path.join(sideRoot, "usage.json"));
+    const usage = await readJson<{ availability: string; turns: Array<{ usage: unknown; cumulative_usage?: unknown; source_event?: string }>; summary: { total_tokens: { total: number } } }>(path.join(scenarioRoot, "usage.json"));
     assert.equal(usage.availability, "present");
     assert.equal(usage.turns.length, 2);
     assert.equal(usage.summary.total_tokens.total, 24);
@@ -117,8 +120,9 @@ describe("AppServerScenarioRunner", () => {
     const result = await runner.run({
       projectRoot: skillRoot,
       skillRoot,
+      attachSkill: true,
       scenario,
-      side: "candidate",
+      runSource: workingRunSource,
       runId: "001-test",
       runRoot: path.join(root, "run"),
       appServer: { mode: "managed", endpoint: null, auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }
@@ -126,11 +130,11 @@ describe("AppServerScenarioRunner", () => {
 
     assert.equal(result.token_usage.availability, "unavailable");
     assert.match(result.token_usage.unavailable_reasons[0], /turn-1/);
-    const usage = await readJson<{ turns: Array<{ source_event?: string }> }>(path.join(root, "run", "scenarios", scenario.folder, "candidate", "usage.json"));
+    const usage = await readJson<{ turns: Array<{ source_event?: string }> }>(path.join(root, "run", "scenarios", scenario.folder, "usage.json"));
     assert.equal("source_event" in usage.turns[0], false);
   });
 
-  it("does not promote per-turn usage into side totals when final cumulative usage is missing", async () => {
+  it("does not promote per-turn usage into scenario totals when final cumulative usage is missing", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "meta-skill-runner-last-only-"));
     const skillRoot = path.join(root, "skill");
     const scenario = await fixtureScenario(root, []);
@@ -142,8 +146,9 @@ describe("AppServerScenarioRunner", () => {
     const result = await runner.run({
       projectRoot: skillRoot,
       skillRoot,
+      attachSkill: true,
       scenario,
-      side: "candidate",
+      runSource: workingRunSource,
       runId: "001-test",
       runRoot,
       appServer: { mode: "managed", endpoint: null, auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }
@@ -152,8 +157,8 @@ describe("AppServerScenarioRunner", () => {
     assert.equal(result.token_usage.availability, "unavailable");
     assert.equal(result.token_usage.total_tokens.total, 0);
     assert.match(result.token_usage.unavailable_reasons[0], /cumulative token metrics were unavailable for final reporting turn turn-1/);
-    const sideRoot = path.join(runRoot, "scenarios", scenario.folder, "candidate");
-    const usage = await readJson<{ turns: Array<{ usage: unknown; cumulative_usage?: unknown; source_event?: string }>; summary: { availability: string; total_tokens: { total: number } } }>(path.join(sideRoot, "usage.json"));
+    const scenarioRoot = path.join(runRoot, "scenarios", scenario.folder);
+    const usage = await readJson<{ turns: Array<{ usage: unknown; cumulative_usage?: unknown; source_event?: string }>; summary: { availability: string; total_tokens: { total: number } } }>(path.join(scenarioRoot, "usage.json"));
     assert.equal(usage.summary.availability, "unavailable");
     assert.equal(usage.summary.total_tokens.total, 0);
     assert.deepEqual(usage.turns[0].usage, {
@@ -167,7 +172,7 @@ describe("AppServerScenarioRunner", () => {
     assert.equal(usage.turns[0].source_event, "thread/tokenUsage/updated");
   });
 
-  it("writes each reused-client scenario side trace to that side rpc.jsonl", async () => {
+  it("writes each reused-client scenario trace to that scenario rpc.jsonl", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "meta-skill-runner-trace-"));
     const skillRoot = path.join(root, "skill");
     const scenario = await fixtureScenario(root, []);
@@ -176,14 +181,15 @@ describe("AppServerScenarioRunner", () => {
     const fake = new FakeScenarioClient();
     const runner = new AppServerScenarioRunner({ clientFactory: (onLine) => fake.attach(onLine), turnTimeoutMs: 25 });
     const appServer = { mode: "managed" as const, endpoint: null, auth: "inherited" as const, protocol: "generated-ts" as const, generatedTypes: "test" };
+    const secondScenario = { ...scenario, folder: "R2-second", id: "R2" };
 
-    await runner.run({ projectRoot: skillRoot, skillRoot, scenario, side: "candidate", runId: "001-test", runRoot, appServer });
-    await runner.run({ projectRoot: skillRoot, skillRoot, scenario, side: "release", runId: "001-test", runRoot, appServer });
+    await runner.run({ projectRoot: skillRoot, skillRoot, attachSkill: true, scenario, runSource: workingRunSource, runId: "001-test", runRoot, appServer });
+    await runner.run({ projectRoot: skillRoot, skillRoot, attachSkill: true, scenario: secondScenario, runSource: workingRunSource, runId: "001-test", runRoot, appServer });
 
-    const candidateTrace = await readText(path.join(runRoot, "scenarios", scenario.folder, "candidate", "rpc.jsonl"));
-    const releaseTrace = await readText(path.join(runRoot, "scenarios", scenario.folder, "release", "rpc.jsonl"));
-    assert.match(candidateTrace, /thread\/start/);
-    assert.match(releaseTrace, /thread\/start/);
+    const firstTrace = await readText(path.join(runRoot, "scenarios", scenario.folder, "rpc.jsonl"));
+    const secondTrace = await readText(path.join(runRoot, "scenarios", secondScenario.folder, "rpc.jsonl"));
+    assert.match(firstTrace, /thread\/start/);
+    assert.match(secondTrace, /thread\/start/);
   });
 
   it("covers the runner JSONL protocol contract without a live App Server", async () => {
@@ -200,8 +206,9 @@ describe("AppServerScenarioRunner", () => {
     const result = await runner.run({
       projectRoot: skillRoot,
       skillRoot,
+      attachSkill: true,
       scenario,
-      side: "candidate",
+      runSource: workingRunSource,
       runId: "001-test",
       runRoot: path.join(root, "run"),
       appServer: { mode: "managed", endpoint: null, auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }
@@ -229,8 +236,9 @@ describe("AppServerScenarioRunner", () => {
       runner.run({
         projectRoot: skillRoot,
         skillRoot,
+        attachSkill: true,
         scenario,
-        side: "candidate",
+        runSource: workingRunSource,
         runId: "001-test",
         runRoot: path.join(root, "run"),
         appServer: { mode: "managed", endpoint: null, auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }

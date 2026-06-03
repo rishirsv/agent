@@ -91,8 +91,8 @@ There is no sealed release gate. For release confidence, prefer:
 - relevant `R`, `F`, `T`, and `G` coverage for the risk
 - deterministic tests where possible
 - human-reviewed judge prompt quality when judges matter
-- fresh `--compare release` runs after a release snapshot exists
+- fresh saved-snapshot runs with `meta-skill eval run . --snapshot` when snapshot evidence matters
 - explicit human review before release or package decisions
 - `meta-skill release . --from-run <run-id>` when a run supports readiness, so the release metadata records the evidence basis
 
-Current App Server scenarios force-attach the staged skill and run read-only final-answer checks. Use them for forced-skill behavior evidence. Do not claim true trigger routing, no-skill uplift, or writable artifact proof until the runner supports those modes.
+Working-payload and saved-snapshot App Server scenarios force-attach the staged skill and run read-only final-answer checks. Use them for forced-skill behavior evidence. No-skill runs are available with `--no-skill`, but compare them against skill-attached runs only as a separate report-level analysis over multiple run IDs. Do not claim true trigger routing or writable artifact proof until the runner supports those modes.

@@ -1,5 +1,5 @@
 import type { AppServerScenarioRunner } from "../app-server/runner";
-import type { EvalSide, ScenarioRecord } from "../models";
+import type { EvalRunSourceKind, ScenarioRecord } from "../models";
 
 export interface EvalSelector {
   scenario?: string[];
@@ -11,7 +11,7 @@ export interface EvalRunOptions {
   project: string;
   selector: EvalSelector;
   label?: string;
-  compare?: "release";
+  runSource?: EvalRunSourceKind;
   withJudges?: boolean;
   noLint?: boolean;
   appServerEndpoint?: string;
@@ -34,7 +34,7 @@ export interface JudgeExecutionInput {
   judgeId: string;
   judgePrompt: string;
   scenario: ScenarioRecord;
-  side: EvalSide;
+  runSourceLabel: string;
   final: string;
 }
 

@@ -31,11 +31,11 @@ async function planImprovement(options) {
             review_id: options.fromReview || null
         },
         status: "planned",
-        summary: "Fill in one bounded candidate edit tied to the cited evidence before promotion.",
+        summary: "Fill in one bounded working-payload edit tied to the cited evidence before promotion.",
         edits: []
     };
     await (0, project_1.writeJson)(node_path_1.default.join(planRoot, "plan.json"), plan);
-    await (0, project_1.writeText)(node_path_1.default.join(planRoot, "summary.md"), `# Improvement Plan ${planId}\n\nEvidence run: ${options.fromRun || "none"}\nEvidence review: ${options.fromReview || "none"}\n\n## Candidate Edit\n\nAdd exactly one bounded edit to \`plan.json\` under \`edits\` before running \`meta-skill promote\`.\n`);
+    await (0, project_1.writeText)(node_path_1.default.join(planRoot, "summary.md"), `# Improvement Plan ${planId}\n\nEvidence run: ${options.fromRun || "none"}\nEvidence review: ${options.fromReview || "none"}\n\n## Working Payload Edit\n\nAdd exactly one bounded edit to \`plan.json\` under \`edits\` before running \`meta-skill promote\`.\n`);
     return { planId, planRoot };
 }
 async function promotePlan(project, planId) {

@@ -186,16 +186,17 @@ function renderLintReportMarkdown(report) {
     return (0, lint_1.formatLintReport)(report);
 }
 function renderRunListMarkdown(runs) {
-    if (!runs.length)
+    const normalizedRuns = runs.map(report_1.normalizeRunIndexRowForRead).filter((run) => run.run_id);
+    if (!normalizedRuns.length)
         return "No eval runs found.";
-    const header = "Run ID\tStatus\tCreated\tCompleted\tLabel\tCompare\tScenarios\tManual Review\tFailures\tReadiness";
-    const rows = runs.map((run) => [
+    const header = "Run ID\tStatus\tCreated\tCompleted\tLabel\tSource\tScenarios\tManual Review\tFailures\tReadiness";
+    const rows = normalizedRuns.map((run) => [
         run.run_id,
         run.status,
         run.created_at || "",
         run.completed_at || "",
         run.label || "",
-        run.comparison_mode,
+        run.run_source.label,
         String(run.scenario_count),
         run.manual_review_required ? "yes" : "no",
         run.failure_classifications.length ? run.failure_classifications.join(",") : "none",
@@ -204,6 +205,7 @@ function renderRunListMarkdown(runs) {
     return [header, ...rows].join("\n");
 }
 function renderEvalRunMarkdown(report) {
+    report = (0, report_1.normalizeRunReportForRead)(report);
     const lines = [
         `# Meta Skill Eval ${report.summary.run_id}`,
         "",
@@ -224,14 +226,14 @@ function renderEvalRunMarkdown(report) {
         lines.push("- No scenario rows recorded.");
     for (const scenario of report.scenarios) {
         lines.push(`- ${scenario.id} ${scenario.title || scenario.folder}: ${scenario.status}${scenario.unresolved ? " (unresolved)" : ""}`);
-        for (const side of scenario.sides) {
-            const detail = [side.side, side.status, side.failure_classification || side.error || ""].filter(Boolean).join(" / ");
+        for (const attempt of scenario.attempts) {
+            const detail = [attempt.run_source.label, attempt.status, attempt.failure_classification || attempt.error || ""].filter(Boolean).join(" / ");
             lines.push(`  - ${detail}`);
         }
     }
     lines.push("", "## Evidence Paths");
     for (const artifact of report.artifacts)
-        lines.push(`- ${artifact.scenario_id}/${artifact.side}: ${artifact.path}`);
+        lines.push(`- ${artifact.scenario_id}: ${artifact.path}`);
     if (!report.artifacts.length)
         lines.push("- No artifact files recorded.");
     lines.push("", "## Tests, Judges, Feedback");
@@ -342,7 +344,7 @@ async function readEvalRunForReport(root, runId, refresh) {
 async function readOrBuildRunReport(runRoot) {
     const reportPath = node_path_1.default.join(runRoot, "report.json");
     if (await (0, project_1.exists)(reportPath))
-        return (0, project_1.readJson)(reportPath);
+        return (0, report_1.normalizeRunReportForRead)(await (0, project_1.readJson)(reportPath));
     return (0, report_1.buildRunReport)(runRoot);
 }
 async function readReviewForReport(root, reviewId) {
@@ -437,7 +439,7 @@ async function refreshRunsIndex(runsRoot) {
 async function readRunsIndexWithoutWrites(runsRoot) {
     const indexPath = node_path_1.default.join(runsRoot, "index.json");
     if (await (0, project_1.exists)(indexPath))
-        return (await (0, project_1.readJson)(indexPath)).runs;
+        return (await (0, project_1.readJson)(indexPath)).runs.map(report_1.normalizeRunIndexRowForRead).filter((row) => row.run_id);
     if (!(await (0, project_1.exists)(runsRoot)))
         return [];
     const rows = [];

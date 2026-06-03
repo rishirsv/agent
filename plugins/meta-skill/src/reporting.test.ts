@@ -7,7 +7,7 @@ import type { ScenarioRunInput, ScenarioRunResult } from "./app-server/runner";
 import type { RunReport, TokenUsageSummary } from "./models";
 import { openRun, runEval } from "./evals";
 import { renderEvalReportHtml } from "./report";
-import { buildMetaSkillReport, listRunSummariesForReport, renderReportMarkdown } from "./reporting";
+import { buildMetaSkillReport, listRunSummariesForReport, renderReportMarkdown, renderRunListMarkdown } from "./reporting";
 import { exists, writeJson, writeText } from "./project";
 import { createSkill } from "./skills";
 
@@ -86,9 +86,9 @@ describe("central reporting service", () => {
         label: null,
         status: "needs_review",
         scenario_count: 1,
-        side_count: 1,
+        attempt_count: 1,
         result_count: 1,
-        comparison_mode: "none",
+        run_source: { kind: "working_payload", label: "Working payload", skill_root: "../../../..", attached_skill: true },
         manual_review_required: true,
         failure_classifications: [],
         assessment_status: "needs_review",
@@ -102,12 +102,12 @@ describe("central reporting service", () => {
           title: "Legacy",
           topics: [],
           evidence_basis: "run_snapshot",
-          sides: [
+          attempts: [
             {
-              side: "candidate",
+              run_source: { kind: "working_payload", label: "Working payload", skill_root: "../../../..", attached_skill: true },
               status: "needs_review",
-              evidence_path: "scenarios/R1-legacy/candidate",
-              final_path: "scenarios/R1-legacy/candidate/final.md",
+              evidence_path: "scenarios/R1-legacy",
+              final_path: "scenarios/R1-legacy/final.md",
               final_preview: "Fixture final.",
               token_usage: {
                 input_tokens: { available: true, value: 1 },
@@ -123,7 +123,6 @@ describe("central reporting service", () => {
       tests: [],
       judges: [],
       feedback: [],
-      comparisons: [],
       artifacts: [],
       readiness: {
         status: "needs_review",
@@ -140,6 +139,84 @@ describe("central reporting service", () => {
     assert.match(html, /<td>3<\/td>/);
   });
 
+  it("normalizes legacy side-shaped reports and indexes in read mode", async () => {
+    const project = await fixtureProject("report-legacy-side-read");
+    const runsRoot = path.join(project, ".meta-skill", "evals", "runs");
+    const runRoot = path.join(runsRoot, "001-legacy");
+    await fs.mkdir(runRoot, { recursive: true });
+    await writeJson(path.join(runRoot, "run.json"), { run_id: "001-legacy", status: "needs_review", manual_review_required: true });
+    await writeJson(path.join(runRoot, "report.json"), {
+      schema_version: 2,
+      generated_at: "2026-06-02T00:00:00.000Z",
+      run: { run_id: "001-legacy", status: "needs_review", manual_review_required: true },
+      summary: {
+        run_id: "001-legacy",
+        label: null,
+        status: "needs_review",
+        scenario_count: 1,
+        side_count: 2,
+        result_count: 2,
+        comparison_mode: "release",
+        manual_review_required: true,
+        failure_classifications: [],
+        assessment_status: "needs_review",
+        unresolved_count: 1,
+        token_usage: { by_side: {}, availability_counts: { available: 0, unavailable: 2 } }
+      },
+      scenarios: [
+        {
+          id: "R1",
+          folder: "R1-legacy",
+          title: "Legacy report",
+          topics: [],
+          evidence_basis: "legacy_current_project",
+          sides: [
+            { side: "candidate", status: "needs_review", evidence_path: "scenarios/R1-legacy/candidate", final_preview: "Old working payload output." },
+            { side: "release", status: "passed", evidence_path: "scenarios/R1-legacy/release", final_preview: "Old saved snapshot output." }
+          ],
+          status: "needs_review",
+          unresolved: true
+        }
+      ],
+      tests: [],
+      judges: [],
+      feedback: [],
+      comparisons: [],
+      artifacts: [],
+      readiness: { status: "needs_review", summary: "Legacy report.", blockers: [], unresolved: 1, basis: "report.json" }
+    });
+    await writeJson(path.join(runsRoot, "index.json"), {
+      schema_version: 1,
+      updated_at: "2026-06-02T00:00:00.000Z",
+      runs: [
+        {
+          run_id: "001-legacy",
+          label: null,
+          status: "needs_review",
+          scenario_count: 1,
+          comparison_mode: "release",
+          manual_review_required: true,
+          failure_classifications: [],
+          assessment_status: "needs_review",
+          unresolved_count: 1,
+          readiness_status: "needs_review"
+        }
+      ]
+    });
+
+    const runs = await listRunSummariesForReport(project, {}, "read");
+    const listMarkdown = renderRunListMarkdown(runs);
+    const report = await buildMetaSkillReport({ project, view: "eval", runId: "001-legacy", executeLint: false });
+    const evalMarkdown = renderReportMarkdown(report, "eval");
+    const html = renderEvalReportHtml(report.evidence.latest_eval_run?.report as RunReport);
+
+    assert.match(listMarkdown, /Working payload/);
+    assert.match(evalMarkdown, /Legacy working payload side \/ needs_review/);
+    assert.match(evalMarkdown, /Legacy saved snapshot side \/ passed/);
+    assert.match(html, /Old working payload output/);
+    assert.match(html, /Old saved snapshot output/);
+  });
+
   it("renders the eval report app shell and selects failed scenarios first", () => {
     const html = renderEvalReportHtml(reportFixture());
 
@@ -152,34 +229,30 @@ describe("central reporting service", () => {
     assert.match(html, /data-scenario-id="R2" aria-current="true"/);
     assert.match(html, /Needs review is unresolved evidence, not pass proof/);
     assert.match(html, /Forced-skill run: final-answer behavior only/);
-    assert.match(html, /Candidate failed answer/);
-    assert.match(html, /Release passed answer/);
-    assert.match(html, /<td>Candidate<\/td><td>30<\/td>/);
-    assert.match(html, /<td>Release<\/td><td>70<\/td>/);
-    assert.match(html, /href="scenarios\/R2-failed\/candidate\/final\.md"/);
-    assert.match(html, /href="scenarios\/R2-failed\/candidate\/turns\.jsonl"/);
-    assert.match(html, /href="scenarios\/R2-failed\/candidate\/usage\.json"/);
-    assert.match(html, /href="scenarios\/R2-failed\/candidate\/rpc\.jsonl"/);
+    assert.match(html, /Working payload failed answer/);
+    assert.match(html, /<td>Working payload<\/td><td>30<\/td>/);
+    assert.match(html, /href="scenarios\/R2-failed\/final\.md"/);
+    assert.match(html, /href="scenarios\/R2-failed\/turns\.jsonl"/);
+    assert.match(html, /href="scenarios\/R2-failed\/usage\.json"/);
+    assert.match(html, /href="scenarios\/R2-failed\/rpc\.jsonl"/);
     assert.doesNotMatch(html, /Artifact section/i);
   });
 
-  it("renders candidate-only reports without a release attempt", () => {
+  it("renders one-source reports without extra attempts", () => {
     const report = reportFixture();
-    report.summary.comparison_mode = "none";
     report.scenarios = [report.scenarios[2]];
-    report.comparisons = [report.comparisons[2]];
 
     const html = renderEvalReportHtml(report);
 
-    assert.match(html, /Candidate passed answer/);
-    assert.doesNotMatch(html, /No release attempt in this run/);
+    assert.match(html, /Working payload passed answer/);
+    assert.doesNotMatch(html, /No saved snapshot attempt in this run/);
   });
 });
 
 function reportFixture(): RunReport {
-  const candidateFailed = tokenSummary(10, 20, 30);
-  const releasePassed = tokenSummary(30, 40, 70);
-  const candidatePassed = tokenSummary(3, 4, 7);
+  const workingSource = { kind: "working_payload", label: "Working payload", skill_root: "../../../..", attached_skill: true } as const;
+  const failedUsage = tokenSummary(10, 20, 30);
+  const passedUsage = tokenSummary(3, 4, 7);
   return {
     schema_version: 2,
     generated_at: "2026-06-03T00:00:00.000Z",
@@ -189,14 +262,14 @@ function reportFixture(): RunReport {
       label: "fixture",
       status: "needs_review",
       scenario_count: 3,
-      side_count: 4,
-      result_count: 4,
-      comparison_mode: "release",
+      attempt_count: 3,
+      result_count: 3,
+      run_source: workingSource,
       manual_review_required: true,
       failure_classifications: ["scenario_failure"],
       assessment_status: "failed",
       unresolved_count: 1,
-      token_usage: { by_side: { candidate: candidateFailed, release: releasePassed }, availability_counts: { available: 3, unavailable: 1 } }
+      token_usage: { by_run_source: { working_payload: failedUsage }, availability_counts: { available: 2, unavailable: 1 } }
     },
     scenarios: [
       {
@@ -208,7 +281,7 @@ function reportFixture(): RunReport {
         topics: ["review"],
         evidence_basis: "run_snapshot",
         criteria: { what_it_tests: "Review", expected_behavior: "Review expected.", assertions: ["Review assertion."], tests: [], judges: [] },
-        sides: [{ side: "candidate", status: "needs_review", evidence_path: "scenarios/R1-review/candidate", final_path: "scenarios/R1-review/candidate/final.md", final_preview: "Candidate review answer.", token_usage: undefined }],
+        attempts: [{ run_source: workingSource, status: "needs_review", evidence_path: "scenarios/R1-review", final_path: "scenarios/R1-review/final.md", final_preview: "Working payload review answer.", token_usage: undefined }],
         status: "needs_review",
         unresolved: true
       },
@@ -221,10 +294,7 @@ function reportFixture(): RunReport {
         topics: ["failure"],
         evidence_basis: "run_snapshot",
         criteria: { what_it_tests: "Failure", expected_behavior: "Pass the check.", assertions: ["No failure."], tests: ["check"], judges: ["judge"] },
-        sides: [
-          { side: "candidate", status: "failed", evidence_path: "scenarios/R2-failed/candidate", final_path: "scenarios/R2-failed/candidate/final.md", final_preview: "Candidate failed answer.", token_usage: candidateFailed, failure_classification: "scenario_failure" },
-          { side: "release", status: "passed", evidence_path: "scenarios/R2-failed/release", final_path: "scenarios/R2-failed/release/final.md", final_preview: "Release passed answer.", token_usage: releasePassed }
-        ],
+        attempts: [{ run_source: workingSource, status: "failed", evidence_path: "scenarios/R2-failed", final_path: "scenarios/R2-failed/final.md", final_preview: "Working payload failed answer.", token_usage: failedUsage, failure_classification: "scenario_failure" }],
         status: "failed",
         unresolved: false
       },
@@ -237,19 +307,14 @@ function reportFixture(): RunReport {
         topics: ["pass"],
         evidence_basis: "run_snapshot",
         criteria: { expected_behavior: "Pass.", assertions: [], tests: [], judges: [] },
-        sides: [{ side: "candidate", status: "passed", evidence_path: "scenarios/R3-passed/candidate", final_path: "scenarios/R3-passed/candidate/final.md", final_preview: "Candidate passed answer.", token_usage: candidatePassed }],
+        attempts: [{ run_source: workingSource, status: "passed", evidence_path: "scenarios/R3-passed", final_path: "scenarios/R3-passed/final.md", final_preview: "Working payload passed answer.", token_usage: passedUsage }],
         status: "passed",
         unresolved: false
       }
     ],
-    tests: [{ schema_version: 1, type: "test_result", run_id: "app-run", scenario_id: "R2", side: "candidate", created_at: "now", source: "fixture", payload: { scenario_id: "R2", status: "failed", id: "check" } }],
-    judges: [{ schema_version: 1, type: "judge_result", run_id: "app-run", scenario_id: "R2", side: "candidate", created_at: "now", source: "fixture", payload: { scenario_id: "R2", status: "failed", failure_classification: "judge_failure" } }],
+    tests: [{ schema_version: 1, type: "test_result", run_id: "app-run", scenario_id: "R2", created_at: "now", source: "fixture", payload: { scenario_id: "R2", status: "failed", id: "check" } }],
+    judges: [{ schema_version: 1, type: "judge_result", run_id: "app-run", scenario_id: "R2", created_at: "now", source: "fixture", payload: { scenario_id: "R2", status: "failed", failure_classification: "judge_failure" } }],
     feedback: [],
-    comparisons: [
-      { scenario_id: "R1", scenario_folder: "R1-review", kind: "none", classification: "not_comparable", candidate_status: "needs_review" },
-      { scenario_id: "R2", scenario_folder: "R2-failed", kind: "release", classification: "candidate_regresses", candidate_status: "failed", release_status: "passed" },
-      { scenario_id: "R3", scenario_folder: "R3-passed", kind: "none", classification: "not_comparable", candidate_status: "passed" }
-    ],
     artifacts: [],
     readiness: { status: "blocked", summary: "Run has blocking failures.", blockers: ["scenario_failure"], unresolved: 1, basis: "report.json" }
   };
@@ -258,18 +323,18 @@ function reportFixture(): RunReport {
 function scenarioRunner(status: ScenarioRunResult["status"], error?: string) {
   return {
     async run(input: ScenarioRunInput): Promise<ScenarioRunResult> {
-      const sideRoot = path.join(input.runRoot, "scenarios", input.scenario.folder, input.side);
-      await fs.mkdir(path.join(sideRoot, "stage", "skill"), { recursive: true });
-      await writeText(path.join(sideRoot, "stage", "skill", "SKILL.md"), "fixture");
-      await writeText(path.join(sideRoot, "final.md"), "Fixture final.");
-      await writeText(path.join(sideRoot, "turns.jsonl"), "");
-      await writeJson(path.join(sideRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
-      await writeText(path.join(sideRoot, "rpc.jsonl"), "");
+      const scenarioRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
+      await fs.mkdir(path.join(scenarioRoot, "stage", "skill"), { recursive: true });
+      await writeText(path.join(scenarioRoot, "stage", "skill", "SKILL.md"), "fixture");
+      await writeText(path.join(scenarioRoot, "final.md"), "Fixture final.");
+      await writeText(path.join(scenarioRoot, "turns.jsonl"), "");
+      await writeJson(path.join(scenarioRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
+      await writeText(path.join(scenarioRoot, "rpc.jsonl"), "");
       return {
         status,
         token_usage: tokenSummary(1, 1, 2),
-        final_path: path.join(sideRoot, "final.md"),
-        evidence_path: path.join("scenarios", input.scenario.folder, input.side),
+        final_path: path.join(scenarioRoot, "final.md"),
+        evidence_path: path.join("scenarios", input.scenario.folder),
         error
       };
     },
@@ -280,7 +345,7 @@ function scenarioRunner(status: ScenarioRunResult["status"], error?: string) {
 function tokenSummary(input: number, output: number, total: number): TokenUsageSummary {
   return {
     availability: "present",
-    sample_unit: "scenario_side",
+    sample_unit: "scenario",
     sample_count: 1,
     unavailable_count: 0,
     input_tokens: { total: input, average: input, min: input, max: input },

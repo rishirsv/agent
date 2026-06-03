@@ -25,7 +25,7 @@ Usage:
   meta-skill review <project> [--json]
   meta-skill eval init <project>
   meta-skill eval generate <project> [--count <n>] [--family <R|F|T|G>] [--topic <topic>] [--strategy merge|replace] [--json]
-  meta-skill eval run <project> [--scenario <id>] [--family <R|F|T|G>] [--topic <topic>] [--label "..."] [--compare release|none] [--with-judges] [--no-lint]
+  meta-skill eval run <project> [--scenario <id>] [--family <R|F|T|G>] [--topic <topic>] [--label "..."] [--snapshot | --no-skill] [--with-judges] [--no-lint]
   meta-skill eval judge <project> --run <run-id> (--judge <id> | --all-judges) (--scenario <id> | --all-scenarios)
   meta-skill eval feedback import <project> --run <run-id> <feedback.jsonl>
   meta-skill eval open <project> [--run <run-id>] [--list] [--json]
@@ -198,21 +198,20 @@ async function commandEvalInit(argv: string[]): Promise<number> {
 }
 
 async function commandEvalRun(argv: string[]): Promise<number> {
-  const args = parse(argv, ["scenario", "family", "topic", "label", "compare", "app-server-endpoint"], ["with-judges", "no-lint"]);
+  const args = parse(argv, ["scenario", "family", "topic", "label", "compare", "app-server-endpoint"], ["snapshot", "no-skill", "with-judges", "no-lint"]);
   const project = args.positionals[0] || ".";
   if (args.one("app-server-endpoint")) {
     throw new CliError("--app-server-endpoint is not supported yet; omit it to use the managed stdio App Server", 2);
   }
-  const compare = args.one("compare");
-  if (compare === "baseline") throw new CliError("--compare baseline is not supported yet; the current App Server runner force-attaches the staged skill and cannot prove no-skill uplift.", 2);
-  if (compare && !["release", "none"].includes(compare)) throw new CliError("eval run supports --compare release or --compare none", 2);
+  if (args.one("compare")) throw new CliError("--compare was removed. Run one source at a time: omit source flags for the working payload, pass --snapshot for the saved snapshot payload, or pass --no-skill for unassisted execution.", 2);
+  if (args.has("snapshot") && args.has("no-skill")) throw new CliError("eval run accepts only one source flag: --snapshot or --no-skill", 2);
   const family = args.one("family");
   if (family && !["R", "F", "T", "G"].includes(family)) throw new CliError("--family must be one of R, F, T, G", 2);
   const result = await runEval({
     project,
     selector: { scenario: args.many("scenario"), family, topic: args.many("topic") },
     label: args.one("label"),
-    compare: compare === "release" ? "release" : undefined,
+    runSource: args.has("snapshot") ? "snapshot_payload" : args.has("no-skill") ? "no_skill" : "working_payload",
     withJudges: args.has("with-judges"),
     noLint: args.has("no-lint"),
     appServerEndpoint: undefined

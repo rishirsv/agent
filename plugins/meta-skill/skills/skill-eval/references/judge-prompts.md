@@ -74,7 +74,7 @@ Feed only the information needed:
 - relevant source excerpts
 - deterministic test summaries
 
-Do not feed private evaluator answer keys into candidate workspaces. Judges run over saved evidence after the scenario run.
+Do not feed private evaluator answer keys into solver workspaces. Judges run over saved evidence after the scenario run.
 
 ## Anti-Patterns
 

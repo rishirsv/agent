@@ -12,7 +12,15 @@ export type TokenMetric =
   | { available: true; value: number }
   | { available: false; reason: string };
 
-export type EvalSide = "candidate" | "release";
+export type LegacyEvalSide = "candidate" | "release";
+export type EvalRunSourceKind = "working_payload" | "snapshot_payload" | "no_skill";
+
+export interface EvalRunSource {
+  kind: EvalRunSourceKind | string;
+  label: string;
+  skill_root?: string | null;
+  attached_skill: boolean;
+}
 
 export interface TokenUsage {
   input_tokens: TokenMetric;
@@ -23,7 +31,7 @@ export interface TokenUsage {
 }
 
 export type TokenAvailability = "present" | "partial" | "unavailable";
-export type TokenSampleUnit = "turn" | "scenario_side";
+export type TokenSampleUnit = "turn" | "scenario";
 
 export interface TokenStat {
   total: number;
@@ -61,7 +69,7 @@ export interface TokenUsageEvidence {
 }
 
 export interface RunTokenUsageSummary {
-  by_side: Partial<Record<EvalSide, TokenUsageSummary>>;
+  by_run_source: Partial<Record<string, TokenUsageSummary>>;
   availability_counts: {
     available: number;
     unavailable: number;
@@ -80,7 +88,7 @@ export interface EvalManifest {
   };
   defaults: {
     runner: "app_server";
-    compare: "none" | "release";
+    run_source: EvalRunSourceKind;
     timeout_ms: number;
   };
 }
@@ -161,14 +169,15 @@ export interface EventEnvelope {
   type: string;
   run_id?: string;
   scenario_id?: string;
-  side?: EvalSide;
+  /** Read-only compatibility for old run evidence written before eval subjects replaced sides. */
+  side?: LegacyEvalSide;
   created_at: string;
   source: string;
   payload: Record<string, unknown>;
 }
 
-export interface RunReportSide {
-  side: EvalSide;
+export interface RunReportAttempt {
+  run_source: EvalRunSource;
   status: string;
   evidence_path: string;
   final_path?: string;
@@ -177,6 +186,8 @@ export interface RunReportSide {
   failure_classification?: string | null;
   error?: string;
   raw?: Record<string, unknown>;
+  /** Read-only compatibility marker for old scenario/<side>/ evidence. */
+  legacy_side?: LegacyEvalSide;
 }
 
 export interface RunReportScenario {
@@ -196,18 +207,9 @@ export interface RunReportScenario {
   };
   metadata?: Record<string, unknown>;
   evidence_basis: "run_snapshot" | "legacy_current_project" | "unavailable";
-  sides: RunReportSide[];
+  attempts: RunReportAttempt[];
   status: string;
   unresolved: boolean;
-}
-
-export interface RunComparison {
-  scenario_id: string;
-  scenario_folder: string;
-  kind: "release" | "none";
-  classification: string;
-  candidate_status?: string;
-  release_status?: string;
 }
 
 export interface RunReadiness {
@@ -229,9 +231,9 @@ export interface RunReport {
     created_at?: string;
     completed_at?: string;
     scenario_count: number;
-    side_count: number;
+    attempt_count: number;
     result_count: number;
-    comparison_mode: "none" | "release";
+    run_source: EvalRunSource;
     manual_review_required: boolean;
     failure_classifications: string[];
     assessment_status: "passed" | "needs_review" | "failed" | "unknown";
@@ -242,8 +244,7 @@ export interface RunReport {
   tests: EventEnvelope[];
   judges: EventEnvelope[];
   feedback: EventEnvelope[];
-  comparisons: RunComparison[];
-  artifacts: Array<{ scenario_id: string; side: EvalSide; path: string; kind: string }>;
+  artifacts: Array<{ scenario_id: string; path: string; kind: string; legacy_side?: LegacyEvalSide }>;
   readiness: RunReadiness;
 }
 
@@ -254,7 +255,7 @@ export interface RunIndexRow {
   created_at?: string;
   completed_at?: string;
   scenario_count: number;
-  comparison_mode: "none" | "release";
+  run_source: EvalRunSource;
   manual_review_required: boolean;
   failure_classifications: string[];
   assessment_status: string;

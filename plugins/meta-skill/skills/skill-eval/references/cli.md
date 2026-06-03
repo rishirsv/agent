@@ -7,7 +7,7 @@ Read this for exact `meta-skill eval ...` command guidance.
 ```bash
 meta-skill eval init <project>
 meta-skill eval generate <project> [--count <n>] [--family <R|F|T|G>] [--topic <topic>] [--strategy merge|replace] [--json]
-meta-skill eval run <project> [--scenario <id>] [--family <R|F|T|G>] [--topic <topic>] [--label "..."] [--compare release|none] [--with-judges] [--no-lint]
+meta-skill eval run <project> [--scenario <id>] [--family <R|F|T|G>] [--topic <topic>] [--label "..."] [--snapshot | --no-skill] [--with-judges] [--no-lint]
 meta-skill eval judge <project> --run <run-id> (--judge <id> | --all-judges) (--scenario <id> | --all-scenarios)
 meta-skill eval feedback import <project> --run <run-id> <feedback.jsonl>
 meta-skill eval open <project> [--run <run-id>] [--list] [--json]
@@ -30,18 +30,21 @@ meta-skill eval run . --topic source-faithfulness
 
 Selectors narrow the run. `--family` uses the strict ID prefix: `R`, `F`, `T`, or `G`.
 
-## Compare Release
+## Run Source
 
-Candidate-only is the default.
+The working payload at the project root is the default.
 
 ```bash
 meta-skill eval run .
-meta-skill eval run . --compare release
+meta-skill eval run . --snapshot
+meta-skill eval run . --no-skill
 ```
 
-`--compare release` requires `.meta-skill/versions/release/skill/SKILL.md`. It should error with a helpful next step when no release snapshot exists.
+`--snapshot` runs the saved snapshot payload from `.meta-skill/versions/release/skill/`. It should error with a helpful next step when no saved snapshot exists.
 
-`--compare baseline` is not supported yet. The current App Server runner force-attaches the staged skill on the first turn, so it does not prove no-skill uplift or trigger routing.
+`--no-skill` runs the same scenario with no skill attached. Do not compare it inside the same run; create separate run IDs and compare them in a separate report-level artifact when that command exists.
+
+`--compare` was removed. A run evaluates one source only.
 
 ## Generate Scenarios
 
@@ -54,7 +57,7 @@ meta-skill eval run . --compare release
   criteria.json
 ```
 
-Generated baseline-compatible scenarios are future work. Do not claim generated scenarios are release-facing evidence until a human has reviewed them.
+Generated no-skill-aware scenarios are future work. Do not claim generated scenarios are release-facing evidence until a human has reviewed them.
 
 ## Lint And Judges
 
@@ -77,8 +80,8 @@ Judges are independent and opt-in:
 
 ```bash
 meta-skill eval run . --with-judges
-meta-skill eval judge . --run 004-release-compare --judge artifact-quality --scenario G2
-meta-skill eval judge . --run 004-release-compare --all-judges --all-scenarios
+meta-skill eval judge . --run 004-saved-snapshot --judge artifact-quality --scenario G2
+meta-skill eval judge . --run 004-saved-snapshot --all-judges --all-scenarios
 ```
 
 `eval judge` works over saved run snapshots and final outputs. It does not rerun scenarios. If an older run has no snapshot, the CLI marks that legacy basis instead of silently treating current criteria as the original criteria.
@@ -101,8 +104,8 @@ After feedback import, the CLI regenerates `report.json`, `report.html`, and the
 meta-skill eval open .
 meta-skill eval open . --list
 meta-skill eval open . --list --json
-meta-skill eval open . --run 001-initial-candidate
-meta-skill eval open . --run 001-initial-candidate --json
+meta-skill eval open . --run 001-working-payload
+meta-skill eval open . --run 001-working-payload --json
 meta-skill eval list . --limit 5
 meta-skill eval view . --last
 ```

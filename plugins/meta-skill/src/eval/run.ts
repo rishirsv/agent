@@ -22,6 +22,7 @@ import { classifyScenarioStatus, recordScenarioResult, runStatus } from "./resul
 import { loadScenarios, writeRunScenarioSnapshots } from "./scenarios";
 import { refreshRunEvidence } from "./runs";
 import type { EvalRunOptions, RunFailureClassification } from "./types";
+import type { EvalRunSource, EvalRunSourceKind } from "../models";
 
 export async function runEval(options: EvalRunOptions): Promise<{ runId: string; runRoot: string; report: string; ok: boolean; status: "passed" | "needs_review" | "failed"; manualReviewRequired: boolean; failureClassifications: RunFailureClassification[] }> {
   if (options.appServerEndpoint) {
@@ -40,15 +41,15 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
   const scenarios = await loadScenarios(root, options.selector);
   if (!scenarios.length) throw new CliError("no scenarios selected");
 
-  const sides: Array<"candidate" | "release"> = ["candidate"];
-  if (options.compare === "release") {
+  const runSourceKind = options.runSource || "working_payload";
+  const runSourceConfig = evalRunSourceConfig(runSourceKind, root, p.releaseSkill);
+  if (runSourceKind === "snapshot_payload") {
     if (!(await exists(path.join(p.releaseSkill, "SKILL.md")))) {
-      throw new CliError("`--compare release` requires .meta-skill/versions/release/skill/SKILL.md; run `meta-skill release <project>` first");
+      throw new CliError("`--snapshot` requires .meta-skill/versions/release/skill/SKILL.md; run `meta-skill release <project>` first");
     }
-    sides.push("release");
   }
 
-  const runId = await nextSequencedId(p.runs, options.label || (options.compare === "release" ? "release-compare" : "initial-candidate"));
+  const runId = await nextSequencedId(p.runs, options.label || runSourceConfig.defaultLabel);
   const runRoot = path.join(p.runs, runId);
   await ensureDir(runRoot);
   for (const file of ["events.jsonl", "results.jsonl", "tests.jsonl", "grades.jsonl", "feedback.jsonl"]) {
@@ -66,11 +67,7 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
     suite: "default",
     scenarios_path: "../../scenarios",
     scenarios: { selection: scenarios.map((scenario) => scenario.folder) },
-    sides: sides.map((side) =>
-      side === "candidate"
-        ? { id: "candidate", kind: "working_tree", skill_root: "../../../.." }
-        : { id: "release", kind: "version", skill_root: "../../../versions/release/skill" }
-    ),
+    run_source: runSourceConfig.runSource,
     runner: {
       backend: "app_server",
       app_server: appServer,
@@ -82,7 +79,7 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
       timeout_ms: 120000
     },
     orchestration: {
-      mode: "thread_per_scenario_side",
+      mode: "thread_per_scenario",
       turn_count: null
     }
   };
@@ -96,29 +93,26 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
   const failureClassifications = new Set<RunFailureClassification>();
   try {
     for (const scenario of scenarios) {
-      for (const side of sides) {
-        const skillRoot = side === "candidate" ? root : p.releaseSkill;
-        await appendJsonl(path.join(runRoot, "events.jsonl"), eventEnvelope({ type: "scenario_side_started", run_id: runId, scenario_id: scenario.id, side, source: "meta-skill eval run", payload: { folder: scenario.folder } }));
-        try {
-          const result = await runner.run({ projectRoot: root, skillRoot, scenario, side, runId, runRoot, appServer });
-          scenarioStatuses.add(result.status);
-          const classification = classifyScenarioStatus(result.status);
-          if (classification) {
-            hasFailures = true;
-            failureClassifications.add(classification);
-          }
-          await recordScenarioResult(runRoot, runId, scenario, side, result.status, result.token_usage, result.evidence_path, result.error, classification);
-        } catch (error) {
+      await appendJsonl(path.join(runRoot, "events.jsonl"), eventEnvelope({ type: "scenario_started", run_id: runId, scenario_id: scenario.id, source: "meta-skill eval run", payload: { folder: scenario.folder, run_source: runSourceConfig.runSource } }));
+      try {
+        const result = await runner.run({ projectRoot: root, skillRoot: runSourceConfig.skillRoot, attachSkill: runSourceConfig.runSource.attached_skill, scenario, runSource: runSourceConfig.runSource, runId, runRoot, appServer });
+        scenarioStatuses.add(result.status);
+        const classification = classifyScenarioStatus(result.status);
+        if (classification) {
           hasFailures = true;
-          const message = error instanceof AppServerUnavailableError || error instanceof Error ? error.message : String(error);
-          const classification: RunFailureClassification = error instanceof AppServerUnavailableError ? "app_server_unavailable" : "harness_unavailable";
           failureClassifications.add(classification);
-          scenarioStatuses.add("errored");
-          const evidencePath = relativePath(runRoot, path.join(runRoot, "scenarios", scenario.folder, side));
-          const tokenUsage = unavailableTokenUsage("App Server execution failed before token metrics were available.");
-          await recordScenarioResult(runRoot, runId, scenario, side, "errored", tokenUsage, evidencePath, message, classification);
-          await appendJsonl(path.join(runRoot, "events.jsonl"), eventEnvelope({ type: "scenario_side_failed", run_id: runId, scenario_id: scenario.id, side, source: "app_server", payload: { error: message, failure_classification: classification, token_usage: tokenUsage } }));
         }
+        await recordScenarioResult(runRoot, runId, scenario, runSourceConfig.runSource, result.status, result.token_usage, result.evidence_path, result.error, classification);
+      } catch (error) {
+        hasFailures = true;
+        const message = error instanceof AppServerUnavailableError || error instanceof Error ? error.message : String(error);
+        const classification: RunFailureClassification = error instanceof AppServerUnavailableError ? "app_server_unavailable" : "harness_unavailable";
+        failureClassifications.add(classification);
+        scenarioStatuses.add("errored");
+        const evidencePath = relativePath(runRoot, path.join(runRoot, "scenarios", scenario.folder));
+        const tokenUsage = unavailableTokenUsage("App Server execution failed before token metrics were available.");
+        await recordScenarioResult(runRoot, runId, scenario, runSourceConfig.runSource, "errored", tokenUsage, evidencePath, message, classification);
+        await appendJsonl(path.join(runRoot, "events.jsonl"), eventEnvelope({ type: "scenario_failed", run_id: runId, scenario_id: scenario.id, source: "app_server", payload: { run_source: runSourceConfig.runSource, error: message, failure_classification: classification, token_usage: tokenUsage } }));
       }
     }
   } finally {
@@ -158,4 +152,14 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
   await appendJsonl(path.join(runRoot, "events.jsonl"), eventEnvelope({ type: "run_completed", run_id: runId, source: "meta-skill eval run", payload: { ok, status, manual_review_required: manualReviewRequired, failure_classifications: finalRunJson.failure_classifications } }));
   const { report } = await refreshRunEvidence(root, runId);
   return { runId, runRoot, report, ok, status, manualReviewRequired, failureClassifications: sortedFailureClassifications };
+}
+
+function evalRunSourceConfig(kind: EvalRunSourceKind, projectRoot: string, releaseSkill: string): { skillRoot?: string; runSource: EvalRunSource; defaultLabel: string } {
+  if (kind === "snapshot_payload") {
+    return { skillRoot: releaseSkill, runSource: { kind, label: "Saved snapshot payload", skill_root: "../../../versions/release/skill", attached_skill: true }, defaultLabel: "saved-snapshot" };
+  }
+  if (kind === "no_skill") {
+    return { runSource: { kind, label: "No skill", skill_root: null, attached_skill: false }, defaultLabel: "no-skill" };
+  }
+  return { skillRoot: projectRoot, runSource: { kind: "working_payload", label: "Working payload", skill_root: "../../../..", attached_skill: true }, defaultLabel: "working-payload" };
 }

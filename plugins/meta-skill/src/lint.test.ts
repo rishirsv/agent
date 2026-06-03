@@ -54,18 +54,18 @@ describe("lint, command parsing, and eval evidence", () => {
       selector: {},
       scenarioRunner: {
         async run(input) {
-          const sideRoot = path.join(input.runRoot, "scenarios", input.scenario.folder, input.side);
-          await fs.mkdir(path.join(sideRoot, "stage", "skill"), { recursive: true });
-          await writeText(path.join(sideRoot, "stage", "skill", "SKILL.md"), "fixture");
-          await writeText(path.join(sideRoot, "final.md"), "Fixture final.");
-          await writeText(path.join(sideRoot, "turns.jsonl"), "");
-          await writeJson(path.join(sideRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
-          await writeText(path.join(sideRoot, "rpc.jsonl"), "");
+          const scenarioRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
+          await fs.mkdir(path.join(scenarioRoot, "stage", "skill"), { recursive: true });
+          await writeText(path.join(scenarioRoot, "stage", "skill", "SKILL.md"), "fixture");
+          await writeText(path.join(scenarioRoot, "final.md"), "Fixture final.");
+          await writeText(path.join(scenarioRoot, "turns.jsonl"), "");
+          await writeJson(path.join(scenarioRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
+          await writeText(path.join(scenarioRoot, "rpc.jsonl"), "");
           return {
             status: "needs_review",
             token_usage: tokenSummary(1, 1, 2),
-            final_path: path.join(sideRoot, "final.md"),
-            evidence_path: path.join("scenarios", input.scenario.folder, input.side)
+            final_path: path.join(scenarioRoot, "final.md"),
+            evidence_path: path.join("scenarios", input.scenario.folder)
           };
         },
         close() {}
@@ -78,8 +78,8 @@ describe("lint, command parsing, and eval evidence", () => {
     assert.equal(await exists(path.join(result.runRoot, "tests.jsonl")), true);
     assert.equal(await exists(path.join(result.runRoot, "grades.jsonl")), true);
     assert.equal(await exists(path.join(result.runRoot, "feedback.jsonl")), true);
-    assert.equal(await exists(path.join(result.runRoot, "scenarios", "F1-multiturn", "candidate", "rpc.jsonl")), true);
-    assert.equal(await exists(path.join(result.runRoot, "scenarios", "F1-multiturn", "candidate", "stage", "skill", "SKILL.md")), true);
+    assert.equal(await exists(path.join(result.runRoot, "scenarios", "F1-multiturn", "rpc.jsonl")), true);
+    assert.equal(await exists(path.join(result.runRoot, "scenarios", "F1-multiturn", "stage", "skill", "SKILL.md")), true);
 
     const tests = await readText(path.join(result.runRoot, "tests.jsonl"));
     assert.match(tests, /"status":"failed"/);
@@ -97,7 +97,7 @@ describe("lint, command parsing, and eval evidence", () => {
 function tokenSummary(input: number, output: number, total: number): TokenUsageSummary {
   return {
     availability: "present",
-    sample_unit: "scenario_side",
+    sample_unit: "scenario",
     sample_count: 1,
     unavailable_count: 0,
     input_tokens: { total: input, average: input, min: input, max: input },

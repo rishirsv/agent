@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { EvalSide, EventEnvelope, RunComparison, RunIndex, RunIndexRow, RunReadiness, RunReport, RunReportScenario, RunReportSide, RunTokenUsageSummary, TokenMetric, TokenUsage, TokenUsageEvidence, TokenUsageSummary } from "./models";
+import type { EvalRunSource, EventEnvelope, LegacyEvalSide, RunIndex, RunIndexRow, RunReadiness, RunReport, RunReportAttempt, RunReportScenario, RunTokenUsageSummary, TokenMetric, TokenUsage, TokenUsageEvidence, TokenUsageSummary } from "./models";
 import { exists, readJson, readText, utcNow, writeJson, writeText } from "./project";
 
 export async function materializeEvalRunReport(runRoot: string, options: { updateIndex?: boolean } = {}): Promise<{ report: string; reportJson: string; runId: string; data: RunReport }> {
@@ -33,14 +33,14 @@ export async function buildRunReport(runRoot: string): Promise<RunReport> {
   const scenarios: RunReportScenario[] = [];
   for (const [folder, rows] of [...byFolder.entries()].sort(([a], [b]) => a.localeCompare(b))) {
     const snapshot = await readScenarioSnapshot(runRoot, folder);
-    const sides = await Promise.all(
-      rows.map(async (row): Promise<RunReportSide> => {
-        const side = row.side || "candidate";
+    const attempts = await Promise.all(
+      rows.map(async (row): Promise<RunReportAttempt> => {
+        const legacySide = row.side;
         const evidencePath = String(row.payload?.evidence_path || "");
         const finalPath = evidencePath ? path.join(evidencePath, "final.md") : undefined;
-        const tokenUsage = await readSideTokenUsage(runRoot, evidencePath, row.payload?.token_usage);
+        const tokenUsage = await readAttemptTokenUsage(runRoot, evidencePath, row.payload?.token_usage);
         return {
-          side,
+          run_source: normalizeRunSource(row.payload?.run_source, legacySide),
           status: String(row.payload?.status || "unknown"),
           evidence_path: evidencePath,
           final_path: finalPath,
@@ -48,11 +48,12 @@ export async function buildRunReport(runRoot: string): Promise<RunReport> {
           token_usage: tokenUsage,
           failure_classification: (row.payload?.failure_classification as string | null | undefined) || null,
           error: row.payload?.error ? String(row.payload.error) : undefined,
-          raw: row.payload
+          raw: row.payload,
+          ...(legacySide ? { legacy_side: legacySide } : {})
         };
       })
     );
-    const status = scenarioStatus(sides);
+    const status = scenarioStatus(attempts);
     scenarios.push({
       id: snapshot?.metadata?.id || String(rows[0]?.scenario_id || folder.split("-")[0]),
       folder,
@@ -72,19 +73,18 @@ export async function buildRunReport(runRoot: string): Promise<RunReport> {
         : undefined,
       metadata: snapshot?.metadata?.metadata,
       evidence_basis: snapshot?.basis || "unavailable",
-      sides,
+      attempts,
       status,
-      unresolved: status === "needs_review" || sides.some((side) => side.status === "needs_review")
+      unresolved: status === "needs_review" || attempts.some((attempt) => attempt.status === "needs_review")
     });
   }
 
-  const comparisons = scenarios.map(compareScenario);
   const failureClassifications = derivedFailureClassifications(runJson, testRows, judgeRows, scenarioRows as EventEnvelope[]);
   const unresolvedCount = scenarios.reduce((sum, scenario) => sum + (scenario.unresolved ? 1 : 0), 0);
   const tokenUsage = countTokenUsage(scenarios);
-  const comparisonMode = scenarios.some((scenario) => scenario.sides.some((side) => side.side === "release")) ? "release" : "none";
   const assessmentStatus = assessmentStatusFor(String(runJson.status || "unknown"), failureClassifications, unresolvedCount);
   const readiness = readinessFor(assessmentStatus, Boolean(runJson.manual_review_required), failureClassifications, unresolvedCount);
+  const runSource = normalizeRunSource(runJson.run_source);
 
   return {
     schema_version: 2,
@@ -97,9 +97,9 @@ export async function buildRunReport(runRoot: string): Promise<RunReport> {
       created_at: runJson.created_at ? String(runJson.created_at) : undefined,
       completed_at: runJson.completed_at ? String(runJson.completed_at) : undefined,
       scenario_count: scenarios.length,
-      side_count: scenarios.reduce((sum, scenario) => sum + scenario.sides.length, 0),
+      attempt_count: scenarios.reduce((sum, scenario) => sum + scenario.attempts.length, 0),
       result_count: scenarioRows.length,
-      comparison_mode: comparisonMode,
+      run_source: runSource,
       manual_review_required: Boolean(runJson.manual_review_required),
       failure_classifications: failureClassifications,
       assessment_status: assessmentStatus,
@@ -110,7 +110,6 @@ export async function buildRunReport(runRoot: string): Promise<RunReport> {
     tests: testRows,
     judges: judgeRows,
     feedback: feedbackRows,
-    comparisons,
     artifacts: await listArtifacts(runRoot, scenarios),
     readiness
   };
@@ -263,32 +262,11 @@ async function readScenarioSnapshot(
   };
 }
 
-function scenarioStatus(sides: RunReportSide[]): string {
-  if (sides.some((side) => side.status === "failed" || side.status === "errored")) return "failed";
-  if (sides.some((side) => side.status === "needs_review")) return "needs_review";
-  if (sides.length && sides.every((side) => side.status === "passed")) return "passed";
+function scenarioStatus(attempts: RunReportAttempt[]): string {
+  if (attempts.some((attempt) => attempt.status === "failed" || attempt.status === "errored")) return "failed";
+  if (attempts.some((attempt) => attempt.status === "needs_review")) return "needs_review";
+  if (attempts.length && attempts.every((attempt) => attempt.status === "passed")) return "passed";
   return "unknown";
-}
-
-function compareScenario(scenario: RunReportScenario): RunComparison {
-  const candidate = scenario.sides.find((side) => side.side === "candidate");
-  const release = scenario.sides.find((side) => side.side === "release");
-  if (!release) {
-    return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "none", classification: "not_comparable", candidate_status: candidate?.status };
-  }
-  if (candidate?.status === "needs_review" || release.status === "needs_review") {
-    return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "release", classification: "needs_review", candidate_status: candidate?.status, release_status: release.status };
-  }
-  if (candidate?.status === "failed" && release.status !== "failed") {
-    return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "release", classification: "candidate_regresses", candidate_status: candidate.status, release_status: release.status };
-  }
-  if (candidate?.status === "passed" && release.status === "failed") {
-    return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "release", classification: "candidate_beats_release", candidate_status: candidate.status, release_status: release.status };
-  }
-  if (candidate?.status === "failed" && release.status === "failed") {
-    return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "release", classification: "both_fail", candidate_status: candidate.status, release_status: release.status };
-  }
-  return { scenario_id: scenario.id, scenario_folder: scenario.folder, kind: "release", classification: "no_regression", candidate_status: candidate?.status, release_status: release.status };
 }
 
 function readinessFor(status: string, manualReviewRequired: boolean, failureClassifications: string[], unresolvedCount: number): RunReadiness {
@@ -329,20 +307,26 @@ function readinessFor(status: string, manualReviewRequired: boolean, failureClas
 }
 
 function countTokenUsage(scenarios: RunReportScenario[]): RunTokenUsageSummary {
-  const bySide: Partial<Record<EvalSide, TokenUsageSummary>> = {};
+  const byRunSource: Partial<Record<string, TokenUsageSummary>> = {};
   let available = 0;
   let unavailable = 0;
-  for (const sideName of ["candidate", "release"] as const) {
-    const summaries = scenarios.flatMap((scenario) => scenario.sides.filter((side) => side.side === sideName).map((side) => side.token_usage).filter((usage): usage is TokenUsageSummary => Boolean(usage)));
+  const sourceKeys = [...new Set(scenarios.flatMap((scenario) => scenario.attempts.map((attempt) => attempt.run_source.kind || attempt.run_source.label)))].sort();
+  for (const sourceKey of sourceKeys) {
+    const summaries = scenarios.flatMap((scenario) =>
+      scenario.attempts
+        .filter((attempt) => (attempt.run_source.kind || attempt.run_source.label) === sourceKey)
+        .map((attempt) => attempt.token_usage)
+        .filter((usage): usage is TokenUsageSummary => Boolean(usage))
+    );
     if (!summaries.length) continue;
-    bySide[sideName] = aggregateTokenSummaries(summaries);
+    byRunSource[sourceKey] = aggregateTokenSummaries(summaries);
     available += summaries.filter((summary) => summary.availability !== "unavailable").length;
     unavailable += summaries.filter((summary) => summary.availability === "unavailable").length;
   }
-  return { by_side: bySide, availability_counts: { available, unavailable } };
+  return { by_run_source: byRunSource, availability_counts: { available, unavailable } };
 }
 
-async function readSideTokenUsage(runRoot: string, evidencePath: string, legacy: unknown): Promise<TokenUsageSummary | undefined> {
+async function readAttemptTokenUsage(runRoot: string, evidencePath: string, legacy: unknown): Promise<TokenUsageSummary | undefined> {
   const usagePath = evidencePath ? path.join(runRoot, evidencePath, "usage.json") : "";
   if (usagePath && (await exists(usagePath))) {
     const evidence = await readJson<TokenUsageEvidence>(usagePath);
@@ -358,7 +342,7 @@ function normalizeLegacyTokenUsage(value: unknown): TokenUsageSummary | undefine
     return normalizeTokenUsageSummary(object);
   }
   if (object.input_tokens || object.output_tokens || object.total_tokens) {
-    return summarizeUsageSamples([normalizeTokenUsage(object)], "scenario_side");
+    return summarizeUsageSamples([normalizeTokenUsage(object)], "scenario");
   }
   return undefined;
 }
@@ -367,7 +351,7 @@ function normalizeTokenUsageSummary(value: unknown): TokenUsageSummary {
   const object = objectValue(value);
   return {
     availability: ["present", "partial", "unavailable"].includes(String(object.availability)) ? (String(object.availability) as TokenUsageSummary["availability"]) : Number(object.sample_count || 0) > 0 ? "present" : "unavailable",
-    sample_unit: object.sample_unit === "turn" ? "turn" : "scenario_side",
+    sample_unit: object.sample_unit === "turn" ? "turn" : "scenario",
     sample_count: Number(object.sample_count || 0),
     unavailable_count: Number(object.unavailable_count || 0),
     input_tokens: normalizeStat(object.input_tokens),
@@ -385,7 +369,7 @@ function aggregateTokenSummaries(summaries: TokenUsageSummary[]): TokenUsageSumm
   const availability = usable.length === summaries.length && summaries.length > 0 ? "present" : usable.length > 0 ? "partial" : "unavailable";
   return {
     availability,
-    sample_unit: "scenario_side",
+    sample_unit: "scenario",
     sample_count: usable.length,
     unavailable_count: summaries.length - usable.length,
     input_tokens: statFromNumbers(usable.map((summary) => summary.input_tokens.total)),
@@ -397,7 +381,7 @@ function aggregateTokenSummaries(summaries: TokenUsageSummary[]): TokenUsageSumm
   };
 }
 
-function summarizeUsageSamples(samples: TokenUsage[], sampleUnit: "turn" | "scenario_side"): TokenUsageSummary {
+function summarizeUsageSamples(samples: TokenUsage[], sampleUnit: "turn" | "scenario"): TokenUsageSummary {
   const present = samples.filter((usage) => usage.total_tokens.available);
   const unavailableReasons = [...new Set(samples.flatMap(reasonsForUsage))].sort();
   const unavailableCount = samples.length - present.length;
@@ -422,14 +406,28 @@ function normalizeTokenUsage(value: Record<string, unknown>): TokenUsage {
   };
 }
 
-async function listArtifacts(runRoot: string, scenarios: RunReportScenario[]): Promise<Array<{ scenario_id: string; side: EvalSide; path: string; kind: string }>> {
-  const artifacts: Array<{ scenario_id: string; side: EvalSide; path: string; kind: string }> = [];
+function normalizeRunSource(value: unknown, legacySide?: LegacyEvalSide): EvalRunSource {
+  const object = objectValue(value);
+  if (typeof object.kind === "string") {
+    return {
+      kind: object.kind,
+      label: typeof object.label === "string" ? object.label : sentenceStatus(object.kind),
+      skill_root: typeof object.skill_root === "string" || object.skill_root === null ? object.skill_root : undefined,
+      attached_skill: object.attached_skill === true
+    };
+  }
+  if (legacySide === "release") return { kind: "legacy_side", label: "Legacy saved snapshot side", skill_root: "../../../versions/release/skill", attached_skill: true };
+  return { kind: legacySide ? "legacy_side" : "working_payload", label: legacySide ? "Legacy working payload side" : "Working payload", skill_root: "../../../..", attached_skill: true };
+}
+
+async function listArtifacts(runRoot: string, scenarios: RunReportScenario[]): Promise<Array<{ scenario_id: string; path: string; kind: string; legacy_side?: LegacyEvalSide }>> {
+  const artifacts: Array<{ scenario_id: string; path: string; kind: string; legacy_side?: LegacyEvalSide }> = [];
   for (const scenario of scenarios) {
-    for (const side of scenario.sides) {
-      const artifactRoot = path.join(runRoot, side.evidence_path, "artifacts");
+    for (const attempt of scenario.attempts) {
+      const artifactRoot = path.join(runRoot, attempt.evidence_path, "artifacts");
       if (!(await exists(artifactRoot))) continue;
       for (const relative of await walkFiles(artifactRoot)) {
-        artifacts.push({ scenario_id: scenario.id, side: side.side, path: path.join(side.evidence_path, "artifacts", relative).split(path.sep).join("/"), kind: "file" });
+        artifacts.push({ scenario_id: scenario.id, path: path.join(attempt.evidence_path, "artifacts", relative).split(path.sep).join("/"), kind: "file", ...(attempt.legacy_side ? { legacy_side: attempt.legacy_side } : {}) });
       }
     }
   }
@@ -448,19 +446,20 @@ async function walkFiles(root: string, relativeDir = ""): Promise<string[]> {
 }
 
 export function indexRowFromReport(report: RunReport): RunIndexRow {
+  const normalized = normalizeRunReportForRead(report);
   return {
-    run_id: report.summary.run_id,
-    label: report.summary.label,
-    status: report.summary.status,
-    created_at: report.summary.created_at,
-    completed_at: report.summary.completed_at,
-    scenario_count: report.summary.scenario_count,
-    comparison_mode: report.summary.comparison_mode,
-    manual_review_required: report.summary.manual_review_required,
-    failure_classifications: report.summary.failure_classifications,
-    assessment_status: report.summary.assessment_status,
-    unresolved_count: report.summary.unresolved_count,
-    readiness_status: report.readiness.status
+    run_id: normalized.summary.run_id,
+    label: normalized.summary.label,
+    status: normalized.summary.status,
+    created_at: normalized.summary.created_at,
+    completed_at: normalized.summary.completed_at,
+    scenario_count: normalized.summary.scenario_count,
+    run_source: normalized.summary.run_source,
+    manual_review_required: normalized.summary.manual_review_required,
+    failure_classifications: normalized.summary.failure_classifications,
+    assessment_status: normalized.summary.assessment_status,
+    unresolved_count: normalized.summary.unresolved_count,
+    readiness_status: normalized.readiness.status
   };
 }
 
@@ -473,13 +472,156 @@ export function indexRowFromRun(run: Record<string, unknown>, fallbackId: string
     created_at: run.created_at ? String(run.created_at) : undefined,
     completed_at: run.completed_at ? String(run.completed_at) : undefined,
     scenario_count: Array.isArray((run.scenarios as { selection?: unknown[] } | undefined)?.selection) ? ((run.scenarios as { selection: unknown[] }).selection || []).length : 0,
-    comparison_mode: "none",
+    run_source: normalizeRunSource(run.run_source),
     manual_review_required: Boolean(run.manual_review_required),
     failure_classifications: failures,
     assessment_status: String(run.status || "unknown"),
     unresolved_count: Boolean(run.manual_review_required) ? 1 : 0,
     readiness_status: failures.length ? "blocked" : Boolean(run.manual_review_required) ? "needs_review" : "needs_review"
   };
+}
+
+export function normalizeRunIndexRowForRead(value: unknown): RunIndexRow {
+  const row = objectValue(value);
+  const failures = Array.isArray(row.failure_classifications) ? row.failure_classifications.map(String) : [];
+  const status = String(row.status || "unknown");
+  return {
+    run_id: String(row.run_id || ""),
+    label: (row.label as string | null | undefined) || null,
+    status,
+    created_at: row.created_at ? String(row.created_at) : undefined,
+    completed_at: row.completed_at ? String(row.completed_at) : undefined,
+    scenario_count: numberFrom(row.scenario_count),
+    run_source: normalizeRunSource(row.run_source),
+    manual_review_required: Boolean(row.manual_review_required),
+    failure_classifications: failures,
+    assessment_status: String(row.assessment_status || status),
+    unresolved_count: numberFrom(row.unresolved_count),
+    readiness_status: String(row.readiness_status || (failures.length ? "blocked" : Boolean(row.manual_review_required) ? "needs_review" : "needs_review"))
+  };
+}
+
+export function normalizeRunReportForRead(value: RunReport): RunReport {
+  const report = objectValue(value) as RunReport & Record<string, unknown>;
+  const summary = objectValue(report.summary);
+  const run = objectValue(report.run);
+  const scenarios = Array.isArray(report.scenarios) ? report.scenarios.map(normalizeRunReportScenarioForRead) : [];
+  const failureClassifications = Array.isArray(summary.failure_classifications) ? summary.failure_classifications.map(String) : [];
+  const status = String(summary.status || run.status || "unknown");
+  const unresolvedCount = summary.unresolved_count !== undefined ? numberFrom(summary.unresolved_count) : scenarios.reduce((sum, scenario) => sum + (scenario.unresolved ? 1 : 0), 0);
+  const manualReviewRequired = Boolean(summary.manual_review_required ?? run.manual_review_required);
+  const assessmentStatus = ["passed", "needs_review", "failed", "unknown"].includes(String(summary.assessment_status)) ? (String(summary.assessment_status) as RunReport["summary"]["assessment_status"]) : assessmentStatusFor(status, failureClassifications, unresolvedCount);
+  const readiness = normalizeRunReadinessForRead(report.readiness, assessmentStatus, manualReviewRequired, failureClassifications, unresolvedCount);
+  return {
+    schema_version: 2,
+    generated_at: typeof report.generated_at === "string" ? report.generated_at : utcNow(),
+    run,
+    summary: {
+      run_id: String(summary.run_id || run.run_id || "unknown"),
+      label: (summary.label as string | null | undefined) || null,
+      status,
+      created_at: summary.created_at ? String(summary.created_at) : undefined,
+      completed_at: summary.completed_at ? String(summary.completed_at) : undefined,
+      scenario_count: summary.scenario_count !== undefined ? numberFrom(summary.scenario_count) : scenarios.length,
+      attempt_count: summary.attempt_count !== undefined ? numberFrom(summary.attempt_count) : scenarios.reduce((sum, scenario) => sum + scenario.attempts.length, 0),
+      result_count: numberFrom(summary.result_count),
+      run_source: normalizeRunSource(summary.run_source),
+      manual_review_required: manualReviewRequired,
+      failure_classifications: failureClassifications,
+      assessment_status: assessmentStatus,
+      unresolved_count: unresolvedCount,
+      token_usage: (summary.token_usage as RunTokenUsageSummary) || { by_run_source: {}, availability_counts: { available: 0, unavailable: 0 } }
+    },
+    scenarios,
+    tests: Array.isArray(report.tests) ? report.tests : [],
+    judges: Array.isArray(report.judges) ? report.judges : [],
+    feedback: Array.isArray(report.feedback) ? report.feedback : [],
+    artifacts: normalizeRunArtifactsForRead(report.artifacts),
+    readiness
+  };
+}
+
+function normalizeRunReportScenarioForRead(value: unknown): RunReportScenario {
+  const scenario = objectValue(value);
+  const rawAttempts = Array.isArray(scenario.attempts) ? scenario.attempts : Array.isArray(scenario.sides) ? scenario.sides : [];
+  const attempts = rawAttempts.map(normalizeRunReportAttemptForRead);
+  const status = String(scenario.status || scenarioStatus(attempts));
+  return {
+    id: String(scenario.id || scenario.folder || "unknown"),
+    folder: String(scenario.folder || scenario.id || "unknown"),
+    title: scenario.title ? String(scenario.title) : undefined,
+    family: scenario.family ? String(scenario.family) : undefined,
+    type: scenario.type ? String(scenario.type) : undefined,
+    topics: Array.isArray(scenario.topics) ? scenario.topics.map(String) : [],
+    capability: (scenario.capability as string | null | undefined) || null,
+    criteria: normalizeScenarioCriteriaForRead(scenario.criteria),
+    metadata: objectValue(scenario.metadata),
+    evidence_basis: ["run_snapshot", "legacy_current_project", "unavailable"].includes(String(scenario.evidence_basis)) ? (String(scenario.evidence_basis) as RunReportScenario["evidence_basis"]) : "unavailable",
+    attempts,
+    status,
+    unresolved: Boolean(scenario.unresolved) || status === "needs_review" || attempts.some((attempt) => attempt.status === "needs_review")
+  };
+}
+
+function normalizeRunReportAttemptForRead(value: unknown): RunReportAttempt {
+  const attempt = objectValue(value);
+  const legacySide = legacySideFromValue(attempt.side);
+  return {
+    run_source: normalizeRunSource(attempt.run_source, legacySide),
+    status: String(attempt.status || "unknown"),
+    evidence_path: String(attempt.evidence_path || ""),
+    final_path: attempt.final_path ? String(attempt.final_path) : undefined,
+    final_preview: attempt.final_preview ? String(attempt.final_preview) : "",
+    token_usage: normalizeLegacyTokenUsage(attempt.token_usage),
+    failure_classification: (attempt.failure_classification as string | null | undefined) || null,
+    error: attempt.error ? String(attempt.error) : undefined,
+    raw: objectValue(attempt.raw),
+    ...(legacySide ? { legacy_side: legacySide } : {})
+  };
+}
+
+function normalizeScenarioCriteriaForRead(value: unknown): RunReportScenario["criteria"] {
+  const criteria = objectValue(value);
+  if (!Object.keys(criteria).length) return undefined;
+  return {
+    what_it_tests: criteria.what_it_tests ? String(criteria.what_it_tests) : undefined,
+    expected_behavior: criteria.expected_behavior ? String(criteria.expected_behavior) : undefined,
+    assertions: Array.isArray(criteria.assertions) ? criteria.assertions.map(String) : [],
+    tests: Array.isArray(criteria.tests) ? criteria.tests.map(String) : [],
+    judges: Array.isArray(criteria.judges) ? criteria.judges.map(String) : []
+  };
+}
+
+function normalizeRunReadinessForRead(value: unknown, assessmentStatus: RunReport["summary"]["assessment_status"], manualReviewRequired: boolean, failureClassifications: string[], unresolvedCount: number): RunReadiness {
+  const readiness = objectValue(value);
+  if (["ready", "needs_review", "blocked"].includes(String(readiness.status))) {
+    return {
+      status: String(readiness.status) as RunReadiness["status"],
+      summary: String(readiness.summary || ""),
+      blockers: Array.isArray(readiness.blockers) ? readiness.blockers.map(String) : [],
+      unresolved: numberFrom(readiness.unresolved),
+      basis: String(readiness.basis || "report.json")
+    };
+  }
+  return readinessFor(assessmentStatus, manualReviewRequired, failureClassifications, unresolvedCount);
+}
+
+function normalizeRunArtifactsForRead(value: unknown): RunReport["artifacts"] {
+  if (!Array.isArray(value)) return [];
+  return value.map((artifact) => {
+    const item = objectValue(artifact);
+    const legacySide = legacySideFromValue(item.legacy_side || item.side);
+    return {
+      scenario_id: String(item.scenario_id || ""),
+      path: String(item.path || ""),
+      kind: String(item.kind || "file"),
+      ...(legacySide ? { legacy_side: legacySide } : {})
+    };
+  });
+}
+
+function legacySideFromValue(value: unknown): LegacyEvalSide | undefined {
+  return value === "candidate" || value === "release" ? value : undefined;
 }
 
 interface ReportAppModelV1 {
@@ -492,7 +634,7 @@ interface ReportAppModelV1 {
     assessment_status: string;
     readiness_status: string;
     readiness_summary: string;
-    comparison_mode: "none" | "release";
+    run_source: EvalRunSource;
     manual_review_required: boolean;
     created_at?: string;
     completed_at?: string;
@@ -501,13 +643,12 @@ interface ReportAppModelV1 {
   };
   summary: {
     scenario_count: number;
-    side_count: number;
+    attempt_count: number;
     result_count: number;
     unresolved_count: number;
     failure_classifications: string[];
     token_usage: RunTokenUsageSummary | { legacy: { available: number; unavailable: number } };
   };
-  variants: Array<{ id: EvalSide; label: string; kind: "working_tree" | "release" }>;
   scenarios: ReportAppScenarioV1[];
 }
 
@@ -518,11 +659,10 @@ interface ReportAppScenarioV1 {
   subtitle: string;
   status: string;
   unresolved: boolean;
-  comparison: string;
   evidence_basis: string;
   criteria: Array<{ label: string; value: string }>;
   attempts: Array<{
-    variant_id: EvalSide;
+    source_kind: string;
     label: string;
     status: string;
     final_preview: string;
@@ -539,9 +679,6 @@ interface ReportAppScenarioV1 {
 function toReportAppModel(report: RunReport): ReportAppModelV1 {
   const runner = objectValue(report.run.runner);
   const appServer = objectValue(runner.app_server);
-  const variants = (["candidate", "release"] as const)
-    .filter((side) => report.scenarios.some((scenario) => scenario.sides.some((attempt) => attempt.side === side)))
-    .map((side) => ({ id: side, label: side === "candidate" ? "Candidate" : "Release", kind: side === "candidate" ? "working_tree" : "release" }) as { id: EvalSide; label: string; kind: "working_tree" | "release" });
   return {
     schema_version: 1,
     skill: { name: String(report.run.skill_name || report.run.skill || "Meta Skill") },
@@ -552,7 +689,7 @@ function toReportAppModel(report: RunReport): ReportAppModelV1 {
       assessment_status: report.summary.assessment_status,
       readiness_status: report.readiness.status,
       readiness_summary: report.readiness.summary,
-      comparison_mode: report.summary.comparison_mode,
+      run_source: report.summary.run_source,
       manual_review_required: report.summary.manual_review_required,
       created_at: report.summary.created_at,
       completed_at: report.summary.completed_at,
@@ -561,13 +698,12 @@ function toReportAppModel(report: RunReport): ReportAppModelV1 {
     },
     summary: {
       scenario_count: report.summary.scenario_count,
-      side_count: report.summary.side_count,
+      attempt_count: report.summary.attempt_count,
       result_count: report.summary.result_count,
       unresolved_count: report.summary.unresolved_count,
       failure_classifications: report.summary.failure_classifications,
       token_usage: normalizeRunTokenUsageSummaryForRender(report.summary.token_usage)
     },
-    variants,
     scenarios: report.scenarios.map((scenario) => toReportAppScenario(report, scenario))
   };
 }
@@ -581,7 +717,6 @@ function toReportAppScenario(report: RunReport, scenario: RunReportScenario): Re
     subtitle: scenarioSubtitle(scenario),
     status: scenario.status,
     unresolved: scenario.unresolved,
-    comparison: comparisonForScenario(report, scenario),
     evidence_basis: scenario.evidence_basis,
     criteria: criteriaRowsForScenario(scenario),
     attempts: attemptsForScenario(scenario),
@@ -594,30 +729,25 @@ function scenarioSubtitle(scenario: RunReportScenario): string {
   return [scenario.family, scenario.type, scenario.topics.join(", ")].filter(Boolean).join(" / ") || scenario.folder;
 }
 
-function comparisonForScenario(report: RunReport, scenario: RunReportScenario): string {
-  return comparisonLabel(report.comparisons.find((comparison) => comparison.scenario_folder === scenario.folder || comparison.scenario_id === scenario.id)?.classification || compareScenario(scenario).classification);
-}
-
 function attemptsForScenario(scenario: RunReportScenario): ReportAppScenarioV1["attempts"] {
-  return scenario.sides
+  return scenario.attempts
     .slice()
-    .sort((a, b) => (a.side === b.side ? 0 : a.side === "candidate" ? -1 : 1))
-    .map((side) => ({
-      variant_id: side.side,
-      label: side.side === "candidate" ? "Candidate" : "Release",
-      status: side.status,
-      final_preview: side.final_preview || "",
-      final_href: side.final_path,
-      token_usage: normalizeLegacyTokenUsage(side.token_usage),
-      failure_classification: side.failure_classification,
-      error: side.error,
-      raw_links: rawLinksForAttempt(side)
+    .map((attempt) => ({
+      source_kind: attempt.run_source.kind,
+      label: attempt.run_source.label,
+      status: attempt.status,
+      final_preview: attempt.final_preview || "",
+      final_href: attempt.final_path,
+      token_usage: normalizeLegacyTokenUsage(attempt.token_usage),
+      failure_classification: attempt.failure_classification,
+      error: attempt.error,
+      raw_links: rawLinksForAttempt(attempt)
     }));
 }
 
-function rawLinksForAttempt(side: RunReportSide): Array<{ label: string; href: string }> {
-  if (!side.evidence_path) return [];
-  return ["final.md", "turns.jsonl", "usage.json", "rpc.jsonl"].map((file) => ({ label: file, href: `${side.evidence_path}/${file}`.split(path.sep).join("/") }));
+function rawLinksForAttempt(attempt: RunReportAttempt): Array<{ label: string; href: string }> {
+  if (!attempt.evidence_path) return [];
+  return ["final.md", "turns.jsonl", "usage.json", "rpc.jsonl"].map((file) => ({ label: file, href: `${attempt.evidence_path}/${file}`.split(path.sep).join("/") }));
 }
 
 function criteriaRowsForScenario(scenario: RunReportScenario): Array<{ label: string; value: string }> {
@@ -634,8 +764,8 @@ function criteriaRowsForScenario(scenario: RunReportScenario): Array<{ label: st
 
 function evidenceRowsForScenario(report: RunReport, scenario: RunReportScenario): ReportAppScenarioV1["evidence"] {
   const rows: ReportAppScenarioV1["evidence"] = [];
-  for (const side of scenario.sides) {
-    if (side.failure_classification || side.error) rows.push({ type: side.side, status: side.status, detail: side.failure_classification || side.error || "" });
+  for (const attempt of scenario.attempts) {
+    if (attempt.failure_classification || attempt.error) rows.push({ type: attempt.run_source.label, status: attempt.status, detail: attempt.failure_classification || attempt.error || "" });
   }
   for (const row of [...report.tests, ...report.judges, ...report.feedback]) {
     if (!eventMatchesScenario(row, scenario)) continue;
@@ -661,9 +791,9 @@ function reviewReasonsForScenario(scenario: RunReportScenario, evidence: ReportA
   for (const row of evidence) {
     if (row.status === "failed" || row.status === "unavailable") reasons.add(`${sentenceStatus(row.status)} evidence: ${sentenceStatus(row.detail || row.type)}`);
   }
-  for (const side of scenario.sides) {
-    if (side.error) reasons.add(side.error);
-    if (side.failure_classification) reasons.add(sentenceStatus(side.failure_classification));
+  for (const attempt of scenario.attempts) {
+    if (attempt.error) reasons.add(attempt.error);
+    if (attempt.failure_classification) reasons.add(sentenceStatus(attempt.failure_classification));
   }
   return [...reasons];
 }
@@ -680,7 +810,7 @@ function statusRank(status: string): number {
 }
 
 export function renderEvalReportHtml(report: RunReport): string {
-  const model = toReportAppModel(report);
+  const model = toReportAppModel(normalizeRunReportForRead(report));
   const selected = defaultSelectedScenario(model.scenarios);
   return `<!doctype html>
 <html lang="en">
@@ -784,17 +914,16 @@ function renderRunTokenSummary(summary: unknown): string {
   if ("legacy" in normalized) {
     return `<p class="muted">Legacy availability counts: ${normalized.legacy.available} available, ${normalized.legacy.unavailable} unavailable. Detailed token totals are unavailable in v1 reports.</p>`;
   }
-  const rows = (["candidate", "release"] as const)
-    .map((side) => {
-      const usage = normalized.by_side[side];
+  const rows = Object.entries(normalized.by_run_source)
+    .map(([source, usage]) => {
       if (!usage) return "";
-      return `<tr><td>${escapeHtml(side)}</td><td>${escapeHtml(usage.availability)}</td><td>${usage.sample_count}</td><td>${formatNumber(usage.total_tokens.total)}</td><td>${formatNumber(usage.total_tokens.average)}</td><td>${formatNumber(usage.input_tokens.total)}</td><td>${formatNumber(usage.output_tokens.total)}</td><td>${escapeHtml(usage.unavailable_reasons.join("; ") || "none")}</td></tr>`;
+      return `<tr><td>${escapeHtml(sentenceStatus(source))}</td><td>${escapeHtml(usage.availability)}</td><td>${usage.sample_count}</td><td>${formatNumber(usage.total_tokens.total)}</td><td>${formatNumber(usage.total_tokens.average)}</td><td>${formatNumber(usage.input_tokens.total)}</td><td>${formatNumber(usage.output_tokens.total)}</td><td>${escapeHtml(usage.unavailable_reasons.join("; ") || "none")}</td></tr>`;
     })
     .filter(Boolean)
     .join("\n");
   if (!rows) return '<p class="muted">No token usage recorded.</p>';
   return `<table>
-    <thead><tr><th>Side</th><th>Availability</th><th>Samples</th><th>Total Tokens</th><th>Avg / Side</th><th>Input</th><th>Output</th><th>Unavailable Reasons</th></tr></thead>
+    <thead><tr><th>Source</th><th>Availability</th><th>Samples</th><th>Total Tokens</th><th>Avg / Scenario</th><th>Input</th><th>Output</th><th>Unavailable Reasons</th></tr></thead>
     <tbody>${rows}</tbody>
   </table>
   <p class="muted">Availability counts: ${normalized.availability_counts.available} available, ${normalized.availability_counts.unavailable} unavailable. Token usage is measured telemetry and is not a readiness verdict.</p>`;
@@ -809,15 +938,17 @@ function renderSideTokenUsage(value: unknown): string {
 
 function normalizeRunTokenUsageSummaryForRender(value: unknown): RunTokenUsageSummary | { legacy: { available: number; unavailable: number } } {
   const object = objectValue(value);
-  if (!("by_side" in object) && ("available" in object || "unavailable" in object)) {
+  if (!("by_run_source" in object) && !("by_side" in object) && ("available" in object || "unavailable" in object)) {
     return { legacy: { available: numberFrom(object.available), unavailable: numberFrom(object.unavailable) } };
   }
-  const bySide = objectValue(object.by_side);
+  const byRunSource = objectValue(object.by_run_source);
+  const legacyBySide = objectValue(object.by_side);
   const counts = objectValue(object.availability_counts);
   return {
-    by_side: {
-      ...(bySide.candidate ? { candidate: normalizeTokenUsageSummary(bySide.candidate) } : {}),
-      ...(bySide.release ? { release: normalizeTokenUsageSummary(bySide.release) } : {})
+    by_run_source: {
+      ...Object.fromEntries(Object.entries(byRunSource).map(([key, usage]) => [key, normalizeTokenUsageSummary(usage)])),
+      ...(legacyBySide.candidate ? { legacy_working_payload_side: normalizeTokenUsageSummary(legacyBySide.candidate) } : {}),
+      ...(legacyBySide.release ? { legacy_saved_snapshot_side: normalizeTokenUsageSummary(legacyBySide.release) } : {})
     },
     availability_counts: {
       available: numberFrom(counts.available),
@@ -831,7 +962,7 @@ function renderScenarioRail(scenarios: ReportAppScenarioV1[], selectedId?: strin
   return scenarios
     .map((scenario) => `<button class="scenario-row" type="button" data-scenario-id="${escapeHtml(scenario.id)}" aria-current="${scenario.id === selectedId}">
       <strong>${escapeHtml(scenario.id)} · ${escapeHtml(scenario.title)}</strong>
-      <span>${escapeHtml(sentenceStatus(scenario.status))} · ${escapeHtml(scenario.comparison)}</span>
+      <span>${escapeHtml(sentenceStatus(scenario.status))} · ${escapeHtml(scenario.attempts.map((attempt) => attempt.label).join(", ") || "No output")}</span>
     </button>`)
     .join("");
 }
@@ -844,7 +975,7 @@ function renderScenarioDetail(scenario: ReportAppScenarioV1, model: ReportAppMod
   </div>
   <div class="fact-row">
     <div class="fact"><span>Run</span><strong>${escapeHtml(model.run.id)}</strong></div>
-    <div class="fact"><span>Comparison</span><strong>${escapeHtml(scenario.comparison)}</strong></div>
+    <div class="fact"><span>Source</span><strong>${escapeHtml(model.run.run_source.label)}</strong></div>
     <div class="fact"><span>Evidence basis</span><strong>${escapeHtml(sentenceStatus(scenario.evidence_basis))}</strong></div>
     <div class="fact"><span>Scenario status</span><strong>${escapeHtml(sentenceStatus(scenario.status))}</strong></div>
   </div>
@@ -867,13 +998,8 @@ function renderScenarioDetail(scenario: ReportAppScenarioV1, model: ReportAppMod
 }
 
 function renderAttemptPreviews(scenario: ReportAppScenarioV1, model: ReportAppModelV1): string {
-  const attemptsBySide = new Map(scenario.attempts.map((attempt) => [attempt.variant_id, attempt]));
-  const sides = model.variants.some((variant) => variant.id === "release") ? (["candidate", "release"] as const) : (["candidate"] as const);
-  return sides
-    .map((side) => {
-      const attempt = attemptsBySide.get(side);
-      if (!attempt && side === "release") return '<div class="answer"><h3>Release</h3><p class="empty">No release attempt in this run.</p></div>';
-      if (!attempt) return '<div class="answer"><h3>Candidate</h3><p class="empty">No candidate attempt in this run.</p></div>';
+  return (scenario.attempts.length ? scenario.attempts : [{ label: model.run.run_source.label, status: "unknown", final_preview: "No final output recorded.", source_kind: model.run.run_source.kind, raw_links: [] }])
+    .map((attempt) => {
       const problem = [attempt.failure_classification, attempt.error].filter(Boolean).join(" · ");
       return `<div class="answer"><h3><span>${escapeHtml(attempt.label)}</span> <span class="status ${escapeHtml(attempt.status)}"><span class="dot"></span>${escapeHtml(sentenceStatus(attempt.status))}</span></h3>${problem ? `<p class="muted">${escapeHtml(sentenceStatus(problem))}</p>` : ""}<pre>${escapeHtml(attempt.final_preview || "No final output recorded.")}</pre>${attempt.final_href ? `<p class="answer-actions"><a href="${escapeHtml(attempt.final_href)}">Open final</a></p>` : ""}</div>`;
     })
@@ -905,7 +1031,7 @@ function renderMetadataRail(scenario: ReportAppScenarioV1 | undefined, model: Re
 
 function renderScenarioTokenUsage(scenario: ReportAppScenarioV1): string {
   if (!scenario.attempts.length) return '<p class="empty">No token usage recorded.</p>';
-  return `<table><thead><tr><th>Side</th><th>Total</th><th>Input</th><th>Output</th></tr></thead><tbody>${scenario.attempts
+  return `<table><thead><tr><th>Source</th><th>Total</th><th>Input</th><th>Output</th></tr></thead><tbody>${scenario.attempts
     .map((attempt) => {
       const usage = attempt.token_usage;
       return `<tr><td>${escapeHtml(attempt.label)}</td><td>${usage ? formatNumber(usage.total_tokens.total) : "unavailable"}</td><td>${usage ? formatNumber(usage.input_tokens.total) : "-"}</td><td>${usage ? formatNumber(usage.output_tokens.total) : "-"}</td></tr>`;
@@ -943,18 +1069,8 @@ function evidenceTypeLabel(value: string): string {
   if (value === "judge_result") return "Judge";
   if (value === "lint_summary") return "Lint summary";
   if (value === "lint_skipped") return "Lint skipped";
-  if (value === "candidate") return "Candidate";
-  if (value === "release") return "Release";
-  return sentenceStatus(value);
-}
-
-function comparisonLabel(value: string): string {
-  if (value === "not_comparable") return "No release comparison";
-  if (value === "candidate_regresses") return "Release better";
-  if (value === "candidate_beats_release") return "Candidate better";
-  if (value === "both_fail") return "Both failed";
-  if (value === "no_regression") return "No regression";
-  if (value === "needs_review") return "Needs review";
+  if (value === "candidate") return "Legacy working payload side";
+  if (value === "release") return "Legacy saved snapshot side";
   return sentenceStatus(value);
 }
 
@@ -980,23 +1096,19 @@ function filtered() {
   const q = search.value.trim().toLowerCase();
   return data.scenarios.filter((s) => {
     const filterOk = filter === "all" || (filter === "no_tokens" ? hasNoTokens(s) : s.status === filter);
-    const hay = [s.id, s.title, s.subtitle, s.status, s.comparison].join(" ").toLowerCase();
+    const hay = [s.id, s.title, s.subtitle, s.status, s.attempts.map((a) => a.label).join(" ")].join(" ").toLowerCase();
     return filterOk && (!q || hay.includes(q));
   });
 }
 function renderList() {
   const rows = filtered();
   count.textContent = rows.length;
-  list.innerHTML = rows.length ? rows.map((s) => '<button class="scenario-row" type="button" data-scenario-id="' + esc(s.id) + '" aria-current="' + (s.id === selectedId) + '"><strong>' + esc(s.id) + ' · ' + esc(s.title) + '</strong><span>' + esc(label(s.status)) + ' · ' + esc(s.comparison) + '</span></button>').join("") : '<p class="empty">No scenarios match this filter.</p>';
+  list.innerHTML = rows.length ? rows.map((s) => '<button class="scenario-row" type="button" data-scenario-id="' + esc(s.id) + '" aria-current="' + (s.id === selectedId) + '"><strong>' + esc(s.id) + ' · ' + esc(s.title) + '</strong><span>' + esc(label(s.status)) + ' · ' + esc(s.attempts.map((a) => a.label).join(", ") || "No output") + '</span></button>').join("") : '<p class="empty">No scenarios match this filter.</p>';
   list.querySelectorAll("button").forEach((button) => button.addEventListener("click", () => { selectedId = button.dataset.scenarioId; render(); }));
 }
 function attemptBlocks(s) {
-  const bySide = new Map(s.attempts.map((a) => [a.variant_id, a]));
-  const sides = data.variants.some((v) => v.id === "release") ? ["candidate", "release"] : ["candidate"];
-  return sides.map((side) => {
-    const a = bySide.get(side);
-    if (!a && side === "release") return '<div class="answer"><h3>Release</h3><p class="empty">No release side recorded.</p></div>';
-    if (!a) return '<div class="answer"><h3>Candidate</h3><p class="empty">No candidate attempt in this run.</p></div>';
+  const attempts = s.attempts.length ? s.attempts : [{ label: data.run.run_source.label, status: "unknown", final_preview: "No final output recorded.", raw_links: [] }];
+  return attempts.map((a) => {
     const problem = [a.failure_classification, a.error].filter(Boolean).join(" · ");
     return '<div class="answer"><h3><span>' + esc(a.label) + '</span> <span class="status ' + esc(a.status) + '"><span class="dot"></span>' + esc(label(a.status)) + '</span></h3>' + (problem ? '<p class="muted">' + esc(evidenceLabel(problem)) + '</p>' : '') + '<pre>' + esc(a.final_preview || "No final output recorded.") + '</pre>' + (a.final_href ? '<p class="answer-actions"><a href="' + esc(a.final_href) + '">Open final</a></p>' : '') + '</div>';
   }).join("");
@@ -1006,10 +1118,10 @@ function renderDetail(s) {
   const reasons = s.review_reasons.length ? '<ul class="reason-list">' + s.review_reasons.map((r) => '<li>' + esc(r) + '</li>').join("") + '</ul>' : '<p class="empty">No review reasons recorded.</p>';
   const evidence = s.evidence.length ? '<table><thead><tr><th>Type</th><th>Status</th><th>Detail</th></tr></thead><tbody>' + s.evidence.map((r) => '<tr><td>' + esc(evidenceLabel(r.type)) + '</td><td>' + esc(label(r.status)) + '</td><td>' + esc(evidenceLabel(r.detail || "recorded")) + '</td></tr>').join("") + '</tbody></table>' : '<p class="empty">No confidently matched tests, judges, or feedback for this scenario.</p>';
   const criteria = s.criteria.length ? '<table><tbody>' + s.criteria.map((r) => '<tr><th>' + esc(r.label) + '</th><td>' + esc(r.value) + '</td></tr>').join("") + '</tbody></table>' : '<p class="empty">No criteria recorded.</p>';
-  return '<div class="scenario-head"><span class="status ' + esc(s.status) + '"><span class="dot"></span>' + esc(label(s.status)) + '</span><h1>' + esc(s.title) + '</h1><p class="muted">' + esc(s.id) + ' · ' + esc(s.subtitle) + '</p></div><div class="fact-row"><div class="fact"><span>Run</span><strong>' + esc(data.run.id) + '</strong></div><div class="fact"><span>Comparison</span><strong>' + esc(s.comparison) + '</strong></div><div class="fact"><span>Evidence basis</span><strong>' + esc(label(s.evidence_basis)) + '</strong></div><div class="fact"><span>Scenario status</span><strong>' + esc(label(s.status)) + '</strong></div></div><section class="section"><h2>Review reasons</h2>' + reasons + '</section><section class="section"><h2>Final answer preview</h2><div class="answers">' + attemptBlocks(s) + '</div></section><section class="section"><h2>Evaluation evidence</h2>' + evidence + '</section><section class="section"><h2>Criteria</h2>' + criteria + '</section>';
+  return '<div class="scenario-head"><span class="status ' + esc(s.status) + '"><span class="dot"></span>' + esc(label(s.status)) + '</span><h1>' + esc(s.title) + '</h1><p class="muted">' + esc(s.id) + ' · ' + esc(s.subtitle) + '</p></div><div class="fact-row"><div class="fact"><span>Run</span><strong>' + esc(data.run.id) + '</strong></div><div class="fact"><span>Source</span><strong>' + esc(data.run.run_source.label) + '</strong></div><div class="fact"><span>Evidence basis</span><strong>' + esc(label(s.evidence_basis)) + '</strong></div><div class="fact"><span>Scenario status</span><strong>' + esc(label(s.status)) + '</strong></div></div><section class="section"><h2>Review reasons</h2>' + reasons + '</section><section class="section"><h2>Final answer preview</h2><div class="answers">' + attemptBlocks(s) + '</div></section><section class="section"><h2>Evaluation evidence</h2>' + evidence + '</section><section class="section"><h2>Criteria</h2>' + criteria + '</section>';
 }
 function renderRail(s) {
-  const tokenRows = s && s.attempts.length ? '<table><thead><tr><th>Side</th><th>Total</th><th>Input</th><th>Output</th></tr></thead><tbody>' + s.attempts.map((a) => '<tr><td>' + esc(a.label) + '</td><td>' + (a.token_usage ? number(a.token_usage.total_tokens.total) : "unavailable") + '</td><td>' + (a.token_usage ? number(a.token_usage.input_tokens.total) : "-") + '</td><td>' + (a.token_usage ? number(a.token_usage.output_tokens.total) : "-") + '</td></tr>').join("") + '</tbody></table>' : '<p class="empty">No token usage recorded.</p>';
+  const tokenRows = s && s.attempts.length ? '<table><thead><tr><th>Source</th><th>Total</th><th>Input</th><th>Output</th></tr></thead><tbody>' + s.attempts.map((a) => '<tr><td>' + esc(a.label) + '</td><td>' + (a.token_usage ? number(a.token_usage.total_tokens.total) : "unavailable") + '</td><td>' + (a.token_usage ? number(a.token_usage.input_tokens.total) : "-") + '</td><td>' + (a.token_usage ? number(a.token_usage.output_tokens.total) : "-") + '</td></tr>').join("") + '</tbody></table>' : '<p class="empty">No token usage recorded.</p>';
   const raw = s ? s.attempts.filter((a) => a.raw_links.length).map((a) => '<div class="raw-group"><strong>' + esc(a.label) + '</strong><div class="raw-files">' + a.raw_links.map((r) => '<a href="' + esc(r.href) + '">' + esc(r.label) + '</a>').join("") + '</div></div>').join("") : "";
   const legacy = data.summary.token_usage.legacy;
   const foot = legacy ? 'Legacy availability counts: ' + legacy.available + ' available, ' + legacy.unavailable + ' unavailable.' : 'Token usage is measured telemetry, not a quality score. Availability: ' + data.summary.token_usage.availability_counts.available + ' available, ' + data.summary.token_usage.availability_counts.unavailable + ' unavailable.';
@@ -1031,14 +1143,12 @@ render();
 `;
 
 function renderScenarioCard(scenario: RunReportScenario): string {
-  const comparison = compareScenario(scenario);
   const criteria = scenario.criteria;
   return `<section class="scenario">
     <h3>${escapeHtml(scenario.id)} ${escapeHtml(scenario.title || scenario.folder)}</h3>
     <p class="muted">${escapeHtml([scenario.family, scenario.type, scenario.topics.join(", ")].filter(Boolean).join(" / "))}</p>
     <p><strong>Evidence basis:</strong> ${escapeHtml(scenario.evidence_basis)}</p>
     <p><strong>Capability:</strong> ${escapeHtml(scenario.capability || "not recorded")}</p>
-    <p><strong>Comparison:</strong> ${escapeHtml(comparison.classification)}</p>
     <p><strong>Expected behavior:</strong> ${escapeHtml(criteria?.expected_behavior || "not recorded")}</p>
     <table>
       <thead><tr><th>Assertions</th><th>Tests</th><th>Judges</th></tr></thead>

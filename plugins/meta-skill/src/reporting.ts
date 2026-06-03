@@ -7,6 +7,8 @@ import {
   indexRowFromReport,
   indexRowFromRun,
   materializeEvalRunReport,
+  normalizeRunIndexRowForRead,
+  normalizeRunReportForRead,
   renderEvalReportHtml,
   renderReviewReportMarkdown,
   updateRunsIndex
@@ -252,16 +254,17 @@ export function renderLintReportMarkdown(report: LintReport): string {
 }
 
 export function renderRunListMarkdown(runs: RunIndexRow[]): string {
-  if (!runs.length) return "No eval runs found.";
-  const header = "Run ID\tStatus\tCreated\tCompleted\tLabel\tCompare\tScenarios\tManual Review\tFailures\tReadiness";
-  const rows = runs.map((run) =>
+  const normalizedRuns = runs.map(normalizeRunIndexRowForRead).filter((run) => run.run_id);
+  if (!normalizedRuns.length) return "No eval runs found.";
+  const header = "Run ID\tStatus\tCreated\tCompleted\tLabel\tSource\tScenarios\tManual Review\tFailures\tReadiness";
+  const rows = normalizedRuns.map((run) =>
     [
       run.run_id,
       run.status,
       run.created_at || "",
       run.completed_at || "",
       run.label || "",
-      run.comparison_mode,
+      run.run_source.label,
       String(run.scenario_count),
       run.manual_review_required ? "yes" : "no",
       run.failure_classifications.length ? run.failure_classifications.join(",") : "none",
@@ -272,6 +275,7 @@ export function renderRunListMarkdown(runs: RunIndexRow[]): string {
 }
 
 export function renderEvalRunMarkdown(report: RunReport): string {
+  report = normalizeRunReportForRead(report);
   const lines = [
     `# Meta Skill Eval ${report.summary.run_id}`,
     "",
@@ -291,13 +295,13 @@ export function renderEvalRunMarkdown(report: RunReport): string {
   if (!report.scenarios.length) lines.push("- No scenario rows recorded.");
   for (const scenario of report.scenarios) {
     lines.push(`- ${scenario.id} ${scenario.title || scenario.folder}: ${scenario.status}${scenario.unresolved ? " (unresolved)" : ""}`);
-    for (const side of scenario.sides) {
-      const detail = [side.side, side.status, side.failure_classification || side.error || ""].filter(Boolean).join(" / ");
+    for (const attempt of scenario.attempts) {
+      const detail = [attempt.run_source.label, attempt.status, attempt.failure_classification || attempt.error || ""].filter(Boolean).join(" / ");
       lines.push(`  - ${detail}`);
     }
   }
   lines.push("", "## Evidence Paths");
-  for (const artifact of report.artifacts) lines.push(`- ${artifact.scenario_id}/${artifact.side}: ${artifact.path}`);
+  for (const artifact of report.artifacts) lines.push(`- ${artifact.scenario_id}: ${artifact.path}`);
   if (!report.artifacts.length) lines.push("- No artifact files recorded.");
   lines.push("", "## Tests, Judges, Feedback");
   lines.push(`- Tests: ${report.tests.length}`);
@@ -399,7 +403,7 @@ async function readEvalRunForReport(root: string, runId: string, refresh: Report
 
 async function readOrBuildRunReport(runRoot: string): Promise<RunReport> {
   const reportPath = path.join(runRoot, "report.json");
-  if (await exists(reportPath)) return readJson<RunReport>(reportPath);
+  if (await exists(reportPath)) return normalizeRunReportForRead(await readJson<RunReport>(reportPath));
   return buildRunReport(runRoot);
 }
 
@@ -491,7 +495,7 @@ async function refreshRunsIndex(runsRoot: string): Promise<RunIndex> {
 
 async function readRunsIndexWithoutWrites(runsRoot: string): Promise<RunIndexRow[]> {
   const indexPath = path.join(runsRoot, "index.json");
-  if (await exists(indexPath)) return (await readJson<RunIndex>(indexPath)).runs;
+  if (await exists(indexPath)) return (await readJson<RunIndex>(indexPath)).runs.map(normalizeRunIndexRowForRead).filter((row) => row.run_id);
   if (!(await exists(runsRoot))) return [];
   const rows: RunIndexRow[] = [];
   for (const dir of (await fs.readdir(runsRoot, { withFileTypes: true })).filter((entry) => entry.isDirectory())) {

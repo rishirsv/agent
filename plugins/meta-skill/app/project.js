@@ -182,7 +182,7 @@ async function createWorkbench(projectRoot, options = {}) {
                 description: "Behavior, routing, gates, and known failure-mode coverage."
             },
             scenarios: { path: "scenarios" },
-            defaults: { runner: "app_server", compare: "none", timeout_ms: 120000 }
+            defaults: { runner: "app_server", run_source: "working_payload", timeout_ms: 120000 }
         };
         await writeJson(p.evalManifest, manifest);
     }

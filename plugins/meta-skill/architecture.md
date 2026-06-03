@@ -20,7 +20,7 @@ flowchart LR
 
 It creates portable payloads, adds `.meta-skill/` workbenches, records eval
 evidence, turns evidence into bounded edits, snapshots releases, and packages
-candidate or release payloads. It is not a marketplace publisher, installer, or
+working or saved snapshot payloads. It is not a marketplace publisher, installer, or
 sync system. Human approval remains required for promotion, release replacement,
 packaging, install, publish, marketplace sync, and external writes.
 
@@ -55,7 +55,7 @@ generated packages.
 
 ```mermaid
 flowchart TB
-  root["Skill project root"] --> payload["Portable candidate payload"]
+  root["Skill project root"] --> payload["Portable working payload"]
   root --> workbench[".meta-skill/ workbench"]
   payload --> skill["SKILL.md"]
   payload --> agents["agents/"]
@@ -71,19 +71,19 @@ flowchart TB
   workbench --> versions["versions/release/"]
 ```
 
-The project root is the current candidate. Only `SKILL.md`, `agents/`,
+The project root is the working payload. Only `SKILL.md`, `agents/`,
 `references/`, `scripts/`, and `assets/` can be packaged. `.meta-skill/` stores
 specs, scenarios, run evidence, tests, reviews, plans, promotion sessions, and
 release snapshots. It must not be packaged.
 
-Candidate and release are different:
+The working payload and saved snapshot payload are different:
 
 ```mermaid
 flowchart LR
-  candidate["candidate\nproject root payload"] -->|meta-skill release| release["release snapshot"]
-  release --> releasePath[".meta-skill/versions/release/skill/"]
-  candidate -->|meta-skill package --source candidate| candidatePkg["candidate package"]
-  release -->|meta-skill package --source release| releasePkg["release package"]
+  working["working payload\nproject root"] -->|meta-skill release| snapshot["saved snapshot"]
+  snapshot --> snapshotPath[".meta-skill/versions/release/skill/"]
+  working -->|package working payload| workingPkg["working payload package"]
+  snapshot -->|package saved snapshot| snapshotPkg["saved snapshot package"]
 ```
 
 ## Lifecycle
@@ -141,11 +141,11 @@ sequenceDiagram
 
   CLI->>CLI: lint preflight without tests
   CLI->>Run: create run.json and JSONL files
-  loop each scenario and side
+  loop each scenario
     CLI->>Run: snapshot task, metadata, criteria, and turns
-    CLI->>Stage: copy portable skill and solver-visible scenario files
+    CLI->>Stage: copy selected payload and solver-visible scenario files
     CLI->>App: start read-only ephemeral thread
-    CLI->>App: send task.md with staged skill attached
+    CLI->>App: send task.md with selected payload attached, or no skill for --no-skill
     CLI->>App: send turns.json follow-ups
     App-->>Run: final.md, turns.jsonl, usage.json, thread.json, rpc.jsonl
     CLI->>Run: append scenario_result
@@ -156,17 +156,17 @@ sequenceDiagram
 ```
 
 Default runner constraints: managed stdio App Server, read-only sandbox,
-`approvalPolicy: "never"`, no network access, one thread per scenario side,
-first turn with staged skill attached, follow-ups from `turns.json`, and token
+`approvalPolicy: "never"`, no network access, one thread per scenario,
+first turn with the selected payload attached unless `--no-skill` is used, follow-ups from `turns.json`, and token
 metrics recorded as available or explicitly unavailable.
 
-Token evidence is measured App Server telemetry. Each scenario side writes
+Token evidence is measured App Server telemetry. Each scenario writes
 `usage.json` as the canonical token file, attaches per-turn usage to assistant
-rows in `turns.jsonl`, and denormalizes the side summary into `results.jsonl`.
-For multi-turn sides, App Server cumulative `tokenUsage.total` from the final
+rows in `turns.jsonl`, and denormalizes the scenario summary into `results.jsonl`.
+For multi-turn scenarios, App Server cumulative `tokenUsage.total` from the final
 reporting turn is authoritative; per-turn `tokenUsage.last` is retained for
-transcript and turn-level inspection. Reports aggregate candidate and release
-separately so comparison runs never pool two executions into one total.
+transcript and turn-level inspection. A run records exactly one source; compare
+multiple runs only in separate report-level artifacts.
 
 `--app-server-endpoint` is not supported yet; the CLI rejects it.
 
@@ -201,7 +201,7 @@ zero.
       resources/          optional
     judges/
   runs/
-    001-initial-candidate/
+    001-working-payload/
       run.json
       events.jsonl
       results.jsonl
@@ -217,16 +217,13 @@ zero.
           criteria.json
       scenarios/
         R1-basic/
-          candidate/
-            stage/
-            thread.json
-            turns.jsonl
-            usage.json
-            final.md
-            rpc.jsonl
-            artifacts/
-          release/
-            ...
+          stage/
+          thread.json
+          turns.jsonl
+          usage.json
+          final.md
+          rpc.jsonl
+          artifacts/
 ```
 
 Scenario IDs are strict: `R` regression, `F` failure mode, `T` trigger, and
@@ -250,15 +247,15 @@ flowchart TB
   auto --> reviews["heuristic reviews"]
   auto --> plans["plan scaffolds"]
 
-  gate["Needs human approval"] --> promote["promote edits into candidate"]
+  gate["Needs human approval"] --> promote["promote edits into working payload"]
   gate --> decide["accept source decision"]
   gate --> release["create or replace release"]
   gate --> package["package when not explicitly requested"]
   gate --> publish["install, publish, sync, marketplace, external writes"]
 ```
 
-Keep the verbs separate: `promote` edits candidate files, `decide` records
-accept or reject, `release` snapshots candidate, and `package` emits an artifact.
+Keep the verbs separate: `promote` edits working payload files, `decide` records
+accept or reject, `release` snapshots the working payload, and `package` emits an artifact.
 
 ## Build And Tests
 
@@ -304,12 +301,12 @@ Add commands in `src/commands.ts`, keep logic in the owning module, update
 `src/models.ts` for new data shapes, test the changed area, run `npm test`,
 and commit regenerated `app/` for code changes.
 
-For eval changes, preserve `.meta-skill/evals/runs/<run-id>/`, scenario-side
-evidence under `scenarios/<scenario>/<side>/`, unavailable-token records,
+For eval changes, preserve `.meta-skill/evals/runs/<run-id>/`, per-scenario
+evidence under `scenarios/<scenario>/`, unavailable-token records,
 read-only/no-approval/no-network defaults, and optional judges.
 
 For package changes, package only the portable payload, never `.meta-skill/`,
-keep candidate and release separate, and keep promote, decide, release, and
+keep working payload and saved snapshot packaging separate, and keep promote, decide, release, and
 package as separate gated operations.
 
 For lane changes, edit `plugins/meta-skill/skills/<lane>/`, update references

@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { ScenarioRecord, TokenMetric, TokenUsage, TokenUsageSummary, TokenUsageTurn } from "../models";
+import type { EvalRunSource, ScenarioRecord, TokenMetric, TokenUsage, TokenUsageSummary, TokenUsageTurn } from "../models";
 import { appendJsonl, copyPortablePayload, ensureDir, parseSkillFrontmatter, readText, unavailableTokenUsage, writeJson, writeText } from "../project";
 import type { AppServerConfig, AppServerLine } from "./client";
 import { AppServerJsonClient } from "./client";
@@ -25,9 +25,10 @@ export interface AppServerScenarioRunnerOptions {
 
 export interface ScenarioRunInput {
   projectRoot: string;
-  skillRoot: string;
+  skillRoot?: string;
+  attachSkill: boolean;
   scenario: ScenarioRecord;
-  side: "candidate" | "release";
+  runSource: EvalRunSource;
   runId: string;
   runRoot: string;
   appServer: AppServerConfig;
@@ -53,12 +54,12 @@ export class AppServerScenarioRunner {
   }
 
   async run(input: ScenarioRunInput): Promise<ScenarioRunResult> {
-    const rawRoot = path.join(input.runRoot, "scenarios", input.scenario.folder, input.side);
+    const rawRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
     await ensureDir(rawRoot);
     await ensureDir(path.join(rawRoot, "artifacts"));
     const stageRoot = path.join(rawRoot, "stage");
     await stageWorkspace(input, stageRoot);
-    const attachmentName = await runtimeSkillName(input.skillRoot);
+    const attachmentName = input.attachSkill && input.skillRoot ? await runtimeSkillName(input.skillRoot) : undefined;
 
     const rpcPath = path.join(rawRoot, "rpc.jsonl");
     await this.client?.flush?.();
@@ -73,11 +74,11 @@ export class AppServerScenarioRunner {
       experimentalRawEvents: true,
       persistExtendedHistory: false,
       ephemeral: true,
-      baseInstructions: "You are executing a Meta Skill scenario. Follow the staged skill payload exactly and answer the user's task.",
+      baseInstructions: input.attachSkill ? "You are executing a Meta Skill scenario. Follow the staged skill payload exactly and answer the user's task." : "You are executing a Meta Skill scenario without an attached skill. Answer the user's task directly.",
       developerInstructions: [
-        "Use the skill mounted in this turn as the only runtime skill guidance.",
+        input.attachSkill ? "Use the skill mounted in this turn as the only runtime skill guidance." : "No skill is mounted for this scenario. Answer without skill-specific runtime guidance.",
         "Treat stage/scenario/task.md as the first user request and stage/scenario/turns.json as follow-up user turns.",
-        "Do not modify files. Produce the final answer that the skill would give the user."
+        input.attachSkill ? "Do not modify files. Produce the final answer that the skill would give the user." : "Do not modify files. Produce the final answer you would give without a skill."
       ].join("\n")
     });
     const thread = start.thread as { id?: string } | undefined;
@@ -90,7 +91,7 @@ export class AppServerScenarioRunner {
     const turns = [{ content: input.scenario.task, source: "task.md" }, ...input.scenario.turns.map((turn) => ({ content: turn.content, source: "turns.json" }))];
     for (const [index, turn] of turns.entries()) {
       turnRecords.push({ role: "user", index, source: turn.source, content: turn.content, status: "sent" });
-      const result = await runTurn(client, threadId, stageRoot, input.scenario, turn.content, index === 0, this.turnTimeoutMs, attachmentName);
+      const result = await runTurn(client, threadId, stageRoot, input.scenario, turn.content, index === 0 && input.attachSkill, this.turnTimeoutMs, attachmentName);
       final = result.final || final;
       usageTurns.push({
         turn_id: result.turnId,
@@ -111,12 +112,12 @@ export class AppServerScenarioRunner {
       });
     }
     await client.flush?.();
-    const sideSummary = summarizeSideUsage(usageTurns);
+    const scenarioSummary = summarizeScenarioUsage(usageTurns);
     const usageEvidence = {
       schema_version: 1 as const,
-      availability: sideSummary.availability,
+      availability: scenarioSummary.availability,
       turns: usageTurns,
-      summary: sideSummary
+      summary: scenarioSummary
     };
 
     await writeJson(path.join(rawRoot, "thread.json"), {
@@ -136,7 +137,7 @@ export class AppServerScenarioRunner {
 
     return {
       status: "needs_review",
-      token_usage: sideSummary,
+      token_usage: scenarioSummary,
       final_path: path.join(rawRoot, "final.md"),
       evidence_path: path.relative(input.runRoot, rawRoot)
     };
@@ -171,11 +172,11 @@ async function runTurn(
   content: string,
   includeSkill: boolean,
   turnTimeoutMs: number,
-  attachmentName: string
+  attachmentName?: string
 ): Promise<{ turnId: string; final: string; tokenUsage: TokenUsage; cumulativeTokenUsage?: TokenUsage; tokenEvent: boolean }> {
   const mark = client.eventCount();
   const input = [
-    ...(includeSkill ? [{ type: "skill", name: attachmentName, path: path.join(stageRoot, "skill") }] : []),
+    ...(includeSkill && attachmentName ? [{ type: "skill", name: attachmentName, path: path.join(stageRoot, "skill") }] : []),
     { type: "text", text: content, text_elements: [] }
   ];
   const started = await client.request("turn/start", {
@@ -238,16 +239,16 @@ function toTokenUsage(raw: unknown, reason = "App Server token metrics were unav
   };
 }
 
-function summarizeSideUsage(turns: AppServerTokenUsageTurn[]): TokenUsageSummary {
+function summarizeScenarioUsage(turns: AppServerTokenUsageTurn[]): TokenUsageSummary {
   const finalTurn = turns.at(-1);
   const reason = finalTurn
-    ? `App Server cumulative token metrics were unavailable for final reporting turn ${finalTurn.turn_id}; scenario side totals require tokenUsage.total from that turn.`
-    : "App Server completed without a final reporting turn; scenario side token totals require tokenUsage.total from the final turn.";
+    ? `App Server cumulative token metrics were unavailable for final reporting turn ${finalTurn.turn_id}; scenario totals require tokenUsage.total from that turn.`
+    : "App Server completed without a final reporting turn; scenario totals require tokenUsage.total from the final turn.";
   const sample = finalTurn?.cumulative_usage?.total_tokens.available ? finalTurn.cumulative_usage : unavailableTokenUsage(reason);
-  return summarizeUsageSamples([sample], "scenario_side");
+  return summarizeUsageSamples([sample], "scenario");
 }
 
-function summarizeUsageSamples(samples: TokenUsage[], sampleUnit: "turn" | "scenario_side"): TokenUsageSummary {
+function summarizeUsageSamples(samples: TokenUsage[], sampleUnit: "turn" | "scenario"): TokenUsageSummary {
   const present = samples.filter((usage) => usage.total_tokens.available);
   const unavailableReasons = [...new Set(samples.flatMap(reasonsForUsage))].sort();
   const unavailableCount = samples.length - present.length;
@@ -290,7 +291,7 @@ function objectValue(value: unknown): Record<string, unknown> {
 async function stageWorkspace(input: ScenarioRunInput, stageRoot: string): Promise<void> {
   await fs.rm(stageRoot, { recursive: true, force: true });
   await ensureDir(stageRoot);
-  await copyPortablePayload(input.skillRoot, path.join(stageRoot, "skill"));
+  if (input.attachSkill && input.skillRoot) await copyPortablePayload(input.skillRoot, path.join(stageRoot, "skill"));
   await ensureDir(path.join(stageRoot, "scenario"));
   for (const name of ["task.md", "scenario.json", "turns.json", "capability.txt"]) {
     const source = path.join(input.scenario.path, name);
@@ -308,7 +309,7 @@ async function stageWorkspace(input: ScenarioRunInput, stageRoot: string): Promi
   }
   await writeText(
     path.join(stageRoot, "HARNESS.md"),
-    `# Meta Skill App Server Harness\n\nRun ${input.runId}, scenario ${input.scenario.id}, side ${input.side}.\n`
+    `# Meta Skill App Server Harness\n\nRun ${input.runId}, scenario ${input.scenario.id}, source ${input.runSource.label}.\n`
   );
 }
 

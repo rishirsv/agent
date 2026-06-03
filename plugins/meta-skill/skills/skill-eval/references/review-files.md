@@ -41,7 +41,7 @@ Read this when inspecting or explaining `.meta-skill/evals/`, scenarios, run bun
   },
   "defaults": {
     "runner": "app_server",
-    "compare": "none",
+    "run_source": "working_payload",
     "timeout_ms": 120000
   }
 }
@@ -160,31 +160,28 @@ Each run writes:
       capability.txt      optional
   scenarios/
     <scenario-folder>/
-      candidate/
-        stage/
-        rpc.jsonl
-        thread.json
-        turns.jsonl
-        usage.json
-        final.md
-        artifacts/
-      release/
-        ...
+      stage/
+      rpc.jsonl
+      thread.json
+      turns.jsonl
+      usage.json
+      final.md
+      artifacts/
 ```
 
 `run.json` is the plan. `events.jsonl` is the chronological execution ledger. `results.jsonl` is derived summary data. `tests.jsonl`, `grades.jsonl`, and `feedback.jsonl` are append-only annotation streams.
 
 `snapshots/<scenario-folder>/` stores evaluator-side task, metadata, criteria, and turns as they existed when the run started. Judges read these snapshots with saved final outputs. If an older run has no snapshot, the CLI marks the judge evidence basis as legacy current-project criteria.
 
-`report.json` is the normalized view consumed by `report.html`, `eval open --json`, and the runs `index.json`. It contains run summary, scenario side rows, tests, judges, feedback, comparisons, artifacts, and readiness.
+`report.json` is the normalized view consumed by `report.html`, `eval open --json`, and the runs `index.json`. It contains run summary, scenario attempts, tests, judges, feedback, artifacts, and readiness.
 
 `runs/index.json` stores one summary row per run for `eval open --list`, `eval list`, and future local evidence browsers.
 
 The staged solver workspace includes `task.md`, `scenario.json`, `turns.json`, `capability.txt`, and `resources/` when present. It must not include `criteria.json`; criteria are evaluator evidence, not solver context.
 
-`usage.json` is the canonical structured token evidence for a scenario side. It records `schema_version`, availability, per-turn `tokenUsage.last`, cumulative App Server `tokenUsage.total` when present, and a side summary. `turns.jsonl` also carries token usage on assistant rows for transcript-adjacent inspection, and `results.jsonl.payload.token_usage` carries a denormalized side summary for compatibility.
+`usage.json` is the canonical structured token evidence for a scenario. It records `schema_version`, availability, per-turn `tokenUsage.last`, cumulative App Server `tokenUsage.total` when present, and a scenario summary. `turns.jsonl` also carries token usage on assistant rows for transcript-adjacent inspection, and `results.jsonl.payload.token_usage` carries a denormalized scenario summary.
 
-For multi-turn scenarios, the side summary uses App Server cumulative `tokenUsage.total` from the final reporting turn as authoritative. Do not sum per-turn `last` values when explaining side totals. Candidate and release usage are separate executions and should be compared side by side, never pooled into one run total.
+For multi-turn scenarios, the scenario summary uses App Server cumulative `tokenUsage.total` from the final reporting turn as authoritative. Do not sum per-turn `last` values when explaining scenario totals. Compare multiple runs only in a separate report-level artifact; do not pool separate executions into one run total.
 
 Every result should include token usage fields. If exact usage is unavailable, the fields should explicitly say unavailable and why.
 
@@ -194,14 +191,14 @@ Every result should include token usage fields. If exact usage is unavailable, t
 
 | Claim | Required support |
 |---|---|
-| Execution completed | `results.jsonl` side status plus per-side `final.md`, `turns.jsonl`, and `thread.json` |
+| Execution completed | `results.jsonl` scenario status plus `final.md`, `turns.jsonl`, and `thread.json` |
 | Deterministic pass | `tests.jsonl` rows with passing eval tests and no lint/test failures |
 | Judge pass | `grades.jsonl` rows where thresholds are satisfied; threshold failure overrides a judge's raw `pass: true` |
-| Human pass | `feedback.jsonl` rows with reviewer label, notes, scenario, and side |
+| Human pass | `feedback.jsonl` rows with reviewer label, notes, and scenario |
 | Release-ready | Fresh `report.json` readiness, human approval, and release metadata such as `release --from-run <run-id>` |
 
 ## Feedback
 
 Feedback rows are append-only JSONL. Use labels such as `pass`, `fail`, `needs_review`, and `defer`. `defer` is a human label, not a framework result status.
 
-When feedback motivates an edit, cite the run ID, scenario ID, side, label, first failure step, and notes in the improvement plan.
+When feedback motivates an edit, cite the run ID, scenario ID, label, first failure step, and notes in the improvement plan.

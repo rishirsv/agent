@@ -26,16 +26,16 @@ describe("App Server eval orchestration", () => {
       noLint: true,
       scenarioRunner: {
         async run(input) {
-          const sideRoot = path.join(input.runRoot, "scenarios", input.scenario.folder, input.side);
-          await fs.mkdir(sideRoot, { recursive: true });
-          await writeText(path.join(sideRoot, "final.md"), "ok");
-          await writeText(path.join(sideRoot, "rpc.jsonl"), "");
-          await writeJson(path.join(sideRoot, "thread.json"), { schema_version: 1, thread_id: "thread", turn_ids: ["turn-1"], status: "completed" });
+          const scenarioRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
+          await fs.mkdir(scenarioRoot, { recursive: true });
+          await writeText(path.join(scenarioRoot, "final.md"), "ok");
+          await writeText(path.join(scenarioRoot, "rpc.jsonl"), "");
+          await writeJson(path.join(scenarioRoot, "thread.json"), { schema_version: 1, thread_id: "thread", turn_ids: ["turn-1"], status: "completed" });
           return {
             status: "needs_review",
             token_usage: tokenSummary(1, 2, 3),
-            final_path: path.join(sideRoot, "final.md"),
-            evidence_path: path.join("scenarios", input.scenario.folder, input.side)
+            final_path: path.join(scenarioRoot, "final.md"),
+            evidence_path: path.join("scenarios", input.scenario.folder)
           };
         },
         close() {
@@ -108,7 +108,7 @@ describe("App Server eval orchestration", () => {
 
     assert.equal(result.ok, false);
     assert.equal(closed, true);
-    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "candidate")), false);
+    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "final.md")), false);
     const run = await readJson<{ status: string; ok: boolean; failure_classifications: string[] }>(path.join(result.runRoot, "run.json"));
     assert.equal(run.status, "failed");
     assert.equal(run.ok, false);
@@ -117,7 +117,7 @@ describe("App Server eval orchestration", () => {
     assert.equal(results[0]?.payload?.status, "errored");
     assert.equal(results[0]?.payload?.failure_classification, "app_server_unavailable");
     const events = await readText(path.join(result.runRoot, "events.jsonl"));
-    assert.match(events, /"type":"scenario_side_failed"/);
+    assert.match(events, /"type":"scenario_failed"/);
     assert.match(events, /"failure_classification":"app_server_unavailable"/);
     assert.match(events, /"available":false/);
   });
@@ -140,6 +140,42 @@ describe("App Server eval orchestration", () => {
     assert.equal(results[0]?.payload?.status, "failed");
     assert.equal(results[0]?.payload?.failure_classification, "scenario_failed");
     assert.equal(results[0]?.payload?.error, "Scenario assertions failed.");
+  });
+
+  it("runs unassisted scenarios without attaching a skill", async () => {
+    const project = await fixtureProject("eval-no-skill");
+    await writeScenario(project);
+    let sawNoSkill = false;
+    const result = await runEval({
+      project,
+      selector: {},
+      runSource: "no_skill",
+      noLint: true,
+      scenarioRunner: {
+        async run(input) {
+          sawNoSkill = !input.attachSkill && !input.skillRoot && input.runSource.kind === "no_skill";
+          const scenarioRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
+          await fs.mkdir(scenarioRoot, { recursive: true });
+          await writeText(path.join(scenarioRoot, "final.md"), "Unassisted final.");
+          await writeText(path.join(scenarioRoot, "rpc.jsonl"), "");
+          await writeJson(path.join(scenarioRoot, "thread.json"), { schema_version: 1, thread_id: "thread", turn_ids: ["turn"], status: "completed" });
+          return {
+            status: "passed",
+            token_usage: tokenSummary(1, 1, 2),
+            final_path: path.join(scenarioRoot, "final.md"),
+            evidence_path: path.join("scenarios", input.scenario.folder)
+          };
+        },
+        close() {}
+      }
+    });
+
+    assert.equal(result.ok, true);
+    assert.equal(sawNoSkill, true);
+    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "stage", "skill", "SKILL.md")), false);
+    const run = await readJson<{ run_source: { kind: string; attached_skill: boolean } }>(path.join(result.runRoot, "run.json"));
+    assert.equal(run.run_source.kind, "no_skill");
+    assert.equal(run.run_source.attached_skill, false);
   });
 
   it("marks runs failed when deterministic checks or judges fail", async () => {
@@ -234,7 +270,7 @@ describe("App Server eval orchestration", () => {
       scenarioRunner: scenarioRunner("passed")
     });
     const feedback = path.join(path.dirname(project), "feedback.jsonl");
-    await writeText(feedback, JSON.stringify({ scenario_id: "R1", side: "candidate", source: "reviewer", label: "fail", note: "Missing source grounding." }));
+    await writeText(feedback, JSON.stringify({ scenario_id: "R1", source: "reviewer", label: "fail", note: "Missing source grounding." }));
 
     const imported = await importFeedback(project, result.runId, feedback);
 
@@ -273,8 +309,8 @@ describe("App Server eval orchestration", () => {
     assert.equal(proof.projectRoot, project);
   });
 
-  it("covers release, release comparison, and release packaging without packaging .meta-skill", async () => {
-    const project = await fixtureProject("release-e2e");
+  it("runs a saved snapshot payload and packages it without packaging .meta-skill", async () => {
+    const project = await fixtureProject("snapshot-e2e");
     await writeScenario(project);
     const release = await releaseProject(project);
     assert.equal(await exists(path.join(release.releaseRoot, "skill", ".meta-skill")), false);
@@ -282,14 +318,16 @@ describe("App Server eval orchestration", () => {
     const result = await runEval({
       project,
       selector: {},
-      compare: "release",
+      runSource: "snapshot_payload",
       noLint: true,
       scenarioRunner: scenarioRunner("passed")
     });
 
     assert.equal(result.ok, true);
-    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "candidate", "final.md")), true);
-    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "release", "final.md")), true);
+    assert.equal(await exists(path.join(result.runRoot, "scenarios", "R1-basic", "final.md")), true);
+    const run = await readJson<{ run_source: { kind: string; label: string } }>(path.join(result.runRoot, "run.json"));
+    assert.equal(run.run_source.kind, "snapshot_payload");
+    assert.equal(run.run_source.label, "Saved snapshot payload");
     const outDir = path.join(path.dirname(project), "release-pkg");
     const packaged = await packageProject({ project, source: "release", outDir });
     assert.equal(await exists(path.join(packaged.artifact, "SKILL.md")), true);
@@ -300,18 +338,21 @@ describe("App Server eval orchestration", () => {
 function scenarioRunner(status: ScenarioRunResult["status"], error?: string) {
   return {
     async run(input: ScenarioRunInput): Promise<ScenarioRunResult> {
-      const sideRoot = path.join(input.runRoot, "scenarios", input.scenario.folder, input.side);
-      await fs.mkdir(path.join(sideRoot, "stage", "skill"), { recursive: true });
-      await writeText(path.join(sideRoot, "stage", "skill", "SKILL.md"), "fixture");
-      await writeText(path.join(sideRoot, "final.md"), "Fixture final.");
-      await writeText(path.join(sideRoot, "turns.jsonl"), "");
-      await writeJson(path.join(sideRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
-      await writeText(path.join(sideRoot, "rpc.jsonl"), "");
+      const scenarioRoot = path.join(input.runRoot, "scenarios", input.scenario.folder);
+      await fs.mkdir(scenarioRoot, { recursive: true });
+      if (input.attachSkill) {
+        await fs.mkdir(path.join(scenarioRoot, "stage", "skill"), { recursive: true });
+        await writeText(path.join(scenarioRoot, "stage", "skill", "SKILL.md"), "fixture");
+      }
+      await writeText(path.join(scenarioRoot, "final.md"), "Fixture final.");
+      await writeText(path.join(scenarioRoot, "turns.jsonl"), "");
+      await writeJson(path.join(scenarioRoot, "thread.json"), { schema_version: 1, thread_id: "fixture", turn_ids: ["turn"], status: "completed" });
+      await writeText(path.join(scenarioRoot, "rpc.jsonl"), "");
       return {
         status,
         token_usage: tokenSummary(1, 1, 2),
-        final_path: path.join(sideRoot, "final.md"),
-        evidence_path: path.join("scenarios", input.scenario.folder, input.side),
+        final_path: path.join(scenarioRoot, "final.md"),
+        evidence_path: path.join("scenarios", input.scenario.folder),
         error
       };
     },
@@ -322,7 +363,7 @@ function scenarioRunner(status: ScenarioRunResult["status"], error?: string) {
 function tokenSummary(input: number, output: number, total: number): TokenUsageSummary {
   return {
     availability: "present",
-    sample_unit: "scenario_side",
+    sample_unit: "scenario",
     sample_count: 1,
     unavailable_count: 0,
     input_tokens: { total: input, average: input, min: input, max: input },
