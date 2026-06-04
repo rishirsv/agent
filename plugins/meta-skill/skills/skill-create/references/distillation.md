@@ -47,6 +47,7 @@ These are the named patterns engagement-specific content takes when it slips int
 - **One-source overfit.** Rule's only support is the single past engagement being studied. Flag for human review; do not ship as a general rule.
 - **Encyclopedia bloat.** Rule restates general knowledge the base model already has. Example: "Use the indirect method for cash flow statements" — the model knows this; the value-add is what is specific about how this team applies it.
 - **Self-citation.** Rule cites the past output as authority for itself. The past output is evidence the rule was applied once; it is not authority for the rule's validity.
+- **Source-tool leakage.** Rule carries through another product, repo, command, plugin, skill, or internal namespace from the source material even though the generated skill should not directly use that dependency. Replace the named surface with the user-facing concept it represents. A provider-specific session-report command should become "generate a local session-insights report" unless the runtime actually calls that command.
 
 ## Rule Surface Form
 
@@ -57,7 +58,7 @@ Procedural rules survive across engagements. Instance-specific rules rot on firs
 - **Placeholder templates instead of literal values.** `BASE_PERIOD = <fiscal year of the deal>` instead of `BASE_PERIOD = "FY24"`.
 - **Discipline-style section headers.** "Normalization Discipline," "Tie-Out Discipline." Not "Steps for the Acme QoE."
 
-Concrete tokens that should never appear in a runtime rule extracted from source material: client names, deal sponsor names, dollar amounts, fiscal-year labels, file paths, identifying dates, target identifiers.
+Concrete tokens that should never appear in a runtime rule extracted from source material unless they are direct runtime dependencies: client names, deal sponsor names, dollar amounts, fiscal-year labels, file paths, identifying dates, target identifiers, repo names, product names, plugin names, skill names, command names, and provider-specific namespaces.
 
 ## Examples in the Runtime Skill
 

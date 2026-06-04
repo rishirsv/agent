@@ -11,7 +11,7 @@ Measure a reusable skill with `.meta-skill/cases/` and `.meta-skill/runs/`. This
 
 | Need | Read |
 |---|---|
-| Exact command syntax and examples | [cli.md](references/cli.md) |
+| Eval command examples and evidence semantics | [cli.md](references/cli.md) |
 | Human-authored judge rubrics | [judge-prompts.md](references/judge-prompts.md) |
 
 ## Beginner Path

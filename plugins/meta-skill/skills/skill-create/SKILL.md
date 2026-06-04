@@ -59,6 +59,7 @@ Single-shot creation is opt-in. If the user says "one shot," "no questions," or 
 ## Runtime Payload Rules
 
 - Keep build notes, review notes, raw source examples, and eval evidence out of the portable payload.
+- When source material names another product, repo, command, plugin, or skill, generalize it to the user-facing concept unless the generated skill directly invokes that dependency as part of its runtime workflow.
 - Quote or escape YAML frontmatter values when they contain punctuation.
 - `agents/openai.yaml` should use supported Codex metadata (`name` and `description`) unless a documented interface shape is intentionally used.
 - Add runtime references, scripts, or assets only when they are real reusable materials.

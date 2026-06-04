@@ -1,14 +1,4 @@
-Read this for exact Meta Skill eval command guidance.
-
-## Commands
-
-```bash
-meta-skill project init <project>
-meta-skill run <project> [--case <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--no-skill] [--with-judges] [--no-lint]
-meta-skill judge <project> --run <run-id> (--judge <id> | --all-judges) (--case <id> | --all-cases)
-meta-skill feedback import <project> --run <run-id> <feedback.jsonl>
-meta-skill report [run-id] [case-id] [--project <dir>] [--json]
-```
+Read this for eval command semantics and examples. The full command surface lives in the sibling skill-create [cli-conventions.md](../../skill-create/references/cli-conventions.md); do not invent commands or flags beyond it.
 
 ## Run Selection
 
@@ -21,7 +11,7 @@ meta-skill run . --topic source-faithfulness
 meta-skill run . --no-skill
 ```
 
-`run` freezes the current portable payload, freezes each selected `case.md`, writes per-case `rpc.jsonl` and `final.md`, appends facts to `facts.jsonl`, and prints the run report. `--no-skill` omits the payload and records control evidence.
+`run` freezes the current portable payload and each selected `case.md`, writes per-case `rpc.jsonl` and `final.md`, appends facts to `facts.jsonl`, and prints the run report. `--no-skill` omits the payload and records control evidence. Exit code is `1` when the run records errors.
 
 ## Lint And Judges
 
@@ -32,7 +22,7 @@ meta-skill judge . --run 001-working-payload --judge final-answer-quality --case
 meta-skill judge . --run 001-working-payload --all-judges --all-cases
 ```
 
-`lint --run` appends deterministic check observations to `facts.jsonl`. `judge` reads frozen run cases and final outputs, then appends judge observations to `facts.jsonl`.
+`lint --run` appends deterministic check observations to the run's `facts.jsonl`. `judge` reads frozen run cases and final outputs, then appends judge observations.
 
 ## Feedback
 
@@ -40,7 +30,7 @@ meta-skill judge . --run 001-working-payload --all-judges --all-cases
 meta-skill feedback import . --run 001-working-payload reviewer-feedback.jsonl
 ```
 
-Feedback rows are append-only facts. Use labels such as `note`, `accept`, `reject`, or any reviewer vocabulary that helps the user interpret the evidence.
+Each line is one JSON object preserved verbatim as a fact payload. Optional `case_id` links the row to a case; optional `source` names the reviewer.
 
 ## Reports
 
@@ -51,4 +41,4 @@ meta-skill report 001-working-payload R1
 meta-skill report 001-working-payload --json
 ```
 
-Reports are projections. JSON exposes `subject`, `missing`, `errors`, `usage`, `cases`, and `decisions`; Markdown may include human-facing case titles.
+Reports are projections over `facts.jsonl` and are never persisted. JSON exposes `subject`, `missing`, `errors`, `usage`, `cases`, and `decisions`, plus `runs` at project level. Markdown may include human-facing case titles.

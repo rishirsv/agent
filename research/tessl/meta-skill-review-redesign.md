@@ -4,7 +4,7 @@ Date: 2026-06-02
 
 ## Audience
 
-Future agents implementing Meta Skill review changes in `/Users/rishi/Code/perks/plugins/meta-skill`.
+Future agents implementing Meta Skill review changes in `/Users/rishi/Code/agent/plugins/meta-skill`.
 
 ## Source Context
 
@@ -14,7 +14,6 @@ This note captures a live comparison between Meta Skill and Tessl's skill qualit
 - Tessl registry example: `https://tessl.io/registry/skills/github/softaworks/agent-toolkit/react-dev/quality?showAll=`
 - Meta Skill source:
   - `plugins/meta-skill/cli/src/lint.ts`
-  - `plugins/meta-skill/cli/src/review.ts`
   - `plugins/meta-skill/skills/skill-create/`
   - `plugins/meta-skill/skills/skill-improve/`
   - `plugins/meta-skill/skills/skill-eval/`
@@ -29,7 +28,7 @@ This note captures a live comparison between Meta Skill and Tessl's skill qualit
   - per-vector reasoning
   - clear percentages and pass/warning/fail rows
   - concrete suggestions tied to the scored vectors
-- `meta-skill review` should run deterministic lint first, then invoke a dedicated reviewer subagent to judge the skill against the rubric.
+- A future `meta-skill review` should run deterministic lint first, then invoke a dedicated reviewer subagent to judge the skill against the rubric.
 - The reviewer must be read-only. It can inspect skill files, linked references/scripts/assets, and lint output, but it must not edit the skill.
 - Review output is evidence for `skill-improve`; applying changes remains a separate human-approved improve/promote step.
 - Keep Meta Skill's workbench/eval/test/judge checks. Tessl's validation surface is strong for Agent Skills spec checks, but Meta Skill already has deeper `.meta-skill/` lifecycle validation.
@@ -51,7 +50,7 @@ This note captures a live comparison between Meta Skill and Tessl's skill qualit
 - runtime-script unit-test coverage warnings
 - optional eval-run annotations into saved run evidence
 
-`meta-skill review` currently uses a heuristic local scorer in `cli/src/review.ts` with these rough dimensions:
+The old `meta-skill review` command used a heuristic local scorer in `src/review.ts` with these rough dimensions:
 
 - `activation_quality`
 - `boundary_clarity`
@@ -62,7 +61,7 @@ This note captures a live comparison between Meta Skill and Tessl's skill qualit
 - `resource_and_script_hygiene`
 - `eval_and_lint_readiness`
 
-This is useful but too shallow compared with Tessl's review artifact. It does not provide enough per-vector reasoning, does not mirror the Discovery / Implementation / Validation shape, and is not a real judge pass.
+That fallback has been removed from the runtime CLI until review facts exist. It was too shallow compared with Tessl's review artifact, did not provide enough per-vector reasoning, did not mirror the Discovery / Implementation / Validation shape, and was not a real judge pass.
 
 ## Tessl Review Shape To Adopt
 
@@ -247,7 +246,7 @@ The subagent should return structured JSON plus a Markdown report:
 
 ## CLI Behavior
 
-Target command:
+Future target command:
 
 ```bash
 meta-skill review <project> [--json]
@@ -269,7 +268,7 @@ Expected flow:
    - optionally `lint.json`
    - optionally reviewer transcript/metadata if available
 6. Print quality summary and next step:
-   - if suggestions exist: `meta-skill plan <project> --from-review <review-id>`
+   - if suggestions exist: point the user at evidence-backed improvement work
    - if no issues: say no material review issues found
 
 Do not edit files during review.
@@ -314,7 +313,7 @@ Does the skill satisfy structural and packaging expectations?
 
 ## Implementation Notes
 
-- Replace or heavily revise `plugins/meta-skill/cli/src/review.ts`.
+- Add a real review producer only when reviewer-backed facts exist; do not restore the heuristic fallback.
 - Update `plugins/meta-skill/cli/src/report.ts` so review reports render the new bucketed shape.
 - Preserve existing `meta-skill lint` output; add missing deterministic checks in `lint.ts` only when they are truly deterministic.
 - Add tests for the new review data shape and report rendering.
@@ -324,19 +323,19 @@ Does the skill satisfy structural and packaging expectations?
   - `plugins/meta-skill/cli/src/commands.ts`: `meta-skill v1`
   - `plugins/meta-skill/skills/skill-create/references/cli-conventions.md`: "V1 uses..."
   - `plugins/meta-skill/skills/skill-create/references/cli-conventions.md`: "Do not suggest command namespaces outside the v1 surface above."
-  - `plugins/meta-skill/skills/skill-eval/references/review-design.md`: "V1 has no sealed release gate."
-  - `plugins/meta-skill/skills/skill-eval/references/review-files.md`: "Scenarios may have no tests or judges in v1..."
+  - `research/tessl/review/review-design.md`: "V1 has no sealed release gate."
+  - `research/tessl/review/review-files.md`: "Scenarios may have no tests or judges in v1..."
 - Upgrade the Meta Skill CLI reference to closely match Tessl's CLI reference style: clear command grouping, usage, arguments, flags, examples, output, and common failure notes.
 
 ## Relationship To Improve
 
-`review` creates evidence. `improve` acts on evidence.
+Future review should create facts. Improve acts on evidence.
 
 The expected improvement chain becomes:
 
 ```text
 meta-skill review .
-meta-skill plan . --from-review <review-id>
+meta-skill plan . --from-run <run-id>
 meta-skill promote . --plan <plan-id>
 meta-skill decide . --session <session-id> --accept
 meta-skill lint .

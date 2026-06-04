@@ -23,7 +23,7 @@ Do not suggest command namespaces outside the supported surface above.
 
 ## Path Model
 
-The project root is also the current portable candidate payload. It contains `SKILL.md` plus optional `agents/`, `references/`, `scripts/`, and `assets/`.
+The project root is also the current portable payload. It contains `SKILL.md` plus optional `agents/`, `references/`, `scripts/`, and `assets/`.
 
 Workbench state lives under `.meta-skill/`. Commands must not create alternate root-level workbench folders.
 
@@ -32,7 +32,7 @@ Installed skill copies are runtime state, not canonical source. Prefer the sourc
 ## Output And Exit Codes
 
 - `0`: success, including success with advisory warnings.
-- `1`: invalid project state, failed deterministic check, unavailable runner, or blocked human-gated action.
+- `1`: invalid project state, failed deterministic check, or unavailable runner.
 - `2`: usage error, unknown command, or bad flags.
 
 Human-readable results print to stdout. Errors print to stderr. Use `--json` only where the command supports machine-readable output.
@@ -43,7 +43,7 @@ Commands may prepare evidence and packages, but the human gate remains explicit.
 
 ## Evidence Rules
 
-Run IDs are readable sequenced folders such as `001-initial-candidate`. Treat them as opaque once created.
+Run IDs are readable sequenced folders such as `001-working-payload`. Treat them as opaque once created.
 
 Every eval run records unavailable token metrics explicitly when exact usage cannot be collected. Do not hide missing usage fields.
 
