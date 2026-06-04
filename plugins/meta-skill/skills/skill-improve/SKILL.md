@@ -1,6 +1,6 @@
 ---
 name: skill-improve
-description: Use when reviewing, patching, or recording decisions for an existing skill from lint, eval, judge, trace, artifact, or human-feedback evidence; not for creating new skills, running eval cases, autonomous rewrites, packaging, installing, or publishing.
+description: Use when reviewing, patching, or recording decisions for an existing skill from lint, eval, judge, trace, saved evidence file, or human-feedback evidence; not for creating new skills, running eval cases, autonomous rewrites, packaging, installing, or publishing.
 ---
 
 # Skill Improve
@@ -18,7 +18,7 @@ Improve an existing skill with evidence and restraint. This lane owns best-pract
 ## Runtime Contract
 
 - Use `.meta-skill/` as the workbench.
-- Require evidence before patching: lint output, eval run ID, case ID, test failure, judge note, trace, artifact, or human feedback. Each edit should cite at least one evidence reference.
+- Require evidence before patching: lint output, eval run ID, case ID, test failure, judge note, trace, saved evidence file, or human feedback. Each edit should cite at least one evidence reference.
 - Do not invent proof, auto-apply edits, package, install, or publish.
 - Treat completed eval execution as evidence only, not pass proof. Before editing from it, name what ran, what facts/files exist, and what the evidence shows.
 
@@ -41,7 +41,7 @@ Read [prompt-doctor.md](references/prompt-doctor.md) before non-trivial edits.
 - Read the skill before changing it.
 - Keep the smallest useful change tied to evidence.
 - Preserve trigger meaning, output contract, tone, and unrelated resources unless they are the problem.
-- Update `.meta-skill/spec.md` when behavior changes.
+- Update `SKILL.md`, relevant references, cases, deterministic tests, and `.meta-skill/spec.md` when the change affects their stated behavior or eval intent.
 - Rerun `meta-skill lint` and relevant `meta-skill run` cases after edits.
 
 ## Output

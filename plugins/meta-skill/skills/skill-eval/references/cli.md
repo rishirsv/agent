@@ -11,7 +11,7 @@ meta-skill run . --topic source-faithfulness
 meta-skill run . --no-skill
 ```
 
-`run` freezes the current portable payload and each selected `case.md`, writes per-case `rpc.jsonl` and `final.md`, appends facts to `facts.jsonl`, and prints the run report. `--no-skill` omits the payload and records control evidence. Exit code is `1` when the run records errors.
+`run` freezes the current portable payload and each selected `case.md`, writes per-case `rpc.jsonl`, `trajectory.json`, and `final.md`, appends facts to `facts.jsonl`, records token usage on case trial facts, and prints the run report. `--no-skill` omits the payload and records control evidence. Exit code is `1` when the run records errors.
 
 ## Lint And Judges
 
@@ -41,4 +41,8 @@ meta-skill report 001-working-payload R1
 meta-skill report 001-working-payload --json
 ```
 
-Reports are projections over `facts.jsonl` and are never persisted. JSON exposes `subject`, `missing`, `errors`, `usage`, `cases`, and `decisions`, plus `runs` at project level. Markdown may include human-facing case titles.
+Reports are projections over `facts.jsonl` plus referenced case evidence and are never persisted. JSON exposes `subject`, `missing`, `errors`, `usage`, `cases`, and `decisions`, plus `runs` at project level. Markdown may include human-facing case titles and compact trajectory summaries.
+
+## Current Boundaries
+
+Use the top-level commands from `cli-conventions.md`, manually authored `R`/`F`/`G` cases, one execution source per run, printed reports, read-only App Server evidence, and direct TypeScript runtime validation.

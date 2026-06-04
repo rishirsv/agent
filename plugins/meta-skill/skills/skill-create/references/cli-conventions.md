@@ -19,7 +19,7 @@ meta-skill decide <project> --run <run-id> --evidence <path[:line]> [--evidence 
 meta-skill package <project> [--out <zip>] [--out-dir <dir>]
 ```
 
-Do not suggest command namespaces outside the supported surface above.
+Use the supported surface above for command examples and workflow guidance.
 
 ## Path Model
 
@@ -39,7 +39,7 @@ Human-readable results print to stdout. Errors print to stderr. Use `--json` onl
 
 ## Human Gates
 
-Commands may prepare evidence and packages, but the human gate remains explicit. Require user approval before package, install, publish, sync, external writes, or source edits.
+Commands may prepare evidence and packages, but the human gate remains explicit. Evidence-backed source edits are allowed when the user asks for edit mode. Require user approval before packaging, installing, publishing, syncing, external writes, or promoting a candidate as accepted.
 
 ## Evidence Rules
 
@@ -47,4 +47,4 @@ Run IDs are readable sequenced folders such as `001-working-payload`. Treat them
 
 Every eval run records unavailable token metrics explicitly when exact usage cannot be collected. Do not hide missing usage fields.
 
-Case authoring is manual. Do not present generated cases, automated uplift scores, or trigger-routing proof as supported until the runner has those modes.
+Case authoring is manual. Current eval reports are printed projections over saved facts and case evidence. Current eval guidance uses manually authored cases, one execution source per run, read-only App Server evidence, and direct TypeScript runtime validation.
