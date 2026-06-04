@@ -21,7 +21,7 @@ The observable outcome is simple: after implementation, a user can run `node scr
 
 ## Progress
 
-- [x] (2026-06-02 23:20Z) PR #19 merged the Meta Skill package reshape, so this plan targets the root package layout under `plugins/meta-skill/src/`, `plugins/meta-skill/app/`, and `plugins/meta-skill/scripts/meta-skill.js`.
+- [x] (2026-06-02 23:20Z) PR #19 merged the Meta Skill package reshape, so this plan targets the root package layout under `plugins/meta-skill/src/` and `plugins/meta-skill/scripts/meta-skill.js`.
 - [x] (2026-06-02 23:30Z) Reviewed the prior chat-first router draft and the code review comments. The prior design duplicated the `AGENTS.md` orchestrator and overfit a CLI-side natural-language router.
 - [x] (2026-06-02 23:50Z) Reframed the feature as one unified reporting path that is agnostic of lifecycle stage and dynamically renders the relevant view.
 - [x] (2026-06-02 23:55Z) Inspected current report producers: `plugins/meta-skill/src/lint.ts`, `plugins/meta-skill/src/review.ts`, `plugins/meta-skill/src/report.ts`, `plugins/meta-skill/src/eval/runs.ts`, `plugins/meta-skill/src/versions.ts`, and `plugins/meta-skill/src/package.ts`.
@@ -32,7 +32,7 @@ The observable outcome is simple: after implementation, a user can run `node scr
 - [ ] Add `meta-skill report` to the command dispatcher with `--run`, `--view`, and `--json`.
 - [ ] Update Meta Skill skill guidance so agents use `meta-skill report --json` as the default state read before answering broad status, eval, review, improvement, release, or next-step questions.
 - [ ] Add focused tests that prove the report is stage-agnostic, fast, read-only, and safe.
-- [ ] Rebuild committed runtime and validate with `npm test`, CLI smoke commands, and `git diff --check`.
+- [ ] Validate with `npm test`, `npm run typecheck`, CLI smoke commands, and `git diff --check`.
 
 ## Surprises & Discoveries
 
@@ -101,7 +101,7 @@ No implementation has happened yet. When implementation completes, record what t
 
 ## Context and Orientation
 
-Meta Skill is a Codex plugin under `plugins/meta-skill/`. Its CLI is written in TypeScript. Source files live in `plugins/meta-skill/src/`; compiled runtime files live in `plugins/meta-skill/app/`; `plugins/meta-skill/scripts/meta-skill.js` runs the compiled CLI. The package root is `plugins/meta-skill/`.
+Meta Skill is a Codex plugin under `plugins/meta-skill/`. Its CLI is written in TypeScript. Source files live and run directly in `plugins/meta-skill/src/`; `plugins/meta-skill/scripts/meta-skill.js` imports `src/main.ts`. The package root is `plugins/meta-skill/`.
 
 A portable skill project is a directory containing `SKILL.md`. A maintained skill project can also contain `.meta-skill/`, the hidden workbench that stores authoring and evidence state. Important workbench folders are:
 
@@ -366,7 +366,7 @@ Update `plugins/meta-skill/skills/skill-eval/SKILL.md` so interpretation guidanc
 
 while still naming raw files for deep inspection. Update `plugins/meta-skill/skills/skill-improve/SKILL.md` so evidence-backed planning can cite the unified report plus the underlying run/review IDs. Update `plugins/meta-skill/skills/skill-create/references/cli-conventions.md` to list `meta-skill report`.
 
-If any source skill files under `plugins/meta-skill/skills/` change, rebuild the plugin runtime as usual. Do not hand-edit generated plugin mirrors under `plugins/codex/agent/` or `plugins/claude/agent/`.
+If any source skill files under `plugins/meta-skill/skills/` change, run native TypeScript validation. Do not hand-edit generated plugin mirrors under `plugins/codex/agent/` or `plugins/claude/agent/`.
 
 This milestone is complete when the skill text teaches agents to excerpt relevant report views, not dump full report JSON or duplicate lifecycle reasoning.
 
@@ -406,7 +406,7 @@ If source skill guidance changes and repository sync rules require it, run:
 
     scripts/sync-plugins.sh
 
-This milestone is complete when all tests pass, compiled runtime in `plugins/meta-skill/app/` is current, and `git diff --check` reports no whitespace errors.
+This milestone is complete when all tests and typecheck pass, and `git diff --check` reports no whitespace errors.
 
 ## Concrete Steps
 
@@ -488,7 +488,7 @@ On a skill with a release snapshot and a newer run, `meta-skill report <project>
 
 Existing `meta-skill review`, `meta-skill eval open`, `meta-skill eval list`, and `meta-skill eval view` tests continue to pass.
 
-`npm test` from `plugins/meta-skill/` passes and `npm run check:app` finds no compiled runtime drift.
+`npm test` and `npm run typecheck` from `plugins/meta-skill/` pass.
 
 `git diff --check` passes from the repository root.
 
@@ -508,7 +508,7 @@ If a report needs fresher eval evidence, it should recommend the existing eviden
     meta-skill eval judge <project> --run <run-id> ...
     meta-skill lint <project> --run <run-id>
 
-If build output drifts, run `npm test` from `plugins/meta-skill/`; the test script rebuilds `app/` and then checks that committed runtime matches source.
+If native TypeScript validation fails, run `npm test` and `npm run typecheck` from `plugins/meta-skill/` and fix `src/` directly.
 
 If implementation touches generated plugin mirrors under `plugins/codex/agent/` or `plugins/claude/agent/`, stop and remove those generated edits unless a deliberate sync step was requested. The source of this feature is `plugins/meta-skill/`.
 

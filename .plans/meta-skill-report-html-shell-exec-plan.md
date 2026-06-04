@@ -17,7 +17,7 @@ After this change, `.meta-skill/evals/runs/<run-id>/report.html` is a small stat
 - [x] (2026-06-03) Ran the Interface Craft slop detector on the prototype and removed card/dashboard/side-stripe patterns.
 - [x] (2026-06-03) Implemented renderer adapter and static app shell in `plugins/meta-skill/src/report.ts`.
 - [x] (2026-06-03) Added focused rendering tests in `plugins/meta-skill/src/reporting.test.ts`.
-- [x] (2026-06-03) Rebuilt `plugins/meta-skill/app/` and ran validation.
+- [x] (2026-06-03) Ran native TypeScript validation.
 - [x] (2026-06-03) Inspected generated `report.html` in Codex Browser and iterated on design/functionality.
 
 ## Source Grounding
@@ -39,8 +39,8 @@ Current implementation:
   - This is the right home for renderer shell assertions and legacy/minimal compatibility tests.
 
 - `plugins/meta-skill/package.json`
-  - `npm test` runs build-test, node tests, production build, and `check:app`.
-  - Any TypeScript source change should leave generated `plugins/meta-skill/app/` in sync.
+  - `npm test` runs Node tests directly against `src/`.
+  - Any TypeScript source change should pass `npm run typecheck` with `erasableSyntaxOnly`.
 
 Existing V1 design artifacts:
 
@@ -461,7 +461,7 @@ If `skills/`, `.codex/agents/`, `assets/agent/`, or `AGENTS.md` changes during i
 scripts/sync-plugins.sh
 ```
 
-This plan should not require plugin sync if only `plugins/meta-skill/src/`, `plugins/meta-skill/app/`, tests, and `.plans/` change.
+This plan should not require plugin sync if only `plugins/meta-skill/src/`, tests, and `.plans/` change.
 
 ## Risks And Mitigations
 
@@ -491,10 +491,10 @@ Mitigation: retain `normalizeRunTokenUsageSummaryForRender()` compatibility and 
 
 ## Outcomes & Retrospective
 
-- Final files changed for this plan: `plugins/meta-skill/src/report.ts`, `plugins/meta-skill/src/reporting.test.ts`, and generated `plugins/meta-skill/app/report.js`.
+- Final files changed for this plan: `plugins/meta-skill/src/report.ts`, `plugins/meta-skill/src/reporting.test.ts`.
 - The renderer now builds a private V1 app model, embeds it safely as JSON, renders a no-dependency static shell, keeps a server-rendered default scenario, and uses inline JavaScript only for search, filtering, and selection.
 - The shell selects failed scenarios before `needs_review` and passed scenarios, keeps candidate/release token usage separate, exposes raw evidence links, preserves legacy token availability rendering, and omits a visible V1 artifact section.
-- Validation run from `plugins/meta-skill/`: `npm test` passed, including production build and `check:app`.
+- Validation run from `plugins/meta-skill/`: `npm test` passed.
 - Validation run from repo root: `git diff --check` passed.
 - Interface Craft slop detector run on `.plans/meta-skill-report-shell-prototype.html`: passed with no slop patterns.
 - Generated a representative `report.html`, served it over localhost, opened it in Codex Browser, and iterated on the UI from the live DOM and browser-visible page.

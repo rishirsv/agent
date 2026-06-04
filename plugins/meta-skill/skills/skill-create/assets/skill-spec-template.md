@@ -35,7 +35,7 @@ Delete this section if the input shape is obvious from the trigger.
 ## Boundaries And Gates
 
 - Review posture: <report-only vs edit>
-- Human gates: <package, install, publish, sync, release, promote, external write>
+- Human gates: <package, install, publish, sync, source edit, external write>
 - Anti-patterns: <specific mistakes worth preserving against>
 
 ## Runtime Payload

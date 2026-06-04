@@ -10,7 +10,7 @@ import {
   readText,
   requirePortableSkill,
   writeText
-} from "./project";
+} from "./project.ts";
 
 export interface CreateSkillOptions {
   target?: string;

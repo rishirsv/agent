@@ -1,9 +1,10 @@
 import path from "node:path";
-import type { EventEnvelope, RunIndexRow, RunReport } from "../models";
-import { CliError, appendJsonl, eventEnvelope, exists, projectPaths, readText, requirePortableSkill } from "../project";
-import { listRunSummariesForReport, openRunForReport } from "../reporting";
+import { appendFact } from "../facts.ts";
+import type { EvidenceReport } from "../models.ts";
+import { CliError, exists, projectPaths, readText, requirePortableSkill } from "../project.ts";
+import { buildProjectEvidenceReport, buildRunEvidenceReport, latestRunId } from "../report.ts";
 
-export async function importFeedback(project: string, runId: string, feedbackFile: string): Promise<{ rows: number; report: string }> {
+export async function importFeedback(project: string, runId: string, feedbackFile: string): Promise<{ rows: number }> {
   const root = await requirePortableSkill(project);
   const p = projectPaths(root);
   const runRoot = path.join(p.runs, runId);
@@ -17,30 +18,29 @@ export async function importFeedback(project: string, runId: string, feedbackFil
     } catch {
       throw new CliError(`invalid feedback JSONL row: ${line.slice(0, 120)}`);
     }
-    const envelope: EventEnvelope =
-      parsed.schema_version === 1 && typeof parsed.type === "string"
-        ? (parsed as unknown as EventEnvelope)
-        : eventEnvelope({ type: "human_feedback", run_id: runId, source: String(parsed.source || "feedback-import"), payload: parsed });
-    await appendJsonl(path.join(runRoot, "feedback.jsonl"), envelope);
+    const caseId = parsed.case_id ? String(parsed.case_id) : undefined;
+    await appendFact(runRoot, {
+      type: "feedback_imported",
+      run_id: runId,
+      ...(caseId ? { case_id: caseId } : {}),
+      source: String(parsed.source || "feedback-import"),
+      payload: parsed
+    });
     rows += 1;
   }
-  const refreshed = await refreshRunEvidence(root, runId);
-  return { rows, report: refreshed.report };
+  return { rows };
 }
 
 export async function listRuns(project: string): Promise<string[]> {
-  const rows = await listRunSummaries(project);
-  return rows.map((row) => row.run_id);
+  const report = await buildProjectEvidenceReport(project);
+  return (report.runs || []).map((row) => row.id);
 }
 
-export async function listRunSummaries(project: string, options: { limit?: number; status?: string } = {}): Promise<RunIndexRow[]> {
-  return listRunSummariesForReport(project, options, "refresh-if-missing");
-}
-
-export async function openRun(project: string, runId?: string): Promise<{ report: string; reportJson: string; runId: string; data: RunReport }> {
-  return openRunForReport(project, runId, "refresh");
-}
-
-export async function refreshRunEvidence(project: string, runId: string): Promise<{ report: string; reportJson: string; runId: string; data: RunReport }> {
-  return openRunForReport(project, runId, "refresh");
+export async function openRun(project: string, runId?: string, caseId?: string): Promise<{ runId: string; data: EvidenceReport }> {
+  const root = await requirePortableSkill(project);
+  const selected = runId || (await latestRunId(root));
+  if (!selected) throw new CliError("no runs found; run `meta-skill run <project>` first");
+  const runRoot = path.join(projectPaths(root).runs, selected);
+  if (!(await exists(runRoot))) throw new CliError(`run does not exist: ${selected}`);
+  return { runId: selected, data: await buildRunEvidenceReport(runRoot, { caseId }) };
 }

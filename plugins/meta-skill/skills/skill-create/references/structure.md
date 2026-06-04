@@ -44,10 +44,6 @@ Project mode adds hidden authoring state:
       manifest.json
       unit/
       eval/
-    versions/release/
-    reviews/
-    plans/
-    sessions/
 ```
 
 Use `meta-skill create --project ...` for new project-mode skills and `meta-skill project init <skill-dir>` for an existing portable skill.
@@ -58,7 +54,7 @@ Do not create alternate root-level workbench folders.
 
 A runtime resource earns its place when it prevents repeated mistakes, saves tokens, standardizes fragile output, or performs deterministic work better than prose.
 
-Keep a file in `.meta-skill/` when it is build reasoning, raw examples, eval evidence, review notes, improvement plans, release metadata, or local test harness state.
+Keep a file in `.meta-skill/` when it is build reasoning, raw examples, eval evidence, decision evidence, or local test state.
 
 ## References
 
@@ -91,4 +87,4 @@ Use `assets/` only for approved reusable runtime materials such as templates, sc
 
 ## Packaging
 
-`meta-skill package` exports only the portable payload from the candidate root or `.meta-skill/versions/release/skill/`. It excludes `.meta-skill/` and writes package metadata next to the artifact.
+`meta-skill package` exports only the portable payload from the project root. It excludes `.meta-skill/` and writes package metadata next to the artifact.

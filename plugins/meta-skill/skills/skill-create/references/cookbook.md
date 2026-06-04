@@ -154,7 +154,7 @@ Use when the skill classifies risk or decides escalation.
 ```md
 ## Severity
 
-- High: likely changes a conclusion, release decision, or external-facing artifact.
+- High: likely changes a conclusion, publication decision, or external-facing artifact.
 - Medium: likely causes reviewer rework or weakens support.
 - Low: clarity, formatting, or minor consistency issue.
 

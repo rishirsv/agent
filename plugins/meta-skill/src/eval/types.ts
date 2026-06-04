@@ -1,5 +1,5 @@
-import type { AppServerCaseRunner } from "../app-server/runner";
-import type { CaseRecord, EvalRunSourceKind } from "../models";
+import type { AppServerCaseRunner } from "../app-server/runner.ts";
+import type { CaseRecord, EvalRunSourceKind } from "../models.ts";
 
 export interface EvalSelector {
   case?: string[];
@@ -40,10 +40,10 @@ export interface JudgeExecutionInput {
 
 export type RunFailureClassification =
   | "app_server_unavailable"
-  | "harness_unavailable"
+  | "runner_unavailable"
   | "judge_failure"
   | "lint_test_failure"
-  | "case_failed";
+  | "case_error";
 
 export interface JudgeRunResult {
   annotations: number;

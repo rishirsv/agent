@@ -31,13 +31,14 @@ Do not let a broad review request become an unbounded rewrite.
 Valid improvement evidence includes:
 
 - `meta-skill lint` failures or warnings
-- `.meta-skill/reviews/<review-id>/review.json`
-- `.meta-skill/evals/runs/<run-id>/results.jsonl`
+- `.meta-skill/evals/runs/<run-id>/facts.jsonl`
+- `.meta-skill/evals/runs/<run-id>/cases/<case-folder>/final.md`
+- `.meta-skill/evals/runs/<run-id>/cases/<case-folder>/rpc.jsonl`
 - `tests.jsonl`, `grades.jsonl`, or `feedback.jsonl`
 - case `case.md`, criteria, trace, final output, or artifacts
 - concrete user-observed failure
 
-If evidence is missing, ask the user to run `meta-skill lint`, `meta-skill review`, or `meta-skill eval run`, or to authorize a manual review path.
+If evidence is missing, ask the user to run `meta-skill lint` or `meta-skill run`, or to authorize a manual review path.
 
 ## Review Lanes
 
@@ -46,8 +47,8 @@ Use only lanes relevant to the request:
 - Activation: trigger clarity, realistic phrasing, near misses, non-trigger boundary.
 - Runtime clarity: default path, output contract, stop/ask points, final checks.
 - Resources: linked references/scripts/assets, dependency clarity, source leakage, stale files.
-- Controls: user files as data, approval gates, external writes, release/package gates.
-- Eval readiness: `.meta-skill/evals/` cases, `.meta-skill/tests/manifest.json`, judge quality, token usage visibility.
+- Controls: user files as data, approval gates, external writes, package/publish gates.
+- Eval evidence: `.meta-skill/evals/` cases, `.meta-skill/tests/manifest.json`, judge quality, token usage visibility.
 
 ## Prompt Doctor Loop
 
@@ -57,7 +58,7 @@ Use only lanes relevant to the request:
 4. Propose no more than four candidate edits.
 5. Apply only the smallest useful change that removes the ambiguity or wrong encouragement.
 6. Add a broad rule only when the agent would likely repeat the mistake without it.
-7. Record changed behavior, evidence, rejected tempting edits, and residual risk in `.meta-skill/spec.md` or the plan/session evidence.
+7. Record changed behavior, evidence, rejected tempting edits, and residual risk in `.meta-skill/spec.md` or the run decision evidence.
 
 Prefer replacing a misleading sentence over adding a prohibition. Preserve unrelated behavior.
 
@@ -88,17 +89,13 @@ Avoid vague findings like "make it clearer." Name the phrase, section, or eviden
 ## Command Flow
 
 ```bash
-meta-skill review .
-meta-skill plan . --from-review <review-id>
-meta-skill plan . --from-run <run-id>
-meta-skill promote . --plan <plan-id>
-meta-skill decide . --session <session-id> --accept
+meta-skill decide . --run <run-id> --evidence <path[:line]> --commit <sha> --accept
 ```
 
-`plan` records a bounded candidate and does not edit source. `promote` applies a human-approved plan to the working payload and does not release. `decide` records human intent.
+Edit the working payload directly, let the human approve the git diff, then use `decide` to record the evidence reference and approved commit.
 
 ## Output Contracts
 
-For review-only mode, report verdict, findings ordered by severity, exact suggested replacements, validation commands, and risks intentionally left unresolved.
+For review-only mode, report findings ordered by severity, exact suggested replacements, validation commands, and risks intentionally left unresolved.
 
 For edit mode, report files changed, behavior preserved, behavior changed, validation run and result, and residual risk.

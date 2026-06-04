@@ -3,13 +3,16 @@ import { createHash } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { promisify } from "node:util";
-import type { EvalManifest, EventEnvelope, TestManifest } from "./models";
+import type { EvalManifest, TestManifest } from "./models.ts";
 
 const execFileAsync = promisify(execFile);
 
 export class CliError extends Error {
-  constructor(message: string, public exitCode = 1) {
+  exitCode: number;
+
+  constructor(message: string, exitCode = 1) {
     super(message);
+    this.exitCode = exitCode;
   }
 }
 
@@ -139,13 +142,7 @@ export function projectPaths(projectRoot: string) {
     tests: path.join(meta, "tests"),
     testManifest: path.join(meta, "tests", "manifest.json"),
     unitTests: path.join(meta, "tests", "unit"),
-    evalTests: path.join(meta, "tests", "eval"),
-    versions: path.join(meta, "versions"),
-    release: path.join(meta, "versions", "release"),
-    releaseSkill: path.join(meta, "versions", "release", "skill"),
-    reviews: path.join(meta, "reviews"),
-    plans: path.join(meta, "plans"),
-    sessions: path.join(meta, "sessions")
+    evalTests: path.join(meta, "tests", "eval")
   };
 }
 
@@ -169,16 +166,11 @@ export async function createWorkbench(projectRoot: string, options: { force?: bo
   await ensureDir(p.runs);
   await ensureDir(p.unitTests);
   await ensureDir(p.evalTests);
-  await ensureDir(p.versions);
-  await ensureDir(p.releaseSkill);
-  await ensureDir(p.reviews);
-  await ensureDir(p.plans);
-  await ensureDir(p.sessions);
 
   if (options.force || !(await exists(p.spec))) {
     await writeText(
       p.spec,
-      `# ${skillName} Meta Skill Spec\n\n## Purpose\n\nRecord why this skill exists, the workflow boundary, and the release/eval intent.\n\n## Boundaries\n\n- Portable payload lives at the project root.\n- Authoring workbench state lives under \`.meta-skill/\`.\n\n## Open Questions\n\n- None recorded yet.\n`
+      `# ${skillName} Meta Skill Spec\n\n## Purpose\n\nRecord why this skill exists, the workflow boundary, and the eval intent.\n\n## Boundaries\n\n- Portable payload lives at the project root.\n- Authoring workbench state lives under \`.meta-skill/\`.\n\n## Open Questions\n\n- None recorded yet.\n`
     );
   }
 
@@ -291,13 +283,5 @@ export function unavailableTokenUsage(reason: string) {
     reasoning_tokens: null,
     model_context_window: null,
     unavailable_reason: reason
-  };
-}
-
-export function eventEnvelope(input: Omit<EventEnvelope, "schema_version" | "created_at"> & { created_at?: string }): EventEnvelope {
-  return {
-    schema_version: 1,
-    created_at: input.created_at || utcNow(),
-    ...input
   };
 }

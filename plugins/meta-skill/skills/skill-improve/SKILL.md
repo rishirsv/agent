@@ -1,11 +1,11 @@
 ---
 name: skill-improve
-description: Use when reviewing, planning, patching, promoting, or recording decisions for an existing skill from lint, review, eval, judge, trace, artifact, or human-feedback evidence; not for creating new skills, running eval cases, autonomous rewrites, or silent release.
+description: Use when reviewing, patching, or recording decisions for an existing skill from lint, eval, judge, trace, artifact, or human-feedback evidence; not for creating new skills, running eval cases, autonomous rewrites, packaging, installing, or publishing.
 ---
 
 # Skill Improve
 
-Improve an existing skill with evidence and restraint. This lane owns best-practice review, bounded plans, human-approved promotion into the working portable payload, and accept/reject decision records.
+Improve an existing skill with evidence and restraint. This lane owns best-practice review, evidence-backed edits to the working portable payload, and accept/reject decision records.
 
 ## Reference Map
 
@@ -18,33 +18,20 @@ Improve an existing skill with evidence and restraint. This lane owns best-pract
 ## Runtime Contract
 
 - Use `.meta-skill/` as the workbench.
-- Use `.meta-skill/reviews/` for best-practice review output.
-- Use `.meta-skill/plans/` for bounded improvement plans.
-- Use `.meta-skill/sessions/` for promotion and decision records.
-- Require evidence before planning a patch: lint output, review ID, eval run ID, case ID, test failure, judge note, trace, artifact, or human feedback. Each planned edit should cite at least one evidence reference.
-- Do not invent proof, auto-promote, release, package, install, or publish.
-- Treat completed eval execution without a verdict as evidence only, not pass proof. Before planning or promoting from it, name what ran, what evidence exists, and whether deterministic tests, judge approval, or human feedback recorded a pass/fail verdict.
+- Require evidence before patching: lint output, eval run ID, case ID, test failure, judge note, trace, artifact, or human feedback. Each edit should cite at least one evidence reference.
+- Do not invent proof, auto-apply edits, package, install, or publish.
+- Treat completed eval execution as evidence only, not pass proof. Before editing from it, name what ran, what facts/files exist, and what the evidence shows.
 
 ## Commands
 
 ```bash
-meta-skill review <project> [--json]
-meta-skill plan <project> --from-run <run-id>
-meta-skill plan <project> --from-review <review-id>
-meta-skill promote <project> --plan <plan-id>
-meta-skill decide <project> --session <session-id> --accept
-meta-skill decide <project> --session <session-id> --reject
+meta-skill decide <project> --run <run-id> --evidence <path[:line]> --commit <sha> --accept
+meta-skill decide <project> --run <run-id> --evidence <path[:line]> --reject
 ```
 
-`review` writes `.meta-skill/reviews/<review-id>/` and does not edit source.
+Edit the working portable payload directly after the evidence justifies the change. Git is the application mechanism and diff review surface.
 
-`plan` writes `.meta-skill/plans/<plan-id>/` and does not edit source.
-
-`promote` applies a human-approved candidate edit from the plan into the working portable payload at the project root. It does not create a release.
-
-`decide` records accept/reject in `.meta-skill/sessions/<session-id>/`. Reject records intent; it does not restore files.
-
-Use `meta-skill release <project>` only after validation and human approval. Release is separate from promotion.
+`decide` appends a `decision_recorded` fact to `.meta-skill/evals/runs/<run-id>/facts.jsonl`. Accept records the commit the human approved; reject records intent and evidence but does not restore files.
 
 ## Edit Discipline
 
@@ -55,7 +42,7 @@ Read [prompt-doctor.md](references/prompt-doctor.md) before non-trivial edits.
 - Keep the smallest useful change tied to evidence.
 - Preserve trigger meaning, output contract, tone, and unrelated resources unless they are the problem.
 - Update `.meta-skill/spec.md` when behavior changes.
-- Rerun `meta-skill lint` and relevant `meta-skill eval run` cases after edits.
+- Rerun `meta-skill lint` and relevant `meta-skill run` cases after edits.
 
 ## Output
 

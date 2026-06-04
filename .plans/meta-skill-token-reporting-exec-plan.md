@@ -22,7 +22,7 @@ This plan does not add token estimation, pricing, live watch mode, a local web s
 - [x] (2026-06-03) Rendered token usage in the static HTML report as readable totals, averages, input/output splits, and availability reasons instead of raw JSON.
 - [x] (2026-06-03) Added tests for multi-turn cumulative totals, unavailable usage, existing orchestration/report compatibility, and rebuilt runtime behavior.
 - [x] (2026-06-03) Updated `skill-eval` docs and `architecture.md`.
-- [x] (2026-06-03) Rebuilt `plugins/meta-skill/app/`, ran `npm test`, `scripts/sync-plugins.sh`, and `git diff --check`.
+- [x] (2026-06-03) Ran `npm test`, `npm run typecheck`, `scripts/sync-plugins.sh`, and `git diff --check`.
 
 ## Current Token Flow
 
@@ -261,16 +261,17 @@ Test cases:
 Update:
 
 - `plugins/meta-skill/skills/skill-eval/SKILL.md`
-- `plugins/meta-skill/skills/skill-eval/references/review-files.md`
+- `research/tessl/review/review-files.md`
 - `plugins/meta-skill/architecture.md`
 
 Because source `skills/` changes trigger root sync requirements, run `scripts/sync-plugins.sh` after the docs and runtime are updated.
 
-Rebuild committed runtime:
+Validate native TypeScript runtime:
 
 ```bash
 cd plugins/meta-skill
 npm test
+npm run typecheck
 ```
 
 Then run from repo root:
@@ -289,7 +290,7 @@ git diff --check
 - `report.html` shows readable token usage suitable for Codex Browser inspection.
 - Token usage remains separate from readiness/pass/fail claims.
 - Missing App Server metrics are explicit and visible.
-- Existing tests pass, committed `app/` is rebuilt, and plugin mirrors are synced if skill docs changed.
+- Existing tests pass, and plugin mirrors are synced if skill docs changed.
 
 ## Non-Goals
 

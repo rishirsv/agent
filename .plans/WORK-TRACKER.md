@@ -23,14 +23,14 @@ The evidence model is still heavier than the measurement power:
 - readiness still exists as `ready | blocked | unknown`; keep it source-honest and avoid rebuilding verdict-shaped review states.
 - App Server protocol drift is still handled mostly by unavailable token evidence; add a clearer canary/gate before building more event-stream features.
 - trigger/artifact concepts should stay future-only until the runner can prove native routing or writable outputs.
-- schema versions and committed `src/` to `app/` drift still add ceremony before there are external consumers.
+- schema versions still add ceremony before there are external consumers.
 - bounded event retention needs a small hardening pass so overflow bookkeeping itself cannot grow without bound.
 - final-answer extraction should avoid carrying forward a previous turn's final text when the current turn overflows before deltas are available.
 
 Validation baseline from the current merged slice:
 
 - `npm test` from `plugins/meta-skill/`
-- `npm run check:app` from `plugins/meta-skill/`
+- `npm run typecheck` from `plugins/meta-skill/`
 - `git diff --check` from the repo root
 
 ## To Do
@@ -43,7 +43,7 @@ Context: Case metadata used to have both `family` (`R/F/T/G`) and `type` (`behav
 
 Issue: Authors had to choose two overlapping fields, and the runner cannot prove native trigger routing or writable artifacts anyway.
 
-Surface: `models.ts`, `lint.ts`, case fixtures, eval docs, report subtitles, and generated `app/`.
+Surface: `models.ts`, `lint.ts`, case fixtures, eval docs, and report subtitles.
 
 Solution Shape: Keep one author-facing axis: executable case types. For now use `R`, `F`, and `G`; derive display text from the case type. Treat source-grounding as topic/criteria, not a separate type.
 
@@ -58,7 +58,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Collapse Meta Skill case taxonomy in /Users/rishi/Code/agent. Rename the executable case classification from `family` to `type`, remove the old `behavior/trigger/gate` type axis, and keep supported types to `R`/`F`/`G` until trigger routing is protocol-proven. Update `plugins/meta-skill/src/models.ts`, `src/lint.ts`, case loading, docs, fixtures, and reports. Do not add compatibility aliases unless old-run read mode requires them. Rebuild `app/`, run `npm test`, `npm run check:app`, and `git diff --check`.
+Collapse Meta Skill case taxonomy in /Users/rishi/Code/agent. Rename the executable case classification from `family` to `type`, remove the old `behavior/trigger/gate` type axis, and keep supported types to `R`/`F`/`G` until trigger routing is protocol-proven. Update `plugins/meta-skill/src/models.ts`, `src/lint.ts`, case loading, docs, fixtures, and reports. Do not add compatibility aliases unless old-run read mode requires them. Run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 2. Harden App Server Event Buffer Overflow Handling
@@ -79,38 +79,36 @@ Mini Plan:
 2. Keep warning rows in `rpc.jsonl` and evidence warnings in case outputs.
 3. Do not preserve a previous turn's final text when the current turn overflows before final deltas are available.
 4. Add overflow regression tests for both warning memory and final-answer behavior.
-5. Rebuild generated `app/`.
+5. Run `npm run typecheck`.
 
 Implementation Prompt:
 
 ```text
-Harden Meta Skill App Server overflow handling in /Users/rishi/Code/agent. Keep `rpc.jsonl` as the durable raw event log and keep the bounded client-side event buffer, but collapse overflow warning bookkeeping to constant-space state. If the current turn overflows before final assistant deltas are available, write an explicit unavailable final/evidence warning instead of carrying forward a previous turn's final text. Update `plugins/meta-skill/src/app-server/client.ts`, `src/app-server/runner.ts`, tests, docs, and generated `app/`. Run `npm test`, `npm run check:app`, and `git diff --check`.
+Harden Meta Skill App Server overflow handling in /Users/rishi/Code/agent. Keep `rpc.jsonl` as the durable raw event log and keep the bounded client-side event buffer, but collapse overflow warning bookkeeping to constant-space state. If the current turn overflows before final assistant deltas are available, write an explicit unavailable final/evidence warning instead of carrying forward a previous turn's final text. Update `plugins/meta-skill/src/app-server/client.ts`, `src/app-server/runner.ts`, tests, docs. Run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
-### 3. Settle `src/` / `app/` And Schema Version Policy
+### 3. Settle Schema Version Policy
 
-Status: repo hygiene plus ceremony cut.
+Status: app runtime policy implemented; schema ceremony remains.
 
-Context: TypeScript source lives under `plugins/meta-skill/src/`, while committed runtime lives under `plugins/meta-skill/app/`. Most persisted files also carry `schema_version`, and `RunReport` has already reached v2 despite the plugin being pre-1.0.
+Context: TypeScript source now lives and runs directly under `plugins/meta-skill/src/`; `plugins/meta-skill/app/`, `build:test`, and `check:app` were removed. Most persisted files still carry `schema_version`, and `RunReport` has already reached v2 despite the plugin being pre-1.0.
 
-Issue: The repo pays for build-artifact drift plus migration ceremony before there are stable external consumers.
+Issue: The repo still pays for migration ceremony before there are stable external consumers.
 
-Surface: `plugins/meta-skill/package.json`, `src/`, committed `app/`, `project.ts`, `models.ts`, persisted run/report/package metadata, tests, and repo validation.
+Surface: `project.ts`, `models.ts`, persisted run/report/package metadata, tests, and repo validation.
 
-Solution Shape: Either build runtime during packaging and stop committing `app/`, or keep committed `app/` and enforce `npm run check:app` in CI. Remove schema versions from internal pre-1.0 files unless they mark a real external protocol or migration boundary.
+Solution Shape: Remove schema versions from internal pre-1.0 files unless they mark a real external protocol or migration boundary.
 
 Mini Plan:
 
-1. Decide whether plugin packaging can build runtime from `src/` reliably.
-2. If yes, remove committed `app/` and update packaging/validation.
-3. If no, keep `app/` and enforce `npm run check:app`.
-4. Inventory `schema_version` fields and remove internal-only versions.
-5. Preserve versions only for external protocol snapshots or truly migrated persisted data.
+1. Inventory `schema_version` fields and remove internal-only versions.
+2. Preserve versions only for external protocol snapshots or truly migrated persisted data.
+3. Update tests and docs for the remaining canonical persisted shapes.
 
 Implementation Prompt:
 
 ```text
-Decide and implement Meta Skill build/schema policy in /Users/rishi/Code/agent. If plugin packaging can build runtime during packaging, stop committing `plugins/meta-skill/app/`; otherwise keep `app/` committed and enforce `npm run check:app` in CI or the repo validation gate. Separately remove pre-1.0 per-file `schema_version` ceremony where no migration boundary exists, preserving only external or truly versioned protocol records. Update tests/docs accordingly. Run `npm test`, `npm run check:app` if `app/` remains, and `git diff --check`.
+Remove pre-1.0 per-file `schema_version` ceremony in /Users/rishi/Code/agent where no migration boundary exists, preserving only external or truly versioned protocol records. Update tests/docs accordingly. Run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 4. Parse Structured App Server Trajectories
@@ -136,7 +134,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add structured App Server trajectory parsing to Meta Skill in /Users/rishi/Code/agent. Create a small parser around observed generated App Server events that extracts final text, turn completion, token event references, and compact tool/file/command/approval facts for a specific thread and turn. Keep `rpc.jsonl` as the raw source of truth and write compact trajectory evidence only when it feeds assertions or reporting. Update runner/judge code to use the parser, add focused parser fixtures, rebuild `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add structured App Server trajectory parsing to Meta Skill in /Users/rishi/Code/agent. Create a small parser around observed generated App Server events that extracts final text, turn completion, token event references, and compact tool/file/command/approval facts for a specific thread and turn. Keep `rpc.jsonl` as the raw source of truth and write compact trajectory evidence only when it feeds assertions or reporting. Update runner/judge code to use the parser, add focused parser fixtures, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 5. Add Deterministic Trajectory Assertions And First-Failure Localization
@@ -162,7 +160,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add deterministic trajectory assertions to Meta Skill in /Users/rishi/Code/agent. Build on structured App Server trajectory evidence and support a small assertion set: expected tool/file/command event, forbidden event, approval requested, no write, no network, max tool calls, and final answer present. Record assertion results in `tests.jsonl`, show first-failure localization in `report.html`, and keep judges separate. Update case docs, lint validation, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add deterministic trajectory assertions to Meta Skill in /Users/rishi/Code/agent. Build on structured App Server trajectory evidence and support a small assertion set: expected tool/file/command event, forbidden event, approval requested, no write, no network, max tool calls, and final answer present. Record assertion results in `tests.jsonl`, show first-failure localization in `report.html`, and keep judges separate. Update case docs, lint validation, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 6. Add Cost / Latency / Tool-Budget Gates
@@ -188,7 +186,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add deterministic cost, latency, and tool-budget gates to Meta Skill in /Users/rishi/Code/agent. Use canonical `usage.json`, trajectory facts, and event timestamps to support optional assertions like max total tokens, max turns, max tool calls, max commands, and max elapsed time. Record failures in `tests.jsonl` and render compact budget evidence in `report.html`. Update docs, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add deterministic cost, latency, and tool-budget gates to Meta Skill in /Users/rishi/Code/agent. Use canonical `usage.json`, trajectory facts, and event timestamps to support optional assertions like max total tokens, max turns, max tool calls, max commands, and max elapsed time. Record failures in `tests.jsonl` and render compact budget evidence in `report.html`. Update docs, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 7. Golden-Trajectory Snapshot Tests
@@ -214,7 +212,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add golden-trajectory snapshot tests to Meta Skill in /Users/rishi/Code/agent. Use normalized trajectory facts, not raw RPC IDs or timestamps, to bless known-good behavior for selected cases and flag behavioral drift on later runs. Support opt-in case configuration, snapshot blessing from a run, deterministic diff output, report rendering, tests, docs, generated `app/`, and validation with `npm test`, `npm run check:app`, and `git diff --check`.
+Add golden-trajectory snapshot tests to Meta Skill in /Users/rishi/Code/agent. Use normalized trajectory facts, not raw RPC IDs or timestamps, to bless known-good behavior for selected cases and flag behavioral drift on later runs. Support opt-in case configuration, snapshot blessing from a run, deterministic diff output, report rendering, tests, docs, and validation with `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 8. Behavioral Trajectory Diff Between Separate Runs
@@ -240,7 +238,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add a manual behavioral trajectory diff view to Meta Skill in /Users/rishi/Code/agent without reviving eval sides or `--compare`. The command should accept two explicit run IDs, read normalized trajectory facts, align cases/turns, and show the first behavioral divergence plus compact tool/file/command/approval deltas. Label it as manual inspection evidence, not an automated uplift or verdict. Update report code, docs, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add a manual behavioral trajectory diff view to Meta Skill in /Users/rishi/Code/agent without reviving eval sides or `--compare`. The command should accept two explicit run IDs, read normalized trajectory facts, align cases/turns, and show the first behavioral divergence plus compact tool/file/command/approval deltas. Label it as manual inspection evidence, not an automated uplift or verdict. Update report code, docs, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 9. Counterfactual Fork Trees
@@ -266,7 +264,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Prototype counterfactual fork-tree evals in Meta Skill in /Users/rishi/Code/agent after verifying the generated App Server fork/resume protocol. Add explicit case config for a fork point and branch prompts, run a shared prefix once, fork N branches with different user pressures, persist per-branch trajectory evidence, and render a decision tree in `report.html`. Keep this single-source per run and do not reintroduce sides or comparison reports. Add tests/fixtures, docs, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Prototype counterfactual fork-tree evals in Meta Skill in /Users/rishi/Code/agent after verifying the generated App Server fork/resume protocol. Add explicit case config for a fork point and branch prompts, run a shared prefix once, fork N branches with different user pressures, persist per-branch trajectory evidence, and render a decision tree in `report.html`. Keep this single-source per run and do not reintroduce sides or comparison reports. Add tests/fixtures, docs, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 10. User-Simulator Branches For Follow-Up Pressure
@@ -292,7 +290,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add constrained user-simulator branches to Meta Skill in /Users/rishi/Code/agent after fork-tree support exists. Generate labeled follow-up pressure prompts from case-visible context using profiles like naive, impatient, adversarial, distractor, and missing-context user. Save generated prompts before execution, avoid criteria leakage, run them as fork branches, and report them as generated pressure evidence. Update docs, tests/fixtures, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add constrained user-simulator branches to Meta Skill in /Users/rishi/Code/agent after fork-tree support exists. Generate labeled follow-up pressure prompts from case-visible context using profiles like naive, impatient, adversarial, distractor, and missing-context user. Save generated prompts before execution, avoid criteria leakage, run them as fork branches, and report them as generated pressure evidence. Update docs, tests/fixtures, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 11. Tool Chaos / Graceful-Degradation Evals
@@ -318,7 +316,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add tool chaos and graceful-degradation evals to Meta Skill in /Users/rishi/Code/agent after verifying App Server tool/MCP/sandbox controls. Support explicit case policies for allowed or denied tools/capabilities, record the policy in run evidence, and assert that the skill handles missing tools by using approved fallbacks or clearly reporting unavailability. Update trajectory assertions, failure classification, report rendering, docs, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add tool chaos and graceful-degradation evals to Meta Skill in /Users/rishi/Code/agent after verifying App Server tool/MCP/sandbox controls. Support explicit case policies for allowed or denied tools/capabilities, record the policy in run evidence, and assert that the skill handles missing tools by using approved fallbacks or clearly reporting unavailability. Update trajectory assertions, failure classification, report rendering, docs, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 12. Trigger Fuzzing After Native Routing Exists
@@ -344,7 +342,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add trigger fuzzing to Meta Skill in /Users/rishi/Code/agent only after the App Server exposes native skill routing evidence without force-attaching the skill. Restore trigger type `T` at that point, generate prompt mutations for trigger cases, run them as sampled or forked cases, record activation/non-activation from trajectory evidence, and report trigger robustness with representative examples. Do not restore `T` as an executable type until routing proof is real. Update taxonomy, docs, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add trigger fuzzing to Meta Skill in /Users/rishi/Code/agent only after the App Server exposes native skill routing evidence without force-attaching the skill. Restore trigger type `T` at that point, generate prompt mutations for trigger cases, run them as sampled or forked cases, record activation/non-activation from trajectory evidence, and report trigger robustness with representative examples. Do not restore `T` as an executable type until routing proof is real. Update taxonomy, docs, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 13. Writable Sandbox And Artifact Capture
@@ -370,7 +368,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add writable sandbox artifact capture to Meta Skill in /Users/rishi/Code/agent only after verifying the App Server writable sandbox protocol. Support explicit writable cases scoped to the staged workspace/artifacts area, capture generated files deterministically, assert no writes escape the allowed area, and render artifact evidence in reports. Reintroduce artifact case docs only after the capability is real. Update runner, case config, trajectory assertions, report code, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add writable sandbox artifact capture to Meta Skill in /Users/rishi/Code/agent only after verifying the App Server writable sandbox protocol. Support explicit writable cases scoped to the staged workspace/artifacts area, capture generated files deterministically, assert no writes escape the allowed area, and render artifact evidence in reports. Reintroduce artifact case docs only after the capability is real. Update runner, case config, trajectory assertions, report code, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 14. Closed-Loop Eval Diagnose Fork-Verify
@@ -396,7 +394,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add a human-gated closed-loop eval diagnose fork-verify workflow to Meta Skill in /Users/rishi/Code/agent. On a failed case, create a critic thread that reads the failing trajectory and proposes a bounded skill edit with evidence citations. Apply the edit only to a temporary verification payload, rerun the failing case, and present before/after trajectory/test evidence to the human. Do not auto-promote or release. Update skill-improve docs, eval evidence storage, tests/fixtures, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add a human-gated closed-loop eval diagnose fork-verify workflow to Meta Skill in /Users/rishi/Code/agent. On a failed case, create a critic thread that reads the failing trajectory and proposes a bounded skill edit with evidence citations. Apply the edit only to a temporary verification payload, rerun the failing case, and present before/after trajectory/test evidence to the human. Do not auto-promote or release. Update skill-improve docs, eval evidence storage, tests/fixtures, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 15. Answer-Only Runner As An Explicit Escape Hatch
@@ -422,7 +420,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Evaluate and, if accepted, add an explicit answer-only runner mode to Meta Skill in /Users/rishi/Code/agent. This mode should be opt-in, limited to final-answer cases, and clearly labeled as text-only evidence with no trajectory, sandbox, trigger, or artifact proof. If the team decides not to implement it, record that decision in docs and keep App Server as the behavior-eval default. Update runner selection, report labels, tests, docs, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Evaluate and, if accepted, add an explicit answer-only runner mode to Meta Skill in /Users/rishi/Code/agent. This mode should be opt-in, limited to final-answer cases, and clearly labeled as text-only evidence with no trajectory, sandbox, trigger, or artifact proof. If the team decides not to implement it, record that decision in docs and keep App Server as the behavior-eval default. Update runner selection, report labels, tests, docs, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 16. Case Minimality And Criteria-Leak Audit
@@ -448,7 +446,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add a case minimality and criteria-leak audit to Meta Skill in /Users/rishi/Code/agent. Record solver-visible files and prompts for each case, verify hidden `case.md` criteria and judge/rubric material do not leak into task, branch, simulator, or fuzz prompts, and render compact evidence in reports. Update stage workspace code, lint/audit tests, docs, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add a case minimality and criteria-leak audit to Meta Skill in /Users/rishi/Code/agent. Record solver-visible files and prompts for each case, verify hidden `case.md` criteria and judge/rubric material do not leak into task, branch, simulator, or fuzz prompts, and render compact evidence in reports. Update stage workspace code, lint/audit tests, docs, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 17. Case Flake Ledger
@@ -474,7 +472,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add a read-only case flake ledger to Meta Skill in /Users/rishi/Code/agent. Aggregate recent outcomes for each case across existing runs, including execution failures, test/judge verdicts, token totals, and trajectory assertion failures when present. Show instability markers in the project report without adding sampling mode or promotion gates. Update report/index code, tests, docs, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add a read-only case flake ledger to Meta Skill in /Users/rishi/Code/agent. Aggregate recent outcomes for each case across existing runs, including execution failures, test/judge verdicts, token totals, and trajectory assertion failures when present. Show instability markers in the project report without adding sampling mode or promotion gates. Update report/index code, tests, docs, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 18. Protocol Canary Run
@@ -500,7 +498,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add an App Server protocol canary to Meta Skill in /Users/rishi/Code/agent. Provide an opt-in diagnostic command or preflight that starts a tiny thread and verifies the required generated protocol methods and event shapes used by evals. Report observed token and trajectory event shapes clearly, and use canary results to explain unsupported protocol warnings. Update live-smoke tests, docs, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add an App Server protocol canary to Meta Skill in /Users/rishi/Code/agent. Provide an opt-in diagnostic command or preflight that starts a tiny thread and verifies the required generated protocol methods and event shapes used by evals. Report observed token and trajectory event shapes clearly, and use canary results to explain unsupported protocol warnings. Update live-smoke tests, docs, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ### 19. Evidence Bundle Export For Review Threads
@@ -526,7 +524,7 @@ Mini Plan:
 Implementation Prompt:
 
 ```text
-Add a compact eval evidence brief export to Meta Skill in /Users/rishi/Code/agent. For a selected run/case, emit Markdown that summarizes execution status, verdict evidence, final answer, token usage, trajectory highlights, failed assertions, and local evidence paths without leaking hidden criteria by default. Use canonical evidence files only. Update commands/report docs, tests, generated `app/`, and run `npm test`, `npm run check:app`, and `git diff --check`.
+Add a compact eval evidence brief export to Meta Skill in /Users/rishi/Code/agent. For a selected run/case, emit Markdown that summarizes execution status, verdict evidence, final answer, token usage, trajectory highlights, failed assertions, and local evidence paths without leaking hidden criteria by default. Use canonical evidence files only. Update commands/report docs, tests, and run `npm test`, `npm run typecheck`, and `git diff --check`.
 ```
 
 ## Completed Items

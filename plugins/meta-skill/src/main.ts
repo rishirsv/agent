@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { runCommand } from "./commands";
-import { CliError } from "./project";
+import { runCommand } from "./commands.ts";
+import { CliError } from "./project.ts";
 
 runCommand(process.argv.slice(2))
   .then((code) => {

@@ -78,7 +78,7 @@ Do not feed private evaluator answer keys into solver workspaces. Judges run ove
 
 ## Anti-Patterns
 
-- Using judges as release gates without human review.
+- Treating judges as user decisions.
 - Hiding deterministic failures behind a good judge score.
 - Setting thresholds inside judge frontmatter.
 - Running judges by default without user approval.

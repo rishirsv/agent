@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 
-const fs = require("node:fs");
-const path = require("node:path");
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const entry = path.join(__dirname, "..", "app", "main.js");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const entry = path.join(__dirname, "..", "src", "main.ts");
 
-if (!fs.existsSync(entry)) {
-  console.error(`error: Meta Skill CLI runtime is missing: ${entry}`);
-  process.exit(1);
-}
-
-require(entry);
+await import(pathToFileURL(entry).href);

@@ -1,29 +1,20 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { lintProject } from "./lint";
-import { CliError, copyPortablePayload, ensureDir, exists, listPortablePayloadFiles, projectPaths, requirePortableSkill, sha256File, utcNow, writeJson } from "./project";
+import { lintProject } from "./lint.ts";
+import { CliError, copyPortablePayload, ensureDir, exists, listPortablePayloadFiles, projectPaths, requirePortableSkill, sha256File, utcNow, writeJson } from "./project.ts";
 
 export interface PackageOptions {
   project: string;
-  source?: "candidate" | "release";
   out?: string;
   outDir?: string;
 }
 
 export async function packageProject(options: PackageOptions): Promise<{ artifact: string; metadata: string; files: string[] }> {
   const root = await requirePortableSkill(options.project);
-  const p = projectPaths(root);
-  const releaseExists = await exists(path.join(p.releaseSkill, "SKILL.md"));
-  const source = options.source || (releaseExists ? "release" : undefined);
-  if (!source) throw new CliError("no release snapshot exists; pass --source candidate to package the current working payload");
-  const sourceRoot = source === "release" ? p.releaseSkill : root;
-  if (source === "candidate") {
-    const lint = await lintProject(root);
-    if (!lint.ok) throw new CliError(`candidate package validation failed:\n${lint.failures.map((failure) => `- ${failure.message}`).join("\n")}`);
-  } else {
-    const lint = await lintProject(sourceRoot);
-    if (!lint.ok) throw new CliError(`release package validation failed:\n${lint.failures.map((failure) => `- ${failure.message}`).join("\n")}`);
-  }
+  const sourceRoot = root;
+  const source = "current";
+  const lint = await lintProject(root);
+  if (!lint.ok) throw new CliError(`package validation failed:\n${lint.failures.map((failure) => `- ${failure.message}`).join("\n")}`);
 
   const files = await listPortablePayloadFiles(sourceRoot);
   if (options.outDir) {
@@ -34,7 +25,7 @@ export async function packageProject(options: PackageOptions): Promise<{ artifac
     return { artifact: outDir, metadata, files };
   }
 
-  const artifact = path.resolve(options.out || path.join(root, `${path.basename(root)}-${source}.zip`));
+  const artifact = path.resolve(options.out || path.join(root, `${path.basename(root)}.zip`));
   await writeZip(sourceRoot, artifact, files);
   const metadata = `${artifact}.metadata.json`;
   await writePackageMetadata(metadata, { source, sourceRoot, artifact, files });

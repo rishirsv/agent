@@ -3,7 +3,7 @@ import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { describe, it } from "node:test";
-import { AppServerJsonClient, appServerConfig, codexVersion } from "./client";
+import { AppServerJsonClient, appServerConfig, codexVersion } from "./client.ts";
 
 describe("live App Server smoke", () => {
   it("runs a managed stdio thread and turn", { skip: process.env.META_SKILL_LIVE_APP_SERVER !== "1" }, async (t) => {

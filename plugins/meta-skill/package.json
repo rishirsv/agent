@@ -3,17 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "description": "Meta Skill TypeScript CLI for portable skill workbenches.",
+  "type": "module",
   "bin": {
     "meta-skill": "./scripts/meta-skill.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.18"
   },
   "scripts": {
-    "build": "rm -rf app && tsc -p tsconfig.json",
-    "build:test": "rm -rf app && tsc -p tsconfig.test.json",
-    "check:app": "tmp=$(mktemp -d) && trap 'rm -rf \"$tmp\"' EXIT && tsc -p tsconfig.json --outDir \"$tmp\" && diff -qr \"$tmp\" app",
-    "test": "npm run build:test && node --test \"app/**/*.test.js\" && npm run build && npm run check:app",
+    "test": "node --test \"src/**/*.test.ts\"",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {

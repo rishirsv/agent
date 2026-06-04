@@ -14,19 +14,19 @@ Use `skill-create` when the user wants to create a reusable skill, redesign a dr
 
 Use `skill-eval` when the user wants to create case eval scaffolding, run App Server-backed cases, inspect run evidence, import feedback, handle case-generation requests, or run optional judges.
 
-Use `skill-improve` when the user wants a best-practice review, a bounded improvement plan, a promoted candidate edit, or a recorded accept/reject decision from concrete evidence.
+Use `skill-improve` when the user wants a best-practice review, an evidence-backed payload edit, or a recorded accept/reject decision from concrete evidence.
 
 When a request spans lanes, sequence the lanes explicitly. A mature workflow is:
 
 ```text
-create portable skill -> project init -> lint -> review -> eval init -> eval run -> plan -> promote -> decide -> release -> package
+create portable skill -> project init -> lint -> run -> report -> edit -> diff approval -> decide -> package
 ```
 
 Do not make the user think in lane names. Translate their request into the lane and next command that fits.
 
 ## Default Posture
 
-Create a portable skill by default. Add a `.meta-skill/` workbench only when the user requests a project, release, publish, tests, evals, comparison, team reuse, production use, or other maintained-skill signals.
+Create a portable skill by default. Add a `.meta-skill/` workbench only when the user requests a project, publish, tests, evals, comparison, team reuse, production use, or other maintained-skill signals.
 
 The project root is the portable candidate payload:
 
@@ -51,35 +51,32 @@ Use `.meta-skill/evals/cases/<ID-slug>/` for executable cases. `case.md` contain
 
 Use `.meta-skill/tests/manifest.json` for deterministic unit and eval tests. Prefer deterministic tests when a rule can answer the question.
 
-Run evidence lives under `.meta-skill/evals/runs/<run-id>/` with `run.json`, `events.jsonl`, `results.jsonl`, `tests.jsonl`, `grades.jsonl`, `feedback.jsonl`, `report.json`, snapshots, and per-case evidence. `.meta-skill/evals/runs/index.json` stores the run-list summary.
+Run evidence lives under `.meta-skill/evals/runs/<run-id>/` with one `facts.jsonl` log, a frozen `payload/`, and per-case `case.md`, `rpc.jsonl`, and `final.md` files.
 
-Case execution runs through Codex App Server and records per-case final output, turn traces, RPC traces, and token usage. The current runner force-mounts the selected skill on the first turn, so trigger cases are not true routing proof and baseline/no-skill uplift is not supported yet. If exact token usage is unavailable because App Server did not return metrics, record it as unavailable in the run evidence instead of omitting it.
+Case execution runs through Codex App Server and records per-case final output, RPC traces, and token usage. The current runner force-mounts the selected skill on the first turn, so trigger cases are not true routing proof. Use `--no-skill` when the user asks for a baseline. If exact token usage is unavailable because App Server did not return metrics, record it as unavailable in the run evidence instead of omitting it.
 
-Criteria are evaluator evidence and must not appear in solver-visible runtime inputs. Judges read saved run snapshots plus final output; if a legacy run lacks snapshots, say so.
+Criteria are evaluator evidence and must not appear in solver-visible runtime inputs. Judges read frozen case definitions plus final output.
 
-Completed case execution is not a behavioral verdict. When no deterministic test, judge, or human feedback verdict is recorded, say execution completed with no verdict recorded and identify the saved evidence to inspect before claiming behavior passed.
+Completed case execution is evidence, not proof of quality. Identify the saved facts and files to inspect before claiming behavior is good.
 
-Judges run over saved evidence through App Server. They are optional because they cost tokens; run them only when the user asks or passes `--with-judges`. Standalone judge runs, feedback imports, and `lint --run` annotations regenerate `report.json` and the runs index.
+Judges run over saved evidence through App Server. They are optional because they cost tokens; run them only when the user asks or passes `--with-judges`. Standalone judge runs, feedback imports, and `lint --run` append facts; reports compute from those facts on demand.
 
 ## Improve Policy
 
-Improve only from evidence. Cite the lint output, review ID, run ID, case ID, test result, judge note, trace, artifact, or feedback row that motivates the change.
+Improve only from evidence. Cite the lint output, run ID, case ID, test result, judge note, trace, artifact, or feedback row that motivates the change.
 
 Use top-level commands:
 
 ```bash
-meta-skill review <project>
-meta-skill plan <project> --from-run <run-id>
-meta-skill plan <project> --from-review <review-id>
-meta-skill promote <project> --plan <plan-id>
-meta-skill decide <project> --session <session-id> --accept
+meta-skill decide <project> --run <run-id> --evidence <path[:line]> --commit <sha> --accept
+meta-skill decide <project> --run <run-id> --evidence <path[:line]> --reject
 ```
 
-`promote` applies a human-approved candidate edit to the working portable payload. It does not create a release. `release` creates or replaces `.meta-skill/versions/release/` only after validation and human approval. Prefer `meta-skill release <project> --from-run <run-id>` when eval evidence supports readiness so `version.json` records the source run, readiness summary, and payload digests.
+Agents edit the working portable payload directly after evidence points to a needed change. The human gate happens when the user reviews and approves the git diff. `decide` records that call as a `decision_recorded` fact on the run, including the evidence reference and accepted commit. `package` validates and packages the current payload when the user asks for an artifact.
 
 ## Human Gates
 
-A human must approve before packaging, installing, publishing, syncing to a marketplace, writing to external systems, promoting a candidate into source, creating or replacing a release snapshot, or treating unthresholded judge scores as release gates.
+A human must approve before packaging, installing, publishing, syncing to a marketplace, writing to external systems, promoting a candidate into source, or treating judge output as sufficient evidence for a decision.
 
 ## Output Style
 

@@ -1,10 +1,10 @@
 import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import type { SkillActivation, EvalRunSource, CaseRecord, TokenUsage } from "../models";
-import { appendJsonl, ensureDir, exists, parseSkillFrontmatter, unavailableTokenUsage, writeJson, writeText } from "../project";
-import type { AppServerConfig, AppServerLine } from "./client";
-import { AppServerJsonClient, AppServerUnavailableError } from "./client";
+import type { SkillActivation, EvalRunSource, CaseRecord, TokenUsage } from "../models.ts";
+import { appendJsonl, ensureDir, exists, parseSkillFrontmatter, unavailableTokenUsage, writeText } from "../project.ts";
+import type { AppServerConfig, AppServerLine } from "./client.ts";
+import { AppServerJsonClient, AppServerUnavailableError } from "./client.ts";
 
 interface AppServerClientLike {
   request(method: string, params: unknown): Promise<Record<string, unknown>>;
@@ -34,10 +34,12 @@ export interface CaseRunInput {
 
 export interface CaseRunResult {
   execution_status: "completed" | "errored";
-  verdict?: "passed" | "failed";
   token_usage: TokenUsage;
   final_path: string;
+  rpc_path: string;
   evidence_path: string;
+  thread_id?: string;
+  turn_ids: string[];
   error?: string;
 }
 
@@ -93,7 +95,7 @@ export class AppServerCaseRunner {
         baseInstructions: forceSkill ? "You are executing a Meta Skill eval case. Follow the mounted skill payload exactly and answer the user's task." : "You are executing a Meta Skill eval case without an attached skill. Answer the user's task directly.",
         developerInstructions: [
           forceSkill ? "Use the skill mounted in this turn as the only runtime skill guidance." : "No skill is mounted for this case. Answer without skill-specific runtime guidance.",
-          "The user messages are supplied directly by the harness. Solver-visible fixture files, when present, are mounted as read-only workspace roots.",
+          "The user messages are supplied directly. Solver-visible fixture files, when present, are mounted as read-only workspace roots.",
           forceSkill ? "Do not modify files. Produce the final answer that the skill would give the user." : "Do not modify files. Produce the final answer you would give without a skill."
         ].join("\n")
       });
@@ -101,47 +103,28 @@ export class AppServerCaseRunner {
       const threadId = thread?.id;
       if (!threadId) throw new Error("App Server thread/start response did not include thread.id");
 
-      const turnRecords: Array<{ role: "user" | "assistant"; index: number; source: string; content: string; status: string; turn_id?: string }> = [];
+      const turnIds: string[] = [];
       let finalCumulativeUsage: TokenUsage | undefined;
       let final = "";
       const turns = [{ content: input.case.task, source: "case.md#Task" }, ...input.case.turns.map((turn, index) => ({ content: turn.content, source: `case.md#Turn ${index + 2}` }))];
       for (const [index, turn] of turns.entries()) {
-        turnRecords.push({ role: "user", index, source: turn.source, content: turn.content, status: "sent" });
         const result = await runTurn(client, threadId, runtimeRoot, workspaceRoots, turn.content, index === 0 && forceSkill, this.turnTimeoutMs, attachmentName, input.skillRoot);
         final = result.final || final;
         finalCumulativeUsage = result.cumulativeTokenUsage;
-        turnRecords.push({
-          role: "assistant",
-          index,
-          source: "app-server",
-          content: result.final,
-          status: "completed",
-          turn_id: result.turnId
-        });
+        if (result.turnId) turnIds.push(result.turnId);
       }
       await client.flush?.();
       const caseSummary = summarizeCaseUsage(finalCumulativeUsage);
-
-      await writeJson(path.join(rawRoot, "thread.json"), {
-        schema_version: 1,
-        thread_id: threadId,
-        turn_ids: turnRecords.filter((row) => row.role === "assistant").map((row) => row.turn_id),
-        parent_thread_id: null,
-        forked_from_id: null,
-        resume_from_id: null,
-        app_server: input.appServer,
-        status: "completed",
-        error: null
-      });
-      await writeText(path.join(rawRoot, "turns.jsonl"), turnRecords.map((row) => JSON.stringify(row)).join("\n"));
-      await writeJson(path.join(rawRoot, "usage.json"), caseSummary);
       await writeText(path.join(rawRoot, "final.md"), final || "(no final assistant message captured)");
 
       return {
         execution_status: "completed",
         token_usage: caseSummary,
         final_path: path.join(rawRoot, "final.md"),
-        evidence_path: path.relative(input.runRoot, rawRoot)
+        rpc_path: rpcPath,
+        evidence_path: path.relative(input.runRoot, rawRoot),
+        thread_id: threadId,
+        turn_ids: turnIds
       };
     } finally {
       await fs.rm(runtimeRoot, { recursive: true, force: true });

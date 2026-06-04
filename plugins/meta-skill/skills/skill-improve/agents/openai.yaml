@@ -1,4 +1,4 @@
 interface:
   display_name: "Skill Improve"
-  short_description: "Review and promote bounded skill improvements"
-  default_prompt: "Use $skill-improve to review a skill, plan one evidence-backed edit, promote an approved plan, or record a decision."
+  short_description: "Review and record skill improvements"
+  default_prompt: "Use $skill-improve to review a skill, make evidence-backed edits, or record a human decision."

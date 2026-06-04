@@ -1,4 +1,4 @@
 interface:
   display_name: "Skill Eval"
   short_description: "Design and run App Server-backed skill evals"
-  default_prompt: "Use $skill-eval to initialize, run, inspect, or audit .meta-skill eval cases with the meta-skill CLI."
+  default_prompt: "Use $skill-eval to initialize, run, inspect, or audit .meta-skill cases with the meta-skill CLI."

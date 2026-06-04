@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { EventEmitter } from "node:events";
 import { PassThrough } from "node:stream";
 import { describe, it } from "node:test";
-import { AppServerJsonClient, AppServerProtocolError, AppServerUnavailableError, type AppServerLine } from "./client";
+import { AppServerJsonClient, AppServerProtocolError, AppServerUnavailableError, type AppServerLine } from "./client.ts";
 
 describe("AppServerJsonClient", () => {
   it("sends initialize then initialized before later requests", async () => {

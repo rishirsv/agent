@@ -55,8 +55,11 @@ export interface AppServerJsonClientOptions {
 }
 
 export class AppServerProtocolError extends AppServerUnavailableError {
-  constructor(message: string, public code?: number) {
+  code?: number;
+
+  constructor(message: string, code?: number) {
     super(message);
+    this.code = code;
   }
 }
 

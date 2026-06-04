@@ -1,18 +1,19 @@
 import path from "node:path";
-import { AppServerJsonClient, AppServerUnavailableError, appServerConfig } from "../app-server/client";
-import { CliError, appendJsonl, eventEnvelope, exists, projectPaths, readText, relativePath, requirePortableSkill } from "../project";
-import { writeEvalReport } from "../report";
-import { loadRunCaseSnapshots } from "./cases";
-import { attemptsInRun } from "./results";
-import type { JudgeExecutionInput, JudgeOptions, JudgeRunResult, RunFailureClassification } from "./types";
+import { AppServerJsonClient, AppServerUnavailableError, appServerConfig } from "../app-server/client.ts";
+import { appendFact } from "../facts.ts";
+import { CliError, appendJsonl, exists, projectPaths, readText, relativePath, requirePortableSkill } from "../project.ts";
+import { buildRunEvidenceReport } from "../report.ts";
+import { loadRunCaseSnapshots } from "./cases.ts";
+import { attemptsInRun } from "./results.ts";
+import type { JudgeExecutionInput, JudgeOptions, JudgeRunResult, RunFailureClassification } from "./types.ts";
 
 export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
   const root = await requirePortableSkill(options.project);
   const p = projectPaths(root);
   const runRoot = path.join(p.runs, options.runId);
   if (!(await exists(runRoot))) throw new CliError(`run does not exist: ${options.runId}`);
-  if (!options.judge && !options.allJudges) throw new CliError("eval judge requires --judge <id> or --all-judges", 2);
-  if (!options.case && !options.allCases) throw new CliError("eval judge requires --case <id> or --all-cases", 2);
+  if (!options.judge && !options.allJudges) throw new CliError("judge requires --judge <id> or --all-judges", 2);
+  if (!options.case && !options.allCases) throw new CliError("judge requires --case <id> or --all-cases", 2);
 
   const cases = await loadRunCaseSnapshots(root, runRoot, options.allCases ? {} : { case: [options.case as string] });
   let annotations = 0;
@@ -20,11 +21,12 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
   const failureClassifications = new Set<RunFailureClassification>();
   let judgeClient: AppServerJsonClient | undefined;
   let judgeExecutor = options.judgeExecutor;
+  let rpcPath = path.join(runRoot, "rpc.jsonl");
   try {
     if (!judgeExecutor) {
       const appServer = await appServerConfig();
       judgeClient = new AppServerJsonClient(async (line) => {
-        await appendJsonl(path.join(runRoot, "grades.rpc.jsonl"), {
+        await appendJsonl(rpcPath, {
           schema_version: 1,
           direction: line.direction,
           message: line.message
@@ -44,51 +46,27 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
           const finalPath = path.join(runRoot, attempt.evidencePath, "final.md");
           if (!(await exists(finalPath))) {
             ok = false;
-            failureClassifications.add("harness_unavailable");
-            await appendJsonl(
-              path.join(runRoot, "grades.jsonl"),
-              eventEnvelope({
-                type: "judge_result",
-                run_id: options.runId,
-                case_id: item.id,
-                ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
-                source: judgeId,
-                payload: {
-                  judge_id: judgeId,
-                  run_source: attempt.runSource,
-                  status: "unavailable",
-                  failure_classification: "harness_unavailable",
-                  reason: `missing case final evidence: ${relativePath(runRoot, finalPath)}`
-                }
-              })
-            );
+            failureClassifications.add("runner_unavailable");
+            await appendFact(runRoot, {
+              type: "check_observed",
+              run_id: options.runId,
+              case_id: item.id,
+              source: judgeId,
+              payload: { kind: "judge", id: judgeId, outcome: "error", classification: "runner_unavailable", message: `missing case final evidence: ${relativePath(runRoot, finalPath)}` }
+            });
             annotations += 1;
             continue;
           }
           const final = await readText(finalPath);
+          rpcPath = path.join(runRoot, attempt.evidencePath, "rpc.jsonl");
           const result = await judgeExecutor({ projectRoot: root, judgeId, judgePrompt, case: item, runSourceLabel: attempt.runSource.label, final });
-          const passed = judgePassed(result, threshold);
-          ok = ok && passed;
-          if (!passed) failureClassifications.add("judge_failure");
-          await appendJsonl(
-            path.join(runRoot, "grades.jsonl"),
-            eventEnvelope({
-              type: "judge_result",
-              run_id: options.runId,
-              case_id: item.id,
-              ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
-              source: judgeId,
-              payload: {
-                judge_id: judgeId,
-                run_source: attempt.runSource,
-                status: passed ? "passed" : "failed",
-                failure_classification: passed ? null : "judge_failure",
-                threshold: threshold || null,
-                evidence_basis: item.evidence_basis || "run_snapshot",
-                result
-              }
-            })
-          );
+          await appendFact(runRoot, {
+            type: "check_observed",
+            run_id: options.runId,
+            case_id: item.id,
+            source: judgeId,
+            payload: { kind: "judge", id: judgeId, threshold: threshold || null, result }
+          });
           annotations += 1;
         }
       }
@@ -101,33 +79,21 @@ export async function judgeRun(options: JudgeOptions): Promise<JudgeRunResult> {
     for (const item of cases) {
       const judgeIds = options.allJudges ? (item.criteria.judges || []).map((judge) => judge.id) : [options.judge as string];
       for (const judgeId of judgeIds) {
-        for (const attempt of await attemptsInRun(runRoot, item.folder)) {
-          await appendJsonl(
-            path.join(runRoot, "grades.jsonl"),
-            eventEnvelope({
-              type: "judge_result",
-              run_id: options.runId,
-              case_id: item.id,
-              ...(attempt.legacySide ? { side: attempt.legacySide } : {}),
-              source: judgeId,
-              payload: {
-                judge_id: judgeId,
-                run_source: attempt.runSource,
-                status: "unavailable",
-                failure_classification: classification,
-                reason: message
-              }
-            })
-          );
-          annotations += 1;
-        }
+        await appendFact(runRoot, {
+          type: "check_observed",
+          run_id: options.runId,
+          case_id: item.id,
+          source: judgeId,
+          payload: { kind: "judge", id: judgeId, outcome: "error", classification, message }
+        });
+        annotations += 1;
       }
     }
   } finally {
     await judgeClient?.flush();
     judgeClient?.close();
   }
-  await writeEvalReport(runRoot);
+  await buildRunEvidenceReport(runRoot);
   return { annotations, ok, failureClassifications: [...failureClassifications].sort() };
 }
 
@@ -153,7 +119,7 @@ async function runJudge(
     "# Judge Prompt",
     input.judgePrompt,
     "# Case",
-    JSON.stringify({ id: input.case.id, folder: input.case.folder, run_source: input.runSourceLabel, evidence_basis: input.case.evidence_basis || "run_snapshot", metadata: input.case.metadata, criteria: input.case.criteria }, null, 2),
+    JSON.stringify({ id: input.case.id, folder: input.case.folder, run_source: input.runSourceLabel, metadata: input.case.metadata, criteria: input.case.criteria }, null, 2),
     "# Final Output",
     input.final,
     "# Required Output",
@@ -169,37 +135,31 @@ async function runJudge(
   });
   const turnId = (turn.turn as { id?: string } | undefined)?.id;
   if (!turnId) throw new Error("judge turn/start response did not include turn.id");
-  await client.waitFor(
-    (message) => message.method === "turn/completed" && (message.params as { threadId?: string; turn?: { id?: string } } | undefined)?.threadId === threadId && (message.params as { turn?: { id?: string } } | undefined)?.turn?.id === turnId,
-    120000
-  );
-  const text = client
-    .eventsSince(mark)
-    .filter((message) => message.method === "item/agentMessage/delta" && (message.params as { turnId?: string } | undefined)?.turnId === turnId)
-    .map((message) => String((message.params as { delta?: string }).delta || ""))
-    .join("")
-    .trim();
-  return parseJudgeJson(text);
+  const completed = await client.waitFor((message) => {
+    const msg = message.msg as { type?: string } | undefined;
+    return msg?.type === "thread/turn/completed" || msg?.type === "turn/completed";
+  }, 120000);
+  const final = extractFinalJson(client.eventsSince(mark), completed);
+  if (!final) throw new Error("judge did not return JSON");
+  return final;
 }
 
-function parseJudgeJson(text: string): Record<string, unknown> {
-  const fenced = /```(?:json)?\s*([\s\S]*?)```/.exec(text);
-  const raw = fenced ? fenced[1] : text;
-  try {
-    return JSON.parse(raw) as Record<string, unknown>;
-  } catch {
-    return { overall: 0, pass: false, rationale: text || "Judge returned no parseable JSON.", dimensions: {} };
+function extractFinalJson(events: Record<string, unknown>[], completed: Record<string, unknown>): Record<string, unknown> | undefined {
+  const candidates = [...events, completed].flatMap((event) => stringsFrom(event)).reverse();
+  for (const candidate of candidates) {
+    try {
+      const parsed = JSON.parse(candidate.trim()) as unknown;
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed as Record<string, unknown>;
+    } catch {
+      // Keep scanning for the final JSON candidate.
+    }
   }
+  return undefined;
 }
 
-export function judgePassed(result: Record<string, unknown>, threshold?: { overall_min?: number; dimensions?: Record<string, number> }): boolean {
-  const overall = typeof result.overall === "number" ? result.overall : 0;
-  if (threshold?.overall_min !== undefined && overall < threshold.overall_min) return false;
-  for (const [name, min] of Object.entries(threshold?.dimensions || {})) {
-    const dimensions = result.dimensions && typeof result.dimensions === "object" ? (result.dimensions as Record<string, unknown>) : {};
-    const value = Number(dimensions[name] ?? 0);
-    if (value < min) return false;
-  }
-  if (typeof result.pass === "boolean") return result.pass;
-  return overall >= 3;
+function stringsFrom(value: unknown): string[] {
+  if (typeof value === "string") return [value];
+  if (!value || typeof value !== "object") return [];
+  if (Array.isArray(value)) return value.flatMap(stringsFrom);
+  return Object.values(value as Record<string, unknown>).flatMap(stringsFrom);
 }

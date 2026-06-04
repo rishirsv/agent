@@ -2,19 +2,17 @@ import { exec } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { promisify } from "node:util";
-import type { Issue, LintReport, TestManifest } from "./models";
+import type { Issue, LintReport, TestManifest } from "./models.ts";
+import { appendFact, readFacts } from "./facts.ts";
 import {
   CliError,
-  appendJsonl,
-  eventEnvelope,
   exists,
   parseSkillFrontmatter,
   projectPaths,
   readJson,
   requirePortableSkill
-} from "./project";
-import { writeEvalReport } from "./report";
-import { caseIdentity, readCase } from "./eval/cases";
+} from "./project.ts";
+import { caseIdentity, readCase } from "./eval/cases.ts";
 
 const execAsync = promisify(exec);
 
@@ -48,33 +46,28 @@ export async function lintProject(target: string, options: LintOptions = {}): Pr
     if (!(await exists(runRoot))) {
       failures.push(issue("failure", `run evidence does not exist: ${options.runId}`, runRoot));
     } else {
+      const runFacts = await readFacts(runRoot);
       for (const test of tests.filter((row) => row.kind === "eval")) {
-        await appendJsonl(
-          path.join(runRoot, "tests.jsonl"),
-          eventEnvelope({
-            type: "test_result",
+        const declaredCases = runFacts.filter((fact) => fact.type === "case_defined" && Array.isArray(fact.payload.tests) && fact.payload.tests.map(String).includes(test.id));
+        const targets = declaredCases.length ? declaredCases : [undefined];
+        for (const target of targets) {
+          await appendFact(runRoot, {
+            type: "check_observed",
             run_id: options.runId,
-            source: test.id,
-            payload: test
-          })
-        );
-        annotations += 1;
+            ...(target?.case_id ? { case_id: target.case_id } : {}),
+            source: "meta-skill lint",
+            payload: { kind: "test", id: test.id, outcome: test.status, command: test.command, output: test.output }
+          });
+          annotations += 1;
+        }
       }
-      await appendJsonl(
-        path.join(runRoot, "tests.jsonl"),
-        eventEnvelope({
-          type: "lint_summary",
-          run_id: options.runId,
-          source: "meta-skill lint",
-          payload: {
-            failures: failures.length,
-            warnings: warnings.length,
-            tests: tests.length
-          }
-        })
-      );
+      await appendFact(runRoot, {
+        type: "check_observed",
+        run_id: options.runId,
+        source: "meta-skill lint",
+        payload: { kind: "test", id: "lint", outcome: failures.length ? "failed" : "passed", failures: failures.length, warnings: warnings.length, tests: tests.length }
+      });
       annotations += 1;
-      await writeEvalReport(runRoot);
     }
   }
 

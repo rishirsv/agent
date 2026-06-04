@@ -1,13 +1,12 @@
+import { initEvals, importFeedback, judgeRun, runEval } from "./evals.ts";
+import { recordDecision } from "./improve.ts";
+import { lintProject } from "./lint.ts";
+import { packageProject } from "./package.ts";
+import { CliError } from "./project.ts";
+import { buildProjectEvidenceReport, buildRunEvidenceReport, renderEvidenceReportJson, renderEvidenceReportMarkdown, renderLintReportMarkdown } from "./reporting.ts";
+import { createSkill, initProject } from "./skills.ts";
+import { projectPaths, requirePortableSkill } from "./project.ts";
 import path from "node:path";
-import { importFeedback, initEvals, judgeRun, listRunSummaries, openRun, runEval } from "./evals";
-import { decideSession, planImprovement, promotePlan } from "./improve";
-import { lintProject } from "./lint";
-import { packageProject } from "./package";
-import { CliError } from "./project";
-import { REPORT_VIEWS, buildMetaSkillReport, isReportView, renderLintReportMarkdown, renderReportMarkdown, renderRunListMarkdown } from "./reporting";
-import { reviewProject } from "./review";
-import { createSkill, initProject } from "./skills";
-import { releaseProject } from "./versions";
 
 const HELP = `meta-skill
 
@@ -15,20 +14,12 @@ Usage:
   meta-skill create [skill-dir] [--project] --slug <slug> --title <title> --description <text> --job <text>
   meta-skill project init <skill-dir>
   meta-skill lint <project-or-skill> [--run <run-id>] [--json]
-  meta-skill report <project> [--view status|runs|eval|review|release|full|lint] [--run <run-id>] [--review <review-id>] [--json] [--refresh]
-  meta-skill review <project> [--json]
-  meta-skill eval init <project>
-  meta-skill eval run <project> [--case <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--snapshot | --no-skill] [--with-judges] [--no-lint]
-  meta-skill eval judge <project> --run <run-id> (--judge <id> | --all-judges) (--case <id> | --all-cases)
-  meta-skill eval feedback import <project> --run <run-id> <feedback.jsonl>
-  meta-skill eval open <project> [--run <run-id>] [--list] [--json]
-  meta-skill eval list <project> [--limit <n>] [--status <status>] [--json]
-  meta-skill eval view <project> [--run <run-id>] [--last] [--json]
-  meta-skill plan <project> [--from-run <run-id>] [--from-review <review-id>]
-  meta-skill promote <project> --plan <plan-id>
-  meta-skill decide <project> --session <session-id> --accept | --reject
-  meta-skill release <project> [--from-run <run-id>]
-  meta-skill package <project> [--source candidate|release] [--out <zip>] [--out-dir <dir>]
+  meta-skill report [run-id] [case-id] [--project <dir>] [--json]
+  meta-skill run <project> [--case <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--no-skill] [--with-judges] [--no-lint]
+  meta-skill judge <project> --run <run-id> (--judge <id> | --all-judges) (--case <id> | --all-cases)
+  meta-skill feedback import <project> --run <run-id> <feedback.jsonl>
+  meta-skill decide <project> --run <run-id> --evidence <path[:line]> [--evidence <path[:line]> ...] [--commit <sha>] --accept | --reject
+  meta-skill package <project> [--out <zip>] [--out-dir <dir>]
 `;
 
 export async function runCommand(argv: string[]): Promise<number> {
@@ -47,18 +38,14 @@ export async function runCommand(argv: string[]): Promise<number> {
       return commandLint(rest);
     case "report":
       return commandReport(rest);
-    case "review":
-      return commandReview(rest);
-    case "eval":
-      return commandEval(rest);
-    case "plan":
-      return commandPlan(rest);
-    case "promote":
-      return commandPromote(rest);
+    case "run":
+      return commandRun(rest);
+    case "judge":
+      return commandJudge(rest);
+    case "feedback":
+      return commandFeedback(rest);
     case "decide":
       return commandDecide(rest);
-    case "release":
-      return commandRelease(rest);
     case "package":
       return commandPackage(rest);
     default:
@@ -93,8 +80,9 @@ async function commandProject(argv: string[]): Promise<number> {
   const target = args.positionals[0];
   if (!target) throw new CliError("project init requires <skill-dir>", 2);
   const result = await initProject(target, { force: args.has("force") });
+  await initEvals(result.path);
   console.log(`initialized .meta-skill workbench: ${result.path}`);
-  console.log(`next step: meta-skill lint ${shellPath(result.path)}`);
+  console.log(`next step: add cases, then meta-skill run ${shellPath(result.path)}`);
   return 0;
 }
 
@@ -108,117 +96,44 @@ async function commandLint(argv: string[]): Promise<number> {
 }
 
 async function commandReport(argv: string[]): Promise<number> {
-  const args = parse(argv, ["view", "run", "review"], ["json", "refresh"]);
-  const project = args.positionals[0] || ".";
-  const view = args.one("view") || "status";
-  if (!isReportView(view)) {
-    throw new CliError(`--view must be one of ${REPORT_VIEWS.join(", ")}`, 2);
-  }
-  const report = await buildMetaSkillReport({
-    project,
-    view,
-    runId: args.one("run"),
-    reviewId: args.one("review"),
-    refresh: args.has("refresh") ? "refresh" : "read"
-  });
-  if (args.has("json")) {
-    console.log(JSON.stringify(report, null, 2));
-    return 0;
-  }
-  console.log(renderReportMarkdown(report, report.subject.view));
-  return report.readiness.status === "blocked" ? 1 : 0;
-}
-
-async function commandReview(argv: string[]): Promise<number> {
-  const args = parse(argv, [], ["json"]);
-  const project = args.positionals[0] || ".";
-  const result = await reviewProject(project);
-  if (args.has("json")) console.log(JSON.stringify(result.data, null, 2));
-  else {
-    console.log(`review: ${result.reviewId}`);
-    console.log(`score: ${result.score}/100`);
-    console.log(`report: ${result.report}`);
-    console.log(`next step: meta-skill plan ${shellPath(project)} --from-review ${result.reviewId}`);
-  }
+  const args = parse(argv, ["project"], ["json"]);
+  const project = args.one("project") || ".";
+  const root = await requirePortableSkill(project);
+  const runId = args.positionals[0];
+  const caseId = args.positionals[1];
+  const report = runId
+    ? await buildRunEvidenceReport(path.join(projectPaths(root).runs, runId), { caseId })
+    : await buildProjectEvidenceReport(root);
+  if (args.has("json")) console.log(renderEvidenceReportJson(report));
+  else console.log(renderEvidenceReportMarkdown(report));
   return 0;
 }
 
-async function commandEval(argv: string[]): Promise<number> {
-  const [subcommand, ...rest] = argv;
-  switch (subcommand) {
-    case "init":
-      return commandEvalInit(rest);
-    case "run":
-      return commandEvalRun(rest);
-    case "judge":
-      return commandEvalJudge(rest);
-    case "feedback":
-      return commandEvalFeedback(rest);
-    case "open":
-      return commandEvalOpen(rest, true);
-    case "list":
-      return commandEvalList(rest);
-    case "view":
-      return commandEvalOpen(rest, false);
-    default:
-      throw new CliError("eval command supports init, run, judge, feedback import, open, list, and view", 2);
-  }
-}
-
-async function commandEvalInit(argv: string[]): Promise<number> {
-  const args = parse(argv, [], []);
+async function commandRun(argv: string[]): Promise<number> {
+  const args = parse(argv, ["case", "type", "topic", "label", "app-server-endpoint"], ["no-skill", "with-judges", "no-lint"]);
   const project = args.positionals[0] || ".";
-  const result = await initEvals(project);
-  console.log(`eval workbench: ${result.path}`);
-  for (const warning of result.warnings) console.log(`warning: ${warning}`);
-  console.log(`next step: add cases, then meta-skill eval run ${shellPath(project)}`);
-  return 0;
-}
-
-async function commandEvalRun(argv: string[]): Promise<number> {
-  const args = parse(argv, ["case", "type", "topic", "label", "app-server-endpoint"], ["snapshot", "no-skill", "with-judges", "no-lint"]);
-  const project = args.positionals[0] || ".";
-  if (args.one("app-server-endpoint")) {
-    throw new CliError("--app-server-endpoint is not supported yet; omit it to use the managed stdio App Server", 2);
-  }
-  if (args.has("snapshot") && args.has("no-skill")) throw new CliError("eval run accepts only one source flag: --snapshot or --no-skill", 2);
+  if (args.one("app-server-endpoint")) throw new CliError("--app-server-endpoint is not supported yet; omit it to use the managed stdio App Server", 2);
   const type = args.one("type");
   if (type && !["R", "F", "G"].includes(type)) throw new CliError("--type must be one of R, F, G", 2);
   const result = await runEval({
     project,
     selector: { case: args.many("case"), type, topic: args.many("topic") },
     label: args.one("label"),
-    runSource: args.has("snapshot") ? "snapshot_payload" : args.has("no-skill") ? "no_skill" : "working_payload",
+    runSource: args.has("no-skill") ? "no_skill" : "working_payload",
     withJudges: args.has("with-judges"),
     noLint: args.has("no-lint"),
     appServerEndpoint: undefined
   });
-  console.log(formatEvalRunSummary(project, result));
+  const report = await buildRunEvidenceReport(result.runRoot);
+  console.log(renderEvidenceReportMarkdown(report));
   return result.ok ? 0 : 1;
 }
 
-export function formatEvalRunSummary(
-  project: string,
-  result: { runId: string; status: string; failureClassifications: string[]; report: string }
-): string {
-  const reportJson = path.join(path.dirname(result.report), "report.json");
-  const lines = [
-    `run: ${result.runId}`,
-    `status: ${result.status}`,
-    `failure classifications: ${result.failureClassifications.length ? result.failureClassifications.join(", ") : "none"}`,
-    `report.json: ${reportJson}`
-  ];
-  if (result.status === "completed") {
-    lines.push("note: execution completed; behavioral verdicts appear only when deterministic tests, judges, or human feedback record one.");
-  }
-  return lines.join("\n");
-}
-
-async function commandEvalJudge(argv: string[]): Promise<number> {
+async function commandJudge(argv: string[]): Promise<number> {
   const args = parse(argv, ["run", "judge", "case"], ["all-judges", "all-cases"]);
   const project = args.positionals[0] || ".";
   const runId = args.one("run");
-  if (!runId) throw new CliError("eval judge requires --run <run-id>", 2);
+  if (!runId) throw new CliError("judge requires --run <run-id>", 2);
   const result = await judgeRun({
     project,
     runId,
@@ -227,15 +142,14 @@ async function commandEvalJudge(argv: string[]): Promise<number> {
     case: args.one("case"),
     allCases: args.has("all-cases")
   });
-  console.log(`judge annotations: ${result.annotations}`);
-  console.log(`report refreshed: .meta-skill/evals/runs/${runId}/report.json`);
-  console.log(`next step: meta-skill report ${shellPath(project)} --view eval --run ${runId}`);
+  console.log(`judge observations: ${result.annotations}`);
+  console.log(`next step: meta-skill report ${runId} --project ${shellPath(project)}`);
   return result.ok ? 0 : 1;
 }
 
-async function commandEvalFeedback(argv: string[]): Promise<number> {
+async function commandFeedback(argv: string[]): Promise<number> {
   const [subcommand, ...rest] = argv;
-  if (subcommand !== "import") throw new CliError("eval feedback supports only: meta-skill eval feedback import <project> --run <run-id> <feedback.jsonl>", 2);
+  if (subcommand !== "import") throw new CliError("feedback supports only: meta-skill feedback import <project> --run <run-id> <feedback.jsonl>", 2);
   const args = parse(rest, ["run"], []);
   const project = args.positionals[0] || ".";
   const feedback = args.positionals[1];
@@ -244,112 +158,34 @@ async function commandEvalFeedback(argv: string[]): Promise<number> {
   if (!feedback) throw new CliError("feedback import requires <feedback.jsonl>", 2);
   const result = await importFeedback(project, runId, feedback);
   console.log(`imported feedback rows: ${result.rows}`);
-  console.log(`report refreshed: ${result.report}`);
-  console.log(`next step: meta-skill report ${shellPath(project)} --view eval --run ${runId}`);
-  return 0;
-}
-
-async function commandEvalOpen(argv: string[], openHtml: boolean): Promise<number> {
-  const args = parse(argv, ["run", "limit", "status"], ["list", "json", "last"]);
-  const project = args.positionals[0] || ".";
-  if (args.has("list")) {
-    const runs = await listRunSummaries(project, parseRunListOptions(args));
-    if (args.has("json")) console.log(JSON.stringify(runs, null, 2));
-    else console.log(renderRunListMarkdown(runs));
-    return 0;
-  }
-  const result = await openRun(project, args.one("run"));
-  if (args.has("json")) {
-    console.log(JSON.stringify(result.data, null, 2));
-    return 0;
-  }
-  if (openHtml) {
-    const report = await buildMetaSkillReport({ project, view: "eval", runId: result.runId, refresh: "read" });
-    console.log(renderReportMarkdown(report, "eval"));
-  } else {
-    const report = await buildMetaSkillReport({ project, view: "eval", runId: result.runId, refresh: "read" });
-    console.log(renderReportMarkdown(report, "eval"));
-  }
-  return 0;
-}
-
-async function commandEvalList(argv: string[]): Promise<number> {
-  const args = parse(argv, ["limit", "status"], ["json"]);
-  const project = args.positionals[0] || ".";
-  const runs = await listRunSummaries(project, parseRunListOptions(args));
-  if (args.has("json")) console.log(JSON.stringify(runs, null, 2));
-  else console.log(renderRunListMarkdown(runs));
-  return 0;
-}
-
-async function commandPlan(argv: string[]): Promise<number> {
-  const args = parse(argv, ["from-run", "from-review"], []);
-  const project = args.positionals[0] || ".";
-  const result = await planImprovement({ project, fromRun: args.one("from-run"), fromReview: args.one("from-review") });
-  console.log(`plan: ${result.planId}`);
-  console.log(`path: ${result.planRoot}`);
-  console.log(`next step: fill plan.json edits, then meta-skill promote ${shellPath(project)} --plan ${result.planId}`);
-  return 0;
-}
-
-async function commandPromote(argv: string[]): Promise<number> {
-  const args = parse(argv, ["plan"], []);
-  const project = args.positionals[0] || ".";
-  const planId = args.one("plan");
-  if (!planId) throw new CliError("promote requires --plan <plan-id>", 2);
-  const result = await promotePlan(project, planId);
-  console.log(`promoted plan: ${planId}`);
-  console.log(`session: ${result.sessionId}`);
-  console.log(`files: ${result.applied.join(", ")}`);
-  console.log(`next step: meta-skill decide ${shellPath(project)} --session ${result.sessionId} --accept`);
+  console.log(`next step: meta-skill report ${runId} --project ${shellPath(project)}`);
   return 0;
 }
 
 async function commandDecide(argv: string[]): Promise<number> {
-  const args = parse(argv, ["session"], ["accept", "reject"]);
+  const args = parse(argv, ["run", "evidence", "commit"], ["accept", "reject"]);
   const project = args.positionals[0] || ".";
-  const sessionId = args.one("session");
-  if (!sessionId) throw new CliError("decide requires --session <session-id>", 2);
+  const runId = args.one("run");
+  if (!runId) throw new CliError("decide requires --run <run-id>", 2);
   if (args.has("accept") === args.has("reject")) throw new CliError("decide requires exactly one of --accept or --reject", 2);
   const decision = args.has("accept") ? "accept" : "reject";
-  const result = await decideSession(project, sessionId, decision);
+  const result = await recordDecision({
+    project,
+    runId,
+    decision,
+    evidence: args.many("evidence").map(parseEvidenceRef),
+    commit: args.one("commit")
+  });
   console.log(`decision: ${decision}`);
-  console.log(`path: ${result.sessionRoot}`);
+  console.log(`run: ${runId}`);
+  console.log(`path: ${result.runRoot}`);
   return 0;
-}
-
-async function commandRelease(argv: string[]): Promise<number> {
-  const args = parse(argv, ["from-run"], []);
-  const project = args.positionals[0] || ".";
-  const result = await releaseProject(project, { fromRun: args.one("from-run") });
-  console.log(`release: ${result.releaseRoot}`);
-  console.log(`files: ${result.files.join(", ")}`);
-  console.log(`next step: meta-skill package ${shellPath(project)} --source release`);
-  return 0;
-}
-
-function parseRunListOptions(args: ParsedArgs): { limit?: number; status?: string } {
-  const rawLimit = args.one("limit");
-  const limit = rawLimit === undefined ? undefined : Number(rawLimit);
-  if (rawLimit !== undefined) {
-    const parsed = Number(rawLimit);
-    if (!Number.isInteger(parsed) || parsed < 1) throw new CliError("--limit must be a positive integer", 2);
-    return { limit: parsed, status: args.one("status") };
-  }
-  return { limit, status: args.one("status") };
 }
 
 async function commandPackage(argv: string[]): Promise<number> {
-  const args = parse(argv, ["source", "out", "out-dir"], []);
+  const args = parse(argv, ["out", "out-dir"], []);
   const project = args.positionals[0] || ".";
-  const source = args.one("source");
-  if (source && !["candidate", "release"].includes(source)) throw new CliError("--source must be candidate or release", 2);
-  const result = await packageProject({
-    project,
-    source: source as "candidate" | "release" | undefined,
-    out: args.one("out"),
-    outDir: args.one("out-dir")
-  });
+  const result = await packageProject({ project, out: args.one("out"), outDir: args.one("out-dir") });
   console.log(`package: ${result.artifact}`);
   console.log(`metadata: ${result.metadata}`);
   console.log(`files: ${result.files.join(", ")}`);
@@ -357,11 +193,15 @@ async function commandPackage(argv: string[]): Promise<number> {
 }
 
 class ParsedArgs {
-  constructor(
-    public positionals: string[],
-    private values: Map<string, string[]>,
-    private booleans: Set<string>
-  ) {}
+  positionals: string[];
+  private values: Map<string, string[]>;
+  private booleans: Set<string>;
+
+  constructor(positionals: string[], values: Map<string, string[]>, booleans: Set<string>) {
+    this.positionals = positionals;
+    this.values = values;
+    this.booleans = booleans;
+  }
 
   one(name: string): string | undefined {
     return this.values.get(name)?.at(-1);
@@ -406,4 +246,10 @@ function parse(argv: string[], valueFlags: string[], booleanFlags: string[]): Pa
 
 function shellPath(target: string): string {
   return target.includes(" ") ? JSON.stringify(target) : target;
+}
+
+function parseEvidenceRef(value: string) {
+  const match = /^(.*):([1-9][0-9]*)$/.exec(value);
+  if (!match) return { path: value };
+  return { path: match[1], line: Number(match[2]) };
 }

@@ -1,8 +1,8 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { CaseCriteria, CaseFixture, CaseMetadata, CaseRecord, CaseType } from "../models";
-import { CliError, createWorkbench, ensureDir, exists, projectPaths, readText, requirePortableSkill, writeJson } from "../project";
-import type { EvalSelector } from "./types";
+import type { CaseCriteria, CaseFixture, CaseMetadata, CaseRecord, CaseType } from "../models.ts";
+import { CliError, createWorkbench, exists, projectPaths, readText, requirePortableSkill } from "../project.ts";
+import type { EvalSelector } from "./types.ts";
 
 export async function initEvals(project: string): Promise<{ path: string; warnings: string[] }> {
   const root = await requirePortableSkill(project);
@@ -29,34 +29,15 @@ export async function loadCases(project: string, selector: EvalSelector = {}): P
   return selected;
 }
 
-export async function writeRunCaseSnapshots(runRoot: string, cases: CaseRecord[]): Promise<void> {
-  for (const item of cases) {
-    const snapshot = path.join(runRoot, "snapshots", item.folder);
-    await ensureDir(snapshot);
-    await fs.cp(item.path, snapshot, { recursive: true });
-    await writeJson(path.join(snapshot, "snapshot.json"), {
-      schema_version: 1,
-      case_id: item.id,
-      case_folder: item.folder,
-      evidence_basis: "run_snapshot",
-      source_path: item.path
-    });
-  }
-}
-
 export async function loadRunCaseSnapshots(project: string, runRoot: string, selector: EvalSelector = {}): Promise<CaseRecord[]> {
   const root = await requirePortableSkill(project);
-  const snapshots = path.join(runRoot, "snapshots");
-  if (!(await exists(snapshots))) {
-    const current = await loadCases(root, selector);
-    return current.map((item) => ({ ...item, evidence_basis: "legacy_current_project" }));
-  }
-
-  const dirs = (await fs.readdir(snapshots, { withFileTypes: true })).filter((entry) => entry.isDirectory());
+  const casesRoot = path.join(runRoot, "cases");
+  if (!(await exists(casesRoot))) return loadCases(root, selector);
+  const dirs = (await fs.readdir(casesRoot, { withFileTypes: true })).filter((entry) => entry.isDirectory());
   const records: CaseRecord[] = [];
   for (const dirent of dirs) {
-    const casePath = path.join(snapshots, dirent.name);
-    records.push({ ...(await readCase(casePath, dirent.name)), evidence_basis: "run_snapshot", snapshot_path: casePath });
+    const casePath = path.join(casesRoot, dirent.name);
+    if (await exists(path.join(casePath, "case.md"))) records.push(await readCase(casePath, dirent.name));
   }
 
   const selected = selectCases(records, selector);

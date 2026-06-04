@@ -15,7 +15,7 @@ scripts/         optional
 assets/          optional
 ```
 
-Add the hidden `.meta-skill/` workbench only when the user requests project mode or clearly needs release discipline, evals, tests, comparison, team reuse, or a maintained production capability.
+Add the hidden `.meta-skill/` workbench only when the user requests project mode or clearly needs evals, tests, comparison, team reuse, or a maintained production capability.
 
 ## Reference Map
 
@@ -50,8 +50,7 @@ meta-skill lint <skill-dir>
 3. Distill source material when the skill is source-derived.
 4. Draft the portable runtime payload.
 5. Add `.meta-skill/` only when requested or clearly implied.
-6. Run `meta-skill lint <skill-dir>` and stop before packaging, release, install, or publish unless the user explicitly asks.
-7. Do not recommend `release` until project mode exists or the user explicitly wants `release` to create the workbench.
+6. Run `meta-skill lint <skill-dir>` and stop before packaging, install, or publish unless the user explicitly asks.
 
 Ask one focused question only when the answer changes routing, runtime instructions, resources, gates, or project mode. Include your recommended answer.
 
@@ -65,7 +64,7 @@ Single-shot creation is opt-in. If the user says "one shot," "no questions," or 
 - Add runtime references, scripts, or assets only when they are real reusable materials.
 - Link every runtime reference, script, or asset directly from `SKILL.md`.
 - Runtime scripts should get or recommend unit tests in `.meta-skill/tests/manifest.json` when project mode exists.
-- Add human gates before packaging, installing, publishing, syncing, promotion, external writes, or final client/user-facing delivery.
+- Add human gates before packaging, installing, publishing, syncing, source edits, external writes, or final client/user-facing delivery.
 
 ## Output
 
