@@ -30,7 +30,8 @@ Project mode adds only the implemented hidden authoring state under
 .meta-skill/
   spec.md
   eval-scenarios.md
-  evals/<ID-slug>/eval.md
+  evals/<slug>/task.md
+  evals/<slug>/criteria.json
   runs/<run-id>/
   tests/
 ```

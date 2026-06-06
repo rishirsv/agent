@@ -46,15 +46,15 @@ Do not create alternate root-level workbench folders. The portable payload stays
 
 Use `.meta-skill/evals/` as the eval namespace.
 
-Use `.meta-skill/eval-scenarios.md` as the high-level create-time scenario plan. Keep it to evaluation purpose, source distillation, base quality/implementation/validation dimensions, additive skill-specific dimensions, and scenario-plan rows. Executable details belong in `.meta-skill/evals/<ID-slug>/eval.md`.
+Use `.meta-skill/eval-scenarios.md` as the high-level create-time scenario plan. Keep it to evaluation purpose, source distillation, base quality/implementation/validation dimensions, additive skill-specific dimensions, and scenario-plan rows. Executable details belong in `.meta-skill/evals/<slug>/task.md` and `.meta-skill/evals/<slug>/criteria.json`.
 
-Use `.meta-skill/evals/<ID-slug>/` for executable evals. `eval.md` contains the first user turn and any follow-up user turns.
+Use `.meta-skill/evals/<slug>/` for executable evals. `task.md` contains the solver-visible problem description, output specification, first user turn, and any follow-up user turns. `criteria.json` contains evaluator-only fixtures, deterministic test refs, metadata, and review criteria.
 
 Use executable files directly under `.meta-skill/tests/` for deterministic tests. Do not create nested test folders. Prefer deterministic tests when a rule can answer the question.
 
-Run evidence lives under `.meta-skill/runs/<run-id>/` with a frozen `payload/` for working-payload runs and per-eval `eval.md`, `rpc.jsonl`, `transcript.json`, and `response.md` files. Token usage is stored in `transcript.json`.
+Run evidence lives under `.meta-skill/runs/<run-id>/` with a frozen `payload/` for working-payload runs and per-eval `task.md`, `criteria.json`, `rpc.jsonl`, `transcript.json`, and `response.md` files. Token usage is stored in `transcript.json`.
 
-Eval types are `R`, `F`, and `G`. Current workflow guidance uses manually authored evals, one execution source per run, and read-only App Server evidence.
+Current workflow guidance uses manually authored evals, one execution source per run, and read-only App Server evidence.
 
 Eval execution runs through Codex App Server and records per-eval final output, RPC traces, and token usage. The current runner force-mounts the selected skill on the first turn, so trigger evals are not true routing proof. Use `--no-skill` when the user asks for a baseline. If exact token usage is unavailable because App Server did not return metrics, record it as unavailable in `transcript.json` instead of omitting it.
 

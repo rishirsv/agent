@@ -67,7 +67,7 @@ meta-skill create <skill-dir> --project --slug <slug> --title "<title>" --descri
 meta-skill project init <skill-dir>
 meta-skill evals create <project>
 meta-skill lint <project-or-skill>
-meta-skill run <project> [--eval <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--no-skill]
+meta-skill run <project> [--eval <id>] [--topic <topic>] [--label "..."] [--no-skill]
 meta-skill package <project> [--out <zip>] [--out-dir <dir>]
 ```
 
@@ -75,7 +75,7 @@ Command routing:
 
 - `create` writes a portable skill payload. Add `--project` only when the user needs evals, tests, comparison, release discipline, or maintained-skill evidence.
 - `project init` adds `.meta-skill/` to an existing portable payload without moving the runtime files.
-- `evals create` reads `.meta-skill/eval-scenarios.md` and creates draft `.meta-skill/evals/<ID-slug>/eval.md` files.
+- `evals create` reads `.meta-skill/eval-scenarios.md` and creates draft `.meta-skill/evals/<slug>/task.md` and `.meta-skill/evals/<slug>/criteria.json` files.
 - `lint` validates the portable payload, workbench shape, links, evals, and deterministic tests. Use it after create, after edits, before runs, and before packaging.
 - `run` records new eval evidence under `.meta-skill/runs/<run-id>/`. Working-payload runs force-attach the selected skill, so treat the result as mounted-skill behavior evidence, not true trigger-routing proof.
 - `package` runs lint and exports the current portable payload. Use it only after explicit user approval for packaging, and keep install, publish, marketplace sync, or promotion as separate explicit approvals.
@@ -90,7 +90,7 @@ Do not use it for running evals, improving from evidence, packaging, installing,
 
 ### evaluate-skill
 
-Route here for setting up, running, auditing, or interpreting App Server-backed evals with `meta-skill run`. It owns `.meta-skill/eval-scenarios.md`, `.meta-skill/evals/`, `.meta-skill/runs/`, eval types `R`, `F`, and `G`, baseline runs with `--no-skill`, and evidence readouts.
+Route here for setting up, running, auditing, or interpreting App Server-backed evals with `meta-skill run`. It owns `.meta-skill/eval-scenarios.md`, split-file evals under `.meta-skill/evals/`, `.meta-skill/runs/`, baseline runs with `--no-skill`, and evidence readouts.
 
 Do not use it for rewriting skills, best-practice review, packaging, installing, or publishing.
 

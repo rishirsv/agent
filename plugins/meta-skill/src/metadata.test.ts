@@ -3,7 +3,7 @@ import { promises as fs } from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { describe, it } from "node:test";
-import { parseAgentManifestMetadata, parseEvalFrontmatter, parseSkillFrontmatter } from "./metadata.ts";
+import { parseAgentManifestMetadata, parseSkillFrontmatter } from "./metadata.ts";
 
 describe("metadata parsing", () => {
   it("decodes skill frontmatter with the shared YAML subset", async () => {
@@ -22,71 +22,6 @@ description: 'Use when testing shared metadata; not for production.'
       name: "demo-skill",
       description: "Use when testing shared metadata; not for production."
     });
-  });
-
-  it("decodes eval metadata, criteria, fixture maps, and body from one parser", () => {
-    const parsed = parseEvalFrontmatter(
-      `---
-title: Basic
-topics:
-  - routing
-capability: eval
-fixtures:
-  - path: fixtures/input.txt
-    description: Input file
-metadata:
-  budget:
-    max_turns: 2
-criteria:
-  what_it_tests: Metadata parsing
-  expected_behavior: Answer directly.
-  assertions:
-    - Uses the fixture.
-  tests: []
----
-
-## Task
-
-Answer directly.
-`,
-      "eval.md"
-    );
-
-    assert.deepEqual(parsed.metadata, {
-      title: "Basic",
-      topics: ["routing"],
-      capability: "eval",
-      fixtures: [{ path: "fixtures/input.txt", description: "Input file" }],
-      metadata: { budget: { max_turns: 2 } }
-    });
-    assert.deepEqual(parsed.criteria, {
-      what_it_tests: "Metadata parsing",
-      expected_behavior: "Answer directly.",
-      assertions: ["Uses the fixture."],
-      tests: []
-    });
-    assert.match(parsed.body, /## Task/);
-  });
-
-  it("rejects malformed typed fields instead of coercing them", () => {
-    assert.throws(
-      () =>
-        parseEvalFrontmatter(
-          `---
-title: 12
-criteria:
-  expected_behavior: Answer.
-  assertions: []
----
-
-## Task
-
-Answer.
-`,
-          "eval.md"
-        ),
-      /eval.md: frontmatter field 'title' must be a string/
-    );
   });
 
   it("detects documented sections and ignores top-level name/description", async () => {

@@ -1,6 +1,5 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { EvalType } from "../models.ts";
 import { CliError, exists } from "../project.ts";
 
 export interface DiscoveredTest {
@@ -10,15 +9,12 @@ export interface DiscoveredTest {
   command: string;
 }
 
-const EVAL_FOLDER_RE = /^([RFG]\d+)-[a-z0-9][a-z0-9-]*$/;
+const EVAL_FOLDER_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const TEST_ID_RE = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 
-export function evalIdentity(folder: string): { id: string; type: EvalType } {
-  const match = EVAL_FOLDER_RE.exec(folder);
-  if (!match) throw new CliError(`eval folder must use <ID>-<slug> with R/F/G prefix: ${folder}`);
-  const id = match[1];
-  const type = id.startsWith("R") ? "regression" : id.startsWith("F") ? "failure_mode" : "gate";
-  return { id, type };
+export function evalIdentity(folder: string): { id: string } {
+  if (!EVAL_FOLDER_RE.test(folder)) throw new CliError(`eval folder must use a lowercase hyphen slug: ${folder}`);
+  return { id: folder };
 }
 
 export function isValidTestId(id: string): boolean {

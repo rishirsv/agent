@@ -7,12 +7,12 @@ import type { EvalRunInput, EvalRunResult } from "./app-server/runner.ts";
 import type { TokenUsage } from "./models.ts";
 import { runEval } from "./evals.ts";
 import { createSkill } from "./skills.ts";
-import { ensureDir, exists, readText, writeText } from "./project.ts";
+import { ensureDir, exists, readText, writeJson, writeText } from "./project.ts";
 
 describe("eval evidence hard cut", () => {
   it("writes only the hard-cut per-eval evidence files", async () => {
     const project = await fixtureProject("fact-run");
-    await writeCase(project);
+    await writeEval(project);
     const result = await runEval({
       project,
       selector: {},
@@ -22,14 +22,33 @@ describe("eval evidence hard cut", () => {
 
     assert.equal(await exists(path.join(result.runRoot, "facts.jsonl")), false);
     assert.equal(await exists(path.join(result.runRoot, "payload", "SKILL.md")), true);
-    assert.equal(await exists(path.join(result.runRoot, "evals", "R1-basic", "eval.md")), true);
-    assert.equal(await exists(path.join(result.runRoot, "evals", "R1-basic", "rpc.jsonl")), true);
-    assert.equal(await exists(path.join(result.runRoot, "evals", "R1-basic", "transcript.json")), true);
-    assert.equal(await exists(path.join(result.runRoot, "evals", "R1-basic", "response.md")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "task.md")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "criteria.json")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "fixtures", "input.txt")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "rpc.jsonl")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "transcript.json")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "response.md")), true);
 
-    assert.deepEqual(result.evals, ["R1-basic"]);
-    const transcript = JSON.parse(await readText(path.join(result.runRoot, "evals", "R1-basic", "transcript.json")));
+    assert.deepEqual(result.evals, ["basic"]);
+    const transcript = JSON.parse(await readText(path.join(result.runRoot, "evals", "basic", "transcript.json")));
     assert.equal((transcript.turns[0].tokenUsage as TokenUsage).total_tokens, 2);
+  });
+
+  it("runs a selected eval without parsing unrelated draft eval folders", async () => {
+    const project = await fixtureProject("selected-run");
+    await writeEval(project);
+    await ensureDir(path.join(project, ".meta-skill", "evals", "draft-broken"));
+
+    const result = await runEval({
+      project,
+      selector: { eval: ["basic"] },
+      noLint: true,
+      evalRunner: evalRunner()
+    });
+
+    assert.deepEqual(result.evals, ["basic"]);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "basic", "response.md")), true);
+    assert.equal(await exists(path.join(result.runRoot, "evals", "draft-broken")), false);
   });
 });
 
@@ -87,24 +106,41 @@ async function fixtureProject(slug: string): Promise<string> {
   return target;
 }
 
-async function writeCase(project: string): Promise<void> {
-  const evalRoot = path.join(project, ".meta-skill", "evals", "R1-basic");
+async function writeEval(project: string): Promise<void> {
+  const evalRoot = path.join(project, ".meta-skill", "evals", "basic");
   await ensureDir(evalRoot);
+  await writeText(path.join(evalRoot, "fixtures", "input.txt"), "Fixture text.");
   await writeText(
-    path.join(evalRoot, "eval.md"),
-    `---
-title: Basic
-criteria:
-  expected_behavior: Answer directly.
-  assertions:
-    - Answers.
-  tests: []
----
+    path.join(evalRoot, "task.md"),
+    `# Basic
+
+Capability: Direct answer
+
+## Problem Description
+
+The user needs a direct answer.
+
+## Output Specification
+
+Return a concise direct answer.
 
 ## Task
 
 Answer directly.
 `
+  );
+  await writeJson(
+    path.join(evalRoot, "criteria.json"),
+    {
+      fixtures: [{ path: "fixtures/input.txt", description: "Input text" }],
+      tests: [],
+      metadata: {},
+      criteria: [
+        { criterion: "Specific answer", phase: "Quality", dimension: "Specificity", question: "Is the response specific?", evidence: "response" },
+        { criterion: "Answers directly", phase: "Implementation", dimension: "Actionability", question: "Does the response answer directly?", evidence: "response" },
+        { criterion: "Valid structure", phase: "Validation", dimension: "Structural correctness", question: "Is the response structurally valid?", evidence: "response" }
+      ]
+    }
   );
 }
 

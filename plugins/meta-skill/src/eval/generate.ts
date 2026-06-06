@@ -1,5 +1,6 @@
 import path from "node:path";
-import { ensureDir, exists, projectPaths, readText, requirePortableSkill, slugify, writeText } from "../project.ts";
+import { markdownTableHeadersMatch, normalizeMarkdownTableHeader, splitMarkdownTableRow } from "../markdown-table.ts";
+import { ensureDir, projectPaths, readText, requirePortableSkill, slugify, writeJson, writeText } from "../project.ts";
 import { listEvalFolders } from "./discovery.ts";
 
 interface ScenarioSeed {
@@ -37,23 +38,21 @@ export async function generateEvalsFromScenarios(project: string): Promise<Gener
   const text = await readText(scenariosPath);
   const seeds = parseScenarioPlan(text).filter((seed) => !isPlaceholder(seed.scenario));
   const existing = await listEvalFolders(p.evals);
-  const existingSlugs = new Set(existing.map((folder) => folder.replace(/^[RFG]\d+-/, "")));
+  const existingSlugs = new Set(existing);
   const created: string[] = [];
   const skipped: string[] = [];
-  let next = nextEvalNumber(existing);
 
   await ensureDir(p.evals);
   for (const seed of seeds) {
-    const slug = slugify(seed.scenario, "eval").slice(0, 60);
+    const slug = slugify(seed.scenario, "eval");
     if (existingSlugs.has(slug)) {
       skipped.push(seed.scenario);
       continue;
     }
-    const id = `${evalTypeCode(seed)}${next}`;
-    next += 1;
-    const folder = `${id}-${slug}`;
-    const target = path.join(p.evals, folder, "eval.md");
-    await writeText(target, evalDraft(seed));
+    const folder = slug;
+    const evalRoot = path.join(p.evals, folder);
+    await writeText(path.join(evalRoot, "task.md"), taskDraft(seed));
+    await writeJson(path.join(evalRoot, "criteria.json"), criteriaDraft(seed));
     existingSlugs.add(slug);
     created.push(folder);
   }
@@ -65,11 +64,11 @@ function parseScenarioPlan(text: string): ScenarioSeed[] {
   const lines = text.split(/\r?\n/);
   const seeds: ScenarioSeed[] = [];
   for (let index = 0; index < lines.length; index += 1) {
-    const header = splitTableRow(lines[index]).map(normalizeHeader);
-    if (!sameColumns(header, SCENARIO_COLUMNS)) continue;
+    const header = splitMarkdownTableRow(lines[index]).map(normalizeMarkdownTableHeader);
+    if (!markdownTableHeadersMatch(header, SCENARIO_COLUMNS)) continue;
     index += 2;
     while (index < lines.length) {
-      const cells = splitTableRow(lines[index]);
+      const cells = splitMarkdownTableRow(lines[index]);
       if (!cells.length) break;
       if (cells.length < SCENARIO_COLUMNS.length) break;
       seeds.push({
@@ -88,81 +87,144 @@ function parseScenarioPlan(text: string): ScenarioSeed[] {
   return seeds;
 }
 
-function splitTableRow(line: string): string[] {
-  const trimmed = line.trim();
-  if (!trimmed.startsWith("|") || !trimmed.endsWith("|")) return [];
-  return trimmed
-    .slice(1, -1)
-    .split("|")
-    .map((cell) => cell.trim());
-}
-
-function normalizeHeader(value: string): string {
-  return value.toLowerCase().replace(/\s+/g, " ");
-}
-
-function sameColumns(actual: string[], expected: string[]): boolean {
-  return expected.every((column, index) => actual[index] === column);
-}
-
 function isPlaceholder(value: string): boolean {
   return !value.trim() || /^<.*>$/.test(value.trim());
 }
 
-function nextEvalNumber(folders: string[]): number {
-  return folders.reduce((max, folder) => {
-    const match = /^[RFG](\d+)-/.exec(folder);
-    return match ? Math.max(max, Number(match[1])) : max;
-  }, 0) + 1;
-}
-
-function evalTypeCode(seed: ScenarioSeed): "R" | "F" | "G" {
-  const text = `${seed.scenario} ${seed.phaseFocus} ${seed.baselineRisk} ${seed.userTaskShape}`.toLowerCase();
-  if (/\bgate|trigger|boundary|approval|refusal|no-op|non-use\b/.test(text)) return "G";
-  if (/\bfailure|mistake|risk|miss|counterexample|avoid\b/.test(text)) return "F";
-  return "R";
-}
-
-function yamlString(value: string): string {
-  return JSON.stringify(value || "");
-}
-
-function evalDraft(seed: ScenarioSeed): string {
+function taskDraft(seed: ScenarioSeed): string {
   const expected = seed.expectedSkillLift || `The skill improves the ${seed.capability || seed.scenario} workflow.`;
-  const assertions = [
-    seed.capability ? `Addresses capability: ${seed.capability}` : "",
-    seed.dimensionsExercised ? `Exercises dimensions: ${seed.dimensionsExercised}` : "",
-    seed.baselineRisk ? `Avoids baseline risk: ${seed.baselineRisk}` : "",
-    seed.sourceBasis ? `Grounds behavior in source basis: ${seed.sourceBasis}` : ""
-  ].filter(Boolean);
-  return `---
-title: ${yamlString(seed.scenario)}
-topics:
-  - ${yamlString(slugify(seed.phaseFocus || "implementation", "implementation"))}
-capability: ${yamlString(seed.capability)}
-metadata:
-  generated_from: ".meta-skill/eval-scenarios.md"
-  phase_focus: ${yamlString(seed.phaseFocus)}
-  baseline_risk: ${yamlString(seed.baselineRisk)}
-  expected_skill_lift: ${yamlString(seed.expectedSkillLift)}
-  dimensions_exercised: ${yamlString(seed.dimensionsExercised)}
-  source_basis: ${yamlString(seed.sourceBasis)}
-criteria:
-  what_it_tests: ${yamlString(seed.scenario)}
-  expected_behavior: ${yamlString(expected)}
-  assertions:
-${assertions.map((assertion) => `    - ${yamlString(assertion)}`).join("\n") || "    - \"Refine this generated assertion before running.\""}
-  tests: []
----
+  return `# ${seed.scenario}
+
+Capability: ${seed.capability || seed.scenario}
+Topics: ${slugify(seed.phaseFocus || "implementation", "implementation")}
+
+## Problem Description
+
+${seed.userTaskShape || "Refine this generated problem description into realistic user context before running."}
+
+## Output Specification
+
+${expected}
 
 ## Task
 
-Draft this eval from the high-level scenario plan before running it.
+${seed.userTaskShape || seed.scenario}
 
-Scenario: ${seed.scenario}
-
-User task shape: ${seed.userTaskShape || "(fill in the solver-visible task)"}
-
-Expected skill lift: ${expected}
+Return an output that satisfies the specification above.
 `;
+}
+
+function criteriaDraft(seed: ScenarioSeed): Record<string, unknown> {
+  return {
+    fixtures: [],
+    tests: [],
+    metadata: {
+      generated_from: ".meta-skill/eval-scenarios.md",
+      phase_focus: seed.phaseFocus,
+      baseline_risk: seed.baselineRisk,
+      expected_skill_lift: seed.expectedSkillLift,
+      dimensions_exercised: seed.dimensionsExercised,
+      source_basis: seed.sourceBasis
+    },
+    criteria: criteriaRows(seed)
+  };
+}
+
+function criteriaRows(seed: ScenarioSeed): Array<{ criterion: string; phase: string; dimension: string; question: string; evidence: string }> {
+  const dimensions = splitDimensions(seed.dimensionsExercised, seed.phaseFocus);
+  const primary = dimensions[0] || { phase: phaseName(seed.phaseFocus || "Implementation"), dimension: "Actionability" };
+  const rows = [
+    {
+      criterion: seed.capability ? `Addresses ${seed.capability}` : "Addresses scenario capability",
+      phase: primary.phase,
+      dimension: primary.dimension,
+      question: `Does the response satisfy the ${seed.capability || seed.scenario} capability?`,
+      evidence: "response"
+    }
+  ];
+  const seenDimensions = new Set([`${primary.phase}:${primary.dimension}`.toLowerCase()]);
+  for (const dimension of dimensions.slice(1)) {
+    const key = `${dimension.phase}:${dimension.dimension}`.toLowerCase();
+    if (seenDimensions.has(key)) continue;
+    seenDimensions.add(key);
+    rows.push({
+      criterion: `Exercises ${dimension.dimension}`,
+      phase: dimension.phase,
+      dimension: dimension.dimension,
+      question: criteriaQuestion(dimension.phase, dimension.dimension, seed),
+      evidence: "response, transcript, tests"
+    });
+  }
+  if (seed.baselineRisk) {
+    rows.push({
+      criterion: "Avoids baseline risk",
+      phase: "Validation",
+      dimension: dimensionNamed(dimensions, "Prohibited Behavior Avoidance") || "Prohibited Behavior Avoidance",
+      question: `Does the response avoid this baseline risk: ${seed.baselineRisk}?`,
+      evidence: "response"
+    });
+  }
+  if (seed.sourceBasis) {
+    rows.push({
+      criterion: "Uses source basis",
+      phase: "Validation",
+      dimension: dimensionNamed(dimensions, "Source Faithfulness") || "Source Faithfulness",
+      question: `Does the response ground its behavior in ${seed.sourceBasis}?`,
+      evidence: "response"
+    });
+  }
+  return withBasePhaseCoverage(rows, seed);
+}
+
+function splitDimensions(text: string, defaultPhase: string): Array<{ phase: string; dimension: string }> {
+  return text
+    .split(/[;,]/)
+    .map((item) => item.trim())
+    .filter((item) => item && !isPlaceholder(item))
+    .map((item) => {
+      const parts = item.split(":").map((part) => part.trim()).filter(Boolean);
+      if (parts.length >= 2) return { phase: phaseName(parts[0]), dimension: parts.slice(1).join(": ") };
+      return { phase: phaseName(defaultPhase || "Implementation"), dimension: item };
+    });
+}
+
+function phaseName(value: string): string {
+  const normalized = value.toLowerCase();
+  if (normalized.includes("quality")) return "Quality";
+  if (normalized.includes("validation")) return "Validation";
+  return "Implementation";
+}
+
+function dimensionNamed(dimensions: Array<{ dimension: string }>, wanted: string): string | undefined {
+  return dimensions.find((item) => item.dimension.toLowerCase() === wanted.toLowerCase())?.dimension;
+}
+
+function criteriaQuestion(phase: string, dimension: string, seed: ScenarioSeed): string {
+  const target = seed.expectedSkillLift || seed.capability || seed.scenario;
+  if (phase === "Quality") return `Is the response strong on ${dimension} for ${target}?`;
+  if (phase === "Validation") return `Can the saved evidence validate ${dimension} for ${target}?`;
+  return `Does the response implement ${dimension} for ${target}?`;
+}
+
+function withBasePhaseCoverage(
+  rows: Array<{ criterion: string; phase: string; dimension: string; question: string; evidence: string }>,
+  seed: ScenarioSeed
+): Array<{ criterion: string; phase: string; dimension: string; question: string; evidence: string }> {
+  const existing = new Set(rows.map((row) => row.phase));
+  const baseRows = [
+    { phase: "Quality", dimension: "Specificity", criterion: "Specific output quality" },
+    { phase: "Implementation", dimension: "Actionability", criterion: "Actionable implementation" },
+    { phase: "Validation", dimension: "Structural correctness", criterion: "Validatable result" }
+  ];
+  for (const base of baseRows) {
+    if (existing.has(base.phase)) continue;
+    rows.push({
+      criterion: base.criterion,
+      phase: base.phase,
+      dimension: base.dimension,
+      question: criteriaQuestion(base.phase, base.dimension, seed),
+      evidence: base.phase === "Validation" ? "response, transcript, tests" : "response"
+    });
+  }
+  return rows;
 }

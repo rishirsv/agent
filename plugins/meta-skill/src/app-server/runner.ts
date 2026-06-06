@@ -123,7 +123,7 @@ export class AppServerEvalRunner {
       const turnIds: string[] = [];
       let final = "";
       const transcript: Transcript = { source: "codex_app_server", threadId, turns: [] };
-      const turns = [{ content: input.eval.task, source: "eval.md#Task" }, ...input.eval.turns.map((turn, index) => ({ content: turn.content, source: `eval.md#Turn ${index + 2}` }))];
+      const turns = [{ content: input.eval.task, source: "task.md#Task" }, ...input.eval.turns.map((turn, index) => ({ content: turn.content, source: `task.md#Turn ${index + 2}` }))];
       for (const [index, turn] of turns.entries()) {
         const result = await runTurn(client, this.rawTrace, threadId, runtimeRoot, workspaceRoots, turn.content, index === 0 && forceSkill, this.turnTimeoutMs, attachmentName, input.skillRoot);
         transcript.turns.push(result);

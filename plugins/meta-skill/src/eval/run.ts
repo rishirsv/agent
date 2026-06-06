@@ -21,7 +21,7 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
   const p = projectPaths(root);
   if (!(await exists(p.evals))) throw new CliError("eval workbench is missing; run `meta-skill project init <project>` first");
 
-  const preflight = await lintProject(root, { executeTests: false });
+  const preflight = await lintProject(root, { executeTests: false, evalSelector: options.selector });
   if (preflight.failures.length) {
     throw new CliError(`lint failed before run:\n${preflight.failures.map((failure) => `- ${failure.message}`).join("\n")}`);
   }
@@ -52,7 +52,12 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
     for (const item of evals) {
       const evalRoot = path.join(runRoot, "evals", item.folder);
       await ensureDir(evalRoot);
-      await fs.copyFile(path.join(item.path, "eval.md"), path.join(evalRoot, "eval.md"));
+      await Promise.all([
+        fs.copyFile(path.join(item.path, "task.md"), path.join(evalRoot, "task.md")),
+        fs.copyFile(path.join(item.path, "criteria.json"), path.join(evalRoot, "criteria.json"))
+      ]);
+      const fixtures = path.join(item.path, "fixtures");
+      if (await exists(fixtures)) await fs.cp(fixtures, path.join(evalRoot, "fixtures"), { recursive: true });
       try {
         const skillRoot = runSourceKind === "working_payload" ? path.join(runRoot, "payload") : undefined;
         await runner.run({ projectRoot: root, skillRoot, skill_activation: runSourceConfig.runSource.skill_activation, eval: { ...item, path: evalRoot }, runSource: runSourceConfig.runSource, runId, runRoot, appServer });
@@ -67,7 +72,7 @@ export async function runEval(options: EvalRunOptions): Promise<{ runId: string;
   }
 
   if (!options.noLint) {
-    const lint = await lintProject(root);
+    const lint = await lintProject(root, { evalSelector: options.selector });
     if (!lint.ok) errors.push("lint checks recorded non-passing observations");
   }
 

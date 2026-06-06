@@ -1,5 +1,4 @@
 import { promises as fs } from "node:fs";
-import type { EvalCriteria, EvalFixture, EvalMetadata } from "./models.ts";
 
 export interface SkillFrontmatter {
   name?: string;
@@ -47,28 +46,6 @@ export async function parseSkillFrontmatterFull(skillMd: string): Promise<SkillF
   return decodeSkillFrontmatterFull(parsed.frontmatter, skillMd);
 }
 
-export function parseEvalFrontmatter(text: string, filePath: string): { metadata: EvalMetadata; criteria: EvalCriteria; body: string } {
-  const parsed = parseRequiredFrontmatter(text, filePath, "eval.md must start with YAML frontmatter");
-  const frontmatter = parsed.frontmatter;
-  const criteria = decodeObject(frontmatter, "criteria", filePath);
-  return {
-    body: parsed.body,
-    metadata: {
-      title: decodeString(frontmatter, "title", filePath, { defaultValue: "" }) ?? "",
-      topics: decodeStringArray(frontmatter, "topics", filePath, { defaultValue: [] }),
-      capability: decodeString(frontmatter, "capability", filePath, { optional: true }),
-      fixtures: decodeFixtures(frontmatter, filePath),
-      metadata: decodeObject(frontmatter, "metadata", filePath, { defaultValue: {} })
-    },
-    criteria: {
-      what_it_tests: decodeString(criteria, "what_it_tests", filePath, { optional: true }),
-      expected_behavior: decodeString(criteria, "expected_behavior", filePath, { defaultValue: "" }) ?? "",
-      assertions: decodeStringArray(criteria, "assertions", filePath, { defaultValue: [] }),
-      tests: decodeStringArray(criteria, "tests", filePath, { defaultValue: [] })
-    }
-  };
-}
-
 export async function parseAgentManifestMetadata(manifestPath: string): Promise<AgentManifestMetadata> {
   const text = await fs.readFile(manifestPath, "utf8");
   const frontmatter = parseYamlObject(text, manifestPath);
@@ -100,11 +77,6 @@ function decodeSkillFrontmatterFull(frontmatter: Record<string, unknown>, filePa
 
 function parseOptionalFrontmatter(text: string, filePath: string): { frontmatter: Record<string, unknown>; body: string } | null {
   if (!text.startsWith("---\n")) return null;
-  return parseFrontmatter(text, filePath);
-}
-
-function parseRequiredFrontmatter(text: string, filePath: string, missingMessage: string): { frontmatter: Record<string, unknown>; body: string } {
-  if (!text.startsWith("---\n")) throw new MetadataError(`${filePath}: ${missingMessage}`);
   return parseFrontmatter(text, filePath);
 }
 
@@ -221,43 +193,10 @@ function decodeString(
   return value;
 }
 
-function decodeStringArray(source: Record<string, unknown>, key: string, filePath: string, options: { defaultValue: string[] }): string[] {
-  const value = source[key];
-  if (value === undefined) return options.defaultValue;
-  if (!Array.isArray(value) || !value.every((item) => typeof item === "string")) {
-    throw new MetadataError(`${filePath}: frontmatter field '${key}' must be a list of strings`);
-  }
-  return value;
-}
-
-function decodeObject(
-  source: Record<string, unknown>,
-  key: string,
-  filePath: string,
-  options: { defaultValue?: Record<string, unknown> } = {}
-): Record<string, unknown> {
-  const value = source[key];
-  if (value === undefined) return options.defaultValue || {};
-  return asObject(value, filePath, `frontmatter field '${key}'`);
-}
-
 function decodeOptionalObject(source: Record<string, unknown>, key: string, filePath: string): Record<string, unknown> | undefined {
   const value = source[key];
   if (value === undefined || value === null) return undefined;
   return asObject(value, filePath, `frontmatter field '${key}'`);
-}
-
-function decodeFixtures(source: Record<string, unknown>, filePath: string): EvalFixture[] {
-  const value = source.fixtures;
-  if (value === undefined) return [];
-  if (!Array.isArray(value)) throw new MetadataError(`${filePath}: frontmatter field 'fixtures' must be a list of fixture objects`);
-  return value.map((item, index) => {
-    const fixture = asObject(item, filePath, `frontmatter field 'fixtures[${index}]'`);
-    const fixturePath = decodeString(fixture, "path", filePath, { optional: true });
-    if (!fixturePath) throw new MetadataError(`${filePath}: frontmatter field 'fixtures[${index}].path' must be a string`);
-    const description = decodeString(fixture, "description", filePath, { optional: true });
-    return { path: fixturePath, ...(description ? { description } : {}) };
-  });
 }
 
 function asObject(value: unknown, filePath: string, label: string): Record<string, unknown> {

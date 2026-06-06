@@ -34,7 +34,7 @@ Valid improvement evidence includes:
 - `.meta-skill/runs/<run-id>/evals/<eval-folder>/response.md`
 - `.meta-skill/runs/<run-id>/evals/<eval-folder>/rpc.jsonl`
 - `tests.jsonl`, `grades.jsonl`, or `feedback.jsonl`
-- eval `eval.md`, criteria, trace, final output, or artifacts
+- eval `task.md`, `criteria.json`, trace, final output, or artifacts
 - concrete user-observed failure
 
 If evidence is missing, ask the user to run `meta-skill lint` or `meta-skill run`, or to authorize a manual review path.

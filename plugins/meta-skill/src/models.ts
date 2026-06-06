@@ -1,10 +1,3 @@
-export type EvalTypeCode = "R" | "F" | "G";
-
-export type EvalType =
-  | "regression"
-  | "failure_mode"
-  | "gate";
-
 export type EvalRunSourceKind = "working_payload" | "no_skill";
 export type SkillActivation = "forced" | "none" | "discoverable";
 
@@ -38,10 +31,20 @@ export interface EvalMetadata {
   metadata?: Record<string, unknown>;
 }
 
+export const EVAL_PHASES = ["Quality", "Implementation", "Validation"] as const;
+
+export type EvalPhase = (typeof EVAL_PHASES)[number];
+
+export interface EvalCriterion {
+  criterion: string;
+  phase?: EvalPhase;
+  dimension?: string;
+  question: string;
+  evidence?: string;
+}
+
 export interface EvalCriteria {
-  what_it_tests?: string;
-  expected_behavior: string;
-  assertions: string[];
+  criteria: EvalCriterion[];
   tests?: string[];
 }
 
@@ -49,9 +52,10 @@ export interface EvalRecord {
   folder: string;
   id: string;
   path: string;
-  type: EvalType;
   metadata: EvalMetadata;
   criteria: EvalCriteria;
+  problemDescription: string;
+  outputSpecification: string;
   task: string;
   turns: Array<{ content: string }>;
 }

@@ -21,14 +21,14 @@ describe("AppServerEvalRunner", () => {
       projectRoot: skillRoot,
       skillRoot,
       skill_activation: "forced",
-      eval: caseRecord(root),
+      eval: evalRecord(root),
       runSource: { kind: "working_payload", label: "Working payload", skill_root: "payload", skill_activation: "forced" },
       runId: "001-test",
       runRoot,
       appServer: { mode: "managed", auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }
     });
 
-    const evalRoot = path.join(runRoot, "evals", "R1-basic");
+    const evalRoot = path.join(runRoot, "evals", "basic");
     assert.equal(await exists(path.join(evalRoot, "rpc.jsonl")), true);
     assert.equal(await exists(path.join(evalRoot, "transcript.json")), true);
     assert.equal(await exists(path.join(evalRoot, "response.md")), true);
@@ -52,14 +52,14 @@ describe("AppServerEvalRunner", () => {
       projectRoot: skillRoot,
       skillRoot,
       skill_activation: "forced",
-      eval: { ...caseRecord(root), turns: [{ content: "Follow up." }] },
+      eval: { ...evalRecord(root), turns: [{ content: "Follow up." }] },
       runSource: { kind: "working_payload", label: "Working payload", skill_root: "payload", skill_activation: "forced" },
       runId: "001-test",
       runRoot,
       appServer: { mode: "managed", auth: "inherited", protocol: "generated-ts", generatedTypes: "test" }
     });
 
-    const evalRoot = path.join(runRoot, "evals", "R1-basic");
+    const evalRoot = path.join(runRoot, "evals", "basic");
     const final = await readText(path.join(evalRoot, "response.md"));
     assert.doesNotMatch(final, /first turn final/);
     assert.match(final, /Final assistant message unavailable for turn turn-2/);
@@ -131,14 +131,22 @@ class OverflowFakeClient {
   }
 }
 
-function caseRecord(root: string): EvalRecord {
+function evalRecord(root: string): EvalRecord {
   return {
-    folder: "R1-basic",
-    id: "R1",
+    folder: "basic",
+    id: "basic",
     path: root,
-    type: "regression",
-    metadata: { title: "Basic" },
-    criteria: { expected_behavior: "Runs", assertions: [], tests: [] },
+    metadata: { title: "Basic", capability: "Basic answer" },
+    criteria: {
+      criteria: [
+        { criterion: "Specific", phase: "Quality", dimension: "Specificity", question: "Is it specific?", evidence: "response" },
+        { criterion: "Runs", phase: "Implementation", dimension: "Actionability", question: "Does it answer?", evidence: "response" },
+        { criterion: "Valid", phase: "Validation", dimension: "Structural correctness", question: "Is it valid?", evidence: "response" }
+      ],
+      tests: []
+    },
+    problemDescription: "Answer directly.",
+    outputSpecification: "A direct answer.",
     task: "Answer.",
     turns: []
   };

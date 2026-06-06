@@ -35,10 +35,12 @@ describe("eval generation", () => {
 
     const result = await generateEvalsFromScenarios(target);
 
-    assert.deepEqual(result.created, ["F1-capture-a-decision-record", "G2-stop-on-missing-approval"]);
-    assert.equal(await exists(path.join(p.evals, "F1-capture-a-decision-record", "eval.md")), true);
-    const generated = await readText(path.join(p.evals, "F1-capture-a-decision-record", "eval.md"));
-    assert.match(generated, /generated_from: ".meta-skill\/eval-scenarios.md"/);
-    assert.match(generated, /Expected skill lift: Captures decision, options, and follow-ups/);
+    assert.deepEqual(result.created, ["capture-a-decision-record", "stop-on-missing-approval"]);
+    assert.equal(await exists(path.join(p.evals, "capture-a-decision-record", "task.md")), true);
+    assert.equal(await exists(path.join(p.evals, "capture-a-decision-record", "criteria.json")), true);
+    const generated = JSON.parse(await readText(path.join(p.evals, "capture-a-decision-record", "criteria.json")));
+    assert.equal(generated.metadata.generated_from, ".meta-skill/eval-scenarios.md");
+    assert.ok(generated.criteria.some((criterion: { criterion?: string; phase?: string; dimension?: string }) => criterion.criterion === "Exercises Required Content Capture" && criterion.phase === "Implementation" && criterion.dimension === "Required Content Capture"));
+    assert.match(await readText(path.join(p.evals, "capture-a-decision-record", "task.md")), /Captures decision, options, and follow-ups/);
   });
 });

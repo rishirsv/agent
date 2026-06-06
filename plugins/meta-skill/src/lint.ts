@@ -4,7 +4,7 @@ import path from "node:path";
 import { promisify } from "node:util";
 import { parseAgentManifestMetadata, parseSkillFrontmatterFull } from "./metadata.ts";
 import type { AgentManifestMetadata, SkillFrontmatterFull } from "./metadata.ts";
-import type { Issue, LintReport } from "./models.ts";
+import { EVAL_PHASES, type Issue, type LintReport } from "./models.ts";
 import {
   exists,
   projectPaths,
@@ -12,12 +12,14 @@ import {
 } from "./project.ts";
 import { evalIdentity, readEval } from "./eval/evals.ts";
 import { isValidTestId, listEvalFolders, listDeterministicTests } from "./eval/discovery.ts";
+import type { EvalSelector } from "./eval/types.ts";
 
 const execAsync = promisify(exec);
 
 export interface LintOptions {
   json?: boolean;
   executeTests?: boolean;
+  evalSelector?: EvalSelector;
 }
 
 export async function lintProject(target: string, options: LintOptions = {}): Promise<LintReport> {
@@ -30,7 +32,7 @@ export async function lintProject(target: string, options: LintOptions = {}): Pr
   await validatePortablePayload(root, failures, warnings);
 
   if (await exists(p.meta)) {
-    await validateWorkbench(root, failures, warnings);
+    await validateWorkbench(root, failures, warnings, options.evalSelector);
   }
 
   if (options.executeTests !== false) {
@@ -258,7 +260,7 @@ async function validateAgentManifest(root: string, failures: Issue[]): Promise<v
   }
 }
 
-async function validateWorkbench(root: string, failures: Issue[], warnings: Issue[]): Promise<void> {
+async function validateWorkbench(root: string, failures: Issue[], warnings: Issue[], selector: EvalSelector = {}): Promise<void> {
   const p = projectPaths(root);
   if (!(await exists(p.spec))) failures.push(issue("failure", ".meta-skill/spec.md is missing", p.spec));
   else await validateSpecPlaceholders(p.spec, warnings);
@@ -270,7 +272,8 @@ async function validateWorkbench(root: string, failures: Issue[], warnings: Issu
     warnings.push(issue("warning", "no evals folder yet", p.evals));
     return;
   }
-  const evalFolders = await listEvalFolders(p.evals);
+  const wantedEvals = selector.eval?.length ? new Set(selector.eval) : undefined;
+  const evalFolders = (await listEvalFolders(p.evals)).filter((folder) => !wantedEvals || wantedEvals.has(folder));
   if (!evalFolders.length) warnings.push(issue("warning", "no evals yet", p.evals));
   const seenIds = new Set<string>();
   for (const folder of evalFolders) {
@@ -298,9 +301,15 @@ async function validateEval(
   } catch (error) {
     failures.push(issue("failure", error instanceof Error ? error.message : String(error), evalDir));
   }
-  const evalMd = path.join(evalDir, "eval.md");
-  if (!(await exists(evalMd))) {
-    failures.push(issue("failure", "eval is missing eval.md", evalMd));
+  const taskMd = path.join(evalDir, "task.md");
+  const criteriaJson = path.join(evalDir, "criteria.json");
+  const [hasTask, hasCriteria] = await Promise.all([exists(taskMd), exists(criteriaJson)]);
+  if (!hasTask) {
+    failures.push(issue("failure", "eval is missing task.md", taskMd));
+    return;
+  }
+  if (!hasCriteria) {
+    failures.push(issue("failure", "eval is missing criteria.json", criteriaJson));
     return;
   }
 
@@ -308,32 +317,49 @@ async function validateEval(
   try {
     item = await readEval(evalDir, folder);
   } catch (error) {
-    failures.push(issue("failure", error instanceof Error ? error.message : String(error), evalMd));
+    failures.push(issue("failure", error instanceof Error ? error.message : String(error), evalDir));
     return;
   }
-  if (seenIds.has(item.id)) failures.push(issue("failure", `duplicate eval id: ${item.id}`, evalMd));
+  if (seenIds.has(item.id)) failures.push(issue("failure", `duplicate eval id: ${item.id}`, taskMd));
   seenIds.add(item.id);
-  if (!item.metadata.title) warnings.push(issue("warning", "eval title is empty", evalMd));
+  if (!item.metadata.title) failures.push(issue("failure", "task.md title is required", taskMd));
+  if (!item.metadata.capability) failures.push(issue("failure", "task.md capability is required", taskMd));
+  if (!item.problemDescription) failures.push(issue("failure", "task.md problem description is required", taskMd));
+  if (!item.outputSpecification) failures.push(issue("failure", "task.md output specification is required", taskMd));
+  if (!item.task) failures.push(issue("failure", "task.md task is required", taskMd));
 
-  if (!item.criteria.expected_behavior) failures.push(issue("failure", "eval criteria.expected_behavior is required", evalMd));
-  if (!Array.isArray(item.criteria.assertions) || !item.criteria.assertions.length) failures.push(issue("failure", "eval criteria.assertions must include at least one assertion", evalMd));
-  for (const testId of item.criteria.tests || []) {
-    if (!testIds.has(testId)) failures.push(issue("failure", `criteria references missing test id: ${testId}`, evalMd));
+  if (!Array.isArray(item.criteria.criteria) || !item.criteria.criteria.length) failures.push(issue("failure", "criteria.json must include at least one criterion", criteriaJson));
+  for (const criterion of item.criteria.criteria || []) {
+    if (!criterion.criterion) failures.push(issue("failure", "criterion is missing criterion", criteriaJson));
+    if (!criterion.question) failures.push(issue("failure", `criterion is missing question: ${criterion.criterion || "(unnamed)"}`, criteriaJson));
+    if (!criterion.phase) failures.push(issue("failure", `criterion is missing phase: ${criterion.criterion || "(unnamed)"}`, criteriaJson));
+    if (!criterion.dimension) failures.push(issue("failure", `criterion is missing dimension: ${criterion.criterion || "(unnamed)"}`, criteriaJson));
   }
-  if (!(item.criteria.tests || []).length) warnings.push(issue("warning", `${item.id} has no deterministic tests`, evalMd));
+  for (const phase of missingCriteriaPhases(item.criteria.criteria || [])) {
+    failures.push(issue("failure", `criteria.json must include at least one ${phase} criterion`, criteriaJson));
+  }
+  for (const testId of item.criteria.tests || []) {
+    if (!testIds.has(testId)) failures.push(issue("failure", `criteria references missing test id: ${testId}`, criteriaJson));
+  }
+  if (!(item.criteria.tests || []).length) warnings.push(issue("warning", `${item.id} has no deterministic tests`, criteriaJson));
 
   const declared = new Set((item.metadata.fixtures || []).map((fixture) => fixture.path));
   const fixtureFiles = await listFixtureFiles(path.join(evalDir, "fixtures"));
   for (const fixture of declared) {
     const resolved = path.resolve(evalDir, fixture);
     const relative = path.relative(evalDir, resolved);
-    if (!fixture.startsWith("fixtures/")) failures.push(issue("failure", `fixture path must live under fixtures/: ${fixture}`, evalMd));
-    if (relative.startsWith("..") || path.isAbsolute(relative)) failures.push(issue("failure", `fixture path escapes eval folder: ${fixture}`, evalMd));
-    if (!(await exists(resolved))) failures.push(issue("failure", `declared fixture does not exist: ${fixture}`, evalMd));
+    if (!fixture.startsWith("fixtures/")) failures.push(issue("failure", `fixture path must live under fixtures/: ${fixture}`, criteriaJson));
+    if (relative.startsWith("..") || path.isAbsolute(relative)) failures.push(issue("failure", `fixture path escapes eval folder: ${fixture}`, criteriaJson));
+    if (!(await exists(resolved))) failures.push(issue("failure", `declared fixture does not exist: ${fixture}`, criteriaJson));
   }
   for (const fixture of fixtureFiles) {
-    if (!declared.has(fixture)) failures.push(issue("failure", `fixture is present but undeclared: ${fixture}`, evalMd));
+    if (!declared.has(fixture)) failures.push(issue("failure", `fixture is present but undeclared: ${fixture}`, criteriaJson));
   }
+}
+
+function missingCriteriaPhases(criteria: Array<{ phase?: string }>): string[] {
+  const present = new Set(criteria.map((criterion) => criterion.phase).filter(Boolean));
+  return EVAL_PHASES.filter((phase) => !present.has(phase));
 }
 
 // The spec template ships with <...> placeholders; the skill is not authored

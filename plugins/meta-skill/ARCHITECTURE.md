@@ -12,7 +12,7 @@ Commands have one side-effect class:
 | Projection | `lint` | compute output without mutating run evidence |
 | Transform | `create`, `project init`, `evals create`, `package` | write files the user explicitly requested |
 
-The current top-level command surface is `create`, `project init`, `evals create`, `lint`, `run`, and `package`. `evals create` drafts executable eval files from `.meta-skill/eval-scenarios.md`. `run` selects authored evals by `--eval`, `--type <R|F|G>`, or `--topic`; it evaluates either the working payload or a no-skill control with `--no-skill`.
+The current top-level command surface is `create`, `project init`, `evals create`, `lint`, `run`, and `package`. `evals create` drafts executable eval files from `.meta-skill/eval-scenarios.md`. `run` selects authored evals by `--eval` or `--topic`; it evaluates either the working payload or a no-skill control with `--no-skill`.
 
 ## Project Shape
 
@@ -41,7 +41,7 @@ Workbench state uses the flat project-local layout:
   runs/
 ```
 
-`.meta-skill/eval-scenarios.md` is the high-level create-time scenario plan. Executable evals live under `.meta-skill/evals/<ID-slug>/`. The eval ID prefix is the eval type: `R` for regression, `F` for failure mode, and `G` for gate. Eval files may be manually authored or drafted from the scenario plan with `meta-skill evals create`, then refined before running.
+`.meta-skill/eval-scenarios.md` is the high-level create-time scenario plan. Executable evals live under `.meta-skill/evals/<slug>/` with lowercase hyphenated folder names. Eval files may be manually authored or drafted from the scenario plan with `meta-skill evals create`, then refined before running.
 
 ## Eval Evidence
 
@@ -50,7 +50,8 @@ Runs live under `.meta-skill/runs/<run-id>/`:
 ```text
 payload/
 evals/<eval-folder>/
-  eval.md
+  task.md
+  criteria.json
   rpc.jsonl
   transcript.json
   response.md
@@ -60,7 +61,8 @@ evals/<eval-folder>/
 
 Per-eval files have one nature each:
 
-- `eval.md`: frozen definition
+- `task.md`: frozen solver-visible task definition
+- `criteria.json`: frozen evaluator-only criteria, fixtures, tests, and metadata
 - `rpc.jsonl`: raw App Server trace
 - `transcript.json`: normalized App Server transcript
 - `response.md`: final answer

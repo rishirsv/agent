@@ -13,7 +13,7 @@ Usage:
   meta-skill project init <skill-dir>
   meta-skill evals create <project>
   meta-skill lint <project-or-skill> [--json]
-  meta-skill run <project> [--eval <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--turn-timeout-ms <ms>] [--trace-buffer-events <count>] [--no-skill] [--no-lint]
+  meta-skill run <project> [--eval <id>] [--topic <topic>] [--label "..."] [--turn-timeout-ms <ms>] [--trace-buffer-events <count>] [--no-skill] [--no-lint]
   meta-skill package <project> [--out <zip>] [--out-dir <dir>]
 `;
 
@@ -97,13 +97,11 @@ async function commandLint(argv: string[]): Promise<number> {
 }
 
 async function commandRun(argv: string[]): Promise<number> {
-  const args = parse(argv, ["eval", "type", "topic", "label", "turn-timeout-ms", "trace-buffer-events"], ["no-skill", "no-lint"]);
+  const args = parse(argv, ["eval", "topic", "label", "turn-timeout-ms", "trace-buffer-events"], ["no-skill", "no-lint"]);
   const project = args.positionals[0] || ".";
-  const type = args.one("type");
-  if (type && !["R", "F", "G"].includes(type)) throw new CliError("--type must be one of R, F, G", 2);
   const result = await runEval({
     project,
-    selector: { eval: args.many("eval"), type, topic: args.many("topic") },
+    selector: { eval: args.many("eval"), topic: args.many("topic") },
     label: args.one("label"),
     runSource: args.has("no-skill") ? "no_skill" : "working_payload",
     noLint: args.has("no-lint"),

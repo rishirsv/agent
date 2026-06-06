@@ -79,7 +79,7 @@ meta-skill create [skill-dir] [--project] --slug <slug> --title <title> --descri
 meta-skill project init <skill-dir>
 meta-skill evals create <project>
 meta-skill lint <project-or-skill> [--json]
-meta-skill run <project> [--eval <id>] [--type <R|F|G>] [--topic <topic>] [--label "..."] [--turn-timeout-ms <ms>] [--trace-buffer-events <count>] [--no-skill] [--no-lint]
+meta-skill run <project> [--eval <id>] [--topic <topic>] [--label "..."] [--turn-timeout-ms <ms>] [--trace-buffer-events <count>] [--no-skill] [--no-lint]
 meta-skill package <project> [--out <zip>] [--out-dir <dir>]
 ```
 
@@ -118,7 +118,7 @@ nest, move, or copy the portable payload.
 
 Next step: add or refine `.meta-skill/spec.md` and
 `.meta-skill/eval-scenarios.md`, then run `meta-skill evals create <skill-dir>`
-or manually author evals under `.meta-skill/evals/<ID-slug>/`.
+or manually author evals under `.meta-skill/evals/<slug>/`.
 
 ## Lint
 
@@ -129,7 +129,7 @@ Use `lint` after create, after edits, before runs, and before packaging.
 - `SKILL.md` frontmatter, trigger wording, `not for` boundary, and body.
 - `agents/openai.yaml` metadata when present.
 - Runtime references, scripts, and assets are directly linked from `SKILL.md`.
-- `.meta-skill/spec.md`, eval folders, eval frontmatter, fixtures, and
+- `.meta-skill/spec.md`, eval folders, criteria JSON, fixtures, and
   deterministic test IDs when project mode exists.
 - Executable deterministic tests directly under `.meta-skill/tests/`.
 
@@ -142,22 +142,18 @@ Use `evals create` when `.meta-skill/eval-scenarios.md` has a filled Scenario
 Plan table and the user wants draft executable eval files.
 
 The command reads `.meta-skill/eval-scenarios.md` and creates missing
-`.meta-skill/evals/<ID-slug>/eval.md` drafts. It preserves the scenario plan as
-the high-level create-time artifact; the generated `eval.md` files are the
-evaluate-time artifacts to refine before running.
+`.meta-skill/evals/<slug>/task.md` and `.meta-skill/evals/<slug>/criteria.json`
+drafts. It preserves the scenario plan as the high-level create-time artifact;
+the generated split files are the evaluate-time artifacts to refine before
+running.
 
 ## Run
 
 Use `run` only for project skills with authored evals.
 
-Eval folders live at `.meta-skill/evals/<ID-slug>/`, where the ID starts with:
-
-- `R`: regression behavior the skill should preserve.
-- `F`: failure mode, ambiguity, or hard multi-turn behavior.
-- `G`: gate behavior such as approval, safe stop, or safe default.
-
-Select evals with `--eval <id-or-folder>`, `--type <R|F|G>`, or
-`--topic <topic>`. Use `--label` to make the run folder easier to recognize.
+Eval folders live at `.meta-skill/evals/<slug>/`, where `<slug>` is lowercase
+and hyphenated. Select evals with `--eval <id-or-folder>` or `--topic <topic>`.
+Use `--label` to make the run folder easier to recognize.
 
 By default, `run` evaluates the current working payload. It snapshots that
 payload into the run folder before execution. Use `--no-skill` for no-skill
@@ -179,7 +175,8 @@ Run evidence is saved under:
 .meta-skill/runs/<run-id>/
   payload/                 working-payload runs only
   evals/<eval-folder>/
-    eval.md                frozen eval definition
+    task.md                frozen solver-visible task definition
+    criteria.json            frozen evaluator-only criteria definition
     rpc.jsonl              raw App Server trace
     transcript.json         normalized transcript
     response.md             final assistant answer
