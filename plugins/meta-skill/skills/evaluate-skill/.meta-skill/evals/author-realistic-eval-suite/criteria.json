@@ -1,0 +1,33 @@
+{
+  "fixtures": [],
+  "tests": [
+    "prompt-boundary"
+  ],
+  "metadata": {
+    "lane": "evaluate-skill",
+    "expected_artifacts": "eval suite plan with task and criteria outlines"
+  },
+  "criteria": [
+    {
+      "criterion": "Frames realistic solver tasks",
+      "phase": "Quality",
+      "dimension": "Realistic Task Framing",
+      "question": "Does the response make proposed solver-visible tasks read like realistic maintainer requests rather than harness, grader, or self-eval instructions?",
+      "evidence": "response, transcript"
+    },
+    {
+      "criterion": "Keeps criteria hidden",
+      "phase": "Implementation",
+      "dimension": "Criteria Privacy",
+      "question": "Does the response keep evaluator-only criteria, expected answers, and scoring notes out of the proposed task.md text?",
+      "evidence": "response"
+    },
+    {
+      "criterion": "Defines complete eval artifacts",
+      "phase": "Validation",
+      "dimension": "Eval Artifact Completeness",
+      "question": "Does the response include task outlines, criteria rows with Quality/Implementation/Validation coverage, fixture guidance, commands to run, and proof limits?",
+      "evidence": "response"
+    }
+  ]
+}

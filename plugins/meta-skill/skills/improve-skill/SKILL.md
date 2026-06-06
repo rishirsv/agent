@@ -34,7 +34,7 @@ For isolated subagent trials or adversarial reviews, use the shared Meta Skill r
 - Treat completed eval execution as evidence only, not pass proof. Before editing from it, name what ran, what files exist, and what the evidence shows.
 - For non-trivial edits, use an isolated read-only subagent review when available. Follow the shared subagent patterns at `../../references/subagent-patterns.md`: the subagent receives a compact scope and realistic maintainer request, while the parent keeps hidden criteria, scoring, edits, and final validation.
 
-Edit the working portable payload directly after the evidence justifies the change. Git is the application mechanism and diff review surface.
+When the user has authorized edits, edit the working portable payload directly after evidence justifies the change. Git is the application mechanism and diff review surface.
 
 ## Edit Discipline
 

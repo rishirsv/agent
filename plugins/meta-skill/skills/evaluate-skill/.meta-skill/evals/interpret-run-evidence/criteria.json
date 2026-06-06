@@ -1,0 +1,33 @@
+{
+  "fixtures": [],
+  "tests": [
+    "prompt-boundary"
+  ],
+  "metadata": {
+    "lane": "evaluate-skill",
+    "expected_artifacts": "honest run evidence interpretation"
+  },
+  "criteria": [
+    {
+      "criterion": "Avoids pass verdicts without scoring",
+      "phase": "Quality",
+      "dimension": "Proof-Limit Honesty",
+      "question": "Does the response avoid calling the run a pass or fail when all scores are still review required?",
+      "evidence": "response, transcript"
+    },
+    {
+      "criterion": "Interprets evidence paths and errors",
+      "phase": "Implementation",
+      "dimension": "Evidence Interpretation",
+      "question": "Does the response name executed evals, the App Server error, evidence paths, score status, and token usage availability?",
+      "evidence": "response"
+    },
+    {
+      "criterion": "Keeps run interpretation user-facing",
+      "phase": "Validation",
+      "dimension": "Prompt Boundary Protection",
+      "question": "Does the response summarize evidence and next steps without inventing unavailable metrics, hidden criteria, or generated validation rows?",
+      "evidence": "response"
+    }
+  ]
+}
