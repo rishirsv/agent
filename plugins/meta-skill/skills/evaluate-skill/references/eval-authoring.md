@@ -18,23 +18,22 @@ Use this order:
 
 If you have no examples, create a small starter set, run it through the actual skill workflow, then review the resulting traces before expanding the suite. Do not keep scaling synthetic evals that have not been grounded in real behavior.
 
-## Command Truth
+## Surface Truth
 
-Eval authoring may describe only commands and flags that the current Meta Skill CLI supports. If you are unsure a command exists, check the CLI help or source before including it.
+Eval authoring may describe only workflow surfaces that actually exist in the current skill project. Do not invent commands, generated reports, flags, scores, or run IDs.
 
-Current safe command pattern:
+Current safe pattern:
 
-```bash
-meta-skill lint <project>
-meta-skill run <project>
-```
+- author or inspect files under `.meta-skill/evals/<slug>/`
+- inspect saved evidence under `.meta-skill/runs/<run-id>/` when it exists
+- run deterministic tests only when the skill project already provides them
 
-Use a selected eval, labels, no-skill baselines, comparison modes, judges, or generated reports only when the current CLI/source proves that exact surface exists. Otherwise describe the need as a future or manual step. Do not invent flags, run IDs, baseline comparisons, pass/fail scores, token usage, or evidence paths that have not been produced.
+Use selected evals, labels, no-skill baselines, comparison modes, judges, or generated reports only when current files or saved evidence prove that exact surface exists. Otherwise describe the need as a future or manual step. Do not invent options, run IDs, baseline comparisons, pass/fail scores, token usage, or evidence paths that have not been produced.
 
 When writing an honest run plan:
 
 - say which files must be authored before running
-- name the command you know is supported
+- name the workflow action you know is supported
 - say what evidence should exist after a successful run
 - say what remains unproven until the run and review actually happen
 - keep baseline or solver-comparison language as manual analysis unless a supported compare command exists
@@ -221,7 +220,7 @@ Use generic metrics only as exploration signals for finding traces to review. Do
       "phase": "Quality",
       "dimension": "<dimension>",
       "question": "<binary pass/fail question>",
-      "evidence": "response",
+      "evidence": "child result block",
       "max_score": 25
     },
     {
@@ -229,7 +228,7 @@ Use generic metrics only as exploration signals for finding traces to review. Do
       "phase": "Implementation",
       "dimension": "<dimension>",
       "question": "<binary pass/fail question>",
-      "evidence": "response, transcript",
+      "evidence": "child result block, compact report, selected child-thread evidence",
       "max_score": 25
     },
     {
@@ -237,14 +236,14 @@ Use generic metrics only as exploration signals for finding traces to review. Do
       "phase": "Validation",
       "dimension": "<dimension>",
       "question": "<binary pass/fail question>",
-      "evidence": "response, transcript, captured validation output",
+      "evidence": "child result block, selected child-thread evidence, captured validation output",
       "max_score": 25
     }
   ]
 }
 ```
 
-Phases are fixed: `Quality`, `Implementation`, and `Validation`. Use `max_score` when you want the run result to expose Tessl-style weighted-checklist totals; omit it only when all criteria should have equal review weight. Do not create separate score files during authoring.
+Phases are fixed: `Quality`, `Implementation`, and `Validation`. Use `max_score` when you want the result row or report to expose weighted-checklist totals; omit it only when all criteria should have equal review weight. Do not create separate score files during authoring.
 
 Dimensions are dynamic but additive. Start with the shared base dimensions from `.meta-skill/eval-scenarios.md`, then add skill-specific dimensions only when the scenario needs them.
 
@@ -303,7 +302,7 @@ Do not build automated evaluators for every row. Match the evaluator to the fail
 - Use human review for nuanced product judgment, domain quality, source faithfulness that requires expertise, and new failure discovery.
 - Use model judging only for scoped binary classification after the failure mode is well understood and examples exist.
 
-Deterministic tests run through `meta-skill lint`; they are not automatically frozen as per-eval run artifacts. If a criterion depends on test results, cite the command output explicitly in the handoff or save it as an artifact. Fix obvious prompt or instruction gaps before building evaluator machinery around them. Automated evaluators are most valuable for failures that persist after the simple fix.
+Deterministic tests are not automatically frozen as per-eval run artifacts. If a criterion depends on test results, cite the validation output explicitly in the handoff or save it as an artifact. Fix obvious prompt or instruction gaps before building evaluator machinery around them. Automated evaluators are most valuable for failures that persist after the simple fix.
 
 ## Human Review
 
@@ -338,7 +337,7 @@ Use multi-turn evals only when the failure requires conversation context. If a s
 When reviewing multi-turn or agentic evidence:
 
 - Judge the whole user goal first with a binary pass/fail question.
-- Inspect the full `transcript.json`, including tool calls and intermediate steps.
+- Inspect the child result block first, then open selected child-thread/worktree evidence when tool calls or intermediate steps matter.
 - Identify the first upstream failure before scoring downstream symptoms.
 - Add process criteria only when the process affects outcome quality, safety, cost, or debuggability.
 - For follow-up behavior, prefer real conversation prefixes when available.

@@ -15,7 +15,7 @@ This reference covers design decisions and runtime writing. It owns principles. 
 
 ## Design Aim
 
-A good skill is a reusable behavior harness. It gives a future agent the extra context, judgment pattern, file structure, or deterministic helper it needs to handle a recurring task better than it would from the user prompt alone.
+A good skill is a reusable behavior harness. It gives a future agent the extra context, judgment pattern, file structure, or deterministic script it needs to handle a recurring task better than it would from the user prompt alone.
 
 Skills should be practical, not encyclopedic. Treat every runtime `SKILL.md` as scarce attention budget: include what changes future behavior, omit background the base model already knows, and move detailed or conditional material behind progressive disclosure.
 
@@ -94,7 +94,7 @@ Create or update a skill when most of these are true:
 - The workflow will recur across users, files, clients, or projects.
 - The task has non-obvious trigger boundaries or repeated failure modes.
 - The desired output has a specific shape, tone, caveat pattern, or artifact standard.
-- The agent would otherwise reinvent the same helper script, template, checklist, or conversion logic.
+- The agent would otherwise reinvent the same script, template, checklist, or conversion logic.
 - The instructions are portable enough to live in runtime guidance rather than local project docs.
 - The request is substantive enough that specialized guidance would change behavior; simple one-step tasks may be better handled by the base agent.
 

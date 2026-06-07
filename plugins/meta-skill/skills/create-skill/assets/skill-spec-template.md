@@ -69,7 +69,7 @@ have. Delete optional rows and folders that do not exist.
 | `SKILL.md` | yes | <primary runtime instruction surface> | YAML frontmatter with `name` and `description`; H1; short job statement; routing or prerequisites; workflow/default path; guardrails; output/final checks; direct links to any runtime resources. |
 | `agents/openai.yaml` | optional | <Codex UI metadata, invocation policy, or dependencies> | `interface` with display metadata/default prompt; `policy` with invocation behavior; `dependencies` only when the runtime actually needs them. |
 | `references/<name>.md` | optional | <conditional runtime guidance; when to read it> | H1; opening "Read this when..." sentence; compact sections for the decision/rules/examples; no build notes or raw source evidence. Link directly from `SKILL.md`. |
-| `scripts/<name>` | optional | <deterministic helper that is safer or cheaper than prose> | executable script; usage comment or CLI help; clear inputs/outputs; nonzero exit meaning; standard-library preference; linked from `SKILL.md`. |
+| `scripts/<name>` | optional | <deterministic script that is safer or cheaper than prose> | executable script; usage comment; clear inputs/outputs; nonzero exit meaning; standard-library preference; linked from `SKILL.md`. |
 | `assets/<name>` | optional | <approved reusable template/schema/starter material> | sanitized reusable content only; short usage note in `SKILL.md` or adjacent reference; no raw uploads, sensitive examples, or licensed material without approval. |
 | `resources/<name>` | optional | <runtime data or support material that does not fit references/scripts/assets> | documented purpose, owner, and read path; include only when it packages intentionally and passes the runtime resource test. |
 
@@ -79,7 +79,7 @@ have. Delete optional rows and folders that do not exist.
 |---|---:|---|---|
 | `.meta-skill/spec.md` | project mode | <this design record> | current template filled with final decisions, no unresolved placeholders except explicitly open questions. |
 | `.meta-skill/eval-scenarios.md` | project mode | <high-level eval plan> | evaluation purpose, source distillation, base quality/implementation/validation dimensions, additive skill-specific dimensions, and scenario-plan rows. |
-| `.meta-skill/review.md` | after `meta-skill review` | <single review report> | Quality Score, agent-authored Discovery and Implementation, deterministic Validation, combined findings, and deterministic output. |
+| `.meta-skill/review.md` | after review | <single review report> | Quality Score, agent-authored Discovery and Implementation, deterministic Validation, combined findings, and deterministic output. |
 | `.meta-skill/evals/<slug>/task.md` | project mode when evals exist | <solver-visible behavior eval> | title, problem description, output specification, `## Task` first user turn, and optional `## Turn 2`; evaluator metadata stays in `criteria.json`. |
 | `.meta-skill/evals/<slug>/criteria.json` | project mode when evals exist | <evaluator-only criteria> | JSON object with fixtures, tests, metadata, and criteria across Quality, Implementation, and Validation dimensions plus additive skill-specific dimensions. |
 | `.meta-skill/tests/<name>.test.<ext>` | project mode when scripts exist | <deterministic script or fixture test> | executable test that can run locally; covers success and failure paths for runtime scripts or fragile generated assets. |
@@ -98,7 +98,7 @@ have. Delete optional rows and folders that do not exist.
 
 ## Evals And Tests
 
-- Structural check: `meta-skill lint <skill-dir>`
+- Structural check: <manual file/link review and relevant deterministic tests>
 - Eval coverage to add: <normal workflow, hard ambiguity, source-grounding, safe-stop, and boundary coverage>
 - Deterministic tests: <test IDs or planned tests>
 

@@ -37,7 +37,7 @@ Project mode adds only the implemented hidden authoring state under
   tests/
 ```
 
-Use `meta-skill create --project ...` for new project-mode skills and `meta-skill project init <skill-dir>` for an existing portable skill.
+For new project-mode skills, create `.meta-skill/` beside the portable payload. For an existing portable skill, add `.meta-skill/` in place without moving the payload.
 
 Do not create or document alternate workbench surfaces as current behavior:
 `reviews/`, `plans/`, `sessions/`, `evals.json`, and `tests/manifest.json` are
@@ -81,4 +81,4 @@ Use `assets/` only for approved reusable runtime materials such as templates, sc
 
 ## Packaging
 
-`meta-skill package` exports only the portable payload from the project root. It excludes `.meta-skill/` and writes package metadata next to the artifact.
+Packaging exports only the portable payload from the project root. It excludes `.meta-skill/` and should write package metadata next to the artifact when packaging exists in the surrounding workflow.

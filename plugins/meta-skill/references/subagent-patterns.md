@@ -17,7 +17,7 @@ Use subagents only on request, or after a short parent pass, when the work needs
 
 - creating the first skill payload
 - patching `SKILL.md`, references, scripts, or tests
-- changing shared CLI/runtime code
+- changing shared library/runtime code
 
 When a subagent edits, give it a disjoint file scope and merge centrally. Never let two subagents edit the same skill file or generated evidence folder.
 
@@ -66,7 +66,7 @@ User story: A maintainer wants a skill to be built, rapidly reviewed by an isola
 
 Parent flow:
 
-1. Draft the skill payload and run `meta-skill lint`.
+1. Draft the skill payload and review the changed files plus any deterministic tests that exist for that skill.
 2. Pick one realistic user request the skill should handle.
 3. Spawn a read-only subagent with the skill context and realistic request.
 4. Compare the response against hidden expectations in the parent context.
@@ -124,7 +124,7 @@ Parent flow:
 Envelope:
 
 ```md
-Work in /path/to/project. Review only the provided files and evidence. You may write `.meta-skill/review.md` only when running `meta-skill review`; do not edit target payload, generated package, docs, or source files. Do not inspect unrelated files or parent-thread context. Do not spawn nested subagents.
+Work in /path/to/project. Review only the provided files and evidence. You may write `.meta-skill/review.md` only when the review artifact is explicitly in scope; do not edit target payload, generated package, docs, or source files. Do not inspect unrelated files or parent-thread context. Do not spawn nested subagents.
 ```
 
 User task:
@@ -141,7 +141,7 @@ Parent flow:
 
 1. Run deterministic routing-surface checks locally.
 2. Ask a read-only reviewer to inspect current routing surfaces for user-facing language and trigger clarity.
-3. Patch general guidance or lint rules, not just the one string that failed.
+3. Patch general guidance or validation rules, not just the one string that failed.
 
 Envelope:
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Evaluate Skill"
-  short_description: "Design and run reusable skill evals"
-  default_prompt: "Use $evaluate-skill to set up, run, inspect, or audit .meta-skill evals."
+  short_description: "Design and inspect reusable skill evals"
+  default_prompt: "Use $evaluate-skill to set up, orchestrate, inspect, or audit .meta-skill evals."

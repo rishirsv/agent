@@ -10,22 +10,22 @@ The review mirrors the registry Quality page shape:
 - `Validation`
 - a combined severity-ordered findings list
 
-`meta-skill review <skill-dir>` writes the deterministic validation evidence and a worksheet. The reviewing agent must complete Discovery, Implementation, the overall Quality Score, and combined findings. The TypeScript command must not fabricate Discovery, Implementation, or judge-style scores.
+The review artifact records deterministic validation evidence when available and provides a worksheet. The reviewing agent must complete Discovery, Implementation, the overall Quality Score, and combined findings. Do not fabricate Discovery, Implementation, validation rows, or judge-style scores.
 
 When the target has eval planning or eval criteria, the review should mirror those dimensions. Read `.meta-skill/eval-scenarios.md` and any relevant `.meta-skill/evals/*/criteria.json`, then judge whether the skill can satisfy the same Quality, Implementation, and Validation dimensions it asks evals to measure. The base review dimensions stay fixed; eval dimensions are additive evidence lenses and findings sources, not a separate score framework.
 
 ## Review Flow
 
-1. Run `meta-skill review <skill-dir>`.
+1. Create or open `.meta-skill/review.md` for the target skill when artifact writes are allowed.
 2. Read the target `SKILL.md` and directly linked references needed to judge runtime behavior.
 3. If present, read `.meta-skill/eval-scenarios.md` and relevant `.meta-skill/evals/*/criteria.json` to identify the skill's declared Quality, Implementation, and Validation dimensions.
 4. Use the criteria below to replace every `Agent review required` placeholder in `.meta-skill/review.md`.
 5. Compute Discovery and Implementation scores from the completed dimensions, using declared eval dimensions as additional evidence for strengths or findings.
-6. Use the deterministic Validation score already written by the command. Do not rescore Validation by feel.
+6. Use the deterministic Validation score already recorded in the artifact. Do not rescore Validation by feel.
 7. Compute `Quality Score` as the average of Discovery, Implementation, and Validation percentages.
 8. Merge deterministic validation findings with agent-authored Discovery, Implementation, and eval-dimension findings in severity order.
 
-Do not add `Judge Score`, `Total Score`, confidence, basis, unavailable states, sidecar JSON, or review folders. Do not fabricate validation tables, lint output, deterministic test status, run IDs, or evidence paths. If the generated review lacks evidence needed for a claim, write a finding about the missing evidence instead of manufacturing it.
+Do not add `Judge Score`, `Total Score`, confidence, basis, unavailable states, sidecar JSON, or review folders. Do not fabricate validation tables, deterministic test status, run IDs, or evidence paths. If the generated review lacks evidence needed for a claim, write a finding about the missing evidence instead of manufacturing it.
 
 ## Reasoning Standard
 
@@ -101,13 +101,13 @@ Write a 2-4 sentence overall assessment before the table. Cover runtime path, ou
 
 Validation is deterministic. Do not rescore it by feel.
 
-The command writes:
+The review artifact records:
 
 - validation percentage
 - validation pass/warning/failure table
-- deterministic lint output
+- deterministic validation output
 
-Use validation findings as evidence. If validation has warnings or failures, they must appear in the combined findings unless there is a more specific agent-authored finding that subsumes them. If validation output is absent, stale, or inconsistent with the review being completed, do not invent replacement rows; record that the evidence is missing and rerun the review command.
+Use validation findings as evidence. If validation has warnings or failures, they must appear in the combined findings unless there is a more specific agent-authored finding that subsumes them. If validation output is absent, stale, or inconsistent with the review being completed, do not invent replacement rows; record that the evidence is missing and refresh the review artifact.
 
 ## Findings
 
@@ -123,7 +123,7 @@ Phase: Discovery | Implementation | Validation
 Evidence: <exact phrase, section, criterion, file, or deterministic output>
 Impact: <why future skill behavior suffers>
 Fix: <smallest useful change>
-Next Step: <exact edit or validation command>
+Next Step: <exact edit or validation action>
 ```
 
 Findings must name the observed defect. Avoid vague findings like "make it clearer" or "improve implementation."

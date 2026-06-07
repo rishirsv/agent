@@ -1,36 +1,52 @@
 # Meta Skill Architecture
 
-Meta Skill is a local TypeScript CLI for creating portable skills, collecting eval evidence, and packaging the current portable payload.
+Meta Skill is a Codex skill bundle for creating, evaluating, and improving
+portable reusable skills. It has no command wrapper, local eval runner, or local
+API. Codex Desktop is the visible cockpit for evaluation and improvement runs.
 
-## Command Taxonomy
+## Shape
 
-Commands have one side-effect class:
+The plugin is only:
 
-| Kind | Commands | Rule |
-|---|---|---|
-| Producer | `run` | write run evidence |
-| Projection | `lint`, `review` | compute output without mutating run evidence |
-| Transform | `create`, `project init`, `evals create`, `package` | write files the user explicitly requested |
+```text
+plugins/meta-skill/
+  .codex-plugin/plugin.json
+  assets/
+  references/
+  skills/
+```
 
-The current top-level command surface is `create`, `project init`, `evals create`, `lint`, `review`, `run`, and `package`. `evals create` drafts executable eval files from `.meta-skill/eval-scenarios.md`. `review` writes `.meta-skill/review.md` as the single review artifact. `run` selects authored evals by `--eval`, can run selected evals with bounded `--concurrency <n>`, and evaluates either the working payload or a no-skill control with `--no-skill`.
+The source of truth is the skill guidance under `skills/` plus shared references
+under `references/`. Runtime code belongs inside an individual generated skill
+only when that skill itself needs a reusable script.
 
-## Project Shape
+## Lanes
 
-The project root is the portable skill payload:
+Meta Skill works through three focused lanes:
+
+| Lane | Owns |
+|---|---|
+| `create-skill` | deciding whether a workflow should become a skill, drafting the portable payload, and choosing portable-only versus project mode |
+| `evaluate-skill` | authoring `.meta-skill/evals/`, orchestrating Codex child-thread evidence, and explaining proof limits |
+| `improve-skill` | reviewing or editing an existing skill from concrete evidence |
+
+The top-level `meta-skill` skill is only a router. It chooses the lane, keeps
+human approval gates visible, and does not perform lane-specific work itself.
+
+## Skill Project Shape
+
+A portable skill payload is rooted at the skill directory:
 
 ```text
 SKILL.md
 agents/
-references/
-scripts/
-assets/
-<other runtime files or folders>/
-.meta-skill/
+references/      optional
+scripts/         optional
+assets/          optional
 ```
 
-Only `SKILL.md` is required by the portable payload. `references/`, `scripts/`, and `assets/` are the first-class runtime support folders that create/lint know how to copy and link-check. Other non-excluded runtime files or folders can ship in the payload when the skill needs them. `.meta-skill/` is authoring and evidence state, not runtime payload, and packaging ignores it.
-
-Workbench state uses the flat project-local layout:
+Add `.meta-skill/` only for maintained skill projects that need durable
+authoring notes, evals, tests, review artifacts, or run evidence:
 
 ```text
 .meta-skill/
@@ -42,60 +58,34 @@ Workbench state uses the flat project-local layout:
   runs/
 ```
 
-`.meta-skill/eval-scenarios.md` is an optional high-level create-time scenario plan. Executable evals live under `.meta-skill/evals/<slug>/` with lowercase hyphenated folder names. Eval files may be manually authored or drafted from the scenario plan with `meta-skill evals create`, then refined before running. Once concrete evals exist, runs do not require the scenario-plan file.
+`.meta-skill/` is authoring and evidence state. It is not runtime payload.
 
-## Eval Evidence
+## Evidence
 
-Runs live under `.meta-skill/runs/<run-id>/`:
+Evaluation is Codex Desktop-first. The parent thread starts and supervises
+visible child threads, optionally in separate worktrees, then records only the
+compact state needed to compare results and resume the batch.
 
-```text
-payload/
-cases/<eval-folder>/
-  task.md
-  rpc.jsonl
-  transcript.json
-  response.md
-```
-
-`payload/` exists only for working-payload runs. No-skill control runs omit the frozen payload.
-
-Per-eval files have one nature each:
-
-- `task.md`: frozen solver-visible task definition
-- `criteria.json`: source evaluator-only criteria under `.meta-skill/evals/`; run results return its fingerprint instead of copying it
-- `rpc.jsonl`: raw App Server trace
-- `transcript.json`: normalized App Server transcript
-- `response.md`: final answer
-
-The run command returns in-memory metadata for the mounted skill path, per-eval
-case evidence paths, token usage, criteria fingerprint, and review-required weighted score totals derived
-from source `criteria.json`. That metadata is surfaced at the CLI boundary without
-adding `run.json`, score files, or summary files to the run directory.
-
-## Runner Boundary
-
-The App Server runner has one contract:
+The canonical run files are:
 
 ```text
-(world, turns, policy) -> (final, rpc, transcript)
+.meta-skill/runs/<run-id>/
+  run.json
+  results.jsonl
 ```
 
-Token cost uses the final cumulative App Server `tokenUsage.total`; if exact usage is unavailable, `transcript.json` stores null numeric fields plus `unavailable_reason`.
+Optional projections such as `threads.jsonl`, `scores.jsonl`, and `report.md`
+may be regenerated from the ledger, child-thread results, and read-only
+extraction. Do not persist copied raw transcripts by default; cite child thread
+ids, worktree paths, and source digests for drill-down.
 
-The solver-visible world contains the portable payload and solver-visible resources. Harness metadata stays out of the staged world.
+Completed evidence is not proof by itself. Agents should inspect the compact
+rows and any selected child-thread/worktree evidence, cite what they show, and
+say what remains unverified.
 
-Working-payload eval runs force-attach the payload on the first turn. No-skill control runs mount no payload. Solver threads run read-only, with approval policy `never` and network disabled.
+## Validation
 
-`rpc.jsonl` preserves generated App Server JSON-RPC rows as the durable raw event log. The runner also keeps bounded in-memory event windows for per-turn extraction; when a window overflows, `transcript.json` records a warning item and the raw event log remains the source for forensic inspection. If the current turn overflows before final assistant deltas are retained, `response.md` and the transcript say the final answer is unavailable instead of reusing a previous turn's final text.
-
-`transcript.json` is the normalized behavior view for the run: turn IDs, final text or explicit unavailable-final warning, completion status, token usage, command execution items, file change items, tool calls, approval requests, warning items, and unknown event methods.
-
-The current runner measures behavior for mounted-payload and no-skill executions. Trigger routing, writable output production, side-by-side uplift scoring, fork trees, and tool-chaos policies are roadmap capabilities that require additional App Server protocol support or assertion layers.
-
-## Packaging
-
-`package` validates and packages the current portable payload. `.meta-skill/` is workbench state and is never packaged.
-
-## Runtime Source
-
-The CLI runs directly from `src/` through `scripts/meta-skill.js`. Validation is native TypeScript: `npm test`, `npm run typecheck`, and repo-level `git diff --check`.
+There is no shared Meta Skill validator. Validation is now local to the edited
+skill: read the changed payload, check links and referenced files manually, run
+any deterministic tests that exist for that skill, and report what was or was
+not verified.

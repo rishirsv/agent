@@ -43,7 +43,6 @@ Read only what the task needs:
 | Distill a source pack or past outputs into reusable guidance without leaking engagement-specific facts | [distillation.md](references/distillation.md) |
 | Look up a compact runtime snippet after the design decision is clear | [cookbook.md](references/cookbook.md) |
 | Decide what belongs in `SKILL.md`, `references/`, `scripts/`, `assets/`, and `.meta-skill/` | [structure.md](references/structure.md) |
-| Use the shared CLI | [cli-conventions.md](../../references/cli-conventions.md) |
 | Capture decisions as a Skill Spec, on request or in project mode | [skill-spec-template.md](assets/skill-spec-template.md) |
 | Rapidly trial a draft skill with isolated subagents in project mode | [subagent-patterns.md](../../references/subagent-patterns.md) |
 
@@ -121,30 +120,15 @@ When the skill comes from a captured workflow (skillify) or a source pack (disti
 
 ### Step 3 — Build
 
-With the Current Understanding settled, scaffold the payload, then draft it following the Writing Style above:
+With the Current Understanding settled, create or edit the payload files directly, then draft them following the Writing Style above:
 
-```bash
-meta-skill create <skill-dir> --slug <slug> --title "<title>" --description "<Use when ...; not for ...>" --job "<job>"
-```
-
-Add `--project` only in project mode. Project mode also creates `.meta-skill/eval-scenarios.md`; keep it high-level with source distillation, base quality/implementation/validation dimensions, additive skill-specific dimensions, and scenario-plan rows for `evaluate-skill` to expand later. Then draft the runtime payload: use [design.md](references/design.md) for body shape, [cookbook.md](references/cookbook.md) for snippet shapes, and [structure.md](references/structure.md) for references, scripts, and assets.
+Add `.meta-skill/` only in project mode. Project mode also uses `.meta-skill/eval-scenarios.md`; keep it high-level with source distillation, base quality/implementation/validation dimensions, additive skill-specific dimensions, and scenario-plan rows for `evaluate-skill` to expand later. Then draft the runtime payload: use [design.md](references/design.md) for body shape, [cookbook.md](references/cookbook.md) for snippet shapes, and [structure.md](references/structure.md) for references, scripts, and assets.
 
 ### Step 4 — Validate and stop
 
-Run `meta-skill lint <skill-dir>`. Stop before packaging, install, publish, sync, source edits, external writes, or final client/user-facing delivery unless the user explicitly asks. Hand off review, evals, or evidence-backed edits to `evaluate-skill` or `improve-skill` rather than crossing lanes.
+Review the changed skill files, check links and referenced files, and run any deterministic tests that already exist for the skill. Stop before packaging, install, publish, sync, source edits, external writes, or final client/user-facing delivery unless the user explicitly asks. Hand off review, evals, or evidence-backed edits to `evaluate-skill` or `improve-skill` rather than crossing lanes.
 
 When project mode needs a higher-quality first draft, use the Skill Draft Trial pattern in [subagent-patterns.md](../../references/subagent-patterns.md): send an isolated read-only subagent a realistic user request and keep scoring, hidden expectations, and edits in the parent context.
-
-## CLI
-
-Use the shared TypeScript CLI through the `meta-skill` plugin bin. For the full command contract, flags, output, and exit codes, follow [cli-conventions.md](../../references/cli-conventions.md).
-
-```bash
-meta-skill create <skill-dir> --slug <slug> --title "<title>" --description "<Use when ...; not for ...>" --job "<job>"
-meta-skill create <skill-dir> --project ...   # also scaffolds .meta-skill/
-meta-skill project init <skill-dir>           # adds .meta-skill/ to an existing portable skill
-meta-skill lint <skill-dir>
-```
 
 ## Runtime Payload Rules
 
@@ -159,4 +143,4 @@ meta-skill lint <skill-dir>
 
 ## Output
 
-Close with a short report: the skill path, what was built, the lint result, and anything still open. Keep it proportional — do not pad.
+Close with a short report: the skill path, what was built, validation run or skipped, and anything still open. Keep it proportional — do not pad.

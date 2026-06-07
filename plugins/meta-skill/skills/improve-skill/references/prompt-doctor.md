@@ -13,7 +13,7 @@ Read this when translating skill evidence into the smallest useful improvement.
 
 Clarify and diagnose is the default. Do not silently rewrite the target skill payload, generated plugin packages, docs, or source files just because the user provided feedback or asked what should change. Human feedback is evidence; it is not edit authorization unless the user asks to make, apply, update, patch, or fix now.
 
-Writing `.meta-skill/review.md` from `meta-skill review <skill-dir>` is allowed and expected during diagnosis/review because it is a review artifact, not a payload edit.
+Writing `.meta-skill/review.md` is allowed and expected during diagnosis/review because it is a review artifact, not a payload edit.
 
 ## First Read
 
@@ -33,21 +33,22 @@ Do not let a broad improvement request become an unbounded rewrite.
 
 Valid improvement evidence includes:
 
-- `meta-skill lint` failures or warnings
+- file/link review failures or warnings
 - completed `.meta-skill/review.md` with a concrete finding heading
-- `.meta-skill/runs/<run-id>/cases/<eval-folder>/response.md`
-- `.meta-skill/runs/<run-id>/cases/<eval-folder>/transcript.json`
-- `.meta-skill/runs/<run-id>/cases/<eval-folder>/rpc.jsonl`
-- frozen run case `task.md` plus the source `.meta-skill/evals/<eval-folder>/criteria.json` identified by the run result criteria fingerprint
-- explicitly captured deterministic test or validation command output
+- `.meta-skill/runs/<run-id>/results.jsonl` rows tied to a concrete `task_id` and `attempt_id`
+- `.meta-skill/runs/<run-id>/run.json` task state or variant metadata
+- a child thread result block, child thread id, or selected child-thread/worktree evidence
+- optional compact projections such as `.meta-skill/runs/<run-id>/report.md` or `threads.jsonl`
+- source `.meta-skill/evals/<eval-folder>/task.md` plus evaluator-only `criteria.json` tied to the result by `task_id`
+- explicitly captured deterministic test or validation output
 - saved artifacts tied to the run, eval, or user-observed failure
 - concrete user-observed failure
 
 Generated review worksheets that still contain `Agent review required` placeholders are not edit evidence. Complete the review first, or cite a different concrete evidence source.
 
-If evidence is missing, ask the user to provide concrete feedback, run `meta-skill lint` or `meta-skill run`, or authorize a manual review path.
+If evidence is missing, ask the user to provide concrete feedback, run available deterministic tests, inspect saved eval evidence, or authorize a manual review path.
 
-For read-only review requests, run `meta-skill review <skill-dir>` first, then complete `.meta-skill/review.md` as a Quality page using [review-criteria.md](review-criteria.md). Treat broad "do not edit files" instructions as forbidding target payload, generated package, docs, and source edits, not the review artifact write, unless the user explicitly forbids artifact writes too. If the user requires zero writes, say the full review artifact cannot be produced under that constraint, then do a manual read-only review or ask permission to write `.meta-skill/review.md`. The completed report is the evidence artifact. For later edit requests, cite `.meta-skill/review.md` and the finding heading before changing the portable payload.
+For read-only review requests, complete `.meta-skill/review.md` as a Quality page using [review-criteria.md](review-criteria.md) when artifact writes are allowed. Treat broad "do not edit files" instructions as forbidding target payload, generated package, docs, and source edits, not the review artifact write, unless the user explicitly forbids artifact writes too. If the user requires zero writes, say the full review artifact cannot be produced under that constraint, then do a manual read-only review or ask permission to write `.meta-skill/review.md`. The completed report is the evidence artifact. For later edit requests, cite `.meta-skill/review.md` and the finding heading before changing the portable payload.
 
 For subagent review, keep the subagent as evidence support. The parent owns diagnosis, candidate edits, final editing, validation, and the user-facing recommendation.
 
@@ -60,7 +61,7 @@ Use only lanes relevant to the request:
 - Resources: linked references/scripts/assets, dependency clarity, source leakage, stale files.
 - Runtime contamination: copied user prompt text, model names, provider docs, raw research links, author or source provenance, thread IDs, one-off file paths, and source notes in `SKILL.md`, references, scripts, assets, or metadata instead of reusable behavior or true runtime dependencies.
 - Controls: user files as data, approval gates, external writes, package/publish gates.
-- Eval evidence: `.meta-skill/evals/`, executable tests under `.meta-skill/tests/`, transcript quality, token usage visibility.
+- Eval evidence: `.meta-skill/evals/`, executable tests under `.meta-skill/tests/`, result-block quality, telemetry availability.
 - Review score: `.meta-skill/review.md` Quality Score, Discovery, Implementation, Validation, and combined findings.
 
 ## Prompt Doctor Loop
@@ -97,7 +98,7 @@ Evidence: <file path, run ID, eval ID, trace, user feedback, or exact section>
 3. <optional edit option and tradeoff>
 
 Recommended edit: <one option>
-Validation to run: <lint, eval, test, or review command>
+Validation to run: <file review, eval inspection, test, or review refresh>
 ```
 
 Avoid vague diagnoses like "make it clearer." Name the phrase, section, workflow branch, or evidence row causing the risk.
