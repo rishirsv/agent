@@ -53,9 +53,8 @@ Route, evidence, the Prompt Doctor Loop, and surgical update rules live in
 edits the user approved; smallest correct change; edit the **source** skill,
 never a generated package copy.
 
-For one-off improvement testing, use the shared isolated Codex child-thread
-workflow in
-[isolated-thread-smoke.md](../../references/isolated-thread-smoke.md). Prefer a
+For one-off improvement testing, use the shared isolated Codex thread trial in
+[isolated-thread-trial.md](../../references/isolated-thread-trial.md). Prefer a
 child worktree for candidate edits; the child demonstrates or revises in
 isolation, while the parent applies only approved source edits.
 
@@ -69,9 +68,10 @@ Escalate to `skill-evaluator` for systematic, multi-scenario measurement.
 ## Workbench
 
 Iteration artifacts live in a gitignored, plugin-wide workbench at the target
-skill's project root, namespaced by skill:
-`<project>/.meta-skill/<skill-name>/` — `review.md` (Quality page) and `spec.md`
-(durable notes). Never write workbench files into `meta-skill/` itself.
+skill's project root: `<project>/.meta-skill/` — `review.md` (Quality page) and
+`spec.md` (durable notes). The project root already names the skill and contains
+the portable skill payload at `<project>/skill/`; do not add another skill-name
+namespace. Never write workbench files into `meta-skill/` itself.
 
 ## Guardrails
 

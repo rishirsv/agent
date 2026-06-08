@@ -146,7 +146,7 @@ same shape with 5 dimensions (**Total / 15**).
 
 ## Output
 
-Write to `<project>/.meta-skill/<skill-name>/review.md`:
+Write to `<project>/.meta-skill/review.md`:
 
 - **Overall Quality Score** + the three phase percentages.
 - Discovery: the 2–4 sentence assessment, then the scored table (a **Reasoning**

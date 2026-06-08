@@ -8,7 +8,7 @@ They live in `evals.json` in the workbench and are never committed.
 
 ## evals.json
 
-One file per target, in `<project>/.meta-skill/<skill-name>/`:
+One file per target, in `<project>/.meta-skill/`:
 
 ```json
 {

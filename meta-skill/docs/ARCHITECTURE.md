@@ -139,17 +139,19 @@ the authoring standard; the judgment ones score here, the mechanical ones run in
 ## Iteration workbench
 
 Every meta-skill activity iterates in a shared, **gitignored** workbench created
-in the *target skill's project root*: `<project>/.meta-skill/<skill-name>/`. It
-is local scratch, never committed (matched by `**/.meta-skill/` in `.gitignore`),
-and is never written into `meta-skill/`'s own tree.
+in the *target skill's project root*: `<project>/.meta-skill/`. The project root
+already names the skill and contains the portable skill payload at
+`<project>/skill/`, so the workbench does not add another skill-name namespace.
+It is local scratch, never committed (matched by `**/.meta-skill/` in
+`.gitignore`), and is never written into `meta-skill/`'s own tree.
 
 - `skill-doctor` writes `review.md` (the scored Quality page) and `spec.md`
   (durable notes: changed behavior, evidence, rejected edits, residual risk).
 - `skill-evaluator` writes `evals.json` (judge-graded cases) and its
   skill-specific deterministic **tests** here — scratch only, never committed and
   never written into the target's own repo.
-- Namespacing by `<skill-name>` keeps a monorepo (many skills) from clobbering
-  one skill's artifacts with another's.
+- A repo with many skills should treat each skill project as its own root rather
+  than putting several skills under one `.meta-skill/` workbench.
 - It is the surface where the **propose → approve** handoff is recorded before
   Edit touches the real skill files.
 

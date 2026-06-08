@@ -2,10 +2,12 @@
 
 Read this when translating skill evidence into the smallest useful improvement.
 
-Workbench paths below are shorthand for the namespaced
-`<project>/.meta-skill/<skill-name>/` dir (e.g. `review.md` = that dir's
-`review.md`). Review *lenses* live in [rubric.md](rubric.md#review-lanes); the
-scoring rubric is [rubric.md](rubric.md).
+Workbench paths below are shorthand for the target project root's
+`<project>/.meta-skill/` dir (e.g. `review.md` = that dir's `review.md`). The
+project root already names the skill and contains the portable skill payload at
+`<project>/skill/`, so do not add another skill-name namespace. Review *lenses*
+live in [rubric.md](rubric.md#review-lanes); the scoring rubric is
+[rubric.md](rubric.md).
 
 ## Route Selection
 

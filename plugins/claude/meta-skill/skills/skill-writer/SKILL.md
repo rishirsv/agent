@@ -29,7 +29,7 @@ Read only what the task needs:
 | Decide whether the workflow should become a skill; write the trigger contract, frontmatter, runtime body, instruction strength, evidence boundaries, and voice | [design.md](references/design.md) |
 | Capture an active or prior Codex thread/session into a durable skill | [session-capture.md](references/session-capture.md) |
 | Add compact runtime snippets after the design decision is clear | [cookbook.md](references/cookbook.md) |
-| Run one isolated Codex child-thread smoke test for the draft skill | [isolated-thread-smoke.md](../../references/isolated-thread-smoke.md) |
+| Run one isolated Codex thread trial for the draft skill | [isolated-thread-trial.md](../../references/isolated-thread-trial.md) |
 
 Treat [design.md](references/design.md) as the governing principle guide. Treat
 [cookbook.md](references/cookbook.md) as a recipe lookup, not a template to copy
@@ -119,8 +119,8 @@ authoring repo.
 If the user asks for one-off testing, or if one realistic isolated run would
 materially improve confidence in a fragile trigger, resource, script, or output
 contract, read
-[isolated-thread-smoke.md](../../references/isolated-thread-smoke.md) and offer
-a Codex child-thread smoke test. It is optional by default and is not release
+[isolated-thread-trial.md](../../references/isolated-thread-trial.md) and offer
+an isolated Codex thread trial. It is optional by default and is not release
 proof; route systematic multi-scenario measurement to `skill-evaluator`.
 
 Stop before packaging, installing, publishing, syncing, external writes, or

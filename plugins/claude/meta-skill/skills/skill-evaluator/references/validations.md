@@ -13,7 +13,7 @@ directory.
 | Tier | Scope | Form | Home | Durability |
 |---|---|---|---|---|
 | **General checks** | Every skill | Shipped **scripts** (`validate_skill.py`, `lint_authoring.py`) run by `run.py` | Plugin tree | Durable, shipped |
-| **Skill-specific tests** | One target | Authored **tests** | Hidden `.meta-skill/<skill>/` | Scratch — never committed |
+| **Skill-specific tests** | One target | Authored **tests** | Hidden `.meta-skill/` | Scratch — never committed |
 
 General checks already exist and apply to any skill: skill body present, valid
 YAML frontmatter, length bounds, deprecated-surface avoidance. Do not re-author

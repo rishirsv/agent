@@ -68,9 +68,10 @@ Escalate to `skill-evaluator` for systematic, multi-scenario measurement.
 ## Workbench
 
 Iteration artifacts live in a gitignored, plugin-wide workbench at the target
-skill's project root, namespaced by skill:
-`<project>/.meta-skill/<skill-name>/` — `review.md` (Quality page) and `spec.md`
-(durable notes). Never write workbench files into `meta-skill/` itself.
+skill's project root: `<project>/.meta-skill/` — `review.md` (Quality page) and
+`spec.md` (durable notes). The project root already names the skill and contains
+the portable skill payload at `<project>/skill/`; do not add another skill-name
+namespace. Never write workbench files into `meta-skill/` itself.
 
 ## Guardrails
 

@@ -2,10 +2,12 @@
 
 Read this when translating skill evidence into the smallest useful improvement.
 
-Workbench paths below are shorthand for the namespaced
-`<project>/.meta-skill/<skill-name>/` dir (e.g. `review.md` = that dir's
-`review.md`). Review *lenses* live in [rubric.md](rubric.md#review-lanes); the
-scoring rubric is [rubric.md](rubric.md).
+Workbench paths below are shorthand for the target project root's
+`<project>/.meta-skill/` dir (e.g. `review.md` = that dir's `review.md`). The
+project root already names the skill and contains the portable skill payload at
+`<project>/skill/`, so do not add another skill-name namespace. Review *lenses*
+live in [rubric.md](rubric.md#review-lanes); the scoring rubric is
+[rubric.md](rubric.md).
 
 ## Route Selection
 
@@ -14,7 +16,7 @@ scoring rubric is [rubric.md](rubric.md).
 | "improve this skill", "review this skill", "diagnose this fail state", "what would you change", "is this good" | Clarify and diagnose |
 | "update", "patch", "fix", "apply your changes", "make the edit" | Apply a surgical edit |
 | "run evals", "use this trace", "use a subagent", "iterate", "autonomously improve" | Evidence loop |
-| "test one prompt", "try the candidate in another thread", "use a worktree", "smoke test this improvement" | Isolated child-thread smoke |
+| "test one prompt", "try the candidate in another thread", "use a worktree", "trial this improvement" | Isolated thread trial |
 | Ambiguous improvement request | Clarify and diagnose |
 
 Clarify and diagnose is the default. **Do not silently rewrite the target skill
@@ -70,13 +72,13 @@ before changing the portable payload.
 For subagent review, the subagent is evidence support only. The parent owns
 diagnosis, candidate edits, final editing, validation, and the recommendation.
 
-## Isolated Child-Thread Smoke
+## Isolated Thread Trial
 
 For one-off prompt-doctor improvements, read
-[isolated-thread-smoke.md](../../../references/isolated-thread-smoke.md). Use a
+[isolated-thread-trial.md](../../../references/isolated-thread-trial.md). Use a
 Codex worktree child thread when the candidate edit should be tested without
 mutating the parent checkout. The child may apply or inspect the candidate in
-its worktree and return the structured smoke result; the parent decides whether
+its worktree and return the structured trial result; the parent decides whether
 to apply the source edit, refresh review/verify evidence, or escalate to
 `skill-evaluator`.
 

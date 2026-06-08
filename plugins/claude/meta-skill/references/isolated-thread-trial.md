@@ -1,14 +1,14 @@
-# Isolated Child-Thread Smoke
+# Isolated Thread Trial
 
 Read this when a Meta-Skill lane needs one realistic, isolated Codex child
-thread to test a skill draft or candidate improvement. This is a smoke workflow,
-not the full evaluation process.
+thread to test a skill draft or candidate improvement. This is a one-prompt
+trial workflow, not the full evaluation process.
 
 ## When To Use
 
 - A user asks to test one prompt against a new or changed skill.
 - A new skill passes deterministic checks, and a one-off activation/runtime
-  smoke would materially improve confidence.
+  trial would materially improve confidence.
 - `skill-doctor` has a candidate edit and should try it in isolation before the
   parent applies it to the source skill.
 - The user wants an inspectable thread/worktree result instead of a full eval
@@ -37,7 +37,7 @@ seed the child through the worktree snapshot and the prompt.
 1. Pick one realistic prompt. Prefer a should-trigger prompt that exercises the
    skill's main value.
 2. Create a project worktree child thread from the current working tree.
-3. Prompt the child with the target skill path, the smoke prompt, expected
+3. Prompt the child with the target skill path, the trial prompt, expected
    behavior, and the result contract below.
 4. Keep the parent as the decision-maker. The child may propose, test, or edit
    inside its worktree, but it does not promote changes to the parent checkout.
@@ -52,14 +52,14 @@ seed the child through the worktree snapshot and the prompt.
 Ask the child to put this block first in its final answer:
 
 ```md
-META_SKILL_SMOKE_RESULT
+META_SKILL_TRIAL_RESULT
 status: pass|partial|fail|blocked
 target_skill: <path>
 prompt_tested: <short label>
 decision: keep|revise|reject|needs_eval
 evidence: <one or two sentences>
 recommended_next_action: <smallest useful next step>
-END_META_SKILL_SMOKE_RESULT
+END_META_SKILL_TRIAL_RESULT
 ```
 
 After the block, the child may add concise reasoning, changed files in its
@@ -77,18 +77,18 @@ Use these only when the parent needs durable tracking across more than chat:
 
 `run.json` records the parent thread, target skill, child thread or pending
 worktree id, prompt label, and status. `results.jsonl` appends the parsed
-`META_SKILL_SMOKE_RESULT` row.
+`META_SKILL_TRIAL_RESULT` row.
 
 Do not copy raw transcripts, full diffs, or debug folders by default. The child
 thread and worktree remain the heavy evidence surface.
 
 ## Skill Writer Use
 
-After building and validating a new skill, offer this smoke test when the user
+After building and validating a new skill, offer this trial when the user
 asks for one-off testing or when the skill is fragile enough that one isolated
 run would catch likely activation, resource, or runtime-contract failures.
 
-The smoke test is optional by default. It should not block ordinary skill
+The isolated trial is optional by default. It should not block ordinary skill
 creation unless the user explicitly asks for mandatory isolated testing.
 
 ## Skill Doctor Use
@@ -100,4 +100,3 @@ failure.
 
 The parent then decides whether to apply the approved edit to the source skill,
 refresh review/verify evidence, or escalate to `skill-evaluator`.
-

@@ -44,10 +44,12 @@ Read only what the task needs:
 
 ## Workbench
 
-Artifacts live in the gitignored, plugin-wide workbench at the target's project
-root, namespaced by skill: `<project>/.meta-skill/<skill-name>/` — `evals.json`
-and the skill-specific deterministic tests. These are scratch: never committed,
-never written into `meta-skill/` itself or the target's own repo.
+Artifacts live in the gitignored workbench at the target skill's project root:
+`<project>/.meta-skill/` — `evals.json` and the skill-specific deterministic
+tests. The project root already names the skill and contains the portable skill
+payload at `<project>/skill/`, so do not add another skill-name namespace. These
+are scratch: never committed, never written into `meta-skill/` itself or the
+target's own repo.
 
 ## Workflow
 

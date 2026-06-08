@@ -23,8 +23,8 @@ finding, an eval row, or a user-observed failure. See
 ## Output
 
 Root cause + a re-runnable failing case, captured in the workbench as
-`<project>/.meta-skill/<skill-name>/spec.md` (durable notes: changed behavior,
-evidence, rejected edits, residual risk) so Verify can re-run it.
+`<project>/.meta-skill/spec.md` (durable notes: changed behavior, evidence,
+rejected edits, residual risk) so Verify can re-run it.
 
 ## TODO
 
