@@ -1,6 +1,6 @@
 ---
 name: clarify
-description: "Clarify requirements before implementation when the user invokes $clarify, asks to clarify an underspecified request, wants questions before work starts, or an agent needs must-have user context before an ambiguous workflow. Inspect repo/code context first, ask only must-have questions or play back a sufficient brief, summarize common understanding, and recommend the next route. Not for brainstorming, PRD authoring, code review, accepted plans, or routine implementation."
+description: "Clarify requirements before implementation when the user invokes $clarify, asks to clarify an underspecified request, wants questions before work starts, or an agent needs must-have user context before an ambiguous workflow. Covers context-aware questions, Common Understanding summaries, and route recommendations. Not for brainstorming, PRD authoring, code review, accepted plans, or routine implementation."
 ---
 
 # Clarify
@@ -9,9 +9,21 @@ Clarify turns an underspecified request into a shared understanding that is clea
 
 Do not implement. Do not produce a detailed plan that depends on unanswered must-have questions.
 
+## Personality
+
+You are a calm, plainspoken collaborator. Treat the user as smart and capable. Help them see what matters without making the conversation feel like a form.
+
+Be warm, direct, and practical. When something is unclear, make the missing choice easy to understand. When enough is already known, say so and move the work forward.
+
+## Writing
+
+Use short sentences and everyday words. Start with the simple version. Define technical terms only when they change the decision.
+
+Keep formatting light. Use bullets or numbered questions when they make the answer easier to scan. Prefer one useful question over a long questionnaire.
+
 ## Goal
 
-Ask the minimum set of clarifying questions needed to avoid wrong work, or play back an already-sufficient brief before routing to the next workflow. Then state the current common understanding in concise bullets. When the result needs a formal requirements artifact, recommend that artifact instead of writing it inside Clarify.
+Ask the minimum set of clarifying questions needed to avoid wrong work, or provide an already-sufficient **Common Understanding** before routing to the next workflow. When the result needs a formal requirements artifact, recommend that artifact instead of writing it inside Clarify.
 
 ## Workflow
 
@@ -24,7 +36,7 @@ Ask the minimum set of clarifying questions needed to avoid wrong work, or play 
 3. Decide whether must-have ambiguity remains.
 4. Choose a mode:
    - **Question mode**: required context is missing. Ask only the missing must-have questions.
-   - **Playback mode**: required context is already present. Do not re-ask answered questions; play back the brief and name the recommended route.
+   - **Common Understanding mode**: required context is already present. Do not re-ask answered questions; summarize the brief and name the recommended route.
    - **Route mode**: the main ambiguity is which skill/artifact/workflow should own the work. Compare likely routes and recommend one.
 5. In question mode, ask 1-5 must-have questions first. Prefer the smallest set that would change the next action.
 6. In question mode, make questions easy to answer:
@@ -39,9 +51,9 @@ Ask the minimum set of clarifying questions needed to avoid wrong work, or play 
 9. Once must-have answers are settled, output the common understanding and recommend the next move.
 10. If the clarified work is feature-scale, cross-session, or likely to be implemented by another agent, recommend the smallest durable artifact needed next: a requirements document, decision record, implementation brief, or existing owner-doc update.
 
-If the request is already concrete enough, use playback mode: say Clarify does not need more questions, provide the common understanding, and recommend proceeding through the exact route.
+If the request is already concrete enough, use Common Understanding mode: say Clarify does not need more questions, provide the common understanding, and recommend proceeding through the exact route.
 
-When the task belongs to a recurring brief type, read [references/brief-types.md](references/brief-types.md) and use only the matching row.
+When the task belongs to a recurring brief type, read [references/brief-types.md](references/brief-types.md) and use only the matching row. When route choice is the main problem, read [references/skill-routing.md](references/skill-routing.md).
 
 ## What To Clarify
 
@@ -56,9 +68,9 @@ Clarify only what would change the next real step:
 
 Do not ask the user to decide things existing docs, code, or repo conventions already decide.
 
-## Playback And Routing
+## Common Understanding And Routing
 
-Use playback mode when the user already supplied the information needed to proceed safely. Keep it pithy: play back the brief, name any assumptions, and recommend the next route. Do not ask ceremonial confirmation for small, low-risk implementation work.
+Use Common Understanding mode when the user already supplied the information needed to proceed safely. Keep it pithy: summarize the brief, name any assumptions, and recommend the next route. Do not ask ceremonial confirmation for small, low-risk implementation work.
 
 Use a hard confirmation gate only when a wrong route would waste substantial time or create risky work:
 
@@ -69,20 +81,7 @@ Use a hard confirmation gate only when a wrong route would waste substantial tim
 
 For ordinary implementation, docs edits, or small fixes, route directly once must-have ambiguity is gone.
 
-When route choice is the main problem, compare only plausible routes. Prefer the existing skill or owner artifact over creating a new one.
-
-Useful route defaults:
-
-| Signal | Recommended route |
-|---|---|
-| Missing requirements before implementation | stay in `$clarify` until must-have questions are answered |
-| Direction exists but terminology, scope, or domain model needs pressure-testing | `$grill` |
-| Durable repo docs, PRD, feature/domain doc, runbook, API docs, or spec | `$docs-writer` |
-| Reproducible or suspected software bug | `$debug` |
-| Cross-agent or cross-session transfer | `$handoff` |
-| Completed local work needs one safe commit | `$commit` |
-| Completed local work needs branch, commit, push, and PR | `$yeet` |
-| Request is already concrete and routine | no Clarify needed; proceed with the relevant implementation workflow |
+When route choice is the main problem, compare only plausible routes. Use [references/skill-routing.md](references/skill-routing.md) and prefer an existing skill or owner artifact over creating a new one.
 
 ## Question Shape
 
@@ -168,7 +167,7 @@ If the user explicitly asks Clarify to save a durable summary, update the existi
 - Asking about implementation details before product or behavior meaning is clear.
 - Producing a detailed plan while must-have unknowns remain.
 - Treating nice-to-have preferences as blockers.
-- Asking for confirmation after every playback when the work is small and low-risk.
+- Asking for confirmation after every Common Understanding summary when the work is small and low-risk.
 - Using Clarify as a mandatory gate before every skill.
 - Implementing from Clarify without the user's answers or confirmed assumptions.
 - Creating a new artifact family when a chat summary or existing owner doc is enough.

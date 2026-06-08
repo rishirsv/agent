@@ -1,0 +1,7 @@
+interface:
+  display_name: "Interview"
+  short_description: "Interview ideas against repo and research evidence"
+  default_prompt: "Use $interview to stress-test this idea against repo context and source reality, one decision at a time."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,7 +1,7 @@
 interface:
   display_name: "Handoff"
-  short_description: "Create a clear continuation handoff"
-  default_prompt: "Use $handoff to create a concise continuation brief with current state, decisions, risks, and next step."
+  short_description: "Create a clear continuation or Codex thread handoff"
+  default_prompt: "Use $handoff to create a concise continuation brief with current state, decisions, risks, and next step. If requested, create a new Codex thread or worktree-backed continuation."
 
 policy:
   allow_implicit_invocation: false

@@ -1,7 +1,0 @@
-interface:
-  display_name: "Grill"
-  short_description: "Grill ideas against source reality"
-  default_prompt: "Use $grill to pressure-test this idea against durable docs and source reality, one question at a time."
-
-policy:
-  allow_implicit_invocation: false
