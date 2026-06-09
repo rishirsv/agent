@@ -49,8 +49,7 @@ One manifest per target, in `<project>/.meta-skill/evals.json`:
   },
   "defaults": {
     "runner": "codex_app_server",
-    "repetitions": 1,
-    "grader": ["judge"]
+    "repetitions": 1
   },
   "candidates": [
     {

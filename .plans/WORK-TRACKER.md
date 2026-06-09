@@ -19,6 +19,72 @@ scripts/meta-skill validate
 scripts/meta-skill package
 ```
 
+## Current Planning Package
+
+The current repo-owned implementation package lives under
+`.plans/meta-skill/`. It was synthesized from an external architecture,
+work-tracker, roadmap, and skill-language review. Treat those plans as the
+current incremental roadmap until the tracker is explicitly revised again.
+
+Core conclusion: the App Server/Python runner foundation is healthy enough; the
+next cycle should consolidate the evidence loop instead of building a broader
+platform. Prioritize shipped-language hygiene, readable eval reporting,
+baseline-vs-candidate impact, evaluator methodology, dogfood suites, readiness
+gates, and only then a guidance-only `skill-autoresearch` lane.
+
+Accepted constraints:
+
+- Meta Skill remains local-first and file-backed.
+- App Server is for eval trial execution, judge grading, and evidence capture,
+  not generic Desktop thread management.
+- The CLI is an agent-facing command layer; `.meta-skill/` files are the source
+  of truth.
+- Prefer Markdown/JSON reports and deterministic fixtures before UI.
+- Review, eval, and autoresearch may recommend; mutation requires explicit
+  human approval.
+- Generated evals and model grades are scaffolding/evidence, not proof unless
+  calibrated or validated.
+- Human grade rows in `grades.jsonl` must not be overwritten by re-grading.
+- Maintainer docs under `meta-skill/.meta-skill/docs/` must be reconciled or
+  deleted when superseded.
+- Generated plugin mirrors are not source.
+- Optimize for the smallest system that reliably improves skill quality over
+  repeated use.
+
+### Executable Plan Index
+
+| Order | Plan | Scope |
+|---|---|---|
+| 1 | `.plans/meta-skill/lane-hygiene-pass.md` | Fix shipped draft markers, TODOs, stale `context.md`, CLI doc drift, runner naming confusion, and unused grader defaults. |
+| 2 | `.plans/meta-skill/eval-report-command.md` | Merge "eval viewing" and "lifecycle report" into read-only `eval list` / `eval report`. |
+| 3 | `.plans/meta-skill/evaluator-methodology-references.md` | Add evaluation methodology: splits, variance, taxonomy, scaffold-vs-proof, baseline thinking, uncertainty, and when not to evaluate. |
+| 4 | `.plans/meta-skill/baseline-impact-comparison.md` | Add a no-skill baseline candidate and per-case impact categories. |
+| 5 | `.plans/meta-skill/seed-lane-evals.md` | Add router and writer dogfood cases for routing and interview behavior. |
+| 6 | `.plans/meta-skill/eval-generate-draft-scaffolds.md` | Add deterministic, labeled starter eval generation. |
+| 7 | `.plans/meta-skill/package-readiness-check.md` | Add local package/readiness gates over existing evidence. |
+| 8 | `.plans/meta-skill/skill-autoresearch-v1-lane.md` | Add a guidance-only `skill-autoresearch` worker lane that stops at recommendation. |
+
+### Tracker Reconciliation
+
+- Merge "Upgrade Eval Viewing" and "Polish The Skill Lifecycle Report" into
+  `eval-report-command.md`; they are one renderer over the same run evidence.
+- Promote the hygiene/doc-drift pass; it was missing from the tracker and
+  should happen before deeper feature work.
+- Treat "Deepen `skill-doctor` Review" as ongoing quality polish after the
+  hygiene pass, not a standalone feature build.
+- Keep "Skillify Session Mining" deferred until draft eval generation and
+  reporting are stable.
+- Keep inventory, staleness, security-lite, thread-management, concurrency,
+  and broad platform surfaces deferred.
+- Reconcile the tracker reference to
+  `.plans/meta-skill-minimal-eval-generate-exec-plan.md`; that file is cited
+  below but is not present in this repo.
+- Track failure reproduction guidance as a doctor quality polish item: triggering
+  failures should use natural prompts in clean child threads, while behavior
+  failures should force invocation with the failing input.
+- Graduate recurring deterministic failure checks into shared
+  `meta-skill/src/` validation instead of creating worker-local script folders.
+
 ### Seed Evals For Skill Writer Routing And Interview
 
 - Recommendation: Worth exploring

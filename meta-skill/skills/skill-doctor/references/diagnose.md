@@ -26,7 +26,7 @@ Root cause + a re-runnable failing case, captured in the workbench as
 `<project>/.meta-skill/spec.md` (durable notes: changed behavior, evidence,
 rejected edits, residual risk) so Verify can re-run it.
 
-## TODO
-
-- Define how to reproduce triggering failures vs behavior failures.
-- Decide what a "narrow run" includes for each failure type.
+For triggering failures, reproduce with a natural prompt in a clean child thread
+using the shared [skill-trial-runs.md](../../../references/skill-trial-runs.md)
+workflow. For behavior failures, force invocation with the failing input so the
+run isolates the skill's behavior after it has already fired.

@@ -135,10 +135,16 @@ Refine the rubric on disagreement.
 
 Run selected candidates against selected cases. Default to:
 
-- `codex_thread` with worktree isolation for one-off trials and doctor fixes
+- `codex_thread` with worktree isolation for one-off trials and doctor fixes.
+  This is the Desktop child-thread route in
+  [skill-trial-runs.md](../../references/skill-trial-runs.md), not an
+  `eval run --runner` value.
 - `codex_app_server` through the Python SDK for batch evals, A/B comparisons,
   and initial autoresearch
 - `codex_exec` for simple fallback or CI-like automation
+
+The CLI accepts only `codex_app_server` and `codex_exec` as concrete eval
+runners.
 
 For `codex_exec`, store raw streams as `events/<trial-id>.jsonl`, derive compact
 status into `progress.jsonl`, and capture solver output with

@@ -32,8 +32,5 @@ the same runner fills it during a Judge Review (see
 ## Escalate
 
 - Anything needing systematic, multi-scenario confidence → `skill-evaluator`.
-
-## TODO
-
-- Add general deterministic checks to `meta-skill/src/` as failure patterns
-  recur. Keep worker-local script folders out of the public surface.
+- Recurring deterministic failure patterns belong in the shared
+  `meta-skill/src/` checks, not worker-local script folders.

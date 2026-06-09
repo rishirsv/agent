@@ -87,7 +87,7 @@ def write_manifest(project, *, fixtures=None):
     manifest = {
         "schema_version": 1,
         "target": {"type": "skill", "ref": "skill/SKILL.md"},
-        "defaults": {"runner": "codex_exec", "repetitions": 1, "grader": ["validate"]},
+        "defaults": {"runner": "codex_exec", "repetitions": 1},
         "candidates": [
             {
                 "candidate": "current",

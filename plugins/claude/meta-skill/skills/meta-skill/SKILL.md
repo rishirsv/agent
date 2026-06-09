@@ -5,8 +5,6 @@ description: "Use for ANY work on an agent skill — authoring a new skill, revi
 
 # Meta-Skill
 
-*Scaffold — sections and high-level outline only; iterate before shipping.*
-
 Skinny, always-read front door for the agent-skill lifecycle. Understand the
 whole flow here, then route to one specialist and orchestrate multi-step work.
 
@@ -20,6 +18,7 @@ Central CLI reference for future agents:
 | Make a new skill | `skill-writer` |
 | Improve / fix an existing skill | `skill-doctor` |
 | Measure how a skill performs | `skill-evaluator` |
+| Run a one-prompt trial of a draft or fix | The owning lane using `skill-trial-runs.md` |
 
 ## Routing
 
@@ -27,12 +26,18 @@ Central CLI reference for future agents:
 - Create (blank page) → `skill-writer`.
 - Improve / "is it good?" / "it's broken" → `skill-doctor`.
 - Measure / "how well does it work?" → `skill-evaluator`.
+- One-prompt testing → stay with the owning lane and use
+  [skill-trial-runs.md](../../references/skill-trial-runs.md).
+- Validation or packaging → use the central CLI through the lane doing the work.
+- "Use this skill" for a non-skill task is not Meta-Skill work; use the target
+  skill directly.
 - Ambiguous → clarify here, then route.
 
 ## Orchestration (multi-step)
 
 - Sequence specialists toward a goal no single one owns.
 - e.g. write → evaluate; doctor → evaluate → loop until target.
+- Stop looping when the goal gate is met or the user must decide.
 
 ## Front-Door Model
 

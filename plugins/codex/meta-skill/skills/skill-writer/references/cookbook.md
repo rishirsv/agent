@@ -367,7 +367,7 @@ Script-backed skill:
 - Runtime references, scripts, assets, resources, examples, or other folders are direct, flat where discovery matters, linked, and implemented.
 - Setup/config/state rules appear only when they change behavior and name stable storage.
 - Future measurement ideas, when requested, stay in `.meta-skill/` and out of the portable runtime.
-- Scaffolds use the current-working-directory-relative `<skill-dir>` as the root payload; no `skill/` wrapper unless a repo explicitly requires it.
+- Generated starters use the current-working-directory-relative `<skill-dir>` as the root payload; no `skill/` wrapper unless a repo explicitly requires it.
 - `meta-skill` is the single public CLI; worker-local scripts are not a public
   interface.
 - OpenAI/Codex metadata includes `default_prompt`, mentions `$skill-name`, and avoids system or implementation-plumbing terms in routing/UI text.

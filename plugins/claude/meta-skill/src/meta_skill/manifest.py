@@ -13,7 +13,6 @@ DEFAULT_EVALS = {
     "defaults": {
         "runner": "codex_app_server",
         "repetitions": 1,
-        "grader": ["validate"],
     },
     "candidates": [
         {
@@ -105,4 +104,3 @@ def select_candidates(manifest, raw):
 
 def trial_prompt(task_text):
     return task_text.strip() + "\n"
-

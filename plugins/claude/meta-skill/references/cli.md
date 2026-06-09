@@ -202,6 +202,8 @@ Authoritative run files:
   results.jsonl
   grades.jsonl
   events/<trial-id>.jsonl
+  events/<trial-id>.judge.jsonl
+  evidence/<trial-id>.json
   candidates/<candidate>/<trial-id>/final.md
 ```
 
@@ -213,7 +215,14 @@ What each file is for:
   runner detail
 - `grades.jsonl`: validator grading results after `eval grade`
 - `events/*.jsonl`: raw runner event stream for a trial
+- `events/*.judge.jsonl`: raw judge event stream when rubric grading runs
+- `evidence/*.json`: compact thread/runtime evidence for a trial
 - `final.md`: captured final output for that candidate/trial
+
+Solver workspaces are staged under
+`.meta-skill/solver-workspaces/<run-id>/<trial-id>/`. They are run-scoped
+working directories for visible task bytes, listed fixtures, and the candidate
+payload, not authoritative result artifacts.
 
 Hidden case files stay grader-side. `rubric.md`, `expected.*`, `validate.*`,
 grader prompts, and human labels are never copied into the solver workspace.
@@ -354,7 +363,7 @@ Use this flow before claiming the full lifecycle works. Run it in an isolated
 worktree and use the installed plugin launcher, not only source files.
 
 ```sh
-PLUGIN=/Users/rishi/.codex/plugins/cache/agent/meta-skill/0.1.0
+PLUGIN=<plugin-cache-root>/agent/meta-skill/0.1.0
 CLI="$PLUGIN/src/meta-skill"
 
 git worktree add --detach /tmp/meta-skill-e2e HEAD
