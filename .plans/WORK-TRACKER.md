@@ -15,6 +15,8 @@ scripts/meta-skill eval materialize
 scripts/meta-skill eval run
 scripts/meta-skill eval progress
 scripts/meta-skill eval grade
+scripts/meta-skill eval list
+scripts/meta-skill eval report
 scripts/meta-skill validate
 scripts/meta-skill package
 ```
@@ -134,6 +136,10 @@ scenarios, readable eval views, and package/readiness gates.
 
 ### Upgrade Eval Viewing Before Adding More Eval Modes
 
+- Status: Shipped as read-only `eval list` / `eval report`
+  (`meta-skill/src/meta_skill/report.py`) per
+  `.plans/meta-skill/eval-report-command.md`. Winner/next-action framing and
+  impact categories land with `baseline-impact-comparison.md`.
 - Recommendation: Strong.
 - Evidence: Public registry pages make quality, impact, evals, security/advisory, and files legible in one view; current Meta Skill run output is terse and file-first.
 - Where: `meta-skill/src/meta_skill/cli.py`,
@@ -147,6 +153,10 @@ scenarios, readable eval views, and package/readiness gates.
 
 ### Polish The Skill Lifecycle Report
 
+- Status: Rendering half shipped via `eval report` (runner completion split
+  from behavioral grades, evidence pointers, needs-attention list). The
+  winner/recommended-next-action half stays with
+  `.plans/meta-skill/baseline-impact-comparison.md`.
 - Recommendation: Strong.
 - Evidence: The isolated App Server runner dogfood proved the end-to-end loop, but the useful story was spread across review files, run directories, grade JSON, judge traces, and a hand-authored E2E report.
 - Where: `meta-skill/src/meta_skill/runner.py`, `meta-skill/src/meta_skill/grading.py`, `meta-skill/src/meta_skill/workbench.py`, future lifecycle report rendering, and `.meta-skill/report.md`.
@@ -219,8 +229,12 @@ scenarios, readable eval views, and package/readiness gates.
 - The active Meta Skill CLI is Python-backed and lives under
   `meta-skill/src/meta_skill/`.
 - The supported command surface is `doctor`, `workbench init`,
-  `eval materialize`, `eval run`, `eval progress`, `eval grade`, `validate`,
-  and `package`.
+  `eval materialize`, `eval run`, `eval progress`, `eval grade`, `eval list`,
+  `eval report`, `validate`, and `package`.
+- `eval list` and `eval report` render deterministic Markdown/JSON run
+  summaries from existing run files (read-only), separating runner completion
+  from behavioral grades and flagging failed, ungraded, invalid-grader-JSON,
+  and missing-usage trials.
 - `skill-doctor` owns review and improvement workflow guidance. It writes a
   single `.meta-skill/review.md` Quality page; there is no
   `.meta-skill/reviews/` namespace and no current `meta-skill review`

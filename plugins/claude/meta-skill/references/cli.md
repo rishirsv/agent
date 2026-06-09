@@ -73,6 +73,8 @@ scripts/meta-skill eval materialize [--suite .meta-skill/evals.json] [--force] [
 scripts/meta-skill eval run [--suite .meta-skill/evals.json] [--runner auto|codex_app_server|codex_exec] [--candidates <ids>] [--split <name>] [--repetitions <n>] [--model <id>] [--json]
 scripts/meta-skill eval progress --run <run-id-or-path> [--watch] [--json]
 scripts/meta-skill eval grade --run <run-id-or-path> [--json]
+scripts/meta-skill eval list [--suite .meta-skill/evals.json] [--json]
+scripts/meta-skill eval report --run <run-id-or-path> [--out <file>] [--json]
 scripts/meta-skill validate <skill-dir> [--json]
 scripts/meta-skill package <skill-dir> [--out-dir <dir>] [--json]
 ```
@@ -283,6 +285,60 @@ Notes:
   `.meta-skill/runs/<run-id>/events/<trial-id>.judge.jsonl` and records model
   evidence in `grades.jsonl`.
 
+### `eval list`
+
+Use this to enumerate the runs in a workbench without listing run directories
+by hand.
+
+What it does:
+
+- Finds every `runs/<run-id>/run.json` in the suite's workbench
+- Summarizes each run: run id, created time, runner, trial counts by result
+  status, grade count, and candidates
+
+Inputs:
+
+- `--suite`: suite file used to locate the workbench; defaults to
+  `.meta-skill/evals.json`
+
+Output:
+
+- One row per run, ordered by run directory name
+- A run with an unreadable `run.json` is reported with an `error` field instead
+  of failing the whole listing
+
+### `eval report`
+
+Use this after `eval run` and `eval grade` to read one run without manual file
+archaeology. The report is read-only and deterministic: it renders what the run
+files already contain and never re-runs or re-grades anything.
+
+What it renders:
+
+- Header: run id, suite, runner, creation time, and candidate sources with
+  commit, dirty flag, and payload digest
+- Runner completion: per-trial process status. Completion means the trial
+  process finished; it says nothing about answer quality.
+- Behavioral grades: rubric score/label, validator pass counts, graded/ungraded
+  flags, and token usage (`unavailable` when the runner recorded none)
+- Evidence pointers relative to the run directory: final output, runner events,
+  judge events, and folded thread evidence; `-` marks a missing file
+- A needs-attention list: failed trials, planned trials with no result,
+  ungraded trials, graders that emitted invalid JSON, and missing token usage
+
+Inputs:
+
+- `--run <run-id-or-path>`
+- `--out <file>`: write the Markdown report to a caller-named file, for example
+  `.meta-skill/runs/<run-id>/report.md`
+- `--json`: emit the structured report instead of Markdown
+
+Output:
+
+- Markdown to stdout by default
+- With `--out`, the report file plus a confirmation that includes the path
+- With `--json` and no `--out`, the full structured report
+
 ### `validate`
 
 Use this for deterministic validation of a skill payload before review,
@@ -349,7 +405,10 @@ Then edit the generated case `task.md` files and any validators or fixtures.
 scripts/meta-skill eval run --json
 scripts/meta-skill eval progress --run <run-id> --watch --json
 scripts/meta-skill eval grade --run <run-id> --json
+scripts/meta-skill eval report --run <run-id>
 ```
+
+Use `eval list --json` to find earlier run ids in the same workbench.
 
 ### Validate a skill payload
 
@@ -383,11 +442,13 @@ cd /tmp/meta-skill-e2e
 "$CLI" eval run --suite quick-skill/.meta-skill/evals.json --runner codex_app_server --json
 "$CLI" eval grade --run <quick-run-dir> --json
 "$CLI" eval progress --run <quick-run-dir> --json
+"$CLI" eval report --run <quick-run-dir> --out <quick-run-dir>/report.md
 ```
 
 The dogfood report should include two skill ideas, review evidence, eval run
 directories, model and deterministic grade summaries, feedback, the revised
-candidate change, and `score-comparison.json`.
+candidate change, and `score-comparison.json`. Use `eval report` for the
+per-run summaries instead of hand-authoring them.
 
 ## Boundaries
 

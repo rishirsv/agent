@@ -8,18 +8,9 @@ from pathlib import Path
 
 from .app_server.judge import judge_output
 from .errors import CliError
-from .io import read_json, read_jsonl, write_jsonl
+from .io import read_json, read_jsonl, resolve_run_dir, write_jsonl
 from .manifest import case_dir, case_task_info, workbench_from_suite
 from .staging import safe_case_file
-
-
-def resolve_run_dir(raw_run):
-    run_dir = Path(raw_run).expanduser().resolve()
-    if not (run_dir / "run.json").exists():
-        candidate = (Path(".meta-skill/runs") / raw_run).resolve()
-        if candidate.exists():
-            return candidate
-    return run_dir
 
 
 def validator_command(path, output_path, expected_path, events_path):

@@ -4,8 +4,18 @@ import dataclasses
 import enum
 import json
 import sys
+from pathlib import Path
 
 from .errors import CliError
+
+
+def resolve_run_dir(raw_run):
+    run_dir = Path(raw_run).expanduser().resolve()
+    if not (run_dir / "run.json").exists():
+        candidate = (Path(".meta-skill/runs") / raw_run).resolve()
+        if candidate.exists():
+            return candidate
+    return run_dir
 
 
 def write_json(path, data):

@@ -11,7 +11,7 @@ from .candidates import resolve_candidate
 from .errors import CliError
 from .exec_fallback import exec_run
 from .ids import run_id, utc_now
-from .io import append_jsonl, read_json, read_jsonl, write_json
+from .io import append_jsonl, read_json, read_jsonl, resolve_run_dir, write_json
 from .manifest import (
     case_dir,
     case_task_info,
@@ -246,17 +246,6 @@ def run_eval(args):
         "passed": len(results) - len(failures),
         "failed": len(failures),
     }
-
-
-def resolve_run_dir(raw_run):
-    run_dir = Path(raw_run).expanduser().resolve()
-    if run_dir.name != "runs" and (run_dir / "run.json").exists():
-        return run_dir
-    if not (run_dir / "run.json").exists():
-        candidate = (Path(".meta-skill/runs") / raw_run).resolve()
-        if candidate.exists():
-            return candidate
-    return run_dir
 
 
 def progress_snapshot(raw_run):

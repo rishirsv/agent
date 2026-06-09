@@ -156,6 +156,13 @@ The worker should consume run artifacts and progress files, not call raw App
 Server JSON-RPC directly. App Server is the primary workbench runner, but live
 control commands should not be added unless a real eval case requires them.
 
+After grading, render the run with
+`scripts/meta-skill eval report --run <run-id>` (see
+[cli.md](../../references/cli.md)) instead of hand-assembling a summary from
+run files. The report separates runner completion from behavioral grades and
+lists failed, ungraded, and missing-evidence trials. Use `eval list` to find
+earlier runs in the same workbench.
+
 Report per-case results, grades, aggregate performance, failed cases, and gates.
 Hand fixes to `skill-doctor`.
 

@@ -18,6 +18,7 @@ from .errors import CliError
 from .grading import grade_run
 from .io import emit, fail
 from .packaging import package_skill
+from .report import build_report, list_runs, render_markdown
 from .runner import progress_snapshot, run_eval, terminal_count
 from .validation import validate_report
 from .workbench import init_workbench, materialize_cases
@@ -114,6 +115,26 @@ def command_eval_grade(args):
     return 0
 
 
+def command_eval_list(args):
+    emit(list_runs(args.suite), args.json)
+    return 0
+
+
+def command_eval_report(args):
+    report = build_report(args.run)
+    markdown = render_markdown(report)
+    if args.out:
+        out_path = Path(args.out).expanduser()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(markdown)
+        emit({"ok": True, "run_id": report["run_id"], "out": str(out_path)}, args.json)
+    elif args.json:
+        emit(report, True)
+    else:
+        print(markdown, end="")
+    return 0
+
+
 def command_validate(args):
     result = validate_report(args.skill_dir)
     emit(result, args.json)
@@ -170,6 +191,17 @@ def build_parser():
     grade.add_argument("--run", required=True)
     grade.add_argument("--json", action="store_true")
     grade.set_defaults(func=command_eval_grade)
+
+    list_runs_parser = eval_sub.add_parser("list", help="List eval runs in the workbench")
+    list_runs_parser.add_argument("--suite", default=".meta-skill/evals.json")
+    list_runs_parser.add_argument("--json", action="store_true")
+    list_runs_parser.set_defaults(func=command_eval_list)
+
+    report = eval_sub.add_parser("report", help="Render a readable report for one run")
+    report.add_argument("--run", required=True)
+    report.add_argument("--out", help="Write the Markdown report to this file instead of stdout")
+    report.add_argument("--json", action="store_true")
+    report.set_defaults(func=command_eval_report)
 
     validate = sub.add_parser("validate", help="Validate a skill payload")
     validate.add_argument("skill_dir")
