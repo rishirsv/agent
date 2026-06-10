@@ -64,6 +64,18 @@ def load_manifest(path):
         if case_id in seen_case_ids:
             raise CliError(f"duplicate case id: {case_id}", 2)
         seen_case_ids.add(case_id)
+        if "expectations" in case:
+            expectations = case.get("expectations")
+            if not isinstance(expectations, list) or not all(isinstance(item, str) and item.strip() for item in expectations):
+                raise CliError(f"case {case_id} expectations must be non-empty strings", 2)
+        graders = case.get("graders", [])
+        if not isinstance(graders, list):
+            raise CliError(f"case {case_id} graders must be a list", 2)
+        for grader in graders:
+            if not isinstance(grader, dict):
+                raise CliError(f"case {case_id} graders must be objects", 2)
+            if grader.get("kind") not in {"code", "model", "human"}:
+                raise CliError(f"case {case_id} grader kind must be code, model, or human", 2)
     seen_candidate_ids = set()
     for candidate in data.get("candidates", []):
         if not isinstance(candidate, dict):
@@ -72,6 +84,9 @@ def load_manifest(path):
         if candidate_id in seen_candidate_ids:
             raise CliError(f"duplicate candidate: {candidate_id}", 2)
         seen_candidate_ids.add(candidate_id)
+        source = candidate.get("source") or {}
+        if source.get("kind") == "none" and source.get("ref"):
+            raise CliError(f"candidate {candidate_id} source.kind none must not set ref", 2)
     return data
 
 

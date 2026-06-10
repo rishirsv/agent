@@ -223,9 +223,9 @@ contract, read
 [skill-trial-runs.md](../../references/skill-trial-runs.md) and offer a skill
 trial run. It is optional by default and is not release proof; route systematic
 multi-scenario measurement to `skill-evaluator`. For that handoff, provide 2-3
-realistic user tasks, expected outcomes, and any must-not-break constraints so
-the evaluator can compare outcomes across no-skill, current-skill, and
-edited-skill conditions.
+realistic user tasks, expected outcomes or reference solutions, known failure
+or near-miss examples, and any must-not-break constraints so the evaluator can
+compare outcomes across no-skill, current-skill, and edited-skill conditions.
 
 Stop before packaging, installing, publishing, syncing, external writes, or
 final delivery unless the user explicitly approved that action or the current

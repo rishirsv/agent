@@ -84,8 +84,15 @@ def evidence_pointer(run_dir, raw):
 def build_trial(run_dir, planned, result, grades):
     merged = {**planned, **{key: value for key, value in (result or {}).items() if value is not None}}
     trial_id = merged.get("trial_id")
-    rubric = next((row for row in grades if row.get("metric") == "rubric"), None)
-    validators = [row for row in grades if row.get("metric") == "validator"]
+    rubric = next((row for row in grades if (row.get("grader") or {}).get("kind") == "model"), None)
+    validators = [row for row in grades if (row.get("grader") or {}).get("kind") == "code"]
+    gate_failures = [
+        row
+        for row in grades
+        if row.get("gate") is True and row.get("label") not in {"pass"}
+    ]
+    has_gate = any(row.get("gate") is True for row in grades)
+    uncertain = any(row.get("label") in {"unknown", "needs_human_review"} for row in grades)
     return {
         "trial_id": trial_id,
         "case_id": merged.get("case_id"),
@@ -103,6 +110,18 @@ def build_trial(run_dir, planned, result, grades):
         else None,
         "graded": bool(rubric or validators),
         "invalid_grader_json": any("emitted invalid JSON" in (row.get("rationale") or "") for row in grades),
+        "has_gate": has_gate,
+        "gate_failed": bool(gate_failures),
+        "failed_gates": [
+            {
+                "metric": row.get("metric"),
+                "grader": row.get("grader"),
+                "label": row.get("label"),
+                "rationale": row.get("rationale"),
+            }
+            for row in gate_failures
+        ],
+        "needs_human_review": uncertain,
         "paths": {
             "final": evidence_pointer(run_dir, merged.get("final_path")),
             "events": evidence_pointer(run_dir, merged.get("event_path")),
@@ -123,9 +142,71 @@ def trial_attention(trial):
         items.append({"kind": "ungraded_trial", "trial_id": trial_id, "detail": "no rubric or validator grade recorded"})
     if trial["invalid_grader_json"]:
         items.append({"kind": "invalid_grader_json", "trial_id": trial_id, "detail": "a grader emitted invalid JSON; see grades.jsonl rationale"})
+    if trial["gate_failed"]:
+        items.append({"kind": "gate_failed", "trial_id": trial_id, "detail": "one or more required grader gates failed"})
+    if trial["needs_human_review"]:
+        items.append({"kind": "needs_human_review", "trial_id": trial_id, "detail": "a grader returned unknown or needs_human_review"})
     if trial["runner_status"] != "no_result" and not trial.get("usage"):
         items.append({"kind": "missing_usage", "trial_id": trial_id, "detail": "no token usage recorded for this trial"})
     return items
+
+
+def trial_behavior_state(trial):
+    if trial["runner_status"] == "no_result" or trial["invalid_grader_json"] or trial["needs_human_review"] or not trial["graded"]:
+        return "unknown"
+    if trial["runner_status"] != "passed" or trial["gate_failed"]:
+        return "fail"
+    rubric = trial.get("rubric")
+    if rubric and rubric.get("label") != "pass":
+        return "unknown" if rubric.get("label") == "partial" else "fail"
+    validators = trial.get("validators")
+    if validators and validators["passed"] < validators["total"]:
+        return "fail"
+    return "pass"
+
+
+def aggregate_case_candidate_state(trials):
+    states = [trial_behavior_state(trial) for trial in trials]
+    if not states or "unknown" in states or ("pass" in states and "fail" in states):
+        return "unknown"
+    return states[0]
+
+
+def build_impact(candidates, trials):
+    baseline_ids = {row.get("candidate") for row in candidates if row.get("source_kind") == "none"}
+    payload_ids = [row.get("candidate") for row in candidates if row.get("source_kind") != "none"]
+    if not baseline_ids or not payload_ids:
+        return []
+    baseline_id = sorted(baseline_ids)[0]
+    by_case_candidate = {}
+    for trial in trials:
+        by_case_candidate.setdefault((trial["case_id"], trial["candidate"]), []).append(trial)
+    rows = []
+    for case_id in sorted({trial["case_id"] for trial in trials}):
+        baseline_state = aggregate_case_candidate_state(by_case_candidate.get((case_id, baseline_id), []))
+        for candidate_id in sorted(payload_ids):
+            candidate_state = aggregate_case_candidate_state(by_case_candidate.get((case_id, candidate_id), []))
+            if baseline_state == "unknown" or candidate_state == "unknown":
+                impact = "needs_human_review"
+            elif baseline_state == "fail" and candidate_state == "pass":
+                impact = "candidate_improves"
+            elif baseline_state == "pass" and candidate_state == "fail":
+                impact = "candidate_regresses"
+            elif baseline_state == "fail" and candidate_state == "fail":
+                impact = "both_fail"
+            else:
+                impact = "baseline_already_succeeds"
+            rows.append(
+                {
+                    "case_id": case_id,
+                    "baseline": baseline_id,
+                    "candidate": candidate_id,
+                    "baseline_state": baseline_state,
+                    "candidate_state": candidate_state,
+                    "impact": impact,
+                }
+            )
+    return rows
 
 
 def build_report(raw_run):
@@ -149,7 +230,12 @@ def build_report(raw_run):
         "no_result": sum(1 for trial in trials if trial["runner_status"] == "no_result"),
         "graded": sum(1 for trial in trials if trial["graded"]),
         "ungraded": sum(1 for trial in trials if not trial["graded"]),
+        "gate_failed": sum(1 for trial in trials if trial["gate_failed"]),
     }
+    candidates = sorted(
+        ({key: row.get(key) for key in CANDIDATE_FIELDS} for row in run.get("candidates", [])),
+        key=lambda row: row.get("candidate") or "",
+    )
     return {
         "ok": True,
         "run_id": run.get("run_id") or run_dir.name,
@@ -157,12 +243,10 @@ def build_report(raw_run):
         "suite": run.get("suite"),
         "runner": run.get("runner"),
         "created_at": run.get("created_at"),
-        "candidates": sorted(
-            ({key: row.get(key) for key in CANDIDATE_FIELDS} for row in run.get("candidates", [])),
-            key=lambda row: row.get("candidate") or "",
-        ),
+        "candidates": candidates,
         "totals": totals,
         "trials": trials,
+        "impact": build_impact(candidates, trials),
         "needs_attention": [item for trial in trials for item in trial_attention(trial)],
     }
 
@@ -251,7 +335,7 @@ def render_markdown(report):
         "",
     ]
     lines += md_table(
-        ["Case", "Candidate", "Rep", "Rubric", "Validators", "Graded", "Tokens"],
+        ["Case", "Candidate", "Rep", "Rubric", "Validators", "Gate", "Graded", "Tokens"],
         [
             [
                 md_cell(t["case_id"]),
@@ -259,12 +343,29 @@ def render_markdown(report):
                 md_cell(t["repetition"]),
                 rubric_cell(t["rubric"]),
                 f"{t['validators']['passed']}/{t['validators']['total']} pass" if t["validators"] else "-",
+                "failed" if t["gate_failed"] else ("pass" if t["has_gate"] else "-"),
                 "yes" if t["graded"] else "ungraded",
                 usage_cell(t["usage"]),
             ]
             for t in trials
         ],
     )
+    if report["impact"]:
+        lines += ["", "## Impact", ""]
+        lines += md_table(
+            ["Case", "Baseline", "Candidate", "Baseline state", "Candidate state", "Impact"],
+            [
+                [
+                    md_cell(row["case_id"]),
+                    md_cell(row["baseline"]),
+                    md_cell(row["candidate"]),
+                    md_cell(row["baseline_state"]),
+                    md_cell(row["candidate_state"]),
+                    md_cell(row["impact"]),
+                ]
+                for row in report["impact"]
+            ],
+        )
     lines += ["", "## Evidence", ""]
     lines += md_table(
         ["Trial", "Final output", "Events", "Judge events", "Thread evidence"],

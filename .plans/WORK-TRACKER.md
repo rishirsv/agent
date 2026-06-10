@@ -5,12 +5,7 @@ and one-line `Done`; keep implementation detail in linked Plans.
 
 ## Active
 
-### baseline-impact-comparison
-
-- Outcome: Measure skill lift with a no-skill baseline and per-case impact categories.
-- Plan: `meta-skill/baseline-impact-comparison.md`
-- Proof: Fixture run covers baseline/current/candidate impact categories and `eval report` renders them without pooled scores.
-- Notes: Read `meta-skill/anthropic-eval-flow-alignment.md` before starting.
+No active Meta Skill implementation plan.
 
 ## Later
 
@@ -64,5 +59,6 @@ and one-line `Done`; keep implementation detail in linked Plans.
 
 ## Done
 
-- `eval-report-command` - read-only `eval list` / `eval report` rendering shipped; baseline impact categories remain active work.
+- `baseline-impact-comparison` - no-skill candidate staging, explicit grader declarations, expectation-aware model grading, gate failures, and per-case impact categories shipped.
+- `eval-report-command` - read-only `eval list` / `eval report` rendering shipped.
 - `evaluator-methodology-references` - baseline/current/candidate methodology and evaluation guidance landed.

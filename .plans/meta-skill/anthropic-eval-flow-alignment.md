@@ -208,30 +208,29 @@ broader agent-eval discipline. The parts most relevant to Meta Skill:
   ownership clear, and retire or reclassify saturated capability cases into
   regression checks.
 
-## Gaps In Meta Skill
+## Remaining Gaps In Meta Skill
 
-1. No true no-skill baseline candidate yet.
-2. No per-case impact summary comparing baseline/current/candidate.
-3. Eval authoring still reads heavier than Anthropic's prompt-first flow.
-4. No first-class "expectations" checklist equivalent for simple pass/fail
-   assertions.
-5. Grading does not yet critique eval quality: weak assertion, missing
+1. Eval authoring still reads heavier than Anthropic's prompt-first flow.
+2. Grading does not yet critique eval quality: weak assertion, missing
    expectation, always-pass, always-fail, or cannot-verify.
-6. Trigger evals exist conceptually, but no dedicated description-trigger loop
+3. Trigger evals exist conceptually, but no dedicated description-trigger loop
    with should-trigger and should-not-trigger near misses.
-7. Reports do not yet summarize time/token/tool-call tradeoffs by candidate.
-8. Reports do not yet make the transcript/outcome distinction obvious enough:
+4. Reports do not yet summarize time/token/tool-call tradeoffs by candidate.
+5. Reports do not yet make the transcript/outcome distinction obvious enough:
    a transcript may show effort, but the artifact or final state is what should
    usually decide success.
-9. Authoring docs do not yet ask for reference solutions or expert-solvability
+6. Authoring docs do not yet ask for reference solutions or expert-solvability
    checks before trusting a case.
+
+Shipped alignment: no-skill candidate sources, per-case impact summaries,
+`expectations[]`, explicit `graders[]`, and gate semantics.
 
 ## Suggested Modifications
 
-### 1. Keep Baseline Impact As The Next Task
+### 1. Baseline Impact
 
-Proceed with `.plans/meta-skill/baseline-impact-comparison.md`, but treat
-Anthropic alignment as part of the acceptance criteria:
+`.plans/meta-skill/baseline-impact-comparison.md` has shipped. Anthropic
+alignment acceptance criteria:
 
 - A single run must be able to contain `baseline`, `current`, and at least one
   edited candidate.
@@ -244,7 +243,7 @@ Anthropic alignment as part of the acceptance criteria:
   evidence, transcript evidence, validator evidence, rubric evidence, or human
   review.
 
-Do not add parallelism or an HTML viewer in this task.
+Parallelism and an HTML viewer remain out of scope.
 
 ### 2. Add A Prompt-First Authoring Reference
 
@@ -264,10 +263,10 @@ Update `skill-evaluator` docs after baseline support lands:
 
 This is docs-only and should be small.
 
-### 3. Add Simple Expectations Without Replacing Rubrics
+### 3. Simple Expectations Without Replacing Rubrics
 
-Add a lightweight expectation checklist as a bridge between Anthropic-style
-assertions and Meta Skill's existing validators/rubrics.
+Meta Skill now has a lightweight expectation checklist as a bridge between
+Anthropic-style assertions and Meta Skill's existing validators/rubrics.
 
 Recommended shape:
 
@@ -285,15 +284,15 @@ Recommended shape:
 }
 ```
 
-Implementation option:
+Implemented shape:
 
 - Materialize `expectations` into hidden case metadata, not `task.md`.
-- Grader can emit one `metric: "expectation"` row per expectation.
+- Model graders receive expectations as hidden checks alongside rubric context.
 - Deterministic validators remain the preferred path for exact checks.
 - Rubrics remain the preferred path for subjective quality.
 
-This should be a separate plan after baseline impact, or folded into
-`eval-generate-draft-scaffolds.md`.
+Draft-case generation can later emit `expectations[]`, but the runtime and docs
+already support them.
 
 ### 4. Teach The Grader To Critique Eval Quality
 
@@ -362,15 +361,13 @@ quality impact.
 
 ## Proposed Ordering
 
-1. Execute `baseline-impact-comparison.md`.
+1. Add eval-quality notes to `eval report`.
 2. Update evaluator docs with prompt-first authoring and baseline/current/candidate
    examples, including unambiguous-task and reference-solution checks.
 3. Extend `eval-generate-draft-scaffolds.md` so generated cases include
    realistic prompts plus expected-output prose and optional expectations.
-4. Add simple expectation grading/reporting.
-5. Add eval-quality notes to `eval report`.
-6. Add capability/regression purpose guidance, docs-first.
-7. Later: add trigger-description optimization as a focused lane or command.
+4. Add capability/regression purpose guidance, docs-first.
+5. Later: add trigger-description optimization as a focused lane or command.
 
 ## Validation For Future Work
 

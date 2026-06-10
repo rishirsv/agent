@@ -265,6 +265,18 @@ def test_solver_staging_hidden_boundaries(tmp):
         check(not (workspace / hidden).exists(), f"hidden case material staged: {hidden}")
     check(not (workspace / "skill" / ".meta-skill").exists(), "candidate .meta-skill copied into solver workspace")
 
+    baseline = meta_skill.stage_solver_workspace(
+        project / ".meta-skill",
+        project / ".meta-skill" / "runs" / "run-stage",
+        "case-a.baseline.t1",
+        {"id": "case-a", "fixtures": ["fixtures/visible.txt"]},
+        "visible task",
+        {"candidate": "baseline", "payload_path": None},
+    )
+    baseline_workspace = Path(baseline["solver_workspace"])
+    check(not (baseline_workspace / "skill").exists(), "no-skill candidate staged a skill payload")
+    check(baseline["staged_payload_digest"] is None, "no-skill candidate should have null staged payload digest")
+
     for fixture in ("/tmp/escape.txt", "../escape.txt"):
         try:
             meta_skill.stage_solver_workspace(
@@ -306,6 +318,19 @@ def test_grade_expected_validator_behavior(tmp):
     project = tmp / "project"
     write_skill(project / "skill")
     suite = write_manifest(project)
+    manifest = json.loads(suite.read_text())
+    manifest["cases"][0]["expectations"] = ["The output exactly matches expected.txt."]
+    manifest["cases"][0]["graders"] = [
+        {
+            "id": "exact-match",
+            "kind": "code",
+            "metric": "exactness",
+            "path": "validate.py",
+            "required": True,
+            "gate": True,
+        }
+    ]
+    suite.write_text(json.dumps(manifest, indent=2) + "\n")
     run_json([CLI, "eval", "materialize", "--suite", str(suite), "--json"], project)
     case_root = project / ".meta-skill" / "cases" / "case-a"
     (case_root / "expected.txt").write_text("expected answer\n")
@@ -354,6 +379,8 @@ def test_grade_expected_validator_behavior(tmp):
     check(graded["ok"] is True and graded["grades"] == 1, "grade JSON shape changed")
     grades = [json.loads(line) for line in (run_dir / "grades.jsonl").read_text().splitlines()]
     check(grades[0]["score"] == 1.0 and grades[0]["label"] == "pass", "validator grade behavior changed")
+    check(grades[0]["metric"] == "exactness" and grades[0]["grader"]["id"] == "exact-match", "explicit grader metadata not preserved")
+    check(grades[0]["gate"] is True, "explicit required grader did not become a gate")
 
 
 def test_eval_list_and_report(tmp):
@@ -453,7 +480,10 @@ def test_eval_list_and_report(tmp):
     first, report = run_json([CLI, "eval", "report", "--run", str(run_dir), "--json"], project)
     second, _ = run_json([CLI, "eval", "report", "--run", str(run_dir), "--json"], project)
     check(first.stdout == second.stdout, "report JSON not byte-stable")
-    check(report["totals"] == {"trials": 5, "passed": 3, "failed": 1, "no_result": 1, "graded": 3, "ungraded": 2}, "report totals changed")
+    check(
+        report["totals"] == {"trials": 5, "passed": 3, "failed": 1, "no_result": 1, "graded": 3, "ungraded": 2, "gate_failed": 0},
+        "report totals changed",
+    )
     check(
         [item["trial_id"] for item in report["trials"]]
         == ["case-a.attempt-1.t1", "case-a.attempt-1.t2", "case-a.current.t1", "case-a.current.t2", "case-b.current.t1"],
@@ -495,6 +525,87 @@ def test_eval_list_and_report(tmp):
     _, written = run_json([CLI, "eval", "report", "--run", str(run_dir), "--out", str(out_file), "--json"], project)
     check(written["ok"] is True and written["out"] == str(out_file), "report --out JSON shape changed")
     check(out_file.read_text() == md_first.stdout, "report --out content diverged from stdout")
+
+
+def test_report_impact_and_gates(tmp):
+    project = tmp / "project"
+    write_skill(project / "skill")
+    suite = write_manifest(project)
+    manifest = json.loads(suite.read_text())
+    manifest["candidates"] = [
+        {"candidate": "baseline", "display": "No skill", "source": {"kind": "none"}},
+        {"candidate": "current", "display": "Current", "source": {"kind": "current_worktree", "ref": "."}},
+    ]
+    manifest["cases"] = [
+        {"id": "case-a", "task": {"path": "task.md", "seed": "A"}},
+        {"id": "case-b", "task": {"path": "task.md", "seed": "B"}},
+    ]
+    suite.write_text(json.dumps(manifest, indent=2) + "\n")
+    run_dir = project / ".meta-skill" / "runs" / "run-impact"
+
+    def trial(case_id, candidate):
+        trial_id = f"{case_id}.{candidate}.t1"
+        return {
+            "trial_id": trial_id,
+            "case_id": case_id,
+            "candidate": candidate,
+            "repetition": 1,
+            "event_path": str(run_dir / "events" / f"{trial_id}.jsonl"),
+            "evidence_path": str(run_dir / "evidence" / f"{trial_id}.json"),
+            "final_path": str(run_dir / "candidates" / candidate / trial_id / "final.md"),
+        }
+
+    trials = [trial("case-a", "baseline"), trial("case-a", "current"), trial("case-b", "baseline"), trial("case-b", "current")]
+    results = [{**row, "status": "passed", "usage": {"input_tokens": 1, "output_tokens": 1}} for row in trials]
+
+    def gate_grade(trial_id, label):
+        score = 1.0 if label == "pass" else 0.0
+        return {
+            "run_id": "run-impact",
+            "trial_id": trial_id,
+            "case_id": trial_id.split(".")[0],
+            "candidate": trial_id.split(".")[1],
+            "metric": "validator",
+            "grader": {"kind": "code", "id": "gate.py"},
+            "score": score,
+            "label": label,
+            "rationale": f"{label} gate",
+            "gate": True,
+        }
+
+    grades = [
+        gate_grade("case-a.baseline.t1", "fail"),
+        gate_grade("case-a.current.t1", "pass"),
+        gate_grade("case-b.baseline.t1", "pass"),
+        gate_grade("case-b.current.t1", "fail"),
+    ]
+    run_dir.mkdir(parents=True)
+    (run_dir / "run.json").write_text(
+        json.dumps(
+            {
+                "run_id": "run-impact",
+                "suite": str(suite),
+                "runner": "codex_exec",
+                "created_at": "2026-01-02T03:04:05+00:00",
+                "candidates": [
+                    {"candidate": "baseline", "display": "No skill", "source_kind": "none", "source_ref": None, "payload_digest": None},
+                    {"candidate": "current", "display": "Current", "source_kind": "current_worktree", "source_ref": ".", "payload_digest": "a" * 64},
+                ],
+                "trials": trials,
+            }
+        )
+        + "\n"
+    )
+    (run_dir / "results.jsonl").write_text("".join(json.dumps(row) + "\n" for row in results))
+    (run_dir / "grades.jsonl").write_text("".join(json.dumps(row) + "\n" for row in grades))
+    _, report = run_json([CLI, "eval", "report", "--run", str(run_dir), "--json"], project)
+    impacts = {(row["case_id"], row["impact"]) for row in report["impact"]}
+    check(impacts == {("case-a", "candidate_improves"), ("case-b", "candidate_regresses")}, f"impact categories changed: {impacts}")
+    check(report["totals"]["gate_failed"] == 2, "gate failure total changed")
+    attention = {(item["kind"], item["trial_id"]) for item in report["needs_attention"]}
+    check(("gate_failed", "case-a.baseline.t1") in attention and ("gate_failed", "case-b.current.t1") in attention, "gate failures not surfaced")
+    md = run([CLI, "eval", "report", "--run", str(run_dir)], project).stdout
+    check("## Impact" in md and "candidate_improves" in md and "candidate_regresses" in md, "impact Markdown missing")
 
 
 def test_eval_run_artifact_records(tmp):
@@ -727,6 +838,7 @@ TESTS = [
     test_solver_staging_hidden_boundaries,
     test_grade_expected_validator_behavior,
     test_eval_list_and_report,
+    test_report_impact_and_gates,
     test_eval_run_artifact_records,
     test_fake_app_server_runner,
 ]

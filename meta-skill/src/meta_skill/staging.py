@@ -57,12 +57,15 @@ def stage_solver_workspace(workbench, run_dir, trial_id, case, task_text, candid
         else:
             shutil.copy2(source, target)
 
-    staged_payload = workspace / "skill"
-    copy_payload(candidate["payload_path"], staged_payload)
     staged_candidate = dict(candidate)
-    staged_candidate["cwd"] = str(workspace)
-    staged_candidate["payload_path"] = str(staged_payload)
     staged_candidate["solver_workspace"] = str(workspace)
-    staged_candidate["staged_payload_digest"] = payload_digest(staged_payload)
+    staged_candidate["cwd"] = str(workspace)
+    if candidate.get("payload_path"):
+        staged_payload = workspace / "skill"
+        copy_payload(candidate["payload_path"], staged_payload)
+        staged_candidate["payload_path"] = str(staged_payload)
+        staged_candidate["staged_payload_digest"] = payload_digest(staged_payload)
+    else:
+        staged_candidate["payload_path"] = None
+        staged_candidate["staged_payload_digest"] = None
     return staged_candidate
-

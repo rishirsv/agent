@@ -10,7 +10,7 @@ should judge the produced answer, files, or state first.
 Validations come in two tiers. Keep the terminology straight:
 
 - **scripts** are a skill's runtime deterministic code, or shipped plugin checks.
-- **validators** are evaluator-owned checks for one case.
+- **validators** are evaluator-owned checks for one task.
 - **tests** are shared deterministic checks in the hidden workbench.
 
 ## Two Tiers
@@ -29,7 +29,8 @@ them per target.
 
 Prefer a deterministic validator over a judge dimension wherever the check can
 be made exact: required strings, file presence, schema shape, exit codes,
-event-log assertions. Judges are for semantic quality a script cannot decide.
+state checks, exact outcome checks, and transcript metrics such as turns, tool
+calls, or token use. Judges are for semantic quality a script cannot decide.
 
 When authoring a rubric, each judged criterion should state why it cannot be
 deterministic. If no reason survives writing it down, move the check into
@@ -38,6 +39,22 @@ deterministic. If no reason survives writing it down, move the check into
 Task-local validators check behavior unique to one task. They live beside the
 task as `validate.*`, but they are hidden from the solver. They run after the
 trial outcome exists.
+
+When a validator protects a must-not-break condition, declare it as a gate in
+`evals.json`:
+
+```json
+{
+  "id": "prompt-boundary",
+  "kind": "code",
+  "metric": "boundary",
+  "path": "validate.py",
+  "required": true,
+  "gate": true
+}
+```
+
+A gate failure blocks promotion even if model-rubric quality improves.
 
 ## Solver Boundary
 
@@ -66,8 +83,8 @@ global state:
 
 ```text
 validate.ts \
-  --output runs/<run-id>/candidates/<candidate>/<trial-id>/final.md \
-  --expected cases/<case-id>/expected.json \
+  --output runs/<run-id>/candidates/<condition>/<trial-id>/final.md \
+  --expected cases/<task-id>/expected.json \
   --events runs/<run-id>/events/<trial-id>.jsonl \
   --json
 ```
@@ -89,7 +106,11 @@ It should print a compact JSON object:
 ```
 
 The runner converts validator output into `grades.jsonl` rows with
-`grader.kind = "code"`.
+`grader.kind = "code"`. Explicit `graders[]` entries preserve their `id`,
+`metric`, and `gate` fields in the grade row.
+
+Code graders should return named checks rather than one opaque pass/fail. Named
+checks make partial credit and failure diagnosis possible.
 
 ## Boundary With skill-doctor
 

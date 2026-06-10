@@ -9,7 +9,7 @@ let the judge scale.
 ## The Loop
 
 1. **Anchor the rubric.** Put discrete level descriptions in
-   `cases/<case-id>/rubric.md`. Ambiguous criteria are the main cause of an
+   `cases/<task-id>/rubric.md`. Ambiguous criteria are the main cause of an
    unreliable judge.
 2. **Select a spot-check slice.** Pick a small set of representative trial
    outcomes before trusting the judge for a decision. For small skill suites, a
@@ -18,7 +18,7 @@ let the judge scale.
 3. **Collect human grades.** Store human labels as `grades.jsonl` rows over trial
    outcomes. Do not put human labels in `task.md`, and do not hide them as front
    matter in case files.
-4. **Check agreement.** Run the judge on the same trial outputs and compare.
+4. **Check agreement.** Run the judge on the same trial outcomes and compare.
    Practical signal: exact-match rate plus a +/-1 tolerance band. Reach for
    weighted kappa or correlation only when statistical rigor is needed.
 5. **Refine on disagreement.** Every material judge/human disagreement is a
@@ -54,7 +54,7 @@ schema field `candidate`, not `candidate_id`. Use `trial_id`, not `attempt_id`.
 
 ## Surfacing Divergence
 
-Flag every case where `|human - judge| >= 1` for review, and propose the rubric
+Flag every task where `|human - judge| >= 1` for review, and propose the rubric
 or anchor change that would close it. A few well-chosen spot checks beat
 labeling everything.
 
@@ -74,3 +74,8 @@ LLM judges drift in predictable ways. Guard against them:
 Reference-guided grading reduces all three. Give the judge the explicit rubric
 and, where possible, hidden expected output or reference material. These hidden
 files remain outside the solver workspace.
+
+If the judge cannot decide from the outcome and allowed transcript evidence,
+prefer `unknown` or `needs_human_review` over a confident invented score.
+Treat either label as a calibration signal, not as a failure to hide. The report
+will surface those trials for review.

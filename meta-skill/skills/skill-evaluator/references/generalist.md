@@ -23,6 +23,9 @@ Answer these about the target, then turn the answers into dimensions:
   recurring failure mode may become a judged dimension.
 - **Variance tolerance** — must it be identical every time, or is a range
   acceptable? This sets how many repetitions each task needs.
+- **Eval purpose** — is this a capability, regression, gate, failure, trigger,
+  or efficiency question? Use [eval-types.md](eval-types.md) to pick the suite
+  shape.
 
 ## Map Answers To The Workbench
 
@@ -50,3 +53,11 @@ target. A skill condition may be a branch/worktree. A prompt condition may be a
 prompt file. A document condition may be a revised document path. In all cases,
 use condition/task/trial language in prose, while preserving `candidate` in the
 current run evidence field and `trial_id` for one execution.
+
+For non-skill targets, start from concrete examples:
+
+- prompt eval: same task under old-prompt and edited-prompt conditions
+- document eval: same review task against current and revised document
+- workflow eval: same operational task with different runbook or agent setup
+- UI/product eval: same user goal with state checks, screenshots, or artifact
+  inspection as outcome graders

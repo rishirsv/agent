@@ -4,11 +4,15 @@
 
 The strongest external eval concept (registry reference, Tessl dogfood
 findings) is impact: the same case run **without** the skill vs **with** it.
-Today `resolve_candidate` only supports `current_worktree` / git-ref sources,
-and staging always copies a `skill/` payload, so a no-skill baseline is
-impossible and score comparison is a manual JSON read. Add a `none` candidate
-source and per-case impact categories in `eval report`. True North:
-skill-evaluator candidate measurement and baseline comparison.
+Meta Skill now supports a `none` candidate source, stages no `skill/` payload
+for that condition, and renders per-case impact categories in `eval report`.
+True North: skill-evaluator candidate measurement and baseline comparison.
+
+## Status
+
+Implemented. The shipped runtime supports no-skill baselines, expectation-aware
+model grading, explicit grader declarations, promotion gates, and impact
+classification.
 
 ## Non-Goals
 
@@ -40,7 +44,7 @@ skill-evaluator candidate measurement and baseline comparison.
    the payload; any skill-pointing instruction lives in the staged workspace,
    not the prompt (per Tessl gap #4, record `skill_root` in run metadata when a
    payload IS staged).
-5. `eval report`: when a run contains a `none` candidate plus ≥1 payload
+5. `eval report`: when a run contains a `none` candidate plus >=1 payload
    candidate, add an Impact section. Per case, classify using rubric/validator
    labels: `candidate_improves`, `candidate_regresses`, `both_fail`,
    `baseline_already_succeeds`, `needs_human_review` (missing/ungraded/invalid

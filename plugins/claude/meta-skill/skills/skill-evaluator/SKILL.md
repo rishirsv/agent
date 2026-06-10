@@ -81,6 +81,7 @@ Read only what the task needs:
 | Need | Read |
 |---|---|
 | Choose the smallest eval loop, compare task outcomes across conditions, or skip a suite | [references/methodology.md](references/methodology.md) |
+| Choose the eval type, grader mix, and example task shape | [references/eval-types.md](references/eval-types.md) |
 | Author `evals.json`, materialize `task.md` task folders, and keep hidden files out of the solver workspace | [references/evaluations.md](references/evaluations.md) |
 | Calibrate the judge against human grades | [references/calibration.md](references/calibration.md) |
 | Author deterministic validations and task-local `validate.*` checks | [references/validations.md](references/validations.md) |
@@ -109,7 +110,8 @@ use `trial_id` for one execution.
 ### 1. Scope
 
 Name the target and its job, then pick the route: skill defaults or generalist
-rubric builder. For a skill, state whether triggering is in scope.
+rubric builder. For a skill, state whether triggering is in scope. Choose the
+eval type and grader mix with [references/eval-types.md](references/eval-types.md).
 
 Before authoring, check "When Not To Evaluate" in
 [references/methodology.md](references/methodology.md); a one-off fix, an
@@ -120,7 +122,7 @@ unstable draft, or a purely deterministic question does not need a suite.
 Write or update `.meta-skill/evals.json` — see
 [references/evaluations.md](references/evaluations.md). Keep metadata minimal:
 target, defaults, tasks, repetition counts, runner intent, condition selection,
-and materialization intent.
+materialization intent, optional expectations, and optional grader declarations.
 
 Do not put hidden metadata in `task.md`. Do not create another metadata file in
 task folders.
@@ -129,13 +131,26 @@ task folders.
 
 Create `.meta-skill/cases/<task-id>/task.md` and optional fixtures, rubric,
 expected output, and validator files. `task.md` is the prompt or task shown to
-the solver. Hidden files remain outside the solver workspace.
+the solver. Hidden files remain outside the solver workspace. For each task,
+make the success criteria clear enough that a domain reviewer could tell
+whether a good agent should pass.
 
-### 4. Author Validations
+### 4. Author Graders
 
 Author deterministic checks — see [references/validations.md](references/validations.md).
 General checks already ship with the plugin. Add task-local `validate.*` files
 only when a task needs exact, deterministic checks.
+
+Use model rubrics for semantic quality, human grades for calibration or domain
+judgment, and code validators for exact outcome, artifact, or transcript checks.
+Prefer outcome graders over process graders unless the process behavior itself
+is the requirement.
+
+Use explicit `graders[]` entries when a task needs named metrics, required gates,
+or stable report fields. Use `expectations[]` for hidden model-judge checks that
+are visible to the grader but not to the solver. Mark must-not-break code
+validators with `gate: true`; a gate failure blocks promotion even when a model
+rubric score improves.
 
 ### 5. Calibrate
 

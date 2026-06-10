@@ -278,6 +278,7 @@ rubrics, or both.
 What it does:
 
 - Reads `results.jsonl` from the selected run
+- Reads optional `graders[]` and `expectations[]` from `evals.json`
 - Looks for `rubric.md` inside each task directory and, when present, records a
   model rubric grade through App Server
 - Looks for `validate.*` files inside each task directory
@@ -298,6 +299,11 @@ Notes:
 - If a task has neither `rubric.md` nor `validate.*`, the run is marked
   ungraded for that task and the rationale points the reader to `rubric.md` for
   human or judge grading.
+- Implicit discovery keeps old suites working. Explicit `graders[]` entries
+  preserve named `id`, `metric`, `required`, and `gate` semantics in
+  `grades.jsonl`.
+- `expectations[]` are hidden model-judge checks. They are never staged into the
+  solver workspace.
 - Validators and task-local rubrics are the supported grading hooks. Do not add
   worker-local grading wrappers outside the task directory.
 - Rubric grading writes judge events to
@@ -339,11 +345,17 @@ What it renders:
 - Runner completion: per-trial process status. Completion means the trial
   process finished; it says nothing about answer quality.
 - Behavioral grades: rubric score/label, validator pass counts, graded/ungraded
-  flags, and token usage (`unavailable` when the runner recorded none)
+  flags, gate failures, and token usage (`unavailable` when the runner recorded
+  none)
+- Impact: when a run contains a no-skill condition and at least one payload
+  condition, per-task categories show `candidate_improves`,
+  `candidate_regresses`, `both_fail`, `baseline_already_succeeds`, or
+  `needs_human_review`
 - Evidence pointers relative to the run directory: outcome, runner transcripts,
   judge events, and folded thread evidence; `-` marks a missing file
 - A needs-attention list: failed trials, planned trials with no result,
-  ungraded trials, graders that emitted invalid JSON, and missing token usage
+  ungraded trials, gate failures, graders that emitted invalid JSON,
+  `needs_human_review` trials, and missing token usage
 
 Inputs:
 
