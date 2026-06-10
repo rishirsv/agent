@@ -24,6 +24,8 @@ DEFAULT_EVALS = {
     "cases": [],
 }
 
+SOURCE_KINDS = {"branch", "current_worktree", "git_ref", "none"}
+
 
 def suite_path(raw):
     path = Path(raw or ".meta-skill/evals.json").expanduser()
@@ -64,6 +66,18 @@ def load_manifest(path):
         if case_id in seen_case_ids:
             raise CliError(f"duplicate case id: {case_id}", 2)
         seen_case_ids.add(case_id)
+        if "expectations" in case:
+            expectations = case.get("expectations")
+            if not isinstance(expectations, list) or not all(isinstance(item, str) and item.strip() for item in expectations):
+                raise CliError(f"case {case_id} expectations must be non-empty strings", 2)
+        graders = case.get("graders", [])
+        if not isinstance(graders, list):
+            raise CliError(f"case {case_id} graders must be a list", 2)
+        for grader in graders:
+            if not isinstance(grader, dict):
+                raise CliError(f"case {case_id} graders must be objects", 2)
+            if grader.get("kind") not in {"code", "model", "human"}:
+                raise CliError(f"case {case_id} grader kind must be code, model, or human", 2)
     seen_candidate_ids = set()
     for candidate in data.get("candidates", []):
         if not isinstance(candidate, dict):
@@ -72,6 +86,19 @@ def load_manifest(path):
         if candidate_id in seen_candidate_ids:
             raise CliError(f"duplicate candidate: {candidate_id}", 2)
         seen_candidate_ids.add(candidate_id)
+        source = candidate.get("source") or {}
+        kind = source.get("kind", "current_worktree")
+        ref = source.get("ref")
+        if kind not in SOURCE_KINDS:
+            raise CliError(f"candidate {candidate_id} source.kind must be one of branch, current_worktree, git_ref, or none", 2)
+        if kind == "none" and ref:
+            raise CliError(f"candidate {candidate_id} source.kind none must not set ref", 2)
+        if kind == "current_worktree" and ref not in (None, "."):
+            raise CliError(f"candidate {candidate_id} source.kind current_worktree must not set a git ref", 2)
+        if kind in {"branch", "git_ref"} and not ref:
+            raise CliError(f"candidate {candidate_id} source.kind {kind} must set ref", 2)
+        if kind in {"branch", "git_ref"} and ref == ".":
+            raise CliError(f"candidate {candidate_id} source.kind {kind} must use a git ref, not .", 2)
     return data
 
 

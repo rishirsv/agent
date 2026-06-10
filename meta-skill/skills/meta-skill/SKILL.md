@@ -17,7 +17,7 @@ Central CLI reference for future agents:
 |---|---|
 | Make a new skill | `skill-writer` |
 | Improve / fix an existing skill | `skill-doctor` |
-| Measure how a skill performs | `skill-evaluator` |
+| Measure task outcomes across no-skill/current-skill/edited-skill conditions | `skill-evaluator` |
 | Run a one-prompt trial of a draft or fix | The owning lane using `skill-trial-runs.md` |
 
 ## Routing
@@ -25,7 +25,7 @@ Central CLI reference for future agents:
 - Detect intent from the request; pick exactly one specialist.
 - Create (blank page) → `skill-writer`.
 - Improve / "is it good?" / "it's broken" → `skill-doctor`.
-- Measure / "how well does it work?" → `skill-evaluator`.
+- Measure / "how well does it work?" → `skill-evaluator` for task/condition/trial evidence.
 - One-prompt testing → stay with the owning lane and use
   [skill-trial-runs.md](../../references/skill-trial-runs.md).
 - Validation or packaging → use the central CLI through the lane doing the work.

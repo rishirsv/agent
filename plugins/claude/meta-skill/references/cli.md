@@ -35,13 +35,31 @@ Both launchers are self-bootstrapping:
 
 The CLI is an orchestration layer. The workbench is authoritative.
 
-- `.meta-skill/evals.json` defines the suite, defaults, candidates, and cases.
-- `.meta-skill/cases/<case-id>/` owns authored case content: visible `task.md`,
+- `.meta-skill/evals.json` defines the suite, defaults, conditions, and tasks.
+- `.meta-skill/cases/<task-id>/` owns authored task content: visible `task.md`,
   fixtures, hidden validators, hidden expected outputs, and rubrics.
 - `.meta-skill/runs/<run-id>/` owns run plans, progress, events, outputs, and
   grades.
 
 Do not treat CLI stdout as the system of record once files have been written.
+
+## Eval Vocabulary
+
+Use Anthropic-aligned terms when explaining evals to users:
+
+| Term | Current file/schema surface |
+|---|---|
+| **suite** | `.meta-skill/evals.json` plus its materialized workbench |
+| **task** | one row in `cases[]` and one folder under `.meta-skill/cases/<task-id>/` |
+| **condition** | one row in `candidates[]`; current CLI flags still say `--candidates` |
+| **trial** | one task executed once under one condition |
+| **transcript** | `events/<trial-id>.jsonl` plus compact `evidence/<trial-id>.json` |
+| **outcome** | `candidates/<condition>/<trial-id>/final.md` and produced artifacts |
+| **grader** | model, human, or code rows in `grades.jsonl` |
+
+Keep current field names in JSON and CLI commands until the code changes. In
+plain English, say condition rather than candidate, and outcome rather than
+final message.
 
 ## Runner Policy
 
@@ -54,10 +72,10 @@ Use the default runner unless you have a specific fallback reason:
 `codex_app_server`. App Server is the main path. Use `codex_exec` only when you
 need the simpler fallback surface.
 
-## Case Authoring Rules
+## Task Authoring Rules
 
 - `task.md` is for the visible task only. Do not hide metadata in it.
-- Put metadata in `.meta-skill/evals.json`, not in extra case-local metadata
+- Put metadata in `.meta-skill/evals.json`, not in extra task-local metadata
   files.
 - Do not add worker-local script surfaces under lane skills. Shared behavior
   belongs behind this CLI.
@@ -139,14 +157,14 @@ scripts/meta-skill workbench init --target skills/my-skill --json
 
 ### `eval materialize`
 
-Use this after editing `.meta-skill/evals.json` or when a case directory has
+Use this after editing `.meta-skill/evals.json` or when a task directory has
 not been created yet.
 
 What it does:
 
 - Reads the suite manifest from `--suite`
-- Creates `.meta-skill/cases/<case-id>/`
-- Writes the seeded task file for each case, usually `task.md`
+- Creates `.meta-skill/cases/<task-id>/`
+- Writes the seeded task file for each task, usually `task.md`
 - Creates parent directories for declared fixtures
 
 Inputs:
@@ -156,11 +174,11 @@ Inputs:
 
 Output:
 
-- A change list showing which case files were created, overwritten, or skipped
+- A change list showing which task files were created, overwritten, or skipped
 
 Notes:
 
-- If a case uses a custom task path in the manifest, that file is materialized
+- If a task uses a custom task path in the manifest, that file is materialized
   instead of `task.md`.
 - The seeded task text is visible prompt content. Keep it free of hidden
   control metadata.
@@ -171,22 +189,23 @@ Use this to execute a suite or a selected slice of it.
 
 What it does:
 
-- Loads cases and candidates from `.meta-skill/evals.json`
-- Verifies each selected case already has a materialized task file
+- Loads tasks and conditions from `.meta-skill/evals.json`
+- Verifies each selected task already has a materialized task file
 - Chooses a runner: App Server first, `codex_exec` fallback
 - Stages a solver workspace with only `task.md`, declared fixtures, and the
-  candidate payload
+  condition payload when present
 - Creates a new run directory under `.meta-skill/runs/<run-id>/`
-- Executes each case/candidate/trial combination
+- Executes each task/condition/trial combination
 - Writes progress, events, and output artifact paths
 
 Inputs:
 
 - `--suite`: suite file; defaults to `.meta-skill/evals.json`
 - `--runner`: `auto`, `codex_app_server`, or `codex_exec`
-- `--candidates <ids>`: restrict to selected candidates
+- `--candidates <ids>`: restrict to selected conditions; the CLI flag keeps the
+  current schema name
 - `--split <name>`: restrict to a manifest split
-- `--repetitions <n>`: override case or suite repetition count
+- `--repetitions <n>`: override task or suite repetition count
 - `--model <id>`: pass a model override to the runner
 
 Output:
@@ -206,27 +225,27 @@ Authoritative run files:
   events/<trial-id>.jsonl
   events/<trial-id>.judge.jsonl
   evidence/<trial-id>.json
-  candidates/<candidate>/<trial-id>/final.md
+  candidates/<condition>/<trial-id>/final.md
 ```
 
 What each file is for:
 
-- `run.json`: run plan, selected runner, candidates, and trial list
+- `run.json`: run plan, selected runner, conditions, and trial list
 - `progress.jsonl`: queued/running/passed/failed status changes
 - `results.jsonl`: per-trial summary, timestamps, output path, event path, and
   runner detail
-- `grades.jsonl`: validator grading results after `eval grade`
-- `events/*.jsonl`: raw runner event stream for a trial
+- `grades.jsonl`: grader results after `eval grade`
+- `events/*.jsonl`: raw runner transcript for a trial
 - `events/*.judge.jsonl`: raw judge event stream when rubric grading runs
-- `evidence/*.json`: compact thread/runtime evidence for a trial
-- `final.md`: captured final output for that candidate/trial
+- `evidence/*.json`: compact transcript/runtime evidence for a trial
+- `final.md`: captured outcome for that condition/trial
 
 Solver workspaces are staged under
 `.meta-skill/solver-workspaces/<run-id>/<trial-id>/`. They are run-scoped
-working directories for visible task bytes, listed fixtures, and the candidate
-payload, not authoritative result artifacts.
+working directories for visible task bytes, listed fixtures, and the condition
+payload when present, not authoritative result artifacts.
 
-Hidden case files stay grader-side. `rubric.md`, `expected.*`, `validate.*`,
+Hidden task files stay grader-side. `rubric.md`, `expected.*`, `validate.*`,
 grader prompts, and human labels are never copied into the solver workspace.
 
 ### `eval progress`
@@ -253,15 +272,16 @@ Output:
 
 ### `eval grade`
 
-Use this after `eval run` when the cases include deterministic validators,
+Use this after `eval run` when the tasks include deterministic validators,
 rubrics, or both.
 
 What it does:
 
 - Reads `results.jsonl` from the selected run
-- Looks for `rubric.md` inside each case directory and, when present, records a
+- Reads optional `graders[]` and `expectations[]` from `evals.json`
+- Looks for `rubric.md` inside each task directory and, when present, records a
   model rubric grade through App Server
-- Looks for `validate.*` files inside each case directory
+- Looks for `validate.*` files inside each task directory
 - Runs each validator with `--output`, `--events`, and `--json`
 - Optionally passes `--expected <file>` when an `expected.*` file exists
 - Writes or updates `.meta-skill/runs/<run-id>/grades.jsonl`
@@ -276,11 +296,16 @@ Output:
 
 Notes:
 
-- If a case has neither `rubric.md` nor `validate.*`, the run is marked
-  ungraded for that case and the rationale points the reader to `rubric.md` for
+- If a task has neither `rubric.md` nor `validate.*`, the run is marked
+  ungraded for that task and the rationale points the reader to `rubric.md` for
   human or judge grading.
-- Validators and case-local rubrics are the supported grading hooks. Do not add
-  worker-local grading wrappers outside the case directory.
+- Implicit discovery keeps old suites working. Explicit `graders[]` entries
+  preserve named `id`, `metric`, `required`, and `gate` semantics in
+  `grades.jsonl`.
+- `expectations[]` are hidden model-judge checks. They are never staged into the
+  solver workspace.
+- Validators and task-local rubrics are the supported grading hooks. Do not add
+  worker-local grading wrappers outside the task directory.
 - Rubric grading writes judge events to
   `.meta-skill/runs/<run-id>/events/<trial-id>.judge.jsonl` and records model
   evidence in `grades.jsonl`.
@@ -294,7 +319,7 @@ What it does:
 
 - Finds every `runs/<run-id>/run.json` in the suite's workbench
 - Summarizes each run: run id, created time, runner, trial counts by result
-  status, grade count, and candidates
+  status, grade count, and conditions
 
 Inputs:
 
@@ -315,16 +340,22 @@ files already contain and never re-runs or re-grades anything.
 
 What it renders:
 
-- Header: run id, suite, runner, creation time, and candidate sources with
+- Header: run id, suite, runner, creation time, and condition sources with
   commit, dirty flag, and payload digest
 - Runner completion: per-trial process status. Completion means the trial
   process finished; it says nothing about answer quality.
 - Behavioral grades: rubric score/label, validator pass counts, graded/ungraded
-  flags, and token usage (`unavailable` when the runner recorded none)
-- Evidence pointers relative to the run directory: final output, runner events,
+  flags, gate failures, and token usage (`unavailable` when the runner recorded
+  none)
+- Impact: when a run contains a no-skill condition and at least one payload
+  condition, per-task categories show `candidate_improves`,
+  `candidate_regresses`, `both_fail`, `baseline_already_succeeds`, or
+  `needs_human_review`
+- Evidence pointers relative to the run directory: outcome, runner transcripts,
   judge events, and folded thread evidence; `-` marks a missing file
 - A needs-attention list: failed trials, planned trials with no result,
-  ungraded trials, graders that emitted invalid JSON, and missing token usage
+  ungraded trials, gate failures, graders that emitted invalid JSON,
+  `needs_human_review` trials, and missing token usage
 
 Inputs:
 
@@ -391,13 +422,13 @@ scripts/meta-skill doctor --json
 scripts/meta-skill workbench init --target <target> --json
 ```
 
-### Add or refresh cases from the suite
+### Add or refresh tasks from the suite
 
 ```sh
 scripts/meta-skill eval materialize --json
 ```
 
-Then edit the generated case `task.md` files and any validators or fixtures.
+Then edit the generated task `task.md` files and any validators or fixtures.
 
 ### Run and inspect a suite
 
@@ -437,7 +468,7 @@ cd /tmp/meta-skill-e2e
 "$CLI" package quick-skill/skill --out-dir quick-skill/.meta-skill/dist --json
 "$CLI" package hefty-skill/skill --out-dir hefty-skill/.meta-skill/dist --json
 
-# Author .meta-skill/evals.json, task.md, rubric.md, and validate.* cases.
+# Author .meta-skill/evals.json, task.md, rubric.md, and validate.* tasks.
 "$CLI" eval materialize --suite quick-skill/.meta-skill/evals.json --json
 "$CLI" eval run --suite quick-skill/.meta-skill/evals.json --runner codex_app_server --json
 "$CLI" eval grade --run <quick-run-dir> --json
@@ -447,7 +478,7 @@ cd /tmp/meta-skill-e2e
 
 The dogfood report should include two skill ideas, review evidence, eval run
 directories, model and deterministic grade summaries, feedback, the revised
-candidate change, and `score-comparison.json`. Use `eval report` for the
+condition change, and any comparison artifact. Use `eval report` for the
 per-run summaries instead of hand-authoring them.
 
 ## Boundaries

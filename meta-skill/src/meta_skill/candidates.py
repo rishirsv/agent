@@ -111,12 +111,23 @@ def resolve_candidate(project, workbench, run_id_value, manifest, candidate):
     kind = source.get("kind", "current_worktree")
     ref = source.get("ref", ".")
     candidate_id = candidate.get("candidate")
-    if kind == "current_worktree" or ref == ".":
+    if kind == "none":
+        if source.get("ref"):
+            raise CliError(f"candidate {candidate_id} source.kind none must not set ref", 2)
+        ref = None
         cwd = project
         base_commit = git_ref(project, "HEAD")
         head_commit = base_commit
         branch = current_branch(project)
         worktree = None
+        payload = None
+    elif kind == "current_worktree" or ref == ".":
+        cwd = project
+        base_commit = git_ref(project, "HEAD")
+        head_commit = base_commit
+        branch = current_branch(project)
+        worktree = None
+        payload = resolve_target_payload(project, manifest, cwd)
     else:
         base_commit = git_ref(project, ref)
         if not base_commit:
@@ -128,7 +139,7 @@ def resolve_candidate(project, workbench, run_id_value, manifest, candidate):
         cwd = worktree
         head_commit = git_ref(cwd, "HEAD")
         branch = ref if kind == "branch" else None
-    payload = resolve_target_payload(project, manifest, cwd)
+        payload = resolve_target_payload(project, manifest, cwd)
     return {
         "candidate": candidate_id,
         "display": candidate.get("display") or candidate_id,
@@ -142,8 +153,8 @@ def resolve_candidate(project, workbench, run_id_value, manifest, candidate):
         "diffstat": diffstat(cwd),
         "worktree": str(worktree) if worktree else None,
         "cwd": str(cwd),
-        "payload_path": str(payload),
-        "payload_digest": payload_digest(payload),
+        "payload_path": str(payload) if payload else None,
+        "payload_digest": payload_digest(payload) if payload else None,
     }
 
 
@@ -155,4 +166,3 @@ def skill_input_name(payload):
         if isinstance(name, str) and name.strip():
             return name.strip()
     return Path(payload).name
-

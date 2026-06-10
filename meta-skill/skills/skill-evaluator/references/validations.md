@@ -3,10 +3,14 @@
 Read when authoring deterministic validations: pass/fail checks with no
 judgment.
 
+Validations are code graders over trial outcomes and artifacts. They may read
+transcripts when the check is about process or tool use, but outcome checks
+should judge the produced answer, files, or state first.
+
 Validations come in two tiers. Keep the terminology straight:
 
 - **scripts** are a skill's runtime deterministic code, or shipped plugin checks.
-- **validators** are evaluator-owned checks for one case.
+- **validators** are evaluator-owned checks for one task.
 - **tests** are shared deterministic checks in the hidden workbench.
 
 ## Two Tiers
@@ -14,7 +18,7 @@ Validations come in two tiers. Keep the terminology straight:
 | Tier | Scope | Form | Home | Durability |
 |---|---|---|---|---|
 | **General checks** | Every skill | Canonical CLI validators run by `scripts/meta-skill validate` | Plugin tree | Durable, shipped |
-| **Case-local validators** | One case | `validate.*` beside `task.md` | Hidden case folder | Local eval content |
+| **Task-local validators** | One task | `validate.*` beside `task.md` | Hidden task folder | Local eval content |
 | **Shared workbench tests** | One target suite | Authored tests reused across cases | `.meta-skill/tests/` | Local eval content |
 
 General checks already exist and apply to any skill: skill body present, valid
@@ -25,15 +29,32 @@ them per target.
 
 Prefer a deterministic validator over a judge dimension wherever the check can
 be made exact: required strings, file presence, schema shape, exit codes,
-event-log assertions. Judges are for semantic quality a script cannot decide.
+state checks, exact outcome checks, and transcript metrics such as turns, tool
+calls, or token use. Judges are for semantic quality a script cannot decide.
 
 When authoring a rubric, each judged criterion should state why it cannot be
 deterministic. If no reason survives writing it down, move the check into
 `validate.*`.
 
-Case-local validators check behavior unique to one case. They live beside the
-case as `validate.*`, but they are hidden from the solver. They run after solver
-output exists.
+Task-local validators check behavior unique to one task. They live beside the
+task as `validate.*`, but they are hidden from the solver. They run after the
+trial outcome exists.
+
+When a validator protects a must-not-break condition, declare it as a gate in
+`evals.json`:
+
+```json
+{
+  "id": "prompt-boundary",
+  "kind": "code",
+  "metric": "boundary",
+  "path": "validate.py",
+  "required": true,
+  "gate": true
+}
+```
+
+A gate failure blocks promotion even if model-rubric quality improves.
 
 ## Solver Boundary
 
@@ -41,7 +62,7 @@ The solver workspace receives:
 
 - `task.md`
 - fixtures listed in `evals.json`
-- the candidate payload
+- the condition payload, when present
 
 The solver workspace does not receive:
 
@@ -52,18 +73,18 @@ The solver workspace does not receive:
 - human labels
 
 Validators run outside the solver workspace and may read hidden expected output,
-the solver output file, selected artifacts, event logs, and case metadata from
+the outcome file, selected artifacts, transcripts, and task metadata from
 `evals.json`.
 
 ## Validator Contract
 
-A case-local validator should accept explicit paths rather than discovering
+A task-local validator should accept explicit paths rather than discovering
 global state:
 
 ```text
 validate.ts \
-  --output runs/<run-id>/candidates/<candidate>/<trial-id>/final.md \
-  --expected cases/<case-id>/expected.json \
+  --output runs/<run-id>/candidates/<condition>/<trial-id>/final.md \
+  --expected cases/<task-id>/expected.json \
   --events runs/<run-id>/events/<trial-id>.jsonl \
   --json
 ```
@@ -85,7 +106,11 @@ It should print a compact JSON object:
 ```
 
 The runner converts validator output into `grades.jsonl` rows with
-`grader.kind = "code"`.
+`grader.kind = "code"`. Explicit `graders[]` entries preserve their `id`,
+`metric`, and `gate` fields in the grade row.
+
+Code graders should return named checks rather than one opaque pass/fail. Named
+checks make partial credit and failure diagnosis possible.
 
 ## Boundary With skill-doctor
 

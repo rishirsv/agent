@@ -39,7 +39,7 @@ def grade_key(row):
     )
 
 
-def no_validator_grade(run, result):
+def ungraded_grade(run, result, rationale=None):
     return {
         "run_id": run["run_id"],
         "case_id": result["case_id"],
@@ -49,7 +49,7 @@ def no_validator_grade(run, result):
         "metric": "grade_status",
         "score": None,
         "label": "ungraded",
-        "rationale": "No validate.* file exists; use rubric.md for judge or human grading.",
+        "rationale": rationale or "No validate.* file exists; use rubric.md for judge or human grading.",
         "evidence_refs": [result["output_path"]],
     }
 
@@ -75,34 +75,56 @@ def run_validator(validator, result, expected, root):
         return 0, 1, [], "fail", f"validator emitted invalid JSON: {exc}"
 
 
-def code_validator_grade(run, result, validator, expected, root):
+def code_validator_grade(run, result, validator, expected, root, grader=None):
+    grader = grader or {}
     passed, total, checks, label, rationale = run_validator(validator, result, expected, root)
     return {
         "run_id": run["run_id"],
         "case_id": result["case_id"],
         "candidate": result["candidate"],
         "trial_id": result["trial_id"],
-        "grader": {"kind": "code", "id": validator.name},
-        "metric": "validator",
+        "grader": {"kind": "code", "id": grader.get("id") or validator.name},
+        "metric": grader.get("metric") or "validator",
         "score": passed / total if total else None,
         "label": label,
         "rationale": rationale,
         "checks": checks,
+        "gate": bool(grader.get("gate") or grader.get("required")),
         "evidence_refs": [result["output_path"], result["event_path"]],
     }
 
 
-def rubric_grade(run_dir, run, result, root, rubric_path, model=None):
+def read_if_exists(path, limit=20000):
+    if path and Path(path).exists():
+        return Path(path).read_text()[:limit]
+    return None
+
+
+def generated_expectation_rubric(expectations):
+    return (
+        "Grade the solver output against the listed expectations. "
+        "Each expectation should pass only when specific evidence shows genuine task completion. "
+        "Treat unverifiable expectations as unknown or needs_human_review."
+    )
+
+
+def rubric_grade(run_dir, run, result, root, rubric_path=None, model=None, grader=None, expectations=None, expected=None, case=None):
+    grader = grader or {}
+    expectations = expectations or []
     suite = Path(run["suite"]).resolve()
     workbench = workbench_from_suite(suite)
-    case = next((row for row in read_json(suite).get("cases", []) if row.get("id") == result["case_id"]), None)
     task_path = safe_case_file(root, case_task_info(case or {})["path"], "task")
     output_text = Path(result["output_path"]).read_text() if Path(result["output_path"]).exists() else ""
     event_path = run_dir / "events" / f"{result['trial_id']}.judge.jsonl"
+    events_text = read_if_exists(result.get("event_path"), limit=12000)
+    rubric = rubric_path.read_text() if rubric_path and rubric_path.exists() else generated_expectation_rubric(expectations)
     detail = judge_output(
-        rubric=rubric_path.read_text(),
+        rubric=rubric,
         task_text=task_path.read_text() if task_path.exists() else "",
         output_text=output_text,
+        expectations=expectations,
+        expected_text=read_if_exists(expected),
+        events_text=events_text,
         cwd=workbench.parent,
         event_path=event_path,
         model=model,
@@ -112,15 +134,52 @@ def rubric_grade(run_dir, run, result, root, rubric_path, model=None):
         "case_id": result["case_id"],
         "candidate": result["candidate"],
         "trial_id": result["trial_id"],
-        "grader": {"kind": "model", "id": "rubric"},
-        "metric": "rubric",
+        "grader": {"kind": "model", "id": grader.get("id") or ("rubric" if rubric_path else "expectations")},
+        "metric": grader.get("metric") or ("rubric" if rubric_path else "expectations"),
         "score": detail["score"],
         "label": detail["label"],
         "rationale": detail["rationale"],
         "checks": detail["checks"],
-        "evidence_refs": [result["output_path"], str(rubric_path), str(event_path)],
+        "gate": bool(grader.get("gate") or grader.get("required")),
+        "eval_feedback": detail.get("eval_feedback", []),
+        "evidence_refs": [item for item in [result["output_path"], str(rubric_path) if rubric_path else None, str(event_path)] if item],
         "detail": detail,
     }
+
+
+def normalize_graders(case, root):
+    explicit = case.get("graders") or []
+    graders = []
+    if explicit:
+        for index, grader in enumerate(explicit, 1):
+            if not isinstance(grader, dict):
+                raise CliError(f"grader entry must be an object for case {case.get('id')}", 2)
+            kind = grader.get("kind")
+            if kind not in {"code", "model", "human"}:
+                raise CliError(f"unsupported grader kind for case {case.get('id')}: {kind}", 2)
+            item = dict(grader)
+            item["id"] = item.get("id") or f"{kind}-{index}"
+            graders.append(item)
+        return graders
+
+    rubric = root / "rubric.md"
+    if rubric.exists():
+        graders.append({"kind": "model", "id": "rubric", "metric": "rubric", "path": "rubric.md"})
+    elif case.get("expectations"):
+        graders.append({"kind": "model", "id": "expectations", "metric": "expectations"})
+    for validator in sorted(root.glob("validate.*")):
+        graders.append({"kind": "code", "id": validator.name, "metric": "validator", "path": validator.name})
+    return graders
+
+
+def grader_path(root, grader, label):
+    raw = grader.get("path")
+    if not raw:
+        return None
+    path = safe_case_file(root, raw, label)
+    if not path.exists():
+        raise CliError(f"{label} missing: {path}", 2)
+    return path
 
 
 def grade_run(raw_run):
@@ -128,18 +187,42 @@ def grade_run(raw_run):
     run = read_json(run_dir / "run.json")
     suite = Path(run["suite"]).resolve()
     workbench = workbench_from_suite(suite)
+    manifest = read_json(suite)
+    cases_by_id = {case.get("id"): case for case in manifest.get("cases", [])}
     rows = []
     for result in read_jsonl(run_dir / "results.jsonl"):
         root = case_dir(workbench, result["case_id"])
-        validators = sorted(root.glob("validate.*"))
+        case = cases_by_id.get(result["case_id"], {})
+        graders = normalize_graders(case, root)
         expected = next(iter(sorted(root.glob("expected.*"))), None)
-        rubric = root / "rubric.md"
-        if rubric.exists():
-            rows.append(rubric_grade(run_dir, run, result, root, rubric))
-        if not validators and not rubric.exists():
-            rows.append(no_validator_grade(run, result))
-            continue
-        rows.extend(code_validator_grade(run, result, validator, expected, root) for validator in validators)
+        runnable = False
+        for grader in graders:
+            if grader.get("kind") == "code":
+                validator = grader_path(root, grader, "validator")
+                if validator is None:
+                    raise CliError(f"code grader {grader.get('id')} missing path for case {case.get('id')}", 2)
+                rows.append(code_validator_grade(run, result, validator, expected, root, grader))
+                runnable = True
+            elif grader.get("kind") == "model":
+                rubric_path = grader_path(root, grader, "rubric") if grader.get("path") else (root / "rubric.md" if (root / "rubric.md").exists() else None)
+                rows.append(
+                    rubric_grade(
+                        run_dir,
+                        run,
+                        result,
+                        root,
+                        rubric_path,
+                        grader=grader,
+                        expectations=case.get("expectations") or [],
+                        expected=expected,
+                        case=case,
+                    )
+                )
+                runnable = True
+            elif grader.get("kind") == "human":
+                continue
+        if not runnable:
+            rows.append(ungraded_grade(run, result, "No runnable code or model grader exists; add rubric.md, validate.*, or a human grade row."))
     grades_path = run_dir / "grades.jsonl"
     new_keys = {grade_key(row) for row in rows}
     preserved = [row for row in read_jsonl(grades_path) if grade_key(row) not in new_keys]

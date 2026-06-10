@@ -2,7 +2,7 @@
 
 After approved edits are applied, confirm the targeted problem is resolved
 without regressing the skill, then refresh the score. The doctor confirms *one*
-case; `skill-evaluator` measures many.
+case; `skill-evaluator` measures many tasks across conditions.
 
 ## Run the deterministic tests
 
@@ -31,6 +31,7 @@ the same runner fills it during a Judge Review (see
 
 ## Escalate
 
-- Anything needing systematic, multi-scenario confidence → `skill-evaluator`.
+- Anything needing systematic, multi-scenario confidence or no-skill/current-skill
+  outcome comparison → `skill-evaluator`.
 - Recurring deterministic failure patterns belong in the shared
   `meta-skill/src/` checks, not worker-local script folders.

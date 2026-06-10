@@ -22,10 +22,10 @@ def app_server_run(trial, prompt, candidate_info, event_path, output_path, model
             ephemeral=False,
             model=model,
         )
-        inputs = [
-            openai_codex.SkillInput(name=skill_input_name(candidate_info["payload_path"]), path=candidate_info["payload_path"]),
-            openai_codex.TextInput(text=prompt),
-        ]
+        inputs = []
+        if candidate_info.get("payload_path"):
+            inputs.append(openai_codex.SkillInput(name=skill_input_name(candidate_info["payload_path"]), path=candidate_info["payload_path"]))
+        inputs.append(openai_codex.TextInput(text=prompt))
         turn = thread.turn(inputs, cwd=candidate_info["cwd"], sandbox=sandbox, model=model)
         folded = fold_events(turn, generated, event_path)
         completed = folded["completed"]
