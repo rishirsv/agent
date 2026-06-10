@@ -24,6 +24,8 @@ DEFAULT_EVALS = {
     "cases": [],
 }
 
+SOURCE_KINDS = {"branch", "current_worktree", "git_ref", "none"}
+
 
 def suite_path(raw):
     path = Path(raw or ".meta-skill/evals.json").expanduser()
@@ -85,8 +87,18 @@ def load_manifest(path):
             raise CliError(f"duplicate candidate: {candidate_id}", 2)
         seen_candidate_ids.add(candidate_id)
         source = candidate.get("source") or {}
-        if source.get("kind") == "none" and source.get("ref"):
+        kind = source.get("kind", "current_worktree")
+        ref = source.get("ref")
+        if kind not in SOURCE_KINDS:
+            raise CliError(f"candidate {candidate_id} source.kind must be one of branch, current_worktree, git_ref, or none", 2)
+        if kind == "none" and ref:
             raise CliError(f"candidate {candidate_id} source.kind none must not set ref", 2)
+        if kind == "current_worktree" and ref not in (None, "."):
+            raise CliError(f"candidate {candidate_id} source.kind current_worktree must not set a git ref", 2)
+        if kind in {"branch", "git_ref"} and not ref:
+            raise CliError(f"candidate {candidate_id} source.kind {kind} must set ref", 2)
+        if kind in {"branch", "git_ref"} and ref == ".":
+            raise CliError(f"candidate {candidate_id} source.kind {kind} must use a git ref, not .", 2)
     return data
 
 

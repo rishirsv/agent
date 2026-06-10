@@ -54,10 +54,6 @@ def ungraded_grade(run, result, rationale=None):
     }
 
 
-def no_validator_grade(run, result):
-    return ungraded_grade(run, result)
-
-
 def run_validator(validator, result, expected, root):
     proc = subprocess.run(
         validator_command(validator, result["output_path"], expected, result["event_path"]),
@@ -112,12 +108,11 @@ def generated_expectation_rubric(expectations):
     )
 
 
-def rubric_grade(run_dir, run, result, root, rubric_path=None, model=None, grader=None, expectations=None, expected=None):
+def rubric_grade(run_dir, run, result, root, rubric_path=None, model=None, grader=None, expectations=None, expected=None, case=None):
     grader = grader or {}
     expectations = expectations or []
     suite = Path(run["suite"]).resolve()
     workbench = workbench_from_suite(suite)
-    case = next((row for row in read_json(suite).get("cases", []) if row.get("id") == result["case_id"]), None)
     task_path = safe_case_file(root, case_task_info(case or {})["path"], "task")
     output_text = Path(result["output_path"]).read_text() if Path(result["output_path"]).exists() else ""
     event_path = run_dir / "events" / f"{result['trial_id']}.judge.jsonl"
@@ -193,10 +188,11 @@ def grade_run(raw_run):
     suite = Path(run["suite"]).resolve()
     workbench = workbench_from_suite(suite)
     manifest = read_json(suite)
+    cases_by_id = {case.get("id"): case for case in manifest.get("cases", [])}
     rows = []
     for result in read_jsonl(run_dir / "results.jsonl"):
         root = case_dir(workbench, result["case_id"])
-        case = next((row for row in manifest.get("cases", []) if row.get("id") == result["case_id"]), {})
+        case = cases_by_id.get(result["case_id"], {})
         graders = normalize_graders(case, root)
         expected = next(iter(sorted(root.glob("expected.*"))), None)
         runnable = False
@@ -209,7 +205,19 @@ def grade_run(raw_run):
                 runnable = True
             elif grader.get("kind") == "model":
                 rubric_path = grader_path(root, grader, "rubric") if grader.get("path") else (root / "rubric.md" if (root / "rubric.md").exists() else None)
-                rows.append(rubric_grade(run_dir, run, result, root, rubric_path, grader=grader, expectations=case.get("expectations") or [], expected=expected))
+                rows.append(
+                    rubric_grade(
+                        run_dir,
+                        run,
+                        result,
+                        root,
+                        rubric_path,
+                        grader=grader,
+                        expectations=case.get("expectations") or [],
+                        expected=expected,
+                        case=case,
+                    )
+                )
                 runnable = True
             elif grader.get("kind") == "human":
                 continue

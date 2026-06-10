@@ -114,6 +114,7 @@ def resolve_candidate(project, workbench, run_id_value, manifest, candidate):
     if kind == "none":
         if source.get("ref"):
             raise CliError(f"candidate {candidate_id} source.kind none must not set ref", 2)
+        ref = None
         cwd = project
         base_commit = git_ref(project, "HEAD")
         head_commit = base_commit

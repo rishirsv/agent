@@ -227,6 +227,27 @@ def test_candidate_digest_and_package_exclusions(tmp):
     check(candidate["source_kind"] == "current_worktree", "candidate source kind changed")
     check(candidate["source_ref"] == ".", "candidate source ref changed")
     check(candidate["payload_path"].endswith("/skill"), "candidate payload path changed")
+    baseline = meta_skill.resolve_candidate(
+        project,
+        project / ".meta-skill",
+        "run-characterize",
+        manifest,
+        {"candidate": "baseline", "display": "No skill", "source": {"kind": "none"}},
+    )
+    check(baseline["source_kind"] == "none", "baseline source kind changed")
+    check(baseline["source_ref"] is None, "baseline source ref should be null")
+    check(baseline["payload_path"] is None, "baseline payload path should be null")
+    check(baseline["payload_digest"] is None, "baseline payload digest should be null")
+    bad_manifest = json.loads(suite.read_text())
+    bad_manifest["candidates"][0]["source"] = {"kind": "no_skill"}
+    bad_suite = project / ".meta-skill" / "bad-evals.json"
+    bad_suite.write_text(json.dumps(bad_manifest, indent=2) + "\n")
+    try:
+        meta_skill.load_manifest(bad_suite)
+    except meta_skill.CliError as exc:
+        check("source.kind" in exc.message, "invalid candidate source kind error changed")
+    else:
+        raise CheckFailure("invalid candidate source kind should fail validation")
 
     _, packaged = run_json([CLI, "package", str(project / "skill"), "--out-dir", str(project / "out"), "--json"], project)
     with zipfile.ZipFile(packaged["artifact"]) as zf:
@@ -608,6 +629,84 @@ def test_report_impact_and_gates(tmp):
     check("## Impact" in md and "candidate_improves" in md and "candidate_regresses" in md, "impact Markdown missing")
 
 
+def test_report_uses_all_grader_kinds(tmp):
+    project = tmp / "project"
+    write_skill(project / "skill")
+    suite = write_manifest(project)
+    manifest = json.loads(suite.read_text())
+    manifest["candidates"] = [
+        {"candidate": "baseline", "display": "No skill", "source": {"kind": "none"}},
+        {"candidate": "current", "display": "Current", "source": {"kind": "current_worktree", "ref": "."}},
+    ]
+    manifest["cases"] = [
+        {"id": "case-a", "task": {"path": "task.md", "seed": "A"}},
+        {"id": "case-b", "task": {"path": "task.md", "seed": "B"}},
+    ]
+    suite.write_text(json.dumps(manifest, indent=2) + "\n")
+    run_dir = project / ".meta-skill" / "runs" / "run-grader-kinds"
+
+    def trial(case_id, candidate):
+        trial_id = f"{case_id}.{candidate}.t1"
+        return {
+            "trial_id": trial_id,
+            "case_id": case_id,
+            "candidate": candidate,
+            "repetition": 1,
+            "event_path": str(run_dir / "events" / f"{trial_id}.jsonl"),
+            "evidence_path": str(run_dir / "evidence" / f"{trial_id}.json"),
+            "final_path": str(run_dir / "candidates" / candidate / trial_id / "final.md"),
+        }
+
+    def grade(trial_id, kind, metric, label):
+        return {
+            "run_id": "run-grader-kinds",
+            "trial_id": trial_id,
+            "case_id": trial_id.split(".")[0],
+            "candidate": trial_id.split(".")[1],
+            "metric": metric,
+            "grader": {"kind": kind, "id": metric},
+            "score": 1.0 if label == "pass" else 0.0,
+            "label": label,
+            "rationale": f"{metric} {label}",
+        }
+
+    trials = [trial("case-a", "baseline"), trial("case-a", "current"), trial("case-b", "baseline"), trial("case-b", "current")]
+    results = [{**row, "status": "passed", "usage": {"input_tokens": 1, "output_tokens": 1}} for row in trials]
+    grades = [
+        grade("case-a.baseline.t1", "code", "validator", "fail"),
+        grade("case-a.current.t1", "model", "quality", "pass"),
+        grade("case-a.current.t1", "model", "grounding", "fail"),
+        grade("case-b.baseline.t1", "code", "validator", "fail"),
+        grade("case-b.current.t1", "human", "human-review", "pass"),
+    ]
+    run_dir.mkdir(parents=True)
+    (run_dir / "run.json").write_text(
+        json.dumps(
+            {
+                "run_id": "run-grader-kinds",
+                "suite": str(suite),
+                "runner": "codex_exec",
+                "created_at": "2026-01-02T03:04:05+00:00",
+                "candidates": [
+                    {"candidate": "baseline", "display": "No skill", "source_kind": "none", "source_ref": None, "payload_digest": None},
+                    {"candidate": "current", "display": "Current", "source_kind": "current_worktree", "source_ref": ".", "payload_digest": "a" * 64},
+                ],
+                "trials": trials,
+            }
+        )
+        + "\n"
+    )
+    (run_dir / "results.jsonl").write_text("".join(json.dumps(row) + "\n" for row in results))
+    (run_dir / "grades.jsonl").write_text("".join(json.dumps(row) + "\n" for row in grades))
+    _, report = run_json([CLI, "eval", "report", "--run", str(run_dir), "--json"], project)
+    impacts = {(row["case_id"], row["impact"]) for row in report["impact"]}
+    check(impacts == {("case-a", "both_fail"), ("case-b", "candidate_improves")}, f"grader-kind impact changed: {impacts}")
+    current_a = next(row for row in report["trials"] if row["trial_id"] == "case-a.current.t1")
+    current_b = next(row for row in report["trials"] if row["trial_id"] == "case-b.current.t1")
+    check([row["label"] for row in current_a["model_grades"]] == ["fail", "pass"], "all model grades should be reported")
+    check(current_b["graded"] is True and current_b["human_grades"][0]["label"] == "pass", "human grade should count as graded")
+
+
 def test_eval_run_artifact_records(tmp):
     project = tmp / "project"
     write_skill(project / "skill")
@@ -839,6 +938,7 @@ TESTS = [
     test_grade_expected_validator_behavior,
     test_eval_list_and_report,
     test_report_impact_and_gates,
+    test_report_uses_all_grader_kinds,
     test_eval_run_artifact_records,
     test_fake_app_server_runner,
 ]

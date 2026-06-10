@@ -66,6 +66,16 @@ def grade_sort_key(row):
     return (row.get("metric") or "", grader.get("kind") or "", grader.get("id") or "")
 
 
+def grade_summary(row):
+    return {
+        "metric": row.get("metric"),
+        "grader": row.get("grader"),
+        "score": row.get("score"),
+        "label": row.get("label"),
+        "rationale": row.get("rationale"),
+    }
+
+
 def evidence_pointer(run_dir, raw):
     """Run-relative path when the evidence file exists, else None."""
     if not raw:
@@ -84,15 +94,17 @@ def evidence_pointer(run_dir, raw):
 def build_trial(run_dir, planned, result, grades):
     merged = {**planned, **{key: value for key, value in (result or {}).items() if value is not None}}
     trial_id = merged.get("trial_id")
-    rubric = next((row for row in grades if (row.get("grader") or {}).get("kind") == "model"), None)
+    model_rows = [row for row in grades if (row.get("grader") or {}).get("kind") == "model"]
     validators = [row for row in grades if (row.get("grader") or {}).get("kind") == "code"]
+    human_rows = [row for row in grades if (row.get("grader") or {}).get("kind") == "human"]
+    behavioral_rows = [*model_rows, *validators, *human_rows]
     gate_failures = [
         row
-        for row in grades
+        for row in behavioral_rows
         if row.get("gate") is True and row.get("label") not in {"pass"}
     ]
-    has_gate = any(row.get("gate") is True for row in grades)
-    uncertain = any(row.get("label") in {"unknown", "needs_human_review"} for row in grades)
+    has_gate = any(row.get("gate") is True for row in behavioral_rows)
+    uncertain = any(row.get("label") in {"unknown", "needs_human_review"} for row in behavioral_rows)
     return {
         "trial_id": trial_id,
         "case_id": merged.get("case_id"),
@@ -101,14 +113,17 @@ def build_trial(run_dir, planned, result, grades):
         "runner_status": (result or {}).get("status") or "no_result",
         "error": (result or {}).get("error"),
         "usage": (result or {}).get("usage"),
-        "rubric": {"score": rubric.get("score"), "label": rubric.get("label")} if rubric else None,
+        "rubric": {"score": model_rows[0].get("score"), "label": model_rows[0].get("label")} if model_rows else None,
+        "model_grades": [grade_summary(row) for row in model_rows],
         "validators": {
             "passed": sum(1 for row in validators if row.get("label") == "pass"),
             "total": len(validators),
         }
         if validators
         else None,
-        "graded": bool(rubric or validators),
+        "human_grades": [grade_summary(row) for row in human_rows],
+        "grade_labels": [row.get("label") for row in behavioral_rows],
+        "graded": bool(behavioral_rows),
         "invalid_grader_json": any("emitted invalid JSON" in (row.get("rationale") or "") for row in grades),
         "has_gate": has_gate,
         "gate_failed": bool(gate_failures),
@@ -139,7 +154,7 @@ def trial_attention(trial):
     elif trial["runner_status"] != "passed":
         items.append({"kind": "failed_trial", "trial_id": trial_id, "detail": trial.get("error") or trial["runner_status"]})
     if not trial["graded"]:
-        items.append({"kind": "ungraded_trial", "trial_id": trial_id, "detail": "no rubric or validator grade recorded"})
+        items.append({"kind": "ungraded_trial", "trial_id": trial_id, "detail": "no model, code, or human grade recorded"})
     if trial["invalid_grader_json"]:
         items.append({"kind": "invalid_grader_json", "trial_id": trial_id, "detail": "a grader emitted invalid JSON; see grades.jsonl rationale"})
     if trial["gate_failed"]:
@@ -156,11 +171,10 @@ def trial_behavior_state(trial):
         return "unknown"
     if trial["runner_status"] != "passed" or trial["gate_failed"]:
         return "fail"
-    rubric = trial.get("rubric")
-    if rubric and rubric.get("label") != "pass":
-        return "unknown" if rubric.get("label") == "partial" else "fail"
-    validators = trial.get("validators")
-    if validators and validators["passed"] < validators["total"]:
+    labels = trial.get("grade_labels") or []
+    if any(label in {None, "partial", "unknown", "needs_human_review", "ungraded"} for label in labels):
+        return "unknown"
+    if any(label != "pass" for label in labels):
         return "fail"
     return "pass"
 
@@ -269,12 +283,17 @@ def usage_cell(usage):
     return md_cell(" / ".join(parts)) if parts else "recorded"
 
 
-def rubric_cell(rubric):
-    if not rubric:
+def grades_cell(grades):
+    if not grades:
         return "-"
-    if rubric.get("score") is None:
-        return rubric.get("label") or "-"
-    return f"{rubric['score']} {rubric.get('label') or ''}".strip()
+    parts = []
+    for grade in grades:
+        label = grade.get("label") or "-"
+        score = grade.get("score")
+        metric = grade.get("metric") or ((grade.get("grader") or {}).get("id")) or "grade"
+        value = label if score is None else f"{score} {label}".strip()
+        parts.append(f"{metric}: {value}")
+    return md_cell("; ".join(parts))
 
 
 def render_markdown(report):
@@ -335,14 +354,15 @@ def render_markdown(report):
         "",
     ]
     lines += md_table(
-        ["Case", "Candidate", "Rep", "Rubric", "Validators", "Gate", "Graded", "Tokens"],
+        ["Case", "Candidate", "Rep", "Model grades", "Validators", "Human grades", "Gate", "Graded", "Tokens"],
         [
             [
                 md_cell(t["case_id"]),
                 md_cell(t["candidate"]),
                 md_cell(t["repetition"]),
-                rubric_cell(t["rubric"]),
+                grades_cell(t["model_grades"]),
                 f"{t['validators']['passed']}/{t['validators']['total']} pass" if t["validators"] else "-",
+                grades_cell(t["human_grades"]),
                 "failed" if t["gate_failed"] else ("pass" if t["has_gate"] else "-"),
                 "yes" if t["graded"] else "ungraded",
                 usage_cell(t["usage"]),
