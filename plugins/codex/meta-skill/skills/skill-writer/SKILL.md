@@ -31,7 +31,7 @@ Read only what the task needs:
 |---|---|
 | Decide what a skill is, whether the idea is skill-shaped, and what artifact should be created if it is not a skill | [skill-shape.md](references/skill-shape.md) |
 | Distill source packs, example input/output pairs, transcripts plus notes, or prior artifacts into reusable skill rules | [source-distillation.md](references/source-distillation.md) |
-| Decide whether the workflow should become a skill; classify the skill type; write the trigger contract, frontmatter, runtime body, instruction strength, setup/state, future measurement handoff, evidence boundaries, and voice | [design.md](references/design.md) |
+| Decide whether the workflow should become a skill; classify the skill type and evaluation posture; write the trigger contract, frontmatter, runtime body, instruction strength, setup/state, eval seed handoff, evidence boundaries, and voice | [design.md](references/design.md) |
 | Capture an active or prior Codex thread/session into a durable skill | [session-capture.md](references/session-capture.md) |
 | Add compact runtime snippets after the design decision is clear | [cookbook.md](references/cookbook.md) |
 | Use the central Meta Skill CLI for validate, package, workbench, eval, progress, and runner workflows | [cli.md](../../references/cli.md) |
@@ -70,6 +70,8 @@ conventions, or a question:
 | Inputs and output | What the skill consumes and the expected output shape or artifact. |
 | Invariants and failure shields | What the skill should preserve, prevent, or flag; include common mistakes and user corrections. |
 | Fragility | Whether the work is judgment prose, fixed-shape output, script-backed, or a strict sequence. |
+| Skill category | Primary type from [design.md](references/design.md); narrow or split if the draft straddles categories. |
+| Evaluation posture | Capability uplift, encoded preference, or hybrid; include the baseline and lightweight eval seeds when context provides them. |
 | Gates | Approvals required before external writes, destructive actions, publishing, sending, install/sync, or final client-facing delivery. |
 | Project mode | Portable-only, or project mode with `.meta-skill/` docs, research, fixtures, package artifacts, and team reuse material. |
 
@@ -114,14 +116,18 @@ Draft Skill Outline
 - Inputs and output: a folder of PDFs -> one CSV with validated columns.
 - Invariants and failure shields: never invent missing values; flag pages that fail to parse.
 - Fragility: deterministic, script-backed extraction and validation.
+- Skill category: product verification.
+- Evaluation posture: capability uplift; baseline is no skill.
+- Eval seeds: positive prompt about invoice line items; near miss about summarizing invoice prose; checks for required CSV columns, flagged parse failures, and no invented values.
 - Gates: none; portable-only.
 - Project mode: portable-only.
 - Still open: none.
 ```
 
 Before scaffolding, pressure-check the trigger by naming one should-trigger
-prompt, one should-not-trigger prompt, and the nearest near miss. Use
-[design.md](references/design.md) for trigger-contract quality.
+prompt, one should-not-trigger prompt, and the nearest near miss. Keep those
+prompts as eval seeds when the skill is non-trivial or trigger risk is material.
+Use [design.md](references/design.md) for trigger-contract quality.
 
 The interview self-bypasses when context is complete, the user says "just build
 it" or "no questions," or the idea is not skill-shaped. Skipping changes the
@@ -139,12 +145,12 @@ skill-shaped.
 Use [design.md](references/design.md) to decide:
 
 - the recurring job and ownership boundary
-- the skill type and the resource/test shape it implies
+- the skill type, evaluation posture, and resource/test shape it implies
 - frontmatter name and description
 - runtime body shape and section names
 - instruction strength: prose, checklist, template, script, or strict sequence
 - setup, config, state, and memory requirements
-- future measurement handoff for realistic prompts, expected outputs, and objective checks when the user asks for that lane
+- eval seed handoff for realistic prompts, expected outputs, objective checks, and baseline comparison
 - input and evidence boundaries
 - failure handling, approval gates, output shape, and final checks
 
@@ -172,7 +178,7 @@ test fixtures or check inputs when the user provides them. Keep
 
 Follow these payload rules:
 
-- Keep build notes, raw source examples, review notes, future measurement material, and
+- Keep build notes, raw source examples, review notes, eval seeds, benchmark material, and
   rejected options out of the portable payload.
 - Put runtime references in `references/`, one level deep. Link every reference
   directly from `SKILL.md`, and start each reference with when to read it.

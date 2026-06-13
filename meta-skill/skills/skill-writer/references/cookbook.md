@@ -14,7 +14,7 @@ Snippet headings are illustrative. Derive actual section names from the job, fil
 ## Contents
 
 - Signal matrix and recipe-use rules.
-- Pattern cards for trigger, input, output, evidence, review, artifact, script, asset, setup/state, scaffold, failure, approval, and future measurement snippets.
+- Pattern cards for trigger, input, output, evidence, review, artifact, script, asset, setup/state, scaffold, failure, approval, and eval-seed snippets.
 - Worked mini examples and conversion checklist.
 
 ## Signal Matrix
@@ -29,7 +29,7 @@ Snippet headings are illustrative. Derive actual section names from the job, fil
 | Runtime script, CLI, renderer, MCP tool, or package | Tools and dependencies | Direct Markdown link, command, dependency note, and failure behavior | Judge whether code behavior is correct |
 | Approved template, schema, boilerplate, reusable visual, runtime dataset, or example corpus | Runtime folders | Direct folder/file reference and use instruction | Confirm licensing, approval, and whether it belongs in portable payload |
 | First-run config, persistent history, or prior-run deltas | Setup and state | Config/state section with storage location and missing-config behavior | Confirm privacy, upgrade safety, and whether state really changes output |
-| User explicitly asks to preserve future measurement ideas | Future measurement note | Private workbench note outside runtime payload | Confirm it stays out of scaffolded runtime and package output |
+| New non-trivial skill, trigger-risky skill, or source material with realistic prompts and expected behavior | Eval seed handoff | Private workbench note or final handoff outside runtime payload | Confirm seeds are realistic, objective enough, and routed to `skill-evaluator` for suites |
 | New skill or user-requested skill project | Payload skeleton | Directly authored `SKILL.md`, optional `agents/`, and runtime folders | Confirm target path and project-vs-portable intent |
 | Client-facing delivery, external write, package, install, publish, sync, or send | Human gate | Explicit approval before the action | Confirm who can approve |
 | Explicit-only activation | Metadata invocation policy | `policy.allow_implicit_invocation: false` in `agents/openai.yaml` | Confirm explicit-only is intentional |
@@ -275,26 +275,34 @@ or dashboard ID. If the file is absent, ask for the minimum missing value and
 continue with a draft instead of guessing.
 ```
 
-### 17. Future Measurement Parking Lot
+### 17. Eval Seed Handoff
 
-Use only when the user explicitly asks to preserve future measurement ideas.
-Do not create these notes by default during ordinary skill authoring.
+Use during ordinary authoring when the context provides realistic prompts,
+expected behavior, objective checks, or trigger near misses. Keep this as a
+handoff, not a benchmark suite.
 
 ```md
-Measurement notes:
-- Candidate positive prompt: "<realistic messy user prompt>"
-- Candidate formal prompt: "<formal prompt with expected file/resource>"
-- Candidate near miss: "<adjacent request that should route away>"
+Eval seed handoff:
+- Skill posture: capability uplift | encoded preference | hybrid
+- Positive prompts:
+  - "<realistic messy user prompt>"
+  - "<formal prompt with expected file/resource>"
+- Trigger negatives / near misses:
+  - "<adjacent request that should route away>"
 
 Expected behavior:
 - Positive prompts produce <artifact/output shape>.
 - Objective checks: <field exists>, <script exits 0>, <no unsupported claims>.
 - Baseline: no skill for greenfield; old skill for approved improvements.
+- Comparator question: <what a later A/B or baseline run should decide>.
+- Route to skill-evaluator when: <multi-case suite, judge grading, benchmark, CI, or A/B comparison is needed>.
 ```
 
-Keep measurement ideas out of the portable runtime unless examples are required
-during execution. Put authoring-only notes in `.meta-skill/docs/`, the
-workbench, or final handoff until the measurement process is designed.
+Keep eval seeds out of the portable runtime unless examples are required during
+execution and approved as runtime material. Put authoring-only seeds in
+`.meta-skill/docs/`, the workbench, or final handoff. Route systematic
+multi-case measurement, benchmark runs, pass-rate/time/token tracking, judge
+grading, and A/B comparisons to `skill-evaluator`.
 
 ### 18. Skill And Project Payloads
 
@@ -366,7 +374,7 @@ Script-backed skill:
 - Output shape, tone, and review posture are explicit where they matter.
 - Runtime references, scripts, assets, resources, examples, or other folders are direct, flat where discovery matters, linked, and implemented.
 - Setup/config/state rules appear only when they change behavior and name stable storage.
-- Future measurement ideas, when requested, stay in `.meta-skill/` and out of the portable runtime.
+- Eval seeds stay in `.meta-skill/` or the final handoff and out of the portable runtime unless they are approved runtime examples.
 - Generated starters use the current-working-directory-relative `<skill-dir>` as the root payload; no `skill/` wrapper unless a repo explicitly requires it.
 - `meta-skill` is the single public CLI; worker-local scripts are not a public
   interface.

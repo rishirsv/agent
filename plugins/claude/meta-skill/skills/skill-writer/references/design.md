@@ -8,9 +8,9 @@ This reference covers design decisions and runtime writing after the idea is pla
 
 ## Contents
 
-- Design aim, directive writing, voice and style, the skill-or-not gate, and skill type taxonomy.
+- Design aim, directive writing, voice and style, the skill-or-not gate, skill type taxonomy, and evaluation posture.
 - Intake, trigger contract, frontmatter, and description checks.
-- Degree of freedom, failure handling, runtime body shape, examples, setup/state, future measurement boundaries, and evidence boundaries.
+- Degree of freedom, failure handling, runtime body shape, examples, setup/state, eval-seed boundaries, and evidence boundaries.
 - Draft outline and authoring-note expectations.
 
 ## Design Aim
@@ -138,6 +138,22 @@ usually carry scripts or assertion guidance; a reference skill may need only
 well-linked gotchas and examples; an automation skill often needs config setup
 and stable state instructions.
 
+## Evaluation Posture
+
+Classify the draft's evaluation posture before deciding what evidence to
+preserve. This is an authoring aid, not a frontmatter label.
+
+| Posture | Use when | Seed checks should emphasize |
+|---|---|---|
+| Capability uplift | The skill helps the agent do something the base model cannot do or does inconsistently. | Skill-vs-no-skill baseline, output quality, fragile steps, deterministic checks, and whether the skill remains necessary as models improve. |
+| Encoded preference | The base model can do the pieces, but the skill preserves a team process, voice, approval path, rubric, or artifact standard. | Fidelity to the intended workflow, required sections, approval gates, tone, positive-null behavior, and near-miss routing. |
+| Hybrid | The skill combines a capability boost with workflow or style preferences. | Separate capability checks from preference checks so later evaluation can tell which part regressed. |
+
+Use the posture to choose eval seeds, not to bloat runtime. Capability uplift
+seeds need a baseline comparison against no skill. Encoded preference seeds need
+realistic workflow prompts and objective indicators of process fidelity. Hybrid
+seeds should name which checks measure capability and which measure preference.
+
 ## Portable Payload And Project State
 
 Default to the general Agent Skill shape unless the target repo has a stricter
@@ -174,10 +190,10 @@ and `assets/` are defaults, not the full vocabulary.
 | Folder | Include when | Avoid when |
 |---|---|---|
 | `references/` | A future agent should read conditional runtime guidance, API details, schemas, policies, gotchas, or long examples only when needed. | The material is source-specific, client-specific, build-only, or better kept in `.meta-skill/docs/`. |
-| `scripts/` | Deterministic code is safer, cheaper, or more reliable than prose; the shipped skill should run it at runtime. | The code is a repo-only build helper, future measurement helper, or one-off migration. |
+| `scripts/` | Deterministic code is safer, cheaper, or more reliable than prose; the shipped skill should run it at runtime. | The code is a repo-only build helper, benchmark helper, or one-off migration. |
 | `assets/` | Approved reusable runtime files are used in outputs: templates, schemas, starter workbooks, icons, fonts, boilerplate, sample forms. | The file is a raw user upload, sensitive material, licensed content without approval, or research evidence. |
 | `resources/` | The skill needs runtime data or structured resources that are not naturally references, scripts, or assets. | The content is private workbench state or generated package metadata. |
-| `examples/` | Examples are themselves runtime material the future agent should inspect or copy patterns from. | Examples are source captures, authoring evidence, or future measurement material; keep those in `.meta-skill/`. |
+| `examples/` | Examples are themselves runtime material the future agent should inspect or copy patterns from. | Examples are source captures, authoring evidence, or benchmark material; keep those in `.meta-skill/`. |
 | Other runtime folder | A domain convention makes the folder clearer than forcing material into a default bucket. | The folder exists only because the authoring process produced it. |
 
 Link every runtime folder from `SKILL.md` and state when to read, run, copy, or
@@ -215,7 +231,9 @@ Start from existing context. Mine the conversation and files for:
 - repeated manual steps that can be scripted
 - tools, packages, file types, or runtime assumptions
 - skill type and resource/test expectations
+- capability-uplift, encoded-preference, or hybrid posture
 - success criteria and one or two realistic task prompts the skill should handle well
+- objective checks that would let `skill-evaluator` compare baseline, current skill, or a future candidate
 - moments where approval is needed
 - likely gotchas, common rationalizations, or counterintuitive failure modes that would not be obvious from the workflow
 
@@ -422,6 +440,11 @@ Runtime guidance should cover the behavior somewhere, without forcing headings:
 
 Use [cookbook.md](cookbook.md) for concrete snippet shapes. Use the Skill Writer payload rules for direct links, script/resource rules, and payload hygiene.
 
+For non-trivial skills, include a compact `Gotchas` section when evidence shows
+recurring or high-cost failures. If no evidence-backed gotchas exist, do not
+invent generic ones; keep that absence in authoring notes or the final handoff
+rather than shipping a filler section.
+
 ## Rules That Earn Their Place
 
 A rule belongs in `Operating Rules` only if the agent is likely to make a consequential mistake without it. Otherwise, put it closer to the behavior it affects.
@@ -487,6 +510,10 @@ present in ordinary prompts or when prior runs materially improve the next run.
   where deltas matter, such as standups, recaps, cleanup runs, or recurring
   status posts. Tell the agent what to read, how to compare, and when to ignore
   stale history.
+- Runtime-specific hooks: include only when the target runtime supports them and
+  they should activate with this skill rather than globally. State the safety
+  reason, matcher scope, and stop behavior; otherwise keep the behavior as
+  runtime guidance or validation.
 - Upgrade safety: assume files inside an installed skill directory may be
   replaced during upgrades. Put mutable state in the stable data/workbench
   location provided by the project or runtime, usually `.meta-skill/` for
@@ -498,24 +525,42 @@ present in ordinary prompts or when prior runs materially improve the next run.
 Skip this section for ordinary guidance skills. Empty config/state rules create
 maintenance burden without changing behavior.
 
-## Future Measurement Boundary
+## Evaluation Seeds And Measurement Boundary
 
-Do not create measurement suites, seed cases, or special measurement folders
-during ordinary skill authoring. That process is separate and not fully designed
-for this scaffold.
+During greenfield authoring, capture lightweight eval seeds when the context
+provides realistic prompts, source files, expected output shape, or objective
+checks. A seed is not a suite; it is a compact handoff for `skill-evaluator`.
 
-If the user explicitly asks to preserve future measurement ideas, keep them in
-`.meta-skill/docs/` as private authoring notes. Keep user-provided fixtures or
-sample inputs in the flat `.meta-skill/tests/` folder. Do not put future
-measurement material in the portable payload unless the examples are approved
-runtime material the future agent should actually read.
+Include only what is available and useful:
+
+- skill posture: capability uplift, encoded preference, or hybrid
+- two or three should-trigger prompts
+- one or two should-not-trigger prompts or near misses
+- expected behavior or output shape
+- objective checks such as required fields, script exits, citation presence,
+  positive-null language, no unsupported claims, or exact artifact paths
+- baseline: no skill for greenfield authoring, prior skill for approved
+  revisions, or named candidate when the user provides one
+- comparator question: what later measurement should decide
+
+Keep eval seeds out of the portable payload unless they are approved runtime
+examples the future agent should inspect while doing the task. In project mode,
+put seeds in `.meta-skill/docs/` or the final handoff. Put user-provided
+fixtures or sample inputs in the flat `.meta-skill/tests/` folder only when the
+user provided or approved them.
+
+Do not create `.meta-skill/evals.json`, case folders, hidden rubrics, judge
+configuration, benchmark runs, dashboards, or CI wiring during ordinary
+authoring. Route systematic measurement, A/B comparison, model-update checks,
+and pass-rate/time/token tracking to `skill-evaluator`.
 
 ## Draft Outline Handoff
 
 Use the scaffolded `SKILL.md` as the authoring outline while the skill is still
 being shaped. The outline should contain the recurring job, trigger boundary,
-inputs and output, invariants, fragility, gates, project-mode choice, and any
-still-open uncertainty.
+inputs and output, invariants, fragility, skill category, evaluation posture,
+eval seeds when available, gates, project-mode choice, and any still-open
+uncertainty.
 
 Finalize by rewriting that same `SKILL.md` into runtime guidance and removing
 stale intake notes. In project mode, keep durable non-runtime notes under

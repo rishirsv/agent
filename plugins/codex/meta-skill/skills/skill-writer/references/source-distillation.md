@@ -11,7 +11,7 @@ Turn source material into reusable skill behavior before drafting runtime
 guidance. The output is not a source summary. It is a candidate operating model:
 the recurring job, trigger boundary, input requirements, output contract,
 workflow moves, evidence rules, style constraints, domain judgment, failure
-shields, runtime resources, and example checks.
+shields, runtime resources, gotchas, and eval seeds.
 
 Keep raw source, provenance, client facts, private examples, rejected drafts,
 research notes, and one-off details out of runtime unless the user explicitly
@@ -33,7 +33,8 @@ interview and design flow:
 4. Extract candidate rules through the selected lenses.
 5. Promote, reject, or park each candidate rule.
 6. Check against examples by dimension, not wording.
-7. Map promoted rules into the main workflow answer-set in `SKILL.md`.
+7. Map promoted rules and eval seed handoff into the main workflow answer-set in
+   `SKILL.md`.
 8. Return to [design.md](design.md) for trigger, body shape, and runtime
    placement.
 
@@ -61,6 +62,7 @@ Add conditional lenses when the source pack shows the signal:
 | Rubrics, scoring sheets, expert comments, or accepted decisions | Domain Judgment And Rubric. |
 | Process notes, command logs, scripts, or validation output | Process, Tools, And Deterministic Work. |
 | User corrections, weak examples, rejected drafts, or review comments | Corrections, Failures, And Anti-Patterns. |
+| Realistic prompts, near misses, accepted outputs, or objective check language | Evaluation Seeds. |
 | Sensitive client, user, project, or engagement material | Privacy, Anonymization, And Keep-Out-Of-Runtime gates. |
 
 If source roles conflict, prefer explicit user corrections, accepted final
@@ -363,6 +365,37 @@ behavior. Keep rejected drafts and private review notes in `.meta-skill/docs/`.
 Example check: the revised skill prevents the old failure without blocking valid
 adjacent cases.
 
+### Evaluation Seeds
+
+Use this when the source pack contains realistic prompts, paired inputs and
+outputs, accepted examples, rejected drafts, near misses, trigger failures, or
+objective check language.
+
+Extract:
+
+- should-trigger prompts, including messy or implicit user wording
+- should-not-trigger prompts and near misses that protect adjacent skills
+- expected behavior or output shape
+- objective checks such as required fields, source citations, no unsupported
+  claims, script exit status, rendered artifact checks, positive-null language,
+  or exact paths
+- baseline: no skill for greenfield, prior skill for revisions, or named
+  candidate when provided
+- comparator question: what later measurement should decide
+
+Promote when the seed is realistic, grounded in source material or user
+correction, and checks behavior rather than source-specific wording. Reject toy
+prompts, exact exemplar-copying checks, private facts, and hidden answer keys
+that would leak into runtime.
+
+Runtime placement: keep eval seeds in `.meta-skill/docs/` or the final handoff.
+Put source fixtures in the flat `.meta-skill/tests/` folder only when the user
+provided or approved them. Do not add `evals.json`, case folders, judge rubrics,
+or benchmark scripts; route those to `skill-evaluator`.
+
+Example check: a future evaluator can build a baseline-vs-skill or
+skill-vs-candidate case from the seed without reconstructing authoring context.
+
 ### Runtime Placement And Economy
 
 Use this after candidate rules exist.
@@ -375,7 +408,7 @@ Use this after candidate rules exist.
 | Approved reusable templates, schemas, boilerplate, starter files, sample workbooks, or visual materials | `assets/` |
 | Approved runtime datasets or structured maps the skill must consult | `resources/` |
 | Scrubbed examples that future agents should inspect for shape or tone during runtime | `examples/` |
-| Raw source packs, private examples, authoring provenance, rejected rules, research reports, future measurement notes, and source-specific evidence | `.meta-skill/docs/` or external project docs |
+| Eval seeds, trigger near misses, objective check notes, raw source packs, private examples, authoring provenance, rejected rules, research reports, benchmark notes, and source-specific evidence | `.meta-skill/docs/` or external project docs |
 
 Economy gates:
 
@@ -513,6 +546,8 @@ Source Distillation Notes
 - Domain judgment/rubric rules:
 - Process/tool/script rules:
 - Runtime resources:
+- Gotchas:
+- Eval seeds:
 - Keep out of runtime:
 - Example-matching checks:
 - Open decisions:
