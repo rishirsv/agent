@@ -67,7 +67,7 @@ agent/
    └─ sync-plugins.sh
 ```
 
-- `agent/skills/`: Agent plugin skills, packaged into `plugins/{codex,claude}/agent/skills/`. This is intentionally narrow; today it contains `yeet`.
+- `agent/skills/`: Agent plugin skills, packaged into `plugins/{codex,claude}/agent/skills/`. This is intentionally narrow; today it contains `commit`, `publish-pr`, and the `yeet` alias.
 - `agent/assets/`: canonical Agent Codex plugin assets, packaged into `plugins/codex/agent/assets/`.
 - `meta-skill/`: standalone Meta-Skill plugin source. The sync script packages `skills/`, `references/`, and `src/` into `plugins/{codex,claude}/meta-skill/`.
 - `.codex/agents/`: canonical local Codex agent definitions. `scripts/sync-local-agents.sh` copies these to `~/.codex/agents/` and generates Claude agent Markdown under `~/.claude/agents/`.

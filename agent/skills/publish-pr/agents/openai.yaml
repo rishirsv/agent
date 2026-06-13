@@ -1,0 +1,7 @@
+interface:
+  display_name: "Publish PR"
+  short_description: "Publish scoped work as a draft PR"
+  default_prompt: "Use $publish-pr to publish the scoped local change as a pushed branch and draft PR."
+
+policy:
+  allow_implicit_invocation: false

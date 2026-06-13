@@ -1,7 +1,7 @@
 interface:
   display_name: "Yeet"
-  short_description: "Commit, push, and open a draft PR"
-  default_prompt: "Use $yeet to stage the intended changes, commit them, push the branch, and open a draft GitHub PR."
+  short_description: "Alias for publishing a draft PR"
+  default_prompt: "Use $yeet to publish the scoped local change as a pushed branch and draft PR."
 
 policy:
   allow_implicit_invocation: false

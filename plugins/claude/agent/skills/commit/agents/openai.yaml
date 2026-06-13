@@ -1,0 +1,7 @@
+interface:
+  display_name: "Commit"
+  short_description: "Create clean local git commits"
+  default_prompt: "Use $commit to stage the intended local changes and create a clean git commit; use $commit push when I explicitly want it pushed too."
+
+policy:
+  allow_implicit_invocation: false
